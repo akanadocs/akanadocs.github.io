@@ -1,0 +1,499 @@
+---
+layout: apipage
+title: List Discussions | Discussions Service | Enterprise API Platform API
+description:  Returns a list of <a href="../Ref_Glossary_CommunityPlatform.htm#gl_discussion">discussions</a> that match specified filter criteria.
+product: cm
+category: ref
+nav-title: List Discussions 
+no-nav: api
+sub-nav: true
+sub-nav-class: discussions
+no-catalog: true
+---
+
+<!-- InstanceBeginEditable name="Heading" -->
+<h2><a name="top" id="top"></a>GET&nbsp;/api/discussions</h2>
+<!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
+<p><!-- #BeginLibraryItem "/Library/desc_listDiscussions.lbi" -->
+Returns a list of <a href="../Ref_Glossary_CommunityPlatform.htm#gl_discussion">discussions</a> that match specified filter criteria.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: This operation applies to all users. Login is not required. However, the results are restricted according to the user's permissions. When the user is not logged in, only public discussion information is returned.</p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>This topic includes the following sections:</p>
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="200"><ul>
+  <li><a href="#httpmethod">HTTP Method</a></li>
+  <li><a href="#endpoint">URL</a></li>
+  <li><a href="#samplerequest">Sample Request</a></li>
+  <li><a href="#requestheaders">Request Headers</a></li>
+  <li><a href="#requestparameters">Request Parameters</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="#response">Response</a></li>
+  <li><a href="#sampleresponse">Sample Response</a></li>
+  <li><a href="#responseheaders">Response Headers</a></li>
+  <li><a href="#responsebody">Response Body</a></li>
+  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<!-- InstanceBeginEditable name="HTTP Method" -->
+<p class="httpverb">GET</p>
+<!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+<h3 id="endpoint">URL</h3>
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->discussions[?DiscussionSubjectID={DiscussionSubjectID}][&amp;ItemID={ItemID}][&amp;Tag={Tag}]
+[&amp;SortBy={SortBy}][&amp;IncludeComments={IncludeComments}][&amp;NumberOfComments={NumberOfComments}][&amp;count={count}]</pre>
+<!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<!-- InstanceBeginEditable name="Sample Request" -->
+<h3 id="samplerequest">Sample Request</h3>
+<p id="id_samplerequest">The example below shows a request for the discussion items relating to a specific discussion about a specific API version.</p>
+<p><strong>Request URL</strong></p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->discussions?DiscussionSubjectID=apiversion20693.acmecorp&amp;ItemID=discussion25796.acmecorp</pre>
+<p><strong>Sample request headers</strong></p>
+<pre>Accept: application/json</pre>
+<p><strong>Sample request body</strong></p>
+<p>Not applicable.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Headers" -->
+<h3 id="requestheaders">Request Headers</h3>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><strong>text/xml</strong>, <strong>application/rss+xml</strong>, or <strong>application/json</strong></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Parameters" -->
+<h3 id="requestparameters">Request Parameters</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="11%">Parameter</th>
+      <th width="9%">Parm Type</th>
+      <th width="11%">Data Type</th>
+      <th width="11%">Required</th>
+      <th width="58%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_discussionsubjectid">DiscussionSubjectID</a></td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_DiscussionSubjectID.lbi" -->
+The unique ID for the specific resource that a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_discussion">discussion</a> relates to; for example, the AppVersionID, APIVersionID, GroupID, or a custom BoardID.<!-- #EndLibraryItem -->&nbsp;Use this if you only want information about discussions for a specific resource such as an app version or API version.</td>
+    </tr>
+    <tr>
+      <td>DiscussionType</td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_discussiontype">type of discussion</a>. No longer in use.</td>
+      </tr>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_retrievinguserid">RetrievingUserID</a></td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>The ID of the user retrieving the discussion information.</td>
+      </tr>
+    <tr>
+      <td>I<a href="../Ref_IDsOnThePlatform.htm#id_itemid">temID</a></td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" -->
+The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_boarditem">Board item</a>.<!-- #EndLibraryItem --></td>
+      </tr>
+    <tr>
+      <td>Tag</td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>Name of a specific discussion tag, if information relating to only a specific tag is required.</td>
+    </tr>
+    <tr>
+      <td>SortBy</td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_SortBy.lbi" --> An optional parameter allowing users to sort results by a specific value; for example, <strong>com.soa.sort.order.updated</strong> sorts with the most updated entries first. For valid values, see <a href="../Ref_Values.htm#values_sortby">Sort By Values</a>. If not specified, items are returned in the sort order of <strong>DescendingDate</strong>, which means that the most recent items are first.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>IncludeComments</td>
+      <td>Query</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_apps_IncludeComments.lbi" --> Indicates whether comments should be included in the board information. Default: <strong>true</strong>. If set to <strong>false</strong>, comments are excluded.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>NumberOfComments</td>
+      <td>Query</td>
+      <td>int</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_apps_NumberOfComments.lbi" --> The number of comments to be returned (if IncludeComments is not set to <strong>false</strong>). Default value: <strong>2</strong>.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>start</td>
+      <td>Query</td>
+      <td>int</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_start.lbi" --> An index number indicating the starting point for the results to be returned. If not specified, results start at position 0, the first result.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>count</td>
+      <td>Query</td>
+      <td>int</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_count.lbi" --> The number of results to be returned, from the specified starting point. If not specified, all matching results are returned.<!-- #EndLibraryItem --></td>
+    </tr>
+    </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Description" -->
+<h3 id="response">Response</h3>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the discussion list. <!-- #BeginLibraryItem "/Library/_rss.lbi" -->The information is sent as an RSS feed in JSON format.<!-- #EndLibraryItem --></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Sample Response" -->
+<h3 id="sampleresponse">Sample Response</h3>
+<p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
+<p><strong>Sample response headers: JSON</strong></p>
+<pre>Status Code: 200 OK
+Content-Type: application/json
+Date: Tue, 23 Jul 2013 13:51:51 GMT</pre>
+<p><a id="rss_apis_json"></a><strong>Sample response body: JSON</strong></p>
+<pre>
+{
+  "channel" : {
+    "title" : "",
+    "link" : "../acmecorp#/forum/discussions",
+    "description" : "",
+    "startIndex" : 0,
+    "itemsPerPage" : 0,
+    "item" : [ {
+      "title" : "Upcoming user event: Atlanta, Sat 11/16/13",
+      "link" : "../acmecorp#/forum/discussions/discussion25796.acmecorp/details",
+      "description" : "We are pleased to announce the first annual ACMEPayments user event, in Atlanta on Sat 16 Nov 2013. Details to come.",
+      "category" : [ {
+        "value" : "DISCUSSION",
+        "domain" : "uddi:soa.com:resourcetype"
+      }, {
+        "value" : "com.soa.discussion.type.comment",
+        "domain" : "uddi:soa.com:discussiontype"
+      }, {
+        "value" : "ACMEPayments",
+        "domain" : "uddi:soa.com:tag"
+      }, {
+        "value" : "user",
+        "domain" : "uddi:soa.com:tag"
+      }, {
+        "value" : "forum",
+        "domain" : "uddi:soa.com:tag"
+      }, {
+        "value" : "Atlanta",
+        "domain" : "uddi:soa.com:tag"
+      }, {
+        "value" : "event",
+        "domain" : "uddi:soa.com:tag"
+      }, {
+        "value" : "com.soa.board.item.closed",
+        "domain" : "uddi:soa.com:state"
+      } ],
+      "guid" : {
+        "value" : "discussion25796.acmecorp"
+      },
+      "pubDate" : "2013-07-22T20:15:34.000Z",
+      "AuthoringUser" : {
+        "ID" : "user12262.acmecorp",
+        "Name" : "JaneSaoirse",
+        "Image" : {
+          "Url" : "http://api.acmecorp.com/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
+          "Title" : "JaneSaoirse",
+          "Link" : "#/users/user12262.acmecorp/details"
+        }
+      },
+      "Image" : {
+        "Url" : "http://api.acmecorp.com/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
+        "Link" : "../acmecorp#/user/user12262.acmecorp/details"
+      },
+      "CreatedDate" : "2013-07-22T20:15:34.000Z",
+      "Actions" : {
+        "Action" : [ {
+          "value" : "discussion.action.delete",
+          "label" : "discussion.action.delete"
+        } ]
+      },
+      "Marks" : {
+        "Count" : 0,
+        "IsMarkedByReader" : false
+      },
+      "CommentsPreview" : {
+        "Count" : 0,
+        "Comment" : [ ]
+      },
+      "EntityReference" : [ {
+        "Title" : "ACMEPayments",
+        "Guid" : "api18969.acmecorp",
+        "Category" : [ {
+          "value" : "api",
+          "domain" : "uddi:soa.com:resourcetype"
+        } ]
+      }, {
+        "Title" : "3.0",
+        "Guid" : "apiversion20693.acmecorp",
+        "Category" : [ {
+          "value" : "apiversion",
+          "domain" : "uddi:soa.com:resourcetype"
+        } ]
+      } ]
+    } ]
+  },
+  "version" : "1.0"
+}</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<p><strong>Sample response headers: Text/XML or  <strong>Application/rss+xml</strong></strong></p>
+<pre>Status Code: 200 OK
+Content-Type: text/xml
+Date: Tue, 23 Jul 2013 14:01:00 GMT</pre>
+<p><a id="rss_apis_xml"></a><strong>Sample response body: Text/XML or  <strong>Application/rss+xml</strong></strong></p>
+<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;rss xmlns:ns2="http://soa.com/xsd/business/1.0" xmlns:ns3="http://soa.com/xsd/user/1.0" xmlns:ns4="http://soa.com/xsd/rss/1.0" 
+xmlns:ns5="http://soa.com/xsd/comment/1.0" xmlns:ns6="http://a9.com/-/spec/opensearch/1.1/" xmlns:ns7="http://soa.com/xsd/resource/1.0" 
+xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
+  &lt;channel&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;link&gt;../acmecorp#/forum/discussions&lt;/link&gt;
+    &lt;description&gt;&lt;/description&gt;
+    &lt;ns6:startIndex&gt;0&lt;/ns6:startIndex&gt;
+    &lt;ns6:itemsPerPage&gt;0&lt;/ns6:itemsPerPage&gt;
+    &lt;item&gt;
+      &lt;title&gt;Upcoming user event: Atlanta, Sat 11/16/13&lt;/title&gt;
+      &lt;link&gt;../acmecorp#/forum/discussions/discussion25796.acmecorp/details&lt;/link&gt;
+      &lt;description&gt;We are pleased to announce the first annual ACMEPayments user event, in Atlanta on Sat 16 Nov 2013. Details to come.&lt;/description&gt;
+      &lt;category domain="uddi:soa.com:resourcetype"&gt;DISCUSSION&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:discussiontype"&gt;com.soa.discussion.type.comment&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:tag"&gt;ACMEPayments&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:tag"&gt;user&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:tag"&gt;forum&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:tag"&gt;Atlanta&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:tag"&gt;event&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:state"&gt;com.soa.board.item.closed&lt;/category&gt;
+      &lt;guid&gt;discussion25796.acmecorp&lt;/guid&gt;
+      &lt;pubDate&gt;2013-07-22T20:15:34.000Z&lt;/pubDate&gt;
+      &lt;ns4:Image&gt;
+        &lt;Url&gt;http://api.acmecorp.com/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
+        &lt;Link&gt;../acmecorp#/user/user12262.acmecorp/details&lt;/Link&gt;
+      &lt;/ns4:Image&gt;
+      &lt;ns4:CreatedDate&gt;2013-07-22T20:15:34.000Z&lt;/ns4:CreatedDate&gt;
+      &lt;ns4:Marks&gt;
+        &lt;Count&gt;0&lt;/Count&gt;
+        &lt;IsMarkedByReader&gt;false&lt;/IsMarkedByReader&gt;
+      &lt;/ns4:Marks&gt;
+      &lt;ns5:CommentsPreview&gt;
+        &lt;ns5:Count&gt;0&lt;/ns5:Count&gt;
+      &lt;/ns5:CommentsPreview&gt;
+      &lt;ns4:AuthoringUser&gt;
+        &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
+        &lt;Name&gt;JaneSaoirse&lt;/Name&gt;
+        &lt;ns4:Image&gt;
+          &lt;Url&gt;http://api.acmecorp.com/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
+          &lt;Title&gt;JaneSaoirse&lt;/Title&gt;
+          &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
+        &lt;/ns4:Image&gt;
+      &lt;/ns4:AuthoringUser&gt;
+      &lt;ns4:EntityReference&gt;
+        &lt;Title&gt;ACMEPayments&lt;/Title&gt;
+        &lt;Guid&gt;api18969.acmecorp&lt;/Guid&gt;
+        &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns4:Category&gt;
+      &lt;/ns4:EntityReference&gt;
+      &lt;ns4:EntityReference&gt;
+        &lt;Title&gt;3.0&lt;/Title&gt;
+        &lt;Guid&gt;apiversion20693.acmecorp&lt;/Guid&gt;
+        &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns4:Category&gt;
+      &lt;/ns4:EntityReference&gt;
+      &lt;ns4:Actions&gt;
+        &lt;ns4:Action label="discussion.action.delete"&gt;discussion.action.delete&lt;/ns4:Action&gt;
+      &lt;/ns4:Actions&gt;
+    &lt;/item&gt;
+  &lt;/channel&gt;
+&lt;/rss&gt;
+</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Headers" -->
+<h3 id="responseheaders">Response Headers</h3>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><strong>text/xml</strong>, <strong>application/rss+xml</strong>, or <strong>application/json</strong></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Body" -->
+<h3 id="responsebody">Response Body</h3>
+<p><!-- #BeginLibraryItem "/Library/_rss_responsetable_intro.lbi" --> The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0.<!-- #EndLibraryItem --> The channel includes a link to the Board for the discussion and also <a href="../Ref_RSSChannelsOnThePlatform.htm#rss_pagingofreturnedrssitems">paging values</a>: StartIndex, TotalResults (if applicable), and ItemsPerPage. Each item in the channel represents a discussion, and includes the information listed below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Name</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>title</td>
+      <td>The text title of the discussion.</td>
+    </tr>
+    <tr>
+      <td>link</td>
+      <td>A link to the Board for the discussion.</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>A text description, if applicable.</td>
+    </tr>
+    <tr>
+      <td>category[&nbsp;]</td>
+      <td><p>An array of sets of two name/value pairs, each including Value and Domain, with a value for each. For example:</p>
+        <pre>"value" : "DISCUSSION",
+"domain" : "uddi:soa.com:resourcetype"</pre>
+        <p>The example above indicates that the item is a discussion.</p>
+        <pre>"value" : "event",
+"domain" : "uddi:soa.com:tag"</pre>
+        <p>The example above indicates that the item has the word &quot;event&quot; as one of the tags.</p></td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_guid">GUID</a></td>
+      <td>GUID for the dscussion; the <a href="../Ref_IDsOnThePlatform.htm#id_discussionid">DiscussionID</a>.</td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_pubdate">pubdate</a></td>
+      <td>The date/timestamp when the information was generated.</td>
+    </tr>
+    <tr>
+      <td>AuthoringUser</td>
+      <td><p>Information about the user who authored the discussion, including:</p>
+        <ul class="apidoctable_ul">
+          <li>ID: the unique <a href="../Ref_IDsOnThePlatform.htm#id_userid">UserID</a></li>
+          <li>Name: The user's name as it appears in the platform</li>
+          <li>Image: Information about the user's image, including URL, Title, and Link</li>
+        </ul></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td>Information about the image for the resource that the discussion is associated with, including URL and link.</td>
+    </tr>
+    <tr>
+      <td>CreatedDate</td>
+      <td>The date/timestamp when the information was generated.</td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_marks">Marks</a></td>
+      <td>Information about marks on the discussion, including a numeric count and a boolean value, IsMarkedByReader, indicating whether the current user (if a user is logged in) marked the discussion.</td>
+    </tr>
+    <tr>
+      <td>CommentsPreview</td>
+      <td>Information about comments on the discussion, including a numeric count and information about each comment, if applicable.</td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_entityreferences">EntityReference</a></td>
+      <td><p>An array of one or more entity references for the discussion. Each includes:</p>
+        <ul class="apidoctable_ul">
+          <li>Title</li>
+          <li><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_guid">GUID</a>: the unique ID for the item.</li>
+          <li>Category: an array of name/value pairs with information about the category for the discussion.</li>
+        </ul></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<h3 id="errorcodes">Error Codes/Messages</h3>
+<p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<!-- InstanceBeginEditable name="Error Messages" -->
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Item</th>
+      <th width="80%">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
+      <td>An error occurred processing the call. </td>
+    </tr>
+  </tbody>
+</table>
+<!-- InstanceEndEditable -->
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="700" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

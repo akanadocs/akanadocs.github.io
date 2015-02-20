@@ -1,0 +1,404 @@
+---
+layout: page
+title: Glossary of Terms
+description: Definitions for some of the terms used on the platform.
+product: cm
+category: ref
+subcategory: Basics
+weight: 30
+type: page
+nav-title: Glossary of Terms
+---
+<h2 id="top">Glossary of Terms</h2>
+<p>Key terminology used in the platform.</p>
+<div class = "divider1"></div>
+
+
+
+<dl>
+<dt><a name="gl_alert"></a>alert</dt>
+<dd>A type of <a href="#gl_dashboardentry">Dashboard item</a> designed to inform app or API administrators about an issue such as an SLA (Service Level Agreement) violation.</dd>
+
+
+
+<dt><a name="gl_anonymoususer"></a>anonymous user</dt>
+<dd>A user who is browsing the platform without logging in. Anonymous users can see public content but cannot post to Boards, write comments or ratings, or create resources such as apps.</dd>
+
+
+
+<dt><a name="gl_api"></a>API</dt>
+<dd>A key resource in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->. An API provides a business with a way of using the Internet to extend business capabilities to connect with new customers in new ways. In this context an API is a Web service exposed outside the enterprise, typically using RESTful design principles, and often with JSON content. </dd>
+
+
+
+<dt><a name="gl_apiaccessrequest"></a>API access request</dt>
+<dd>A specific type of <a href="#gl_connectionrequest">Connection Request</a>. An API access request governs the relationship between an app and an API for the life of the connection. When an app team member requests a connection to an API on behalf of the app, the API administrator is notified of the pending request and can respond accordingly. The administrator can approve or deny the request.</dd>
+
+
+
+<dt><a name="gl_apiadmin"></a>API Administrator</dt>
+<dd>One of the <a href="#gl_role">roles</a> defined in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> is that of the API Admin. Each API must have at least one Admin, and can have more. The API Admin approves or rejects connection requests, moderates the API's <a href="#gl_board">Board</a>, views and manages alerts and trouble tickets, and manages documents, policies, and other information associated with the API. The API Admin can also view performance and usage data for the entire API, and can invite others to be Admins for the same API.</dd>
+
+
+
+<dt><a name="gl_api_board"></a>API Board</dt>
+<dd>The <em>API Board</em> allows any member to post discussions pertaining to a specific API, or create trouble tickets pertaining to issues associated with the operation of a particular API.</dd>
+<dd>Navigation: <em>APIs &gt; API Name &gt; Board</em></dd>
+
+
+
+<dt><a name="gl_api_gateway"></a>API Gateway</dt>
+<dd>The SOA Software API Gateway provides service integration and gateway services for APIs. It bundles SOA Software <a href="#gl_policy_manager">Policy Manager</a> with one or more message handling intermediaries.</dd>
+<!--<dd>Message handling intermediaries might include Network Director, Policy Manager for DataPower, or the Microsoft Intermediary./<dd>-->
+
+
+
+<dt><a name="gl_app"></a>app</dt>
+<dd>An app (application) is a piece of software that delivers specific capabilities to its users. In the context of the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, an app is a piece of software that consumes one or more APIs.</dd>
+
+
+
+<dt><a name="gl_app_board"></a>App Board</dt>
+<dd>The <em>App Board</em> allows development team members to create private discussions with other team members pertaining to their specific application development projects. Team members can also create trouble tickets pertaining to issues associated with application development.</dd>
+<dd>Navigation: <em>My Apps &gt; App Name &gt; Board</em></dd>
+
+
+
+<dt><a name="gl_app_id"></a>App ID</dt>
+<dd>When an app developer registers an app in the platform, it is assigned an App ID. The App ID is a unique identifier for your app within the platform. All API calls include the App ID.</dd>
+
+
+
+<dt><a name="gl_appteammember"></a>app team member</dt>
+<dd>One of the <a href="#gl_role">roles</a> defined in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> is that of the app team member. Each app most have at least one team member and can have more. An app team member initiates contract requests, such as API access requests, moderates the app's <a href="#gl_board">Board</a>, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights.</dd>
+
+
+
+<dt><a name="gl_board"></a>Board</dt>
+<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, every resource, such as an app or API, has a Board that displays all feed entries for the resource. Users with approved connections to the resource can post items to the resource's Board according to privileges. For example, a member of a specific app team can post items to the Board for that app. Users with approved connections also see relevant Board items in their personal home Feed.</dd>
+
+
+
+<dt><a name="gl_board_item"></a>Board item</dt>
+<dd>An individual entry on a resource's Board. A Board item can be an Alert, API Access Request (Contract Request), Discussion, Group Membership Invitation, or Ticket.</dd>
+
+
+
+<dt><a name="gl_bpel_file"></a>bpel file</dt>
+<dd>A bpel file is a Business Process Execution Language file. BPEL itself is an abbreviation for Web Services Business Process Execution Language (WS-BPEL), an OASIS standard executable language which is a standard format for specifying actions within a business process, used by webservices. When the Site Admin or Business Admin creates an export file from the platform, such as an API export file, the <a href="#gl_packagefile">export ZIP file (package file)</a> includes BPEL files.</dd>
+
+
+
+<dt><a name="gl_businessadmin"></a>Business Administrator</dt>
+<dd>One of the roles defined in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> is that of the Business Administrator. A business can own one or more APIs and apps, and must have at least one Administrator. The Business Administrator automatically has administrator rights over all the APIs and apps owned by the business as well as all the users who are part of the business. For more information, see <a href="business_administration_overview.htm#what_roles_can_a_business_administrator_perform">What roles can a Business Administrator perform?</a></dd>
+
+
+
+<dt><a name="gl_certificate_authority"></a>Certificate Authority</dt>
+<dd>A Certificate Authority (CA) issues certificates and guarantees the validity of the binding between the certificate owner and its public key. The CA is a trusted authority, and any certificate issued by the CA identifies the owner of the certificate. Therefore the private key that corresponds to the public key in the certificate is deemed to be known only by the specific owner. Two Certificate Authority options are supported. The Platform Tenant (Host) provides a simplified version of a Certificate Authority that can issue and renew X.509 certificates, or the app developer can import a certificate that was issued outside the platform.</dd>
+<dd>Navigation: <em>My Apps</em> &gt; <em>Details &gt; Security </em></dd>
+
+
+
+<dt><a name="gl_connection"></a>connection</dt>
+<dd>A relationship between resources in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->&#8212;such as the API access relationship between an app and an API that it's using.</dd>
+
+
+
+<dt><a name="gl_connectionrequest"></a>connection request</dt>
+<dd>A workflow process that governs the relationship between two resources for the life of the connection. It is a request to establish a <a href="#gl_connection">connection</a> between resources; for example, an <a href="#gl_apiaccessrequest">API access request</a> or a <a href="#gl_followrequest">follow request</a>.</dd>
+
+
+
+<dt><a name="gl_container"></a>container</dt>
+<dd>An SOA Software container instance performs a specific web service management function in an API Gateway deployment. Instances have a unique Instance Name, Description, and Listener configuration relative to the deployment requirements.</dd>
+
+
+
+<dt><a name="gl_dashboard"></a>Dashboard</dt>
+<dd>The user's Dashboard, also called home page or feed, is the first page the user sees after logging in. The Dashboard includes information relating to apps and APIs the user is associated with. An individual user's Dashboard is an aggregation of all the Board items from all the resources that the user is following. An individual user can modify the types of information that are displayed on his/her Dashboard. See also <a href="#gl_dashboardentry">Dashboard entry</a>.</dd>
+<dd>Navigation: <em>Dashboard</em> tab.</dd>
+
+
+
+<dt><a name="gl_dashboardentry"></a>Dashboard entry/item</dt>
+<dd>An informational item that appears on a user's Dashboard. The entries on a specific user's Dashboard are Board items for resources the user is following. A Dashboard entry can be any of the following: <a href="#gl_alert">Alert</a>, <a href="#gl_apiaccessrequest">API Access Request (Contract Request)</a>, <a href="#gl_discussion">Discussion</a>, <a href="#gl_membershiprequest">Group Membership Invitation</a>, or <a href="#gl_ticket">Ticket</a>.</dd>
+
+
+
+<dt><a name="gl_deploymentzone"></a>deployment zone</dt>
+<dd>If an API is hosted on the platform and using the proxy capability, the API owner can specify the deployment zones, such as a geographical area or a specific data center, that the endpoint will be proxied in.</dd>
+
+
+
+<dt><a name="gl_developer"></a>developer</dt>
+<dd>A developer of an app that will consume an API.</dd>
+
+
+<dt><a name="gl_discussion"></a>discussion</dt>
+<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, an authorized user can create a discussion topic about a resource (app or API) on the resource's Board. A discussion is typically, but not necessarily, created by someone other than the owner or administrator of the resource. Discussion entries are not threaded; users comment on the original item rather than on the comments/replies to the original item. Users can, however, <a href="#gl_mark">mark</a> or <a href="#gl_unmark">unmark</a> the discussion itself and/or one or more discussion comments.</dd>
+<dd>Each discussion has a title and one or more comments. The visibility of a discussion is controlled by the visibility of the resource it's associated with; for example, a discussion about a Limited (Private) API can only be seen by administrators and Private API Group members associated with that API.</dd>
+
+
+
+<dt><a name="gl_environment"></a>environment</dt>
+<dd>An API contract can apply either to the Sandbox environment, which is a testing area, or the production environment.</dd>
+
+
+
+<dt><a name="gl_export"></a>export</dt>
+<dd>A Site Admin or Business Admin can output all the information about one or more of certain resources, or an entire business, to an export file. The information can then be <a href="#gl_import">imported</a> into another platform instance. Information is exported to a specially formulated ZIP file called a <a href="#gl_packagefile">package file</a>.</dd>
+<dd>Full export is only available to a Site Admin or Business Admin. An API Admin can export an API.</dd>
+
+
+
+<dt><a name="gl_followrequest"></a>follow request</dt>
+<dd>A specific type of <a href="#gl_connectionrequest">Connection Request</a> used to establish a "follow" relationship between a user and a <a href="#gl_resource">resource</a> that can be followed. Currently, only apps, APIs, and groups can be followed.</dd>
+
+
+
+<dt><a name="gl_group"></a>group</dt>
+<dd>1) The term "group" is used in many instances to refer to any of the following types of groups in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->: app teams, Private API groups, API Administrator groups, Site Administrator groups, or independent groups.</dd>
+<dd>2) &quot;Group&quot; is sometimes used specifically to mean a <a href="#gl_privateapigroup">Private API Group</a>.</dd>
+
+
+
+<dt><a name="gl_hmac"></a>HMAC</dt>
+<dd>The HMAC hashing algorithm uses a symmetric key to create a hash for message security. HMAC can be used with cryptographic hash algorithms such as MD5 or SHA-1. </dd>
+
+
+
+<dt><a name="gl_import"></a>import</dt>
+<dd>When information is <a href="#gl_export">exported</a> from one instance of the platform to an <a href="#gl_packagefile">export file (package file)</a>, it can be imported to another instance of the platform.</dd>
+<dd>Only a Site Admin or Business Admin has permission to perform functions relating to import.</dd>
+
+
+
+<dt><a name="gl_independentgroup"></a>independent group</dt>
+<dd>A group that exists independently of any single app or API. Any authorized user can create an independent group, and becomes the first administrator. The administrator can then invite other members and can remove members and change a member's role. There are three roles; admin, leader, and member. All members can see resources the group is linked to. Admins have full rights over the group..</dd>
+
+
+
+<dt><a name="gl_json"></a>JSON</dt>
+<dd>An acronym for JavaScript Object Notation, JSON uses a subset of the JavaScript syntax to describe an object clearly and succinctly. One of the advantages of JSON over XML for API messages is that message content conveyed in the JSON format is much more concise than the same content conveyed in XML, consuming less bandwidth.</dd>
+
+
+
+<dt><a name="gl_leader"></a>leader</dt>
+<dd>In the context of a <a href="#gl_privateapigroup">Private API Group</a>, a leader is a senior group member. A leader can invite additional members to the group and can change another member's status, from <a href="#gl_member">member</a> to leader or vice versa.</dd>
+
+
+
+<dt><a name="gl_license"></a>license</dt>
+<dd>A License is a tailored API access package designed by the Business Admin/API Admin and offered to the app developer. A license includes one or more <a href="#gl_licenseterm">license terms</a>, each of which can include multiple <a href="#gl_scope">scopes</a>, giving access to specifically designated operations, and multiple <a href="#gl_qospolicy">quality of service (QoS) policies</a>, and also one or more legal agreements applicable to the license.</dd>
+<dd>For more information on the License feature, see <a href="ov_licenses.htm">Licenses: Feature Overview</a>.</dd>
+
+
+
+<dt><a name="gl_licenseterm"></a>license term</dt>
+<dd>A license term defines the access that is being offered in a license (<a href="#gl_scope">scope</a>) and the level of access (<a href="#gl_qospolicy">QoS policy</a>). Each license term includes one or more scopes plus, optionally, the quality of service limits/policies to be applied to all scopes in the license term. Scopes apply to both visibility and access; policies apply only to access. To have any impact, a license term must include at least one scope.</dd>
+
+
+
+<dt><a name="gl_mark"></a>mark</dt>
+<dd>Users can give positive feedback to items such as discussion topics and associated comments, reviews, and other resources such as tickets, using the <strong>Mark</strong> function. Choosing Mark provides positive feedback, in the same way as &quot;Like&quot; in Facebook&reg;. The Mark value toggles on and off, so a user can mark or <a href="#gl_unmark">unmark</a> a discussion comment. In the user interface, the <strong>mark</strong> icon is a thumbs-up, and the <strong>unmark</strong> icon is a closed fist. </dd>
+
+
+
+<dt><a name="gl_member"></a>member</dt>
+<dd>In the context of a <a href="#gl_privateapigroup">Private API Group</a>, a group member has access to all information relating to the Private API and the group, including tickets and discussions. Members cannot invite additional members or change the status of other members. A member can be promoted to <a href="#gl_leader">leader</a> status by the API Admin or by another leader.</dd>
+
+
+
+<dt><a name="gl_membershiprequest"></a>membership request (invitation)</dt>
+<dd>An invitation to another individual, whether a registered user or not, to join a <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> group or team such as an app team. API Administrators can invite others to be API Administrators; app team members can invite others to the app team. A Site Administrator, Private API Administrator, or Independent Group member can also issue a membership request in the same way.</dd>
+
+
+
+<dt><a name="gl_my_apis"></a>My APIs</dt>
+<dd>The <em>My APIs</em> quick filter provides a list of APIs that a member who is an API Provider has added. Each API includes functional and usage documentation, and download files.</dd>
+<dd>Navigation: <em>My APIs</em> quick filter</dd>
+
+
+
+<dt><a name="gl_my_apps"></a>My Apps</dt>
+<dd>The <em>My Apps</em> quick filter is a dashboard that displays all the apps defined by a member. The dashboard is used to manage your app workflow from setup to a live production site.</dd>
+<dd>Navigation: <em>My Apps</em> quick filter</dd>
+
+
+
+<dt><a name="gl_openid"></a>OpenID</dt>
+<dd>OpenID is an open decentralized standard for authenticating users. It can be used for access control and allows users to log on to different services with the same digital identity where these services trust the authentication body. OpenID simplifies the authentication process because there is only one username and password to remember. For more information, see <a href="api_admin_openid_support.htm#what_is_openid">What is OpenID?</a></dd>
+
+
+
+<dt><a name="gl_packagefile"></a>package file</dt>
+<dd>The ZIP file that is created as a result of using the <a href="#gl_export">export</a> function. The package file can be <a href="#gl_import">imported</a> into another instance of the platform by a Site Admin or API Admin.</dd>
+
+
+
+<dt><a name="gl_policy_manager"></a>Policy Manager</dt>
+<dd>SOA Software Policy Manager is the core product that provides the underlying infrastructure for the platform. Message handling intermediaries integrate with Policy Manager which attaches policies and provides a policy decision point as well as the policy administration point.</dd>
+<dd>The Policy Manager console is the user interface for the SOA Software <a href="#gl_api_gateway">API Gateway</a>.</dd>
+
+
+
+<dt><a name="gl_private_api"></a>Private API</dt>
+<dd>Private APIs are visible to members who have been invited to join a Private API Group. Once a member has accepted a Private API invitation, the Private API is displayed with a unique icon.</dd>
+
+
+
+<dt><a name="gl_privateapigroup"></a>Private API Group</dt>
+<dd>A group associated with a Limited (Private) API and created by an API admin for that API. Each member has a group member role, either as <a href="#gl_member">member</a> or <a href="#gl_leader">leader</a>. Each group can have multiple leaders as well as members.</dd>
+
+
+
+<dt><a name="gl_proxyapi"></a>proxy API</dt>
+<dd>When you set up your API on the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> and choose to use the Proxy feature, all traffic to your API endpoints is channeled via the platform. This offers significant benefits, including the ability to apply policies and monitor traffic at the proxy.</dd>
+
+
+
+<dt><a name="gl_production_environment_url"></a>production environment URL</dt>
+<dd>A unique gateway URL (service endpoint) that provides access to the production endpoint of an API. The production endpoint URL becomes available when you request production access, and go live after production access has been approved.</dd>
+<dd>Navigation<strong>:</strong> <em>My Apps &gt; Apps </em></dd>
+
+
+
+<dt><a name="gl_pki"></a>Public Key Integration</dt>
+<dd>The Public Key Integration section of <em>My Apps &gt; App Details &gt; Security</em> allows you to use Public Key Infrastructure (PKI) for secure message signing. When you initially create your app, a shared secret is generated by default. If you would like to override the shared secret, you can upload a Certificate Signing Request (CSR). The Certificate Authority associated with the platform will generate a public/private key pair using the uploaded CSR.</dd>
+<dd>Navigation: <em>My Apps</em> &gt; <em>Details &gt; Security</em></dd>
+
+
+
+<dt><a name="gl_qospolicy"></a>QoS (quality of service) policy</dt>
+<dd>A QoS policy defines the level of service being offered to an app that is accessing an API; for example, the number of transactions per minute that are allowed for the app. In the platform, QoS policies are tied to <a href="#gl_licenseterm">license terms</a>.</dd>
+
+
+
+<dt><a name="gl_resource"></a>resource</dt>
+<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, a Resource is an item, such as an App or API, which has its own Board and set of activities.</dd>
+
+
+
+<dt><a name="gl_role"></a>role</dt>
+<dd>Within a <a href="#gl_privateapigroup">Private API Group</a>, each group member has a role, either as <a href="#gl_member">Member</a> or <a href="#gl_leader">Leader</a>. The Private API Admin cam invite team members and designate roles.</dd>
+<dd>Within an <a href="#gl_independentgroup">independent group</a>, each group member has a role, either as Member, Admin, or Leader. An Admin can invite or remove other team members and designate roles.</dd>
+<dd>Other roles on the platform include App Team Member, Site Administrator, API Administrator, and Site User.</dd>
+
+
+
+<dt><a name="gl_sandbox_endpoint_url"></a>sandbox endpoint URL</dt>
+<dd>A unique gateway URL (service endpoint) that provides access to an APIs sandbox environment. The Sandbox Endpoint URL becomes available after requesting access an API using the <strong>Request API Access Wizard</strong>.</dd>
+<dd>Navigation: <strong>Add APIs</strong> in <em>My Apps &gt; API Management</em>, or <strong>Request API Access</strong> in <strong>My Apps</strong>.</dd>
+
+
+
+<dt><a name="gl_scope"></a>scope</dt>
+<dd>A subset of a <a href="#gl_license">license</a>. A scope is the bridge between the top level of the hierarchy, which is a license, and the bottom level, an operation. At the business level, the Business Admin defines the scope with a name and basic attributes. Then, at the API level, the API Admin assigns specific operations to one or more scopes for the API. These operations are included in any license that the scope is assigned to.</dd>
+
+
+
+<dt><a name="gl_search"></a>Search</dt>
+<dd>The <em>Search</em> function provides a full-text search capability that allows members and visitors to find information about APIs, and also <em>Board</em> posts, tickets, and alerts.</dd>
+<dd>Navigation: <em>Search</em> text box</dd>
+
+
+
+<dt><a name="gl_securitydomain"></a>security domain</dt>
+<dd>An application or collection of applications that all share, and trust, common security. The same security mechanism is used for all within the security domain, for authentication, authorization, and/or session management. A user who is authorized on one part of the security domain is considered authorized for other parts.</dd>
+<dd>In a tenant/partner scenario, all tenants share the same security domain and are considered to be trusted. So, for example, app owners on one tenant have access to API information on another tenant seamlessly and without any additional security authorization.</dd>
+
+
+
+<dt><a name="gl_sha1"></a>SHA-1</dt>
+<dd>SHA-1 is a cryptographic hash function, broadly used and trusted.</dd>
+<dd>When you hash a value with SHA-1, the hash function returns a 160-bit string. This is the message digest. The value is hashed and sent with the message; at the receipt point, the value is hashed again, and the two hash values are compared. When the two hash values match, it is a secure, reliable indication that the message hasn't changed; the message at the receipt point is an accurate duplication of the message at the send point.</dd>
+
+
+
+<dt><a name="gl_sha256"></a>SHA-256</dt>
+<dd>Part of the SHA-2 family of algorithms developed by the National Institute of Standards and Technology (NIST) and the National Security Agency (NSA) to succeed SHA-1. Each is named according to the number of bits in the output; so, whereas SHA-1 has 160 bits in the hash output, SHA-256 has 256.</dd>
+
+
+
+<dt><a name="gl_shared_secret"></a>Shared Secret</dt>
+<dd>A shared secret is a value generated for an app developer within the secure environment of the platform. The shared secret is known only to the app developer and the platform, and is used for authentication in secure send/receive communications.</dd>
+<dd>Navigation: <em>My Apps</em> &gt; <em>Details &gt; Security </em></dd>
+
+
+
+<dt><a name="gl_siteadmin"></a>site administrator</dt>
+<dd>An individual who has responsibility for keeping the site running smoothly. The Site Admin has access to additional parts of the user interface for configuration and monitoring purposes. There can be more than one site administrator. For more information, see <a href="site_administration_overview.htm#what_functions_are_available_to_the_site_administrator">What functions are available to the Site Administrator in the platform?</a></dd>
+
+
+
+<dt><a name="gl_ssl"></a>SSL</dt>
+<dd>A cryptograpic protocol used to add security to messages by encryption. SSL uses X.509 certificates and asymmetric security.  The session key is used to encrypt the messages. SSL offers encryption and identification.</dd>
+
+
+
+<dt><a name="gl_tag"></a>tag</dt>
+<dd>A tag is essentially a keyword or key phrase that's added to a piece of content, or information associated with a resource, to assist in search results. Several different types of resources can have tags assigned to them; for example, apps, APIs, groups, and tickets. Multiple tags are separated by commas.</dd>
+<dd>For example, if an app is a movie general knowledge game, the app owner might assign tags of movie, game, general knowledge; or an API owner can add a category or product line to the metadata for certain APIs so those APIs will come up in search results for that term.</dd>
+
+
+
+<dt><a name="gl_targetapi"></a>target API</dt>
+<dd>If an API is using the platform as a proxy, the TargetAPI is used to define the destination ("next-hop") endpoint for the API.</dd>
+
+
+
+<dt><a name="gl_tenant"></a>tenant</dt>
+<dd>The tenant is a distinct developer portal and community that is logical separated from any other communities that may be hosted in the same product instance.</dd>
+<dd>The Tenant is managed by the Site Administrator.</dd>
+
+
+
+<dt><a name="gl_ticket"></a>ticket</dt>
+<dd>A type of feed entry, representing a trouble ticket created to raise an issue with a resource (app or API) or a connection. Tickets are typically created by a consumer of an API. Any member of the community can comment on a ticket, but it can only be marked as Resolved by the original creator or by an administrator of the target resource. For example, if Joe writes a ticket about an issue with the SkyBlue API, only Joe or the SkyBlue API Admin can mark the ticket as Resolved.</dd>
+
+
+
+<dt><a name="gl_trusted_certificate_authority"></a>Trusted Certificate Authority</dt>
+<dd>A Trusted Certificate Authority (CA) is a third party identity that is qualified with a specified level of trust. Trusted CA Certificates are used when an identity is being validated as the entity it claims to be. Certificates imported into the Platform Tenant (i.e., Host) must be issued by a Trusted Authority. Trusted CA Certificates must be configured prior to importing X.509 certificates for applications running on the platform.</dd>
+<dd>Navigation: <em>My Apps</em> &gt; <em>Details &gt; Security </em></dd>
+
+
+
+<dt><a name="gl_unmark"></a>unmark</dt>
+<dd>To unmark a discussion, ticket, or other resource means to remove a <a href="#gl_mark">mark</a> previously placed on the resource. In the user interface, the <strong>mark</strong> icon is a thumbs-up, and the <strong>unmark</strong> icon is a closed fist. </dd>
+
+
+
+<dt><a name="gl_version"></a>version</dt>
+<dd>Each <a href="#gl_app">app</a> or <a href="#gl_api">API</a> on the platform much have at least one version, and can have multiple versions. When a user creates an app or API on the platform, the first version is created automatically; when using the API it's important to complete both actions. If there is only one app or API version, deleting that version also deletes the app or API.</dd>
+
+
+
+<dt><a name="gl_visibility"></a>visibility</dt>
+<dd>A setting that controls the types of users who can see an object, such as an app, API, or group, and its associated items such as discussions and tickets. See below: <a href="#gl_visibility_api">visibility (API)</a> and <a href="#gl_visibility_app">visibility (app)</a>.</dd>
+
+
+
+<dt><a name="gl_visibility_api"></a>visibility (API)</dt>
+<dd>A setting that controls the types of users who can see an API and its associated items such as discussions and tickets. Possible values are <strong>Public</strong> or <strong>Limited</strong>. A discussion about a Limited (Private) API can only be seen by administrators and Private API Group members associated with that API. Members must be either invited to a Private API Group associated with the API or invited to be an Administrator for the API, and must then accept the invitation, before they even see the API in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->.</dd>
+
+
+
+<dt><a name="gl_visibility_app"></a>visibility (app)</dt>
+<dd>A setting that controls the types of users who can see an app and its associated items such as discussions and tickets. Possible values are Public, meaning that anyone can see information about the app, or Limited, meaning that only app team members can see it.</dd>
+
+
+
+<dt><a name="gl_visibilityscope"></a>visibility scope</dt>
+<dd>In the context of the Licenses feature, an individual user's visibility scope includes the set of licenses to which the user has been  invited (due to the user's group membership). The user sees those licenses and can apply for API access with one or more of them. Operations that have been assigned to a scope that are included in a license a specific user has not been invited to are not visible to that user in the API documentation, and the user does not see the license and cannot request API access with that license.</dd>
+
+
+
+<dt><a name="gl_workflowaction"></a>workflow action</dt>
+<dd>Certain types of activities on the platform must be done in a specific sequence. These are often managed by workflows. Each workflow action changes the state of the resource. Some examples of workflow actions are: requesting or approving an API contract, sending a group membership invitation, or changing the status of a ticket.</dd>
+
+
+
+</dl>
+<p><a href="#top">Back to top</a></p>

@@ -1,0 +1,129 @@
+---
+layout: apipage
+title: Contract Object | Contracts Service | Enterprise API Platform API
+description:  Includes information about a contract.
+product: cm
+category: ref
+nav-title: Contract Object 
+no-nav: api
+sub-nav: true
+sub-nav-class: obj
+no-catalog: true
+---
+
+<h2><a name="top"></a>Contract Object</h2>
+<p><!-- #BeginLibraryItem "/Library/o_contracts_Contract.lbi" -->
+Includes information about a contract.<!-- #EndLibraryItem --></p>
+<p class="usedby">This object is used by the following operations:</p>
+<ul>
+  <li><span class="apidoc_code"><a href="../contracts/m_contracts_requestContract.htm">POST&nbsp;/api/contracts</a></span>: <!-- #BeginLibraryItem "/Library/desc_requestContract.lbi" --> Requests a new contract between a specific version of an app and a specific version of an API.<!-- #EndLibraryItem --></li>
+</ul>
+
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="15%">Parameter</th>
+      <th width="15%">Type</th>
+      <th width="10%">Required</th>
+      <th width="60%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ContractID</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_ContractID.lbi" -->
+The unique ID for a specific contract between an app version and an API version.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>Name</td>
+      <td>Name</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_contracts_Name.lbi" -->The name for the contract.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>Description</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_contracts_Description.lbi" -->The text description of the contract.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>APIVersionID</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>Endpoint</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_contracts_Endpoint.lbi" -->
+The endpoint that the contract relates to.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>RuntimeID</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_RuntimeID_short.lbi" -->
+Unique ID used at runtime by the app version.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>Environment</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_contracts_Environment.lbi" -->The environment that the contract relates to (Sandbox or Production).<!-- #EndLibraryItem --></td>
+  </tr>
+<!--  <tr>
+      <td>PlanID</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>&nbsp;</td>
+  </tr>
+-->  <tr>
+      <td>Policies</td>
+      <td><a href="o_apis_Policies.htm">Policies</a></td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_contracts_Policies.lbi" -->Policies relating to the contract.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>State</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_contracts_State.lbi" -->
+The current state of the contract. For valid values, see <a href="../Ref_Values.htm#values_apicontractstatus">API Contract Status</a>.<!-- #EndLibraryItem --></td>
+  </tr>
+    </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="samplerequest">Contract Object: Sample</h3>
+<p>Below is an example of a Contract object returned as the response to a <a href="#top">requestContract</a> call.</p>
+<pre>{
+  "ContractID" : "contract10061.acmecorp&quot;,
+  "APIVersionID" : "apiversion500.acmecorp&quot;,
+  "RuntimeID" : "9ezRSOnifci8EYNndZu79U6w.acmecorp&quot;,
+  "Environment" : "Sandbox",
+  "State" : "apicontract.status.activated"
+}</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="700" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

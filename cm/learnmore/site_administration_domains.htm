@@ -1,0 +1,460 @@
+---
+layout: page
+title: Domains
+description: Site configuration tasks&#8212;Configure authentication domains for APIs defined in the platform.
+product: cm
+category: learn
+subcategory: Site Administration
+weight: 20
+type: page
+nav-title: 
+no-nav: true
+no-catalog: true
+---
+<h2 id="top">Domains</h2>
+<p>Configure authentication domains for APIs defined in the platform.</p>
+<div class = "divider1"></div>
+
+
+<h3 style="color: gray;">Table of Contents</h3>
+<ol class="table_of_contents">
+  <li><a href="#how_do_i_enable_a_login_domain">How do I enable a login domain?</a></li>
+  <li><a href="#how_does_the_authentication_provider_configuration_process_work">How does the authentication provider configuration process work?</a></li>
+  <li><a href="#what_domain_types_are_supported">What domain types are supported?</a></li>
+  <li><a href="#how_do_i_configure_a_platform_login_default_domain">How do I configure a Platform Login (Default) domain?</a></li>
+  <li><a href="#how_do_i_configure_a_facebook_connector_domain">How do I configure a Facebook Connector domain?</a></li>
+  <li><a href="#how_do_i_set_up_and_configure_an_oauth_provider_domain">How do I set up and configure an OAuth Provider domain?</a></li>
+  <li><a href="#how_do_i_configure_an_openid_relying_party_domain">How do I configure an OpenID Relying Party domain?</a></li>
+  <li><a href="#how_do_i_configure_an_ldap_domain">How do I configure an LDAP domain?</a></li>
+  <li><a href="#how_do_i_configure_a_ca_siteminder_domain">How do I configure a CA SiteMinder domain?</a></li>
+  <li><a href="#how_do_i_configure_access_permissions_for_openid">How do I configure access permissions for OpenID?</a></li>
+  <li><a href="#what_is_an_authorization_server_url">What is an Authorization Server URL?</a></li>
+  <li><a href="#how_do_i_set_up_a_platform_deployment_to_support_a_third_party_provider">How do I set up a platform deployment to support a third-party provider?</a></li>
+  <li><a href="#how_do_i_add_a_domain">How do I add a domain?</a></li>
+  <li><a href="#how_do_i_modify_a_domain">How do I modify a domain?</a></li>
+  <li><a href="#how_do_i_delete_a_domain">How do I delete a domain?</a></li>
+  <li><a href="#how_do_i_setup_a_connector_domain">How do I set up a connector domain?</a></li>
+  <li><a href="#how_do_i_set_up_the_platform_to_log_in_with_facebook">How do I set up the platform to log in with Facebook?</a></li>
+  <li><a href="#how_do_i_set_up_the_platform_to_log_in_with_google">How do I set up the platform to log in with Google?</a></li>
+  <li><a href="#how_do_i_set_up_the_platform_to_log_in_with_ca_siteminder">How do I set up the platform to log in with CA SiteMinder?</a></li>
+  <li><a href="#how_do_i_set_up_the_platform_to_log_in_with_ldap">How do I set up the platform to log in with LDAP?</a></li>
+</ol>
+<div class = "divider1"></div>
+
+
+
+<a name="how_do_i_enable_a_login_domain"></a><h3>How do I enable a login domain?</h3>
+<p>In versions prior to the 7.1.0 release, certain security domains that allow login with email address and password were automatically enabled once the security domain was created in Administration / Domains.</p>
+<p> In version 7.1.0, the default has been changed to not allow the default platform login screen to fall back to security domains supporting email/password-based login. Instead, you must explicitly enable the login domain after adding it.</p>
+<p>If you have already configured the platform prior to upgrading to the version 7.1.0 release, your default option and configuration will be unchanged after upgrading. However, if you install 7.1.0 and then configure, you'll need to add the login domains and then enable them, in two separate steps.</p>
+<p>Notes:</p>
+<ul>
+<li>Adding a domain does not automatically enable it for user login in the developer portal.</li>
+<li>After adding one or more specific domains that you want to make available to your users for login to the platform, in Administration / Domains, enable those domains as a separate action.</li>
+<li>For new installations, if you want to restore the old setting so that platform login falls back to security domains supporting email/password login, run the query below query on the database (line break added for display purposes only, query should not include line break):
+  <pre>update LOGIN_RULES set AUTO_LOGIN_EXT_DOMAIN='com.soa.feature.enabled' where BUSINESSID in 
+(select BUSINESSID from TENANTS where FEDMEMBERID='<tenantid>';</pre>
+</li>
+</ul>
+<p>If you have further questions, <a href="basics_support.htm#how_do_i_contact_technical_support">contact SOA Software technical support</a>.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_does_the_authentication_provider_configuration_process_work"></a><h3>How does the authentication provider configuration process work?</h3>
+<p>The platform provides a series of add-on features that provide authentication support for APIs. The platform currently supports OAuth and OpenID Provider types.</p>
+<p>Here's how the provider type configuration process works:</p>
+<ul>
+  <li>The Site Administrator installs the OAuth Provider and Resource Owner Authentication (e.g., Open ID Relying Party) features into the platform container via the <em>SOA Software Administration Console</em>. This process is covered in the installation guide for the platform.</li>
+  <li>After the features are installed, the authentication provider options are available as selectable <em>domains</em> via the platform <em>Site Administrator &gt; Domains</em> user interface.</li>
+  <li>The <em>Site Administration &gt; Domains</em> section allows Site Administrators and API Administrators to select a domain type that best suits the authentication protocol required for APIs that are part of the platform deployment.</li>
+  <li>You then configure custom security provider definitions based on the authentication method and use cases supported by the APIs.</li>
+  <li>For example, if your APIs support OAuth, you can select the OAuth Provider domain and configure a separate OAuth Provider for each OAuth version (i.e., 1.0a, and 2.0), then select grant types, and resources relative to the specific OAuth version. You could also define a separate OAuth Provider for each API.</li>
+  <li>After the domains are configured in the <em>Site Administration</em> section, they are then available via the <em>OAuth Details</em> section on the <em>API Details</em> page.</li>
+  <li>Here an API Provider can select the domain type that best suits the authentication method supported by their API, and they can customize it based on their authentication use case requirements.</li>
+</ul>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="what_domain_types_are_supported"></a><h3>What domain types are supported?</h3>
+<p>The platform domain types can be used to log in to the platform, or can be configured with an OAuth Provider.</p>
+<p>The following domains are supported:</p>
+<ul>
+  <li><a href="#how_do_i_configure_a_platform_login_default_domain">Platform Login (Default)</a></li>
+  <li><a href="#how_do_i_configure_a_facebook_connector_domain">Facebook Connector</a></li>
+  <li><a href="#how_do_i_set_up_and_configure_an_oauth_provider_domain">OAuth Provider</a></li>
+  <li><a href="#how_do_i_configure_an_openid_relying_party_domain">OpenID Relying Party</a></li>
+  <li><a href="#how_do_i_configure_an_ldap_domain">LDAP</a></li>
+  <li><a href="#how_do_i_configure_a_ca_siteminder_domain">CA SiteMinder</a></li>
+</ul>
+<a name="how_do_i_configure_a_platform_login_default_domain"></a><h3>How do I configure a Platform Login (Default) domain?</h3>
+<p>This login domain type allows users to log in via the default platform login page using Email Address and Password credentials.</p>
+<p><em>Note: The Platform Login (Default) domain is automatically generated, cannot be deleted, and will not display in the Resource Owner Authentication Domain drop-down menu of an OAuth Provider domain.</em></p>
+<h5>Installation Method:</h5>
+<p>The default platform login is automatically added and enabled as part of the platform default installation.</p>
+<p>This option can be disabled if another login approach is used by deselecting the &quot;Enable&quot; checkbox for this login line item in the <em>Site Administrator &gt; Config &gt; Logins </em>section.</p>
+<h5>Documentation:</h5>
+<p>See the <em>Site Admin &gt; Config &gt; Logins</em> sections of the Community Manager online help for more information.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_configure_a_facebook_connector_domain"></a><h3>How do I configure a Facebook Connector domain?</h3>
+<p>The Facebook Connector domain allows users to log into the platform using Facebook credentials. Essentially, the Site Admin registers the platform with Facebook as a Facebook app, and then uses the values provided by Facebook for App ID and App Secret to set up the Facebook Connector domain. Once this is set up, the Facebook icon appears during signup and users can log in using Facebook credentials.</p>
+<p><strong>Note</strong>: For certain actions, such as creating an API, users must complete the standard platform signup process. Logging in with Facebook is not adequate for these activities.</p>
+<p>Before setting up the domain in the platform, you'll need to register the platform as an app on the Facebook developer site and get the App ID and Shared Secret values. For instructions, see below.</p>
+<p>Once the configuration steps are done, you can enable the domain in the <em>Site Administrator &gt; Config &gt; Logins </em>section.</p>
+<h5><a name="to_configure_domain_facebook_connector"></a>To configure a Facebook Connector domain:</h5>
+<ol>
+  <li>Log in as the Site Administrator.</li>
+  <li>Click the <em>Administration</em> quick filter (wrench icon). The <em>Site Administration</em> page displays.</li>
+  <li>Click <strong>Domains</strong>. The <em>Domains Summary</em> page displays.</li>
+  <li>Click <strong>Add Domain</strong>. The <strong>Select Domain Type</strong> drop-down menu displays.</li>
+  <li>Select <strong>Facebook Connector</strong> and click <strong>Select</strong>. The <em>Add Connector Domain</em> page displays.</li>
+  <li>Specify values for Name and Description and then click <strong>Next</strong>.</li>
+  <li>For App ID and App Secret, provide the values that were assigned by Facebook after registering the platform as an app at <a href="https://developers.facebook.com/apps" target="_blank">https://developers.facebook.com/apps</a>.</li>
+  <li>Click <strong>Save</strong>.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_set_up_and_configure_an_oauth_provider_domain"></a><h3>How do I set up and configure an OAuth Provider domain?</h3>
+<p>The <strong>SOA Software Community Manager OAuth Provider</strong> feature is an SOA Software Community Manager add-on for the OAuth Provider. This domain type allows you to select a Resource Owner Authentication Domain (for the login process), and configure grant types, access tokens, grant properties, and branding.</p>
+<h5>Installation:</h5>
+<p>The feature is installed via the <em>SOA Software Administration Console</em> and installs on top of the <strong>SOA Software Community Manager</strong> feature.</p>
+<p>It installs the OAuth Provider domain to the <strong>Site Administration &gt; Domains </strong>section of your platform deployment.</p>
+<p>Using the <strong>Add Domain</strong> function, Site Administrators can select the <strong>OAuth Provider</strong> domain type to configure the domain. The domain is then available on the <em>Edit OAuth Details</em> page on the <em>API Details</em> page where you can customize the OAuth configuration for an API.</p>
+<p><em>Note: This domain type adds the OAuth Provider domain option to the &quot;Select Domain Type&quot; menu and is not posted as a Login option in the Site Administration &gt; Config &gt; Logins section. </em></p>
+<h5>Configuration:</h5>
+<p>After defining your access permissions domain, the next step is to configure one or more OAuth Provider domains that represent the OAuth authentication use case types the APIs in your platform deployment will support.</p>
+<h5><a name="to_configure_domain_oauth_provider"></a>To configure an OAuth Provider domain:</h5>
+<ol>
+  <li>Click the <em>Administration</em> quick filter (wrench icon). The <em>Site Administration</em> page displays.</li>
+  <li>Click <strong>Domains</strong>. The <em>Domains Summary</em> page displays.</li>
+  <li>Click <strong>Add Domain</strong>. The <strong>Select Domain Type</strong> drop-down menu displays.</li>
+  <li>Select <strong>OAuth Provider</strong> and click <strong>Select</strong>. The <em>Details</em> page displays.</li>
+  <li>In the <em>OAuth Provider</em> section, enter the &quot;Name&quot; and &quot;Description&quot; of the domain definition (e.g., Name=OAuth 2-Legged, Description=OAuth 2-Legged Domain). <br />
+    <br />
+    <em>Note that the &quot;Name&quot; field cannot be edited after the domain configuration is saved, so it's important to be as descriptive as possible with your domain name. For example, including the name of the OAuth Provider as an identifier is recommended along with other details that reveal something about the configuration (e.g., OAuth version, API Name, Grant Types, etc.)</em> <br /></li>
+  <li>Click <strong>Next</strong> to continue. The <em>Grant Types </em>page displays.</li>
+  <li>In the &quot;Grant Validity Period (days)&quot; text box, specify the number of days the authorization grant will remain active.</li>
+  <li>In the &quot;Grant Types&quot; section, click the checkbox of the authorization grant types that apply to this domain configuration. Grant types are grouped by 2-Legged and 3-Legged scenarios. See <a href="api_admin_oauth_support.htm#what_grant_types_does_oauth_support">What grant types does OAuth support?</a> and
+    <a href="api_admin_oauth_support.htm#how_does_oauth_2legged_and_3legged_authorization_work">How does OAuth 2-Legged and 3-Legged Authorization work?</a> for more information.
+    <ul>
+  <li>If you selected the Authorization Code grant, specify the number of seconds the Authorization Code grant is valid in the &quot;Authorization Code Timeout&quot; field.</li>
+  <li><p>Select a domain from the &quot;Resource Owner Authentication Domain&quot; drop-down menu. If one has not been previously defined, configure one and then return to complete the OAuth Provider domain definition.</p>
+<p><em>Note: If you select the Client Credentials grant type ONLY, the Resource Owner Authentication Domain is not required. This is because the Client Credentials grant type does not require a Resource Owner.</em></p></li>
+  <li>For each grant selected, specify the number of seconds the access token is valid in the &quot;Access Token Timeout&quot; field. See <a href="api_admin_oauth_support.htm#what_is_an_access_token">What is an Access Token?</a></li>
+  <li>Click the &quot;Refresh Tokens&quot; checkbox if refresh tokens are supported by your Authentication Server. See <a href="api_admin_oauth_support.htm#what_is_a_refresh_token">What is a Refresh Token?</a> for more information.</li>
+  <li>Click the radio button of the Access Token Type. See <a href="api_admin_oauth_support.htm#what_is_an_access_token">What is an Access Token?</a> for more information.</li>
+    </ul>
+</li>
+  <li>Click <strong>Next</strong>. The <em>Resources</em> page displays. Here you will specify the operations in your API that require authorization. The resource list should represent the full set of resources you would like assign to the current OAuth Provider domain configuration.
+    <ul>
+     <li>For example, if multiple APIs will be using the OAuth Provider domain, each may have a different operation requirement.</li>
+      <li>In this case, when you configure your API with an OAuth Provider using the <strong>OAuth Details</strong> function on the <em>API Details</em> page, you can simply filter the set of operations by deleting resources that do not apply for the current API.</li>
+      <li>A resource is typically entered using a URL, but can also be a symbol {id}.</li>
+      <li>If you would like to set a specific resource as the default, click the &quot;Default Resource&quot; checkbox.</li>
+      <li>If the resource requires authorization for use (e.g., login screen), click the &quot;User Authorization Required&quot; checkbox.</li>
+      <li>See <a href="api_admin_oauth_support.htm#how_does_scope_mapping_work">How does Scope Mapping work?</a> for more information.</li>
+      <li>Note: If you will be using a third-party provider, you can use the pre-defined &quot;Third Party Provider&quot; domain via the <em>API Details &gt; OAuth Details</em> function, and specify your resources on the <em>Resource Mapping</em> page. In this scenario, you can bypass creating a domain and go directly to the <em>API Details</em> page.</li>
+</ul>
+</li>
+  <li>Click <strong>Next</strong>. The <em>Grant Properties</em> page displays.</li>
+  <li>In the &quot;Properties&quot; section, click <strong>+Add</strong> to create a grant property instance and specify the &quot;Property Label&quot; and &quot;Property ID.&quot; <em>Note that specifying grant properties is optional.</em>
+    <ul>
+      <li>The &quot;Property Label&quot; represents the text description of the grant property. It is only visible in the platform.</li>
+      <li>The &quot;Property ID&quot; represents the object ID that references the property file that is stored on the OAuth Provider's site.</li>
+      <li>To delete a grant property, click <strong>-Delete</strong> under the grant property instance.</li>
+      <li>See <a href="api_admin_oauth_support.htm#what_is_a_grant_property">What is a Grant Property?</a> for more information.</li>
+    </ul>
+</li>
+  <li>Click <strong>Next</strong>. The <em>Branding</em> page displays. When a user logs into your application using the OAuth configuration you just defined, they must see a login screen. <br />
+    <br />
+    If you want a custom branded login screen, you can customize the login with a unique logo that represents your organization, footer text (e.g., copyright information), and the URL you want to offer to Resource Owners and applications to access this OAuth provider capabilities.
+    <ul>
+      <li>The &quot;Site Logo&quot; option allows you to upload a logo that is 50px high. This logo will display on your login page. See <a href="basics_account_management.htm#how_do_i_upload_and_crop_icons">How do I upload and crop icons?</a> for more information.</li>
+      <li>The &quot;Footer Text&quot; field allows you to enter custom text for your login page.</li>
+      <li>The Authorization Server URL is the public address that developers and apps will be using to access the OAuth provider. For more information, including the specific paths for different OAuth URLs for the OAuth provider, see <a href="#what_is_an_authorization_server_url">What is an Authorization Server URL?</a></li>
+      <li>See <a href="api_admin_oauth_support.htm#how_does_resource_owner_authentication_page_login_branding_work">How does Resource Owner Authentication Page Login Branding work?</a> for more information.</li>
+      </ul>
+</li>
+  <li>To save the domain configuration, click <strong>Save</strong>. The OAuth Provider domain is saved, displays on the <em>Domains Summary</em> page, and is now available for selection in <strong>API OAuth Wizard</strong> (via <em>API Details &gt; OAuth Details</em>).</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_configure_an_openid_relying_party_domain"></a><h3>How do I configure an OpenID Relying Party domain?</h3>
+<p>This <strong>SOA Software Community Manager OpenID Provider</strong> feature is an SOA Software Community Manager add-on for the OpenID Provider.</p>
+<h5>Installation Method:</h5>
+<p>The feature is installed via the <em>SOA Software Administration Console</em> and installs on top of the <strong>SOA Software Community Manager</strong> feature.</p>
+<p>It installs the OpenID Relying Party domain to the <strong>Site Administration &gt; Domains </strong>section of your platform deployment.</p>
+<p>Using the <strong>Add Domain</strong> function, Site Administrators can select the <strong>OpenID Relying Party </strong> domain type to configure the domain, then enable the domain as a login option in the <em>Site Administrator &gt; Config &gt; Logins </em>section, or select it as a Resource Owner Authentication Domain when defining an OAuth Provider.</p>
+<p>These configurations are then available for selection using the <strong>API OAuth</strong> function in the APIs that are part of your deployment.</p>
+<h5>Documentation:</h5>
+<p>See the <em>Site Admin &gt; Domains </em>and <em>Site Admin &gt; Config</em> sections of the platform online help for more information.</p>
+<p>For information about setting up an API to use OpenID, see <a href="api_admin_openid_support.htm">Open ID Support</a>.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+
+<a name="how_do_i_set_up_an_my_deployment_to_support_openid"></a><h3>How do I set up my deployment to support OpenID?</h3>
+<p>If you are a Site or API Administrator you can set up OAuth Provider definitions in the <em>Site Administration &gt; Domains</em> section. You create a domain for each OpenID Provider scenario and these configurations are then available for selection using the <strong>API OAuth</strong> function in the APIs that are part of your deployment.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_configure_an_ldap_domain"></a><h3>How do I configure an LDAP domain?</h3>
+<p>The LDAP domain allows you to log into the platform using an LDAP domain defined in the <a href="basics_glossary.htm#gl_policy_manager">Policy Manager</a> Management Console.</p>
+<h5>Installation Method:</h5>
+<p>This feature is installed via the <em>Configure &gt; Security &gt; Identity Systems</em> section of the Policy Manager Management Console.</p>
+<p>You can then enable the domain in the <em>Site Administrator &gt; Config &gt; Logins </em>section of the platform or select it as a Resource Owner Authentication Domain when defining an OAuth Provider.</p>
+<h5>Documentation:</h5>
+<p>Refer to the <strong>Add Identity System</strong> (Active Directory) topic in the Policy Manager Online Help for instructions on how to add an LDAP domain.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_configure_a_ca_siteminder_domain"></a>
+<h3>How do I configure a CA SiteMinder domain?</h3>
+<p>The CA SiteMinder domain allows you to log into the platform using a CA SiteMinder domain defined in the Policy Manager &quot;Management Console.&quot;</p>
+<h5>Installation Method:</h5>
+<p>This feature is installed via the <em>Configure &gt; Security &gt; Identity Systems</em> section of the Policy Manager &quot;Management Console.&quot;</p>
+<p>You can then enable the domain in the <em>Site Administrator &gt; Config &gt; Logins </em>section of the platform or select it as a Resource Owner Authentication Domain when defining an OAuth Provider.</p>
+<h5>Documentation:</h5>
+<p><strong>Add CA SiteMinder Domain&#8212;</strong>See the <em>Integrating CA SiteMinder with Policy Manager 6.1 Guide </em>available via the SOA Software Support Site (support.soa.com &gt; Downloads &gt; PolicyManager &gt; PM61 &gt; PM61_CASiteMinder_Integration.pdf) for instructions on how to set up CA SiteMinder and install the identity system (domain) in Policy Manager.</p>
+<p><strong>Configure CA SiteMinder</strong> <strong>Domain</strong> – See the <em>Site Admin &gt; Domains</em> and <em>Site Admin &gt; Config &gt; Logins</em> sections of the Community Manager online help for instructions on how to use the CA SiteMinder domain in an OAuth Provider domain definition, and how to enable the CA SiteMinder login.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_configure_access_permissions_for_openid"></a><h3>How do I configure access permissions for OpenID?</h3>
+<p>Access permissions for OpenID are established by configuring a domain that represents the login resource. For OpenID, you use the <strong>OpenID Relying Party</strong> domain. This domain is installed as part of the <strong>SOA Software Community Manager OpenID Provider</strong> feature in the SOA Software Administration Console and is available via <strong>Add Domain</strong> feature via <em>Site Administration &gt; Domains.</em></p>
+<p>After you configure the OpenID login resource, entries will show in the platform as follows:</p>
+<ul>
+  <li>In the <em>Site Administration &gt; Domain</em>s section, the defined domain will be selectable from the <em>Resource Owner Authentication Domain</em> drop-down when you configure an OAuth Provider domain.</li>
+  <li>In the <em>Site Administration &gt; Config &gt; Users</em> section the defined domain will be available on the <em>List of Users</em> page and can be enabled as a login option.</li>
+</ul>
+<a name="configure_openid_login_resource"></a><h5>To configure an OpenID login resource:</h5>
+<ol>
+  <li>Click the <em>Administration</em> quick filter (wrench icon). The <em>Site Administration</em> page displays.</li>
+  <li>Click <strong>Domains</strong>. The <em>Domains Summary</em> page displays.</li>
+  <li>Click <strong>Add Domain</strong>. The <strong>Select Domain Type</strong> drop-down menu displays.</li>
+  <li>Select <strong>OpenID Relying Party</strong> and click <strong>Select</strong>. The <em>Details</em> page displays.</li>
+  <li>In the <em>OpenID Client</em> section, enter the &quot;Name&quot; and &quot;Description&quot; of the login resource (e.g., Name=Google, Description=Google Login Resource). <br />
+    <br />
+    <em>Note that the &quot;Name&quot; field cannot be edited after the domain configuration is saved, so it's important to be as descriptive as possible with your domain name. For example, including the name of the OpenID Provider as an identifier is recommended along with other details that reveal something about the configuration.</em></li>
+  <li>Click <strong>Next</strong> to continue. The <em>Provider Details</em> page displays. Enter the OpenID &quot;Discovery URL&quot; that represents the location of the Relying Party's OpenID endpoints. See <a href="api_admin_openid_support.htm#what_is_a_discovery_url">What is a Discovery URL?</a> for more information.</li>
+  <li>Click <strong>Next</strong> to continue. The <em>Client Details</em> page displays. Enter the &quot;Realm&quot; and &quot;Return URL.&quot; See <a href="api_admin_openid_support.htm#what_is_a_realm">What is a Realm?</a> for more information.</li>
+  <li>To save the domain configuration, click <strong>Save</strong>. The OpenID login resource domain is saved, displays on the <em>Domains Summary</em> page, and is now available for selection as a resource when you define an OAuth Provider domain.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="what_is_an_authorization_server_url"></a><h3>What is an Authorization Server URL?</h3>
+<p>As part of setting up the OAuth domain, the Site Admin must specify the Authorization Server URL. This is the URL that the browser for the resource owner (app user) will be accessing for the OAuth grant.</p>
+<p>It is the URL at which the OAuth Provider accesses the requests, for both Authorization Endpoint and Token Endpoint.</p>
+<p><strong>Note</strong>: One deployment can support more than one OAuth Provider. If there is more than one, it is important that each OAuth Provider has a different Authorization Server URL, for both Authorization Endpoint and Token Endpoint.</p>
+<p>For a full definition of Authorization Endpoint and Token Endpoint, refer to the OAuth specification.</p>
+<p>When setting up the OAuth domain, once you have specified the Authorization Server URL it is important to make sure that requests are directed to this URL where either OAuth Provider or OAuth Provider Agent features are installed. This might include additional actions; for example, adding a DNS entry or configuring the load balancer if the URL is a virtual endpoint on F5.</p>
+<p>The URL you provide for the Authorization Server is the base of the URL for the Request Token URL, Access Token URL, and Authorize URL, with additional parts of the paths as shown below. The Callback URL is the Redirect URL that an app developer would provide in the App details page. </p>
+<p>The URLs for both supported OAuth versions are shown below.</p>
+<p>OAuth 1.0a:</p>
+<ul>
+  <li><strong>Authorization Endpoint URL</strong>: {oauth.provider.url}/oauth/auz/authorize</li>
+  <li><strong>Token Endpoint Request Token URL</strong>: {oauth.provider.url}/oauth/oauth10/initiate</li>
+  <li><strong>Token Endpoint Access Token URL</strong>: {oauth.provider.url}/oauth/oauth10/token</li>
+</ul>
+<p>OAuth 2.0:</p>
+<ul>
+  <li><strong>Authorization Endpoint URL</strong>: {oauth.provider.url}/oauth/auz/authorize</li>
+  <li><strong>Token Endpoint URL</strong>: {oauth.provider.url}/oauth/oauth20/token</li>
+</ul>
+<p><strong>Note</strong>: App developers need to know the Authorization Server URL in order to set up their apps to use the OAuth domain. This information must be made available to API Admins, who must make sure it is included in API documentation. </p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_set_up_a_platform_deployment_to_support_a_third_party_provider"></a>
+<h3>How do I set up a platform deployment to support a third-party provider?</h3>
+<p>The <strong>OAuth Details</strong> function on the <em>API &gt; Details</em> page includes a pre-defined &quot;third-party provider&quot; domain that allows you to configure grant for OAuth 2.0 and 1.0a versions and resource mapping. See <a href="api_admin_oauth_support.htm#how_do_i_configure_my_api_with_an_oauth_provider">How do I configure my API with an OAuth Provider?</a> for more information.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_add_a_domain"></a><h3>How do I add a domain?</h3>
+<h5>To add a domain:</h5>
+<ol>
+  <li>Navigate to <em>Site Administration &gt; Domains</em>. The <em>Domains Summary</em> displays.</li>
+  <li>In the right-hand column of the domain line item, click <strong>Modify</strong>. The <em>Edit</em> wizard for the specific domain type displays.</li>
+  <li>Follow the procedure for adding the specific domain type:
+    <ul>
+      <li> <a href="#to_configure_domain_oauth_provider">OAuth Provider</a></li>
+      <li><a href="#how_do_i_configure_an_openid_relying_party_domain">OpenID Relying Party</a></li>
+      <li><a href="#to_configure_domain_facebook_connector">Facebook Connector</a></li>
+      <li><a href="#how_do_i_configure_a_ca_siteminder_domain">CA Siteminder</a></li>
+    </ul>
+  </li>
+</ol>
+<p><em><strong>Note</strong>: Adding a domain does not automatically enable it for user login in the developer portal.</em> After adding it, you must enable it in the Config / Logins page.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_modify_a_domain"></a><h3>How do I modify a domain?</h3>
+<h5>To modify a domain:</h5>
+<ol>
+  <li>Navigate to <em>Site Administration &gt; Domains</em>. The <em>Domains Summary</em> displays.</li>
+  <li>In the right-hand column of the domain line item, click <strong>Modify</strong>. The <em>Edit</em> wizard for the specific domain type displays.</li>
+  <li>Follow the procedure for adding the specific domain type:
+    <ul>
+      <li> <a href="#to_configure_domain_oauth_provider">OAuth Provider</a></li>
+      <li><a href="#how_do_i_configure_an_openid_relying_party_domain">OpenID Relying Party</a></li>
+      <li><a href="#to_configure_domain_facebook_connector">Facebook Connector</a></li>
+      <li><a href="#how_do_i_configure_a_ca_siteminder_domain">CA Siteminder</a></li>
+    </ul>
+  </li>
+</ol>
+<p><em><strong>Note</strong>: The domain name cannot be changed after the domain is initially defined and will not be selectable. </em></p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_delete_a_domain"></a><h3>How do I delete a domain?</h3>
+<h5>To delete a domain:</h5>
+<ol>
+  <li>Navigate to <em>Site Administration &gt; Domains</em>. The <em>Domains Summary</em> displays.</li>
+  <li>In the right-hand column of the domain line item, click <strong>Delete</strong>. At the confirmation message, click <strong>OK</strong>.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_setup_a_connector_domain"></a><h3>How do I set up a connector domain?</h3>
+<p>The platform provides support for logging into the platform using a connector domain (e.g., Facebook).</p>
+<ul>
+  <li>The process of configuring a connector domain involves adding a Facebook domain using the <strong>Add Domain</strong> function in the <strong>Site Administration &gt; Domains </strong> section, configuring the connector in using the <strong>Add Connector Domain Wizard</strong>, and enabling the domain in the <em>Site Administration &gt; Config &gt; Logins</em> section.</li>
+  <li>After the configuration is complete, the connector domain icon will display in the <strong>Sign-in using external ID:</strong> section of the platform <em>Login</em> page.</li>
+</ul>
+<a name="configure_domain_connector"></a><h5>To configure a connector domain:</h5>
+<ol>
+  <li>Click the <em>Site Administration</em> quick filter. The <em>Site Admins</em> page displays.</li>
+  <li>Click <strong>Domains</strong>. The <em>Domains Summary</em> page displays.</li>
+  <li>Click <strong>Add Domain</strong>. The <strong>Select Domain Type</strong> drop-down menu displays. In this example we will configure a Facebook Connector.</li>
+  <li>Select <strong>Facebook Connector </strong>and click <strong>Select</strong>. The <strong>Add Connector Domain Wizard</strong> launches and the <em>Details</em> page displays.</li>
+  <li>In the <em>Connector Domain</em> section, enter the &quot;Name&quot; and &quot;Description&quot; of the domain definition (e.g., Name=Facebook, Description=Facebook Login). <br />
+    <br />
+    <em>Note that the &quot;Name&quot; field cannot be edited after the domain configuration is saved, so it's important to be as descriptive as possible with your domain name. </em><br />
+</li>
+  <li>Click <strong>Next</strong> to continue. The <em>App Details</em> page displays. Here you will specify the App ID and App Secret for the Facebook Connector.</li>
+  <li>Click <strong>Save</strong>. The Facebook Connector definition is saved and displays on the summary screen.</li>
+  <li>The next step is to enable and customize the Facebook Connector. See <a href="site_administration_config.htm#how_do_i_enable_and_customize_a_platform_login">How do I enable and customize a platform login?</a></li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_set_up_the_platform_to_log_in_with_facebook"></a><h3>How do I set up the platform to log in with Facebook?</h3>
+<p> The platform provides support for logging into the platform using Facebook using a <strong>Facebook Connector</strong> domain.</p>
+<ul>
+  <li>This domain is installed (by default) to your platform deployment.</li>
+  <li>The process of configuring a Facebook login involves adding a Facebook domain using the <strong>Add Domain</strong> function in the <strong>Site Administration &gt; Domains </strong> section, configuring the connector in using the <strong>Add Connector Domain Wizard</strong>, and enabling the domain in the <em>Site Administration &gt; Config &gt; Logins</em> section.</li>
+  <li>After the configuration is complete, the Facebook icon will display in the <strong>Sign-in using external ID:</strong> section of the platform <em>Login</em> page.</li>
+</ul>
+<a name="configure_domain_facebook"></a><h5>To configure a Facebook login:</h5>
+<ol>
+  <li>Click the <em>Administration</em> quick filter (wrench icon). The <em>Site Admins</em> page displays.</li>
+  <li>Click <strong>Domains</strong>. The <em>Domains Summary</em> page displays.</li>
+  <li>Click <strong>Add Domain</strong>. The <strong>Select Domain Type</strong> drop-down menu displays.</li>
+  <li>Select <strong>Facebook Connector</strong> and click <strong>Select</strong>. The <strong>Add Connector Domain Wizard</strong> launches and the <em>Details</em> page displays.</li>
+  <li>In the <em>Connector Domain</em> section, enter the &quot;Name&quot; and &quot;Description&quot; of the domain definition (e.g., Name=Facebook, Description=Facebook Login). <br />
+    <br />
+    <em>Note that the &quot;Name&quot; field cannot be edited after the domain configuration is saved, so it's important to be as descriptive as possible with your domain name. </em><br />
+</li>
+  <li>Click <strong>Next</strong> to continue. The <em>App Details</em> page displays. Here you will specify the App ID and App Secret for the Facebook Connector.</li>
+  <li>Click <strong>Save</strong>. The Facebook Connector definition is saved and displays on the summary screen.</li>
+  <li>The next step is to enable the Facebook Connector. Still remaining in the Site Administration section, click <em>Config &gt; Logins</em>. The <em>Configure</em> screen displays and the Facebook Connector you just added will display in the listing.</li>
+  <li>To enable the Facebook Connector, click the checkbox in the &quot;Enable&quot; column.</li>
+  <li>If you would like configure a virtual host for the domain, enter it in the &quot;Target Host&quot; text box. See <a href="site_administration_config.htm#what_is_a_target_host">What is a Target Host?</a> for more information.</li>
+  <li>In the Logo/Avatar column, click <strong>Upload</strong> and select the logo you would like to display for the Login button. See <a href="basics_account_management.htm#how_do_i_upload_and_crop_icons">How do I upload and crop icons?</a> for more information. You can upload your own custom button or refer to the following page for information on Facebook login button usage: <a href="https://www.facebookbrand.com" target="_blank">https://www.facebookbrand.com/</a>.</li>
+  <li>In the Mode column, click the radio button of the identity store integration method (Popup or Main) you would like to use for the current domain. See <a href="site_administration_config.htm#what_login_page_integration_modes_are_supported">What login page integration modes are supported?</a> for more information.</li>
+  <li>Click <strong>Save</strong> to commit your changes.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_set_up_the_platform_to_log_in_with_google"></a><h3>How do I set up the platform to log in with Google?</h3>
+<p> The platform provides support for logging into the platform using Google using an <strong>Open ID Relying Party </strong> domain.</p>
+<ul>
+  <li>This domain is installed (by default) to your platform deployment.</li>
+  <li>The process of configuring a Google login involves adding an OpenID Relying Party domain using the <strong>Add Domain</strong> function in the <strong>Site Administration &gt; Domains </strong> section, configuring the connector in using the <strong>OpenID Relying Party Wizard</strong>, and enabling the domain in the <em>Site Administration &gt; Config &gt; Logins</em> section.</li>
+  <li>After the configuration is complete, the Google icon will display in the <strong>Sign-in using external ID:</strong> section of the platform <em>Login</em> page.</li>
+</ul>
+<a name="configure_login_google"></a><h5>To configure a Google login:</h5>
+<ol>
+  <li>Click the <em>Administration</em> quick filter (wrrnch icon). The Site Administration page displays.</li>
+  <li>Click <strong>Domains</strong>. The <em>Domains Summary</em> page displays.</li>
+  <li>Click <strong>Add Domain</strong>. The <strong>Select Domain Type</strong> drop-down menu displays.</li>
+  <li>Select <strong>OpenID Relying Party</strong> and click <strong>Select</strong>. The <em>Details</em> page displays.</li>
+  <li>In the <em>OpenID Client</em> section, enter the &quot;Name&quot; and &quot;Description&quot; of the login resource (e.g., Name=Google, Description=Google Login Resource). <br />
+    <br />
+    <em>Note that the &quot;Name&quot; field cannot be edited after the domain configuration is saved, so it's important to be as descriptive as possible with your domain name. For example, including the name of the OpenID Provider as an identifier is recommended along with other details that reveal something about the configuration.</em></li>
+  <li>Click <strong>Next</strong> to continue. The <em>Provider Details</em> page displays. Enter the OpenID &quot;Discovery URL&quot; for the Google domain that represents the location of the Relying Party's OpenID endpoints (e.g., https://www.google.com/accounts/o8/id). See <a href="api_admin_openid_support.htm#what_is_a_discovery_url">What is a Discovery URL?</a> for more information.</li>
+  <li>Click <strong>Next</strong> to continue. The <em>Client Details</em> page displays. Enter the &quot;Realm&quot; and &quot;Return URL.&quot; See <a href="api_admin_openid_support.htm#what_is_a_realm">What is a Realm?</a> for more information.</li>
+  <li>To save the domain configuration, click <strong>Save</strong>. The OpenID login resource domain is saved, displays on the <em>Domains Summary</em> page, and is now available for selection as a resource when you define an OAuth Provider domain.</li>
+  <li>The next step is to enable the Google Domain. Still remaining in the <em>Site Administration</em> section, click <em>Config &gt; Logins</em>. The <em>Configure</em> screen displays and the Google domain you just added will display in the listing.</li>
+  <li>To enable the Google domain, click the checkbox in the &quot;Enable&quot; column.</li>
+  <li>If you would like configure a virtual host for the domain, enter it in the &quot;Target Host&quot; text box. See <a href="site_administration_config.htm#what_is_a_target_host">What is a Target Host?</a> for more information.</li>
+  <li>In the Logo/Avatar column, click <strong>Upload</strong> and select the logo you would like to display for the Login button. See <a href="basics_account_management.htm#how_do_i_upload_and_crop_icons">How do I upload and crop icons?</a> for more information. You can upload your own custom button or refer to the following page for information on Google login button usage: <a href="https://developers.google.com/accounts/docs/OpenID" target="_blank">https://developers.google.com/accounts/docs/OpenID</a>.</li>
+  <li>In the Mode column, click the radio button of the identity store integration method (Popup or Main) you would like to use for the current domain. See <a href="site_administration_config.htm#what_login_page_integration_modes_are_supported">What login page integration modes are supported?</a> for more information.</li>
+  <li>Click <strong>Save</strong> to commit your changes.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_set_up_the_platform_to_log_in_with_ca_siteminder"></a><h3>How do I set up the platform to log in with CA SiteMinder?</h3>
+<p> The platform provides support for logging into the platform using a CA SiteMinder domain.</p>
+<ul>
+  <li>Configure the CA SiteMinder domain in the <em>Configure &gt; Security &gt; Identity Systems </em>section of <a href="basics_glossary.htm#gl_policy_manager">Policy Manager</a>. Refer to the <em>Enterprise API Platform Installation Guide</em> for information on how to install a CA SiteMinder Identity System.</li>
+  <li>Enable and customize the domain in the <em>Site Administration &gt; Config &gt; Logins</em> section of the platform.</li>
+  <li>After the configuration is complete, the CA SiteMinder icon will display in the <strong>Sign-in using external ID:</strong> section of the platform <em>Login</em> page.</li>
+</ul>
+<a name="configure_login_ca_siteminder"></a><h5>To configure a CA SiteMinder login:</h5>
+<ol>
+  <li>Configure the CA SiteMinder domain in the <em>Configure &gt; Security &gt; Identity Systems </em>section of Policy Manager.</li>
+  <li>The next step is to enable the CA SiteMinder Domain. In the platform, navigate to <em>Site Administration &gt; Config &gt; Logins</em>. The <em>Configure</em> screen displays and the Google domain you just added will display in the listing.</li>
+  <li>To enable the CA SiteMinder domain, click the checkbox in the &quot;Enable&quot; column.</li>
+  <li>If you would like configure a virtual host for the domain, enter it in the &quot;Target Host&quot; text box. See <a href="site_administration_config.htm#what_is_a_target_host">What is a Target Host?</a> for more information.</li>
+  <li>In the Logo/Avatar column, click Upload and select the logo you would like to display for the Login button. See <a href="basics_account_management.htm#how_do_i_upload_and_crop_icons">How do I upload and crop icons?</a> for more information. You can upload your own custom button or refer to the CA SiteMinder developer documentation for information on CA SiteMinder login button usage.</li>
+  <li>In the Mode column, click the radio button of the identity store integration method (Popup or Main) you would like to use for the current domain. See <a href="site_administration_config.htm#what_login_page_integration_modes_are_supported">What login page integration modes are supported?</a> for more information.</li>
+  <li>Click <strong>Save</strong> to commit your changes.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_set_up_the_platform_to_log_in_with_ldap"></a><h3>How do I set up the platform to log in with LDAP?</h3>
+<p> The platform provides support for logging into the platform using an LDAP domain.</p>
+<ul>
+  <li>Configure the LDAP domain in the <em>Configure &gt; Security &gt; Identity Systems </em>section of Policy Manager. Refer to the <em>Enterprise API Platform Installation Guide</em> for information on how to install an LDAP Identity System.</li>
+  <li>Enable and customize the domain in the <em>Site Administration &gt; Config &gt; Logins</em> section of the platform.</li>
+  <li>After the configuration is complete, the LDAP icon will display in the <strong>Sign-in using external ID:</strong> section of the platform <em>Login</em> page.</li>
+</ul>
+<a name="configure_login_ldap"></a><h5>To configure an LDAP login:</h5>
+<ol>
+  <li>Configure the LDAP domain in the <em>Configure &gt; Security &gt; Identity Systems </em>section of Policy Manager.</li>
+  <li>The next step is to enable the LDAP Domain. In the platform, navigate to <em>Site Administration &gt; Config &gt; Logins</em>. The <em>Configure</em> screen displays and the LDAP domain you just added will display in the listing.</li>
+  <li>To enable the LDAP domain, click the checkbox in the &quot;Enable&quot; column.</li>
+  <li>If you would like configure a virtual host for the domain, enter it in the &quot;Target Host&quot; text box. See <a href="site_administration_config.htm#what_is_a_target_host">What is a Target Host?</a> for more information.</li>
+  <li>In the Logo/Avatar column, click <strong>Upload</strong> and select the logo you would like to display for the Login button. See <a href="basics_account_management.htm#how_do_i_upload_and_crop_icons">How do I upload and crop icons?</a> for more information. You can upload your own custom button or refer to the LDAP developer documentation for information on LDAP login button usage.</li>
+  <li>In the Mode column, click the radio button of the identity store integration method (Popup or Main) you would like to use for the current domain. See <a href="site_administration_config.htm#what_login_page_integration_modes_are_supported">What login page integration modes are supported?</a> for more information.</li>
+  <li>Click <strong>Save</strong> to commit your changes.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
