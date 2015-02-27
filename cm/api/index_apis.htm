@@ -117,6 +117,11 @@ Returns a list of valid current services matching the query parameter provided, 
       <td><!-- #BeginLibraryItem "/Library/desc_getAPIScopeVisibleToUser.lbi" -->Returns information about the current user's visibility of the API, based on an aggregate of all the visibility scopes assigned to all the groups that the user is a member of, for the specified API version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
+      <td>get API auto-connect settings</td>
+      <td><a href="apis/m_apis_getAPIAutoConnectSettings.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/autosettings</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_getAPIAutoConnectSettings.lbi" -->Returns the <a href="Ref_Glossary_CommunityPlatform.htm#gl_autoconnect">auto-connect</a> settings for the specified API version.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
       <td>get API settings</td>
       <td><a href="apis/m_apis_getAPISettings.htm">GET&nbsp;/api/apis/{APIID}/settings</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_getAPISettings.lbi" -->
@@ -144,16 +149,21 @@ Returns the specified API version.<!-- #EndLibraryItem --></td>
       <td><!-- #BeginLibraryItem "/Library/desc_getAPIVersionSettings.lbi" -->
 Returns a list of settings for the specified API version.<!-- #EndLibraryItem --></td>
     </tr>
+<!--    <tr>
+      <td>get auto-connected API versions</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>-->
     <tr>
       <td>get avatar</td>
-      <td><a href="resource/m_getAvatar.htm">GET&nbsp;/api/apis/{APIID}/avatars/{AvatarVersionID}.png</a><a href="resource/m_getAvatar.htm"></a></td>
+      <td><a href="resource/m_getAvatar.htm">GET&nbsp;/api/apis/{APIID}/avatars/{AvatarVersionID}.png</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_getAvatar_all.lbi" -->
 Retrieves the specified avatar version associated with the specified resource. The avatar might be the current one or an earlier one.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>get Board</td>
       <td><a href="apis/m_apis_getBoard.htm">GET&nbsp;/api/apis/{APIID}/board</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_getBoard_apis.lbi" -->Returns a list of Board items for the specified API.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_getBoard_apis.lbi" -->Returns a list of <a href="Ref_Glossary_CommunityPlatform.htm#gl_boarditem">Board items</a> for the specified API.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>get connected apps</td>
@@ -163,7 +173,8 @@ Retrieves the specified avatar version associated with the specified resource. T
     <tr>
       <td>get contract versions</td>
       <td><a href="apis/m_apis_getContractVersions.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/contracts</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_getContractVersions.lbi" -->Returns a list of contract versions for the specified API.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_getContractVersions.lbi" -->
+Returns information about contracts for the specified API version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>get default avatar</td>
@@ -186,7 +197,7 @@ Returns information about the users who are following the specified API.<!-- #En
       <td>get metrics</td>
       <td><a href="apis/m_apis_getMetrics.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/metrics</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_getMetrics_apis.lbi" -->
-Returns a set of metric information for the specified API version, in JSON or XML format, that can be used to create a chart.<!-- #EndLibraryItem --></td>
+        Returns a set of metric information for the specified API version, in JSON or XML format, that can be used to create a chart.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>get operation resources</td>
@@ -194,10 +205,15 @@ Returns a set of metric information for the specified API version, in JSON or XM
       <td><!-- #BeginLibraryItem "/Library/desc_getOperationResources.lbi" -->Returns information about operation-specific scope mapping for an API version.<!-- #EndLibraryItem --></td>
       </tr>
     <tr>
+      <td>get private viewer scope</td>
+      <td><a href="apis/m_apis_getPrivateViewerScope.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/viewers/{ViewerID}/scope</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_getPrivateViewerScope.lbi" -->Returns information about scope visibility for a specific API version, for a specific viewer.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
       <td>get private viewers</td>
       <td><a href="apis/m_apis_getPrivateViewers.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/viewers</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_getPrivateViewers.lbi" -->
-        Returns a list of <a href="Ref_Glossary_CommunityPlatform.htm#gl_viewer">viewers</a> (groups) that can view the specified API.<!-- #EndLibraryItem --></td>
+Returns a list of <a href="Ref_Glossary_CommunityPlatform.htm#gl_viewer">viewers</a> (groups) that can view the specified API.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>get ranges</td>
@@ -252,13 +268,14 @@ Invites a group to connect to a Private API. When the group is connected, group 
     <tr>
       <td>Invite private viewer with scope</td>
       <td><a href="apis/m_apis_invitePrivateViewerWithScope.htm">POST&nbsp;/api/apis/versions/{APIVersionID}/viewers</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_invitePrivateViewerWithScope.lbi" -->Invites a private viewer (group) to have visibility of an API version, with visibility limited to one or more specified scopes.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_invitePrivateViewerWithScope.lbi" -->
+Invites a group to have visibility of an API version, with visibility limited to one or more specified scopes.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>list APIs</td>
       <td><a href="apis/m_apis_listAPIs.htm">GET&nbsp;/api/apis</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_listAPIs.lbi" -->
-Returns a list of all APIs on the platform. With an optional parameter, lists APIs owned by a specific business.<!-- #EndLibraryItem --></td>
+        Returns a list of all APIs on the platform. With an optional parameter, lists APIs owned by a specific business.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>list API versions</td>
@@ -266,6 +283,11 @@ Returns a list of all APIs on the platform. With an optional parameter, lists AP
       <td><!-- #BeginLibraryItem "/Library/desc_listAPIVersions.lbi" -->
 Returns a list of API versions for all APIs.<!-- #EndLibraryItem --></td>
     </tr>
+<!--    <tr>
+      <td>modify API version governing workflow</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>-->
     <tr>
       <td>modify legal details</td>
       <td><a href="apis/m_apis_modifyLegalDetails.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/legals/{LegalDocumentID}/details</a></td>
@@ -281,6 +303,16 @@ Modifies the <a href="Ref_Values.htm#values_legaldocumentstate">State</a> of a l
       <td>Remove API Administrator</td>
       <td>DELETE&nbsp;/api/apis/{APIID}/administrators/{UserID} is deprecated; use <a href="groups/m_groups_removeMemberFromGroup.htm">DELETE&nbsp;/api/groups/{GroupID}/members/{UserID}</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_removeAPIAdministrator.lbi" --> Removes the specified user from the Administrator role for the specified API.<!-- #EndLibraryItem --></td>
+    </tr>
+<!--  <tr>
+        <td>previewavatar is out</td>
+        <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>-->
+    <tr>
+      <td>save API auto-connect settings</td>
+      <td><a href="apis/m_apis_saveAPIAutoConnectSettings.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/autosettings</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_saveAPIAutoConnectSettings.lbi" -->Adds or updates the auto-connect settings for the specified API version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>save API OAuth details</td>
@@ -334,7 +366,7 @@ Adds or updates a specific user's rating for a resource. If the rating doesn't e
 <ul>
   <li>Add API Administrator: POST&nbsp;/api/apis/{APIID}/administrators is deprecated; use <a href="groups/m_groups_inviteMemberToGroup.htm">POST&nbsp;/api/groups/{GroupID}/members</a></li>
   <li>Get API Administrators: GET&nbsp;/api/apis/{APIID}/admins is deprecated; use <a href="groups/m_groups_getMembers.htm">GET&nbsp;/api/groups/{GroupID}/members</a></li>
-  <li>Remove API Administrator: DELETE&nbsp;/api/apis/{APIID}/administrators/{UserID} is deprecated; use <a href="groups/m_groups_removeMemberFromGroup.htm">DELETE&nbsp;/api/groups/{GroupID}/members/{UserID}</a><a href="apis/m_apis_addAPI.htm"></a></li>
+  <li>Remove API Administrator: DELETE&nbsp;/api/apis/{APIID}/administrators/{UserID} is deprecated; use <a href="groups/m_groups_removeMemberFromGroup.htm">DELETE&nbsp;/api/groups/{GroupID}/members/{UserID}</a></li>
 </ul>
 
 
@@ -399,7 +431,6 @@ Adds or updates a specific user's rating for a resource. If the rating doesn't e
 
 <h4>API Legal Agreements</h4>
 <p>These operations allow you to add, modify, retrieve, or delete legal agreements associated with your API.</p>
-<p>&nbsp;</p>
 <ul>
   <li>Create new legal agreement: <a href="apis/m_apis_createNewAgreement.htm">POST&nbsp;/api/apis/versions/{APIVersionID}/legals</a></li>
   <li>Modify legal details: <a href="apis/m_apis_modifyLegalDetails.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/legals/{LegalDocumentID}/details</a></li>
@@ -456,7 +487,7 @@ Adds or updates a specific user's rating for a resource. If the rating doesn't e
 
 
 <h4>API Licenses</h4>
-<p>Allows you to retrieve information about licenses assocated with the API, if the API is using the Licenses feature.</p>
+<p>These operations allow you to retrieve information about licenses assocated with the API, if the API is using the Licenses feature.</p>
 <ul>
   <li>Get API licenses: <a href="apis/m_apis_getAPILicenses.htm">versions/{APIVersionID}/licenses</a></li>
 </ul>
@@ -478,6 +509,7 @@ Adds or updates a specific user's rating for a resource. If the rating doesn't e
 <ul>
   <li>Get API scope visible to user: <a href="apis/m_apis_getAPIScopeVisibleToUser.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/scope</a></li>
   <li>Get operation resources: <a href="apis/m_apis_getOperationResources.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/resources</a></li>
+  <li>Get private viewer scope: <a href="apis/m_apis_getPrivateViewerScope.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/viewers/{ViewerID}/scope</a></li>
   <li>Invite  private viewer with scope: <a href="apis/m_apis_invitePrivateViewerWithScope.htm">POST&nbsp;/api/apis/versions/{APIVersionID}/viewers</a></li>
   <li>Save operation resources: <a href="apis/m_apis_saveOperationResources.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/resources</a></li>
   <li>Save private viewer scope: <a href="apis/m_apis_savePrivateViewerScope.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/viewers/{ViewerID}</a></li>

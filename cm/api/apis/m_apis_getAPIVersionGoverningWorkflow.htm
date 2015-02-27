@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getAPIVersionGoverningWorkflow.lbi" -->Returns information about the workflow governing the specified API version.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,9 +56,10 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the workflow information for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/55af28d8-1b31-44b2-8566-597cc772a204.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem -->/governingworkflow</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/55af28d8-1b31-44b2-8566-597cc772a204.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem -->/governingworkflow</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre>Accept: application/json<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->
+X-Csrf-Token_{tenant}: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -67,7 +68,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -77,7 +78,7 @@ no-catalog: true
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_appxml_or_appjson.lbi" --><strong>application/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -121,7 +122,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
-<p><strong>Sample response headers: JSON</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
 Date: Thu, 06 Feb 2014 22:34:59 GMT</pre>
@@ -146,7 +147,7 @@ Status Code: 200 OK
 Content-Type: text/html;charset=ISO-8859-1
 Date: Thu, 06 Feb 2014 22:30:01 GMT</pre>
 <p><strong>Sample response body: XML</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;ns2:GoverningWorkflow xmlns="http://soa.com/xsd/user/1.0" xmlns:ns2="http://soa.com/xsd/workflow/1.0"&gt;
   &lt;ns2:Governed&gt;true&lt;/ns2:Governed&gt;
   &lt;ns2:Key&gt;7df574bb-a647-446b-b0e5-fa4c3ef84304&lt;/ns2:Key&gt;
@@ -161,7 +162,7 @@ Date: Thu, 06 Feb 2014 22:30:01 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -171,7 +172,7 @@ Date: Thu, 06 Feb 2014 22:30:01 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_appxml_or_appjson.lbi" --><strong>application/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -211,20 +212,24 @@ Date: Thu, 06 Feb 2014 22:30:01 GMT</pre>
       <th width="20%">Item</th>
       <th width="80%">Value</th>
     </tr>
+    <tr>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
+    </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http404">404</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http404">404</a></td>
       <td>The resource could not be found. For example, you might get this if you include an invalid APIVersionID.</td>
     </tr>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

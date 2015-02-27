@@ -37,7 +37,7 @@ The Tickets service provides operations for managing tickets about apps or APIs,
       <td><!-- #BeginLibraryItem "/Library/desc_deleteTicket.lbi" -->Deletes a ticket.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
-      <td>esecute workflow action</td>
+      <td>execute workflow action</td>
       <td><a href="tickets/m_tickets_executeWorkflowAction.htm">POST&nbsp;/api/tickets/{ticketID}/actions</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_executeWorkflowAction_ticket.lbi" -->
         Executes an action on the specified ticket.<!-- #EndLibraryItem --></td>
@@ -46,8 +46,19 @@ The Tickets service provides operations for managing tickets about apps or APIs,
       <td>get ticket</td>
       <td><a href="tickets/m_tickets_getTicket.htm">GET&nbsp;/api/tickets/{ticketID}</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_getTicket.lbi" -->
-        Returns information about the specified ticket.<!-- #EndLibraryItem --></td>
+Returns information about a specific ticket.<!-- #EndLibraryItem --></td>
     </tr>
+    <tr>
+      <td>get tickets</td>
+      <td><a href="tickets/m_tickets_getTickets.htm">GET&nbsp;/api/tickets</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_getTickets.lbi" -->Returns information about tickets.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>get ticket comments</td>
+      <td><a href="tickets/m_tickets_getTicketComments.htm">GET&nbsp;/api/tickets/{TicketID}/comments</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_getTicketComments.lbi" --> Returns the comments for the specified ticket.<!-- #EndLibraryItem --></td>
+    </tr>
+
     <tr>
       <td>mark ticket</td>
       <td><a href="tickets/m_tickets_markTicket.htm">POST&nbsp;/api/tickets/{ticketID}/marks</a></td>

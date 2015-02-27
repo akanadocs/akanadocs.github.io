@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: ApplicationVersion Object | Apps Service | Enterprise API Platform API
-description: Contains information about a version of an app. For example, this object is returned by the <span class="apidoc_code"><a href="../apps/m_apps_getVersion.htm">GET&nbsp;/api/apps/versions/{RuntimeID}</a></span> method.
+description: Contains information about a version of an app.
 product: cm
 category: ref
 nav-title: ApplicationVersion Object 
@@ -12,7 +12,8 @@ no-catalog: true
 ---
 
 <h2><a name="top"></a>ApplicationVersion Object</h2>
-<p>Contains information about a version of an app. For example, this object is returned by the <span class="apidoc_code"><a href="../apps/m_apps_getVersion.htm">GET&nbsp;/api/apps/versions/{RuntimeID}</a></span> method.</p>
+<p><!-- #BeginLibraryItem "/Library/o_apps_ApplicationVersion.lbi" -->Contains information about a version of an app.<!-- #EndLibraryItem --></p>
+<p>For example, this object is returned by the <span class="apidoc_code"><a href="../apps/m_apps_getVersion.htm">GET&nbsp;/api/apps/versions/{RuntimeID}</a></span> method.</p>
 
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
@@ -41,7 +42,7 @@ no-catalog: true
       <td><a href="../Ref_IDsOnThePlatform.htm#id_appid">AppID</a></td>
       <td>string</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" -->
-        The unique ID for the specified app.<!-- #EndLibraryItem --> Required when adding or modifying an app version.</td>
+The unique ID for a specific app.<!-- #EndLibraryItem -->Required when adding or modifying an app version.</td>
     </tr>
     <tr>
       <td>Name</td>
@@ -117,7 +118,7 @@ The current <a href="../Ref_Glossary_CommunityPlatform.htm#gl_state">state</a> o
     <tr>
       <td>Identity</td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_Identity_app.lbi" -->When adding an app version, you can specify a custom identity name for the app version. If no custom value is specified, in response messages this property defaults to the reverse of the RuntimeID, with a dash. For example, if the RuntimeID is <strong>123456.acmecorp</strong>, the value for the Identity property would be <strong>open-123456</strong>.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_Identity_app.lbi" -->When adding an app version, you can specify a custom identity name for the app version. If no custom value is specified, in response messages this property defaults to the reverse of the RuntimeID, with a dash. For example, if the RuntimeID is <strong>123456.acmepayments</strong>, the value for the Identity property would be <strong>open-123456</strong>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>SharedSecret</td>
@@ -133,6 +134,11 @@ The current <a href="../Ref_Glossary_CommunityPlatform.htm#gl_state">state</a> o
       <td>AppVersionSettings</td>
       <td><a href="o_apps_AppVersionSettings.htm">AppVersionSettings</a></td>
       <td><!-- #BeginLibraryItem "/Library/o_apps_AppVersionSettings.lbi" -->Contains information about the settings for an app version.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>TargetResources</td>
+      <td><a href="o_dn_model_TargetResources.htm">TargetResources</a></td>
+      <td><!-- #BeginLibraryItem "/Library/o_dn_model_TargetResources.lbi" --> Contains information about one or more resources that are associated with the current resource.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>

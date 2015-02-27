@@ -26,7 +26,8 @@ no-catalog: true
 <h3>Login Domains</h3>
 <p>When a specific domain is configured for the purpose of developer logins to the portal, it is called a <strong>login domain</strong>.</p>
 <p>The login domain is an entity used to model integration to an external identity store, such as Facebook, Google, or Siteminder. For example, if a tenant wants the tenant platform to be set up so that users can log in using accounts from an external identity store such as Siteminder, we model the domain in our database.</p>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<p>When a user creates an account on the platform, the platform itself is the login domain.</p>
+<p>When the user is logging in, the <strong>domain</strong> request parameter for the <span class="apidoc_code"><a href="login/m_login_ssoLoginInstructions.htm">GET&nbsp;/api/login/ssoLoginInstructions</a></span> operation lets the platform know which domain the user wants to use; the login credential requirements for that domain are then returned in the response.</p><p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->

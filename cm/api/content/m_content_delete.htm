@@ -12,13 +12,13 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>DELETE&nbsp;/content/delete</h2>
+<h2><a name="top" id="top"></a>DELETE&nbsp;/content/{path}</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_content_delete.lbi" -->
 Deletes platform content associated with an API (a specific file).<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -57,9 +57,9 @@ Deletes platform content associated with an API (a specific file).<!-- #EndLibra
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to delete the index file from the API documentation for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://api.acmecorp.com/content/api/api19427.acmecorp/documents/index.htm</pre>
+<pre>https://api.acmepaymentscorp.com/content/api/api19427.acmepaymentscorp/documents/index.htm</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>DELETE /content/api/api19427.acmecorp/documents/index.htm HTTP/1.1
+<pre>DELETE /content/api/api19427.acmepaymentscorp/documents/index.htm HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: */*</pre>
 <p><strong>Sample request body</strong></p>
@@ -70,7 +70,7 @@ Accept: */*</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -80,11 +80,11 @@ Accept: */*</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td>Not applicable; there is no response.</td>
     </tr>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
       <td><strong>*/*</strong></td>
     </tr>
   </tbody>
@@ -111,7 +111,7 @@ Accept: */*</pre>
       <td>path</td>
       <td>&nbsp;</td>
       <td>Required</td>
-      <td>The complete path to the content resource being deleted. The first page of the path is the host and then the /content/part of the URL; for example, <strong>https://api.acmecorp.com/content</strong>. The rest of the URL is the path to the resource, from <strong>/api</strong> onwards; for example, <strong>/api/api19427.acmecorp/documents/index.htm</strong>.</td>
+      <td>The complete path to the content resource being deleted. The first page of the path is the host and then the /content/part of the URL; for example, <strong>https://api.acmepaymentscorp.com/content</strong>. The rest of the URL is the path to the resource, from <strong>/api</strong> onwards; for example, <strong>/api/api19427.acmepaymentscorp/documents/index.htm</strong>.</td>
     </tr>
   </tbody>
 </table>
@@ -142,7 +142,7 @@ Date: Mon, 24 Jun 2013 18:18:59 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -152,7 +152,7 @@ Date: Mon, 24 Jun 2013 18:18:59 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td>Not applicable.</td>
     </tr>
   </tbody>
@@ -180,17 +180,17 @@ Date: Mon, 24 Jun 2013 18:18:59 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http404">404</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http404">404</a></td>
       <td>The resource could not be found. For example, you might get this if the content resource had already been deleted.</td>
     </tr>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

@@ -17,7 +17,8 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getAPIVersion.lbi" --> Returns the specified API version.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:&nbsp;<!-- #BeginLibraryItem "/Library/roles_none.lbi" -->Anyone can use this operation; login is not required.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: &nbsp;<!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
+Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -58,14 +59,15 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for specific API version information.</p>
 <p><strong>Sample request URL #1</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp</pre>
 <p><strong>Sample request URL #2</strong></p>
 <p>Includes the optional <span class="apidoc_code">includeOperations</span> parameter.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp?includeOperations=true</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp?includeOperations=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apis/versions/9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp HTTP/1.1
+<pre>GET&nbsp;/api/apis/versions/9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp HTTP/1.1
 Host: &lt;hostname&gt;
-Accept: application/json, text/javascript, */*; q=0.01</pre>
+Accept: application/json, text/javascript, */*; q=0.01<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->
+X-Csrf-Token_{tenant}: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -74,7 +76,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -84,7 +86,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -172,8 +174,8 @@ Content-Type: application/json</pre>
 
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "APIVersionID" : "9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp",
-  "APIID" : "780e7a30-6f9b-4d08-9366-ae18ea071183.acmecorp",
+  "APIVersionID" : "9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp",
+  "APIID" : "780e7a30-6f9b-4d08-9366-ae18ea071183.acmepaymentscorp",
   "Name" : "1.0",
   "Description" : "First release",
   "Type" : "shttp",
@@ -208,8 +210,8 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
 
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "APIVersionID" : "9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp",
-  "APIID" : "780e7a30-6f9b-4d08-9366-ae18ea071183.acmecorp",
+  "APIVersionID" : "9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp",
+  "APIID" : "780e7a30-6f9b-4d08-9366-ae18ea071183.acmepaymentscorp",
   "Name" : "1.0",
   "Description" : "First release",
   "Type" : "shttp",
@@ -273,7 +275,7 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
       "Category" : "Production",
       "Uri" : "http://10.1.20.137:9901/",
       "ConnectionProperties" : [ ],
-      "BindingQName" : "{uri:acmecorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.production.virtual",
+      "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.production.virtual",
       "BindingType" : "binding.http",
       "EndpointKey" : "uddi:0d6a112f-fae0-11e3-82e1-ee73ce832365"
     }, {
@@ -281,15 +283,15 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
       "Category" : "Sandbox",
       "Uri" : "http://10.1.20.137:9901/",
       "ConnectionProperties" : [ ],
-      "BindingQName" : "{uri:acmecorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.sandbox.virtual",
+      "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.sandbox.virtual",
       "BindingType" : "binding.http",
       "EndpointKey" : "uddi:0e0036f3-fae0-11e3-82e1-ee73ce832365"
     } ]
   },
   "Policies" : {
     "Policy" : [ {
-      "PolicyKey" : "10001-acmecorpApplicationSecurityPolicy",
-      "Name" : "acmecorpApplicationSecurityPolicy",
+      "PolicyKey" : "10001-AtmosphereApplicationSecurityPolicy",
+      "Name" : "AtmosphereApplicationSecurityPolicy",
       "Description" : "",
       "PolicyType" : "Operational Policy",
       "PolicySubType" : "policy.apisec"
@@ -328,9 +330,9 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
       "ServiceKey" : "uddi:0ced18dc-fae0-11e3-82e1-ee73ce832365",
       "APIBindings" : {
         "APIBinding" : [ {
-          "BindingQName" : "{uri:acmecorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.production.virtual",
+          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.production.virtual",
           "BindingKey" : "uddi:c49656e3-58ca-c7e0-f91c-62a3bb1809a2",
-          "InterfaceQName" : "{uri:acmecorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.production",
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.production",
           "InterfaceKey" : "uddi:bd988666-235e-66cc-6289-05f613a8751a",
           "BindingType" : "binding.http",
           "BindingOperations" : {
@@ -404,7 +406,7 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
       },
       "APIInterfaces" : {
         "APIInterface" : [ {
-          "InterfaceQName" : "{uri:acmecorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.production",
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.production",
           "InterfaceKey" : "uddi:bd988666-235e-66cc-6289-05f613a8751a",
           "InterfaceOperations" : {
             "InterfaceOperation" : [ {
@@ -432,14 +434,14 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
           "Category" : "Production",
           "Uri" : "http://10.1.20.137:9901/",
           "ConnectionProperties" : [ ],
-          "BindingQName" : "{uri:acmecorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.production.virtual",
+          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.production.virtual",
           "BindingType" : "binding.http",
           "EndpointKey" : "uddi:0d6a112f-fae0-11e3-82e1-ee73ce832365"
         } ]
       },
       "Policies" : {
         "Policy" : [ {
-          "PolicyKey" : "10001-acmecorpApplicationSecurityPolicy",
+          "PolicyKey" : "10001-AtmosphereApplicationSecurityPolicy",
           "Name" : "AtmosphereApplicationSecurityPolicy",
           "Description" : "",
           "PolicyType" : "Operational Policy",
@@ -459,9 +461,9 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
       "ServiceKey" : "uddi:0dc2dfb1-fae0-11e3-82e1-ee73ce832365",
       "APIBindings" : {
         "APIBinding" : [ {
-          "BindingQName" : "{uri:acmecorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.sandbox.virtual",
+          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.sandbox.virtual",
           "BindingKey" : "uddi:659417b9-f374-65a1-778a-6b5d8a0025dc",
-          "InterfaceQName" : "{uri:acmecorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.sandbox",
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.sandbox",
           "InterfaceKey" : "uddi:d5dd8c7c-3ad0-211e-7eb0-1b6075bebd1f",
           "BindingType" : "binding.http",
           "BindingOperations" : {
@@ -535,7 +537,7 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
       },
       "APIInterfaces" : {
         "APIInterface" : [ {
-          "InterfaceQName" : "{uri:acmecorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.sandbox",
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.sandbox",
           "InterfaceKey" : "uddi:d5dd8c7c-3ad0-211e-7eb0-1b6075bebd1f",
           "InterfaceOperations" : {
             "InterfaceOperation" : [ {
@@ -563,7 +565,7 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
           "Category" : "Sandbox",
           "Uri" : "http://10.1.20.137:9901/",
           "ConnectionProperties" : [ ],
-          "BindingQName" : "{uri:acmecorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.sandbox.virtual",
+          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.sandbox.virtual",
           "BindingType" : "binding.http",
           "EndpointKey" : "uddi:0e0036f3-fae0-11e3-82e1-ee73ce832365"
         } ]
@@ -592,7 +594,7 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -602,7 +604,7 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -642,20 +644,24 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
       <th width="20%">Item</th>
       <th width="80%">Value</th>
     </tr>
+    <tr>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
+    </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http404">404</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http404">404</a></td>
       <td>The resource could not be found. For example, you might get this if you include an invalid APIVersionID.</td>
     </tr>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
     </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

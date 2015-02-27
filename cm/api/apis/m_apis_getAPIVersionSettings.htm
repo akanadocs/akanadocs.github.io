@@ -17,7 +17,8 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getAPIVersionSettings.lbi" -->
 Returns a list of settings for the specified API version.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:&nbsp;<!-- #BeginLibraryItem "/Library/roles_none.lbi" -->Anyone can use this operation; login is not required.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: &nbsp;<!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
+Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -55,9 +56,10 @@ Returns a list of settings for the specified API version.<!-- #EndLibraryItem --
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the settings of a specific API version.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion20693.acmecorp/settings</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion20693.acmepaymentscorp/settings</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre>Accept: application/json<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->
+X-Csrf-Token_{tenant}: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -66,7 +68,7 @@ Returns a list of settings for the specified API version.<!-- #EndLibraryItem --
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -76,7 +78,7 @@ Returns a list of settings for the specified API version.<!-- #EndLibraryItem --
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td>application/json or application/xml</td>
     </tr>
   </tbody>
@@ -121,11 +123,11 @@ Returns a list of settings for the specified API version.<!-- #EndLibraryItem --
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows the settings for the requested API version.</p>
-<p><strong>Sample response headers: JSON</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
 Date: Wed, 01 May 2013 21:59:46 GMT</pre>
-<p><strong>Sample response body: JSON</strong></p>
+<p><strong>Sample response body: application/json</strong></p>
 <pre>{
   "SandboxEndpointSupport" : "com.soa.feature.enabled",
   "ProductionEndpointSupport" : "com.soa.feature.enabled",
@@ -138,7 +140,7 @@ Date: Wed, 01 May 2013 21:59:46 GMT</pre>
   "PrivateAPIIndependentGroupSupport" : "com.soa.feature.enabled"
 }</pre>
 <p><strong>Sample response body: XML</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;APIVersionSettings xmlns=&quot;http://soa.com/xsd/api/1.0&quot;&gt;
   &lt;SandboxEndpointSupport&gt;com.soa.feature.enabled&lt;/SandboxEndpointSupport&gt;
   &lt;ProductionEndpointSupport&gt;com.soa.feature.enabled&lt;/ProductionEndpointSupport&gt;
@@ -157,7 +159,7 @@ Date: Wed, 01 May 2013 21:59:46 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -167,7 +169,7 @@ Date: Wed, 01 May 2013 21:59:46 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td>application/json or application/xml</td>
     </tr>
   </tbody>
@@ -207,16 +209,20 @@ Date: Wed, 01 May 2013 21:59:46 GMT</pre>
       <th width="20%">Item</th>
       <th width="80%">Value</th>
     </tr>
+    <tr>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
+    </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get Contracts | Apps Service | Enterprise API Platform API
-description:  Retrieves information about API contracts for the specified app version.
+description:  Returns information about API contracts for the specified app version, as an RSS feed.
 product: cm
 category: ref
 nav-title: Get Contracts 
@@ -16,8 +16,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getContracts.lbi" --> Retrieves information about API contracts for the specified app version.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>, </strong> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<p><!-- #BeginLibraryItem "/Library/desc_getContracts.lbi" -->
+Returns information about API contracts for the specified app version, as an RSS feed.<!-- #EndLibraryItem --></p>
+<p><strong>Note</strong>: <span class="apidoc_code"><a href="m_apps_listContracts.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/contracts</a></span> (list contracts, with custom Accept header) returns the same information as a JSON object. We recommend using that operation rather than this one.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have read permission for the resource.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,11 +58,12 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below is a request for contract info for the specified app version.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/versions/9ezRSOnifci8EYNndZu79U6w.acmecorp/contracts</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/versions/9ezRSOnifci8EYNndZu79U6w.acmepaymentscorp/contracts</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apps/versions/9ezRSOnifci8EYNndZu79U6w.acmecorp/contracts HTTP/1.1
-Host:api.acmecorp.com
-Accept: application/json, text/javascript, */*; q=0.01</pre>
+<pre>GET&nbsp;/api/apps/versions/9ezRSOnifci8EYNndZu79U6w.acmepaymentscorp/contracts HTTP/1.1
+Host:api.acmepaymentscorp.com
+Accept: application/json, text/javascript, */*; q=0.01<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->
+X-Csrf-Token_{tenant}: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -69,7 +72,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -79,7 +82,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -106,14 +109,15 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" --> The unique ID for the specified app version.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" -->
+The unique ID for a specific app version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>Environment</td>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_Environment.lbi" --> The environment (Sandbox or Production).<!-- #EndLibraryItem --> If not specified, all contracts are returned.</td>
+      <td>The environment (Sandbox or Production). If not specified, results are returned for all environments.</td>
     </tr>
     </tbody>
 </table>
@@ -131,388 +135,377 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows the contract versions for the specified app.</p>
-<p><strong>Sample response headers: JSON</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Thu, 23 May 2013 22:17:47 GMT
+Date: Thu, 16 Oct 2014 11:32:16 GMT
 Content-Type: application/json</pre>
-<p><a name="rss_applicationcontracts_json" id="rss_applicationcontracts_json"></a><strong>Sample response body: JSON</strong></p>
-<pre>{<br />  &quot;channel&quot;: {<br />    &quot;title&quot;: &quot;Application Contracts&quot;,<br />    &quot;item&quot;: [<br />      {<br />        &quot;title&quot;: &quot;contract17122.acmecorp&quot;,<br />        &quot;category&quot;: [<br />          {<br />            &quot;value&quot;: &quot;Production&quot;,<br />            &quot;domain&quot;: &quot;uddi:soa.com:environment&quot;<br />          },<br />          {<br />            &quot;value&quot;: &quot;apicontract.status.activated&quot;,<br />            &quot;domain&quot;: &quot;uddi:soa.com:wfstate&quot;<br />          }<br />        ],<br />        &quot;guid&quot;: {<br />          &quot;value&quot;: &quot;contract17122.acmecorp&quot;<br />        },<br />        &quot;Endpoints&quot;: {<br />          &quot;Endpoint&quot;: [<br />            {<br />              &quot;Category&quot;: &quot;Production&quot;,<br />              &quot;Uri&quot;: &quot;http://linkedin_g3.broker.soa.com/linkedin_api_g3&quot;<br />            }<br />          ]<br />        },<br />        &quot;Image&quot;: [<br />          {<br />            &quot;Url&quot;: &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api17115.acmecorp/avatar&quot;,<br />            &quot;Title&quot;: &quot;api&quot;,<br />            &quot;Link&quot;: &quot;#/api/api17115.acmecorp/versions/apiversion17117.acmecorp/details&quot;<br />          },<br />          {<br />            &quot;Url&quot;: &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app17118.acmecorp/avatar&quot;,<br />            &quot;Title&quot;: &quot;app&quot;,<br />            &quot;Link&quot;: &quot;#/app/app17118.acmecorp/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/details&quot;<br />          }<br />        ],<br />        &quot;Actions&quot;: {<br />          &quot;Action&quot;: [<br />            {<br />              &quot;value&quot;: &quot;apicontract.action.suspend&quot;,<br />              &quot;label&quot;: &quot;apicontract.action.suspend&quot;<br />            },<br />            {<br />              &quot;value&quot;: &quot;apicontract.action.cancel&quot;,<br />              &quot;label&quot;: &quot;apicontract.action.cancel&quot;<br />            }<br />          ]<br />        },<br />        &quot;EntityReferences&quot;: {<br />          &quot;EntityReference&quot;: [<br />            {<br />              &quot;Title&quot;: &quot;1&quot;,<br />              &quot;Guid&quot;: &quot;apiversion17117.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;apiversion&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                },<br />                {<br />                  &quot;value&quot;: &quot;Limited&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:visibility&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;LinkedIn_G3&quot;,<br />              &quot;Guid&quot;: &quot;api17115.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;api&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;1&quot;,<br />              &quot;Guid&quot;: &quot;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;app-version&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;PaasTime2&quot;,<br />              &quot;Guid&quot;: &quot;app17118.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;app&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Guid&quot;: &quot;contract_request17123.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;board-item&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            }<br />          ]<br />        }<br />      },<br />      {<br />        &quot;title&quot;: &quot;contract17172.acmecorp&quot;,<br />        &quot;category&quot;: [<br />          {<br />            &quot;value&quot;: &quot;Production&quot;,<br />            &quot;domain&quot;: &quot;uddi:soa.com:environment&quot;<br />          },<br />          {<br />            &quot;value&quot;: &quot;apicontract.status.activated&quot;,<br />            &quot;domain&quot;: &quot;uddi:soa.com:wfstate&quot;<br />          }<br />        ],<br />        &quot;guid&quot;: {<br />          &quot;value&quot;: &quot;contract17172.acmecorp&quot;<br />        },<br />        &quot;Endpoints&quot;: {<br />          &quot;Endpoint&quot;: [<br />            {<br />              &quot;Category&quot;: &quot;Production&quot;,<br />              &quot;Uri&quot;: &quot;http://paymentapi.broker.soa.com/mary&quot;<br />            }<br />          ]<br />        },<br />        &quot;Image&quot;: [<br />          {<br />            &quot;Url&quot;: &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api17169.acmecorp/avatar&quot;,<br />            &quot;Title&quot;: &quot;api&quot;,<br />            &quot;Link&quot;: &quot;#/api/api17169.acmecorp/versions/apiversion17171.acmecorp/details&quot;<br />          },<br />          {<br />            &quot;Url&quot;: &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app17118.acmecorp/avatar&quot;,<br />            &quot;Title&quot;: &quot;app&quot;,<br />            &quot;Link&quot;: &quot;#/app/app17118.acmecorp/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/details&quot;<br />          }<br />        ],<br />        &quot;Actions&quot;: {<br />          &quot;Action&quot;: [<br />            {<br />              &quot;value&quot;: &quot;apicontract.action.suspend&quot;,<br />              &quot;label&quot;: &quot;apicontract.action.suspend&quot;<br />            },<br />            {<br />              &quot;value&quot;: &quot;apicontract.action.cancel&quot;,<br />              &quot;label&quot;: &quot;apicontract.action.cancel&quot;<br />            }<br />          ]<br />        },<br />        &quot;EntityReferences&quot;: {<br />          &quot;EntityReference&quot;: [<br />            {<br />              &quot;Title&quot;: &quot;1.0&quot;,<br />              &quot;Guid&quot;: &quot;apiversion17171.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;apiversion&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                },<br />                {<br />                  &quot;value&quot;: &quot;Limited&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:visibility&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;PaymentAPI&quot;,<br />              &quot;Guid&quot;: &quot;api17169.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;api&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;1&quot;,<br />              &quot;Guid&quot;: &quot;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;app-version&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;PaasTime2&quot;,<br />              &quot;Guid&quot;: &quot;app17118.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;app&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Guid&quot;: &quot;contract_request17173.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;board-item&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            }<br />          ]<br />        }<br />      },<br />      {<br />        &quot;title&quot;: &quot;contract17248.acmecorp&quot;,<br />        &quot;category&quot;: [<br />          {<br />            &quot;value&quot;: &quot;Production&quot;,<br />            &quot;domain&quot;: &quot;uddi:soa.com:environment&quot;<br />          },<br />          {<br />            &quot;value&quot;: &quot;apicontract.status.approved&quot;,<br />            &quot;domain&quot;: &quot;uddi:soa.com:wfstate&quot;<br />          }<br />        ],<br />        &quot;guid&quot;: {<br />          &quot;value&quot;: &quot;contract17248.acmecorp&quot;<br />        },<br />        &quot;Endpoints&quot;: {<br />          &quot;Endpoint&quot;: [<br />            {<br />              &quot;Category&quot;: &quot;Production&quot;,<br />              &quot;Uri&quot;: &quot;http://paymentapi2.broker.soa.com/mary&quot;<br />            }<br />          ]<br />        },<br />        &quot;Image&quot;: [<br />          {<br />            &quot;Url&quot;: &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api17177.acmecorp/avatar&quot;,<br />            &quot;Title&quot;: &quot;api&quot;,<br />            &quot;Link&quot;: &quot;#/api/api17177.acmecorp/versions/apiversion17179.acmecorp/details&quot;<br />          },<br />          {<br />            &quot;Url&quot;: &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app17118.acmecorp/avatar&quot;,<br />            &quot;Title&quot;: &quot;app&quot;,<br />            &quot;Link&quot;: &quot;#/app/app17118.acmecorp/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/details&quot;<br />          }<br />        ],<br />        &quot;Actions&quot;: {<br />          &quot;Action&quot;: [<br />            {<br />              &quot;value&quot;: &quot;apicontract.action.activate&quot;,<br />              &quot;label&quot;: &quot;apicontract.action.activate&quot;<br />            },<br />            {<br />              &quot;value&quot;: &quot;apicontract.action.cancel&quot;,<br />              &quot;label&quot;: &quot;apicontract.action.cancel&quot;<br />            }<br />          ]<br />        },<br />        &quot;EntityReferences&quot;: {<br />          &quot;EntityReference&quot;: [<br />            {<br />              &quot;Title&quot;: &quot;1&quot;,<br />              &quot;Guid&quot;: &quot;apiversion17179.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;apiversion&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                },<br />                {<br />                  &quot;value&quot;: &quot;Limited&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:visibility&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;PaymentAPI2&quot;,<br />              &quot;Guid&quot;: &quot;api17177.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;api&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;1&quot;,<br />              &quot;Guid&quot;: &quot;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;app-version&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;PaasTime2&quot;,<br />              &quot;Guid&quot;: &quot;app17118.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;app&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Guid&quot;: &quot;contract_request17249.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;board-item&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            }<br />          ]<br />        }<br />      },<br />      {<br />        &quot;title&quot;: &quot;contract17253.acmecorp&quot;,<br />        &quot;category&quot;: [<br />          {<br />            &quot;value&quot;: &quot;Production&quot;,<br />            &quot;domain&quot;: &quot;uddi:soa.com:environment&quot;<br />          },<br />          {<br />            &quot;value&quot;: &quot;apicontract.status.approved&quot;,<br />            &quot;domain&quot;: &quot;uddi:soa.com:wfstate&quot;<br />          }<br />        ],<br />        &quot;guid&quot;: {<br />          &quot;value&quot;: &quot;contract17253.acmecorp&quot;<br />        },<br />        &quot;Endpoints&quot;: {<br />          &quot;Endpoint&quot;: [<br />            {<br />              &quot;Category&quot;: &quot;Production&quot;,<br />              &quot;Uri&quot;: &quot;http://electronicpmts_api.broker.soa.com/2&quot;<br />            }<br />          ]<br />        },<br />        &quot;Image&quot;: [<br />          {<br />            &quot;Url&quot;: &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api16995.acmecorp/avatar&quot;,<br />            &quot;Title&quot;: &quot;api&quot;,<br />            &quot;Link&quot;: &quot;#/api/api16995.acmecorp/versions/apiversion16997.acmecorp/details&quot;<br />          },<br />          {<br />            &quot;Url&quot;: &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app17118.acmecorp/avatar&quot;,<br />            &quot;Title&quot;: &quot;app&quot;,<br />            &quot;Link&quot;: &quot;#/app/app17118.acmecorp/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/details&quot;<br />          }<br />        ],<br />        &quot;Actions&quot;: {<br />          &quot;Action&quot;: [<br />            {<br />              &quot;value&quot;: &quot;apicontract.action.activate&quot;,<br />              &quot;label&quot;: &quot;apicontract.action.activate&quot;<br />            },<br />            {<br />              &quot;value&quot;: &quot;apicontract.action.cancel&quot;,<br />              &quot;label&quot;: &quot;apicontract.action.cancel&quot;<br />            }<br />          ]<br />        },<br />        &quot;EntityReferences&quot;: {<br />          &quot;EntityReference&quot;: [<br />            {<br />              &quot;Title&quot;: &quot;1&quot;,<br />              &quot;Guid&quot;: &quot;apiversion16997.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;apiversion&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                },<br />                {<br />                  &quot;value&quot;: &quot;Limited&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:visibility&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;LinkedIn API_G&quot;,<br />              &quot;Guid&quot;: &quot;api16995.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;api&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;1&quot;,<br />              &quot;Guid&quot;: &quot;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;app-version&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;PaasTime2&quot;,<br />              &quot;Guid&quot;: &quot;app17118.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;app&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Guid&quot;: &quot;contract_request17254.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;board-item&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            }<br />          ]<br />        }<br />      },<br />      {<br />        &quot;title&quot;: &quot;contract17260.acmecorp&quot;,<br />        &quot;category&quot;: [<br />          {<br />            &quot;value&quot;: &quot;Production&quot;,<br />            &quot;domain&quot;: &quot;uddi:soa.com:environment&quot;<br />          },<br />          {<br />            &quot;value&quot;: &quot;apicontract.status.activated&quot;,<br />            &quot;domain&quot;: &quot;uddi:soa.com:wfstate&quot;<br />          }<br />        ],<br />        &quot;guid&quot;: {<br />          &quot;value&quot;: &quot;contract17260.acmecorp&quot;<br />        },<br />        &quot;Endpoints&quot;: {<br />          &quot;Endpoint&quot;: [<br />            {<br />              &quot;Category&quot;: &quot;Production&quot;,<br />              &quot;Uri&quot;: &quot;http://twitter.broker.soa.com/1&quot;<br />            }<br />          ]<br />        },<br />        &quot;Image&quot;: [<br />          {<br />            &quot;Url&quot;: &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api11153.acmecorp/avatars/751757c08b084c7058acb2984cc1ac9c.png&quot;,<br />            &quot;Title&quot;: &quot;api&quot;,<br />            &quot;Link&quot;: &quot;#/api/api11153.acmecorp/versions/apiversion11155.acmecorp/details&quot;<br />          },<br />          {<br />            &quot;Url&quot;: &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app17118.acmecorp/avatar&quot;,<br />            &quot;Title&quot;: &quot;app&quot;,<br />            &quot;Link&quot;: &quot;#/app/app17118.acmecorp/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/details&quot;<br />          }<br />        ],<br />        &quot;Actions&quot;: {<br />          &quot;Action&quot;: [<br />            {<br />              &quot;value&quot;: &quot;apicontract.action.cancel&quot;,<br />              &quot;label&quot;: &quot;apicontract.action.cancel&quot;<br />            }<br />          ]<br />        },<br />        &quot;EntityReferences&quot;: {<br />          &quot;EntityReference&quot;: [<br />            {<br />              &quot;Title&quot;: &quot;1.0&quot;,<br />              &quot;Guid&quot;: &quot;apiversion11155.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;apiversion&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                },<br />                {<br />                  &quot;value&quot;: &quot;Public&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:visibility&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;Twitter&quot;,<br />              &quot;Guid&quot;: &quot;api11153.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;api&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;1&quot;,<br />              &quot;Guid&quot;: &quot;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;app-version&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;PaasTime2&quot;,<br />              &quot;Guid&quot;: &quot;app17118.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;app&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Guid&quot;: &quot;contract_request17261.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;board-item&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            }<br />          ]<br />        }<br />      },<br />      {<br />        &quot;title&quot;: &quot;contract17279.acmecorp&quot;,<br />        &quot;category&quot;: [<br />          {<br />            &quot;value&quot;: &quot;Production&quot;,<br />            &quot;domain&quot;: &quot;uddi:soa.com:environment&quot;<br />          },<br />          {<br />            &quot;value&quot;: &quot;apicontract.status.activated&quot;,<br />            &quot;domain&quot;: &quot;uddi:soa.com:wfstate&quot;<br />          }<br />        ],<br />        &quot;guid&quot;: {<br />          &quot;value&quot;: &quot;contract17279.acmecorp&quot;<br />        },<br />        &quot;Endpoints&quot;: {<br />          &quot;Endpoint&quot;: [<br />            {<br />              &quot;Category&quot;: &quot;Production&quot;,<br />              &quot;Uri&quot;: &quot;http://twitter_mary.broker.soa.com/mary&quot;<br />            }<br />          ]<br />        },<br />        &quot;Image&quot;: [<br />          {<br />            &quot;Url&quot;: &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api17276.acmecorp/avatar&quot;,<br />            &quot;Title&quot;: &quot;api&quot;,<br />            &quot;Link&quot;: &quot;#/api/api17276.acmecorp/versions/apiversion17278.acmecorp/details&quot;<br />          },<br />          {<br />            &quot;Url&quot;: &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app17118.acmecorp/avatar&quot;,<br />            &quot;Title&quot;: &quot;app&quot;,<br />            &quot;Link&quot;: &quot;#/app/app17118.acmecorp/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/details&quot;<br />          }<br />        ],<br />        &quot;Actions&quot;: {<br />          &quot;Action&quot;: [<br />            {<br />              &quot;value&quot;: &quot;apicontract.action.suspend&quot;,<br />              &quot;label&quot;: &quot;apicontract.action.suspend&quot;<br />            },<br />            {<br />              &quot;value&quot;: &quot;apicontract.action.cancel&quot;,<br />              &quot;label&quot;: &quot;apicontract.action.cancel&quot;<br />            }<br />          ]<br />        },<br />        &quot;EntityReferences&quot;: {<br />          &quot;EntityReference&quot;: [<br />            {<br />              &quot;Title&quot;: &quot;1.0&quot;,<br />              &quot;Guid&quot;: &quot;apiversion17278.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;apiversion&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                },<br />                {<br />                  &quot;value&quot;: &quot;Limited&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:visibility&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;Twitter_Jane&quot;,<br />              &quot;Guid&quot;: &quot;api17276.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;api&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;1&quot;,<br />              &quot;Guid&quot;: &quot;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;app-version&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;PaasTime2&quot;,<br />              &quot;Guid&quot;: &quot;app17118.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;app&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Guid&quot;: &quot;contract_request17280.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;board-item&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            }<br />          ]<br />        }<br />      },<br />      {<br />        &quot;title&quot;: &quot;contract17304.acmecorp&quot;,<br />        &quot;category&quot;: [<br />          {<br />            &quot;value&quot;: &quot;Production&quot;,<br />            &quot;domain&quot;: &quot;uddi:soa.com:environment&quot;<br />          },<br />          {<br />            &quot;value&quot;: &quot;apicontract.status.approved&quot;,<br />            &quot;domain&quot;: &quot;uddi:soa.com:wfstate&quot;<br />          }<br />        ],<br />        &quot;guid&quot;: {<br />          &quot;value&quot;: &quot;contract17304.acmecorp&quot;<br />        },<br />        &quot;Endpoints&quot;: {<br />          &quot;Endpoint&quot;: [<br />            {<br />              &quot;Category&quot;: &quot;Production&quot;,<br />              &quot;Uri&quot;: &quot;http://citygrid.broker.soa.com/2&quot;<br />            }<br />          ]<br />        },<br />        &quot;Image&quot;: [<br />          {<br />            &quot;Url&quot;: &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api11217.acmecorp/avatars/751757c08b084c7058acb2984cc1ac9c.png&quot;,<br />            &quot;Title&quot;: &quot;api&quot;,<br />            &quot;Link&quot;: &quot;#/api/api11217.acmecorp/versions/apiversion11219.acmecorp/details&quot;<br />          },<br />          {<br />            &quot;Url&quot;: &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app17118.acmecorp/avatar&quot;,<br />            &quot;Title&quot;: &quot;app&quot;,<br />            &quot;Link&quot;: &quot;#/app/app17118.acmecorp/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/details&quot;<br />          }<br />        ],<br />        &quot;Actions&quot;: {<br />          &quot;Action&quot;: [<br />            {<br />              &quot;value&quot;: &quot;apicontract.action.cancel&quot;,<br />              &quot;label&quot;: &quot;apicontract.action.cancel&quot;<br />            }<br />          ]<br />        },<br />        &quot;EntityReferences&quot;: {<br />          &quot;EntityReference&quot;: [<br />            {<br />              &quot;Title&quot;: &quot;2.0&quot;,<br />              &quot;Guid&quot;: &quot;apiversion11219.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;apiversion&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                },<br />                {<br />                  &quot;value&quot;: &quot;Public&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:visibility&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;CityGrid&quot;,<br />              &quot;Guid&quot;: &quot;api11217.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;api&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;1&quot;,<br />              &quot;Guid&quot;: &quot;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;app-version&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Title&quot;: &quot;PaasTime2&quot;,<br />              &quot;Guid&quot;: &quot;app17118.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;app&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            },<br />            {<br />              &quot;Guid&quot;: &quot;contract_request17305.acmecorp&quot;,<br />              &quot;Category&quot;: [<br />                {<br />                  &quot;value&quot;: &quot;board-item&quot;,<br />                  &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;<br />                }<br />              ]<br />            }<br />          ]<br />        }<br />      }<br />    ]<br />  },<br />  &quot;version&quot;: &quot;1.0&quot;<br />}</pre>
-<p><strong>Sample response headers: XML</strong></p>
+<p><a name="rss_applicationcontracts_json" id="rss_applicationcontracts_json"></a><strong>Sample response body: application/json</strong></p>
+<pre>{
+  "channel" : {
+    "title" : "Application Contracts",
+    "item" : [ {
+      "title" : "6ffa9ff3-e53a-4b32-9ad9-83e08728af2c.acmepaymentscorp",
+      "category" : [ {
+        "value" : "Sandbox",
+        "domain" : "uddi:soa.com:environment"
+      }, {
+        "value" : "apicontract.status.activated",
+        "domain" : "uddi:soa.com:wfstate"
+      }, {
+        "value" : "com.soa.apicontract.inforce",
+        "domain" : "uddi:soa.com:status"
+      }, {
+        "value" : "false",
+        "domain" : "uddi:soa.com:restrictedscope"
+      } ],
+      "guid" : {
+        "value" : "6ffa9ff3-e53a-4b32-9ad9-83e08728af2c.acmepaymentscorp"
+      },
+      "Endpoints" : {
+        "Endpoint" : [ {
+          "CName" : "acme-payments-api.10.1.20.137",
+          "Category" : "Production",
+          "Uri" : "http://10.1.20.137:9901/",
+          "ConnectionProperties" : [ ],
+          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp.production.virtual",
+          "BindingType" : "binding.http",
+          "EndpointKey" : "uddi:937b32ee-5540-11e4-9358-dbbe78cfdf00"
+        }, {
+          "CName" : "acme-payments-api.10.1.20.137",
+          "Category" : "Sandbox",
+          "Uri" : "http://10.1.20.137:9901/",
+          "ConnectionProperties" : [ ],
+          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp.sandbox.virtual",
+          "BindingType" : "binding.http",
+          "EndpointKey" : "uddi:944783df-5540-11e4-9358-dbbe78cfdf00"
+        } ]
+      },
+      "Image" : [ {
+        "Url" : "http://acmepaymentscorp.local/api/apis/f4ff81a9-02cc-4a02-ba2b-b90ec056a1c6.acmepaymentscorp/avatar",
+        "Title" : "api",
+        "Link" : "#/api/f4ff81a9-02cc-4a02-ba2b-b90ec056a1c6.acmepaymentscorp/versions/000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp/details"
+      }, {
+        "Url" : "http://acmepaymentscorp.local/api/apps/8bed5703-e495-4aec-83da-ac0ffb2ecfd3.acmepaymentscorp/avatar",
+        "Title" : "app",
+        "Link" : "#/app/8bed5703-e495-4aec-83da-ac0ffb2ecfd3.acmepaymentscorp/versions/6y5QK80GdG07BCMoO6MzLH86.acmepaymentscorp/details"
+      } ],
+      "Actions" : {
+        "Action" : [ {
+          "value" : "apicontract.action.suspend",
+          "label" : "apicontract.action.suspend"
+        }, {
+          "value" : "apicontract.action.cancel",
+          "label" : "apicontract.action.cancel"
+        } ]
+      },
+      "EntityReferences" : {
+        "EntityReference" : [ {
+          "Title" : "1.0",
+          "Guid" : "000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp",
+          "Category" : [ {
+            "value" : "apiversion",
+            "domain" : "uddi:soa.com:resourcetype"
+          }, {
+            "value" : "Limited",
+            "domain" : "uddi:soa.com:visibility"
+          }, {
+            "value" : "uddi:soa.com:api:resource-level-permissions-supported",
+            "domain" : "uddi:soa.com:api:resource-level-permissions"
+          } ]
+        }, {
+          "Title" : "ACME Payments API",
+          "Guid" : "f4ff81a9-02cc-4a02-ba2b-b90ec056a1c6.acmepaymentscorp",
+          "Category" : [ {
+            "value" : "api",
+            "domain" : "uddi:soa.com:resourcetype"
+          } ]
+        }, {
+          "Title" : "1.0",
+          "Guid" : "6y5QK80GdG07BCMoO6MzLH86.acmepaymentscorp",
+          "Category" : [ {
+            "value" : "app-version",
+            "domain" : "uddi:soa.com:resourcetype"
+          } ]
+        }, {
+          "Title" : "crosfhocal",
+          "Guid" : "8bed5703-e495-4aec-83da-ac0ffb2ecfd3.acmepaymentscorp",
+          "Category" : [ {
+            "value" : "app",
+            "domain" : "uddi:soa.com:resourcetype"
+          } ]
+        }, {
+          "Guid" : "contract_request10557.acmepaymentscorp",
+          "Category" : [ {
+            "value" : "board-item",
+            "domain" : "uddi:soa.com:resourcetype"
+          } ]
+        } ]
+      }
+    }, {
+      "title" : "e9a9f10f-ee3c-4caa-84d7-826dd504456f.acmepaymentscorp",
+      "category" : [ {
+        "value" : "Production",
+        "domain" : "uddi:soa.com:environment"
+      }, {
+        "value" : "apicontract.status.pending_approval",
+        "domain" : "uddi:soa.com:wfstate"
+      }, {
+        "value" : "com.soa.apicontract.draft",
+        "domain" : "uddi:soa.com:status"
+      }, {
+        "value" : "true",
+        "domain" : "uddi:soa.com:restrictedscope"
+      } ],
+      "guid" : {
+        "value" : "e9a9f10f-ee3c-4caa-84d7-826dd504456f.acmepaymentscorp"
+      },
+      "Endpoints" : {
+        "Endpoint" : [ {
+          "CName" : "acme-payments-api.10.1.20.137",
+          "Category" : "Production",
+          "Uri" : "http://10.1.20.137:9901/",
+          "ConnectionProperties" : [ ],
+          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp.production.virtual",
+          "BindingType" : "binding.http",
+          "EndpointKey" : "uddi:937b32ee-5540-11e4-9358-dbbe78cfdf00"
+        }, {
+          "CName" : "acme-payments-api.10.1.20.137",
+          "Category" : "Sandbox",
+          "Uri" : "http://10.1.20.137:9901/",
+          "ConnectionProperties" : [ ],
+          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp.sandbox.virtual",
+          "BindingType" : "binding.http",
+          "EndpointKey" : "uddi:944783df-5540-11e4-9358-dbbe78cfdf00"
+        } ]
+      },
+      "Image" : [ {
+        "Url" : "http://acmepaymentscorp.local/api/apis/f4ff81a9-02cc-4a02-ba2b-b90ec056a1c6.acmepaymentscorp/avatar",
+        "Title" : "api",
+        "Link" : "#/api/f4ff81a9-02cc-4a02-ba2b-b90ec056a1c6.acmepaymentscorp/versions/000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp/details"
+      }, {
+        "Url" : "http://acmepaymentscorp.local/api/apps/8bed5703-e495-4aec-83da-ac0ffb2ecfd3.acmepaymentscorp/avatar",
+        "Title" : "app",
+        "Link" : "#/app/8bed5703-e495-4aec-83da-ac0ffb2ecfd3.acmepaymentscorp/versions/6y5QK80GdG07BCMoO6MzLH86.acmepaymentscorp/details"
+      } ],
+      "Actions" : {
+        "Action" : [ {
+          "value" : "apicontract.action.reject",
+          "label" : "apicontract.action.reject"
+        }, {
+          "value" : "apicontract.action.cancel",
+          "label" : "apicontract.action.cancel"
+        }, {
+          "value" : "apicontract.action.editscope",
+          "label" : "apicontract.action.editscope"
+        }, {
+          "value" : "apicontract.action.edit",
+          "label" : "apicontract.action.edit"
+        } ]
+      },
+      "EntityReferences" : {
+        "EntityReference" : [ {
+          "Title" : "1.0",
+          "Guid" : "000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp",
+          "Category" : [ {
+            "value" : "apiversion",
+            "domain" : "uddi:soa.com:resourcetype"
+          }, {
+            "value" : "Limited",
+            "domain" : "uddi:soa.com:visibility"
+          }, {
+            "value" : "uddi:soa.com:api:resource-level-permissions-supported",
+            "domain" : "uddi:soa.com:api:resource-level-permissions"
+          } ]
+        }, {
+          "Title" : "ACME Payments API",
+          "Guid" : "f4ff81a9-02cc-4a02-ba2b-b90ec056a1c6.acmepaymentscorp",
+          "Category" : [ {
+            "value" : "api",
+            "domain" : "uddi:soa.com:resourcetype"
+          } ]
+        }, {
+          "Title" : "1.0",
+          "Guid" : "6y5QK80GdG07BCMoO6MzLH86.acmepaymentscorp",
+          "Category" : [ {
+            "value" : "app-version",
+            "domain" : "uddi:soa.com:resourcetype"
+          } ]
+        }, {
+          "Title" : "crosfhocal",
+          "Guid" : "8bed5703-e495-4aec-83da-ac0ffb2ecfd3.acmepaymentscorp",
+          "Category" : [ {
+            "value" : "app",
+            "domain" : "uddi:soa.com:resourcetype"
+          } ]
+        }, {
+          "Guid" : "contract_request10560.acmepaymentscorp",
+          "Category" : [ {
+            "value" : "board-item",
+            "domain" : "uddi:soa.com:resourcetype"
+          } ]
+        }, {
+          "Title" : "Bronze",
+          "Guid" : "671bb0b8-7089-4f31-b7fe-06cda72150f8.acmepaymentscorp",
+          "Category" : [ {
+            "value" : "license",
+            "domain" : "uddi:soa.com:resourcetype"
+          } ]
+        } ]
+      }
+    } ]
+  },
+  "version" : "1.0"
+}</pre>
+<p><strong>Sample response headers: text/xml</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Thu, 23 May 2013 22:17:47 GMT
-Content-Type: application/json</pre>
-<p><a name="rss_applicationcontracts_xml" id="rss_applicationcontracts_xml"></a><strong>Sample response body: XML</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;rss xmlns:ns2=&quot;http://soa.com/xsd/business/1.0&quot; xmlns:ns3=&quot;http://soa.com/xsd/user/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/rss/1.0&quot; xmlns:ns5=&quot;http://soa.com/xsd/comment/1.0&quot; xmlns:ns6=&quot;http://a9.com/-/spec/opensearch/1.1/&quot; xmlns:ns7=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns8=&quot;http://soa.com/xsd/fault/1.0&quot; xmlns:ns9=&quot;http://soa.com/xsd/api/1.0&quot; xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
+Date:  Thu, 16 Oct 2014 11:35:41 GMT
+Content-Type: text/xml</pre>
+<p><a name="rss_applicationcontracts_xml" id="rss_applicationcontracts_xml"></a><strong>Sample response body: text/xml</strong></p>
+<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;rss xmlns:ns2="http://soa.com/xsd/business/1.0" xmlns:ns3="http://soa.com/xsd/user/1.0" xmlns:ns4="http://soa.com/xsd/rss/1.0" xmlns:ns5="http://soa.com/xsd/comment/1.0" xmlns:ns6="http://a9.com/-/spec/opensearch/1.1/" xmlns:ns7="http://soa.com/xsd/resource/1.0" xmlns:ns8="http://soa.com/xsd/legals/1.0" xmlns:ns9="http://soa.com/xsd/dnmodel/1.0" xmlns:ns10="http://soa.com/xsd/fault/1.0" xmlns:ns11="http://soa.com/xsd/api/1.0" xmlns:ns12="http://soa.com/xsd/board/1.0" xmlns:ns13="http://soa.com/xsd/search/1.0" xmlns:ns14="http://soa.com/xsd/workflow/1.0" version="1.0"&gt;
   &lt;channel&gt;
     &lt;title&gt;Application Contracts&lt;/title&gt;
     &lt;item&gt;
-      &lt;title&gt;contract17122.acmecorp&lt;/title&gt;
-      &lt;category domain=&quot;uddi:soa.com:environment&quot;&gt;Production&lt;/category&gt;
-      &lt;category domain=&quot;uddi:soa.com:wfstate&quot;&gt;apicontract.status.activated&lt;/category&gt;
-      &lt;guid&gt;contract17122.acmecorp&lt;/guid&gt;
-      &lt;ns4:EntityReferences&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;1&lt;/Title&gt;
-          &lt;Guid&gt;apiversion17117.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;apiversion&lt;/ns4:Category&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:visibility&quot;&gt;Limited&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;LinkedIn_G3&lt;/Title&gt;
-          &lt;Guid&gt;api17115.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;api&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;1&lt;/Title&gt;
-          &lt;Guid&gt;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;app-version&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;PaasTime2&lt;/Title&gt;
-          &lt;Guid&gt;app17118.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;app&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Guid&gt;contract_request17123.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;board-item&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-      &lt;/ns4:EntityReferences&gt;
-      &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api17115.acmecorp/avatar&lt;/Url&gt;
-        &lt;Title&gt;api&lt;/Title&gt;
-        &lt;Link&gt;#/api/api17115.acmecorp/versions/apiversion17117.acmecorp/details&lt;/Link&gt;
-      &lt;/ns4:Image&gt;
-      &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app17118.acmecorp/avatar&lt;/Url&gt;
-        &lt;Title&gt;app&lt;/Title&gt;
-        &lt;Link&gt;#/app/app17118.acmecorp/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/details&lt;/Link&gt;
-      &lt;/ns4:Image&gt;
-      &lt;ns9:Endpoints&gt;
-        &lt;ns9:Endpoint&gt;
-          &lt;ns9:Category&gt;Production&lt;/ns9:Category&gt;
-          &lt;ns9:Uri&gt;http://linkedin_g3.broker.soa.com/linkedin_api_g3&lt;/ns9:Uri&gt;
-        &lt;/ns9:Endpoint&gt;
-      &lt;/ns9:Endpoints&gt;
-      &lt;ns4:Actions&gt;
-        &lt;ns4:Action label=&quot;apicontract.action.suspend&quot;&gt;apicontract.action.suspend&lt;/ns4:Action&gt;
-        &lt;ns4:Action label=&quot;apicontract.action.cancel&quot;&gt;apicontract.action.cancel&lt;/ns4:Action&gt;
-      &lt;/ns4:Actions&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;contract17172.acmecorp&lt;/title&gt;
-      &lt;category domain=&quot;uddi:soa.com:environment&quot;&gt;Production&lt;/category&gt;
-      &lt;category domain=&quot;uddi:soa.com:wfstate&quot;&gt;apicontract.status.activated&lt;/category&gt;
-      &lt;guid&gt;contract17172.acmecorp&lt;/guid&gt;
+      &lt;title&gt;6ffa9ff3-e53a-4b32-9ad9-83e08728af2c.acmepaymentscorp&lt;/title&gt;
+      &lt;category domain="uddi:soa.com:environment"&gt;Sandbox&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:wfstate"&gt;apicontract.status.activated&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:status"&gt;com.soa.apicontract.inforce&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:restrictedscope"&gt;false&lt;/category&gt;
+      &lt;guid&gt;6ffa9ff3-e53a-4b32-9ad9-83e08728af2c.acmepaymentscorp&lt;/guid&gt;
       &lt;ns4:EntityReferences&gt;
         &lt;ns4:EntityReference&gt;
           &lt;Title&gt;1.0&lt;/Title&gt;
-          &lt;Guid&gt;apiversion17171.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;apiversion&lt;/ns4:Category&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:visibility&quot;&gt;Limited&lt;/ns4:Category&gt;
+          &lt;Guid&gt;000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp&lt;/Guid&gt;
+          &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns4:Category&gt;
+          &lt;ns4:Category domain="uddi:soa.com:visibility"&gt;Limited&lt;/ns4:Category&gt;
+          &lt;ns4:Category domain="uddi:soa.com:api:resource-level-permissions"&gt;uddi:soa.com:api:resource-level-permissions-supported&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;PaymentAPI&lt;/Title&gt;
-          &lt;Guid&gt;api17169.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;api&lt;/ns4:Category&gt;
+          &lt;Title&gt;ACME Payments API&lt;/Title&gt;
+          &lt;Guid&gt;f4ff81a9-02cc-4a02-ba2b-b90ec056a1c6.acmepaymentscorp&lt;/Guid&gt;
+          &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;1&lt;/Title&gt;
-          &lt;Guid&gt;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;app-version&lt;/ns4:Category&gt;
+          &lt;Title&gt;1.0&lt;/Title&gt;
+          &lt;Guid&gt;6y5QK80GdG07BCMoO6MzLH86.acmepaymentscorp&lt;/Guid&gt;
+          &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app-version&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;PaasTime2&lt;/Title&gt;
-          &lt;Guid&gt;app17118.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;app&lt;/ns4:Category&gt;
+          &lt;Title&gt;crosfhocal&lt;/Title&gt;
+          &lt;Guid&gt;8bed5703-e495-4aec-83da-ac0ffb2ecfd3.acmepaymentscorp&lt;/Guid&gt;
+          &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
-          &lt;Guid&gt;contract_request17173.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;board-item&lt;/ns4:Category&gt;
+          &lt;Guid&gt;contract_request10557.acmepaymentscorp&lt;/Guid&gt;
+          &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;board-item&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
       &lt;/ns4:EntityReferences&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api17169.acmecorp/avatar&lt;/Url&gt;
+        &lt;Url&gt;http://acmepaymentscorp.local/api/apis/f4ff81a9-02cc-4a02-ba2b-b90ec056a1c6.acmepaymentscorp/avatar&lt;/Url&gt;
         &lt;Title&gt;api&lt;/Title&gt;
-        &lt;Link&gt;#/api/api17169.acmecorp/versions/apiversion17171.acmecorp/details&lt;/Link&gt;
+        &lt;Link&gt;#/api/f4ff81a9-02cc-4a02-ba2b-b90ec056a1c6.acmepaymentscorp/versions/000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app17118.acmecorp/avatar&lt;/Url&gt;
+        &lt;Url&gt;http://acmepaymentscorp.local/api/apps/8bed5703-e495-4aec-83da-ac0ffb2ecfd3.acmepaymentscorp/avatar&lt;/Url&gt;
         &lt;Title&gt;app&lt;/Title&gt;
-        &lt;Link&gt;#/app/app17118.acmecorp/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/details&lt;/Link&gt;
+        &lt;Link&gt;#/app/8bed5703-e495-4aec-83da-ac0ffb2ecfd3.acmepaymentscorp/versions/6y5QK80GdG07BCMoO6MzLH86.acmepaymentscorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
-      &lt;ns9:Endpoints&gt;
-        &lt;ns9:Endpoint&gt;
-          &lt;ns9:Category&gt;Production&lt;/ns9:Category&gt;
-          &lt;ns9:Uri&gt;http://paymentapi.broker.soa.com/mary&lt;/ns9:Uri&gt;
-        &lt;/ns9:Endpoint&gt;
-      &lt;/ns9:Endpoints&gt;
+      &lt;ns11:Endpoints&gt;
+        &lt;ns11:Endpoint&gt;
+          &lt;ns11:Category&gt;Production&lt;/ns11:Category&gt;
+          &lt;ns11:Uri&gt;http://10.1.20.137:9901/&lt;/ns11:Uri&gt;
+          &lt;ns11:CName&gt;acme-payments-api.10.1.20.137&lt;/ns11:CName&gt;
+          &lt;ns11:BindingQName&gt;{uri:acmepaymentscorp}Binding_svc_000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp.production.virtual&lt;/ns11:BindingQName&gt;
+          &lt;ns11:BindingType&gt;binding.http&lt;/ns11:BindingType&gt;
+          &lt;ns11:EndpointKey&gt;uddi:937b32ee-5540-11e4-9358-dbbe78cfdf00&lt;/ns11:EndpointKey&gt;
+        &lt;/ns11:Endpoint&gt;
+        &lt;ns11:Endpoint&gt;
+          &lt;ns11:Category&gt;Sandbox&lt;/ns11:Category&gt;
+          &lt;ns11:Uri&gt;http://10.1.20.137:9901/&lt;/ns11:Uri&gt;
+          &lt;ns11:CName&gt;acme-payments-api.10.1.20.137&lt;/ns11:CName&gt;
+          &lt;ns11:BindingQName&gt;{uri:acmepaymentscorp}Binding_svc_000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp.sandbox.virtual&lt;/ns11:BindingQName&gt;
+          &lt;ns11:BindingType&gt;binding.http&lt;/ns11:BindingType&gt;
+          &lt;ns11:EndpointKey&gt;uddi:944783df-5540-11e4-9358-dbbe78cfdf00&lt;/ns11:EndpointKey&gt;
+        &lt;/ns11:Endpoint&gt;
+      &lt;/ns11:Endpoints&gt;
       &lt;ns4:Actions&gt;
-        &lt;ns4:Action label=&quot;apicontract.action.suspend&quot;&gt;apicontract.action.suspend&lt;/ns4:Action&gt;
-        &lt;ns4:Action label=&quot;apicontract.action.cancel&quot;&gt;apicontract.action.cancel&lt;/ns4:Action&gt;
+        &lt;ns4:Action label="apicontract.action.suspend"&gt;apicontract.action.suspend&lt;/ns4:Action&gt;
+        &lt;ns4:Action label="apicontract.action.cancel"&gt;apicontract.action.cancel&lt;/ns4:Action&gt;
       &lt;/ns4:Actions&gt;
     &lt;/item&gt;
     &lt;item&gt;
-      &lt;title&gt;contract17248.acmecorp&lt;/title&gt;
-      &lt;category domain=&quot;uddi:soa.com:environment&quot;&gt;Production&lt;/category&gt;
-      &lt;category domain=&quot;uddi:soa.com:wfstate&quot;&gt;apicontract.status.approved&lt;/category&gt;
-      &lt;guid&gt;contract17248.acmecorp&lt;/guid&gt;
-      &lt;ns4:EntityReferences&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;1&lt;/Title&gt;
-          &lt;Guid&gt;apiversion17179.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;apiversion&lt;/ns4:Category&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:visibility&quot;&gt;Limited&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;PaymentAPI2&lt;/Title&gt;
-          &lt;Guid&gt;api17177.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;api&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;1&lt;/Title&gt;
-          &lt;Guid&gt;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;app-version&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;PaasTime2&lt;/Title&gt;
-          &lt;Guid&gt;app17118.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;app&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Guid&gt;contract_request17249.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;board-item&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-      &lt;/ns4:EntityReferences&gt;
-      &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api17177.acmecorp/avatar&lt;/Url&gt;
-        &lt;Title&gt;api&lt;/Title&gt;
-        &lt;Link&gt;#/api/api17177.acmecorp/versions/apiversion17179.acmecorp/details&lt;/Link&gt;
-      &lt;/ns4:Image&gt;
-      &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app17118.acmecorp/avatar&lt;/Url&gt;
-        &lt;Title&gt;app&lt;/Title&gt;
-        &lt;Link&gt;#/app/app17118.acmecorp/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/details&lt;/Link&gt;
-      &lt;/ns4:Image&gt;
-      &lt;ns9:Endpoints&gt;
-        &lt;ns9:Endpoint&gt;
-          &lt;ns9:Category&gt;Production&lt;/ns9:Category&gt;
-          &lt;ns9:Uri&gt;http://paymentapi2.broker.soa.com/mary&lt;/ns9:Uri&gt;
-        &lt;/ns9:Endpoint&gt;
-      &lt;/ns9:Endpoints&gt;
-      &lt;ns4:Actions&gt;
-        &lt;ns4:Action label=&quot;apicontract.action.activate&quot;&gt;apicontract.action.activate&lt;/ns4:Action&gt;
-        &lt;ns4:Action label=&quot;apicontract.action.cancel&quot;&gt;apicontract.action.cancel&lt;/ns4:Action&gt;
-      &lt;/ns4:Actions&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;contract17253.acmecorp&lt;/title&gt;
-      &lt;category domain=&quot;uddi:soa.com:environment&quot;&gt;Production&lt;/category&gt;
-      &lt;category domain=&quot;uddi:soa.com:wfstate&quot;&gt;apicontract.status.approved&lt;/category&gt;
-      &lt;guid&gt;contract17253.acmecorp&lt;/guid&gt;
-      &lt;ns4:EntityReferences&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;1&lt;/Title&gt;
-          &lt;Guid&gt;apiversion16997.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;apiversion&lt;/ns4:Category&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:visibility&quot;&gt;Limited&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;LinkedIn API_G&lt;/Title&gt;
-          &lt;Guid&gt;api16995.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;api&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;1&lt;/Title&gt;
-          &lt;Guid&gt;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;app-version&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;PaasTime2&lt;/Title&gt;
-          &lt;Guid&gt;app17118.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;app&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Guid&gt;contract_request17254.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;board-item&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-      &lt;/ns4:EntityReferences&gt;
-      &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api16995.acmecorp/avatar&lt;/Url&gt;
-        &lt;Title&gt;api&lt;/Title&gt;
-        &lt;Link&gt;#/api/api16995.acmecorp/versions/apiversion16997.acmecorp/details&lt;/Link&gt;
-      &lt;/ns4:Image&gt;
-      &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app17118.acmecorp/avatar&lt;/Url&gt;
-        &lt;Title&gt;app&lt;/Title&gt;
-        &lt;Link&gt;#/app/app17118.acmecorp/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/details&lt;/Link&gt;
-      &lt;/ns4:Image&gt;
-      &lt;ns9:Endpoints&gt;
-        &lt;ns9:Endpoint&gt;
-          &lt;ns9:Category&gt;Production&lt;/ns9:Category&gt;
-          &lt;ns9:Uri&gt;http://electronicpmts_api.broker.soa.com/2&lt;/ns9:Uri&gt;
-        &lt;/ns9:Endpoint&gt;
-      &lt;/ns9:Endpoints&gt;
-      &lt;ns4:Actions&gt;
-        &lt;ns4:Action label=&quot;apicontract.action.activate&quot;&gt;apicontract.action.activate&lt;/ns4:Action&gt;
-        &lt;ns4:Action label=&quot;apicontract.action.cancel&quot;&gt;apicontract.action.cancel&lt;/ns4:Action&gt;
-      &lt;/ns4:Actions&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;contract17260.acmecorp&lt;/title&gt;
-      &lt;category domain=&quot;uddi:soa.com:environment&quot;&gt;Production&lt;/category&gt;
-      &lt;category domain=&quot;uddi:soa.com:wfstate&quot;&gt;apicontract.status.activated&lt;/category&gt;
-      &lt;guid&gt;contract17260.acmecorp&lt;/guid&gt;
+      &lt;title&gt;e9a9f10f-ee3c-4caa-84d7-826dd504456f.acmepaymentscorp&lt;/title&gt;
+      &lt;category domain="uddi:soa.com:environment"&gt;Production&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:wfstate"&gt;apicontract.status.pending_approval&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:status"&gt;com.soa.apicontract.draft&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:restrictedscope"&gt;true&lt;/category&gt;
+      &lt;guid&gt;e9a9f10f-ee3c-4caa-84d7-826dd504456f.acmepaymentscorp&lt;/guid&gt;
       &lt;ns4:EntityReferences&gt;
         &lt;ns4:EntityReference&gt;
           &lt;Title&gt;1.0&lt;/Title&gt;
-          &lt;Guid&gt;apiversion11155.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;apiversion&lt;/ns4:Category&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:visibility&quot;&gt;Public&lt;/ns4:Category&gt;
+          &lt;Guid&gt;000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp&lt;/Guid&gt;
+          &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns4:Category&gt;
+          &lt;ns4:Category domain="uddi:soa.com:visibility"&gt;Limited&lt;/ns4:Category&gt;
+          &lt;ns4:Category domain="uddi:soa.com:api:resource-level-permissions"&gt;uddi:soa.com:api:resource-level-permissions-supported&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;Twitter&lt;/Title&gt;
-          &lt;Guid&gt;api11153.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;api&lt;/ns4:Category&gt;
+          &lt;Title&gt;ACME Payments API&lt;/Title&gt;
+          &lt;Guid&gt;f4ff81a9-02cc-4a02-ba2b-b90ec056a1c6.acmepaymentscorp&lt;/Guid&gt;
+          &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;1&lt;/Title&gt;
-          &lt;Guid&gt;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;app-version&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;PaasTime2&lt;/Title&gt;
-          &lt;Guid&gt;app17118.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;app&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Guid&gt;contract_request17261.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;board-item&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-      &lt;/ns4:EntityReferences&gt;
-      &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api11153.acmecorp/avatars/751757c08b084c7058acb2984cc1ac9c.png&lt;/Url&gt;
-        &lt;Title&gt;api&lt;/Title&gt;
-        &lt;Link&gt;#/api/api11153.acmecorp/versions/apiversion11155.acmecorp/details&lt;/Link&gt;
-      &lt;/ns4:Image&gt;
-      &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app17118.acmecorp/avatar&lt;/Url&gt;
-        &lt;Title&gt;app&lt;/Title&gt;
-        &lt;Link&gt;#/app/app17118.acmecorp/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/details&lt;/Link&gt;
-      &lt;/ns4:Image&gt;
-      &lt;ns9:Endpoints&gt;
-        &lt;ns9:Endpoint&gt;
-          &lt;ns9:Category&gt;Production&lt;/ns9:Category&gt;
-          &lt;ns9:Uri&gt;http://twitter.broker.soa.com/1&lt;/ns9:Uri&gt;
-        &lt;/ns9:Endpoint&gt;
-      &lt;/ns9:Endpoints&gt;
-      &lt;ns4:Actions&gt;
-        &lt;ns4:Action label=&quot;apicontract.action.cancel&quot;&gt;apicontract.action.cancel&lt;/ns4:Action&gt;
-      &lt;/ns4:Actions&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;contract17279.acmecorp&lt;/title&gt;
-      &lt;category domain=&quot;uddi:soa.com:environment&quot;&gt;Production&lt;/category&gt;
-      &lt;category domain=&quot;uddi:soa.com:wfstate&quot;&gt;apicontract.status.activated&lt;/category&gt;
-      &lt;guid&gt;contract17279.acmecorp&lt;/guid&gt;
-      &lt;ns4:EntityReferences&gt;
         &lt;ns4:EntityReference&gt;
           &lt;Title&gt;1.0&lt;/Title&gt;
-          &lt;Guid&gt;apiversion17278.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;apiversion&lt;/ns4:Category&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:visibility&quot;&gt;Limited&lt;/ns4:Category&gt;
+          &lt;Guid&gt;6y5QK80GdG07BCMoO6MzLH86.acmepaymentscorp&lt;/Guid&gt;
+          &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app-version&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;Twitter_Jane&lt;/Title&gt;
-          &lt;Guid&gt;api17276.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;api&lt;/ns4:Category&gt;
+          &lt;Title&gt;crosfhocal&lt;/Title&gt;
+          &lt;Guid&gt;8bed5703-e495-4aec-83da-ac0ffb2ecfd3.acmepaymentscorp&lt;/Guid&gt;
+          &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;1&lt;/Title&gt;
-          &lt;Guid&gt;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;app-version&lt;/ns4:Category&gt;
+          &lt;Guid&gt;contract_request10560.acmepaymentscorp&lt;/Guid&gt;
+          &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;board-item&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;PaasTime2&lt;/Title&gt;
-          &lt;Guid&gt;app17118.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;app&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Guid&gt;contract_request17280.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;board-item&lt;/ns4:Category&gt;
+          &lt;Title&gt;Bronze&lt;/Title&gt;
+          &lt;Guid&gt;671bb0b8-7089-4f31-b7fe-06cda72150f8.acmepaymentscorp&lt;/Guid&gt;
+          &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;license&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
       &lt;/ns4:EntityReferences&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api17276.acmecorp/avatar&lt;/Url&gt;
+        &lt;Url&gt;http://acmepaymentscorp.local/api/apis/f4ff81a9-02cc-4a02-ba2b-b90ec056a1c6.acmepaymentscorp/avatar&lt;/Url&gt;
         &lt;Title&gt;api&lt;/Title&gt;
-        &lt;Link&gt;#/api/api17276.acmecorp/versions/apiversion17278.acmecorp/details&lt;/Link&gt;
+        &lt;Link&gt;#/api/f4ff81a9-02cc-4a02-ba2b-b90ec056a1c6.acmepaymentscorp/versions/000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app17118.acmecorp/avatar&lt;/Url&gt;
+        &lt;Url&gt;http://acmepaymentscorp.local/api/apps/8bed5703-e495-4aec-83da-ac0ffb2ecfd3.acmepaymentscorp/avatar&lt;/Url&gt;
         &lt;Title&gt;app&lt;/Title&gt;
-        &lt;Link&gt;#/app/app17118.acmecorp/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/details&lt;/Link&gt;
+        &lt;Link&gt;#/app/8bed5703-e495-4aec-83da-ac0ffb2ecfd3.acmepaymentscorp/versions/6y5QK80GdG07BCMoO6MzLH86.acmepaymentscorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
-      &lt;ns9:Endpoints&gt;
-        &lt;ns9:Endpoint&gt;
-          &lt;ns9:Category&gt;Production&lt;/ns9:Category&gt;
-          &lt;ns9:Uri&gt;http://twitter_mary.broker.soa.com/mary&lt;/ns9:Uri&gt;
-        &lt;/ns9:Endpoint&gt;
-      &lt;/ns9:Endpoints&gt;
+      &lt;ns11:Endpoints&gt;
+        &lt;ns11:Endpoint&gt;
+          &lt;ns11:Category&gt;Production&lt;/ns11:Category&gt;
+          &lt;ns11:Uri&gt;http://10.1.20.137:9901/&lt;/ns11:Uri&gt;
+          &lt;ns11:CName&gt;acme-payments-api.10.1.20.137&lt;/ns11:CName&gt;
+          &lt;ns11:BindingQName&gt;{uri:acmepaymentscorp}Binding_svc_000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp.production.virtual&lt;/ns11:BindingQName&gt;
+          &lt;ns11:BindingType&gt;binding.http&lt;/ns11:BindingType&gt;
+          &lt;ns11:EndpointKey&gt;uddi:937b32ee-5540-11e4-9358-dbbe78cfdf00&lt;/ns11:EndpointKey&gt;
+        &lt;/ns11:Endpoint&gt;
+        &lt;ns11:Endpoint&gt;
+          &lt;ns11:Category&gt;Sandbox&lt;/ns11:Category&gt;
+          &lt;ns11:Uri&gt;http://10.1.20.137:9901/&lt;/ns11:Uri&gt;
+          &lt;ns11:CName&gt;acme-payments-api.10.1.20.137&lt;/ns11:CName&gt;
+          &lt;ns11:BindingQName&gt;{uri:acmepaymentscorp}Binding_svc_000e4b2e-a84f-478a-91f3-08a90b300eb7.acmepaymentscorp.sandbox.virtual&lt;/ns11:BindingQName&gt;
+          &lt;ns11:BindingType&gt;binding.http&lt;/ns11:BindingType&gt;
+          &lt;ns11:EndpointKey&gt;uddi:944783df-5540-11e4-9358-dbbe78cfdf00&lt;/ns11:EndpointKey&gt;
+        &lt;/ns11:Endpoint&gt;
+      &lt;/ns11:Endpoints&gt;
       &lt;ns4:Actions&gt;
-        &lt;ns4:Action label=&quot;apicontract.action.suspend&quot;&gt;apicontract.action.suspend&lt;/ns4:Action&gt;
-        &lt;ns4:Action label=&quot;apicontract.action.cancel&quot;&gt;apicontract.action.cancel&lt;/ns4:Action&gt;
-      &lt;/ns4:Actions&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;contract17304.acmecorp&lt;/title&gt;
-      &lt;category domain=&quot;uddi:soa.com:environment&quot;&gt;Production&lt;/category&gt;
-      &lt;category domain=&quot;uddi:soa.com:wfstate&quot;&gt;apicontract.status.approved&lt;/category&gt;
-      &lt;guid&gt;contract17304.acmecorp&lt;/guid&gt;
-      &lt;ns4:EntityReferences&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;2.0&lt;/Title&gt;
-          &lt;Guid&gt;apiversion11219.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;apiversion&lt;/ns4:Category&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:visibility&quot;&gt;Public&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;CityGrid&lt;/Title&gt;
-          &lt;Guid&gt;api11217.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;api&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;1&lt;/Title&gt;
-          &lt;Guid&gt;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;app-version&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;PaasTime2&lt;/Title&gt;
-          &lt;Guid&gt;app17118.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;app&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-        &lt;ns4:EntityReference&gt;
-          &lt;Guid&gt;contract_request17305.acmecorp&lt;/Guid&gt;
-          &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;board-item&lt;/ns4:Category&gt;
-        &lt;/ns4:EntityReference&gt;
-      &lt;/ns4:EntityReferences&gt;
-      &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api11217.acmecorp/avatars/751757c08b084c7058acb2984cc1ac9c.png&lt;/Url&gt;
-        &lt;Title&gt;api&lt;/Title&gt;
-        &lt;Link&gt;#/api/api11217.acmecorp/versions/apiversion11219.acmecorp/details&lt;/Link&gt;
-      &lt;/ns4:Image&gt;
-      &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app17118.acmecorp/avatar&lt;/Url&gt;
-        &lt;Title&gt;app&lt;/Title&gt;
-        &lt;Link&gt;#/app/app17118.acmecorp/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/details&lt;/Link&gt;
-      &lt;/ns4:Image&gt;
-      &lt;ns9:Endpoints&gt;
-        &lt;ns9:Endpoint&gt;
-          &lt;ns9:Category&gt;Production&lt;/ns9:Category&gt;
-          &lt;ns9:Uri&gt;http://citygrid.broker.soa.com/2&lt;/ns9:Uri&gt;
-        &lt;/ns9:Endpoint&gt;
-      &lt;/ns9:Endpoints&gt;
-      &lt;ns4:Actions&gt;
-        &lt;ns4:Action label=&quot;apicontract.action.cancel&quot;&gt;apicontract.action.cancel&lt;/ns4:Action&gt;
+        &lt;ns4:Action label="apicontract.action.reject"&gt;apicontract.action.reject&lt;/ns4:Action&gt;
+        &lt;ns4:Action label="apicontract.action.cancel"&gt;apicontract.action.cancel&lt;/ns4:Action&gt;
+        &lt;ns4:Action label="apicontract.action.editscope"&gt;apicontract.action.editscope&lt;/ns4:Action&gt;
+        &lt;ns4:Action label="apicontract.action.edit"&gt;apicontract.action.edit&lt;/ns4:Action&gt;
       &lt;/ns4:Actions&gt;
     &lt;/item&gt;
   &lt;/channel&gt;
@@ -524,7 +517,7 @@ Content-Type: application/json</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -534,7 +527,7 @@ Content-Type: application/json</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -612,20 +605,29 @@ Content-Type: application/json</pre>
       <th width="20%">Item</th>
       <th width="80%">Value</th>
     </tr>
+    <tr>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http400">400</a></td>
+      <td>Bad request: Returned if the client sends invalid parameters or body content.
+        For example, you might get this response if you have typos in the URL.</td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
+    </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http404">404</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http404">404</a></td>
       <td>The resource could not be found.</td>
     </tr>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
     </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

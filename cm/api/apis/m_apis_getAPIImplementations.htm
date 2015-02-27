@@ -19,7 +19,7 @@ no-catalog: true
 <p><!-- #BeginLibraryItem "/Library/desc_getAPIImplementations.lbi" -->
 Returns a list of valid current services matching the query parameter provided, for selection when creating an API from an existing service.<!-- #EndLibraryItem --></p>
 <p> This operation searches for valid services matching the query parameter, so that one of the services can be selected as the implementation for the API. It is used by the platform portal when adding an API using the <strong>Add API with Existing Service</strong> option. Note that this operation only returns valid results if the <strong>Creation of API with existing service</strong> platform setting is enabled in the platform instance. This setting is controlled by the Site Admin.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Anyone can run this operation, but if the user is not logged in no results are returned. The results returned are dependent on the user's role or roles, and therefore, the user's permission to view the information.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Anyone can run this operation, but if the user is not logged in no results are returned. The results returned are dependent on the user's role or roles, and therefore, the user's permission to view the information.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -62,7 +62,8 @@ Returns a list of valid current services matching the query parameter provided, 
 <p><strong>Sample request headers</strong></p>
 <pre>GET /api/apis/services?q=acme HTTP/1.1
 Host: &lt;hostname&gt;
-Accept: application/json, text/javascript, */*; q=0.01</pre>
+Accept: application/json, text/javascript, */*; q=0.01<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->
+X-Csrf-Token_{tenant}: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -71,7 +72,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -81,7 +82,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_appxml_or_appjson.lbi" --><strong>application/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -126,11 +127,11 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. There are two matching services.</p>
-<p><strong>Sample response headers: JSON</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>HTTP/1.1 200 OK
 Content-Type: application/json
 Expires: Wed, 18 Jun 2014 14:55:05 GMT</pre>
-<p><strong>Sample response body: JSON</strong></p>
+<p><strong>Sample response body: application/json</strong></p>
 <pre>{
   "APIImplementation" : [ {
     "Name" : "ACME Payments API_1.0_Sandbox_Virtual",
@@ -148,7 +149,7 @@ Expires: Wed, 18 Jun 2014 14:55:05 GMT</pre>
 <p><strong>Sample response headers: application/xml</strong></p>
 <pre>Content-Type: application/xml</pre>
 <p><strong>Sample response body: application/xml</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;APIImplementations xmlns="http://soa.com/xsd/api/1.0" xmlns:ns2="http://soa.com/xsd/business/1.0" xmlns:ns3="http://soa.com/xsd/legals/1.0" xmlns:ns4="http://soa.com/xsd/resource/1.0"&gt;
   &lt;APIImplementation&gt;
     &lt;Name&gt;ACME Payments API_1.0_Sandbox_Virtual&lt;/Name&gt;
@@ -170,7 +171,7 @@ Expires: Wed, 18 Jun 2014 14:55:05 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -180,7 +181,7 @@ Expires: Wed, 18 Jun 2014 14:55:05 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_appxml_or_appjson.lbi" --><strong>application/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -223,18 +224,22 @@ Expires: Wed, 18 Jun 2014 14:55:05 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http400">400</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http400">400</a></td>
       <td>Bad request: Returned if the client sends invalid parameters or body content.
         For example, you might get this response if you didn't include the required <strong>q</strong> parameter in the request.</td>
     </tr>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

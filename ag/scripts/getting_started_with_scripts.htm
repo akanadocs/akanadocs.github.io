@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Getting Started with Scripts using Policy Manager 7.0
+title: Getting Started with Scripts using Policy Manager 7.x
 description: Learn about the script creation process, using a Script Activity in a process, documentation, and management tools.
 product: ag
 category: gs
@@ -17,8 +17,10 @@ nav-title: Getting Started with Scripts
 
 <a href="script_management.htm" class="button secondary">Managing Scripts</a>
 
-<a href="../assets/scriptDocs/index.html" class="button secondary">Policy Manager Scripting API</a>
+<a href="http://docs.soa.com/ag/assets/scriptDocs/index.html" class="button secondary">Policy Manager Scripting API (7.0 / 7.1)</a><p></p>
 
+
+<a href="http://docs.soa.com/ag/assets/scriptDocs_pm72/index.html" class="button secondary">Policy Manager Scripting API (7.2)</a>
 
 
 
@@ -114,7 +116,7 @@ nav-title: Getting Started with Scripts
   <img src="images/script_activity_imports_area.jpg" width="572" height="174"></p>
 <p>Figure. Script Activity Imports Area</p>
 <p>In the figure above the json2 Script from the Registry Scripts folder is imported. Any functions defined in json2 can be used within the Script Activity source code. </p>
-<p>If you are using scripts in a process, the following pre-defined variables are provided.  For more information refer to the Scripts API located in the \sm70\docs\scriptDocs folder of the Policy Manager 7.0 release folder. Click index.htm to launch the documentation: </p>
+<p>If you are using scripts in a process, the following pre-defined variables are provided.  For more information refer to the Scripts API located in the \sm70\docs\scriptDocs folder of the Policy Manager 7.0, 7.1, or 7.2 release folder. Click index.htm to launch the documentation: </p>
 <ul class="usingOrderedList">
   <li> <strong>processContext: </strong> Provides functions for retrieving and changing information about the currently running process, such as the variables defined in the process and the authenticated subject(s) of the process. </li>
   <li> <strong>systemLog</strong>:  Provides logging functions to the container&rsquo;s log. The statements logged with this interface are mixed with the other system log statements. </li>
@@ -128,8 +130,11 @@ nav-title: Getting Started with Scripts
 <h3>Policy Manager Scripting API</h3>
 </a>
 
- <p>The <em>Policy Manager Scripting API</em> located in the <strong>\sm70\docs\scriptDocs</strong> folder of the Policy Manager 7.0 Release Folder provides a series of interfaces and classes you can use to build process related scripts. The API includes lots of use cases and sample code you can experiment with and use as a baseline when building your own scripts. </p>
- <img src="images/script_api_home_page.jpg" width="564" height="327" />
+ <p>The <em>Policy Manager Scripting API</em> located in the <strong>\sm70\docs\scriptDocs</strong> folder of the Policy Manager 7.0, 7.1, and 7.2  Release Folder provides a series of interfaces and classes you can use to build process related scripts. The API includes lots of use cases and sample code you can experiment with and use as a baseline when building your own scripts. 
+ </p>
+ <p>You can access the scripting API for your Policy Manager version here: <a href="http://docs.soa.com/ag/assets/scriptDocs/index.html" >Policy Manager 7.0 and 7.1</a> and <a href="http://docs.soa.com/ag/assets/scriptDocs_pm72/index.html">Policy Manager 7.2<br />
+  <br />
+ </a> <img src="images/script_api_home_page.jpg" width="564" height="327" /></p>
 <p><a href="#top">Back to top</a></p>
 
 

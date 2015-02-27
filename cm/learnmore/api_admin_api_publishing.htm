@@ -1,6 +1,6 @@
 ---
 layout: page
-title: API Publishing
+title: API Publishing | API Administration | Community Manager Help
 description: Learn how to set up and manage your API on the platform.
 product: cm
 category: learn
@@ -18,9 +18,13 @@ no-catalog: true
 <div class = "divider1"></div>
 
 <h3 style="color: gray;">Table of Contents</h3>
+
+
+<h3 style="color: gray;"><a href="#h_api_setup">API Setup</a></h3>
+
+
 <ol class="table_of_contents">
   <li><a href="#what_are_apis">What are APIs?</a></li>
-  <li><a href="#what_is_a_private_api">What is a private API?</a></li>
   <li><a href="#what_are_the_recommended_api_development_best_practices">What are the recommended API development best practices?</a></li>
   <li><a href="#what_is_the_minimum_requirement_for_adding_an_api">What is the minimum requirement for adding an API?</a></li>
   <li><a href="#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></li>
@@ -28,39 +32,55 @@ no-catalog: true
   <li><a href="#how_do_i_add_an_api">How do I add an API?</a></li>
   <li><a href="#how_do_i_add_a_new_api">How do I add a new API (API with New Service)?</a></li>
   <li><a href="#how_do_i_add_an_api_from_a_policy_manager_service">How do I add an API from an existing API Gateway service (API with Existing Service)?</a></li>
-  <li><a href="#what_is_scope_mapping_and_how_do_i_set_it_up">What is scope mapping and how do I set it up?</a></li>
-  <li><a href="#how_do_i_inform_app_developers_about_available_licenses_and_app_access">How do I inform app developers about available licenses and API access?</a></li>
   <li><a href="#how_do_i_add_a_rest_service">How do I add a REST service?</a></li>
+  <li><a href="#what_is_anonymous_api_access">What is Anonymous API access?</a></li>
+  <li><a href="#what_is_a_private_api">What is a private API?</a></li>
   <li><a href="#how_do_i_manage_api_visibility">How do I manage API visibility?</a></li>
   <li><a href="#what_is_a_proxy_api">What is a proxy API?</a></li>
   <li><a href="#what_is_the_difference_between_sandbox_and_production_environments">What is the difference between sandbox and production environments?</a></li>
   <li><a href="#what_is_an_api_type_profile">What is an API Type Profile?</a></li>
   <li><a href="#what_are_the_supported_methods_and_content_types_for_requests">What are the supported HTTP methods and content types for requests?</a></li>
-  <li><a href="#what_is_anonymous_api_access">What is Anonymous API Access?</a></li>
+  <li><a href="#what_is_a_default_profile_for_a_rest_api">What is a Default Profile for a REST API?</a></li>
+  <li><a href="#how_do_i_define_a_custom_content_type_for_a_rest_api">How do I define a custom content-type for a REST API?</a></li>
+  <li><a href="#what_is_autoconnect">What is auto-connect?</a></li>
+  <li><a href="#how_do_i_set_up_autoconnect_for_my_api">How do I set up auto-connect for my API?</a></li>
+</ol>
+
+
+<h3 style="color: gray;"><a href="#h_api_management">API Management</a></h3>
+<ol class="table_of_contents">
   <li><a href="#how_do_i_add_an_api_version">How do I add an API version?</a></li>
   <li><a href="#how_do_i_edit_an_api">How do I edit an API?</a></li>
   <li><a href="#how_do_i_export_an_api">How do I export an API?</a></li>
   <li><a href="#what_are_the_contents_of_the_api_export_file">What are the contents of the API export file?</a></li>
   <li><a href="#how_do_i_import_an_api_from_an_export_file">How do I import an API from an export file?</a></li>
   <li><a href="#how_do_i_delete_an_api">How do I delete an API?</a></li>
+  </ol>
+
+
+<h3 style="color: gray;"><a href="#h_scopes_and_licenses">Scopes and Licenses</a></h3>
+
+
+<ol class="table_of_contents">
   <li><a href="#how_do_i_determine_what_licenses_will_be_available_for_my_api">How do I determine what licenses will be available for my API?</a></li>
   <li><a href="#how_do_i_edit_the_license_on_an_api_access_request_api_administrator">How do I edit the license on an API access request?</a></li>
-  <li><a href="#how_do_i_see_the_status_of_my_apis_contracts_with_apps">How do I see the status of my API's contracts with apps?</a></li>
-  <li><a href="#what_is_a_default_profile_for_a_rest_api">What is a Default Profile for a REST API?</a></li>
-  <li><a href="#how_do_i_define_a_custom_content_type_for_a_rest_api">How do I define a custom content-type for a REST API?</a></li>
+  <li><a href="#what_is_scope_mapping_and_how_do_i_set_it_up">What is scope mapping and how do I set it up?</a></li>
+  <li><a href="#how_do_i_inform_app_developers_about_available_licenses_and_app_access">How do I inform app developers about available licenses and API access?</a></li>
 </ol>
+
+
+
 <div class = "divider1"></div>
+
+
+
+<h3><a name="h_api_setup">API Setup</h3>
+
+
 
 
 <a name="what_are_apis"></a><h3>What are APIs?</h3>
 <p>APIs are business capabilities exposed over the internet for applications to use. Simply put, an API is a programming interface that your organization exposes over the internet that allows applications to communicate with your backend systems. Typically, you build APIs that expose specific aspects of business functionality. These are things that differentiate you in the market place and that make money for you and your company. So essentially what you are doing through the creation of APIs is creating a new channel for your business by exposing a set of capabilities for your product (services that people can build into mobile applications and sell to their customers), thereby creating a channel for your products and services online.</p>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="what_is_a_private_api"></a><h3>What is a private API?</h3>
-<p>The platform supports public and private APIs. Public APIs are visible to members (users who have signed up and logged in) and visitors (users who have not yet signed up). Private APIs are visible only to platform users who are members of one or more groups that have been specifically invited to have visibility of the API.</p>
-<p>In the platform, any API or other resource that is private is shown with a &quot;lock&quot; icon to indicate privacy. </p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -119,7 +139,7 @@ no-catalog: true
   <li><strong>Monitoring</strong>&#8212;Collects transaction details including recorded messages for every transaction.</li>
   <li><strong>OAuth</strong>&#8212;Provides support for applications performing authentication and authorization using OAuth.</li>
 </ul>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="20%">Policy Name</th>
@@ -180,13 +200,13 @@ no-catalog: true
 </tbody>
 </table>
 <br />
-<p>For more information about policies, see <a href="policy_list.htm">Policy List</a>.</p>
+<p>For more information about policies, see <a href="api_admin_policy_list.htm">Policy List</a>.</p>
 <p>If you subscribe to an  API Enterprise Management Platform or decide to install on-premises then you  also have the ability to create and manage your own Policies. If you require a policy that is not on the default list, <a href="basics_support.htm#how_do_i_contact_technical_support">submit a support request</a>.</p>
 <p><a href="#top">Back to top</a></p>
 
 
 <a name="what_is_the_minimum_policy_requirement_for_my_api"></a><h3>What is the minimum policy requirement for my API?</h3>
-<p>When you add an API using the <strong>Add a New API Wizard</strong>, in the <em>Policies</em> section on the <em>Proxy</em> page, you MUST select one security policy (e.g., Category: Simple Header  Security) and you should select a monitoring policy if you want to see charts  and logs.</p>
+<p>When you add an API using the <strong>Add a New API Wizard</strong>, in the <em>Policies</em> section on the <em>Proxy</em> page, you MUST select one security policy (for example, Category: Simple Header  Security) and you should select a monitoring policy if you want to see charts  and logs.</p>
 <p>If there are no policies available for selection, consult your Site Admin.</p>
 <p><a href="#top">Back to top</a></p>
 
@@ -202,6 +222,12 @@ no-catalog: true
   <li><strong>API with Existing Service</strong>: use this option when the service is already defined in the API Gateway console, or if you want to create the service using the flexible service definition model offered by the API Gateway. For more information, see <a href="#how_do_i_add_an_api_from_a_policy_manager_service">How do I add an API from an existing API Gateway service (API with Existing Service)?</a> below.</li>
 </ul>
 <p><strong>Note</strong>: If the above options are not available to you and you feel they should be, contact your Site Admin for assistance.</p>
+<p>Once the basic API setup is done, there are several other important steps you might need to complete, depending on the nature of your API:</p>
+<ul>
+  <li>Setting up OAuth details for the API, if applicable. See See <a href="api_admin_oauth_support.htm#how_do_i_configure_my_api_with_an_oauth_provider">How do I configure my API with an OAuth Provider?</a></li>
+  <li>Scope mapping, if your API is using licenses. <a href="#what_is_scope_mapping_and_how_do_i_set_it_up">What is scope mapping and how do I set it up?</a></li>
+  <li>Setting up auto-connect. See <a href="#how_do_i_set_up_autoconnect_for_my_api">How do I set up Auto-Connect for my API?</a> Note: If your API uses licenses, be sure to set up scope mapping before setting up auto-connect.</li>
+</ul>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -216,13 +242,13 @@ no-catalog: true
 </ul>
 <p>The <em>Add APIs Wizard</em> includes the following sections:</p>
 <p><strong>API</strong></p>
-<p>On the <em>API</em> page you perform the initial step of specifying an API Name, Version ID, Tags, Visibility (Public/Private), API Description, Version Description, and API Icon. This information is displayed on your public API page and in the API search results.</p>
+<p>On the <em>API</em> page you perform the initial step of specifying an API Name, Version ID, Tags, <a href="basics_glossary.htm#gl_visibility">Visibility</a>, API Description, Version Description, and API Icon. This information is displayed on your public API page and in the API search results.</p>
 <p>A platform user who performs a search and finds your public API page, sees the API description and can rate and write and review your API. Individuals can also participate in a Yes/No survey indicating whether a review was useful or not. Based on this high visibility it's important that your API description is highly informative and includes the necessary marketing, functional, and use case information that will engage customers to request access to your API.</p>
 <p><strong>Target</strong></p>
 <p>On the <em>Target</em> page, you can configure SOAP-based APIs by specifying the SOAP version and WSDL. REST-based APIs are configured by specifying one or more operations. Policy selection is not required for the Target URL.</p>
 <p><strong>Proxy</strong></p>
 <p>The Proxy API page allows you to configure your API's proxy settings. If you would like to proxy your API, select the <strong>Yes</strong> radio button in the <em>Proxy API</em> section.</p>
-<p>There are many benefits to proxying your API including utilizing platform security and service-level policies, monitoring performance, and allowing App Developers to gain access to your API sandbox endpoint (to test API functionality in their app), and production endpoint (to use API functionality in a live application). The Allow Anonymous Access option allows you to enable anonymous access to an API endpoint if you would like to offer a preview of an API to developers without requiring users to create an app or sign up to the platform. For more information, see <a href="#what_is_anonymous_api_access">What is anonymous API access?</a></p>
+<p>There are many benefits to proxying your API including utilizing platform security and service-level policies, monitoring performance, and allowing App Developers to gain access to your API sandbox endpoint (to test API functionality in their app), and production endpoint (to use API functionality in a live application). The Allow Anonymous Access option allows you to enable <a href="basics_glossary.htm#gl_anonymoususer">anonymous</a> access to an API endpoint if you would like to offer a preview of an API to developers without requiring users to create an app or sign up to the platform. For more information, see <a href="#what_is_anonymous_api_access">What is anonymous API access?</a></p>
 <h5>To add a new API:</h5>
 <p><strong>A. Launch the Add a New API Wizard</strong></p>
 <ol>
@@ -235,7 +261,7 @@ no-catalog: true
 </blockquote>
 <p><strong>B. Specify API General Information</strong></p>
 <ol>
-  <li>On the <em>API</em> page, specify the API Name, Version ID, Tags, Visibility (Public/Private), API Description, Version Description, and API Icon for the API. All the information you specify here displays on your customer-facing <em>API Details</em> page.
+  <li>On the <em>API</em> page, specify the API Name, Version ID, Tags, <a href="basics_glossary.htm#gl_visibility">Visibility</a>, API Description, Version Description, and API Icon for the API. All the information you specify here displays on your customer-facing <em>API Details</em> page.
     <ul>
       <li>For information on Public and Private APIs, see <a href="#how_do_i_manage_api_visibility">How do I manage API visibility?</a></li>
       <li>For details on setting up your API avatar, see <a href="basics_account_management.htm#how_do_i_upload_and_crop_icons">How do I upload and crop icons?</a></li>
@@ -286,7 +312,7 @@ no-catalog: true
     <br />
     For the typical REST service, the most common methods, URIs, and serialization types would be:<br />
     <br />
-    <table cellspacing="0px" class="doctable" style="width: 90%;">
+    <table cellspacing="0px" class="doctable" style="width: 98%;">
       <thead>
         <tr>
           <th width="20%">Operation</th>
@@ -364,17 +390,14 @@ no-catalog: true
   <li>In the <em>Production Endpoint</em> section, configure the proxy information for each Sandbox or Production endpoint.
     <ul>
       <li>In the <strong>URL</strong> section, specify the protocol. When the system proxies the API, the URL is made up of a selected protocol and hostname in the first field plus the path in the second field. You do not need to specify a path. The default URL shown in this field is constructed from the <a href="basics_glossary.htm#gl_deploymentzone">deployment zones</a> loaded in the platform or, if no deployment zones were loaded, based on Network Director instances configured in the organization path from the root to the tenant organization.</li>
-      <li>For <strong>Allow Anonymous Access</strong>, click the <strong>Yes</strong> or <strong>No</strong> radio button to indicate whether you would like to enable or disable anonymous access for this API. See <a href="#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</li>
+      <li>For <strong>Allow Anonymous Access</strong>, click the <strong>Yes</strong> or <strong>No</strong> radio button to indicate whether you would like to enable or disable <a href="basics_glossary.htm#gl_anonymoususer">anonymous</a> access for this API. See <a href="#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</li>
       <li>For <strong>This API requires Approval</strong>, indicate whether you would like to approve API access requests made with the <strong>API Access Wizard</strong>. All API Access Requests can be monitored by API Providers and designated administrators in the <em>API Name &gt; Apps</em> section.</li>
       <li>If you select <strong>Yes</strong>, proceed and configure the <em>Production Endpoint </em>and <em>Advanced Options</em>.</li>
       <li><em>Its common practice for Sandbox endpoint requests to be auto-approved. Production endpoint requests usually go through an approval cycle as API developers may want to review the app requesting access to see how the API functionality is being used.</em></li>
     </ul>
   </li>
-  <li>Enter the <strong>CNAME</strong>. This represents the host name that is assigned to the proxy that is visible to individuals viewing your API. Note: The API Provider is responsible for mapping the Host Name of the IP Address to the applicable DNS.
-<ul>
-      <li>As you populate the fields, the Published URL display name updates to reflect your changes.</li>
-    </ul>
-  </li>
+  <li>Enter the <strong>CNAME</strong>. This represents the host name that is assigned to the proxy that is visible to individuals viewing your API. The API Provider is responsible for mapping the Host Name of the IP Address to the applicable DNS.
+    <p><strong>Note</strong>: There are some headers that need to be set up in the underlying infrastructure, if your implementation uses load balancing, so that messages will be passed correctly. This is a Site Admin task. Full information is in the Site Admin help (<em>How do I set up and configure an OAuth Provider domain?</em>).</p></li>
   </ol>
 <p><strong>H. Configure Advanced Options</strong></p>
 <ol>
@@ -400,9 +423,9 @@ no-catalog: true
 <strong><em>Select Policies:</em></strong>
 <ol>
 <li>In the <em>Policies</em> section, select the policies that you would like the system to enforce on the proxy.
-  Note: <em>You MUST select one security policy (e.g., Category: Simple Header Security) and you should select a monitoring policy if you want to see charts and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></li>
+  Note: <em>You MUST select one security policy (for example, Category: Simple Header Security) and you should select a monitoring policy if you want to see charts and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></li>
  <li>Also note that if you select a monitoring policy<em>, </em>app data is not supported in <em>My APIs &gt; Monitoring</em> if Anonymous API Access is enabled. See <a href="#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</li>
- <li>If your API will be supporting OAuth, its best practice to use the <strong>Edit</strong> function on the <em>API Details</em> page to select the OAuthSecurity policy after you have configured the API to support OAuth (i.e., adding an OAuth Provider in the <em>Site Admin &gt; Domains</em> section), and configuring the API using the <strong>OAuth Details</strong> function on the <em>API Details</em> page.</li>
+ <li>If your API will be supporting OAuth, it's best to use the <strong>Edit</strong> function on the <em>API Details</em> page to select the OAuthSecurity policy after you have configured the API to support OAuth (i.e., adding an OAuth Provider in the <em>Site Admin &gt; Domains</em> section), and configuring the API using the <strong>OAuth Details</strong> function on the <em>API Details</em> page.</li>
  <li>After making your changes click <strong>Save</strong>. Your API is now registered.</li>
  <li>If you will be configuring your API with OAuth, review the information in the <em>OAuth Support </em>section to determine next steps.</li>
 </ol>
@@ -411,7 +434,7 @@ no-catalog: true
 
 
 <a name="how_do_i_add_an_api_from_a_policy_manager_service"></a>
-<h3><a href="#how_do_i_add_an_api_from_a_policy_manager_service">How do I add an API from an existing API Gateway service</a> (API with Existing Service)?</h3>
+<h3><a href="#how_do_i_add_an_api_from_a_policy_manager_service">How do I add an API from an existing API Gateway service (API with Existing Service)?</a></h3>
 <p>If you already have an API that's set up as a service in the <a href="basics_glossary.htm#gl_api_gateway">API Gateway</a>, or you want to create the service using the flexible service definition model offered by the API Gateway, you can use the Add API with Existing Service function to add the API to the platform.</p>
 <p>The platform references the information already set up in the API Gateway so you don't have to set up all the API details again.</p>
 <p>You might choose this option over the &quot;<a href="#how_do_i_add_a_new_api">Add API with New Service</a>&quot; option if your service matches any of the following descriptions:</p>
@@ -440,43 +463,6 @@ no-catalog: true
   </li>
   <li>Click <strong>Finish</strong>.</li>
 </ol>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="what_is_scope_mapping_and_how_do_i_set_it_up"></a><h3>What is scope mapping and how do I set it up?</h3>
-<p>If your API is using the Licenses feature, scope mapping is the key to defining which portions of your API will be available for which licenses. The scopes and licenses themselves are defined by the Business Admin, but at the API level you determine which operations are assigned to which scopes. This in turn determines which licenses will be available to app developers requesting access to your API.</p>
-<p>For example, let's say your API includes a set of operations relating to calendar functionality and another set of operations relating to email access and management. App A might only need access to the calendar functionality, and App B might include an email client and might require access to the operations relating to email. The scope mapping feature enables you to group individual operations into logical groups that can be separately packaged into a license for App A and another for App B.</p>
-<p>As another example, let's say you want to offer access to your GET operations, and a higher level of access, for a fee, to all operations including add, modify, and delete. The Business Admin defines READ and MODIFY scopes, and then assigns each to a separate license. The API Admin assigns GET operations to the READ scope and assigns all operations to the MODIFY scope. Users who choose the paid license get access to all scopes; users who choose the free license can only access the GET operations.</p>
-<p>At runtime, when a request is received to an API proxy from a particular app, the request is only passed through to the API if it is using one of the specific operations covered by the license governing the API contract.</p>
-<!--<p><em>Note: If your API is configured with OAuth, the scopes were defined as part of the initial OAuth Provider configuration in the Site Administration section. The Edit OAuth Details function on the API Details page includes a <strong>Scope Mapping</strong> function for this scenario.</em></p>-->
-<a name="to_perform_scope_mapping"></a><h5>To perform scope mapping:</h5>
-<ol>
-  <li>First, make sure the Licenses feature is enabled in the API. From the <em>API Details</em> page, click<strong> Edit</strong>, and make sure the <strong>Use Licenses</strong> checkbox is checked.</li>
-  <li>From the <em>API Details</em> page, click <strong>Scope Mapping</strong>. The <em>Edit API Scope</em> page displays.</li>
-  <li>Choose a scope mapping approach:
-    <ul>
-      <li><strong>API-wide Mapping</strong>: choose this if you're not subdividing your operations for licensing purposes.</li>
-      <li><strong>Operation-specific Mapping</strong>: choose this if you'll want to grant access to some portions of your API separately.</li>
-    </ul>
-   </li>
-  
-  <li>Operation-specific mapping only: For each operation, in the <em>Scope</em> column, click <strong>Select</strong>. The <em>Select Scope</em> popup displays. Choose one or more scopes for the operation and click <strong>Confirm</strong>.</li>
-  <li>Repeat for each operation.</li>
-  <li>Click <strong>Save</strong>.</li>
-</ol>
-<!--<h5>To configure Scope Mapping (via <em>Edit OAuth Details &gt; Scope Mapping</em>):</h5>
-<ol>
-  <li>Refer to the Configure Scope Mapping section in <a href="publish_api_oauth_support.htm#how_do_i_configure_my_api_with_an_oauth_provider">How do I configure my API with an OAuth Provider?</a>.</li>
-</ol>-->
-
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="how_do_i_inform_app_developers_about_available_licenses_and_app_access"></a><h3>How do I inform app developers about available licenses and API access?</h3>
-<p>As a standard practice, a list of available Licenses and the level of App Access provided by each License should be included in the documentation for your API.</p>
-
 <p><a href="#top">Back to top</a></p>
 
 
@@ -523,7 +509,7 @@ no-catalog: true
     <li>For <strong>This API requires Approval</strong>, indicate whether you would like to approve API access requests made with the <em>API Access Wizard</em>. All API Access Requests can be monitored by API Providers and designated administrators in the <em>API Name &gt; Apps</em> section.</li>
     <li>Expand <em>Advanced Options</em> and verify the settings are correct (i.e., they match the  Target section in the previous step).</li>
     <li>In the <em>Policies</em> section, select the policies that you would like the system to enforce on the proxy.
-    Note: <em>You MUST select one security policy (e.g., Category: Simple Header Security) and you should select a monitoring policy if you want to see charts  and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></li>
+    Note: <em>You MUST select one security policy (for example, Category: Simple Header Security) and you should select a monitoring policy if you want to see charts  and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></li>
     <li>Click <strong>Save</strong>.<br />
       <br />
       <img src="images/Add_rest_api3.jpg" width="902" height="416" alt="" />
@@ -533,8 +519,8 @@ no-catalog: true
 </ol>
 <p><strong><u>B. Set up Contract </u></strong></p>
 <ol>
-  <li>Add a new app. See <a href="create_app_creation.htm#how_do_i_create_a_new_app">How do I create a new app?</a></li>
-  <li>Request API access for the newly added REST API. See <a href="access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I get API access for my app?</a></li>
+  <li>Add a new app. See <a href="app_create_app_creation.htm#how_do_i_create_a_new_app">How do I create a new app?</a></li>
+  <li>Request API access for the newly added REST API. See <a href="app_access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I get API access for my app?</a></li>
   <li>The API Administrator will then approve and activate your API Access Request. After approval, you are ready to test the API with your app.</li>
 </ol>
 
@@ -549,23 +535,49 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 
 
 
-<a name="how_do_i_manage_api_visibility"></a><h3>How do I manage API visibility?</h3>
-<p>When you create an API using the <strong>Create a New API</strong> function you can control whether visibility of the API is <em>Public</em> or <em>Private</em> via the &quot;Visibility&quot; option. You can change API visibility based on your requirements by using the <strong>Edit</strong> function on the <em>API Details</em> page.</p>
+<a name="what_is_anonymous_api_access"></a><h3>What is anonymous API access?</h3>
+<p>The Add API Wizard includes an Allow Anonymous Access option on the Proxy page that allows you to enable or disable anonymous access to Sandbox and Production endpoints.</p>
+<p>Allowing anonymous access to an API endpoint in the Sandbox environment is useful if you would like to offer a preview of an API to developers without requiring users to create an app or sign up to the platform. For example, if you have a specific feature set you would like to expose as part of promoting your API, you can expose those operations in your API configuration, and enable the Proxy API and the Allow Anonymous Access option.</p>
+<p>Developers can read the documentation and access the API without signing up and requesting access to the API. If a developer tries out the API and likes it, he/she can then sign up to the platform, create an app using the <strong>Add a New App</strong> function, and <a href="app_access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">submit an API Access Request</a>.</p>
+<p><em>Note: Anonymous access is typically granted to API Sandbox endpoints, but it is generally not a standard practice to grant anonymous access to Production endpoints.</em></p>
+<p>When you enable anonymous access in the <strong>Add a New API Wizard</strong> by selecting <strong>Yes</strong> to <strong>Allow Anonymous Access</strong> on the <em>Proxy</em> page, the <strong>This API Requires Approval</strong> option is disabled. This means that app developers are not required to submit an API Access Request to access the API, except in the following scenarios:</p>
 <ul>
-  <li>A public API is visible to all individuals that use the platform, it is searchable, and displays in the <em>All APIs</em> search filter.</li>
-  <li>A private app is visible to the creator, in the <em>My APIs</em> search filter, and to individuals that are members of a Private API Group. The API name displays on the <em>API Details</em> page with a lock icon indicating that it is private.</li>
+  <li>An approved API Access Request is required before you can view the <em>Apps Connected</em> list on the <em>API Details</em> page.</li>
+  <li>The <em>My Apps &gt; Dev Console</em> will only show the API from the API drop-down when an approved API Access Request exists.</li>
+ </ul>
+ <p><strong>API Charts / Logs with Anonymous API Access:</strong></p>
+ <ul>
+  <li>When <strong>Allow Anonymous Access</strong> is set to <strong>Yes</strong> for an API, viewing usage data for apps in the <em>Overview</em>, <em>Charts</em>, and <em>Logs</em> sections of <em>My APIs &gt; Monitor</em> is not supported. This applies whether or not an approved API Access Request exists for an app. The <em>My APIs &gt; Monitor</em> section will still show API usage data.</li>
+ </ul>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="what_is_a_private_api"></a><h3>What is a private API?</h3>
+<p>A private API is one that has a <a href="basics_glossary.htm#gl_visibility">visibility</a> setting such that it is visible only to platform users who are members of one or more groups that have been specifically invited to have visibility of the API.</p>
+<p>In the platform, any API or other resource that is private is shown with a &quot;lock&quot; icon to indicate privacy. </p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_manage_api_visibility"></a><h3>How do I manage API visibility?</h3>
+<p>When you create an API using the <strong>Create a New API</strong> function you can control <a href="basics_glossary.htm#gl_visibility">visibility</a> of the API. You can change API visibility based on your requirements by using the <strong>Edit</strong> function on the <em>API Details</em> page.</p>
+<ul>
+  <li>An API with a visibility of <strong>Public</strong>  is visible to all individuals, even anonymous users; it is searchable, and displays in the <em>All APIs</em> search filter.</li>
+  <li>An API with a visibility of <strong>Registered User</strong> is visible to all individuals who are logged into the platform; it is searchable, and displays in the <em>All APIs</em> search filter.</li>
+  <li>An API with a visibility of <strong>Public</strong> is visible to the creator, in the <em>My APIs</em> search filter, to all API Admins, and to individuals that are members of a Private API Group or of a group that is invited to have visibility of the API. The API name displays on the <em>API Details</em> page with a lock icon indicating that it is private.</li>
 </ul>
 <p><a href="#top">Back to top</a></p>
 
 
 
 <a name="what_is_a_proxy_api"></a><h3>What is a proxy API?</h3>
-<p>The <strong>Add a New API</strong> function includes a proxy API option that allows you to configure an endpoint in a particular environment (e.g., internal or external network) that is accessible by your target applications.</p>
-<p>A proxy API endpoint exists in the Cloud and is similar to a virtual service. As a security measure, users will be able to access a proxy that will run in the Cloud, and will not be accessing the API implementation directly.</p>
-<p>Based on the development cycle of your API, you can chose to expose selected functionality in your API by defining a Proxy API for each endpoint and selecting which functionality (e.g., operations) you would like to expose. This approach allows you to manage the API lifecycle and expose functionality based on your requirements (e.g., development phase, testing, production, etc.).</p>
+<p>When you set up your API on the platform, using the platform as a proxy, your API is the Target API and the platform is the <a href="basics_glossary.htm#gl_proxyapi">Proxy API</a>. This allows you to configure an endpoint in a particular environment (for example, internal or external network) that is accessible by your target applications.</p>
+<p>A proxy API endpoint exists in the Cloud and is similar to a virtual service. As a security measure, users access the proxy that runs in the Cloud, rather than accessing the API implementation directly. Traffic is channeled via the proxy to your target API.</p>
+<p>Based on the development cycle of your API, you can chose to expose selected functionality in your API by defining a Proxy API for each endpoint and selecting which functionality (for example, operations) you would like to expose. This approach allows you to manage the API lifecycle and expose functionality based on your requirements (for example, development phase, testing, production, etc.).</p>
 <p><strong>Advantages:</strong></p>
 <p><em>Internal / External Networks</em>&#8212;If you would like to access to your real API on an internal network, but would like to expose specific functionality on an external network, you can add the API Target URL using the <strong>Add a New API </strong>function, and then virtualize the API by specifying a Proxy API Target URL for specific functionality you would like to make available on an external network.</p>
-<p><em>Bridge Between App and Proxy API</em>&#8212;If your API is focused on the business aspects of the API or service, you can set up the proxy API to provide other tasks such as security enforcement or specifications required by the target (e.g., API specs for the app team, etc.).</p>
+<p><em>Bridge Between App and Proxy API</em>&#8212;If your API is focused on the business aspects of the API or service, you can set up the proxy API to provide other tasks such as security enforcement or specifications required by the target (for example, API specs for the app team).</p>
 <p><em>Sandbox / Production Endpoint Access</em>&#8212;Adding a Proxy API allows app developers to gain access to your API sandbox endpoint (to test API functionality in their app), and production endpoint (to use API functionality in a live application).</p>
 <p><em>Contract Enforcement</em>&#8212;If you configure your API with a proxy, you can take advantage of the platform's contract enforcement functionality. Here's how it works:</p>
 <ul>
@@ -580,15 +592,15 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 <p><em>Scenario 1</em>&#8212;You build an API and would like to expose specific functionality for the purposes of collaborating with a selected development and/or discussion group. You do not want to the API to be visible to anyone outside the selected group. To accomplish this:</p>
 <ul>
   <li>Add a new API, configure with private visibility, and add a proxy API for operations you would like to expose. For more information, refer to the <a href="api_admin_tutorial.htm">quick start for API Providers</a>.</li>
-  <li>App developers can submit an API access request and connect to your API. See <a href="access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I get API access for my app?</a></li>
-  <li>Create a Private API Group and invite selected individuals you would like to be part of your collaboration group<em>.</em> See <a href="collaborate_groups.htm">Groups</a> for more information.</li>
+  <li>App developers can submit an API access request and connect to your API. See <a href="app_access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I get API access for my app?</a></li>
+  <li>Create a Private API Group and invite selected individuals you would like to be part of your collaboration group<em>.</em> See <a href="app_collaborate_groups.htm">Groups</a> for more information.</li>
   <li>Update the API definition and adjust the configuration based on your business requirements.</li>
 </ul>
 <p><em>Scenario 2</em>&#8212;You build an API and would like to expose specific functionality to the public for them to use in their applications. To accomplish this:</p>
 <ul>
   <li>Add a new API, configure with public visibility, and add a proxy API for operations you would like to expose. Your API will be visible via the <em>Search</em> function. See the <a href="api_admin_tutorial.htm">quick start</a> for API Providers for more information.</li>
-  <li>App developers can submit an API access request and connect to your API. See <a href="access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I get API access for my app?</a></li>
-  <li>Create an Independent Group and invite individuals you would like to be part of your collaboration group<em>.</em> See <a href="collaborate_groups.htm">Groups</a> for more information.</li>
+  <li>App developers can submit an API access request and connect to your API. See <a href="app_access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I get API access for my app?</a></li>
+  <li>Create an Independent Group and invite individuals you would like to be part of your collaboration group<em>.</em> See <a href="app_collaborate_groups.htm">Groups</a> for more information.</li>
   <li>Update the API definition and adjust the configuration based on your business requirements.</li>
 </ul>
 <p><a href="#top">Back to top</a></p>
@@ -605,7 +617,7 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 
 <a name="what_is_an_api_type_profile"></a><h3>What is an API Type Profile?</h3>
 <p>An &quot;API Type Profile&quot; is used for proxy APIs to identify the type of content an API will accept from the consumer (IN), and will be returned by the API to the consumer (OUT). IN and OUT identifiers are combined with content types (i.e., ANY, JSON, FORM, and XML) and are packaged on the API Type Profile drop-down menu in profile sets. The following content types are supported:</p>
-  <table cellspacing="0px" class="doctable" style="width: 90%;">
+  <table cellspacing="0px" class="doctable" style="width: 98%;">
     <thead>
     <tr>
     <th width="20%">Content Type</th>
@@ -637,7 +649,7 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 
 <a name="what_are_the_supported_methods_and_content_types_for_requests"></a><h3>What are the supported HTTP method types and content types for requests?</h3>
 <p>If you chose to proxy your API, you can optionally configure the operations with Methods, URLs, and Content Types. After the API settings are saved, the specified information is synchronized with the Target URLs. The following options are supported:</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="20%">Option Name</th>
@@ -673,22 +685,59 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 
 
 
-<a name="what_is_anonymous_api_access"></a><h3>What is anonymous API access?</h3>
-<p>The Add API Wizard includes an Allow Anonymous Access option on the Proxy page that allows you to enable or disable anonymous access to Sandbox and Production endpoints.</p>
-<p>Allowing anonymous access to an API endpoint in the Sandbox environment is useful if you would like to offer a preview of an API to developers without requiring users to create an app or sign up to the platform. For example, if you have a specific feature set you would like to expose as part of promoting your API, you can expose those operations in your API configuration, and enable the Proxy API and the Allow Anonymous Access option.</p>
-<p>Developers can read the documentation and access the API without signing up and requesting access to the API. If a developer tries out the API and likes it, he/she can then sign up to the platform, create an app using the <strong>Add a New App</strong> function, and <a href="access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">submit an API Access Request</a>.</p>
-<p><em>Note: Anonymous access is typically granted to API Sandbox endpoints, but it is generally not a standard practice to grant anonymous access to Production endpoints.</em></p>
-<p>When you enable anonymous access in the <strong>Add a New API Wizard</strong> by selecting <strong>Yes</strong> to <strong>Allow Anonymous Access</strong> on the <em>Proxy</em> page, the <strong>This API Requires Approval</strong> option is disabled. This means that app developers are not required to submit an API Access Request to access the API, except in the following scenarios:</p>
-<ul>
-  <li>An approved API Access Request is required before you can view the <em>Apps Connected</em> list on the <em>API Details</em> page.</li>
-  <li>The <em>My Apps &gt; Dev Console</em> will only show the API from the API drop-down when an approved API Access Request exists.</li>
- </ul>
- <p><strong>API Charts / Logs with Anonymous API Access:</strong></p>
- <ul>
-  <li>When <strong>Allow Anonymous Access</strong> is set to <strong>Yes</strong> for an API, viewing usage data for apps in the <em>Overview</em>, <em>Charts</em>, and <em>Logs</em> sections of <em>My APIs &gt; Monitor</em> is not supported. This applies whether or not an approved API Access Request exists for an app. The <em>My APIs &gt; Monitor</em> section will still show API usage data.</li>
- </ul>
+<a name="what_is_a_default_profile_for_a_rest_api"></a><h3>What is a Default Profile for a REST API?</h3>
+<p>When you're defining a REST API in the platform, the basic API definition includes a default profile. This determines the content-type for request and response that will be used if you don't specific anything different. It's just a default for timesaving purposes.  For example, if 80% of your operations send and receive JSON content, you can choose<strong> JSON in and out</strong>. The default is <strong>Any in and out</strong>.</p>
+<p>Once you've specified the most common scenario as the default profile, you can go ahead and specify content-type for any operations that have different values, by selecting from the list of available content-types. To view the list, click the <strong>Show</strong> link at the far right of the Default_Operation line, in the <strong>Settings</strong> column.</p>
+<p>You can also specify a custom content-type. See <a href="#how_do_i_define_a_custom_content_type_for_a_rest_api">How do I define a custom content-type for a REST API?</a> below.</p>
 <p><a href="#top">Back to top</a></p>
 
+
+
+<a name="how_do_i_define_a_custom_content_type_for_a_rest_api"></a><h3>How do I define a custom content-type for a REST API?</h3>
+<p>When you're adding or editing the API definition for a REST API, you have three choices with regard to defining the content-type for request and response messages:</p>
+<ul>
+  <li>Specify a default that will apply to the majority of your operations. See <a href="#what_is_a_default_profile_for_a_rest_api">What is a Default Profile for a REST API?</a> above.</li>
+  <li>Specify content-type individually for any operation that is different from the default, by choosing from the list of common content-types provided.</li>
+  <li>Specify a custom content-type. See below.</li>
+</ul>
+<h5>To specify a custom content-type:</h5>
+<ol>
+  <li>Follow the instructions in <a href="#to_configure_a_rest_based_api">To configure a REST-based API</a> until you get to Step 3.</li>
+  <li>In the Settings column at the far right of the line for the operation, click the <strong>Show</strong> link. You will see the list of media types available for both request and response.</li>
+  <li>In the Request column, clear the <strong>API Default</strong> box, and then click <strong>Custom</strong>. A new field appears for you to define the custom content-type.</li>
+  <li>Specify the value. Make sure it's a valid media type with correct syntax.</li>
+  <li>Continue setting up your API, specifying a custom media type for other operations as needed, and then click <strong>Next</strong> to go to the <strong>Proxy</strong> page.</li>
+  <li>Follow the steps in <a href="#configure_proxy">Configure Proxy</a> above.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="what_is_autoconnect"></a><h3>What is auto-connect?</h3>
+<p>The platform's auto-connect feature allows an API Admin to set up the API so that when a new app is created on the platform, a contract with the API is created automatically. The API Admin specifies the details of the access granted with the auto-connect feature, such as whether access is to the sandbox or production environment, or whether access is limited to specific operations or a specific transaction volume (via the <a href="basics_glossary.htm#gl_license">Licenses</a> feature, implemented with <a href="basics_glossary.htm#gl_scopemapping">scope mapping</a>).</p>
+<p>You can change the auto-connect details for your API at a later time; however, be aware that if contracts have already been created, those will continue unless you specifically end them.</p>
+<p>If your API uses licenses, it's important to set up scope mapping for your API before setting up the auto-connect feature, since the auto-connect settings reference the scope mapping settings.</p>
+<p>For instructions on setting up auto-connect for your API, see <a href="#how_do_i_set_up_autoconnect_for_my_api">How do I set up Auto-Connect for my API?</a> below.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_set_up_autoconnect_for_my_api"></a><h3>How do I set up auto-connect for my API?</h3>
+<p>If you want to grant new apps automatic access to your API, you'll want to set up the auto-connect feature.</p>
+<p class="apidoc_note"><strong>Note</strong>: If your API is using licenses, set up scope mapping first. Then, follow the instructions below.</p>
+<h5>To set up auto-connect for an API:</h5>
+<ol>
+  <li>Go to the <strong>Details</strong> page for the API.</li>
+  <li>Click the <strong>Auto-Connect</strong> button.</li>
+  <li>In the <strong>Set Up Auto-Connect Settings</strong> page, check one or more boxes to indicate environment for auto-connect contracts: Production, Sandbox, or both.</li>
+  <li>Conditional: if your API uses the Licenses feature, a list of scopes is displayed for any environment you selected. Check one or more scopes that you want to allow for an auto-connect contract, for each environment selected.</li>
+  <li>Click <strong>Finish</strong>.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h3><a name="h_api_management">API Management</h3>
 
 
 
@@ -731,18 +780,19 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 <p>You can also choose whether or not to export additional data associated with the API, such as policies, contracts, scopes, and documentation.</p>
 <h5>To export an API:</h5>
 <ol>
-  <li>Log in as the API Administrator.</li>
+  <li>Log in as the API Admin.</li>
   <li>Select <em>My APIs &gt; API Name</em>. The <em>API Details</em> page displays.</li>
   <li>Click <strong>Export</strong>.</li>
-  <li>In the Export overlay, choose the versions you want to export and the options. If you want to export all information about the API, check all boxes. You can export the following data associated with the API:
-  <ul>
-    <li>Operational Policies</li>
-    <li>QoS Policies</li>
-    <li>API PKI</li>
-    <li>API Administrators</li>
-    <li>Scopes</li>
-    <li>API Contracts</li>
-    <li>Resources/Documentation</li>
+  <li>In the Export overlay, choose the versions you want to export (Current or All) and the options. If you want to export all information about the API, check all boxes. You can export the following data associated with the API:
+    <ul>
+    <li>Export Operational Policies</li>
+    <li>Export QoS Policies</li>
+    <li>Export API PKI</li>
+    <li>Export API Administrators<br />
+      <strong>Note</strong>: the relationship of the user as an API admin is exported, but the user is not exported. The user must exist in the target environment. If the user does not exist when the information is imported, the API is created without that admin. From there, either a) the user can sign up and be invited to be an admin, b) the user can sign up and the API data can be reimported, c) another individual can be designated as an API admin.</li>
+    <li>Export API Contracts</li>
+    <li>Export Scopes</li>
+    <li>Export Resources/Documentation</li>
   </ul>
   </li>
   <li>Click <strong>Export</strong>.</li>
@@ -778,7 +828,7 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 <p>Once you've exported an API to an external zip file, it can be imported to another environment. For example, you can export from a development environment and then import to a testing or production environment.</p>
 <p>The Business Admin can export information about an API to an external file. However, only a Site Admin or Business Admin can import.</p>
 <p>If you need help with import functions, contact your Administrator.</p>
-<p>If you are an Administrator, refer to <a href="business_administration_export_import.htm#how_do_i_import_site_app_or_api_information_from_an_export_file">How do I import site, app, or API information from an export file?</a> for instructions.</p>
+<p>If you are an Administrator, refer to <a href="business_admin_export_import.htm#how_do_i_import_site_app_or_api_information_from_an_export_file">How do I import site, app, or API information from an export file?</a> for instructions.</p>
 
 
 
@@ -791,6 +841,10 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
   <li>If your API is the last API version available, you'll be prompted to confirm that you want to delete the last version, which deletes the API. Click <strong>OK</strong> to confirm.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
+
+
+
+<h3><a name="h_scopes_and_licenses">Scopes and Licenses</h3>
 
 
 
@@ -821,142 +875,51 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 
 
 
-<a name="how_do_i_see_the_status_of_my_apis_contracts_with_apps"></a><h3>How do I see the status of my API's contracts with apps?</h3>
-<p>You can review the status of your API's connections, including pending and active API access requests, in the <em>My APIs &gt; API &gt; Apps</em> page. This page provides a high level summary of workflow status for apps with current API access contracts or pending API access requests for the current API.</p>
-<p>Each listing includes:</p>
-<ul>
-  <li>Apps&#8212;The App Name. This link clicks through to the <em>App Details</em> page.</li>
-  <li>Legals&#8212;A column that indicates whether the Legal Agreements have been accepted (Check = Accepted, No Check = No Accepted).</li>
-  <li>Sandbox / Production&#8212;Represent the two environments that an API Access Request can be submitted for. Each column displays the current status of the API Access Request and available API management functions (e.g., Cancel, Suspend, Resume, Request Access, Switch to Production). The valid actions for a specific contract are determined by the current state of the contract; for example, only a contract that is currently in a state of Suspended can be resumed, and only a contract in a state of Activated can be cancelled. For more information on API access states and valid actions, see <a href="business_administration_workflows.htm#what_is_the_default_workflow_for_api_contracts">What is the default workflow for API contracts?</a></li>
-</ul>
-<p>The following tables provide explanations for information you might see on this page.</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
-  <thead>
-  <tr>
-    <th width="30%">Contract Status</th>
-    <th width="70%">Description</th>
-  </tr>
-  </thead>
-  <tbody>
-    <tr class="t2row">
-      <td>Access Requested</td>
-      <td>An App has requested access to an API but the request has not been approved and activated in the Sandbox or Production environment.</td>
-    </tr>
-  <tr class="t1row">
-    <td>Active</td>
-    <td>API Access has been approved and activated.</td>
-  </tr>
-  <tr class="t2row">
-    <td>Inactive</td>
-    <td>API access has not yet been requested.</td>
-  </tr>
-  <tr class="t1row">
-    <td>Rejected</td>
-    <td>The API Access Request has been rejected.</td>
-  </tr>
-  <tr class="t2row">
-    <td>Suspended</td>
-    <td>API Access that was previously active has been suspended.</td>
-  </tr>
-  </tbody>
-</table>
-<p>&nbsp;</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
-  <thead>
-  <tr>
-    <th width="30%">App Management Task</th>
-    <th width="70%">Description</th>
-</tr>
-</thead>
-<tbody>
-    <tr class="t2row">
-      <td>Cancel</td>
-      <td>Cancels an API Access Request. Listing is removed from the <em>API Connections</em> page. Requestor must submit another request to initiate the process again.</td>
-    </tr>
-  <tr class="t1row">
-    <td>Suspend</td>
-    <td>Suspends the API Access Request. This action can only be performed when the request status is Active.</td>
-  </tr>
-  <tr class="t2row">
-    <td>Resume</td>
-    <td>Resumes the API Access Request and changes the request status to <em>Active</em> after it has been suspended.</td>
-  </tr>
-  <tr class="t1row">
-    <td>Switch to Sandbox</td>
-    <td>Switches the app to the Sandbox Environment and uses the Sandbox Endpoint.</td>
-  </tr>
-  <tr class="t2row">
-    <td>Switch to Production</td>
-    <td>Switches the app to the Production Environment and uses the Production Endpoint.</td>
-  </tr>
-</tbody>
-  </table>
-<p>&nbsp;</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
-  <thead>
-  <tr>
-    <th width="30%">API Access Request Task</th>
-    <th width="70%">Description</th>
-  </tr>
-  </thead>
-  <tbody>
-    <tr class="t2row">
-      <td>Approve</td>
-      <td>Approves the API Action Request. <br />
-      <em>Note that the request still requires activation after it has been approved.</em></td>
-    </tr>
-  <tr class="t1row">
-    <td>Reject</td>
-    <td>Rejects the API Action Request.</td>
-  </tr>
-  <tr class="t2row">
-    <td>Cancel</td>
-    <td>Cancels the API Action Request. Requestor must submit another request to initiate the process again.</td>
-  </tr>
-  <tr class="t1row">
-    <td>Activate</td>
-    <td>Activates the API Access Request.</td>
-  </tr>
-  <tr class="t2row">
-    <td>Suspend</td>
-    <td>Suspends the API Access Request and is performed after the request has been activated.</td>
-  </tr>
-    <tr class="t1row">
-    <td>Resume</td>
-    <td>Resumes the API Access Request and puts it into an activated state after it has been suspended.</td>
-  </tr>
-</tbody>
-  </table>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="what_is_a_default_profile_for_a_rest_api"></a><h3>What is a Default Profile for a REST API?</h3>
-<p>When you're defining a REST API in the platform, the basic API definition includes a default profile. This determines the content-type for request and response that will be used if you don't specific anything different. It's just a default for timesaving purposes.  For example, if 80% of your operations send and receive JSON content, you can choose<strong> JSON in and out</strong>. The default is <strong>Any in and out</strong>.</p>
-<p>Once you've specified the most common scenario as the default profile, you can go ahead and specify content-type for any operations that have different values, by selecting from the list of available content-types. To view the list, click the <strong>Show</strong> link at the far right of the Default_Operation line, in the <strong>Settings</strong> column.</p>
-<p>You can also specify a custom content-type. See <a href="#how_do_i_define_a_custom_content_type_for_a_rest_api">How do I define a custom content-type for a REST API?</a> below.</p>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="how_do_i_define_a_custom_content_type_for_a_rest_api"></a><h3>How do I define a custom content-type for a REST API?</h3>
-<p>When you're adding or editing the API definition for a REST API, you have three choices with regard to defining the content-type for request and response messages:</p>
-<ul>
-  <li>Specify a default that will apply to the majority of your operations. See <a href="#what_is_a_default_profile_for_a_rest_api">What is a Default Profile for a REST API?</a> above.</li>
-  <li>Specify content-type individually for any operation that is different from the default, by choosing from the list of common content-types provided.</li>
-  <li>Specify a custom content-type. See below.</li>
-</ul>
-<h5>To specify a custom content-type:</h5>
+<a name="what_is_scope_mapping_and_how_do_i_set_it_up"></a><h3>What is scope mapping and how do I set it up?</h3>
+<p>If your API is using the Licenses feature, scope mapping is the key to defining which portions of your API will be available for which licenses. The scopes and licenses themselves are defined by the Business Admin, but at the API level you determine which operations are assigned to which scopes. This in turn determines which licenses will be available to app developers requesting access to your API.</p>
+<p>For example, let's say your API includes a set of operations relating to calendar functionality and another set of operations relating to email access and management. App A might only need access to the calendar functionality, and App B might include an email client and might require access to the operations relating to email. The scope mapping feature enables you to group individual operations into logical groups that can be separately packaged into a license for App A and another for App B.</p>
+<p>As another example, let's say you want to offer access to your GET operations, and a higher level of access, for a fee, to all operations including add, modify, and delete. The Business Admin defines READ and MODIFY scopes, and then assigns each to a separate license. The API Admin assigns GET operations to the READ scope and assigns all operations to the MODIFY scope. Users who choose the paid license get access to all scopes; users who choose the free license can only access the GET operations.</p>
+<p>At runtime, when a request is received to an API proxy from a particular app, the request is only passed through to the API if it is using one of the specific operations covered by the license governing the API contract.</p>
+<!--<p><em>Note: If your API is configured with OAuth, the scopes were defined as part of the initial OAuth Provider configuration in the Site Administration section. The Edit OAuth Details function on the API Details page includes a <strong>Scope Mapping</strong> function for this scenario.</em></p>-->
+<a name="to_perform_scope_mapping"></a><h5>To perform scope mapping:</h5>
 <ol>
-  <li>Follow the instructions in <a href="#to_configure_a_rest_based_api">To configure a REST-based API</a> until you get to Step 3.</li>
-  <li>In the Settings column at the far right of the line for the operation, click the <strong>Show</strong> link. You will see the list of media types available for both request and response.</li>
-  <li>In the Request column, clear the <strong>API Default</strong> box, and then click <strong>Custom</strong>. A new field appears for you to define the custom content-type.</li>
-  <li>Specify the value. Make sure it's a valid media type with correct syntax.</li>
-  <li>Continue setting up your API, specifying a custom media type for other operations as needed, and then click <strong>Next</strong> to go to the <strong>Proxy</strong> page.</li>
-  <li>Follow the steps in <a href="#configure_proxy">Configure Proxy</a> above.</li>
+  <li>First, make sure the Licenses feature is enabled in the API. From the <em>API Details</em> page, click<strong> Edit</strong>, and make sure the <strong>Use Licenses</strong> checkbox is checked.</li>
+  <li>From the <em>API Details</em> page, click <strong>Scope Mapping</strong>. The <em>Edit API Scope</em> page displays.</li>
+  <li>Choose a scope mapping approach:
+    <ul>
+      <li><strong>API-wide Mapping</strong>: choose this if you're not subdividing your operations for licensing purposes.</li>
+      <li><strong>Operation-specific Mapping</strong>: choose this if you'll want to grant access to some portions of your API separately.</li>
+    </ul>
+   </li>
+  
+  <li>Operation-specific mapping only: For each operation, in the <em>Scope</em> column, click <strong>Select</strong>. The <em>Select Scope</em> popup displays. Choose one or more scopes for the operation and click <strong>Confirm</strong>.</li>
+  <li>Repeat for each operation.</li>
+  <li>Click <strong>Save</strong>.</li>
 </ol>
+<!--<h5>To configure Scope Mapping (via <em>Edit OAuth Details &gt; Scope Mapping</em>):</h5>
+<ol>
+  <li>Refer to the Configure Scope Mapping section in <a href="publish_api_oauth_support.htm#how_do_i_configure_my_api_with_an_oauth_provider">How do I configure my API with an OAuth Provider?</a>.</li>
+</ol>-->
+
 <p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_inform_app_developers_about_available_licenses_and_app_access"></a><h3>How do I inform app developers about available licenses and API access?</h3>
+<p>As a standard practice, a list of available Licenses and the level of App Access provided by each License should be included in the documentation for your API.</p>
+
+<p><a href="#top">Back to top</a></p>
+
+
+
+
+
+
 
 
 
 <div class = "divider1"></div>
+
+
+
+</div>

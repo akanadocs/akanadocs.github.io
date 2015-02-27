@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Visibility
+title: API Visibility | API Administration | Community Manager Help
 description: Configure and manage API visibility options.
 product: cm
 category: learn
@@ -20,7 +20,7 @@ no-catalog: true
 
 <h3 style="color: gray;">Table of Contents</h3>
 <ol class="table_of_contents">
-  <li><a href="#how_does_the_api_visibility_option_work">How does the API Visibility option work?</a></li>
+  <li><a href="#how_does_the_api_visibility_option_work">How does the API visibility option work?</a></li>
   <li><a href="#what_api_license_visibility_options_are_supported_for_groups">What API License visibility options are supported for Groups?</a></li>
   <li><a href="#how_do_i_edit_the_api_visibility_scope_for_a_group_api_administrator">How do I edit the API visibility scope for a Group (API Administrator)?</a></li>
   <li><a href="#how_do_i_create_a_private_api_group">How do I create a Private API Group?</a></li>
@@ -30,9 +30,10 @@ no-catalog: true
 
 
 
-<a name="how_does_the_api_visibility_option_work"></a><h3>How does the API Visibility option work?</h3>
+<a name="how_does_the_api_visibility_option_work"></a>
+<h3>How does the API visibility option work?</h3>
 <p>The <em>API &gt; Visibility</em> menu option allows API Administrators to control who can see the API and its associated resources such as documentation and downloadable files. The API Admin can invite groups to have visibility of the API resources. The following group visibility scenarios are supported:</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="20%">Scenario</th>
@@ -41,7 +42,8 @@ no-catalog: true
 </thead>
 <tbody>
     <tr class="t2row">
-      <td>Public API with no Private Scopes.</td>
+      <td>Visibility: <strong>Public</strong><br />
+        No Private Scopes.</td>
       <td>API is Public; everyone can see it
         <ul>
           <li>The API does not include any Scopes that are defined as Private.</li>
@@ -51,7 +53,8 @@ no-catalog: true
         </ul></td>
     </tr>
     <tr class="t1row">
-      <td>Public API with some Private Scopes</td>
+      <td>Visibility: <strong>Public</strong><br />
+        Some Private Scopes</td>
       <td>API is Public but some Scopes of the API are defined as Private.
         <ul>
           <li>Only invited users can see the documentation related to the private sections of the API.</li>
@@ -60,14 +63,37 @@ no-catalog: true
       </ul></td>
     </tr>
     <tr class="t2row">
-      <td>Private API with no private Scopes</td>
+      <td>Visibility: <strong>Registered Users</strong><br />
+No Private Scopes.</td>
+      <td>All users who are logged in can see the API.
+        <ul>
+          <li>The API does not include any Scopes that are defined as Private.</li>
+          <li>The <em>Visibility</em> section is available for the API.</li>
+          <li>If &quot;Support Scope Permissions&quot; is not enabled for this API, the &quot;Scope Permissions feature is not enabled for this API&quot; message displays on the <em>Visibility</em> home page.</li>
+          <li>If &quot;Support Scope Permissions&quot; is enabled the &quot;This API is completely public and does not have any private sections. There is no need to invite users or groups to see the API.&quot; message displays and a listing of Licenses and Scopes (if applicable) displays on the <em>Visibility</em> home page.</li>
+      </ul></td>
+    </tr>
+    <tr class="t1row">
+      <td>Visibility: <strong>Registered Users</strong><br />
+Some Private Scopes</td>
+      <td>All users who are logged in can see the API, but some Scopes of the API are defined as Private.
+        <ul>
+          <li>Only invited users can see the documentation related to the private sections of the API.</li>
+          <li><em>APIs &gt; Visibility</em> page includes a table that displays the Private Scopes with the operations that belong to the Scopes and the Licenses that the Scopes are a part of.</li>
+          <li>When inviting Groups to the Private sections of the API, select the Licenses based on the operations that should be visible to the users.</li>
+        </ul></td>
+    </tr>
+    <tr class="t2row">
+      <td>Visibility: <strong>Private</strong><br />
+        No private Scopes</td>
       <td>API is Private.
         <ul>
           <li>Groups must be invited to see the API.</li>
         </ul></td>
     </tr>
     <tr class="t1row">
-      <td>Private API with some Private Scopes</td>
+      <td>Visibility: <strong>Private</strong><br />
+        Some Private Scopes</td>
       <td>API is Private.
         <ul>
           <li>Groups need to be invited to be able to see the API. Parts of the API require specific invitations for users to see these sections.</li>
@@ -88,7 +114,7 @@ no-catalog: true
 </ul>
 <p><em>Note that the API Administrator can update the license scope configuration for Group Visibility at any time prior to the API Access Request being approved by the API Administrator. Once the API Access Request is approved the <strong>Edit Scope</strong> function is disabled.</em></p>
 <p>The following license scope levels are supported.</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
 <thead>
   <tr>
     <th width="20%">Scope Level</th>
@@ -123,7 +149,7 @@ no-catalog: true
   <li>Go to <em>APIs &gt; Visibility &gt; Groups</em>. The <em>Groups Summary</em> page displays.</li>
   <li>Select a Group from the listing and click <strong> Edit Scope.</strong> The <em>Edit Scope</em> page displays.</li>
   <li>Click the radio button of the License access option you would like to assign to the current Group. The following options are available:
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
     <tr>
       <th width="20%">License Option</th>
@@ -154,7 +180,7 @@ no-catalog: true
 
 
 <a name="how_do_i_create_a_private_api_group"></a><h3>How do I create a Private API Group?</h3>
-<p>If you've added a Private API (i.e., visibility = Private), the platform provides a Private API Group collaboration function via the <em>API &gt; Groups</em> page. See the <em>Groups</em> section of <a href="collaborate_groups.htm">Collaborate</a> for more information.</p>
+<p>If you've added a Private API (<a href="basics_glossary.htm#gl_visibility">visibility</a> = Private), the platform provides a Private API Group collaboration function via the <em>API &gt; Groups</em> page. For more information about working with groups, see <a href="app_collaborate_groups.htm">Groups</a>.</p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -168,3 +194,7 @@ no-catalog: true
   <li>If you are a Leader of the Private API Group, the <em>Groups</em> page in the APIs section will display your group membership (with Leader role), and a list of members you have personally invited to the Private API Group.</li>
 </ul>
 <p><a href="#top">Back to top</a></p>
+
+
+
+</div>

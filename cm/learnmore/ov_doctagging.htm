@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Community Manager Doc Tagging Feature Overview
+title: Doc Tagging Overview | API Administration | Community Manager Help
 description: A detailed overview of the doc tagging feature.
 product: cm
 category: learn
@@ -55,14 +55,14 @@ no-nav: true
 <p>You can limit visibility—that is, which users can see your API—by applying privacy settings at these levels:</p>
 <ul>
   <li><strong>API</strong>
-    <p>The entire API can be marked as private. If the API is private, a user must be a member of an invited group, or of the private API group, in order to see the API. If an API is private but all the scopes are public, invited users can see all scopes and operations; if the scopes are private, no matter whether the API is public or private, only users who are specifically invited will see the licenses that include private scopes.</p></li>
+    <p>The entire API can be marked as private. If the API is private, a user must be a member of an invited group, or of the private API group, in order to see the API. If an API is private but all the scopes are public, invited users can see all scopes and operations; if the scopes are private, no matter what the <a href="basics_glossary.htm#gl_visibility">visibility</a> setting is for the API, only users who are specifically invited will see the licenses that include private scopes.</p></li>
   <li><strong>License</strong>
-    <p>Whether the API is public or private, a license can be public or private. A public license is visible to those who have visibility of the API; if a license is private, specific permission is required.</p></li>
+    <p>No matter what the <a href="basics_glossary.htm#gl_visibility">visibility</a> setting is for the API, a license can be public or private. A public license is visible to those who have visibility of the API; if a license is private, specific permission is required.</p></li>
   <li><strong>Scope</strong>
-    <p>Whether the API is public or private, a scope can be public or private. A public scope is visible to all who have visibility of the API; if a scope is private, a user must be invited to have visibility of a license that includes the scope.</p></li>
+    <p>No matter what the <a href="basics_glossary.htm#gl_visibility">visibility</a> setting is for the API, a scope can be public or private. A public scope is visible to all who have visibility of the API; if a scope is private, a user must be invited to have visibility of a license that includes the scope.</p></li>
 </ul>
 <p>The table below summarizes these privacy levels.</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
 <thead>
   <tr>
     <th width="15%">If an API is...</th>
@@ -301,7 +301,7 @@ For details about how to set up your <strong>metadata.xml</strong> file, see <a 
 
 
 <h4><a name="doctag_ex_role_inviteduser"></a>Tagging in metadata.xml by user role</h4>
-<p>You can restrict visibility of a specific piece of content by specifying the entire file in the metadata.xml file so that it can only be seen by users with a specific login status<span class="apidoc_red">.</span> The valid roles are:</p>
+<p>You can restrict visibility of a specific piece of content by specifying the entire file in the metadata.xml file so that it can only be seen by users with a specific login status. The valid roles are:</p>
 <ul>
   <li><strong>InvitedUser</strong>: for a Private API, a user who has been invited to have visibility into the API and has accepted (generally via an invitation to a group that has visibility into the API)</li>
   <li><strong>Admin</strong>: the API admin</li>
@@ -317,6 +317,18 @@ For details about how to set up your <strong>metadata.xml</strong> file, see <a 
 
 
 
+<h4>Tagging in metadata.xml for multiple roles</h4>
+<p>When restricting visibility of a specific piece of content by specifying the entire file in the metadata.xml file so that it can only be seen by users with a specific login status, you can also tag content for multiple roles. If the viewing user has one of the specified roles, the content is visible. An example is shown below.</p>
+<pre>&lt;metadata&gt;
+  &lt;APIVersionID xmlns=&quot;http://soa.com/xsd/api/1.0&quot;&gt;apiversion12345.acmecorp&lt;/APIVersionID&gt;
+  &lt;target&gt;documents/*\.htm&lt;/target&gt;
+  &lt;roles&gt;
+    &lt;role name=&quot;SiteAdmin&quot;&gt;
+    &lt;/role&gt;
+    &lt;role name=&quot;ApiAdmin&quot;&gt;
+    &lt;/role&gt;
+  &lt;/roles&gt;
+&lt;/metadata&gt;</pre>
 
 
 
@@ -460,7 +472,7 @@ For details about how to set up your <strong>metadata.xml</strong> file, see <a 
   <li>SiteAdmin</li>
 </ul>
 <p>The example below shows five pieces of content. Each type of admin (API, Business, Site) will see the one piece of content that's tagged for that role. If content is tagged for either of two roles (OR), and the user has <em>one</em> of the roles, the user will see it. If content is tagged for users who have <em>both</em> roles (AND), only users with both roles will see it.</p>
-<p><a href="example_showforrole.htm" target="_blank">View a complete file with content tagged for each role (click View Source to see the HTML)</a> This example file only works within the platform, not when viewing content on the documentation website, because the supporting files are missing; but you can still use it as a guide in coding your content, and then test by uploading to the platform.</p>
+<p><a href="example_showforrole.htm" target="_blank">View a complete file with content tagged for each role (click View Source to see the HTML)</a>. This example file only works within the platform, not when viewing content on the documentation website, because the supporting files are missing; but you can still use it as a guide in coding your content, and then test by uploading to the platform.</p>
 <pre>&lt;soa:showforrole roleNames="ApiAdmin"&gt;
   &lt;div class="contentSection soa-ui-cm-dynamic-docs"&gt;
     &lt;h3&gt;API Admin&lt;/h3&gt;
@@ -544,3 +556,7 @@ Multiple scopes
 <p class="apidoc_note"><strong>Note</strong>: If there are any overlapping conditions, the user has to meet all the conditions for the content to be displayed to that user.</p>
 <p>Correctly applied, documentation tagging will ensure that each piece of your API documentation content is available for its specific target audience, as defined by you, and for nobody else. No matter how private you want your documentation to be, or how broadly available you want to make it, you can accomplish your goals by correctly tagging your content for valid licenses, scopes, and operations and testing thoroughly.</p>
 <p><a href="#top">Back to top</a></p>
+
+
+
+</div>

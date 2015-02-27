@@ -17,7 +17,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getLegals.lbi" -->Retrieves a summary of information about active legal documents for the specified API version.<!-- #EndLibraryItem --></p>
 <p>For more information about managing legal agreements for your API, see <a href="../Ref_ManagingLegalAgreementsOnThePlatform.htm">Managing Legal Agreements on the Platform</a>.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -54,12 +54,13 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for legal documents for an API.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/a4cc9f79-e8ff-4b06-ad70-2c1a08139776.acmecorp/legals?Drafts=true&amp;Inactive=true</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/a4cc9f79-e8ff-4b06-ad70-2c1a08139776.acmepaymentscorp/legals?Drafts=true&amp;Inactive=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apis/versions/apiversion500.acmecorp/legals?Drafts=true&amp;Inactive=true HTTP/1.1
+<pre>GET&nbsp;/api/apis/versions/apiversion500.acmepaymentscorp/legals?Drafts=true&amp;Inactive=true HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01
-Content-Type: application/x-www-form-urlencoded</pre>
+Content-Type: application/x-www-form-urlencoded<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->
+X-Csrf-Token_{tenant}: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>None.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -68,7 +69,7 @@ Content-Type: application/x-www-form-urlencoded</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -78,7 +79,7 @@ Content-Type: application/x-www-form-urlencoded</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -137,7 +138,7 @@ Content-Type: application/x-www-form-urlencoded</pre>
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows the requested legal agreements returned.</p>
-<p><strong>Sample response headers: JSON</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>HTTP/1.1 200 OK
 Date: Fri, 25 Apr 2014 13:28:20 GMT
 Content-Type: application/json</pre>
@@ -147,13 +148,13 @@ Content-Type: application/json</pre>
     "title" : "Agreement Documents",
     "item" : [ {
       "title" : "Basic EULA",
-      "link" : "api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_1.txt?version=1",
+      "link" : "api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmepaymentscorp/legal/EULA_1.txt?version=1",
       "description" : "Basic EULA for most users.",
       "category" : [ {
         "value" : "agreement",
         "domain" : "uddi:soa.com:resourcetype"
       }, {
-        "value" : "com.soa.acmecorp.legals.eula",
+        "value" : "com.soa.atmosphere.legals.eula",
         "domain" : "uddi:soa.com:documenttype"
       }, {
         "value" : "com.soa.status.active",
@@ -165,23 +166,23 @@ Content-Type: application/json</pre>
         "value" : "1",
         "domain" : "uddi:soa.com:version"
       }, {
-        "value" : "api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_1.txt",
+        "value" : "api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmepaymentscorp/legal/EULA_1.txt",
         "domain" : "uddi:soa.com:docpath"
       } ],
       "guid" : {
-        "value" : "1e5039cb-45b6-4844-8c18-f27d3a7c8f41.acmecorp"
+        "value" : "1e5039cb-45b6-4844-8c18-f27d3a7c8f41.acmepaymentscorp"
       },
       "EntityReferences" : {
         "EntityReference" : [ {
           "Title" : "1.0",
-          "Guid" : "a4cc9f79-e8ff-4b06-ad70-2c1a08139776.acmecorp",
+          "Guid" : "a4cc9f79-e8ff-4b06-ad70-2c1a08139776.acmepaymentscorp",
           "Category" : [ {
             "value" : "apiversion",
             "domain" : "uddi:soa.com:resourcetype"
           } ]
         }, {
           "Title" : "ACME Payments API",
-          "Guid" : "492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp",
+          "Guid" : "492f7d2e-c2c6-41f3-a113-c614bf424252.acmepaymentscorp",
           "Category" : [ {
             "value" : "api",
             "domain" : "uddi:soa.com:resourcetype"
@@ -190,7 +191,7 @@ Content-Type: application/json</pre>
       }
     }, {
       "title" : "EULA_2.txt",
-      "link" : "/content/api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_2.txt?version=1",
+      "link" : "/content/api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmepaymentscorp/legal/EULA_2.txt?version=1",
       "category" : [ {
         "value" : "agreement",
         "domain" : "uddi:soa.com:resourcetype"
@@ -206,7 +207,7 @@ Content-Type: application/json</pre>
         "value" : "1",
         "domain" : "uddi:soa.com:version"
       }, {
-        "value" : "api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_2.txt",
+        "value" : "api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmepaymentscorp/legal/EULA_2.txt",
         "domain" : "uddi:soa.com:docpath"
       } ],
       "guid" : {
@@ -221,7 +222,7 @@ Content-Type: application/json</pre>
 Date: Fri, 25 Apr 2014 13:37:36 GMT
 Content-Type: application/json</pre>
 <p><a id="rss_agreementdocuments_textxml"></a><strong>Sample response body: text/XML</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;rss xmlns:ns2="http://soa.com/xsd/business/1.0" xmlns:ns3="http://soa.com/xsd/rss/1.0" xmlns:ns4="http://soa.com/xsd/user/1.0" 
 xmlns:ns5="http://soa.com/xsd/comment/1.0" xmlns:ns6="http://a9.com/-/spec/opensearch/1.1/" xmlns:ns7="http://soa.com/xsd/resource/1.0" 
 xmlns:ns8="http://soa.com/xsd/legals/1.0" xmlns:ns9="http://soa.com/xsd/fault/1.0" xmlns:ns10="http://soa.com/xsd/api/1.0" 
@@ -230,37 +231,37 @@ xmlns:ns11="http://soa.com/xsd/board/1.0" xmlns:ns12="http://soa.com/xsd/search/
     &lt;title&gt;Agreement Documents&lt;/title&gt;
     &lt;item&gt;
       &lt;title&gt;Basic EULA&lt;/title&gt;
-      &lt;link&gt;api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_1.txt?version=1&lt;/link&gt;
+      &lt;link&gt;api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmepaymentscorp/legal/EULA_1.txt?version=1&lt;/link&gt;
       &lt;description&gt;Basic EULA for most users.&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;agreement&lt;/category&gt;
-      &lt;category domain="uddi:soa.com:documenttype"&gt;com.soa.acmecorp.legals.eula&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:documenttype"&gt;com.soa.atmosphere.legals.eula&lt;/category&gt;
       &lt;category domain="uddi:soa.com:state"&gt;com.soa.status.active&lt;/category&gt;
       &lt;category domain="uddi:soa.com:filename"&gt;EULA_1.txt&lt;/category&gt;
       &lt;category domain="uddi:soa.com:version"&gt;1&lt;/category&gt;
-      &lt;category domain="uddi:soa.com:docpath"&gt;api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_1.txt&lt;/category&gt;
-      &lt;guid&gt;1e5039cb-45b6-4844-8c18-f27d3a7c8f41.acmecorp&lt;/guid&gt;
+      &lt;category domain="uddi:soa.com:docpath"&gt;api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmepaymentscorp/legal/EULA_1.txt&lt;/category&gt;
+      &lt;guid&gt;1e5039cb-45b6-4844-8c18-f27d3a7c8f41.acmepaymentscorp&lt;/guid&gt;
       &lt;ns3:EntityReferences&gt;
         &lt;ns3:EntityReference&gt;
           &lt;Title&gt;1.0&lt;/Title&gt;
-          &lt;Guid&gt;a4cc9f79-e8ff-4b06-ad70-2c1a08139776.acmecorp&lt;/Guid&gt;
+          &lt;Guid&gt;a4cc9f79-e8ff-4b06-ad70-2c1a08139776.acmepaymentscorp&lt;/Guid&gt;
           &lt;ns3:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns3:Category&gt;
         &lt;/ns3:EntityReference&gt;
         &lt;ns3:EntityReference&gt;
           &lt;Title&gt;ACME Payments API&lt;/Title&gt;
-          &lt;Guid&gt;492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp&lt;/Guid&gt;
+          &lt;Guid&gt;492f7d2e-c2c6-41f3-a113-c614bf424252.acmepaymentscorp&lt;/Guid&gt;
           &lt;ns3:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns3:Category&gt;
         &lt;/ns3:EntityReference&gt;
       &lt;/ns3:EntityReferences&gt;
     &lt;/item&gt;
     &lt;item&gt;
       &lt;title&gt;EULA_2.txt&lt;/title&gt;
-      &lt;link&gt;/content/api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_2.txt?version=1&lt;/link&gt;
+      &lt;link&gt;/content/api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmepaymentscorp/legal/EULA_2.txt?version=1&lt;/link&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;agreement&lt;/category&gt;
       &lt;category domain="uddi:soa.com:documenttype" /&gt;
       &lt;category domain="uddi:soa.com:state"&gt;com.soa.status.draft&lt;/category&gt;
       &lt;category domain="uddi:soa.com:filename"&gt;EULA_2.txt&lt;/category&gt;
       &lt;category domain="uddi:soa.com:version"&gt;1&lt;/category&gt;
-      &lt;category domain="uddi:soa.com:docpath"&gt;api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_2.txt&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:docpath"&gt;api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmepaymentscorp/legal/EULA_2.txt&lt;/category&gt;
       &lt;guid&gt;EULA_2.txt&lt;/guid&gt;
     &lt;/item&gt;
   &lt;/channel&gt;
@@ -272,7 +273,7 @@ xmlns:ns11="http://soa.com/xsd/board/1.0" xmlns:ns12="http://soa.com/xsd/search/
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -282,7 +283,7 @@ xmlns:ns11="http://soa.com/xsd/board/1.0" xmlns:ns12="http://soa.com/xsd/search/
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -319,7 +320,7 @@ The response body is in the form of an RSS channel, and includes the items liste
       <td>category</td>
       <td><p>One or more categories. Each category is a set of two name/value pairs. The second item defines the Domain, and the first defines the actual value for the property. For example, the set of values below shows that the document type is a legal eula (end-user licensing agreement) document:</p>
         <pre>{
-  "value" : "com.soa.acmecorp.legals.eula",
+  "value" : "com.soa.atmosphere.legals.eula",
   "domain" : "uddi:soa.com:documenttype"
 }</pre>
 <p>The categories are:</p>
@@ -358,16 +359,20 @@ The response body is in the form of an RSS channel, and includes the items liste
       <th width="20%">Item</th>
       <th width="80%">Value</th>
     </tr>
+    <tr>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
+    </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

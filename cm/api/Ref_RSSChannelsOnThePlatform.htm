@@ -155,7 +155,7 @@ no-catalog: true
     </tr>
     <tr>
       <td>totalResults</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_totalResults.lbi" --> The total number of results matching the search terms, even if a subset of total results is returned.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_totalResults.lbi" -->The total number of results matching the request, even if a subset of total results is returned.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>itemsPerPage</td>
@@ -182,33 +182,36 @@ no-catalog: true
 <h4><a name="rss_platform_rss"></a>&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;Objects Returned as RSS Channels</h4>
 <p>The following is a list of some of the types of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;information that are returned as RSS channels:</p>
 <ul>
-  <li>APIs: <a href="apis/m_apis_listAPIs.htm#rss_apis_json">JSON example</a>, <a href="apis/m_apis_listAPIs.htm#rss_apis_xml">XML example</a></li>
-  <li>API Board: <a href="apis/m_apis_getBoard.htm#rss_apiboard_json">JSON example</a>, <a href="apis/m_apis_getBoard.htm#rss_apiboard_xml">XML example</a></li>
+  <li>APIs: <a href="apis/m_apis_listAPIs.htm#rss_apis_json">JSON,</a> <a href="apis/m_apis_listAPIs.htm#rss_apis_xml">XML</a></li>
+  <li>API Board: <a href="apis/m_apis_getBoard.htm#rss_apiboard_json">JSON,</a> <a href="apis/m_apis_getBoard.htm#rss_apiboard_xml">XML</a></li>
   <li>API Followers: <a href="apis/m_apis_getFollowers.htm#rss_followers_json">JSON only</a></li>
-  <li>API Version Board: <a href="apis/m_apis_getVersionBoard.htm#rss_apiversionboard_json">JSON example</a>, <a href="apis/m_apis_getVersionBoard.htm#rss_apiversionboard_xml">XML example</a></li>
+  <li>API Version Board: <a href="apis/m_apis_getVersionBoard.htm#rss_apiversionboard_json">JSON,</a> <a href="apis/m_apis_getVersionBoard.htm#rss_apiversionboard_xml">XML</a></li>
   <li>API Versions: <a href="apis/m_apis_getAPIVersions.htm#rss_apiversions">JSON example</a> </li>
-  <li>API Contracts (contract versions): <a href="apis/m_apis_getContractVersions.htm#rss_apicontracts_json">JSON example</a>, <a href="apis/m_apis_getContractVersions.htm#rss_apicontracts_xml">XML example</a> </li>
-  <li>App Board: <a href="apps/m_apps_getBoard.htm#rss_appboard_json">JSON example</a>, <a href="apps/m_apps_getBoard.htm#rss_appboard_xml">XML example</a></li>
-  <li>Apps connected to a specific API version: <a href="apis/m_apis_getConnectedApps.htm#rss_appsconnected_json">JSON example</a>, <a href="apis/m_apis_getConnectedApps.htm#rss_appsconnected_xml">XML example</a></li>
-  <li>App Contracts: <a href="apps/m_apps_getContracts.htm#rss_applicationcontracts_json">JSON example</a>, <a href="apps/m_apps_getContracts.htm#rss_applicationcontracts_xml">XML example</a></li>
+  <li>API Contracts (contract versions): <a href="apis/m_apis_getContractVersions.htm#rss_apicontracts_json">JSON,</a> <a href="apis/m_apis_getContractVersions.htm#rss_apicontracts_xml">XML</a> </li>
+  <li>App Board: <a href="apps/m_apps_getBoard.htm#rss_appboard_json">JSON,</a> <a href="apps/m_apps_getBoard.htm#rss_appboard_xml">XML</a></li>
+  <li>Apps connected to a specific API version: <a href="apis/m_apis_getConnectedApps.htm#rss_appsconnected_json">JSON,</a> <a href="apis/m_apis_getConnectedApps.htm#rss_appsconnected_xml">XML</a></li>
+  <li>App Contracts: <a href="apps/m_apps_getContracts.htm#rss_applicationcontracts_json">JSON,</a> <a href="apps/m_apps_getContracts.htm#rss_applicationcontracts_xml">XML</a></li>
   <li>App Followers: <a href="apps/m_apps_getFollowers.htm#rss_followers_json">JSON only</a></li>
   <li>App Team Members: <a href="apps/m_apps_getTeamMembers.htm#rss_applicationteammembers">JSON example</a></li>
-  <li>App Version Board: <a href="apps/m_apps_getVersionBoard.htm#rss_appversionboard_json">JSON example</a>, <a href="apps/m_apps_getVersionBoard.htm#rss_appversionboard_xml">XML example</a></li>
-  <li>App Versions: <a href="apps/m_apps_listVersions.htm#rss_applicationversions_json">JSON example</a>, <a href="apps/m_apps_listVersions.htm#rss_applicationversions_xml">XML example</a></li>
-  <li>Deployment Zones: <a href="deploymentzones/m_deploymentzones_getDeploymentZones.htm#rss_deploymentzones_json">JSON example</a>, <a href="deploymentzones/m_deploymentzones_getDeploymentZones.htm#rss_deploymentzones_xml">XML example</a></li>
-  <li>Group Board: <a href="groups/m_groups_getBoard.htm#rss_groupboard_json">JSON example</a>, <a href="groups/m_groups_getBoard.htm#rss_groupboard_xml">XML example</a></li>
+  <li>App Version Board: <a href="apps/m_apps_getVersionBoard.htm#rss_appversionboard_json">JSON,</a> <a href="apps/m_apps_getVersionBoard.htm#rss_appversionboard_xml">XML</a></li>
+  <li>App Versions: <a href="apps/m_apps_listVersions.htm#rss_applicationversions_json">JSON,</a> <a href="apps/m_apps_listVersions.htm#rss_applicationversions_xml">XML</a></li>
+  <li>Business Resources: <a href="businesses/m_businesses_getBusinessResource.htm#rss_businessresources_json">JSON,</a> <a href="businesses/m_businesses_getBusinessResource.htm#rss_businessresources_xml">XML</a></li>
+  <li>Businesses: <a href="businesses/m_businesses_getBusinesses.htm#rss_businesses_json">JSON,</a> <a href="businesses/m_businesses_getBusinesses.htm#rss_businesses_xml">XML</a></li>
+  <li>Deployment Zones: <a href="deploymentzones/m_deploymentzones_getDeploymentZones.htm#rss_deploymentzones_json">JSON,</a> <a href="deploymentzones/m_deploymentzones_getDeploymentZones.htm#rss_deploymentzones_xml">XML</a></li>
+  <li>Group Board: <a href="groups/m_groups_getBoard.htm#rss_groupboard_json">JSON,</a> <a href="groups/m_groups_getBoard.htm#rss_groupboard_xml">XML</a></li>
   <li>Group Followers: <a href="groups/m_groups_getFollowers.htm#rss_groupfollowers_json">JSON only</a></li>
-  <li>Legal Agreement Documents: <a href="apis/m_apis_getLegals.htm#rss_agreementdocuments_json">JSON example</a>, <a href="apis/m_apis_getLegals.htm#rss_agreementdocuments_textxml">text/XML example</a></li>
+  <li>Legal Agreement Documents: <a href="apis/m_apis_getLegals.htm#rss_agreementdocuments_json">JSON,</a> <a href="apis/m_apis_getLegals.htm#rss_agreementdocuments_textxml">text/XML</a></li>
   <li>User Notifications (notifications for an individual user): <a href="users/m_users_getNotifications.htm#rss_notifications_json">JSON example</a></li>
-  <li>Policies: <a href="policies/m_policies_getPolicies.htm#rss_policies_json">JSON example</a>, <a href="policies/m_policies_getPolicies.htm#rss_policies_xml">XML example</a></li>
-  <li>Private Viewers: <a href="apis/m_apis_getPrivateViewers.htm#rss_privateviewers_json">JSON example</a>, <a href="apis/m_apis_getPrivateViewers.htm#rss_privateviewers_xml">XML example</a></li>
-  <li>Reviews: <a href="reviews/m_reviews_listReviews.htm#rss_reviews_json">JSON example</a>, <a href="reviews/m_reviews_listReviews.htm#rss_reviews_xml">XML example</a></li>
-  <li>Search results: <a href="search/m_search_search.htm#rss_search_json">JSON example</a>, <a href="search/m_search_search.htm#rss_search_xml">XML example</a></li>
-  <li>User Feed: <a href="users/m_users_getHomeFeed.htm#rss_userfeed_json">JSON example</a>, <a href="users/m_users_getHomeFeed.htm#rss_userfeed_xml">XML example</a></li>
-  <li>User's list of apps: <a href="users/m_users_getApps.htm#rss_myapps_json">JSON example</a>, <a href="users/m_users_getApps.htm#rss_myapps_xml">XML example</a></li>
-  <li>User's list of APIs: <a href="users/m_users_getApis.htm#rss_myapis_json">JSON example</a>, <a href="users/m_users_getApis.htm#rss_myapis_xml">XML example</a></li>
-  <li>User's list of groups: <a href="users/m_users_getMyGroups.htm#rss_mygroups_json">JSON example</a>, <a href="users/m_users_getMyGroups.htm#rss_mygroups_xml">XML example</a></li>
-  <li>User's list of Board items: <a href="users/m_users_getBoard.htm#rss_userboard_json">JSON example</a>, <a href="users/m_users_getBoard.htm#rss_userboard_xml">XML example</a></li>
+  <li>Policies: <a href="policies/m_policies_getPolicies.htm#rss_policies_json">JSON,</a> <a href="policies/m_policies_getPolicies.htm#rss_policies_xml">XML</a></li>
+  <li>Private Viewers: <a href="apis/m_apis_getPrivateViewers.htm#rss_privateviewers_json">JSON,</a> <a href="apis/m_apis_getPrivateViewers.htm#rss_privateviewers_xml">XML</a></li>
+  <li>Reviews: <a href="reviews/m_reviews_listReviews.htm#rss_reviews_json">JSON,</a> <a href="reviews/m_reviews_listReviews.htm#rss_reviews_xml">XML</a></li>
+  <li>Search results: <a href="search/m_search_search.htm#rss_search_json">JSON,</a> <a href="search/m_search_search.htm#rss_search_xml">XML</a></li>
+  <li>User Feed: <a href="users/m_users_getHomeFeed.htm#rss_userfeed_json">JSON,</a> <a href="users/m_users_getHomeFeed.htm#rss_userfeed_xml">XML</a></li>
+  <li>User's list of apps: <a href="users/m_users_getApps.htm#rss_myapps_json">JSON,</a> <a href="users/m_users_getApps.htm#rss_myapps_xml">XML</a></li>
+  <li>User's list of APIs: <a href="users/m_users_getApis.htm#rss_myapis_json">JSON,</a> <a href="users/m_users_getApis.htm#rss_myapis_xml">XML</a></li>
+  <li>User's list of groups: <a href="users/m_users_getMyGroups.htm#rss_mygroups_json">JSON,</a> <a href="users/m_users_getMyGroups.htm#rss_mygroups_xml">XML</a></li>
+  <li>User's list of Board items: <a href="users/m_users_getBoard.htm#rss_userboard_json">JSON,</a> <a href="users/m_users_getBoard.htm#rss_userboard_xml">XML</a></li>
+  <li>Workflow definitions: <a href="workflow/m_workflow_listWorkflowDefinitions.htm#rss_workflowdefinitions_json">JSON,</a> <a href="workflow/m_workflow_listWorkflowDefinitions.htm#rss_workflowdefinitions_xml">XML</a></li>
 </ul>
 <p>The properties in the objects above are mapped to specific fields in the RSS channel. For details, refer to the documentation pages for specific operations.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>

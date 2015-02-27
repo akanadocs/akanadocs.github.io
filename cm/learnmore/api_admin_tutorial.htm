@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Tutorial (API Provider)
+title: Tutorial (API Provider) | API Administration | Community Manager Help
 description: Follow an example scenario for API setup.
 product: cm
 category: learn
 subcategory: API Admin
-weight: 21
+weight: 22
 type: page
 nav-title: Tutorial (API Provider)
 no-catalog: true
@@ -78,7 +78,7 @@ no-catalog: true
     <br />
     For the typical REST service, the most common methods, URIs, and serialization types would be:<br />
     <br />
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
     <tr>
         <th width="20%">Operation</th>
@@ -169,7 +169,10 @@ Note:
     </ul>
   </li>
   </ol>
-  <p><strong>H. Configure Advanced Options</strong></p> <ol>
+  <p><strong>H. Configure Advanced Options</strong></p>
+
+
+  <ol>
   <li>On the <em>Advanced Options </em>line click <strong>Show</strong> to expand the section.</li>
   <li>The <em>Advanced Options</em> section allows you to select a protocol for the Proxy API, select policies, and select a Default Profile (REST option only), and displays the settings configured in the <em>Target</em> section.</li>
   <li>If you would like the Proxy configuration to be different than you initially specified in the <em>Target</em> section, you can update the existing settings. For example, you might have two APIs that have the same <em>Target</em> information, but different <em>Proxy</em> information. Alternatively, you might have a SOAP API implementation but want to offer developers a REST API implementation; in this case the <em>Target</em> would be SOAP, and the <em>Proxy</em> would be REST. <br />
@@ -196,7 +199,7 @@ Note:
 <strong><em>Select Policies:</em></strong><br />
 <ol>
   <li>In the <em>Policies</em> section, select the policies that you would like the system to enforce on the proxy.
-    <p>Note: <em>You MUST select one security policy (e.g., Simple Header Security) and you should select a monitoring policy if you want to see charts and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="api_admin_api_publishing.htm#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></p>
+    <p>Note: <em>You MUST select one security policy (for example, Simple Header Security) and you should select a monitoring policy if you want to see charts and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="api_admin_api_publishing.htm#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></p>
   <p>Also note that if you select a monitoring policy<em>, </em>app data is not supported in <em>My APIs &gt; Monitoring</em> if Anonymous API Access is enabled. See <a href="api_admin_api_publishing.htm#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</p>
 <p>If your API will be supporting OAuth, its best practice to use the <strong>Edit</strong> function on the <em>API Details</em> page to select the OAuthSecurity policy after you have configured the API to support OAuth (i.e., adding an OAuth Provider in the <em>Site Admin &gt; Domains</em> section), and configuring the API using the <strong>OAuth Details</strong> function on the <em>API Details</em> page.</p>
 </li>
@@ -207,11 +210,11 @@ Note:
 
 <h3>Step 2: Create Legal Agreements</h3>
 <p>If you will require users of your API to accept any type of end user license agreement or developer agreement, you must create and upload the legal agreement content. The adding legal agreements step should be performed <em>after</em> you add an API using the <strong>Add a New API Wizard</strong> so the legal agreements will be available for review and acceptance when an App Developer requests access to the API using the <strong> API Access Wizard</strong>.</p>
-<p>All legal agreements must be written and maintained outside of the platform using your own HTML editor. Review the following key topics in the <a href="api_admin_content_guidelines.htm">Content Development Guidelines</a> section to get started. When you are ready to publish your legal agreements to the site, proceed to Step 3: Upload Legal Agreements.</p>
+<p>All legal agreements must be written and maintained outside the platform using your own HTML editor. Review the following key topics in the <a href="api_admin_content_guidelines.htm">Content Development Guidelines</a> section to get started. When you are ready to publish your legal agreements to the site, proceed to Step 3: Upload Legal Agreements.</p>
 <ul>
   <li><a href="api_admin_content_guidelines.htm#who_can_edit_api_and_legal_agreement_content">Who can edit API and legal agreement content?</a></li>
-  <li><a href="api_admin_content_guidelines.htm#how_do_i_edit_html_page_content">How do I edit HTML page content?</a></li>
-  <li><a href="api_admin_content_guidelines.htm#what_style_sheets_do_i_use_for_my_legal_agreements">What style sheets do I use for my legal agreements?</a></li>
+  <li><a href="api_admin_content_guidelines.htm#how_do_i_edit_html_page_content_for_api_doc">How do I edit HTML page content for API documentation?</a></li>
+  <li><a href="api_admin_content_guidelines.htm#what_style_sheets_do_i_use_for_my_api_legal_agreements">What style sheets do I use for my API legal agreements?</a></li>
   <li><a href="api_admin_content_guidelines.htm#how_do_i_organize_my_api_and_legal_agreement_documentation_files">How do I organize my API and legal agreement documentation files?</a></li>
 </ul>
 
@@ -227,7 +230,7 @@ Note:
   <li>After the activation is complete a hyperlink is added to the <em>Legal</em> page that you can click to view each legal agreement.</li>
   <li>You can view each legal agreement by clicking the hyperlink.</li>
   <li>To modify the display text for the hyperlink, use the <strong>Edit</strong> function on the <em>Agreements Summary</em> page.</li>
-  <li>See <a href="api_admin_content_guidelines.htm#how_do_i_upload_my_legal_agreements">How do I upload my legal agreements?</a> in the <a href="api_admin_content_guidelines.htm">Content Development Guidelines</a> for information on how to upload your legal agreements.</li>
+  <li>See <a href="api_admin_content_guidelines.htm#how_do_i_upload_my_api_legal_agreements">How do I upload my API legal agreements?</a> in the <a href="api_admin_content_guidelines.htm">Content Development Guidelines</a> for information on how to upload your legal agreements.</li>
   <li>Refer to the <a href="api_admin_legal_agreement_maintenance.htm">Legal Agreements</a> section for information on how to manage legal agreement content.</li>
 </ul>
 <h3>Step 4: Activate Legal Agreements</h3>
@@ -239,22 +242,22 @@ Note:
   <li>Chose the legal agreement you want to activate. In the <em>Status</em> column, click <strong>Activate</strong>. The <em>Edit</em> pop-up displays.</li>
   <li>Specify a Name and Description for your legal agreement. Click <strong>Save</strong> to commit your changes. After you initially assign a Name and Description to a legal agreement, you can update it using the <strong>Edit</strong> function.</li>
   <li>Your legal agreement is activated and the <strong>Deactivate</strong> button displays. The legal agreement will now be available in the <strong>API Access Wizard</strong>.</li>
-  <li>To test the legal agreement and verify that it displays correctly in the <strong>API Access Wizard</strong>, create an app and access an API to view the legal agreement. See <a href="create_app_creation.htm#how_do_i_create_a_new_app">How do I create a new app?</a> and <a href="access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I get API access for my app?</a></li>
+  <li>To test the legal agreement and verify that it displays correctly in the <strong>API Access Wizard</strong>, create an app and access an API to view the legal agreement. See <a href="app_create_app_creation.htm#how_do_i_create_a_new_app">How do I create a new app?</a> and <a href="app_access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I get API access for my app?</a></li>
 </ol>
 
 
 
 <h3>Step 5: Create API Documentation</h3>
-<p>Each API should offer API documentation. All API documentation must be written and maintained outside of the platform using your own HTML editor. Review the following topics in the <em>Content Guidelines</em> section. When you are ready to upload your API documentation to the site, proceed to Step 6: Upload API Documentation.</p>
+<p>Each API should offer API documentation. All API documentation must be written and maintained outside the platform using your own HTML editor. Review the following topics in the <em>Content Guidelines</em> section. When you are ready to upload your API documentation to the site, proceed to Step 6: Upload API Documentation.</p>
 <ul>
   <li><a href="api_admin_content_guidelines.htm#what_api_documentation_publishing_options_does_the_platform_provide">What API documentation options does the platform provide?</a></li>
   <li><a href="api_admin_content_guidelines.htm#what_is_swagger_and_how_does_it_work">What is Swagger and how does it work?</a></li>
   <li><a href="api_admin_content_guidelines.htm#what_are_the_swagger_controls_and_how_do_i_edit_page_content">What are the Swagger controls and how do I edit page content?</a></li>
   <li><a href="api_admin_content_guidelines.htm#who_can_edit_api_and_legal_agreement_content">Who can edit API and legal agreement content?</a></li>
-  <li><a href="api_admin_content_guidelines.htm#how_do_i_edit_html_page_content">How do I edit HTML page content?</a></li>
+  <li><a href="api_admin_content_guidelines.htm#how_do_i_edit_html_page_content_for_api_doc">How do I edit HTML page content for API documentation?</a></li>
   <li><a href="api_admin_content_guidelines.htm#what_style_sheets_do_i_use_for_my_html_api_documentation">What style sheets do I use for my HTML API documentation?</a></li>
-  <li><a href="api_admin_content_guidelines.htm#what_document_styles_can_i_use">What document styles can I use?</a></li>
-  <li><a href="api_admin_content_guidelines.htm#can_i_add_other_types_of_content">Can I add other types of content?</a></li>
+  <li><a href="api_admin_content_guidelines.htm#what_document_styles_can_i_use_for_api_documentation">What document styles can I use for API documentation?</a></li>
+  <li><a href="api_admin_content_guidelines.htm#can_i_add_other_types_of_content_to_my_api_documentation">Can I add other types of content to my API documentation?</a></li>
   <li><a href="api_admin_content_guidelines.htm#how_do_i_organize_my_api_and_legal_agreement_documentation_files">How do I organize my API and legal agreement documentation files?</a></li>
 </ul>
 
@@ -263,7 +266,7 @@ Note:
 <h3>Step 6: Upload API Documentation</h3>
 <p>You can upload API documentation using the <em>File Explorer</em>. Review the following guidelines:</p>
 <ul>
-  <li><a href="api_admin_content_guidelines.htm#how_do_i_zip_my_documentation_files">How do I zip my documentation files?</a></li>
+  <li><a href="api_admin_content_guidelines.htm#how_do_i_zip_my_api_documentation_files">How do I zip my API documentation files?</a></li>
   <li><a href="api_admin_content_guidelines.htm#how_do_i_upload_my_api_documentation">How do I upload my API documentation?</a></li>
   <li><a href="api_admin_content_guidelines.htm#can_i_upload_existing_api_documentation_and_use_it_in_the_platform">Can I upload existing API documentation and use it in the platform?</a></li>
 </ul>
@@ -292,5 +295,9 @@ Note:
 
 
 <h3>Step 9: Test Your API</h3>
-<p>You can test your API by creating an app, requesting API access to your API, and configuring the app to consume your API. See <a href="create_app_tutorial.htm#how_do_i_create_a_new_app_and_configure_it_to_consume_apis">How do I create a new app and configure it to consume APIs?</a> for complete instructions.</p>
+<p>You can test your API by creating an app, requesting API access to your API, and configuring the app to consume your API. See <a href="app_create_app_tutorial.htm#how_do_i_create_a_new_app_and_configure_it_to_consume_apis">How do I create a new app and configure it to consume APIs?</a> for complete instructions.</p>
 <p><a href="#top">Back to top</a></p>
+
+
+
+</div>

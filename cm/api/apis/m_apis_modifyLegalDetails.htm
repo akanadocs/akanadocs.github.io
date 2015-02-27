@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_modifyLegalDetails.lbi" -->Modifies information about a legal document for the specified API (name or description).<!-- #EndLibraryItem --></p>
 <p>For more information about managing legal agreements for your API, see <a href="../Ref_ManagingLegalAgreementsOnThePlatform.htm">Managing Legal Agreements on the Platform</a>.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must have permission to modify the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have permission to modify the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -55,12 +55,13 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to modify the legal agreement information.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/961d2b7d-0f70-4978-b05d-c45dc333e067.acmecorp/legals/6c3cc8b5-9f09-490b-b1ed-2fbb24255b26.acmecorp/details</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/961d2b7d-0f70-4978-b05d-c45dc333e067.acmepaymentscorp/legals/6c3cc8b5-9f09-490b-b1ed-2fbb24255b26.acmepaymentscorp/details</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&nbsp;/api/apis/versions/961d2b7d-0f70-4978-b05d-c45dc333e067.acmecorp/legals/6c3cc8b5-9f09-490b-b1ed-2fbb24255b26.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem -->/details HTTP/1.1
+<pre>PUT&nbsp;/api/apis/versions/961d2b7d-0f70-4978-b05d-c45dc333e067.acmepaymentscorp/legals/6c3cc8b5-9f09-490b-b1ed-2fbb24255b26.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem -->/details HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: */*
-Content-Type: application/json; charset=UTF-8</pre>
+Content-Type: application/json; charset=UTF-8<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->
+X-Csrf-Token_{tenant}: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
   "Name":"Sample EULA for advanced users",
@@ -72,7 +73,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -82,12 +83,16 @@ Content-Type: application/json; charset=UTF-8</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
+      <td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>
     </tr>
     </tbody>
 </table>
@@ -150,14 +155,14 @@ Content-Type: application/json; charset=UTF-8</pre>
 Date: Fri, 18 Jul 2014 14:29:50 GMT
 Content-Type: text/plain</pre>
 <p><strong>Sample response body</strong></p>
-<pre>6c3cc8b5-9f09-490b-b1ed-2fbb24255b26.acmecorp</pre>
+<pre>6c3cc8b5-9f09-490b-b1ed-2fbb24255b26.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -167,7 +172,7 @@ Content-Type: text/plain</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -187,7 +192,7 @@ Content-Type: text/plain</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a><a href="../Ref_API_Reference.htm#contenttype_response"></a></td>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a></td>
       <td>The unique ID of the legal document that was modified.</td>
     </tr>
   </tbody>
@@ -206,16 +211,21 @@ Content-Type: text/plain</pre>
       <th width="20%">Item</th>
       <th width="80%">Value</th>
     </tr>
+    <tr>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
+    </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

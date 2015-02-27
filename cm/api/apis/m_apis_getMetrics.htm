@@ -20,7 +20,7 @@ no-catalog: true
 Returns a set of metric information for the specified API version, in JSON or XML format, that can be used to create a chart.<!-- #EndLibraryItem --></p>
 <p><!-- #BeginLibraryItem "/Library/ref_Metrics.lbi" -->For additional information regarding the set of operations dealing with metric information, see <a href="../Ref_MetricsOnThePlatform.htm">Metrics on the Platform</a>.<!-- #EndLibraryItem --></p>
 <p class="apidoc_note"><strong>Note</strong>: This operation returns metric data as a chart; the <span class="apidoc_code"><a href="m_apis_exportMetrics.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/metrics/export</a></span> operation returns the data as a table.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be a user with Monitor permission for the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or an app developer who has a contract with the API.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must be a user with Monitor permission for the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or an app developer who has a contract with the API.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -57,11 +57,12 @@ Returns a set of metric information for the specified API version, in JSON or XM
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the metric information for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion18972.acmecorp/metrics?TimeInterval=5s&amp;Duration=1m&amp;Environment=Sandbox</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion18972.acmepaymentscorp/metrics?TimeInterval=5s&amp;Duration=1m&amp;Environment=Sandbox</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apis/versions/apiversion18972.acmecorp/metrics?TimeInterval=5s&amp;Duration=1m&amp;Environment=Sandbox HTTP/1.1
+<pre>GET&nbsp;/api/apis/versions/apiversion18972.acmepaymentscorp/metrics?TimeInterval=5s&amp;Duration=1m&amp;Environment=Sandbox HTTP/1.1
 Host: &lt;hostname&gt;
-Accept: */*</pre>
+Accept: */*<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->
+X-Csrf-Token_{tenant}: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -70,7 +71,7 @@ Accept: */*</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -80,7 +81,7 @@ Accept: */*</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -108,6 +109,21 @@ Accept: */*</pre>
       <td>string</td>
       <td>Required</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a></td>
+      <td>Path</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_ContractID.lbi" --> The unique ID for a specific contract between an app version and an API version.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a></td>
+      <td>Path</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" -->
+The unique ID for a specific app version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>ReportType</td>
@@ -158,7 +174,7 @@ The beginning point for the date range of metric information requested. If Start
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->The <a href="../Ref_API_Reference.htm#datatypes_duration">duration</a> for the metric information. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->The <a href="../Ref_DataTypes.htm#datatypes_duration">duration</a> for the metric information. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>ShowSummary</td>
@@ -199,18 +215,18 @@ Indicates whether SLAs should be included in the information returned. If not sp
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
-<p><strong>Sample response headers: JSON</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>HTTP/1.1 200 OK
 Date: Thu, 17 Apr 2014 20:47:50 GMT
 Content-Type: application/json</pre>
-<p><strong>Sample response body: JSON</strong></p>
+<p><strong>Sample response body: application/json</strong></p>
 <pre>{<br />  &quot;StartTime&quot; : &quot;2014-04-17T00:00:00Z&quot;,<br />  &quot;EndTime&quot; : &quot;2014-04-18T00:00:00Z&quot;,<br />  &quot;Summaries&quot; : [ {<br />    &quot;Metric&quot; : [ {<br />      &quot;Name&quot; : &quot;avgResponseTime&quot;,<br />      &quot;Value&quot; : -1<br />    }, {<br />      &quot;Name&quot; : &quot;minResponseTime&quot;,<br />      &quot;Value&quot; : 0<br />    }, {<br />      &quot;Name&quot; : &quot;maxResponseTime&quot;,<br />      &quot;Value&quot; : 0<br />    }, {<br />      &quot;Name&quot; : &quot;totalCount&quot;,<br />      &quot;Value&quot; : 0<br />    }, {<br />      &quot;Name&quot; : &quot;successCount&quot;,<br />      &quot;Value&quot; : 0<br />    }, {<br />      &quot;Name&quot; : &quot;faultCount&quot;,<br />      &quot;Value&quot; : 0<br />    } ],<br />    &quot;StartTime&quot; : &quot;2014-04-17T20:46:55Z&quot;,<br />    &quot;EndTime&quot; : &quot;2014-04-17T20:47:55Z&quot;,<br />    &quot;Duration&quot; : &quot;P0Y0M0DT0H1M0.000S&quot;<br />  }, {<br />    &quot;Metric&quot; : [ {<br />      &quot;Name&quot; : &quot;avgResponseTime&quot;,<br />      &quot;Value&quot; : 248<br />    }, {<br />      &quot;Name&quot; : &quot;minResponseTime&quot;,<br />      &quot;Value&quot; : 248<br />    }, {<br />      &quot;Name&quot; : &quot;maxResponseTime&quot;,<br />      &quot;Value&quot; : 248<br />    }, {<br />      &quot;Name&quot; : &quot;totalCount&quot;,<br />      &quot;Value&quot; : 1<br />    }, {<br />      &quot;Name&quot; : &quot;successCount&quot;,<br />      &quot;Value&quot; : 1<br />    }, {<br />      &quot;Name&quot; : &quot;faultCount&quot;,<br />      &quot;Value&quot; : 0<br />    } ],<br />    &quot;StartTime&quot; : &quot;2014-04-17T00:00:00Z&quot;,<br />    &quot;EndTime&quot; : &quot;2014-04-18T00:00:00Z&quot;,<br />    &quot;Duration&quot; : &quot;P0Y0M1DT0H0M0.000S&quot;<br />  } ]<br />}</pre>
 <p><strong>Sample response headers: XML</strong></p>
 <pre>HTTP/1.1 200 OK
 Date: Thu, 17 Apr 2014 20:49:50 GMT
 Content-Type: text/xml</pre>
-<p><strong>Sample response body: JSON</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<p><strong>Sample response body: application/json</strong></p>
+<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;Graph xmlns="http://soa.com/xsd/performance/1.0"&gt;
   &lt;StartTime&gt;2014-04-17T21:51:50Z&lt;/StartTime&gt;
   &lt;EndTime&gt;2014-04-17T21:52:50Z&lt;/EndTime&gt;
@@ -278,7 +294,7 @@ Content-Type: text/xml</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -288,7 +304,7 @@ Content-Type: text/xml</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -328,16 +344,20 @@ Content-Type: text/xml</pre>
       <th width="20%">Item</th>
       <th width="80%">Value</th>
     </tr>
+    <tr>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
+    </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

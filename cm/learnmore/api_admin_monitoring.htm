@@ -1,10 +1,10 @@
 ---
 layout: page
-title: API Monitoring
-description: Configure email notification settings and monitor API performance.
+title: API Monitoring | API Administration | Community Manager Help
+description: Monitor API performance.
 product: cm
 category: learn
-subcategory: API Admin
+subcategory: API Monitoring
 weight: 20
 type: page
 nav-title: 
@@ -12,104 +12,129 @@ no-nav: true
 no-catalog: true
 ---
 <h2 id="top">API Monitoring</h2>
-<p>Configure email notification settings and monitor API performance.</p>
+<p>Monitor your API's performance.</p>
 <div class = "divider1"></div>
 
 
 <h3 style="color: gray;">Table of Contents</h3>
 <ol class="table_of_contents">
-  <li><a href="#what_monitoring_functions_does_the_platform_offer">What monitoring functions does the platform offer?</a></li>
-  <li><a href="#how_do_i_respond_to_notifications">How do I respond to notifications?</a></li>
-  <li><a href="#how_do_i_enable_or_disable_email_notifications">How do I enable or disable email notifications?</a></li>
-  <li><a href="#what_kind_of_alert_notifications_will_i_receive">What kind of alert notifications will I receive?</a></li>
-  <li><a href="#how_do_i_obtain_a_quick_view_of_my_apis_performance">How do obtain a quick view of my API's performance?</a></li>
+  <li><a href="#how_can_i_keep_informed_about_my_api">How can I keep informed about my API?</a></li>
+  <li><a href="#what_api_monitoring_information_is_available">What API monitoring information is available?</a></li>
+  <li><a href="#how_do_i_obtain_a_quick_view_of_my_apis_performance">How can I see a quick view of my API's performance?</a></li>
   <li><a href="#how_do_i_monitor_api_performance">How do I monitor API performance?</a></li>
   <li><a href="#how_do_i_monitor_api_usage_logs">How do I monitor API usage logs?</a></li>
   <li><a href="#how_do_i_export_usage_data_for_apps_consuming_my_api">How do I export usage data for apps consuming my API?</a></li>
   <li><a href="#how_do_i_export_usage_data_for_operations_in_my_api">How do I export usage data for operations in my API?</a></li>
   <li><a href="#how_do_i_export_data_for_the_most_popular_apis">How do I export usage data for the most popular APIs?</a></li>
+  <li><a href="#api_monitoring_by_license">What information is available for monitoring my API by license?</a></li>
+  <li><a href="#how_do_i_monitor_my_apis_performance_per_license">How do I monitor my API's performance per license?</a></li>
+  <li><a href="#how_do_i_monitor_my_apis_performance_per_contract">How do I monitor my API's performance for a specific app/API contract?</a></li>
 </ol>
 <div class = "divider1"></div>
 
 
 
-<a name="what_monitoring_functions_does_the_platform_offer"></a><h3>What monitoring functions does the platform offer?</h3>
-<p><strong>Dashboard</strong></p>
-<p>The Admin Team may issue alerts from time to time to notify platform members of issues, such as scheduled downtime sessions, that may impact application development. You can monitor alerts in your <em>Dashboard</em>.</p>
-<p>Alert notifications are posted on your <em>Dashboard</em> page and are identified with API Name, Title, Environment (i.e., Sandbox, Production), Status, Priority, Creator ID, and Created Date/Timestamp.</p>
-<p>You can comment on an alert directly from the <em>Dashboard</em> or you can double-click the alert entry to view and manage it in the associated <em>API Board.</em></p>
-<p><strong>API Board</strong></p>
-<p>Alerts can be viewed in the <em>API Board</em>. You can filter posts to view alerts, sort by Most Popular, Most Marked, or Most Recent, and comment on an alert.</p>
-<p><strong>Performance Charts and Usage Logs</strong></p>
-<p>API performance including service response time, adherence to defined API Access Contracts, and transaction faults can be monitored and viewed in performance charts. Usage logs that include request and response message data for API, App, and Contract activity can be queried and viewed. See <a href="#how_do_i_monitor_api_performance">How do I monitor API performance?</a></p>
+<a name="how_can_i_keep_informed_about_my_api"></a>
+<h3>How can I keep informed about my API?</h3>
+<p>The platform offers the following features to help you keep informed about your API:</p>
+<ul>
+  <li><strong>API monitoring charts and graphs</strong>: A set of monitoring charts and graphs for viewing, and in some cases exporting, your API's activity, usage by various apps, and transaction details. For full details, see <a href="#what_api_monitoring_information_is_available">What API monitoring information is available?</a></li>
+  <li><strong>Dashboard notifications</strong> relating to the API. These are viewable via your Dashboard (see <a href="basics_navigation.htm#what_is_the_dashboard">What is the Dashboard?</a>), or via the API Board (see <a href="app_collaborate_api_board.htm#how_do_i_filter_information_in_the_api_board">How do I filter information in the API Board?</a>).</li>
+  <li><strong>API-related email notifications</strong>: for information about the notification categories, and how to turn on and off email notifications, see <a href="basics_account_management.htm#how_do_i_enable_or_disable_email_notifications">How do I enable or disable email notifications?</a></li>
+
+
+
+</ul>
 <p><a href="#top">Back to top</a></p>
 
 
 
-<a name="how_do_i_respond_to_notifications"></a><h3>How do I respond to notifications?</h3>
-<p>You can respond to notifications directly in the <em>Dashboard</em> by using the sort filters to target your entry in the <em>Dashboard</em>, or by clicking the notification to display its Board entry. You can then respond to the notification. See <a href="collaborate_post_ticket_management.htm">Post / Ticket Management</a> for a list of response options.</p>
+<a name="what_api_monitoring_information_is_available"></a>
+<h3>What API monitoring information is available?</h3>
+<p>The platform includes a number of charts and logs to help you monitor your API's performance from different views. Chart data can be used to monitor API usage over time or to troubleshoot errors with API operation. Usage logs that include request and response message data for API, App, and Contract activity can be queried and viewed. See <a href="#how_do_i_monitor_api_performance">How do I monitor API performance?</a></p>
+<p>From your <strong>API Details</strong> page, click <strong>Monitor</strong> on the left menu to access the monitoring features.</p>
+<p>The options available are summarized in the table below.</p>
+<table cellspacing="0px" class="doctable" style="width: 98%;">
+<thead>
+  <tr>
+    <th width="20%">This option...</th>
+    <th width="80%">Shows this information...</th>
+  </tr>
+</thead>
+<tbody>
+  <tr class="t2row">
+    <td>Overview</td>
+    <td><p>Charts:</p>
+      <ul class="apidoctable_ul">
+        <li>Throughput</li>
+        <li>Average Latency</li>
+        <li>Errors</li>
+        <li>Geographical Distribution (of API usage for the past week)</li>
+        <li>Usage by App</li>
+        <li>Usage by Operation</li>
+        <li>Top APIs</li>
+        <li>Top Contributors: shows which users contributed most to the API board: submissions and comments.</li>
+      </ul>
+      <p>For more information, see <a href="#how_do_i_obtain_a_quick_view_of_my_apis_performance">How can I see a quick view of my API's performance?</a></p></td>
+  </tr>
+  <tr class="t1row">
+    <td>Charts</td>
+    <td>Performance charts. See <a href="#how_do_i_monitor_api_performance">How do I monitor API performance?</a></td>
+  </tr>
+  <tr class="t2row">
+    <td>Logs</td>
+    <td>Transaction logs. See <a href="#how_do_i_monitor_api_usage_logs">How do I monitor API usage logs?</a></td>
+  </tr>
+  <tr class="t1row">
+    <td>Licenses</td>
+    <td><p>Charts for licenses:</p>
+      <ul class="apidoctable_ul">
+        <li>API Usage by License</li>
+        <li>API Usage by App</li>
+        <li>API Quota Usage</li></ul>
+      <p>For more information, see <a href="#how_do_i_monitor_my_apis_performance_per_license">How do I monitor my API's performance per license?</a></p></td>
+  </tr>
+</tbody>
+</table>
 <p><a href="#top">Back to top</a></p>
 
 
 
-<a name="how_do_i_enable_or_disable_email_notifications"></a><h3>How do I enable or disable email notifications?</h3>
-<p>You can configure your  account to receive <em>email</em> notifications when certain platform activities occur. Notifications can be updated on the <em>User Settings</em> page. The default state for notifications is <em>enabled</em>.</p>
-<h5> To modify your email notification settings:</h5>
-<ol>
-  <li>Access the <em>Edit User Settings</em> page. See <a href="basics_account_management.htm#how_do_i_edit_my_user_profile">How do I edit my user profile?</a> for details.</li>
-  <li>Notifications are configured in the &quot;Notifications Settings&quot; section by selecting a notification type. All notifications are disabled by default.</li>
-  <li>If you would like to receive platform news updates. Click the <strong>Receive News Updates</strong> checkbox.</li>
-  <li>In the "Send Notifications when" section check or uncheck  each notification type you would like to enable or disable. Options include:
-    <ul>
-      <li>My Apps receive alerts</li>
-      <li>There are major changes to my app's lifecycle</li>
-      <li>Posts are created for my apps</li>
-      <li>There are changes to my app's team</li>
-      <li>There are changes to my app's access to APIs</li>
-      <li>There are changes to my app's Team</li>
-      <li>Someone comments on my post</li>
-      <li>Three are changes to my Private API Group</li>
-      <li>Tickets referencing my apps are created or updated</li>
-    </ul>
-</li>
-  <li>Click <strong>Save</strong>.</li>
-</ol>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="what_kind_of_alert_notifications_will_i_receive"></a><h3>What kind of alert notifications will I receive?</h3>
-<p>The Admin Team may send alert notifications from time to time about API maintenance announcements, API related news, etc. Alert notices are posted in the <em>API Board</em> of the API to which the alert pertains.</p>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="how_do_i_obtain_a_quick_view_of_my_apis_performance"></a><h3>How do obtain a quick view of my API's performance?</h3>
-<p>The <em>API &gt; Monitor  &gt; Overview</em> section includes a barometer style Dashboard controls that  allows you to view API throughput, latency, and errors for messages in  real-time for Sandbox and Production environments. Statistics are calculated  for all apps consuming your API, and for all operations included in your API. You  can obtain statistics on a per-second or per-minute basis. The Dashboard displays statistics for the last  24 hours.</p>
-<p>
-  The Dashboard  controls scale based on the number of messages received and the time interval selected  (sec or min). For example, 50 messages were transmitted for your API in the  last 5 seconds; the scale will change to 0-60.</p>
-<p>
-  The Dashboard  provides the following control types:</p>
-
-  <ul>
-    <li><strong>Throughput:</strong> Provides statistics on the rate of successful message delivery.</li>
-    <li><strong>Latency:</strong> Provides statistics on the amount of time it takes to process a message from source to destination.</li>
-<li><strong>Errors:</strong> Provides statistics on the number  errors incurred during message delivery.</li>
+<a name="how_do_i_obtain_a_quick_view_of_my_apis_performance"></a>
+<h3>How can I see a quick view of my API's performance?</h3>
+<p>The <em>API &gt; Monitor &gt; Overview</em> section includes a barometer-style Dashboard that gives you an overview of your API's performance. For example, it shows API throughput, latency, and errors for messages in real time for Sandbox and Production environments.</p>
+<p>Statistics are calculated for all apps consuming your API, and for all operations that are part of your API. You can get statistics on a per-second or per-minute basis. The Monitoring Dashboard displays statistics for the last 24 hours.</p>
+<p>You can narrow down the data by the following:</p>
+<ul>
+  <li>Environment: Sandbox or Production</li>
+  <li>Interval: Per Sec or Per Min</li>
+</ul>
+<p>The API Monitoring Dashboard controls scale based on the number of messages received and the time interval selected (sec or min). For example, if your app sent or received 50 messages in the last 5 seconds, the scale changes to 0-60.</p>
+<p>The API Monitoring Dashboard provides the following control types:</p>
+<ul>
+  <li><strong>Throughput:</strong> Provides statistics on the rate of successful message delivery.</li>
+  <li><strong>Latency:</strong> Provides statistics on the amount of time it takes to process a message from source to destination.</li>
+  <li><strong>Errors:</strong> Provides statistics on the number errors incurred during message delivery.</li>
 </ul>
 
-  <p>Usage data is further categorized into <em>Usage By App</em>, <em>Usage By Operation</em>, and <em>API Standings</em> groupings and can be exported. See <a href="#how_do_i_export_usage_data_for_apps_consuming_my_api">How do I export usage data for apps consuming my API?</a>, <a href="#how_do_i_export_usage_data_for_operations_in_my_api">How do I export usage data for operations in my API?</a>, and <a href="#how_do_i_export_data_for_the_most_popular_apis">How do I export usage data for the most popular APIs?</a></p>
+<p>You can view data for <em>Usage By App</em>, <em>Usage By Operation</em>, and <em>API Standings</em>; you can also export the data. For more information, see:</p>
+<ul>
+  <li><a href="#how_do_i_export_usage_data_for_apps_consuming_my_api">How do I export usage data for apps consuming my API?</a></li>
+  <li><a href="#how_do_i_export_usage_data_for_operations_in_my_api">How do I export usage data for operations in my API?</a></li>
+  <li><a href="#how_do_i_export_data_for_the_most_popular_apis">How do I export usage data for the most popular APIs?</a></li>
+</ul>
 <p><a href="#top">Back to top</a></p>
 
 
 
 <a name="how_do_i_monitor_api_performance"></a><h3>How do I monitor API performance?</h3>
-<p>Performance charts are included in the <em>My APIs &gt; Monitor</em> page. They provide a mechanism for all platform members to view the performance of their apps and the APIs their apps are consuming. Chart data can be used to monitor API usage over a span of time or to troubleshoot errors with API operation.</p>
-<p>The Performance Chart functionality allows you to view performance in sandbox or production modes, provides monitoring for tracking service response time and transaction faults. Charts are populated by usage &quot;roll-up&quot; data that is gathered during the processing of web service request and response messages. Historic usage and performance data can be queried and viewed in the Usage Logs section. See <a href="#how_do_i_monitor_api_usage_logs">How do I monitor API usage logs?</a></p>
-<p>Performance Charts automatically scale the Y axis to show an appropriate range for the data shown. You can choose to scale to the average (i.e., default) based on the selected interval or set your own scaling.</p>
-<p><em>Note: Updating of chart performance statistics using <strong>Refresh</strong> is based on your selected Duration and Interval which represents the total time range displayed.</em></p>
+<p>Performance charts are included in the <em>My Apps &gt; Monitor &gt; Charts</em> page. Chart data can be used to monitor API usage over time or to troubleshoot errors.</p>
+<p>The Performance Chart functionality allows you to view performance in sandbox or production modes, and provides monitoring for tracking service response time and transaction faults. Charts are populated by usage &quot;roll-up&quot; data that is gathered during the processing of web service request and response messages. Historic usage and performance data can be queried and viewed in the Usage Logs section. See <a href="#how_do_i_monitor_api_usage_logs">How do I monitor API usage logs?</a></p>
+<p>Performance Charts automatically scale the Y axis to show an appropriate range for the data shown. You can choose to scale to the average based on the selected interval (the default) or you can set your own scaling.</p>
+<p><em>Note: Updating of chart performance statistics using <strong>Refresh</strong> is based on the selected Duration and Interval, which together represent the total time range displayed.</em></p>
 <p><strong>Chart Types</strong></p>
-<p>The following performance charts types are supported. All chart data is presented in milliseconds (ms).</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<p>The following performance chart types are supported for APIs. All chart data is presented in milliseconds (ms).</p>
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="20%">Chart Name</th>
@@ -120,23 +145,24 @@ no-catalog: true
     <tr class="t2row">
       <td>Min / Max / Avg Response Time</td>
       <td><p>Minimum, Maximum, and Average Response Times for transactions are depicted in a candlestick bar chart on the Y axis.</p>
-      <p>You can also hover over each time interval and view a Datapoint Pop-up that displays the Date, Time, Average, Max, and Min Response time of the transaction for the selected time interval.</p></td>
+      <p>You can also hover over each time interval and view a Datapoint pop-up that displays the Date, Time, Average, Max, and Min Response time of the transaction for the selected time interval.</p></td>
     </tr>
   <tr class="t1row">
     <td>Success / Fault Throughput</td>
     <td><p>Successful transactions and faults are depicted in a single chart with two&nbsp;Y axes.</p>
       <p>Successful transactions are depicted in a column chart. A vertical bar displays the number of transactions that have successfully processed for the selected response time range.</p>
-      <p>Faults are depicted in a scatter chart. A red dot represents the number of Faults associated with a specific time interval.</p></td>
+      <p>Faults are depicted in a scatter chart. A red dot represents the number of faults associated with a specific time interval.</p></td>
   </tr>
   </tbody>
 </table>
 <p><strong>Time Range</strong></p>
-<p>The Performance Chart includes a navigation control (located at the bottom of the chart) that allows you to navigate the Timeline based on the selected Duration and Time Interval. Throughput data can also be monitored on the timeline and is presented in a spline chart.</p>
+<p>The Performance Chart includes a navigation control, located at the bottom of the chart, which allows you to navigate the Timeline based on the selected Duration and Time Interval. Throughput data can also be monitored on the timeline and is presented in a spline chart.</p>
 <p>After you have targeted a timeline, there are several ways to view additional chart detail. The <em>Zoom</em> feature allows you to view chart data by clicking on a pre-defined interval (1 hour, 3 hour, 6 hour, 12 hour, All). The Data Point Popup allows you to hover over a specific datapoint to view response data detail including Date, Time, Average, Max, and Min.</p>
-<p><strong>Graph Controls</strong></p>
-<p>The Graph Controls section of a Performance Chart
-  provides options for configuring the chart content (i.e., a specific API, or all APIs), data capture and display intervals (i.e., Duration and Interval), and navigating and zooming the chart Timeline. Each chart displays data based on the  currently approved environment (i.e., Sandbox or Production).</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<p><strong>Chart Controls</strong></p>
+<p>You can narrow down the information for the charts by setting the values listed below.</p>
+<p> Graph Controls section of a Performance Chart
+  provides options for configuring the chart content (a specific API or all APIs), data capture, and display intervals (Duration and Interval), as well as navigating and zooming the chart Timeline. Each chart displays data based on the currently approved environment (Sandbox or Production).</p>
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="20%">Field Name</th>
@@ -145,18 +171,35 @@ no-catalog: true
 </thead>
 <tbody>
     <tr class="t2row">
-      <td>Duration</td>
-      <td>A drop-down menu that allows you to select the time interval to summarize report data. Options include 5 minutes, 15 minutes, 1 hour, 1 day, 1 week, 1 month, and 1 year. When you select a new duration, the Performance Chart data is automatically refreshed.</td>
+      <td>Environment</td>
+      <td>Sandbox or Production</td>
+    </tr>
+    <tr class="t1row">
+      <td>Apps</td>
+      <td>Defaults to All Apps, but you can specific an app.</td>
+    </tr>
+    <tr class="t2row">
+      <td><a href="basics_glossary.htm#gl_monitoring_duration">Duration</a></td>
+      <td><p>A drop-down menu that allows you to select the time period to be shown on the chart. You can choose to show the last:</p>
+        <ul class="apidoctable_ul">
+          <li>5 minutes</li>
+          <li> 15 minutes</li>
+          <li>1 hour</li>
+          <li>1 day</li>
+          <li>1 week</li>
+          <li>1 year</li>
+          </ul>
+        <p>When you select a new duration, the Performance Chart data is automatically refreshed.</p></td>
     </tr>
   <tr class="t1row">
-    <td>Interval</td>
-    <td>A drop-down menu that allows you to select the interval that the Performance Chart Timeline will present the data. Options adjust based on selected Duration.</td>
+    <td><a href="basics_glossary.htm#gl_monitoring_interval">Interval</a></td>
+    <td>A drop-down menu that allows you to select the interval for which the Performance Chart Timeline will present the data. Options adjust based on selected Duration. For example, if Duration is 5 minutes, Interval is 5 sec. If Duration is 1 year, Interval is 1 week.</td>
   </tr>
   <tr class="t2row">
     <td>Zoom</td>
-    <td>A button control that allows you to view chart data in pre-defined intervals of All, 1 hour, 3 hours, 6 hours, and 12 hours. <br />
+    <td>A button control that allows you to view chart data in pre-defined intervals of All, 1 hour, 3 hours, 6 hours, or 12 hours. <br />
       <br />
-      <em>Note that selecting <strong>All</strong> can be used to reset the chart display to the current time based on the selected Duration and Interval.</em></td>
+      <em>To reset the chart display to the current time based on the selected Duration and Interval, click <strong>All</strong>.</em></td>
   </tr>
   <tr class="t1row">
     <td>Refresh</td>
@@ -164,7 +207,7 @@ no-catalog: true
   </tr>
   <tr class="t2row">
     <td>Print</td>
-    <td>A button that allows you to print the current chart by loading the chart into the browser and launching the print dialog.</td>
+    <td>A button that allows you to print the current chart by loading the chart in the browser and using the browser's Print feature.</td>
   </tr>
 </tbody>
 </table>
@@ -175,7 +218,7 @@ no-catalog: true
 <a name="how_do_i_monitor_api_usage_logs"></a><h3>How do I monitor API usage logs?</h3>
 <p><em>My APIs</em> includes a <em>Monitor &gt; Logs</em> section that provides options for filtering and viewing usage logs associated with API activity that has occurred in either the platform production and sandbox environments.</p>
 <ul>
-  <li>Usage information can be filtered by duration in All, 5 minute, 1 hour, 1 day, or custom date range intervals.</li>
+  <li>Usage information can be filtered by the following intervals: All, 5 minute, 1 hour, 1 day, or custom date range.</li>
   <li>You can view details of a specific Usage Log record by clicking the <strong>Sent</strong> field in the search results.</li>
   <li>You can view the values of each Usage Log record. This can be useful for performing a quick review of message activity associated with a specific transaction.</li>
 </ul>
@@ -183,7 +226,7 @@ no-catalog: true
 <ol>
   <li>Navigate to <em>My APIs &gt; Monitor &gt; Logs.</em> It is organized as follows:<br />
     <br />
-    <table cellspacing="0px" class="doctable" style="width: 90%;">
+    <table cellspacing="0px" class="doctable" style="width: 98%;">
       <thead>
       <tr>
         <th width="20%">Field Name</th>
@@ -192,23 +235,30 @@ no-catalog: true
 </thead>
 <tbody>
         <tr class="t2row">
-              <td>Duration</td>
-              <td>A drop-down menu that allows you to select a time period for gathering report data. Options include 5 minutes, 1 hour, 1, day, or custom date range.</td>
+          <td>Environment</td>
+          <td>Sandbox or Production</td>
         </tr>
-      <tr class="t1row">
-        <td>Time Period</td>
-        <td>From / To field displays that allow you to  select a date range to monitor performance from a calendar pop-up. <br />
-          <br />
-The ability to specify a date as filter criteria is enabled when the Duration drop-down menu is set to &quot;Custom.&quot;<br />
-<br />
-To configure a Time Period, click in the From: and To: fields and select a date from the Calendar Pop-up. The date is automatically entered in YYYY-MM-DD format.</td>
+        <tr class="t1row">
+              <td>Interval</td>
+            <td><p>A drop-down menu that allows you to select a time period for gathering report data. Options:</p>
+<ul class="apidoctable_ul">
+<li>All</li>
+<li>5 minutes</li>
+<li>1 hour</li>
+<li>1 day</li>
+<li> Custom (specify From/To for the custom time period)</li>
+</ul></td>
+        </tr>
+      <tr class="t2row">
+        <td>Apps</td>
+        <td>Defaults to All Apps, but you can specific an app.</td>
       </tr>
       </tbody>
    </table>
 </li>
-  <li>Enter your filter criteria and click <strong>Refresh</strong> to generate your usage log report. Your usage log report includes the following information: <br />
+  <li>Enter your filter criteria and click <strong>Refresh</strong> to generate the usage log report, which includes the following information: <br />
     <br />
-    <table cellspacing="0px" class="doctable" style="width: 90%;">
+    <table cellspacing="0px" class="doctable" style="width: 98%;">
       <thead>
       <tr>
         <th width="20%">Field Name</th>
@@ -218,11 +268,11 @@ To configure a Time Period, click in the From: and To: fields and select a date 
 <tbody>
           <tr class="t2row">
               <td>Sent</td>
-              <td>The request date and request time (in milliseconds) when the request was received. This field is hyperlinked to a Usage Log Details report for the selected log record.</td>
+              <td>The request date and request time (in milliseconds) when the request was received, with a link to a Usage Log Details report for the selected log record.</td>
         </tr>
       <tr class="t1row">
         <td>API</td>
-        <td>The API associated with the request. This field is hyperlinked to the <em>API Details</em> page of the selected API.</td>
+        <td>The API associated with the request, with a link to the <em>API Details</em> page of the selected API.</td>
       </tr>
       <tr class="t2row">
         <td>Method</td>
@@ -230,22 +280,21 @@ To configure a Time Period, click in the From: and To: fields and select a date 
       </tr>
       <tr class="t1row">
         <td>Result</td>
-        <td>The transaction result error code (i.e., successful, with errors, etc.).</td>
+        <td>The transaction result error code (successful, with errors, and so forth).</td>
       </tr>
 </tbody>
     </table>
-    <br />
 </li>
 </ol>
 <h5>To view usage log details for an API:</h5>
 <ol>
-  <li>In the Usage Log Report, target a log record that you would like to view details for and click the <strong>Sent</strong> field. The <em>Usage Log Details</em> display for the selected log record.</li>
-  <li>Review the log information. Refer for the <em>Usage Log Details</em> tables below for more information.</li>
-  <li>If you would like to navigate to the <em>API Details</em> page of the selected API, click the API Name.</li>
-  <li>See the tables below for additional details about the log record.</li>
-</ol>
+  <li>In the Usage Log Report, choose a log record for which you want to view the details and then click the <strong>Sent</strong> field. The <em>Usage Log Details</em> display for the selected log record.</li>
+  <li>Review the log information. For more information, refer to the tables below.</li>
+  <li>If you would like to navigate to the details page for a specific app, click the app name.</li>
+  </ol>
+<p>For additional details about the log record, see the tables below.</p>
 <p><strong>Usage Log Details (Transport Header)</strong></p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="20%">Field Name</th>
@@ -259,23 +308,23 @@ To configure a Time Period, click in the From: and To: fields and select a date 
     </tr>
   <tr class="t1row">
     <td>Method</td>
-    <td>The name of API method the message is associated with.</td>
+    <td>The name of the method (operation) the message is associated with.</td>
   </tr>
   <tr class="t2row">
     <td>URL</td>
-    <td>The URL of the RESTful web services whose method is being used.</td>
+    <td>The URL for the operation.</td>
    </tr>
   <tr class="t1row">
     <td>Client Host</td>
-    <td>The host name of the client who made the request.</td>
+    <td>The host name of the client that made the request.</td>
   </tr>
   <tr class="t2row">
     <td>Time Sent</td>
-    <td>The request date and request time (in milliseconds) when a request is made.</td>
+    <td>The date and time (in milliseconds) when the request was made.</td>
   </tr>
   <tr class="t1row">
     <td>Time Taken</td>
-    <td>The request date and request time (in milliseconds) when a request is made.</td>
+    <td>The date and time (in milliseconds) when the request is made.</td>
   </tr>
   <tr class="t2row">
     <td>Status Code</td>
@@ -283,13 +332,13 @@ To configure a Time Period, click in the From: and To: fields and select a date 
   </tr>
   <tr class="t1row">
     <td>Message Content</td>
-    <td>Request Message and Response Message content.</td>
+    <td>Request and response message content.</td>
   </tr>
 </tbody>
 </table>
 <p>&nbsp;</p>
 <p><strong>Usage Log Details (Transport Headers for Request Message) </strong></p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="20%">Field Name</th>
@@ -299,7 +348,7 @@ To configure a Time Period, click in the From: and To: fields and select a date 
 <tbody>
     <tr class="t2row">
       <td>Request Method</td>
-      <td>Method used by browser to send request to server (e.g., POST, GET, PUT or DELETE).</td>
+      <td>The HTTP verb for the message; generally POST, GET, PUT, or DELETE.</td>
     </tr>
   <tr class="t1row">
     <td>Accept-Encoding</td>
@@ -311,11 +360,11 @@ To configure a Time Period, click in the From: and To: fields and select a date 
   </tr>
   <tr class="t1row">
     <td>Content-Type</td>
-    <td>The length of the request body in octets.</td>
+    <td>The media type for the request message.</td>
   </tr>
   <tr class="t2row">
     <td>User Agent</td>
-    <td>A media type is composed.</td>
+    <td>The user-agent for the message; for example, the browser type.</td>
   </tr>
   <tr class="t1row">
     <td>Host</td>
@@ -328,7 +377,7 @@ To configure a Time Period, click in the From: and To: fields and select a date 
 </tbody>
 </table>
 <p><strong>Usage Log Details (Transport Headers for Response Message</strong>)</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="20%">Field Name</th>
@@ -342,11 +391,11 @@ To configure a Time Period, click in the From: and To: fields and select a date 
     </tr>
   <tr class="t1row">
     <td>Content-Type</td>
-    <td>A media type is composed.</td>
+    <td>The media type for response message.</td>
   </tr>
   <tr class="t2row">
     <td>Cache-Control</td>
-    <td>Tells all caching mechanisms from server to client whether they may cache the object. It is measured in seconds.</td>
+    <td>Tells all caching mechanisms from server to client whether caching is allowed for the message. Measured in seconds.</td>
   </tr>
   <tr class="t1row">
     <td>Expires</td>
@@ -354,7 +403,7 @@ To configure a Time Period, click in the From: and To: fields and select a date 
   </tr>
   <tr class="t2row">
     <td>Transfer-Encoding</td>
-    <td>The form of encoding used to transfer the entity to the user (e.g., deflate, gzip, etc.).</td>
+    <td>The form of encoding used for the message (for example, deflate or gzip).</td>
   </tr>
   <tr class="t1row">
     <td>Message</td>
@@ -367,38 +416,178 @@ To configure a Time Period, click in the From: and To: fields and select a date 
 
 
 <a name="how_do_i_export_usage_data_for_apps_consuming_my_api"></a><h3>How do I export usage data for apps consuming my API?</h3>
-<p>The monitoring process captures usage data pertaining to apps consuming the current API. The <em>Usage by App</em> section includes an <strong>Export</strong> function that allows you to export usage data  a .csv file. You can open the .csv file into a selected application or download the .csv to your <em>Downloads</em> folder. Data to be exported is based on statistics gathered for the  current 24 hour period.</p>
+<p>The monitoring process captures usage data for apps consuming the current API. The <em>Usage by App</em> section includes an <strong>Export</strong> function that allows you to export usage data to a .csv file. You can open the .csv file in a selected application or download it. The data exported is based on statistics gathered for the current 24-hour period.</p>
 <h5>To export usage data for apps that are using an API:</h5>
 <ol>
   <li>In the <em>Usage By App</em> section on the <em>API &gt; Monitor &gt; Overview</em> screen, click <strong>Export</strong>. The <em>Opening export.csv</em> file dialog box displays.</li>
-  <li>To open the .csv file into Microsoft  Excel or another selected application, click <strong>Open With</strong>.</li>
-  <li>To download the .csv file to your <em>Downloads</em> folder, click <strong>Save File</strong>.</li>
-  <li>To exit the <em>Opening export.csv</em> dialog box click <strong>OK</strong>.</li>
+  <li>To open the .csv file in Microsoft Excel or another selected application, click <strong>Open With</strong>.</li>
+  <li>To download the .csv file, click <strong>Save File</strong>.</li>
+  <li>To exit the <em>Opening export.csv</em> dialog box, click <strong>OK</strong>.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
 
 
 
 <a name="how_do_i_export_usage_data_for_operations_in_my_api"></a><h3>How do I export usage data for operations in my API?</h3>
-<p>The monitoring process captures usage data pertaining to operations in the current API. The <em>Usage by Operation</em> section includes an <strong>Export</strong> function that allows you to export usage data  a .csv file. You can open the .csv file into a selected application or download the .csv to your <em>Downloads</em> folder. Data to be exported is based on statistics gathered for the  current 24 hour period.</p>
+<p>The monitoring process captures usage data for operations in the current API. The <em>Usage by Operation</em> section includes an <strong>Export</strong> function that allows you to export usage data to a .csv file. You can open the .csv file in a selected application or download it. The export data based on statistics gathered in the last 24 hours.</p>
 <h5>To export usage data for operations in your API:</h5>
 <ol>
   <li>In the <em>Usage By Operation</em> section on the <em>API &gt; Monitor &gt; Overview</em> screen, click <strong>Export</strong>. The <em>Opening export.csv</em> file dialog box displays.</li>
-  <li>To open the .csv file into Microsoft  Excel or another selected application, click <strong>Open With</strong>.</li>
-  <li>To download the .csv file to your <em>Downloads</em> folder, click <strong>Save File</strong>.</li>
-  <li>To exit the <em>Opening export.csv</em> dialog box click <strong>OK</strong>.</li>
+  <li>To open the .csv file in Microsoft Excel or another selected application, click <strong>Open With</strong>.</li>
+  <li>To download the .csv file, click <strong>Save File</strong>.</li>
+  <li>To exit the <em>Opening export.csv</em> dialog box, click <strong>OK</strong>.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
 
 
 
 <a name="how_do_i_export_data_for_the_most_popular_apis"></a><h3>How do I export usage data for the most popular APIs?</h3>
-<p>The monitoring process captures usage data based on API popularity. The <em>API Standings</em> section includes an <strong>Export</strong> function that allows you to export usage data  a .csv file. You can open the .csv file into a selected application or download the .csv to your <em>Downloads</em> folder. Data to be exported is based on statistics gathered for the  current 24 hour period.</p>
+<p>The monitoring process captures usage data based on API popularity. The <em>API Standings</em> section includes an <strong>Export</strong> function that allows you to export usage data to a .csv file. You can open the .csv file in a selected application or download it. The export data is based on statistics gathered for the current 24 hour period.</p>
 <h5>To export usage data for the most popular APIs:</h5>
 <ol>
   <li>In the <em>API Standings</em> section on the <em>API &gt; Monitor &gt; Overview</em> screen, click <strong>Export</strong>. The <em>Opening export.csv</em> file dialog box displays.</li>
-  <li>To open the .csv file into Microsoft  Excel or another selected application, click <strong>Open With</strong>.</li>
-  <li>To download the .csv file to your <em>Downloads</em> folder, click <strong>Save File</strong>.</li>
-  <li>To exit the <em>Opening export.csv</em> dialog box click <strong>OK</strong>.</li>
+  <li>To open the .csv file in Microsoft Excel or another selected application, click <strong>Open With</strong>.</li>
+  <li>To download the .csv file, click <strong>Save File</strong>.</li>
+  <li>To exit the <em>Opening export.csv</em> dialog box, click <strong>OK</strong>.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
+
+
+
+<a name="api_monitoring_by_license"></a><h3>What information is available for monitoring my API by license?</h3>
+<p>If your API is using the Licenses feature, you might want to monitor your API's performance for each license.</p>
+<p>The platform includes a set of monitoring tools, including pie charts and bar charts, to help you monitor by license.</p>
+<p>Three choices are available:</p>
+<ul>
+  <li>API Usage by License</li>
+  <li>API Usage by App</li>
+  <li>API Quota Usage</li>
+</ul>
+<p>From your <strong>API Details</strong> page, click <strong>Monitor</strong> on the left menu to access the monitoring features, and then click <strong>Licenses</strong>.</p>
+<p>There are certain prerequisites that must be in place for monitoring information to be displayed correctly. Make sure:</p>
+<ul>
+  <li>Your API is using the Licenses feature.</li>
+  <li>Your licenses include a quota policy.</li>
+  <li>Your timezone is set correctly in the configuration settings for the underlying infrastructure (configuration settings, com.soa.rollup.configuration, monitoring.rollup.configuration.dailyRollupTimeZones setting). The timezone setting affects the way the data is rolled up into increments such as hour and day. If the settings are not correct, ask your Site Admin to adjust the timezone.</li>
+</ul>
+<p>The options available are summarized in the table below.</p>
+<table cellspacing="0px" class="doctable" style="width: 98%;">
+  <thead>
+    <tr>
+      <th width="20%">This option...</th>
+      <th width="80%">Shows this information...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="t2row">
+      <td>API Usage by License</td>
+      <td><p>Pie charts that breaks down the total traffic to the API by license. This shows which license is using which portion of the API, out of the total traffic. Pie charts show the breakdown for the following metrics:</p>
+        <ul class="apidoctable_ul">
+          <li>Usage count (total number of messages)</li>
+          <li>Request message size</li>
+          <li>Response message size</li>
+        </ul>
+        <p>By default, three charts are generated for each license.</p></td>
+    </tr>
+    <tr class="t1row">
+      <td>API Usage by App</td>
+      <td><p>Bar charts that break down the total traffic to the API by app. This shows metrics for the app's usage of the API, including:</p>
+        <ul class="apidoctable_ul">
+          <li>Usage count (total number of messages)</li>
+          <li>Average response time (in milliseconds)</li>
+          <li>Response message size</li>
+        </ul>
+        <p>By default, three charts are generated for each app.</p></td>
+    </tr>
+    <tr class="t2row">
+      <td>API Quota Usage</td>
+      <td>Only valid if a quota policy is attached to a license the API is using. This chart shows app consumption of the API as a bar chart, with each time slot being a bar, and additionally displays the quota threshold as a line across the chart. If the app exceeds the consumption defined by the quota, the bar is shown in red; if the app consumption is within quota, the bar is blue.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h5><a name="monitoring_by_license_graph_controls"></a>Monitoring by License: Graph Controls</h5>
+<p>When you choose <em>Monitor &gt; Licenses</em>,  you can adjust the chart settings so that you see the exact information you need. Settings and their values are shown below.</p>
+<table cellspacing="0px" class="doctable" style="width: 98%;">
+  <thead>
+    <tr>
+      <th width="20%">Setting</th>
+      <th width="80%">Values/Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="t2row">
+      <td>Environment</td>
+      <td>Sandbox or Production.</td>
+    </tr>
+    <tr class="t1row">
+      <td>Report period</td>
+      <td><p>A drop-down menu that allows you to select the time period to be shown in the chart. When you select a new duration, the Performance Chart data is automatically refreshed. Choices:</p>
+        <ul class="apidoctable_ul">
+          <li>1  hour</li>
+          <li>1 day</li>
+          <li>1 week</li>
+          <li>1 month</li>
+          <li>1 year</li>
+          <li> Custom (specify From/To for the custom time period)</li>
+        </ul></td>
+    </tr>
+    <tr class="t2row">
+      <td>Apps</td>
+      <td>Defaults to All Apps, but you can choose a specific app.<em></em></td>
+    </tr>
+    <tr class="t1row">
+      <td>Licenses</td>
+      <td>Defaults to All Licenses, but you can choose a specific license.<em></em></td>
+    </tr>
+    <tr class="t2row">
+      <td>Graphs</td>
+      <td><p>Options:</p>
+        <ul class="apidoctable_ul">
+          <li>All Graphs</li>
+          <li>API Usage by License</li>
+          <li>API Usage by App</li>
+          <li>API Quota Usage</li>
+        </ul>        </td>
+    </tr>
+  </tbody>
+</table>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_monitor_my_apis_performance_per_license"></a><h3>How do I monitor my API's performance per license?</h3>
+<p>The API monitoring feature allows you to review your API's activity with any apps that are using it, specific to any licenses offered for API usage.</p>
+<h5>To monitor API performance for a specific license:</h5>
+<ol>
+  <li>Log in and go to your API Details page.</li>
+  <li>Click <em>Monitor &gt; Licenses</em>.</li>
+  <li>Choose values as needed. For details on the options available, refer to <a href="#monitoring_by_license_graph_controls">Monitoring by License: Graph Controls</a> above.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_monitor_my_apis_performance_per_contract"></a>
+<h3>How do I monitor my API's performance for a specific app/API contract?</h3>
+<p>You can view monitoring charts and logs for any specific contract your API has with an app, as long as monitoring is turned on for your API.</p>
+<p class="apidoc_note"><strong>Note</strong>: If the specified time period includes a point where the contract was revised, or suspended and resumed, or the contract was cancelled and a new one created, the chart or graph shows <strong>all</strong> transaction info between the app and the API in the selected time period. However, only in the case where the contract was revised, there is uninterrupted service. In other scenarios, service is suspended or stopped and is then resumed or restarted, with a period in between where the contract is not active.</p>
+<h5>To monitor API performance for a specific contract:</h5>
+<ol>
+  <li>Log in and go to the API Details page for your API.</li>
+  <li>On the left menu, click <em>Monitor</em>.</li>
+  <li>Choose one of the following options, to view contract information in different ways:
+    <ul>
+      <li><strong>Overview</strong>: Choose the environment. Here, in the <strong>Usage by App</strong> pie chart, you can see what portion of your API's total traffic is generated by a specific app.</li>
+      <li><strong>Charts</strong>: Choose the environment and the app, and other values as needed. Here, you can view transaction volume, success/fault, and how the traffic measures against min/max average transaction time, if specified. You can also export the chart information.</li>
+      <li><strong>Logs</strong>: Choose the environment and the app, and date range if needed. Here, you can view specific transaction logs. You can also export the log information.</li>
+      <li><strong>Licenses</strong>: Choose the environment and the app, and other values as needed. Choose API Usage by App.</li>
+    </ul>
+  </li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+</div>

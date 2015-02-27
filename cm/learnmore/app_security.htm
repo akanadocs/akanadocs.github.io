@@ -1,11 +1,11 @@
 ---
 layout: page
-title: App Security
+title: App Security Options and Setup | App Development | Community Manager Help
 description: Learn about how to set up and manage app security.
 product: cm
 category: learn
 subcategory: App Security
-weight: 22
+weight: 23
 type: page
 nav-title: App Security
 ---
@@ -51,7 +51,7 @@ nav-title: App Security
   <li>The Shared Secret approaches are easier to implement since you don't have to generate public and private keys.</li>
   <li>The HMAC Signature with Shared Secret and PKI approaches are a little more secure than Hash/Digest with Shared Secret, although all three approaches are very secure.</li>
   <li> The PKI approach is more complex to implement than Shared Secret approaches since it requires external key generation.</li>
-  <li>HMAC Signature with Shared Secret is compatible with the OAuth 1.0 standard. However, this standard is now deprecated (see <a href="http://oauth.net/core/1.0/" target="_blank">OAuth Core 1.0 specification</a>).</li>
+  <li>HMAC Signature with Shared Secret is compatible with the OAuth 1.0 standard. However, this standard is now deprecated (see <a href="http://oauth.net/core/1.0/" target="_blank">OAuth Core 1.0 specification</a>)(external site).</li>
   <li>HMAC Signature with Shared Secret offers a library support and examples based on the programming language. </li>
   <li>With all options, F5 to ND hop in DMZ would not cause any problems as the signature is still valid and encrypted. </li>
 </ul>
@@ -163,7 +163,7 @@ nav-title: App Security
 
 <a name="processflow_hmac_ss"></a><h4>Authenticating with HMAC Signature with Shared Secret: Process Flow</h4>
 <p> The process flow diagram below shows an overview of API request authentication with HMAC Signature with Shared Secret.</p>
-<p class="apidoc_image_p"><img src="images/processflow_apirequestauth_hmac_app.jpg" alt="Process flow: HMAC signature with shared secret security mechanism" /></p>
+<p class="apidoc_image_p"><img src="images/processflow_apirequestauth_hmac_app.jpg" alt="Process flow: HMAC signature with shared secret security mechanism" width="590" height="565" /></p>
 
 
 
@@ -189,7 +189,7 @@ nav-title: App Security
 </pre>
 
 <a name="signing_hmac_ss"></a><h4>HMAC Signature with Shared Secret: Signing Requests with the Shared Secret</h4>
-<p>The Shared Secret is a binary hashed value, generated within the secure environment of the platform and known only to you and to the platform. For more information, see <a href="#def_sharedsecret">What Is the Shared Secret?</a></p>
+<p>The Shared Secret is a binary hashed value, generated within the secure environment of the platform and known only to you and to the platform. For more information, see <a href="app_create_app_security.htm#what_is_a_shared_secret">What is a Shared Secret?</a></p>
 <p>With the HMAC Signature with Shared Secret security mechanism, you do the following:</p>
 <ol>
   <li>Compose the Signature. See <a href="#composing_signature_hmac_ss">Composing the Signature: HMAC Signature with Shared Secret</a>.</li>
@@ -289,7 +289,7 @@ String resultSignature = org.apache.commons.codec.binary.Base64.encodeBase64Stri
 
 
 <a name="authenticating_hash_ss"></a><h3>Hash/Digest with Shared Secret</h3>
-<p>The Shared Secret is a binary hashed value, generated within the secure environment of the platform and known only to you and to the platform. For more information, see <a href="#def_sharedsecret">What Is the Shared Secret?</a></p>
+<p>The Shared Secret is a binary hashed value, generated within the secure environment of the platform and known only to you and to the platform. For more information, see <a href="app_create_app_security.htm#what_is_a_shared_secret">What is a Shared Secret?</a></p>
 <p>With the Hash/Digest with Shared Secret security mechanism, you do the following:</p>
 <ol>
   <li>Combine the Shared Secret with two other values.</li>
@@ -312,7 +312,7 @@ String resultSignature = org.apache.commons.codec.binary.Base64.encodeBase64Stri
 
 <h4><a name="processflow_ss"></a>Authenticating with the Hash/Digest with Shared Secret: Process Flow</h4>
 <p> The process flow diagram below shows an overview of API request authentication with the shared secret security mechanism.</p>
-<p class="apidoc_image_p"><img src="images/processflow_apirequestauth_ss_app.jpg" alt="Process flow: shared secret security mechanism" /></p>
+<p class="apidoc_image_p"><img src="images/processflow_apirequestauth_ss_app.jpg" alt="Process flow: shared secret security mechanism" width="592" height="535" /></p>
 
 
 <a name="sampleheader"></a><h4>Sample Header With Authorization Parameters (Hash/Digest with Shared Secret)</h4>
@@ -408,7 +408,7 @@ String digest = encodeAsBase64String(md.digest());</pre>
 
 <a name="processflow_pki"></a><h4>Authenticating with PKI: Process Flow</h4>
 <p> The process flow diagram below shows an overview of API request authentication with PKI.</p>
-<p class="apidoc_image_p"><img src="images/processflow_apirequestauth_pki_app.jpg" alt="Process flow: PKI security mechanism" /></p>
+<p class="apidoc_image_p"><img src="images/processflow_apirequestauth_pki_app.jpg" alt="Process flow: PKI security mechanism" width="585" height="538" /></p>
 
 
 <a name="generatingkeypair"></a><h4>Generating a Public/Private Keypair</h4>
@@ -518,7 +518,6 @@ POST&amp;https://api.sandbox.yoursandbox.com/APIName/Payment/v1/MethodName
 <a name="ref_notes_and_procedures"></a><h3>Reference Notes and Procedures</h3>
 <p>This section includes overview information about the authentication process and specific details and procedures about aspects of the process of composing the signature. It includes:</p>
 <ul>
-  <li><a href="#def_sharedsecret">What Is the Shared Secret?</a></li>
   <li><a href="#generatingtimestamp">Generating the Timestamp</a></li>
   <li><a href="#generatingnonce">Generating a Nonce Value</a></li>
   <li><a href="#constructingsbs_shared">Constructing the Signature Base String</a></li>
@@ -529,15 +528,6 @@ POST&amp;https://api.sandbox.yoursandbox.com/APIName/Payment/v1/MethodName
 <!--  <li><a href="#differences">Differences between PKI-Based (Asymmetric) and Symmetric Key-Based Solutions</a></li>
 -->
 </ul>
-
-
-
-<a name="def_sharedsecret"></a><h4>What Is the Shared Secret?</h4>
-<p>When you register your app, the AppID and Shared Secret are automatically generated. The Shared Secret is a binary hashed value, generated within the secure environment of the platform and known only to you and to the platform. In the <em>Security Credentials</em> section of the App Details page you'll see the Shared Secret option.</p>
-<p>The Shared Secret approach follows the WS-Security digest authentication mechanism.</p>
-<p>The Shared Secret, generated by the platform for the app, is a 40-character alphanumeric value that acts as the key. An example is shown below.</p>
-<pre><a name="example_sharedsecret"></a>1008877afabf32efb31f9c974dbeaa688bed0769</pre>
-
 
 
 
@@ -631,7 +621,7 @@ long nonce = rand.nextLong();</pre>
 
 <a name="generating_keypair_openssl"></a><h4>Generating PKI Key Pair with Certificate Using OpenSSL</h4>
 <p>You can use the OpenSSL open source product to produce a public/private key pair. For more information on OpenSSL, refer to <a href="http://www.openssl.org" target="_blank">www.openssl.org</a>.</p>
-<p>If you are developing the application using the Microsoft Windows OS you can get an adaptation of OpenSSL for the Windows platform from the following location: <a href="http://code.google.com/p/openssl-for-windows/downloads/list" target="_blank">http://code.google.com/p/openssl-for-windows/downloads/list</a>.</p>
+<p>If you are developing the application using the Microsoft Windows OS you can get an adaptation of OpenSSL for the Windows platform from the following location: <a href="http://code.google.com/p/openssl-for-windows/downloads/list" target="_blank">http://code.google.com/p/openssl-for-windows/downloads/list</a> (external site).</p>
 <h4><a name="issuecert"></a>To create a public/private key pair with OpenSSL</h4>
 <ol>
   <li>From the URL given above, download the applicable <strong>openssl</strong> archive file for your operating system.</li>
@@ -805,7 +795,6 @@ long nonce = rand.nextLong();</pre>
 
 <a name="errors_all"></a><h3>Error Codes and Descriptions</h3>
 <p>If there's a problem with your HTTPS header, you might see one of the error messages shown below.</p>
-<!--<p>{{Queries and suggested text changes on error messages.}}</p>-->
 <table width="84%" cellpadding="2" cellspacing="0" class="tableparmsresponse" summary="table of error messages">
 <thead>
   <tr>
@@ -866,3 +855,7 @@ long nonce = rand.nextLong();</pre>
 </table>
 <p><a href="#top">Back to top</a></p>
 <hr />
+
+
+
+</div>

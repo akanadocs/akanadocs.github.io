@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getTeamMembers.lbi" --> Returns information about team members for the specified app.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>, </strong> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>, </strong> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,11 +56,12 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below requests the team members for app10021.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app10021.acmecorp/members</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app10021.acmepaymentscorp/members</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apps/app10021.acmecorp/members HTTP/1.1
+<pre>GET&nbsp;/api/apps/app10021.acmepaymentscorp/members HTTP/1.1
 Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->
-Accept: application/json, text/javascript, */*; q=0.01</pre>
+Accept: application/json, text/javascript, */*; q=0.01<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->
+X-Csrf-Token_{tenant}: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -69,7 +70,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -79,8 +80,8 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
-      <td><strong>text/xml</strong> or <!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+      <td><strong>text/xml</strong>, <!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -106,7 +107,8 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" --> The unique ID for the specified app.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" -->
+The unique ID for a specific app.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -134,31 +136,31 @@ Content-Type: application/json</pre>
     &quot;title&quot; : &quot;Application team members&quot;,
     &quot;item&quot; : [ {
       &quot;title&quot; : &quot;JonathanSwift&quot;,
-      &quot;description&quot; : &quot;marymead@acmecorp.com&quot;,
+      &quot;description&quot; : &quot;marymead@acmepaymentscorp.com&quot;,
       &quot;category&quot; : [ {
         &quot;value&quot; : &quot;com.soa.group.membership.state.pending&quot;,
         &quot;domain&quot; : &quot;uddi:soa.com:status&quot;
       } ],
       &quot;guid&quot; : {
-        &quot;value&quot; : &quot;user10016.acmecorp&quot;
+        &quot;value&quot; : &quot;user10016.acmepaymentscorp&quot;
       },
       &quot;Image&quot; : {
-        &quot;Url&quot; : &quot;users/user10016.acmecorp/picture&quot;,
-        &quot;Link&quot; : &quot;../acmecorp#/user/user10016.acmecorp/details&quot;
+        &quot;Url&quot; : &quot;users/user10016.acmepaymentscorp/picture&quot;,
+        &quot;Link&quot; : &quot;../acmepaymentscorp#/user/user10016.acmepaymentscorp/details&quot;
       }
     }, {
       &quot;title&quot; : &quot;PhilipPirrip&quot;,
-      &quot;description&quot; : &quot;janesaoirse@acmecorp.com&quot;,
+      &quot;description&quot; : &quot;janesaoirse@acmepaymentscorp.com&quot;,
       &quot;category&quot; : [ {
         &quot;value&quot; : &quot;com.soa.group.membership.state.pending&quot;,
         &quot;domain&quot; : &quot;uddi:soa.com:status&quot;
       } ],
       &quot;guid&quot; : {
-        &quot;value&quot; : &quot;user10017.acmecorp&quot;
+        &quot;value&quot; : &quot;user10017.acmepaymentscorp&quot;
       },
       &quot;Image&quot; : {
-        &quot;Url&quot; : &quot;users/user10017.acmecorp/picture&quot;,
-        &quot;Link&quot; : &quot;../acmecorp#/user/user10017.acmecorp/details&quot;
+        &quot;Url&quot; : &quot;users/user10017.acmepaymentscorp/picture&quot;,
+        &quot;Link&quot; : &quot;../acmepaymentscorp#/user/user10017.acmepaymentscorp/details&quot;
       }
     }, {
       &quot;title&quot; : &quot;JaneSaoirse&quot;,
@@ -168,11 +170,11 @@ Content-Type: application/json</pre>
         &quot;domain&quot; : &quot;uddi:soa.com:status&quot;
       } ],
       &quot;guid&quot; : {
-        &quot;value&quot; : &quot;user10015.acmecorp&quot;
+        &quot;value&quot; : &quot;user10015.acmepaymentscorp&quot;
       },
       &quot;Image&quot; : {
-        &quot;Url&quot; : &quot;users/user10015.acmecorp/picture&quot;,
-        &quot;Link&quot; : &quot;../acmecorp#/user/user10015.acmecorp/details&quot;
+        &quot;Url&quot; : &quot;users/user10015.acmepaymentscorp/picture&quot;,
+        &quot;Link&quot; : &quot;../acmepaymentscorp#/user/user10015.acmepaymentscorp/details&quot;
       }
     } ]
   },
@@ -185,7 +187,7 @@ Content-Type: application/json</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -195,8 +197,8 @@ Content-Type: application/json</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+      <td><strong>text/xml</strong>, <!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -229,7 +231,7 @@ Content-Type: application/json</pre>
   </tr>
     <tr>
       <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_guid">guid</a></td>
-      <td>The unique ID for the item; in this case, the <a href="../Ref_IDsOnThePlatform.htm">UserID</a> of the team member.</td>
+      <td>The unique ID for the item; in this case, the <a href="../Ref_IDsOnThePlatform.htm#id_userid">UserID</a> of the team member.</td>
     </tr>
     <tr>
       <td>Image</td>
@@ -250,16 +252,20 @@ Content-Type: application/json</pre>
       <th width="20%">Item</th>
       <th width="80%">Value</th>
     </tr>
+    <tr>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
+    </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_savePrivateViewerScope.lbi" -->Saves private viewer scope for an API.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
 <p id="indexmetadata"><strong>Metadata indexing</strong>: <!-- #BeginLibraryItem "/Library/_MetadataIndexing.lbi" -->When this operation is run successfully, the platform metadata is automatically reindexed. Since the API documentation might include a metadata.xml file that directs visibility, the index must be updated when the API documentation resources are updated, to ensure the correct API documentation visibility settings are implemented.<!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -57,19 +57,20 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the specified group to have visibility of the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/a1fa6440-8fa6-4453-a0a0-4db181ab1512.acmecorp/viewers/d7244dd9-5f36-4d3d-979c-5558d50c8ecf.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/a1fa6440-8fa6-4453-a0a0-4db181ab1512.acmepaymentscorp/viewers/d7244dd9-5f36-4d3d-979c-5558d50c8ecf.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/apis/versions/a1fa6440-8fa6-4453-a0a0-4db181ab1512.acmecorp/viewers/d7244dd9-5f36-4d3d-979c-5558d50c8ecf.acmecorp HTTP/1.1
+<pre>PUT /api/apis/versions/a1fa6440-8fa6-4453-a0a0-4db181ab1512.acmepaymentscorp/viewers/d7244dd9-5f36-4d3d-979c-5558d50c8ecf.acmepaymentscorp HTTP/1.1
 Accept: application/json, text/javascript, */*; q=0.01
-Content-Type: application/json; charset=UTF-8</pre>
+Content-Type: application/json; charset=UTF-8<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->
+X-Csrf-Token_{tenant}: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  "ResourceID":"a1fa6440-8fa6-4453-a0a0-4db181ab1512.acmecorp",
-  "ViewerID":"d7244dd9-5f36-4d3d-979c-5558d50c8ecf.acmecorp",
+  "ResourceID":"a1fa6440-8fa6-4453-a0a0-4db181ab1512.acmepaymentscorp",
+  "ViewerID":"d7244dd9-5f36-4d3d-979c-5558d50c8ecf.acmepaymentscorp",
   "ViewerType":"group",
   "RestrictedScope":"true",
   "LicenseID":[
-    "45caa075-8d75-4497-b528-dc2a7e2d72b6.acmecorp"
+    "45caa075-8d75-4497-b528-dc2a7e2d72b6.acmepaymentscorp"
   ]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -78,7 +79,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -88,12 +89,16 @@ Content-Type: application/json; charset=UTF-8</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_appxml_or_appjson.lbi" --><strong>application/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_appxml_or_appjson.lbi" --><strong>application/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
+      <td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>
     </tr>
   </tbody>
 </table>
@@ -151,19 +156,19 @@ Content-Type: application/json; charset=UTF-8</pre>
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
-<p><strong>Sample response headers: JSON</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>HTTP/1.1 200 OK
 Content-Type: application/json
 Expires: Tue, 10 Jun 2014 12:44:43 GMT</pre>
-<p><strong>Sample response body: JSON</strong></p>
+<p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  "ResourceID" : "a1fa6440-8fa6-4453-a0a0-4db181ab1512.acmecorp",
+  "ResourceID" : "a1fa6440-8fa6-4453-a0a0-4db181ab1512.acmepaymentscorp",
   "ResourceType" : "apiversion",
-  "ViewerID" : "d7244dd9-5f36-4d3d-979c-5558d50c8ecf.acmecorp",
+  "ViewerID" : "d7244dd9-5f36-4d3d-979c-5558d50c8ecf.acmepaymentscorp",
   "ViewerType" : "group",
   "RestrictedScope" : true,
   "License" : [ {
-    "LicenseID" : "45caa075-8d75-4497-b528-dc2a7e2d72b6.acmecorp",
+    "LicenseID" : "45caa075-8d75-4497-b528-dc2a7e2d72b6.acmepaymentscorp",
     "Name" : "Bronze",
     "Description" : "Read-only access at no charge. Both environments, public, approval required.",
     "Visibility" : "Public",
@@ -172,10 +177,10 @@ Expires: Tue, 10 Jun 2014 12:44:43 GMT</pre>
     "LicenseParts" : {
       "LicensePart" : [ {
         "Name" : "cecec4c6-6c5d-46ec-8316-c885ce4e1b12",
-        "ResourceID" : [ "d97e2638-75a9-42a3-98a6-99a4ad4940ce.acmecorp" ]
+        "ResourceID" : [ "d97e2638-75a9-42a3-98a6-99a4ad4940ce.acmepaymentscorp" ]
       } ]
     },
-    "BusinessID" : "tenantbusiness.acmecorp"
+    "BusinessID" : "tenantbusiness.acmepaymentscorp"
   } ]
 }
 </pre>
@@ -185,16 +190,16 @@ Expires: Tue, 10 Jun 2014 12:44:43 GMT</pre>
 Content-Type: application/xml
 Expires: Tue, 10 Jun 2014 14:49:58 GMT</pre>
 <p><strong>Sample response body: application/xml</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;VisibilityContractDetails xmlns="http://soa.com/xsd/resource/1.0" xmlns:ns2="http://soa.com/xsd/business/1.0" 
 xmlns:ns3="http://soa.com/xsd/legals/1.0" xmlns:ns4="http://soa.com/xsd/user/1.0"&gt;
-  &lt;ResourceID&gt;a1fa6440-8fa6-4453-a0a0-4db181ab1512.acmecorp&lt;/ResourceID&gt;
+  &lt;ResourceID&gt;a1fa6440-8fa6-4453-a0a0-4db181ab1512.acmepaymentscorp&lt;/ResourceID&gt;
   &lt;ResourceType&gt;apiversion&lt;/ResourceType&gt;
-  &lt;ViewerID&gt;d7244dd9-5f36-4d3d-979c-5558d50c8ecf.acmecorp&lt;/ViewerID&gt;
+  &lt;ViewerID&gt;d7244dd9-5f36-4d3d-979c-5558d50c8ecf.acmepaymentscorp&lt;/ViewerID&gt;
   &lt;ViewerType&gt;group&lt;/ViewerType&gt;
   &lt;RestrictedScope&gt;true&lt;/RestrictedScope&gt;
   &lt;ns2:License&gt;
-    &lt;ns2:LicenseID&gt;45caa075-8d75-4497-b528-dc2a7e2d72b6.acmecorp&lt;/ns2:LicenseID&gt;
+    &lt;ns2:LicenseID&gt;45caa075-8d75-4497-b528-dc2a7e2d72b6.acmepaymentscorp&lt;/ns2:LicenseID&gt;
     &lt;ns2:Name&gt;Bronze&lt;/ns2:Name&gt;
     &lt;ns2:Description&gt;Read-only access at no charge. Both environments, public, approval required.&lt;/ns2:Description&gt;
     &lt;ns2:Visibility&gt;Public&lt;/ns2:Visibility&gt;
@@ -203,10 +208,10 @@ xmlns:ns3="http://soa.com/xsd/legals/1.0" xmlns:ns4="http://soa.com/xsd/user/1.0
     &lt;ns2:LicenseParts&gt;
       &lt;ns2:LicensePart&gt;
         &lt;ns2:Name&gt;cecec4c6-6c5d-46ec-8316-c885ce4e1b12&lt;/ns2:Name&gt;
-        &lt;ns2:ResourceID&gt;d97e2638-75a9-42a3-98a6-99a4ad4940ce.acmecorp&lt;/ns2:ResourceID&gt;
+        &lt;ns2:ResourceID&gt;d97e2638-75a9-42a3-98a6-99a4ad4940ce.acmepaymentscorp&lt;/ns2:ResourceID&gt;
       &lt;/ns2:LicensePart&gt;
     &lt;/ns2:LicenseParts&gt;
-    &lt;ns2:BusinessID&gt;tenantbusiness.acmecorp&lt;/ns2:BusinessID&gt;
+    &lt;ns2:BusinessID&gt;tenantbusiness.acmepaymentscorp&lt;/ns2:BusinessID&gt;
   &lt;/ns2:License&gt;
 &lt;/VisibilityContractDetails&gt;
 </pre>
@@ -216,7 +221,7 @@ xmlns:ns3="http://soa.com/xsd/legals/1.0" xmlns:ns4="http://soa.com/xsd/user/1.0
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -226,7 +231,7 @@ xmlns:ns3="http://soa.com/xsd/legals/1.0" xmlns:ns4="http://soa.com/xsd/user/1.0
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_appxml_or_appjson.lbi" --><strong>application/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -266,16 +271,21 @@ xmlns:ns3="http://soa.com/xsd/legals/1.0" xmlns:ns4="http://soa.com/xsd/user/1.0
       <th width="20%">Item</th>
       <th width="80%">Value</th>
     </tr>
+    <tr>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
+    </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
+      <td><a href="../Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
