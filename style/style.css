@@ -221,6 +221,7 @@ document {
 .soa-ui-dc-logo {
   float: left;
   padding-left: 40px;
+  margin-top: -2px;
 }
 .soa-ui-dc-topnav {
   list-style: none;
