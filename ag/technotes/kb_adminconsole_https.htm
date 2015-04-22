@@ -85,8 +85,8 @@ nav-title: Enable HTTPS Access to the SOA Software Administration Console
   <p>If you would like to have multiple HTTPS listeners, you can add one UI browsing only HTTPS listener, and one HTTPS listener to the Policy Manager Management Console and specify both listeners in the system.properties file. </p>
   <p><em>Note that you must add a certificate to the listener in Policy Manager using the <strong>Manage PKI Keys</strong> function.</em></p>
   <p><strong>com.soa.http.bind.all.secure=true (Add to enable HTTPS access)</strong><br>
-  <strong>org.osgi.service.http.port.secure=9446 (Add to enable HTTPS access – UI Browsing Only – No listener configured in Policy Manager)</strong><strong><br>
-  <strong>org.osgi.service.http.port.secure=9448 (Add to enable HTTPS access – For Hosting Services – Listener configured in Policy Manager)</strong></strong></p>
+  <strong>org.osgi.service.http.port.secure=9446 (Add to enable HTTPS access - UI Browsing Only - No listener configured in Policy Manager)</strong><strong><br>
+  <strong>org.osgi.service.http.port.secure=9448 (Add to enable HTTPS access - For Hosting Services - Listener configured in Policy Manager)</strong></strong></p>
 <h5>Step 2: Configure HTTPS Access to SOA Software Administration Console</h5>
 <p>If you want access to the SOA Software Administration Console via HTTPS, you must add a new configuration category. You can do this manually by adding a .cfg file to the \&lt;release_directory&gt;\instances\&lt;container name&gt;\deploy folder. </p>
   <h5>Add Configuration Category File</h5>
