@@ -1,3 +1,5 @@
 baseurl: 
 MAXWEIGHT: 30
 markdown: redcarpet
+lunr_search:
+  excludes: [rss.xml, atom.xml]

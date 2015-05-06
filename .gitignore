@@ -1,6 +1,7 @@
 _site
 _guard.yml
 _plugins
+_config.yml
 Gemfile
 Guardfile
 Gemfile.lock
