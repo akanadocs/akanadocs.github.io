@@ -42,7 +42,19 @@ h5 {
     font-weight: bold;
     padding: 9px 0;
 }
-
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  border-left: 5px solid #cccccc;
+  word-wrap: break-word;
+  font-style: italic;
+}
+blockquote p {
+	font-size: 100%;
+	font-weight: 300;
+	padding-bottom: 0px;
+	line-height: 1;
+}
 
 /*---------------------------------------- API docs / security doc: apidoc.css styles ----------------------------------------*/
 .apidocContent .downloadModule>p, .apidocContent span.selectbox {
@@ -158,6 +170,7 @@ span.apidoc_red { /*temporary style for draft documents. F00 red, FFF white*/
 	padding-left: 2px;
 	overflow-x:auto;
 	line-height: 15px;
+	display: inline-block;
 }
 
 div.apidoc_div_codeendpoint { /*endpoint only: green monospace on pale gray background, scroll bar*/
@@ -584,5 +597,77 @@ div.documentation dd { /*glossary definition*/
 	padding-left: 2px;
 	overflow-x:auto;
 	line-height: 15px;
+	display: inline-block;
 }
 
+/*---------- Version Stamp ----------*/
+.stamp {
+            border: 1px solid #B0B0B0;
+            color: #909090;
+            font-size: 75%;
+            padding: 3px;
+            display: inline-block;
+            font-weight: normal;
+            margin-bottom: 5px;
+}
+
+/* Override default - Table Styles */
+table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+  box-sizing: border-box;
+}
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+table th {
+  background-color: #3d4242;
+  color: #fff;
+  font-weight: bold;
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+/* word break if needed
+table td {
+	  -ms-word-break: break-all;
+  word-break: break-all;
+
+  word-break: break-word;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+ end of word-break */
+td, th {
+  display: table-cell;
+  vertical-align: inherit;
+}
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
