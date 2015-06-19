@@ -10,8 +10,7 @@ type: page
 nav-title: Database Maintenance
 ---
 
-Akana Platform Database Maintenance
--------------------------------------
+##Akana Platform Database Maintenance
 
 <h3 style="color: grey;">Table of Contents</h3>
 <ol class="table_of_contents">
@@ -20,8 +19,8 @@ Akana Platform Database Maintenance
 	<li><a href="#built-in">Using the built-in jobs</a></li>
 	<li><a href="#using-cron">Leveraging cron to delete data</a></li>
 	<li><a href="#partitioning">Partitioning large data stores</a></li>
-	<li><a href="#partitioning-verylarge">Partitioning large data stores under load</a></li>
-	<li><a href="#cron-partitions">Leveraging cron to drop and create partitions</a></li>
+	<li><a href="#partitioning-verylarge">Partitioning large data stores under load (MySQL Only)</a></li>
+	<li><a href="#drop-partitions">Dropping partitions</a></li>
 </ol>
 
 ### <a name="introduction"></a>Introduction
@@ -58,8 +57,8 @@ There are several key tables that require regular maintenance:
 | Table Name| Description|
 | ------ | ------- |
 | BOARD_ITEMS |  stores the tickets, discussions and reviews
-| COMMENTS |  stores the comments on the board items above
-| COMMENT_MARKS | stores the 'like/thumbs-up' votes for the comments
+| COMMENTS |  stores the comments on the board items above (Has FK with BOARD_ITEMS with cascading delete)
+| COMMENT_MARKS | stores the 'like/thumbs-up' votes for the comments (Has FK with COMMENTS with cascading delete)
 
 
 ### <a name="built-in"></a>Using the built-in jobs
@@ -95,12 +94,12 @@ monitoring.delete.usage.enable=false
 
 ### <a name="using-cron"></a>Leveraging cron to delete data
 
-For higher throughput environments its better to offload the task to delete/archive data by simply executing scripts directly against the database using a cron job. The following script (cleanup.sh) will delete all:
+For higher throughput environments its better to offload the task to delete/archive data by simply executing scripts directly against the database using a cron job. The following scripts will delete all:
 
 * next-hop data in MO\_USAGE_NEXTHOP older than 1 month
 * usage messages in MO_USAGEMSGS older than 1 month
 * usage data in MO_USAGEDATA older than 1 month
-* next-hop data in MO\_USAGE_NEXTHOP older than 1 month
+* 5-second rollup data in MO_ROLLUPDATA older than 1 month
 * 15-minute rollup data in MO_ROLLUP15 older than 1 month
 * 15-minute rollup data in MO\_ROLL_ORG15 older than 1 month
 * 1-hour rollup data in MO\_ROLLUP_HOUR older than 3 months
@@ -110,59 +109,41 @@ For higher throughput environments its better to offload the task to delete/arch
 * alerts in AM\_ALERTS and AM\_ALERTS_SLAS older than 1 month
 
 ```
-PATH=$PATH:/usr/bin
+delete from MO_USAGE_NEXTHOP where REQUESTDTS < TIMESTAMPADD(MONTH, -1, now());
 
-date
-mysql -u xxx -pxxx -D open -e "delete from MO_USAGE_NEXTHOP where REQUESTDTS < TIMESTAMPADD(MONTH, -1, now());"
-[ $? != 0 ] && exit 1
+delete from MO_USAGEMSGS where MSGCAPTUREDDTS < TIMESTAMPADD(MONTH, -1, now());
 
-date
-mysql -u xxx -pxxx -D open -e "delete from MO_USAGEMSGS where MSGCAPTUREDDTS < TIMESTAMPADD(MONTH, -1, now());"
-[ $? != 0 ] && exit 1
+delete from MO_USAGEDATA where REQUESTDTS < TIMESTAMPADD(MONTH, -1, now());
 
-date
-mysql -u xxx -pxxx -D open -e "delete from MO_USAGEDATA where REQUESTDTS < TIMESTAMPADD(MONTH, -1, now());"
-[ $? != 0 ] && exit 1
+delete from MO_ROLLUPDATA where ROLLUPDATAID < (select min(MAX_ID) from MO_STATUS) and INTVLSTARTDTS < TIMESTAMPADD(MONTH, -1, now());
 
-date
-mysql -u xxx -pxxx -D dbname -e "delete from MO_ROLLUPDATA where ROLLUPDATAID < (select min(MAX_ID) from MO_STATUS) and INTVLSTARTDTS < TIMESTAMPADD(MONTH, -1, now());"
-[ $? != 0 ] && exit 1
+delete from MO_ROLLUP15 where INTVLSTARTDTS < TIMESTAMPADD(MONTH, -1, now());
 
-date
-mysql -u xxx -pxxx -D dbname -e "delete from MO_ROLLUP15 where INTVLSTARTDTS < TIMESTAMPADD(MONTH, -1, now());"
-[ $? != 0 ] && exit 1
+delete from MO_ROLL_ORG15 where INTVLSTARTDTS < TIMESTAMPADD(MONTH, -1, now());
 
-date
-mysql -u xxx -pxxx -D dbname -e "delete from MO_ROLL_ORG15 where INTVLSTARTDTS < TIMESTAMPADD(MONTH, -1, now());"
-[ $? != 0 ] && exit 1
+delete from MO_ROLLUP_HOUR where INTVLSTARTDTS < TIMESTAMPADD(MONTH, -3, now());
 
-date
-mysql -u xxx -pxxx -D dbname -e "delete from MO_ROLLUP_HOUR where INTVLSTARTDTS < TIMESTAMPADD(MONTH, -3, now());"
-[ $? != 0 ] && exit 1
+delete from MO_ROLL_ORG_H where INTVLSTARTDTS < TIMESTAMPADD(MONTH, -3, now());
 
-date
-mysql -u xxx -pxxx -D dbname -e "delete from MO_ROLL_ORG_H where INTVLSTARTDTS < TIMESTAMPADD(MONTH, -3, now());"
-[ $? != 0 ] && exit 1
+delete from MO_ROLLUP_DAY where INTVLSTARTDTS < TIMESTAMPADD(YEAR, -1, now());
 
-date
-mysql -u xxx -pxxx -D dbname -e "delete from MO_ROLLUP_DAY where INTVLSTARTDTS < TIMESTAMPADD(YEAR, -1, now());"
-[ $? != 0 ] && exit 1
+delete from MO_ROLL_ORG_D where INTVLSTARTDTS < TIMESTAMPADD(YEAR, -1, now());
 
-date
-mysql -u xxx -pxxx -D dbname -e "delete from MO_ROLL_ORG_D where INTVLSTARTDTS < TIMESTAMPADD(YEAR, -1, now());"
-[ $? != 0 ] && exit 1
+delete s from AM_ALERTS a inner join AM_ALERTS_SLAS s on s.ALERTSID = a.ALERTSID where a.SOURCEDTS < TIMESTAMPADD(MONTH, -1, now());
 
-date
-mysql -u xxx -pxxx -D dbname -e "delete s from AM_ALERTS a inner join AM_ALERTS_SLAS s on s.ALERTSID = a.ALERTSID where a.SOURCEDTS < TIMESTAMPADD(MONTH, -1, now());"
-[ $? != 0 ] && exit 1
-
-date
-mysql -u xxx -pxxx -D dbname -e "delete from AM_ALERTS where SOURCEDTS < TIMESTAMPADD(MONTH, -1, now());"
-[ $? != 0 ] && exit 1
-
-date
+delete from AM_ALERTS where SOURCEDTS < TIMESTAMPADD(MONTH, -1, now());
 
 ```
+
+For Community Manager, there are additional tables such as the Boards (Forums) that you may want to clean up:
+
+```
+delete from BOARD_ITEM_ASSIGNMENTS where ITEMID in (select ITEMID from BOARD_ITEMS where ARCHIVABLE='Y' and CREATEDDTS < TIMESTAMPADD(YEAR, -1, now());
+
+delete from BOARD_ITEMS where ARCHIVABLE='Y' and CREATEDDTS < TIMESTAMPADD(YEAR, -1, now());
+
+```
+For sample scripts on MySql and Oracle (other databases coming soon) download the following zip archive: [sample_scripts.zip](sample_scripts.zip)
 
 Once satisfied with the script, you can set up a cron job to execute it each night. For example, configuring cron to execute at 1am each morning as follows:
 
@@ -178,10 +159,12 @@ Partitioning is fairly complex. As a result, we recommend that you test this tho
 
 **Note:** If the tables contain a large amount of data, the process of partitioning will be extremely time and resource intensive and will be virtually impossible to perform under load. Refer to the next section for the correct approach in these circumstances.
 
+#### MySQL ####
 
-#### Drop existing foreign keys and add new indexes ####
 
-Partitioning in mySQL does not support foreign key relationships. In addition, the partition key must be added to the primary key index:
+##### Drop existing foreign keys, modify, and add new indexes #####
+
+Partitioning in MySQL does not support foreign key relationships. In addition, the partition key must be added to the primary key index:
  
 ```
 ALTER TABLE MO_USAGE_NEXTHOP
@@ -202,58 +185,173 @@ ADD INDEX NUI_USG_EVENTID(EVENTID),
 ADD INDEX NUI_USG_USAGEDATAID(USAGEDATAID);
 ```
 
-#### Create partitions ####
+##### Create partitions #####
 
 You then create partitions, with the idea that each partition represents the deletion interval. In this example, you are deleting data once a week and keeping a maximum of 8 weeks of data. The dates must also be changed to match the current time. The names of the partitions are arbitrary, but are used by the cleanup script.
 
 ```
 ALTER TABLE MO_USAGE_NEXTHOP
-PARTITION BY RANGE (UNIX_TIMESTAMP(REQUESTDTS)) (
-     PARTITION p0000 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-04 00:00:00')),
-     PARTITION p0111 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-11 00:00:00')),
-     PARTITION p0118 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-18 00:00:00')),
-     PARTITION p0125 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-25 00:00:00')),
-     PARTITION p0201 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-01 00:00:00')),
-     PARTITION p0208 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-08 00:00:00')),
-     PARTITION p0215 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-15 00:00:00')),
-     PARTITION p0222 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-22 00:00:00')),
+PARTITION BY RANGE (TO_DAYS(REQUESTDTS)) (
+     PARTITION p0000 VALUES LESS THAN (TO_DAYS('2015-01-04 00:00:00')),
+     PARTITION p0111 VALUES LESS THAN (TO_DAYS('2015-01-11 00:00:00')),
+     PARTITION p0118 VALUES LESS THAN (TO_DAYS('2015-01-18 00:00:00')),
+     PARTITION p0125 VALUES LESS THAN (TO_DAYS('2015-01-25 00:00:00')),
+     PARTITION p0201 VALUES LESS THAN (TO_DAYS('2015-02-01 00:00:00')),
+     PARTITION p0208 VALUES LESS THAN (TO_DAYS('2015-02-08 00:00:00')),
+     PARTITION p0215 VALUES LESS THAN (TO_DAYS('2015-02-15 00:00:00')),
+     PARTITION p0222 VALUES LESS THAN (TO_DAYS('2015-02-22 00:00:00')),
      PARTITION future VALUES LESS THAN MAXVALUE
 );
 
 ALTER TABLE MO_USAGEMSGS
-PARTITION BY RANGE (UNIX_TIMESTAMP(MSGCAPTUREDDTS)) (
-     PARTITION p0000 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-04 00:00:00')),
-     PARTITION p0111 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-11 00:00:00')),
-     PARTITION p0118 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-18 00:00:00')),
-     PARTITION p0125 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-25 00:00:00')),
-     PARTITION p0201 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-01 00:00:00')),
-     PARTITION p0208 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-08 00:00:00')),
-     PARTITION p0215 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-15 00:00:00')),
-     PARTITION p0222 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-22 00:00:00')),
+PARTITION BY RANGE (TO_DAYS(MSGCAPTUREDDTS)) (
+     PARTITION p0000 VALUES LESS THAN (TO_DAYS('2015-01-04 00:00:00')),
+     PARTITION p0111 VALUES LESS THAN (TO_DAYS('2015-01-11 00:00:00')),
+     PARTITION p0118 VALUES LESS THAN (TO_DAYS('2015-01-18 00:00:00')),
+     PARTITION p0125 VALUES LESS THAN (TO_DAYS('2015-01-25 00:00:00')),
+     PARTITION p0201 VALUES LESS THAN (TO_DAYS('2015-02-01 00:00:00')),
+     PARTITION p0208 VALUES LESS THAN (TO_DAYS('2015-02-08 00:00:00')),
+     PARTITION p0215 VALUES LESS THAN (TO_DAYS('2015-02-15 00:00:00')),
+     PARTITION p0222 VALUES LESS THAN (TO_DAYS('2015-02-22 00:00:00')),
      PARTITION future VALUES LESS THAN MAXVALUE
 );
 
 ALTER TABLE MO_USAGEDATA
-PARTITION BY RANGE (UNIX_TIMESTAMP(REQUESTDTS)) (
-     PARTITION p0000 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-04 00:00:00')),
-     PARTITION p0111 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-11 00:00:00')),
-     PARTITION p0118 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-18 00:00:00')),
-     PARTITION p0125 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-25 00:00:00')),
-     PARTITION p0201 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-01 00:00:00')),
-     PARTITION p0208 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-08 00:00:00')),
-     PARTITION p0215 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-15 00:00:00')),
-     PARTITION p0222 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-22 00:00:00')),
+PARTITION BY RANGE (TO_DAYS(REQUESTDTS)) (
+     PARTITION p0000 VALUES LESS THAN (TO_DAYS('2015-01-04 00:00:00')),
+     PARTITION p0111 VALUES LESS THAN (TO_DAYS('2015-01-11 00:00:00')),
+     PARTITION p0118 VALUES LESS THAN (TO_DAYS('2015-01-18 00:00:00')),
+     PARTITION p0125 VALUES LESS THAN (TO_DAYS('2015-01-25 00:00:00')),
+     PARTITION p0201 VALUES LESS THAN (TO_DAYS('2015-02-01 00:00:00')),
+     PARTITION p0208 VALUES LESS THAN (TO_DAYS('2015-02-08 00:00:00')),
+     PARTITION p0215 VALUES LESS THAN (TO_DAYS('2015-02-15 00:00:00')),
+     PARTITION p0222 VALUES LESS THAN (TO_DAYS('2015-02-22 00:00:00')),
      PARTITION future VALUES LESS THAN MAXVALUE
 );
 ```
 
-### <a name="partitioning-verylarge"></a>Partitioning large data stores under load
+#### Oracle ####
 
-If the usage tables contain a large amount of data you will need to rename, rotate and transfer data from the existing tables to a new set of partitioned tables. 
+Oracle does not permit the ALTER-ing of tables to add partitions. This means that new tables need to be created and the data migrated over.
 
-#### Step 1: Create new tables ####
+##### Step 1: Create new tables #####
 
-Firstly create new tables that will temporarily support the live system:
+Create new, paritioned tables with a _NEW suffix. Note that the 'PARTITION BY RANGE (REQUESTDTS) INTERVAL' clause will result in new partitions being created automatically.
+ 
+```
+CREATE TABLE MO_USAGE_NEXTHOP_NEW (
+        NEXTHOPID number(38,0) NOT NULL,
+        EVENTID varchar2(41) NOT NULL,
+        URL varchar2(512) NULL,
+        REQUESTDTS date NOT NULL,
+        CREATEDTS date NOT NULL,
+        RESPTIME number(38,0) NULL
+        ,CONSTRAINT MO_USG_NEXTHOP_BAK_PK primary key (NEXTHOPID,REQUESTDTS))
+        PARTITION BY RANGE (REQUESTDTS) INTERVAL (NUMTODSINTERVAL(7,'day'))
+( PARTITION p0 VALUES LESS THAN (to_date('01-JUN-2015','DD-MON-YYYY'))
+);
+
+CREATE TABLE MO_USAGEMSGS_NEW (
+        EVENTID varchar2(41) NOT NULL,
+        SEQ number(38,0) NOT NULL,
+        MSGNAME varchar2(64) NOT NULL,
+        MSGCAPTUREDDTS date NOT NULL,
+        MSGCAPTUREDMILLIS number(38,0) NOT NULL,
+        MESSAGE clob NOT NULL,
+        TYPE varchar2(10) NOT NULL,
+        ISCOMPLETEMESSAGE char(1) NOT NULL,
+        TRANSPORTHEADERS varchar2(2048) NULL,
+        CONSTRAINT MO_USAGEMSGS_BAK_PK primary key (EVENTID,SEQ, MSGCAPTUREDDTS))
+        PARTITION BY RANGE (MSGCAPTUREDDTS) INTERVAL (NUMTODSINTERVAL(7,'day'))
+( PARTITION p0 VALUES LESS THAN (to_date('01-JUN-2015','DD-MON-YYYY'))
+);
+
+CREATE TABLE MO_USAGEDATA_NEW (
+        USAGEDATAID number(38,0) NOT NULL,
+        EVENTID varchar2(41) NOT NULL,
+        PARENTEVENTID varchar2(41) NULL,
+        CLIENTHOST varchar2(255) NULL,
+        MPNAME varchar2(64) NOT NULL,
+        OPERATIONID number(38,0) NOT NULL,
+        SERVICEID number(38,0) NOT NULL,
+        ORGID number(38,0) DEFAULT 0 NULL,
+        CONTRACTID number(38,0) NOT NULL,
+        BINDTEMPLATEID number(38,0) NOT NULL,
+        REQUSERNAME varchar2(128) NULL,
+        REQUESTDTS date NOT NULL,
+        REQUESTMILLIS number(38,0) NOT NULL,
+        RESPONSETIME number(38,0) NOT NULL,
+        REQMSGSIZE number(38,0) NOT NULL,
+        NMREQMSGSIZE number(38,0) NULL,
+        RESPMSGSIZE number(38,0) NULL,
+        NMRESPMSGSIZE number(38,0) NULL,
+        ERRCATEGORY number(38,0) NULL,
+        ERRMESSAGE varchar2(512) NULL,
+        ERRDETAILS varchar2(1024) NULL,
+        CREATEDTS date NOT NULL,
+        CREATEDMILLIS number(38,0) NOT NULL,
+        NEXTHOPURL varchar2(512) NULL,
+        ISSOAPFLTBYMP number(38,0) NOT NULL,
+        ISSOAPFLTBYNEXTHOP number(38,0) NOT NULL,
+        LISTENERURL varchar2(512) NULL,
+        NEXTHOPRESPTIME number(38,0) NULL,
+        APPUSERNAME varchar2(128) NULL,
+        OTHERUSERNAMES varchar2(512) NULL,
+        CUSTOMFIELD1 varchar2(256) NULL,
+        VERB varchar2(8) NULL,
+        STATUS_CODE varchar2(8) NULL
+        ,CONSTRAINT MO_USAGEDATA_PK primary key (USAGEDATAID,REQUESTDTS))
+        PARTITION BY RANGE (REQUESTDTS) INTERVAL (NUMTODSINTERVAL(7,'day'))
+( PARTITION p0 VALUES LESS THAN (to_date('01-JUN-2015','DD-MON-YYYY'))
+);
+
+CREATE  INDEX MO_USAGEDATA_PK1 ON MO_USAGEDATA_NEW(REQUESTDTS DESC,REQUESTMILLIS DESC);
+CREATE  INDEX MO_USAGEDATA_PK2 ON MO_USAGEDATA_NEW(OPERATIONID);
+CREATE  INDEX MO_USAGEDATA_PK3 ON MO_USAGEDATA_NEW(CONTRACTID);
+
+```
+
+**Note:** Table definitions might change based on product version. You should check to make sure that the definition above matches your table structure and alter it as necessary.
+
+##### Step 2: Switch the new tables with the old tables #####
+
+Rename the existing live tables to *\_BCK and replace them with the new, empty tables:
+
+```
+RENAME TABLE MO_USAGEMSGS TO MO_USAGEMSGS_BAK;
+RENAME TABLE MO_USAGEMSGS_NEW TO MO_USAGEMSGS;
+RENAME TABLE MO_USAGEDATA TO MO_USAGEDATA_BAK;
+RENAME TABLE MO_USAGEDATA_NEW TO MO_USAGEDATA;
+RENAME TABLE MO_USAGE_NEXTHOP TO MO_USAGE_NEXTHOP_BAK;
+RENAME TABLE MO_USAGE_NEXTHOP_NEW TO MO_USAGE_NEXTHOP;
+
+```
+
+##### Step 3: Merge data #####
+
+Due to the fact that you created a set of new tables, you need to merge the data from the old tables into the new partitioned tables so that it is not lost.
+
+```
+INSERT INTO MO_USAGE_NEXTHOP SELECT * FROM MO_USAGE_NEXTHOP_BAK;
+INSERT INTO MO_USAGEDATA SELECT * FROM MO_USAGEDATA_BAK;
+INSERT INTO MO_USAGEMSGS SELECT * FROM MO_USAGEMSGS_BAK;
+
+```
+
+These scripts would be called several times with different, incremental values of X and Y where X and Y represents a small time interval like 6 hours. This keeps the merging of data discrete and less error-prone. 
+
+You also might want to call this from a shell script to automate the process - see the sample script merge.sh in [sample_scripts.zip](sample_scripts.zip).
+
+**Note:** Table definitions might change based on product version. You should check to make sure that the definition above matches your table structure and alter it as necessary.
+
+
+### <a name="partitioning-verylarge"></a>Partitioning large data stores under load (MySQL Only)
+
+If the usage tables contain a large amount of data you will need to rename, rotate and transfer data from the existing tables to a new set of partitioned tables. For Oracle, the steps are exactly the same as shown in the previous section. For MySQL, it is quicker to partition the tables with an ALTER statement and merge a much smaller dataset. This is shown below.
+
+#### Step 1: Create new tables (MySQL only) ####
+
+Firstly create new tables that will temporarily support the live system. These do not have to be partitioned as they will only support a small amount of data:
 
 ```
 CREATE TABLE MO_USAGEMSGS_NEW (
@@ -329,7 +427,7 @@ CREATE TABLE MO_USAGE_NEXTHOP_NEW (
 
 **Note:** Table definitions might change based on product version. You should check to make sure that the definition above matches your table structure and alter it as necessary.
 
-#### Step 2: Switch the new tables with the old tables ####
+#### Step 2: Switch the new tables with the old tables (MySQL only) ####
 
 Rename the existing live tables to *\_BCK and replace them with the new, empty tables:
 
@@ -339,7 +437,7 @@ RENAME TABLE MO_USAGEDATA TO MO_USAGEDATA_BCK, MO_USAGEDATA_NEW TO MO_USAGEDATA;
 RENAME TABLE MO_USAGE_NEXTHOP TO MO_USAGE_NEXTHOP_BCK, MO_USAGE_NEXTHOP_NEW TO MO_USAGE_NEXTHOP;
 ```
 
-#### Step 3: Drop existing foreign keys and add new indexes ####
+#### Step 3: Drop existing foreign keys and add new indexes (MySQL only) ####
 
 Alter the tables as shown in the previous chapter, but this time against the *_BCK tables. 
 
@@ -364,7 +462,7 @@ ADD INDEX NUI_USG_EVENTID(EVENTID),
 ADD INDEX NUI_USG_USAGEDATAID(USAGEDATAID);
 ```
 
-#### Step 4: Create partitions ####
+#### Step 4: Create partitions (MySQL only) ####
 
 You then create partitions as shown in the previous chapter - this time against the *_BCK tables. The dates and intervals would be changed to suit your system.
 
@@ -372,46 +470,46 @@ You then create partitions as shown in the previous chapter - this time against 
 
 ```
 ALTER TABLE MO_USAGE_NEXTHOP_BCK
-PARTITION BY RANGE (UNIX_TIMESTAMP(REQUESTDTS)) (
-     PARTITION p0000 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-04 00:00:00')),
-     PARTITION p0111 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-11 00:00:00')),
-     PARTITION p0118 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-18 00:00:00')),
-     PARTITION p0125 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-25 00:00:00')),
-     PARTITION p0201 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-01 00:00:00')),
-     PARTITION p0208 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-08 00:00:00')),
-     PARTITION p0215 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-15 00:00:00')),
-     PARTITION p0222 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-22 00:00:00')),
+PARTITION BY RANGE (TO_DAYS(REQUESTDTS)) (
+     PARTITION p0000 VALUES LESS THAN (TO_DAYS('2015-01-04 00:00:00')),
+     PARTITION p0111 VALUES LESS THAN (TO_DAYS('2015-01-11 00:00:00')),
+     PARTITION p0118 VALUES LESS THAN (TO_DAYS('2015-01-18 00:00:00')),
+     PARTITION p0125 VALUES LESS THAN (TO_DAYS('2015-01-25 00:00:00')),
+     PARTITION p0201 VALUES LESS THAN (TO_DAYS('2015-02-01 00:00:00')),
+     PARTITION p0208 VALUES LESS THAN (TO_DAYS('2015-02-08 00:00:00')),
+     PARTITION p0215 VALUES LESS THAN (TO_DAYS('2015-02-15 00:00:00')),
+     PARTITION p0222 VALUES LESS THAN (TO_DAYS('2015-02-22 00:00:00')),
      PARTITION future VALUES LESS THAN MAXVALUE
 );
 
 ALTER TABLE MO_USAGEMSGS_BCK
-PARTITION BY RANGE (UNIX_TIMESTAMP(MSGCAPTUREDDTS)) (
-     PARTITION p0000 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-04 00:00:00')),
-     PARTITION p0111 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-11 00:00:00')),
-     PARTITION p0118 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-18 00:00:00')),
-     PARTITION p0125 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-25 00:00:00')),
-     PARTITION p0201 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-01 00:00:00')),
-     PARTITION p0208 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-08 00:00:00')),
-     PARTITION p0215 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-15 00:00:00')),
-     PARTITION p0222 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-22 00:00:00')),
+PARTITION BY RANGE (TO_DAYS(MSGCAPTUREDDTS)) (
+     PARTITION p0000 VALUES LESS THAN (TO_DAYS('2015-01-04 00:00:00')),
+     PARTITION p0111 VALUES LESS THAN (TO_DAYS('2015-01-11 00:00:00')),
+     PARTITION p0118 VALUES LESS THAN (TO_DAYS('2015-01-18 00:00:00')),
+     PARTITION p0125 VALUES LESS THAN (TO_DAYS('2015-01-25 00:00:00')),
+     PARTITION p0201 VALUES LESS THAN (TO_DAYS('2015-02-01 00:00:00')),
+     PARTITION p0208 VALUES LESS THAN (TO_DAYS('2015-02-08 00:00:00')),
+     PARTITION p0215 VALUES LESS THAN (TO_DAYS('2015-02-15 00:00:00')),
+     PARTITION p0222 VALUES LESS THAN (TO_DAYS('2015-02-22 00:00:00')),
      PARTITION future VALUES LESS THAN MAXVALUE
 );
 
 ALTER TABLE MO_USAGEDATA_BCK
-PARTITION BY RANGE (UNIX_TIMESTAMP(REQUESTDTS)) (
-     PARTITION p0000 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-04 00:00:00')),
-     PARTITION p0111 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-11 00:00:00')),
-     PARTITION p0118 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-18 00:00:00')),
-     PARTITION p0125 VALUES LESS THAN (UNIX_TIMESTAMP('2015-01-25 00:00:00')),
-     PARTITION p0201 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-01 00:00:00')),
-     PARTITION p0208 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-08 00:00:00')),
-     PARTITION p0215 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-15 00:00:00')),
-     PARTITION p0222 VALUES LESS THAN (UNIX_TIMESTAMP('2015-02-22 00:00:00')),
+PARTITION BY RANGE (TO_DAYS(REQUESTDTS)) (
+     PARTITION p0000 VALUES LESS THAN (TO_DAYS('2015-01-04 00:00:00')),
+     PARTITION p0111 VALUES LESS THAN (TO_DAYS('2015-01-11 00:00:00')),
+     PARTITION p0118 VALUES LESS THAN (TO_DAYS('2015-01-18 00:00:00')),
+     PARTITION p0125 VALUES LESS THAN (TO_DAYS('2015-01-25 00:00:00')),
+     PARTITION p0201 VALUES LESS THAN (TO_DAYS('2015-02-01 00:00:00')),
+     PARTITION p0208 VALUES LESS THAN (TO_DAYS('2015-02-08 00:00:00')),
+     PARTITION p0215 VALUES LESS THAN (TO_DAYS('2015-02-15 00:00:00')),
+     PARTITION p0222 VALUES LESS THAN (TO_DAYS('2015-02-22 00:00:00')),
      PARTITION future VALUES LESS THAN MAXVALUE
 );
 ```
 
-#### Step 5: Switch the partitioned tables back ####
+#### Step 5: Switch the partitioned tables back (MySQL only) ####
 
 Now switch the partitioned tables (*_BCK) with the new tables you created in Step 1. This will return the original data tables to live.
 
@@ -421,96 +519,46 @@ RENAME TABLE MO_USAGEMSGS TO MO_USAGEMSGS2, MO_USAGEMSGS_BCK TO MO_USAGEMSGS;
 RENAME TABLE MO_USAGE_NEXTHOP TO MO_USAGE_NEXTHOP2, MO_USAGE_NEXTHOP_BCK TO MO_USAGE_NEXTHOP;
 ```
 
-#### Step 6: Merge data ####
+#### Step 6: Merge data (MySQL only) ####
 
 Due to the fact that you created a set of new tables to temporarily store live data while the partitioning was done, you need to merge the data from those tables back into the live tables so that it is not lost.
 
 ```
-INSERT INTO MO_USAGE_NEXTHOP (EVENTID, URL, REQUESTDTS, CREATEDTS, RESPTIME) SELECT EVENTID, URL, REQUESTDTS, CREATEDTS, RESPTIME FROM MO_USAGE_NEXTHOP2 where REQUESTDTS between X and Y;
+INSERT INTO MO_USAGE_NEXTHOP 
+	(EVENTID, URL, REQUESTDTS, CREATEDTS, RESPTIME) 
+SELECT EVENTID, URL, REQUESTDTS, CREATEDTS, RESPTIME 
+	FROM MO_USAGE_NEXTHOP_BCK where REQUESTDTS between X and Y;
 
-INSERT INTO MO_USAGEDATA (EVENTID PARENTEVENTID CLIENTHOST MPNAME OPERATIONID SERVICEID ORGID CONTRACTID BINDTEMPLATEID REQUSERNAME REQUESTDTS REQUESTMILLIS RESPONSETIME REQMSGSIZE NMREQMSGSIZE RESPMSGSIZE NMRESPMSGSIZE ERRCATEGORY ERRMESSAGE ERRDETAILS CREATEDTS CREATEDMILLIS NEXTHOPURL ISSOAPFLTBYMP ISSOAPFLTBYNEXTHOP LISTENERURL NEXTHOPRESPTIME APPUSERNAME OTHERUSERNAMES CUSTOMFIELD1 VERB STATUS_CODE) SELECT EVENTID PARENTEVENTID CLIENTHOST MPNAME OPERATIONID SERVICEID ORGID CONTRACTID BINDTEMPLATEID REQUSERNAME REQUESTDTS REQUESTMILLIS RESPONSETIME REQMSGSIZE NMREQMSGSIZE RESPMSGSIZE NMRESPMSGSIZE ERRCATEGORY ERRMESSAGE ERRDETAILS CREATEDTS CREATEDMILLIS NEXTHOPURL ISSOAPFLTBYMP ISSOAPFLTBYNEXTHOP LISTENERURL NEXTHOPRESPTIME APPUSERNAME OTHERUSERNAMES CUSTOMFIELD1 VERB STATUS_CODE FROM MO_USAGEDATA2 where REQUESTDTS between X and Y;
+INSERT INTO MO_USAGEDATA 
+	(EVENTID PARENTEVENTID CLIENTHOST MPNAME OPERATIONID SERVICEID ORGID CONTRACTID BINDTEMPLATEID REQUSERNAME REQUESTDTS REQUESTMILLIS RESPONSETIME REQMSGSIZE NMREQMSGSIZE RESPMSGSIZE NMRESPMSGSIZE ERRCATEGORY ERRMESSAGE ERRDETAILS CREATEDTS CREATEDMILLIS NEXTHOPURL ISSOAPFLTBYMP ISSOAPFLTBYNEXTHOP LISTENERURL NEXTHOPRESPTIME APPUSERNAME OTHERUSERNAMES CUSTOMFIELD1 VERB STATUS_CODE) 
+SELECT EVENTID PARENTEVENTID CLIENTHOST MPNAME OPERATIONID SERVICEID ORGID CONTRACTID BINDTEMPLATEID REQUSERNAME REQUESTDTS REQUESTMILLIS RESPONSETIME REQMSGSIZE NMREQMSGSIZE RESPMSGSIZE NMRESPMSGSIZE ERRCATEGORY ERRMESSAGE ERRDETAILS CREATEDTS CREATEDMILLIS NEXTHOPURL ISSOAPFLTBYMP ISSOAPFLTBYNEXTHOP LISTENERURL NEXTHOPRESPTIME APPUSERNAME OTHERUSERNAMES CUSTOMFIELD1 VERB STATUS_CODE 
+	FROM MO_USAGEDATA_BCK where REQUESTDTS between X and Y;
 
-INSERT INTO MO_USAGEMSGS SELECT * FROM MO_USAGEMSGS2 where MSGCAPTUREDDTS between X and Y;
-
+INSERT INTO MO_USAGEMSGS 
+	SELECT * FROM MO_USAGEMSGS_BCK where MSGCAPTUREDDTS between X and Y;
 ```
 
 **Note:** Table definitions might change based on product version. You should check to make sure that the definition above matches your table structure and alter it as necessary.
 
 These scripts would be called several times with different, incremental values of X and Y where X and Y represents a small time interval like 6 hours. This keeps the merging of data discrete and less error-prone.
 
-### <a name="cron-partitions"></a>Leveraging cron to drop and create partitions
+You also might want to call this from a shell script to automate the process - see the sample script merge.sh in [sample_scripts.zip](sample_scripts.zip).
 
-The benefit of partitioning your data is that you can delete old data by simply dropping a partition. The downside of the approach is that you have to continually create new partitions for future data. The following script (partition.sh) shows how to drop and create partitions on a weekly basis:
+### <a name="drop-partitions"></a>Dropping partitions
 
-```
-#!/bin/bash
-# $id$
+The benefit of partitioning your data is that you can delete old data by simply dropping a partition. The next sections will describe how to drop partitions for different databases
 
-DB_USER=""
-DB_PASS=""
-DB_NAME=""
-WEEKS_KEEP=10
+#### Oracle ####
 
-mysqlcmd="mysql -NB -u $DB_USER -p${DB_PASS} -D $DB_NAME -e "
-NDAY=`$mysqlcmd "select TIMESTAMPADD(DAY, +8,DATE_FORMAT(now(), '%Y-%m-%d 00:00:00'))"`
-[ $? != 0 ] && { echo "cannot connect to database"; exit 1; }
+For Oracle, the tables will automatically create new partitions each week. 
 
-MSGS_NUM=`$mysqlcmd "show create table MO_USAGEMSGS\G" | grep PARTITION | wc -l`
-MSGS_DEL=`$mysqlcmd "show create table MO_USAGEMSGS\G" | awk '/PARTITION/ { if (match($2,"p[0-9][1-9]")) { print $2; exit;} }'`
-[ $? != 0 ] && { echo "cannot connect to database"; exit 1; }
+For sample procedures to drop the partitions, download the following zip archive: [sample_scripts.zip](sample_scripts.zip)
 
-DATA_NUM=`$mysqlcmd "show create table MO_USAGEDATA\G" | grep PARTITION | wc -l`
-DATA_DEL=`$mysqlcmd "show create table MO_USAGEDATA\G" | awk '/PARTITION/ { if (match($2,"p[0-9][1-9]")) { print $2; exit;} }'`
-[ $? != 0 ] && { echo "cannot connect to database"; exit 1; }
+#### MySQL ####
 
-HOP_NUM=`$mysqlcmd "show create table MO_USAGE_NEXTHOP\G" | grep PARTITION | wc -l`
-HOP_DEL=`$mysqlcmd "show create table MO_USAGE_NEXTHOP\G" | awk '/PARTITION/ { if (match($2,"p[0-9][1-9]")) { print $2; exit;} }'`
-[ $? != 0 ] && { echo "cannot connect to database"; exit 1; }
+For MySQL, you will need to create new partitions and drop old partitions each week. For sample scripts on MySql download the following zip archive: [sample_scripts.zip](sample_scripts.zip)
 
-[ -z "$NDAY" -o "$NDAY" = "NULL" ] && { echo "New partition date $NDAY is invalid"; exit 1; }
-[ -z "$MSGS_DEL" -o "$MSGS_DEL" = "NULL" ] && { echo "Old MO_USAGEMSGS partition name $MSGS_DEL is invalid"; exit 1; }
-[ -z "$DATA_DEL" -o "$DATA_DEL" = "NULL" ] && { echo "Old MO_USAGEDATA partition name $DATA_DEL is invalid"; exit 1; }
-[ -z "$HOP_DEL" -o "$HOP_DEL" = "NULL" ] && { echo "Old MO_USAGE_NEXTHOP partition name $HOP_DEL is invalid"; exit 1; }
-
-echo $NDAY | egrep -q '^20[1-9]' || { echo "New partition date $NDAY is invalid"; exit 1; }
-echo $MSGS_DEL | egrep -q '^p[0-9][1-9]' || { echo "Old MO_USAGEMSGS partition name $MSGS_DEL is invalid"; exit 1; }
-echo $DATA_DEL | egrep -q '^p[0-9][1-9]' || { echo "Old MO_USAGEDATA partition name $DATA_DEL is invalid"; exit 1; }
-echo $HOP_DEL | egrep -q '^p[0-9][1-9]' || { echo "Old MO_USAGE_NEXTHOP partition name $HOP_DEL is invalid"; exit 1; }
-
-PNAME=`echo $NDAY | awk '{ split($1,pname,"-"); print "p"pname[2]pname[3]; }'`
-echo $PNAME | egrep -q '^p[0-9][1-9]' || { echo "New partition name $PNAME is invalid"; exit 1; }
-
-[ $MSGS_NUM -le $((WEEKS_KEEP+3)) ] && MSGSCMD1="ALTER TABLE MO_USAGEMSGS DROP PARTITION future" || \
-MSGSCMD1="ALTER TABLE MO_USAGEMSGS DROP PARTITION $MSGS_DEL, future"
-MSGSCMD2="ALTER TABLE MO_USAGEMSGS ADD PARTITION (PARTITION $PNAME VALUES LESS THAN (UNIX_TIMESTAMP('$NDAY')), PARTITION future  VALUES LESS THAN MAXVALUE)"
-
-[ $DATA_NUM  -le $((WEEKS_KEEP+3)) ] && DATACMD1="ALTER TABLE MO_USAGEDATA DROP PARTITION future" || \
-DATACMD1="ALTER TABLE MO_USAGEDATA DROP PARTITION $DATA_DEL, future"
-DATACMD2="ALTER TABLE MO_USAGEDATA ADD PARTITION (PARTITION $PNAME VALUES LESS THAN (UNIX_TIMESTAMP('$NDAY')), PARTITION future  VALUES LESS THAN MAXVALUE)"
-
-[ $HOP_NUM  -le $((WEEKS_KEEP+3)) ] && HOPCMD1="ALTER TABLE MO_USAGE_NEXTHOP DROP PARTITION future" || \
-HOPCMD1="ALTER TABLE MO_USAGE_NEXTHOP DROP PARTITION $HOP_DEL, future"
-HOPCMD2="ALTER TABLE MO_USAGE_NEXTHOP ADD PARTITION (PARTITION $PNAME VALUES LESS THAN (UNIX_TIMESTAMP('$NDAY')), PARTITION future  VALUES LESS THAN MAXVALUE)"
-
-$mysqlcmd "$MSGSCMD1"
-[ $? != 0 ] && { echo "alter tabel failed; $MSGSCMD1"; exit 1; } || { echo "Successfully ran $MSGSCMD1"; }
-$mysqlcmd "$MSGSCMD2"
-[ $? != 0 ] && { echo "alter tabel failed; $MSGSCMD2"; exit 1; } || { echo "Successfully ran $MSGSCMD2"; }
-$mysqlcmd "$DATACMD1"
-[ $? != 0 ] && { echo "alter tabel failed; $DATACMD1"; exit 1; } || { echo "Successfully ran $DATACMD1"; }
-$mysqlcmd "$DATACMD2"
-[ $? != 0 ] && { echo "alter tabel failed; $DATACMD2"; exit 1; } || { echo "Successfully ran $DATACMD2"; }
-$mysqlcmd "$HOPCMD1"
-[ $? != 0 ] && { echo "alter tabel failed; $HOPCMD1"; exit 1; } || { echo "Successfully ran $HOPCMD1"; }
-$mysqlcmd "$HOPCMD2"
-[ $? != 0 ] && { echo "alter tabel failed; $HOPCMD2"; exit 1; } || { echo "Successfully ran $HOPCMD2"; }
-
-$mysqlcmd "show create table MO_USAGEMSGS\G" | grep PARTITION
-$mysqlcmd "show create table MO_USAGEDATA\G" | grep PARTITION
-$mysqlcmd "show create table MO_USAGE_NEXTHOP\G" | grep PARTITION
-exit 0
-```
-Once satisfied with the script, you can set up a cron job to execute it each night. For example, configuring cron to execute on Sunday morning at 1am as follows:
+Once satisfied with the scripts, you can set up a cron job to execute it each night. For example, configuring cron to execute on Sunday morning at 1am as follows:
 
 ```
 0 1 * * 0 /xxx/bin/partition.sh
