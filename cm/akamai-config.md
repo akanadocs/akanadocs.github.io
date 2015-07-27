@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Configuring Akamai with Akana's API Platform
-description: detailed steps on how to configure an Akamai property fiddlydee
+description: detailed steps on how to configure an Akamai property
 product: cm
 category: ref	
 sub-nav-class: 
