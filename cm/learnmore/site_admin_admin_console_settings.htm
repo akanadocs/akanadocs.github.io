@@ -4,12 +4,10 @@ title: Admin Console Settings | Site Administration | Community Manager Help
 description: Managing the configuration settings relating to Community Manager, in the Policy Manager Admin Console.
 product: cm
 category: learn
-subcategory: Site Administration
-weight: 20
+sub-nav-class: Site Administration
+weight: 5000
 type: page
-nav-title: 
-no-nav: true
-no-catalog: true
+nav-title: Admin Console Settings
 ---
 <h2 id="top">Admin Console Settings</h2>
 
@@ -59,11 +57,13 @@ no-catalog: true
   <li><a href="#com_soa_atmosphere_console">com.soa.atmosphere.console</a></li>
   <li><a href="#com_soa_atmosphere_forwardproxy">com.soa.atmosphere.forwardproxy</a></li>
   <li><a href="#com_soa_oauth">com.soa.oauth</a></li>
+  <li><a href="#com_soa_oauth_provider">com.soa.oauth.provider</a></li>
   <li><a href="#com_soa_oauth_agent_client_cache">com.soa.oauth.agent.client.cache</a></li>
   <li><a href="#com_soa_oauth_client_cache">com.soa.oauth.client.cache</a></li>
   <li><a href="#com_soa_oauth_provider">com.soa.oauth.provider</a></li>
 </ul>
 <p>Some of the settings are explained below.</p>
+
 
 
 <h4><a name="com_soa_api_security"></a>com.soa.api.security</h4>
@@ -89,9 +89,13 @@ no-catalog: true
   <dd>This causes a slight additional overhead on performance, therefore it is configurable.</dd>
   <dd>Default: 512k</dd>
   <dt>atmosphere.config.businessSettingsCacheRefreshOnChange</dt>
-  <dd>Allows security configuration changes to be implemented immediately.</dd>
+  <dd>Allows security configuration changes to be implemented immediately. When set to false, configuration settings might take up to 5 minutes to take effect due to caching.</dd>
   <dd><strong>Note</strong>: The configuration only works when there is no load balancing set up, since the in-memory configuration update is limited to the container instance, not all the instances in the cluster.</dd>
   <dd>Default: false</dd>
+
+
+<!--<dt>atmosphere.config.contentPath</dt>
+<dd>(Doc not needed)</dd>-->
 
 
   <dt>atmosphere.config.csrfHttpWriteSkipUserAgents</dt>
@@ -105,6 +109,18 @@ no-catalog: true
   <dd>In a multi-tenant install, the user identity name is formatted as tenantid-username, for example, <strong>acmepaymentscorp-johnsmith</strong>.</dd>
   <dd>This helps ensure that if the same user has an account on two different tenants there is no conflict and each account is treated separately.</dd>
 
+
+
+<!--<dt>atmosphere.config.loadContentFromWorkspace</dt>
+<dd>(debug option used internally)</dd>-->
+
+
+<!--<dt>atmosphere.config.loadResourcesFromWorkspace</dt>
+<dd>(debug option used internally)</dd>-->
+
+
+<!--<dt>atmosphere.config.resourcePath</dt>
+<dd>(Doc not needed)</dd>-->
 
 
   <dt>atmosphere.config.userRolesDenied</dt>
@@ -158,6 +174,38 @@ no-catalog: true
 
 
 
+<h4><a name="com_soa_oauth_provider"></a>com.soa.oauth.provider</h4>
+<p>Indicates settings are applicable when the platform is used as an OAuth Provider. Tuning the settings to your installation can help you achieve better performance and make the OAuth Provider more scalable. To access the settings, log in to the Policy Manager console and go to <strong>Configuration</strong> > <strong>com.soa.oauth.provider</strong>.</p>
+<p>The following settings are available:</p>
+<dl>
+<dt>com.soa.oauth.provider.config.grantAttributesCacheExpirationTime</dt>
+<dd>The expiration time for grant attributes stored in the cache, in milliseconds. A scheduler takes care of refreshing the cache entries depending upon their expiration, as follows:</dd>
+</dl>
+<ul>
+  <li>Value = 0: the cache is not cleared. Cache entries are retained.</li>
+  <li>Value &lt; 0 (negative number): the cache is deleted.</li>
+  <li>Value &gt; 0 (positive number): the scheduler checks the last access time of the entry. If the last access time is greater than the expiration time, the cache entry is expired since this indicates that probably the grant attributes are no longer required. If they are required, they are retrieved from the database.</li>
+</ul>
+<dl>
+  <dt>com.soa.oauth.provider.config.grantAttributesCacheMaxSize</dt>
+  <dd>Maximum cache size for OAuth Provider grants. The cache cannot exceed the max size. The scheduler uses the cache max size and cache expiration time to refresh and update the cache data.</dd>
+  <dt>com.soa.oauth.provider.config.grantSequenceIDCacheExpirationTime</dt>
+  <dd>The cache expiration time for the Grant sequence ID (seqID) in the cache, in milliseconds. This property works in the same way as grantAttributesCacheExpirationTime above, for the grant seqID. The scheduler takes care of refreshing the cache entries depending upon their expiration, as follows:</dd>
+  </dl>
+<ul>
+  <li>Value = 0: the cache is not cleared. Cache entries are retained.</li>
+  <li>Value &lt; 0 (negative number): the cache is deleted.</li>
+  <li>Value > 0 (positive number): the scheduler checks the last access time of the entry . If the last access time is greater than the expiration time, the cache entry is expired since this indicates that probably the grant sequence ID is no longer required. If it is required, it is retrieved from the database.</li>
+</ul>
+<dl>
+  <dt>com.soa.oauth.provider.config.grantSequenceIDCacheCacheMaxSize</dt>
+  <dd>Maximum cache size for OAuth grantSeqID values. The grantSeqID represents a unique OAuth grant or token, and is the primary key of the OAUTH_GRANTS table as well as the OAUTH_TOKENS table. When doing a lookup for a grant or grant-related properties, instead of querying on huge grants or the tokens table it is faster to fetch it from cache.</dd>
+</dl>
+
+<p><a href="#top">Back to top</a></p>
+
+
+
 <h4><a name="com_soa_oauth_agent_client_cache"></a>com.soa.oauth.agent.client.cache</h4>
 <p>The platform's OAuth provider and provider agent can add/retrieve OAuth client details to/from an in-memory cache. Configure the settings below in all containers where the OAuth provider and OAuth provider agent features are installed.</p>
 <p><strong>Note</strong>: These caching properties are node-specific. In a load balancing environment, the properties must be applied individually to each container. Each Network Director has a local cache, and the cache settings apply to that container property only. You must change the property on each Network Director container. The same property is applicable to all containers but must be manually applied on each container.</p>
@@ -201,7 +249,6 @@ no-catalog: true
 <dd>Indicates the RSA JSON Web Key size when the platform is used as an OAuth Resource Server.</dd>
 </dl>
 <p><a href="#top">Back to top</a></p>
-
 
 
 
