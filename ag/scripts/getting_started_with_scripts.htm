@@ -1,29 +1,26 @@
 ---
 layout: page
-title: Getting Started with Scripts using Policy Manager 7.x
+title: Getting Started with Scripts using Policy Manager 7.x 
 description: Learn about the script creation process, using a Script Activity in a process, documentation, and management tools.
 product: ag
 category: gs
 weight:	2
 subcategory: Scripts
 type: page
-nav-title: Getting Started with Scripts
+nav-title: Getting Started with Scripts (PM7x)
 
 ---
-  <h2 name="top">Getting Started with Scripts</h2>
+  <h2 name="top">Getting Started with Scripts (PM7x)</h2>
   <p>Learn about the script creation process, using a Script Activity in a process, documentation,  and management tools.</p>
-
 
 
 <a href="script_management.htm" class="button secondary">Managing Scripts</a>
 
-<a href="http://docs.soa.com/ag/assets/scriptDocs/index.html" class="button secondary">Policy Manager Scripting API (7.0 / 7.1)</a><p></p>
+<a href="http://docs.soa.com/ag/assets/scriptDocs/index.html" class="button secondary">Policy Manager Scripting API (7.0 / 7.1)</a> 
 
+<a href="http://docs.soa.com/ag/assets/scriptDocs_pm72/index.html" class="button secondary">Policy Manager Scripting API (7.2)</a><p></p>
 
-<a href="http://docs.soa.com/ag/assets/scriptDocs_pm72/index.html" class="button secondary">Policy Manager Scripting API (7.2)</a>
-
-
-
+<h5 class="stamp">Supported Platforms: 7.x</h5>
 <p></p>
 
 
@@ -65,7 +62,7 @@ nav-title: Getting Started with Scripts
 
 <div class = "divider1"></div><p></p>
 
-<p>SOA Software Policy Manager provides a <em>Scripts</em> interface that is available in the <em>Scripts</em> folder of each Organization. It allows  you to define a series of utility scripts for performing commonly used tasks. You can then import and reference scripts in a Process definition using the  Script Activity or in a QoS or Operational Script Policy. </p>
+<p>Akana Policy Manager provides a <em>Scripts</em> interface that is available in the <em>Scripts</em> folder of each Organization. It allows  you to define a series of utility scripts for performing commonly used tasks. You can then import and reference scripts in a Process definition using the  Script Activity or in a QoS or Operational Script Policy. </p>
 <p>Let's take a quick walkthrough of the script creation options  and   tools available to get you started. </p>
 <a name="script_contexts">
 <h3>Script Contexts</h3>
@@ -116,7 +113,7 @@ nav-title: Getting Started with Scripts
   <img src="images/script_activity_imports_area.jpg" width="572" height="174"></p>
 <p>Figure. Script Activity Imports Area</p>
 <p>In the figure above the json2 Script from the Registry Scripts folder is imported. Any functions defined in json2 can be used within the Script Activity source code. </p>
-<p>If you are using scripts in a process, the following pre-defined variables are provided.  For more information refer to the Scripts API located in the \sm70\docs\scriptDocs folder of the Policy Manager 7.0, 7.1, or 7.2 release folder. Click index.htm to launch the documentation: </p>
+<p>If you are using scripts in a process, the following pre-defined variables are provided.  For more information refer to the Scripts API located in the \sm70\docs\scriptDocs folder of the Policy Manager 7.0, 7.1, or 7.2 release folder.  Click index.htm to launch the documentation: </p>
 <ul class="usingOrderedList">
   <li> <strong>processContext: </strong> Provides functions for retrieving and changing information about the currently running process, such as the variables defined in the process and the authenticated subject(s) of the process. </li>
   <li> <strong>systemLog</strong>:  Provides logging functions to the container&rsquo;s log. The statements logged with this interface are mixed with the other system log statements. </li>
@@ -130,18 +127,29 @@ nav-title: Getting Started with Scripts
 <h3>Policy Manager Scripting API</h3>
 </a>
 
- <p>The <em>Policy Manager Scripting API</em> located in the <strong>\sm70\docs\scriptDocs</strong> folder of the Policy Manager 7.0, 7.1, and 7.2  Release Folder provides a series of interfaces and classes you can use to build process related scripts. The API includes lots of use cases and sample code you can experiment with and use as a baseline when building your own scripts. 
- </p>
- <p>You can access the scripting API for your Policy Manager version here: <a href="http://docs.soa.com/ag/assets/scriptDocs/index.html" >Policy Manager 7.0 and 7.1</a> and <a href="http://docs.soa.com/ag/assets/scriptDocs_pm72/index.html">Policy Manager 7.2<br />
-  <br />
- </a> <img src="images/script_api_home_page.jpg" width="564" height="327" /></p>
+<p>The <em>Policy Manager Scripting API</em> provides a series of interfaces and classes you can use to build process related scripts.  The API includes lots of use cases and sample code you can experiment with and use as a baseline when building your own scripts. You can access the scripting API for your Policy Manager in the following locations:
+
+</p>
+<h5>Policy Manager 7.x:</h5>
+<ul class="usingOrderedList">
+  <li>Documentation is located in the <strong>\sm70\docs\scriptDocs</strong> folder of the Policy Manager 7.x Release Folder.<br />
+    <br />
+    <em>or</em><br />
+    <br />
+  </li>
+  <li>On the Akana Documentation Repository: <a href="http://docs.soa.com/ag/assets/scriptDocs/index.html" >Policy Manager 7.0 and 7.1</a> and 
+    <a href="http://docs.soa.com/ag/assets/scriptDocs_pm72/index.html">Policy Manager 7.2</a><br />
+.<br />
+<img src="images/script_api_home_page.jpg" width="564" height="327" /> <br>
+  </li>
+</ul>
 <p><a href="#top">Back to top</a></p>
 
 
 <a name="process_reference">
   <h3>Process Reference</h3></a>
 
-<p>Another essential resource you will need when working with Processes and Scripts is the <a href="../processes/process_reference.htm" ">Process Reference</a>. Here you will learn all the fundamentals about creating a process, using the process editors, and configuring activities.</p>
+<p>Another essential resource you will need when working with Processes and Scripts is the <a href="../processes/process_reference_pm7x.htm" ">Process Reference (Policy Manager 7.x</a>. Here you will learn all the fundamentals about creating a process, using the process editors, and configuring activities.</p>
 
 <p><a href="#top">Back to top</a></p>
 <a name="script_management">
