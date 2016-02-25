@@ -13,12 +13,12 @@
             <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
             <!-- <link rel="icon" type="image/png" href="http://akana.com/favicon.ico"> -->
 
+            <script src="{{ site.baseurl }}/js/soadocs.min.js"></script>
+            <script src="https://www.google.com/jsapi"></script>
 
             <!-- <link rel="stylesheet" href="{{ site.baseurl }}/style/site.min.css" type="text/css" media="screen" /> -->
             <!--[if lt IE 10]><link rel="stylesheet" href="style/ie.css" type="text/css"><![endif]-->
             <!--[if lt IE 9]><link rel="stylesheet" href="style/ie8.css" type="text/css"><![endif]-->
-          
-            <script src="{{ site.baseurl }}/js/soadocs.min.js"></script>
 
             <script type="text/javascript">
 
