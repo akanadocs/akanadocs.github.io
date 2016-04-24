@@ -3,7 +3,7 @@ layout: page
 title: Basic Concepts
 description: Provides a technical overview of the Envision product.
 product: ev
-category: learn
+category: ref
 weight: 2
 type: page
 nav-title: Basic Concepts 
@@ -13,20 +13,21 @@ nav-title: Basic Concepts
 Provides a technical overview of the Envision product.
 
 <a href="env_toc.html" class="button secondary">Envision Reference (Main Topic)</a>  <a href="../envision_install/installing_envision.htm" class="button secondary">Installing Envision 1.0</a>
-<h5 class="stamp">Supported Platforms: 8.0</h5>  <h5 class="stamp">Supported Envision Versions: 1.0</h5><br>
+  <h5 class="stamp">Supported Envision Versions: 1.0, 1.1</h5>
 
 <div class = "divider1"></div>
 
-<h3 name="top" style="color: grey;">Table of Contents</h3>
-
-1. [Introduction](#introduction)
-2. [Capabilities](#capabilities)
-3. [Data Definition](#data-definition)
-4. [Data Storage](#data-storage)
-5. [Data Analysis](#data-analysis)
-6. [Data Aggregation](#data-aggregation)
+### Table of Contents
+<div id="toc-marker"></div>
+* [Introduction](#introduction)
+* [Capabilities](#capabilities)
+* [Data Definition](#data-definition)
+* [Data Storage](#data-storage)
+* [Data Analysis](#data-analysis)
+* [Data Aggregation](#data-aggregation)
 
 <div class = "divider1"></div>
+
 ### <a id="introduction"></a>Introduction
 
 Envision is an analytics platform that allows you to slice and dice your data to analyze every aspect of your business and digital strategy. It can help you collect data and identify patterns, trends, violations, baselines, or historical context. The domain of the data you wish to analyze is open ended. You may wish to analyze:

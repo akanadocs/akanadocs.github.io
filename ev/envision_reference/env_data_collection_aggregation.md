@@ -3,7 +3,7 @@ layout: page
 title: Data Set Collection and Aggregation
 description: Learn how Envision performs data collection and data aggregation.
 product: ev
-category: learn
+category: ref
 weight: 4
 type: page
 nav-title: Data Set Collection and Aggregation
@@ -13,18 +13,19 @@ nav-title: Data Set Collection and Aggregation
 Learn how Envision performs data collection and data aggregation.
 
 <a href="env_toc.html" class="button secondary">Envision Reference (Main Topic)</a>  <a href="../envision_install/installing_envision.htm" class="button secondary">Installing Envision 1.0</a>
-<h5 class="stamp">Supported Platforms: 8.0</h5>  <h5 class="stamp">Supported Envision Versions: 1.0</h5><br>
+  <h5 class="stamp">Supported Envision Versions: 1.0, 1.1</h5>
 
 <div class = "divider1"></div>
 
-<h3 name="top" style="color: grey;">Table of Contents</h3>
-
-1. [Introduction](#introduction)
-2. [Data Collection Using a Broker](#data-collection-using-a-broker)
-3. [Data Collection Using Individual Transactions or Raw Data](#data-collection-using-individual-transations-or-raw-data)
-4. [Data Aggregation Using Time Intervals](#data-aggregation-using-time-intervals)
+### Table of Contents
+<div id="toc-marker"></div>
+* [Introduction](#introduction)
+* [Data Collection Using a Broker](#data-collection-using-a-broker)
+* [Data Collection Using Individual Transactions or Raw Data](#data-collection-using-individual-transations-or-raw-data)
+* [Data Aggregation Using Time Intervals](#data-aggregation-using-time-intervals)
 
 <div class = "divider1"></div>
+
 ### <a id="introduction"></a>Introduction
 
 In the previous topic we introduced the concept of a data set, how metrics are defined, their aggregation, and collection intervals. In this topic we will describe how the data in a data set is actually collected and how the aggregation is performed.

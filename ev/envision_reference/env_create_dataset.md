@@ -3,9 +3,9 @@ layout: page
 title: Creating a Data Set
 description: Learn how to create an Envision data set and configure dimensions and metrics.
 product: ev
-category: learn
+category: ref
 weight: 5
-type: pagedura
+type: page
 nav-title: Creating a Data Set
 ---
 
@@ -13,24 +13,25 @@ nav-title: Creating a Data Set
 Learn how to create an Envision data set and configure dimensions and metrics.
 
 <a href="env_toc.html" class="button secondary">Envision Reference (Main Topic)</a>  <a href="../envision_install/installing_envision.htm" class="button secondary">Installing Envision 1.0</a>
-<h5 class="stamp">Supported Platforms: 8.0</h5>  <h5 class="stamp">Supported Envision Versions: 1.0</h5><br>
+  <h5 class="stamp">Supported Envision Versions: 1.0, 1.1</h5>
 
 <div class = "divider1"></div>
 
-<h3 name="top" style="color: grey;">Table of Contents</h3>
-
-1. [Introduction](#introduction)
-2. [Data Sets](#data-sets)
+### Table of Contents
+<div id="toc-marker"></div>
+* [Introduction](#introduction)
+* [Data Sets](#data-sets)
 	* [Create New Dataset](#create-new-data-set)
 	* [Dataset Options](#dataset-options)
-3. [Dimensions](#dimensions)
+* [Dimensions](#dimensions)
 	* [Add New Dimension](#add-new-dimension)
 	* [Dimension Options](#dimension-options)
-4. [Metrics](#metrics)
+* [Metrics](#metrics)
 	* [Add New Metric](#add-new-metric)
 	* [Metrics Options](#metrics-options)
 
 <div class = "divider1"></div>
+
 ### <a id="introduction"></a>Introduction
 
 In the previous topics we described the concept of a data set. In this chapter we will describe how a data set is created in the Envision product.

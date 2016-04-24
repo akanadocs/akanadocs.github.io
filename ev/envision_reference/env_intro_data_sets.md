@@ -3,7 +3,7 @@ layout: page
 title: Introduction to Data Sets
 description: Learn about Envision data sets, metrics, and dimensions. 
 product: ev
-category: learn
+category: ref
 weight: 3
 type: page
 nav-title: Introduction to Data Sets 
@@ -13,17 +13,18 @@ nav-title: Introduction to Data Sets
 Learn about Envision data sets, metrics, and dimensions.
 
 <a href="env_toc.html" class="button secondary">Envision Reference (Main Topic)</a>  <a href="../envision_install/installing_envision.htm" class="button secondary">Installing Envision 1.0</a>
-<h5 class="stamp">Supported Platforms: 8.0</h5>  <h5 class="stamp">Supported Envision Versions: 1.0</h5><br>
+  <h5 class="stamp">Supported Envision Versions: 1.0, 1.1</h5>
 
 <div class = "divider1"></div>
 
-<h3 name="top" style="color: grey;">Table of Contents</h3>
-
-1. [What is a Data Set?](#what-is-a-data-set)
-2. [Metrics and Dimensions](#metrics-and-dimensions)
-3. [Data Set Examples](#data-set-examples)
+### Table of Contents
+<div id="toc-marker"></div>
+* [What is a Data Set?](#what-is-a-data-set)
+* [Metrics and Dimensions](#metrics-and-dimensions)
+* [Data Set Examples](#data-set-examples)
 
 <div class = "divider1"></div>
+
 ### <a id="what-is-a-data-set"></a>What is a Data Set?
 
 A data set is a group of metrics that are collected so that they can be analyzed through queries based on different criteria, or dimensions. It is the foundation on top of which all analysis can be performed. Take a company named Acme that manufactures shoes, for example. Acme provides an API for merchants to order shoes that are sold to the public. Acme wishes to collect metrics on those sales such as: 
