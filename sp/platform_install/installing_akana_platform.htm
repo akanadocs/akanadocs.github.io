@@ -5,22 +5,22 @@ description: Learn how to download and install the Akana Platform self-extractin
 product: sp
 category: gs
 weight:	6
-sub-nav-class: Akana Platform Installation
+sub-nav-class: Akana API Platform Installation
 type: page
 nav-title: Installing Akana Platform 8.x
 ---
 
- <h2 id="top">Installing Akana Platform 8.x</h2>
+ <h2 id="top">Installing Akana Platform 8.x </h2>
 
 <p>Learn how to download and install the Akana Platform self-extracting ZIP file.</p>
 
-<p><a href="../../sp/admin_console/using_admin_console.htm" class="button secondary">Using Admin Console</a>
+<p><a href="../admin_console/using_admin_console.htm" class="button secondary">Using Admin Console</a>
 
-<a href="../../sp/admin_console/installing_tools.htm" class="button secondary">Installing Tools</a>
+<a href="../admin_console/installing_tools.htm" class="button secondary">Installing Tools</a>
 
-<a href="../../sp/admin_console/installing_plugins.htm" class="button secondary">Installing Plug-ins</a> <a href="../../ag/assets/PM_ConfigurationCategories_6x_7x.pdf" class="button secondary">Configuration Categories</a><br /><br />
+<a href="../admin_console/installing_plugins.htm" class="button secondary">Installing Plug-ins</a> <a href="../../ag/assets/PM_ConfigurationCategories_6x_7x.pdf" class="button secondary">Configuration Categories</a><br /><br />
 
-<a href="../../sp/admin_console/config_actions.htm" class="button secondary">Configuration Actions</a></p>
+<a href="../admin_console/config_actions.htm" class="button secondary">Configuration Actions</a></p>
 <p></p>
 
 
@@ -36,6 +36,7 @@ nav-title: Installing Akana Platform 8.x
   <li><a href="#download_platform_zip">Step 1: Download Akana Platform ZIP File</a></li>
   <li><a href="#install_platform_zip">Step 2: Install Akana Platform ZIP File</a></li>
   <li><a href="#install_platform_updates">Step 3: Install Akana Platform Updates</a></li>
+  <li><a href="#related_topics">Related Topics</a></li>
 </ol>
 
 
@@ -45,13 +46,13 @@ nav-title: Installing Akana Platform 8.x
 
 
 <a name="introduction"></a><h3>Introduction</h3>
-<p>The Akana Platform is a OSGI environment that Akana features are designed to run within, obey its constraints, and make use of its facilities. The platform supports Windows and UNIX (Linux, Solaris, AIX) environments, and is installed using an extractable ZIP file. The Win-JRE and Linux-JRE ZIP files include a JRE if you do not want to download one. The Platform ZIP file can work anywhere but you must download and install your own JRE.</p>
+<p>The Akana Platform is an OSGI environment that Akana features are designed to run within, obey its constraints, and make use of its facilities. The platform supports Windows and UNIX (Linux, Solaris, AIX) environments, and is installed using an extractable ZIP file. The Win-JRE and Linux-JRE ZIP files include a JRE if you do not want to download one. The Platform ZIP file can work anywhere but you must download and install your own JRE.</p>
 <p>After installing the platform, feature ZIP files can be extracted to the platform, and then installed and configured using the <strong>Akana Administration Console</strong>.</p>
 
 
 
 <a name="system_requirements"></a><h3>System Requirements</h3>
-<p>As a prerequisite step, verify that you system conforms to the stated system requirements. See <a href="../../sp/system_requirements_akana_platform_8x.htm">Akana Platform System Requirements 8.x</a>.</p>
+<p>As a prerequisite step, verify that you system conforms to the stated system requirements. See <a href="../system_requirements_akana_platform_8x.htm">Akana Platform System Requirements 8.x</a>.</p>
 <p><a href="#top">back to top</a></p>
 
 
@@ -87,15 +88,25 @@ nav-title: Installing Akana Platform 8.x
 
 <a name="download_platform_zip_82"></a><h5>For Version 8.2</h5>
 <p>To get access to the Version 8.2 upgrade files, contact Akana Technical Support.</p>
+<!--<ol>
+  <li>Go to the Akana Library site at <a href="https://library.akana.com/display/MAIN/Akana+Library">https://library.akana.com/display/MAIN/Akana+Library</a>.</li>
+  <li>In the <strong>Downloads</strong> section, click <strong>Akana Platform</strong> <strong>&gt; AP 8.2</strong>.</li>
+  <li>Download a platform ZIP file:<br />
+    <br />
+  <p><strong>akana-platform-linux-jre-8.2.xxx.zip</strong> (Linux only - includes JRE)</p>
+    <p><strong>akana-platform-win-jre-8.2.xxx.zip</strong> (Windows only - includes JRE)<br />
+      <br />
+      <strong>akana-platform-8.2.xxx.zip</strong> (Does not include JRE. Can be used for Windows, Linux, Solaris, Windows only - includes JRE). 
+      Note: When using this JRE you must modify the bin/setDEMS.sh script and comment out lines that pertain to your JRE and then ensure you have JAVA set correctly. </p>
+  </li>
+</ol>-->
 <p><a href="#top">back to top</a></p>
 
 
 
 <a name="install_platform_zip"></a><h3>Step 2: Install Akana Platform ZIP File</h3>
 <ol>
-  <li>Extract the platform ZIP file to a new or existing folder. <br />
-    <br />
-  </li>
+  <li>Extract the platform ZIP file to a new or existing folder.</li>
   <li>The following table provides a brief description of Akana Platform folder.<br />
     <br />
     <table width="706" cellspacing="0px" class="doctable">
@@ -196,3 +207,22 @@ nav-title: Installing Akana Platform 8.x
 
 
 
+<h3 id="related_topics">Related Topics</h3>
+<table width="700" border="0" cellspacing="0" cellpadding="2" class="doctable">
+  <tr>
+    <td width="300" valign="top"><p><strong>Version 8.2:</strong></p>
+      <ul>
+        <li><a href="installing_akana_api_platform_v82.htm">Installing the Akana API Platform 8.2x</a></li>
+        <li><a href="install_cm_jython_script.htm">Installation Jython Script</a></li>
+        <li><a href="implementation_planning.htm">Planning Your Implementation</a></li>
+      </ul>
+    </td>
+    <td width="400" valign="top"><p><strong>Version 8.0:</strong></p>
+      <ul>
+<!--        <li><a href="installing_akana_platform.htm">Installing Akana Platform 8.x</a></li>-->
+        <li><a href="installing_policy_manager_v80.htm">Installing Policy Manager 8.x</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<hr />
