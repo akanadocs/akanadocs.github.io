@@ -9,9 +9,9 @@ weight: 3212
 type: page
 nav-title: User Accounts
 ---
-<h2 id="top">User Accounts</h2>
+<h2 id="top">Managing User Accounts</h2>
 <p>Manage user accounts for platform users, including adding, activating, disabling, and deleting accounts. These are Site Admin activities.</p>
-
+<h5 class="stamp">API Platform Version: 8.1</h5>
 <div class = "divider1"></div>
 
 <h3 style="color: gray;">Table of Contents</h3>
@@ -327,7 +327,7 @@ nav-title: User Accounts
 
 
 <a name="why_dont_i_see_all_user_board_items_on_the_users_board"></a><h3>Why don't I see many Board items when I view the user's Board?</h3>
-<p>As the Site Admin, you can view a user's Board as it appears to the user (<strong>Administration</strong> &gt; <strong>Users</strong> &gt; click through on a specific user &gt; <strong>Board</strong> on left menubar).</p>
+<p>As the Site Admin, you can view a user's Board as it appears to the user (<strong>Administration</strong> &gt; <strong>Users</strong> &gt; click through on a specific user &gt; <strong>Board</strong> on left menu bar).</p>
 <p>A user might have many apps and API contracts but yet not have many Board items. This is because most Board items post only to the Board of the resource they are applicable to, such as an app or API Board.</p>
 <p>For information on what types of Board items post to which Boards, see <a href="basics_boards.htm#what_types_of_board_items_show_up_on_which_boards">What types of Board items show up on which Boards?</a> (general user help).</p>
 <p>Because Board item types are long-lived, and the permissions of an individual user might change, Board items relating to apps and APIs are not posted to the user's individual Board. The user can see those items by visiting the Board of apps or APIs for which he/she has visibility.</p>
@@ -348,7 +348,7 @@ nav-title: User Accounts
   <li>In the Admin Console, go to Configuration &gt; Settings.</li>
   <li>In the Configuration Categories on the left, choose <strong>com.soa.atmosphere</strong>.</li>
   <li>In the right pane, find this property: <strong>atmosphere.config.userRolesDenied</strong>.</li>
-  <li>Set one or more values, using comma separators as needed (additional info re valid values below). You can use Akana AKI Platform or Policy Manager roles, as shown below:
+  <li>Set one or more values, using comma separators as needed (additional info re valid values below). You can use Akana API Platform or Policy Manager roles, as shown below:
     <pre>Site Administrator,Business Administrator, ApiAdmin, BusinessAdmin, SiteAdmin</pre></li>
   <li> Click <strong>Apply Changes</strong>.</li>
 </ol>
@@ -369,9 +369,9 @@ nav-title: User Accounts
   <li>New account setup</li>
 </ul>
 <p>The database field is ALLOW_USER_ENUM, in the BUSINESS_SECURITY_SETTINGS table. If enabled (set to <strong>com.soa.feature.enabled</strong>, or no value specified) the default behavior is in effect. If this value is set to <strong>com.soa.feature.disabled</strong>, the enhanced security behavior is activated.</p>
-<p>You can modify this field in the user interface in the business security configuration settings: see <a href="site_admin_settings.htm#how_do_i_configure_settings_for_security_business">How do I configure settings for business security?</a></p>
+<p>You can modify this field in the user interface in the business security configuration settings: see <a href="site_admin_settings.htm#settings_config_security_business">How do I configure settings for business security?</a></p>
 <p>The table below shows the default platform behavior and the enhanced security behavior for these two activities.</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
     <tr>
       <th width="30%">Activity</th>
@@ -500,7 +500,7 @@ nav-title: User Accounts
 <p>By default, the two-factor authentication feature is turned off. However, the platform out-of-the-box installation includes a user workflow that you can use to implement this functionality. The workflow name is: <strong>workflow:definition:user:v2</strong>.</p>
 <p>This user workflow, <strong>default-user-workflow-v2.xml</strong>, guides the user through entering a verification code after normal login is complete. The verification code, passed to the user in an out-of-band process, completes the login process.</p>
 <p>To log in, the user must provide normal credentials and then also enter the two-factor verification code.</p>
-<p>The workflow retrieves values set up for two-factor authentication in a platform Settings page. For information on the Settings page, see <a href="site_admin_settings.htm#how_do_i_configure_settings_for_users_2fa">How do I configure settings for two-factor authentication of users (2FA)?</a></p>
+<p>The workflow retrieves values set up for two-factor authentication in a platform Settings page. For information on the Settings page, see <a href="site_admin_settings.htm#settings_config_users_2fa">How do I configure settings for two-factor authentication of users (2FA)?</a></p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -509,7 +509,7 @@ nav-title: User Accounts
 <p>You can modify the user interface so that pages that collect user information, such as the user's profile page (<strong>Profile</strong> &gt; <strong>Details</strong>) or the page where the Site Admin adds a user (<strong>Administration</strong> &gt; <strong>Users</strong> &gt; <strong>Add</strong>), include a telephone number field.</p>
 <p>If the telephone number field is present, a field for the telephone country code is also present, and both are required fields.</p>
 <p>To enable these fields in the platform user interface, you must first load the country codes that you want to support, in the database. </p>
-<p> The database table name is TENANT_COUNTRY_CODES.</p>
+<p>The database table name is TENANT_COUNTRY_CODES.</p>
 <p>Once you've done that, the telephone number field automatically appears on applicable user pages.</p>
 <p><a href="#top">Back to top</a></p>
 
@@ -523,8 +523,43 @@ nav-title: User Accounts
 <p>The example below illustrates the above scenario, as an example of custom functionality that you could enable via custom workflow.</p>
 <p><img src="assets/sa_wf_ex01.png" width="657" height="362" alt="sample custom user workflow action" /></p>
 <p>Up to two custom workflow actions are displayed as buttons, as shown above. If there are more than two, they are displayed in a drop-down list.</p>
-<p>If you want to implement custom workflow actions, and need assistance, <a href="basics_support.htm#how_do_i_contact_technical_support">contact Technical Support</a> for additional information. You can also check the workflow documentation to check which custom functions are available: see <a href="http://docs.akana.com/cm/assets/CM_WP_Workflow.pdf" title="Customizing Workflows" target="_blank">http://docs.akana.com/cm/assets/CM_WP_Workflow.pdf</a>.</p>
+<p>If you want to implement custom workflow actions, and need assistance, <a href="basics_support.htm#how_do_i_contact_technical_support">contact Technical Support</a> for additional information. You can also check the workflow documentation to check which custom functions are available: see <a href="http://docs.akana.com/cm/assets/AAP_WP_Workflow.pdf" title="Customizing Workflows" target="_blank">http://docs.akana.com/cm/assets/AAP_WP_Workflow.pdf</a>.</p>
 <p><a href="#top">Back to top</a></p>
 
 
 
+<div class = "divider1"></div>
+
+
+
+<h3 id="relatedtopics">Related Topics</h3>
+<table width="98%" border="0" cellspacing="0" cellpadding="2" class="doctable">
+  <tr>
+    <td width="33%"><ul>
+      <li><a href="site_admin_.htm">Site Admin Summary Page</a></li>
+      <li><a href="site_admin_overview.htm">Site Admin Responsibilities</a></li>
+      <!--<li><a href="site_admin_users.htm">Managing User Accounts</a></li>-->
+      <li><a href="site_admin_site_admins.htm">Managing Site Admins</a></li>
+      <li><a href="business_admin_business_adm.htm">Managing Business Admins</a></li>
+      <li><a href="bus_site_admin_dzs.htm">Managing Deployment Zones</a></li>
+    </ul>
+</td>
+    <td width="33%"><ul>
+      <li><a href="bus_site_api_admin_forum.htm">Forum Moderation</a></li>
+      <li><a href="site_admin_domains.htm"> Domains</a></li>
+      <li><a href="site_admin_domains_eoap.htm">External OAuth Provider Domain</a></li>
+      <li><a href="site_admin_domains_oidc.htm">OpenID Connect Support</a></li>
+      <li><a href="site_admin_ov_pf_endtoend.htm">PingFederate Setup</a></li>
+    </ul></td>
+    <td width="33%"><ul>
+      <li><a href="site_admin_config.htm"> Configuration</a></li>
+      <li><a href="site_admin_settings.htm"> Settings</a></li>
+      <li><a href="site_admin_workflows.htm"> Workflows</a></li>
+      <li><a href="site_admin_tc.htm"> Test Client</a></li>
+      <li><a href="site_admin_es.htm"> Search Configuration</a></li>
+      <li><a href="site_admin_content_guidelines_sd.htm">Content Development Guidelines for Simple Dev Theme</a></li>
+    </ul>
+</td>
+  </tr>
+</table>
+<hr />

@@ -13,6 +13,7 @@ no-nav: true
 <h2 id="top">API Documentation Tagging</h2>
 <p>Learn how to tag your API documentation to control visibility of documentation files.</p>
 <p><strong>Note</strong>: A full set of linked files and setup instructions is also available, as a ZIP file that you can customize, upload, and test. To get a copy of the doc tagging ZIP file, <a href="basics_support.htm#how_do_i_contact_technical_support">contact Technical Support</a>.</p>
+<h5 class="stamp">API Platform Version: 8.1</h5>
 <div class = "divider1"></div>
 
 
@@ -106,10 +107,10 @@ no-nav: true
 
 
 
+
 <div class = "divider1"></div>
-
-
 <a name="h_doc_tagging_general"></a><h3>Doc Tagging General Information:</h3>
+
 
 
 
@@ -373,7 +374,7 @@ no-nav: true
   &lt;metadata&gt;
     &lt;target&gt;documents/*\.html&lt;/target&gt;
     &lt;licenses&gt;
-      &lt;license name=&quot;mypubliclicensenam}&quot;&gt;
+      &lt;license name=&quot;mypubliclicensename}&quot;&gt;
       &lt;/license&gt;
     &lt;/licenses&gt;
   &lt;/metadata&gt;
@@ -414,9 +415,10 @@ no-nav: true
 
 
 
+
 <div class = "divider1"></div>
-<a name="h_doc_tagging_by_file"></a>
-<h3>Doc Tagging By File</h3>
+<a name="h_doc_tagging_by_file"></a><h3>Doc Tagging By File</h3>
+
 
 
 
@@ -645,7 +647,7 @@ no-nav: true
 
 
 <a name="docfilter_byscope"></a><h3>How do I use file-based tagging to filter by scope?</h3>
-<p>The &lt;scopes&gt; filter in the <strong>metadata.xml</strong> file allows you to specify one or more target documents and one or more scope names. Users must have visibility of <strong>all</strong> specified scopes (via licenses that they have visibility of) in order to have visibility of the specified documents. In the developer portal, the API Admin maps scopes to API operations using the <strong>Scope Mapping</strong> function on the <em>API &gt; Details</em> page.</p>
+<p>The &lt;scopes&gt; filter in the <strong>metadata.xml</strong> file allows you to specify one or more target documents and one or more scope names. Users must have visibility of <strong>all</strong> specified scopes (via licenses that they have visibility of) in order to have visibility of the specified documents. In the developer portal, the API Admin maps scopes to API operations using the information set up in the <strong>Manage Licensing page</strong>, accessed via the <strong>API Details</strong> page.</p>
 <p>An example is shown below.</p>
 <pre>
 &lt;metadata&gt;
@@ -664,7 +666,7 @@ no-nav: true
 
 
 <a name="docfilter_byoperation"></a><h3>How do I use file-based tagging to filter by operation?</h3>
-<p>The &lt;operations&gt; filter in the <strong>metadata.xml</strong> file allows you to specify one or more target documents and one or more operation names. Users must have visibility of <strong>all</strong> specified operations (via licenses that they have visibility of, that include scopes the operations are mapped to) in order to have visibility of the specified document. Scopes are mapped to API operations using the <strong>Scope Mapping</strong> function on the <em>API &gt; Details</em> page.</p>
+<p>The &lt;operations&gt; filter in the <strong>metadata.xml</strong> file allows you to specify one or more target documents and one or more operation names. Users must have visibility of <strong>all</strong> specified operations (via licenses that they have visibility of, that include scopes the operations are mapped to) in order to have visibility of the specified document. The API Admin maps scopes to API operations using the information set up in the <strong>Manage Licensing page</strong>, accessed via the <strong>API Details</strong> page.</p>
 <p>An example is shown below.</p>
 <pre>
 &lt;metadata&gt;
@@ -871,8 +873,10 @@ no-nav: true
 
 
 
+
 <div class = "divider1"></div>
 <a name="h_doc_tagging_by_content"></a><h3>Doc Tagging By Content</h3>
+
 
 
 
@@ -937,12 +941,14 @@ no-nav: true
 <a name="how_do_i_set_up_the_head_tag"></a><h3>How do I set up the &lt;head&gt; tag in my file?</h3>
 <p>Within the &lt;head&gt; tag, after the &lt;title&gt; tag, add the following lines, replacing the {resource.version} variable with your own unique value:</p>
     <pre>
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/reset.css&quot;/&gt; 
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/base.css&quot;/&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/reset.css&quot;/&gt;  
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/base.css&quot;/&gt; 
+
 &lt;script language=&quot;javascript&quot; src=&quot;/ui/apps/atmosphere/{resource.version}/resources/uiframework/jquery/jquery.js&quot;
   type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 &lt;script language=&quot;javascript&quot; src=&quot;/ui/apps/atmosphere/{resource.version}/resources/console/javascript/dynamic_docs.js&quot;
   type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</pre>
+<p><strong>Note</strong>: when you reference reset.css, as in the above example, you must also define styles in your custom css. For more information, see <a href="api_admin_content_guidelines.htm#platform_reset_css">What are reset.css and base.css and why would I use them?</a></p>
 <p>For information about the {resource.version} variable and what value to use, see <a href="#what_is_the_resource_version_variable">What is the {resource.version} variable and why is it important?</a></p>
 
 <p>Below is an example of the opening &lt;html&gt; tag and entire &lt;head&gt; tag of a sample HTML file, showing where the additional entries are placed to implement the documentation tagging feature.</p>
@@ -953,8 +959,8 @@ no-nav: true
 
 &lt;title&gt;API Documentation Overview&lt;/title&gt;
 ----------------------
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/reset.css&quot;/&gt; 
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/base.css&quot;/&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/reset.css&quot;/&gt;  
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/base.css&quot;/&gt; 
 
 &lt;script language=&quot;javascript&quot; src=&quot;/ui/apps/atmosphere/123456/resources/uiframework/jquery/jquery.js&quot;
   type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
@@ -969,8 +975,9 @@ no-nav: true
 <a name="what_is_the_resource_version_variable"></a><h3>What is the {resource.version} variable and why is it important?</h3> 
 <p>If you want to use content-based tagging in a documentation file, the doc file must reference these two JavaScript files:</p>
 <pre>
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/reset.css&quot;/&gt; 
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/base.css&quot;/&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/reset.css&quot;/&gt;  
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/base.css&quot;/&gt; 
+
 &lt;script language=&quot;javascript&quot; src=&quot;/ui/apps/atmosphere/{resource.version}/resources/uiframework/jquery/jquery.js&quot;
   type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 &lt;script language=&quot;javascript&quot; src=&quot;/ui/apps/atmosphere/{resource.version}/resources/console/javascript/dynamic_docs.js&quot;
@@ -1040,7 +1047,7 @@ no-nav: true
 <p>To specify multiple scopes, separate them with commas.</p>
 <p>If the tagged content is a link to another file, remember to also specify in the <strong>metadata.xml</strong> file that the destination file is accessible to users with visibility of the same scope. If you don't, users will see the link and be able to click the link but will not have permission to view the target file.</p>
 <p>The platform automatically checks access rights, and makes the content visible to users who have visibility of licenses that include the applicable scope.</p>
-<p class="apidoc_note"><strong>Note</strong>: If you want to restrict documentation visibility by scopes, you must assign scopes to the API. To assign scopes to your API, in <em>API Details &gt; Scope Mapping &gt;Edit Scope Details</em>, select either <strong>API-wide Mapping</strong> or <strong>Operation-specific Mapping</strong>. Choose scope values and save.</p>
+<p class="apidoc_note"><strong>Note</strong>: If you want to restrict documentation visibility by scopes, you must assign scopes to the API. To assign scopes to your API, in <strong>API Details</strong> &gt; <strong>Manage Licensing</strong>, check the <strong>Enable Licensing for API</strong> box, and then select either <strong>API-Wide Mapping</strong> or <strong>Operation-Specific Mapping</strong>. Choose scope values and save. For the most security, be sure to assign at least one scope to each operation. If an operation doesn't have a scope assigned, no specific license is needed to access that operation.</p>
 
 <p>In the documentation tag, use a &lt;div&gt; tag with the <strong>soa-ui-cm-dynamic-docs</strong> tag assigned to it. Refer to the examples below.</p>
 
@@ -1072,7 +1079,7 @@ no-nav: true
 <p>If the tagged content is a link to another file, remember to also specify in the <strong>metadata.xml</strong> file that the destination file is accessible to users with visibility of the same operation. If you don't, users will see the link and be able to click the link but will not have permission to view the target file.</p>
 <p>In the documentation tag, use a &lt;div&gt; tag with the <strong>soa-ui-cm-dynamic-docs</strong> tag assigned to it. Refer to the examples below.</p>
 <p>The platform automatically checks access rights, and makes the content accessible to users who have visibility of licenses that include scopes with the applicable operations.</p>
-<p class="apidoc_note"><strong>Note</strong>: To restrict documentation visibility by operation, scopes must also be assigned to the API. To assign scopes to your API, in <em>API Details &gt; Scope Mapping &gt;Edit Scope Details</em>, select <strong>Operation-specific Mapping</strong>. Assign scopes to operations and save. For the most security, be sure to assign at least one scope to each operation. If an operation doesn't have a scope assigned, no specific license is needed to access that operation.</p>
+<p class="apidoc_note"><strong>Note</strong>: To restrict documentation visibility by operation, scopes must also be assigned to the API. To assign scopes to your API, in <strong>API Details</strong> &gt;<strong> Manage Licensing</strong>, check the <strong>Enable Licensing for API</strong> box, and then select either <strong>API-Wide Mapping</strong> or <strong>Operation-Specific Mapping</strong>. Assign scopes to operations and save. For the most security, be sure to assign at least one scope to each operation. If an operation doesn't have a scope assigned, no specific license is needed to access that operation.</p>
 <p>Then, in the API documentation HTML file, configure the tags as follows, adding one or more operation names separated by commas. </p>
 <p>An example is shown below.</p>
 <pre>
@@ -1298,7 +1305,10 @@ no-nav: true
 
 
 
+
+<div class = "divider1"></div>
 <a name="h_streamlining"></a><h3>Streamlining Content-Based Doc Tagging:</h3>
+
 
 
 
@@ -1439,8 +1449,8 @@ window.ACMEPC = {
 
   &lt;title&gt;About the addPayment Operation&lt;/title&gt;
 
-  &lt;link rel="stylesheet" type="text/css" href="/resources/style/reset.css"/&gt;
-  &lt;link rel="stylesheet" type="text/css" href="/resources/style/base.css"/&gt;
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/reset.css&quot;/&gt; 
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/base.css&quot;/&gt; 
 
   &lt;script language="javascript" src="/ui/apps/atmosphere/123/resources/uiframework/jquery/jquery.js"
   type="text/javascript"&gt;&lt;/script&gt;
@@ -1453,6 +1463,7 @@ window.ACMEPC = {
   type="text/javascript"&gt;&lt;/script&gt;
 &lt;/head&gt;</pre>
 <p><strong>Note</strong>: Make sure you have the correct path to the <strong>replacements.js</strong> file, whether it's in the same folder, a subfolder, or a parent folder.</p>
+<p><strong>Note</strong>: when you reference reset.css, as in the above example, you must also define styles in your custom css. For more information, see <a href="api_admin_content_guidelines.htm#platform_reset_css">What are reset.css and base.css and why would I use them?</a></p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -1499,7 +1510,10 @@ window.ACMEPC = {
 
 
 
+
+<div class = "divider1"></div>
 <a name="h_testing_and_finalizing"></a><h3>Testing and Finalizing:</h3>
+
 
 
 
@@ -1532,7 +1546,7 @@ window.ACMEPC = {
   </li>
   <li>If applicable, make sure that the API version is correctly specified. When you go to your API in the platform, the API version is in the URL path, after /versions/ in the path. It is in the format <strong>{uniqueid}.{tenant}</strong>. For example, 0157f427-0b07-4ae6-9ade-26f4ef3bcc71.acmepaymentscorp.</li>
   <li>Verify that links to tagged sections are also tagged.</li>
-  <li>Verify that the scope and operation names you specified in the visibility tags are valid. In the developer portal, scopes are mapped to operations on the <em>Scope Mapping &gt; Edit API Scope</em> page.</li>
+  <li>Verify that the scope and operation names you specified in the visibility tags are valid. In the developer portal, scopes are mapped to operations on the <em>Manage Licensing &gt; Edit API Scope</em> page.</li>
   <li>Verify that the license names you specified in the visibility tags are available to your app developer audience via the <em>API Access Wizard</em>. To do this you can create a new app and submit an API Access Request by selecting <strong>Access</strong> at the top right of the <em>API &gt; Details</em> page.</li>
   </ul>
 <p>Once you've completed the above steps, and any other testing steps you can think of, it's time to upload your files. See <a href="api_admin_documentation_maintenance.htm#how_do_i_upload_my_api_documentation_files">How do I upload my API documentation files?</a> </p>
@@ -1566,7 +1580,7 @@ window.ACMEPC = {
 <h5>To test that the API documentation is tagged correctly:</h5>
 <ol>
   <li>Set up a test user.</li>
-  <li>Request production approval to the Bronze license.</li>
+  <li>Request API Access to the <!-- #BeginLibraryItem "/library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> implementation with the Bronze license.</li>
   <li>View the documentation. You should be able to see the portions of your documentation that are tagged for Gold and Bronze licenses/scopes but not the content tagged for the Beta license/scope.</li>
   <li>Now, as the API Admin, invite your test user to have visibility of the Beta license.</li>
   <li>As the user, change your API access request to a request for the Beta license.</li>
@@ -1586,6 +1600,3 @@ window.ACMEPC = {
   <li><a href="api_admin_content_guidelines.htm#how_do_i_set_the_file_display_name_in_the_api_documentation_table_of_contents">How do I set the file display name in the API documentation table of contents?</a></li>
 </ul>
 <p><a href="#top">Back to top</a></p>
-
-
-

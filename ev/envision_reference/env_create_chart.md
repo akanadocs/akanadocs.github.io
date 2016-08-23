@@ -3,7 +3,7 @@ layout: page
 title: Creating a Chart
 description: Learn how to create a chart with Envision and configure datasets, use chart options, and preview charts in Live Mode. 
 product: ev
-category: learn
+category: ref
 weight: 6
 type: page
 nav-title: Creating a Chart
@@ -13,22 +13,22 @@ nav-title: Creating a Chart
 Learn how to create a chart with Envision and configure datasets, use chart options, and preview charts in Live Mode.
 
 <a href="env_toc.html" class="button secondary">Envision Reference (Main Topic)</a>  <a href="../envision_install/installing_envision.htm" class="button secondary">Installing Envision 1.0</a>
-<h5 class="stamp">Supported Platforms: 8.0</h5>  <h5 class="stamp">Supported Envision Versions: 1.0</h5><br>
+  <h5 class="stamp">Supported Envision Versions: 1.0, 1.1</h5>
 
 <div class = "divider1"></div>
 
-<h3 id="table-of-contents" name="top" style="color: grey;">Table of Contents</h3>
-
-1. [Introduction](#introduction)
+### Table of Contents
+<div id="toc-marker"></div>
+* [Introduction](#introduction)
 	* [Create New Chart](#create-new-chart)
 	* [Chart Card](#chart-card)
 	* [Configure Chart](#configure-chart)
-2.  [Datasets](#datasets)
+*  [Datasets](#datasets)
 	* [Select Dataset](#select-dataset)
 	* [Select Dataset Options](#select-dataset-options)
 	* [Set Dataset Aggregation Level](#set-aggregation-level)
 	* [Group Dataset by Dimension](#group-dataset-by-dimension)
-3. [Charts](#charts)
+* [Charts](#charts)
 	* [Filter Chart Data](#filter-chart-data)
 	* [Chart Filter Options](#chart-filter-options)
 	* [Chart Filter Example](#chart-filter-example)
@@ -36,18 +36,19 @@ Learn how to create a chart with Envision and configure datasets, use chart opti
 	* [Chart Options](#chart-options)
 	* [Chart X-AXIS](#chart-xaxis)
 	* [Chart X-AXIS Example](#chart-xaxis-example)
-4. [Series](#series)
+* [Series](#series)
 	* [Series](#series)
 	* [Series Options](#series-options)
 	* [Filter Series](#filter-series)
 	* [Series Examples](#series-examples)
-5. [Preview Chart](#preview-chart)
+* [Preview Chart](#preview-chart)
 	* [Preview Examples](#preview-examples)
-6. [Rename Chart](#rename-chart)
-7. [Overlaying Charts](#overlaying-charts)
+* [Rename Chart](#rename-chart)
+* [Overlaying Charts](#overlaying-charts)
 	* [Create Combination Charts](#create-combination-charts)
 
 <div class = "divider1"></div>
+
 ### <a id="introduction"></a>Introduction
 
 Once a data set has been created a Chart can be created that will display the metrics collected for the data set. There are several kinds of Charts that are available in Envision. This topic will describe the common concepts of all charts. The options specific to each chart and examples of their use can be found in [Envision Appendix](../envision_reference/env_appendix.html).

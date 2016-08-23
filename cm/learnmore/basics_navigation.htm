@@ -11,10 +11,12 @@ nav-title: Navigation
 ---
 <h2 id="top">Navigation</h2>
 <p>Information about navigation elements used in the platform, App, API, and Groups component overview, and information about the platform search option.</p>
+<h5 class="stamp">API Platform Version: 8.1</h5>
 <div class = "divider1"></div>
 
 <h3 style="color: gray;">Table of Contents</h3>
 <ol class="table_of_contents">
+  <li><a href="#platform_ui_overview">Platform user interface "theme"</a></li>
   <li><a href="#how_do_i_navigate_the_user_interface">How do I navigate the user interface?</a></li>
   <li><a href="#what_is_the_dashboard" >What is the Dashboard?</a></li>
   <li><a href="#what_are_the_components_of_the_my_apps_section">What are the components of the My Apps section?</a></li>
@@ -23,6 +25,30 @@ nav-title: Navigation
   <li><a href="#how_do_i_search_for_information">How do I search for information?</a></li>
 </ol>
 <div class = "divider1"></div>
+
+
+
+<a name="platform_ui_overview"></a>
+<h3>Platform user interface &quot;theme&quot;</h3>
+<p>When you access the developer portal, whether or not you've signed in, the look and feel, as well as the structure and capabilities, of the user interface are determined by choices and settings made by the Administrator.</p>
+<p>There are two main factors that affect the look and feel of your developer portal:</p>
+<ul>
+  <li><strong>Theme</strong>
+<p>The theme determines the layout of user interface capabilities and, in some cases, whether certain capabilities are available in the user interface or not. For examples, see below.</p></li>
+  <li><strong>Customization</strong>
+<p>Customization determines aspects of the user interface such as font style, weight, and color, logo, icons, and background color.</p></li>
+</ul>
+<p><strong>Theme</strong></p>
+<p>One of the key elements that the theme controls is the layout of the user interface. Customization primarily affects factors such as colors and fonts, but the general layout is determined by the theme.</p>
+<p>The general layout affects navigation, which in turn affects procedures in the help documentation. In general, procedures are written for Default Theme. There are two other main themes: Hermosa and Simple Developer theme. </p>
+<p>For an overview of the general layout, in a sample user interface, click the link:</p>
+<ul>
+  <li><a href="assets/theme_default.htm">Default Theme</a></li>
+  <li><a href="assets/theme_hermosa.htm">Hermosa Theme</a></li>
+  <li><a href="assets/theme_simpledev.htm">Simple Dev Theme</a></li>
+</ul>
+<p><strong>Note</strong>: These examples are very general, only intended to illustrate layout. There are other factors determining the look and feel of the developer portal.</p>
+<p><a href="#top">Back to top</a></p>
 
 
 
@@ -110,7 +136,7 @@ nav-title: Navigation
 
 
 <a name="what_are_the_components_of_the_my_apps_section"></a><h3>What are the components of the My Apps section?</h3>
-<p>The <em>My Apps</em> interface provides functionality that allows you to define and manage your apps, the APIs they use, and the app development team with whom you would like to collaborate. You can also monitor app performance data during testing or production (See <a href="app_monitoring.htm#how_do_i_monitor_app_performance">How do I monitor app performance?</a>).</p>
+<p>The <em>My Apps</em> interface provides functionality that allows you to define and manage your apps, the APIs they use, and the app development team with whom you would like to collaborate. You can also monitor app performance data (See <a href="app_monitoring.htm#how_do_i_monitor_app_performance">How do I monitor app performance?</a>).</p>
 <p>The <em>My Apps</em> section is organized into the following functional areas:</p>
 <p><strong>My Apps Page</strong></p>
 <p>The <em>My Apps</em> page displays a summary listing of apps you have defined and are currently following. After you have logged in, the page is accessible by clicking the <em>My Apps Navigation Icon</em>. Summary information presented includes App Name, Description, link to <em>Details</em> page, incremental counters for Followers and APIs Connected, and Average Rating (based on Peer Reviews).</p>
@@ -127,7 +153,7 @@ nav-title: Navigation
 <tbody>
   <tr class="t2row">
     <td>Overview</td>
-    <td>Displays Tags, Version, Updated (date), Size (KB), Type (SOAP or REST), and Environment (Sandbox or Production) information.</td>
+    <td>Displays Tags, Version, Updated (date), Size (KB), Type (SOAP or REST), and Implementation (Sandbox or <!-- #BeginLibraryItem "/library/environ_live.lbi" -->Live<!-- #EndLibraryItem -->) information.</td>
   </tr>
   <tr class="t1row">
     <td>Description</td>
@@ -155,7 +181,7 @@ nav-title: Navigation
   </tr>
   <tr class="t1row">
     <td>APIs Used</td>
-    <td>An auto-generated display that presents a list of APIs that are used in the app. <em>Note: Only APIs that have been approved for Sandbox or Production environments display in this listing.</em></td>
+    <td>An auto-generated display that presents a list of APIs that are used in the app. <em>Note: Only APIs that have been approved for Sandbox or <!-- #BeginLibraryItem "/library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> implementations display in this listing.</em></td>
   </tr>
   <tr class="t2row">
     <td>Team Members</td>
@@ -190,13 +216,13 @@ nav-title: Navigation
 <p><strong>Test Client</strong></p>
 <p>The Test Client page provides a test tool for sending sample requests.</p>
 <p><strong>Monitor</strong></p>
-<p>The <em>Monitor</em> page provides API performance and health monitoring (i.e., traffic, events, alerts comments, tickets, etc.) relating to all consumers of an API. Chart presentations include Chart and Usage Log views. See <a href="app_monitoring.htm#how_do_i_monitor_app_performance">How do I monitor app performance?</a></p>
+<p>The <em>Monitor</em> page provides monitoring of API performance and health (traffic, events, alerts comments, tickets, and so forth) relating to all consumers of an API. Chart presentations include Chart and Usage Log views. See <a href="app_monitoring.htm#how_do_i_monitor_app_performance">How do I monitor app performance?</a></p>
 <p><strong>Team</strong></p>
 
 <p>The <em>Team</em> page includes an <strong>Invite</strong> function that allows you to send invitations to individuals to join the development team of the current app. Existing team members are displayed in a summary listing. Each summary listing includes a bio of the Team Member and an email address.</p>
 
 <p><strong>APIs</strong></p>
-<p>The <em>APIs</em> page displays a listing of APIs the current App has requested access to. The Sandbox and Production columns display the status of Sandbox and Production access requests.</p>
+<p>The <em>APIs</em> page displays a listing of APIs the current App has requested access to. The Sandbox and <!-- #BeginLibraryItem "/library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> columns display the status of Sandbox and <!-- #BeginLibraryItem "/library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> access requests.</p>
 <p><strong>Followers</strong></p>
 <p>The <em>Followers</em> page allows users to subscribe to apps they are interested in by clicking the <strong>Follow</strong> button. Subscribing to an app allows users to receive news or updates relating to the app on their personal <em>Dashboard</em>.</p>
 
@@ -209,7 +235,7 @@ nav-title: Navigation
 <p>The APIs section is organized into the following functional areas:</p>
 
 <p><strong> API Details</strong></p>
-<p>When an API Name is selected, the <em>Details</em> page displays and presents feature overview documentation for the selected API. You can also select different API versions using the Version menu. The endpoints available for the API are presented (i.e., Sandbox, Production). Each API includes Peer Reviews that you can view, as well as a Similar APIs section which provides a listing of other APIs that include similar functionality.</p>
+<p>When an API Name is selected, the <em>Details</em> page displays and presents feature overview documentation for the selected API. You can also select different API versions using the Version menu. The endpoints available for the API are presented. Each API includes Peer Reviews that you can view, as well as a Similar APIs section which provides a listing of other APIs that include similar functionality.</p>
 <p><strong>Reviews</strong>: You can write a review about an API you are connected to. Depending on the platform settings, reviews might be published immediately or might need to be approved by a moderator. If you have written a review and want to revise it later, you can do that. If reviews are moderated, the earlier review remains published until the revision is published, at which point the earlier review is deleted. If you revise a review, the marks count resets to 0 for the revised review.</p>
 
 <p><strong>API Board</strong></p>
@@ -274,7 +300,7 @@ nav-title: Navigation
 </thead>
 <tbody>
   <tr class="t2row">
-    <td>APIs</td>
+    <td>All APIs</td>
     <td>API Name, API Description, API Version (Name, Description, Type, Tag), Documentation</td>
   </tr>
   <tr class="t1row">
@@ -324,34 +350,51 @@ nav-title: Navigation
 <tbody>
   <tr class="t2row">
     <td>My APIs</td>
-    <td>Displays all Public and Private APIs you have defined.</td>
+    <td>Displays all public and private APIs that you have specific access to.</td>
   </tr>
   <tr class="t1row">
     <td>All APIs</td>
-    <td>Displays all APIs including all Public APIs defined by members, and all Public and Private APIs  you have defined.</td>
+    <td>Displays all public APIs, and all public and private APIs that you have specific access to.</td>
+  </tr>
+  <tr class="t2row">
+    <td>APIs: Last Updated</td>
+    <td>Displays all available API content with most recently updated content at the top.</td>
+  </tr>
+  <tr class="t1row">
+    <td>APIs: Highest Rated</td>
+    <td>Displays all available API content with highest rated content at the top, based on the number of times the API is marked (for example, 5-star rating).</td>
+  </tr>
+  <tr class="t2row">
+    <td>APIs: Most Used</td>
+    <td>Displays all available API content based on the number of apps that are connected to the API.</td>
+  </tr>
+  <tr class="t1row">
+    <td>APIs: Most Popular</td>
+    <td>Displays all available API content with most popular content at the top. Popularity is based on the average rating of Followers, API contracts, and Average Rating.</td>
   </tr>
   <tr class="t2row">
     <td>My Apps</td>
-    <td>Displays all Public and Private visibility apps you have defined.</td>
+    <td>Displays all public and private apps that you have specific access to.</td>
   </tr>
   <tr class="t1row">
-    <td>Last Updated</td>
-    <td>Displays search results  based on the most recently updated.
-      <p>Search Filter:  My APIs, All APIs, and My Apps</p></td>
+    <td>All Apps</td>
+    <td>Displays all public apps, and all public and private apps that you have specific access to.</td>
   </tr>
   <tr class="t2row">
-    <td>Highest Rated</td>
-    <td>Displays search results  based on the  number of times an API or App is marked (for example, 5 Star Rating).<br />
-      <br /><p>Function: My APIs, All APIs, My Apps</p></td>
+    <td>Apps: Last Updated</td>
+    <td>Displays all available app content with most recently updated content at the top.</td>
   </tr>
   <tr class="t1row">
-    <td>Most Used</td>
-    <td>Displays search results  based on the  number of  apps that are connected to the API (i.e., Apps Connected).<br />
-      <br /><p>Function: My APIs, All APIs</p></td>
+    <td>Apps: Highest Rated</td>
+    <td>Displays all available app content with highest rated content at the top, based on the number of times the app is marked (for example, 5-star rating).</td>
   </tr>
   <tr class="t2row">
-    <td>Most Popular</td>
-    <td>Displays search results  based on the average rating of Followers, Apps Connected, and Average Rating.</td>
+    <td>Apps: Most Used</td>
+    <td>Displays all available app content based on the number of APIs that the app is connected to.</td>
+  </tr>
+  <tr class="t1row">
+    <td>Apps: Most Popular</td>
+    <td>Displays all available app content with most popular content at the top. Popularity is based on the average rating of Followers, Apps Connected, and Average Rating.</td>
   </tr>
 </tbody>
 </table>
@@ -363,3 +406,26 @@ nav-title: Navigation
 
 
 
+<div class = "divider1"></div>
+
+
+
+<h3 id="relatedtopics">Related Topics</h3>
+<table width="700" border="0" cellspacing="0" cellpadding="2" class="doctable">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="basics.htm">Basics Summary Page</a></li>
+  <li><a href="basics_signup.htm">Sign Up</a></li>
+  <li><a href="basics_account_management.htm">Account Management</a></li>
+    </ul>
+</td>
+    <td width="400"><ul>
+  <!--<li><a href="basics_navigation.htm">Navigation</a></li>-->
+  <li><a href="basics_boards.htm">Using Boards</a></li>
+  <li><a href="basics_support.htm">Support</a></li>
+  <li><a href="basics_glossary.htm">Glossary of Terms</a></li>
+    </ul>
+</td>
+  </tr>
+</table>
+<hr />
