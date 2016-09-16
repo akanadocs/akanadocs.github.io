@@ -352,11 +352,14 @@ Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre>
+{
+  "RandomHostNameBehavior":"com.akana.dontallow",
   "Name":"EAP_ND",
   "Description":"EAP_ND",
-  "ContainerKey":"4hrNPFUYSpq5jeju_Vk5PA",
-  "VirtualHostSupported":true
+  "ContainerKey":"39lvglP7TiywePHw_vD3Kg",
+  "AddressOverrideBehavior":"com.akana.dontallow",
+  "VirtualHostSupported":false
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -408,8 +411,9 @@ Content-Type: application/json
       <td>Body</td>
       <td><a href="../obj/o_deployment_DeploymentZoneInfo.htm">DeploymentZoneInfo</a></td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_deployment_DeploymentZoneInfo.lbi" -->
-Contains information about a specific deployment zone on the platform.<!-- #EndLibraryItem --></td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_deployment_DeploymentZoneInfo.lbi" -->
+        Contains information about a specific deployment zone on the platform.<!-- #EndLibraryItem --></p>
+        <p>Minimum properties in the request: RandomHostNameBehavior, Name, Description, ContainerKey, AddressOverrideBehavior, VirtualHostSupported.</p></td>
     </tr>
   </tbody>
 </table>
@@ -429,36 +433,32 @@ Contains information about a specific deployment zone on the platform.<!-- #EndL
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Mon, 27 Jun 2016 18:19:26 GMT
+Date: Thu, 15 Sep 2016 21:01:11 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  "DZoneEnvImplAssociations":{
-    "DZoneEnvImplAssociation":[
-      {
-        "Implementation":"Live",
-        "Environment":"Production"
-      },
-      {
-        "Implementation":"Sandbox",
-        "Environment":"Production"
-      }
-    ]
+  "DZoneEnvImplAssociations" : {
+    "DZoneEnvImplAssociation" : [ {
+      "Implementation" : "Live",
+      "Environment" : "Production"
+    }, {
+      "Implementation" : "Sandbox",
+      "Environment" : "Production"
+    } ]
   },
-  "DeploymentZoneID":"cb5502a0-7780-470f-8bda-c41f53659689.acmepaymentscorp",
-  "Name":"EAP_ND",
-  "Description":"EAP_ND",
-  "Location":"25.761680, -80.191790",
-  "ContainerKey":"4hrNPFUYSpq5jeju_Vk5PA",
-  "AddressOverride":false,
-  "VirtualHostSupported":true,
-  "DeploymentZoneAccessPoint":[
-    {
-      "Protocol":"http",
-      "Name":"default-http0",
-      "Address":"http://acmepaymentscorp.com:7901"
-    }
-  ]
+  "DeploymentZoneID" : "2fbb5c83-6a91-455e-9d36-17a013812302.acmepaymentscorp",
+  "Name" : "EAP_ND",
+  "Description" : "EAP_ND",
+  "ContainerKey" : "39lvglP7TiywePHw_vD3Kg",
+  "ContainerName" : "eapndTrunk",
+  "AddressOverrideBehavior" : "com.akana.dontallow",
+  "RandomHostNameBehavior" : "com.akana.dontallow",
+  "VirtualHostSupported" : false,
+  "DeploymentZoneAccessPoint" : [ {
+    "Protocol" : "http",
+    "Name" : "default-http0",
+    "Address" : "http://acmepaymentscorp.com:7901"
+  } ]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -533,8 +533,6 @@ Contains information about a specific deployment zone on the platform.<!-- #EndL
 <!-- InstanceEndEditable -->
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-
-
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
