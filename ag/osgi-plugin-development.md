@@ -27,9 +27,9 @@ This document describes how to create and compile an OSGi Plug-in project (such 
 
 #### <a name="data"></a>Prerequisites
 
-* This configuration guide assumes that you’ve already installed the platform. If you need help installing the platform, please see the [install guide](http://docs.akana.com/sp/assets/SOA_Software_Platform_Install_Guide_v70.pdf). 
-* If writing policy components for the API Gateway, you will have to create and configure a Policy Manager (PM) and Network Directory (ND) container. This is described in the document [Managing a Simple API](simple-api.html#Installing)
-* Install and configure the Eclipse IDE as described in the document [Eclipse Workspace Setup](eclipse-setup.html)
+* This configuration guide assumes that you’ve already installed the platform. If you need help installing the platform, please see the [install guide](../sp/assets/SOA_Software_Platform_Install_Guide_v70.pdf). 
+* If writing policy components for the API Gateway, you will have to create and configure a Policy Manager (PM) and Network Directory (ND) container. This is described in the document [Managing a Simple API](../sp/simple-api.html#Installing)
+* Install and configure the Eclipse IDE as described in the document [Eclipse Workspace Setup](../sp/eclipse-setup.html)
 
 ### <a name="master"></a>Creating the build project
 
@@ -43,9 +43,8 @@ The platform ships with a number of samples that can be found in the '/samples' 
 	2. local.tools.dependent.lib.dir=[product_installation_dir]/sm70/lib/X.Y.Z. Same as above
 5. Modify build.xml to build only the projects that are required. For example:
 	
-	```
+~~~ xml
 	...
-	
 	<target name="clean" depends="
 		complex-policy-handler-clean,
 		complex-policy-console-clean
@@ -55,10 +54,8 @@ The platform ships with a number of samples that can be found in the '/samples' 
 		complex-policy-handler,
 		complex-policy-console
 	"/>
-	
 	...
-	
-	```
+~~~
  
 ### <a name="project"></a>Creating a plug-in project
 
@@ -73,9 +70,8 @@ The platform ships with a number of samples that can be found in the '/samples' 
 2. Build the project from top **Project ** menu and verify that there are no compilation errors.
 3. Edit the master build file described in the previous section:
 
-	```
+~~~ xml
 	...
-	
 	<target name="clean" depends="
 		simple-policy-handler-clean
 	"/>
@@ -83,10 +79,8 @@ The platform ships with a number of samples that can be found in the '/samples' 
 	<target name="samples" depends="
 		simple-policy-handler
 	"/>
-	
 	...
-	
-	```
+~~~
 
 4. Open the Ant view and drag the master build file file into it. Double-click on the 'samples' project to run the build script.
 4. If the build is successful, the resulting JAR file can be found in the master build project under the '/bin' sub-directory. It may be hidden from view, so look on the filesystem.
@@ -110,9 +104,8 @@ Now build both:
 
 1. Edit the master build file described in the previous section:
 
-	```
+~~~ xml
 	...
-	
 	<target name="clean" depends="
 		complex-policy-handler-clean,
 		complex-policy-console-clean
@@ -122,10 +115,8 @@ Now build both:
 		complex-policy-handler,
 		complex-policy-console
 	"/>
-	
 	...
-	
-	```
+~~~
 
 2. Open the Ant view and drag the master build file file into it. Double-click on the 'samples' project to run the build script.
 3. If the build is successful, the resulting JAR files can be found in a '/build/bin/' sub-directory in your Eclipse workspace root directory.
