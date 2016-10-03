@@ -1,0 +1,10 @@
+Script Actity
+
+var rnd = Math.floor((Math.random() * 100) + 1);
+auditLog.debug("Random Numer: " + rnd);
+processContext.setVariable("random",rnd);
+
+Freemarker Template
+
+{ "Hello" : "${message.getPart('id')}",
+  "Number" : "${random}" }
