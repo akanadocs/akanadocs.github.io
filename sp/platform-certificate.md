@@ -10,6 +10,6 @@ type: page
 nav-title: Platform SSL Certificate
 ---
 
-## Securing your inbound API Calls
+## Securing the Connection to your Backend APIs
 
 To secure API calls between the Akana API Platform and your backend APIs, download the the platform gateway [certificate](assets/gateway.cer). You can use this certificate to configure Mutual SSL - guaranteeing that only the Akana Platform can invoke your API.
