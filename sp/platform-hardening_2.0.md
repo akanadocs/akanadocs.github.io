@@ -18,7 +18,6 @@ Akana Platform Hardening Guide
 	<li><a href="#introduction">Introduction</a></li>
 	<li><a href="#deployment-architecture">Deployment Architecture</a></li>
 	<ol>
-		<li><a href="#install-internet-facing-and-administration-application-on-separate-containers">Install Internet-facing and Administration Applications on Separate Containers</a></li>
 		<li><a href="#install-network-director-on-a-separate-container">Install Network Director on a separate container</a></li>
 		<li><a href="#install-internet-facing-and-administration-applications-on-separate-containers">Install Internet-facing and administration applications on separate containers</a></li>
 		<li><a href="#configure-all-listeners-internal-and-external-as-htts-only">Configure all listeners, internal and external as HTTPS only</a></li>
@@ -302,7 +301,7 @@ In the Policy Manager Console, create an Anti-Virus Operational Policy and confi
 
 ![Create Anti Virus Policy](images/modify-av-policy.png "Create Anti Virus Policy")
 
-Attach this policy to the ConsoleResourceAPIService and the ContentAPIService in the SOA Software Policy Manager -> SOA Software Community Manager node in the Policy Manager Console Organization tree.  
+Attach this policy to the ConsoleResourceAPIService and the ContentAPIService in the Policy Manager -> Community Manager node in the Policy Manager Console Organization tree.  
 
 ![Attach Anti Virus Policy](images/attach-av-policy.png "Attach Anti Virus Policy")
 
@@ -359,7 +358,7 @@ Additional settings can be found under Administration -> Config -> Security Sett
 
 ![Encrypt Challenge Answers](images/encrypt-challenge-answers.png "Encrypt Challenge Answers")
 
-Configuration of the actual questions available can be done via an [API call](http://docs.akana.com/cm/api/businesses/m_businesses_saveChallenges.htm) into the system.
+Configuration of the actual questions available can be done via an [API call]({{ site.baseurl }}/cm/api/businesses/m_businesses_saveChallenges.htm) into the system.
 
 #### <a name="disallowing-user-profile-modification"></a>Disallowing User Profile Modification
 User Profile Modification permits a user access to their own profile for modification. In some circumstances, you may wish to prevent this (e.g. when user accounts are pre-provisioned).
@@ -371,7 +370,7 @@ In Community Manager, User Profile Modification configuration can be found under
 #### <a name="configuring-account-login-rules"></a>Configuring Account Login Rules
 The account login rules may include many options regarding failure attempts allowed, account suspension times, auto-login, etc.
 ***Scope***: Community Manager
-These login policies may be set via an [API call](http://docs.soa.com/cm/api/businesses/m_businesses_updateLoginPolicy.htm) into the system or a direct DB query. 
+These login policies may be set via an [API call]({{ site.baseurl }}/cm/api/businesses/m_businesses_updateLoginPolicy.htm) into the system or a direct DB query. 
 If using a DB query, the syntax will be something like:
 
 ```
@@ -382,7 +381,9 @@ update LOGIN_RULES set MAXATTEMPTS=3, ATTEMPTSPERIOD=1, SUSPENSIONTIME=30, AUTO_
 #### <a name="configuring-password-complexity-rules"></a>Configuring Password Complexity Rules
 Password requirements (rules) may include many options regarding length, special characters, etc.
 ***Scope***: Community Manager
-These password rules may be set via an [API call](http://docs.soa.com/cm/api/businesses/m_businesses_updatePasswordPolicy.htm) into the system or a direct DB query.
+
+These password rules may be set via an [API call]({{ site.baseurl }}/cm/api/businesses/m_businesses_updatePasswordPolicy.htm) into the system or a direct DB query.
+
 If using a DB query, the syntax will be something like:
 
 ```

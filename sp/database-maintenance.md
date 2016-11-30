@@ -10,7 +10,7 @@ type: page
 nav-title: Database Maintenance
 ---
 
-##Akana Platform Database Maintenance
+## Akana Platform Database Maintenance
 
 <h3 style="color: grey;">Table of Contents</h3>
 <ol class="table_of_contents">
@@ -65,7 +65,7 @@ There are several key tables that require regular maintenance:
 
 ### <a name="built-in"></a>Using the built-in jobs
 
-The Policy Manager has a built-in capability to delete/archive data in the MO\_USAGE* and MO\_ROLL* tables. These jobs run every hour and can add significant overhead to the Policy Manager container so are best suited to low-throughput environments with limited retained data. 
+Policy Manager has a built-in capability to delete/archive data in the MO\_USAGE* and MO\_ROLL* tables. These jobs run every hour and can add significant overhead to the Policy Manager container so are best suited to low-throughput environments with limited retained data. 
 
 To configure the built-in jobs go to the Policy Manager Admin console -> Configuration tab -> com.soa.rollup.delete.old. The settings in this screen can be summarized as follows:
 
@@ -88,7 +88,11 @@ monitoring.delete.rollup.MO_ROLLUP15.windowSize=1
 **Note:** to disable the built-in jobs for higher throughput environments, set all '*.enable' properties to false as follows:
 
 ```
-monitoring.delete.rollup.MO_ROLLUP15.enable=falsemonitoring.delete.rollup.MO_ROLLUPDATA.enable=falsemonitoring.delete.rollup.MO_ROLLUP_DAY.enable=falsemonitoring.delete.rollup.MO_ROLLUP_HOUR.enable=falsemonitoring.delete.rollup.MO_ROLL_ORG15.enable=false
+monitoring.delete.rollup.MO_ROLLUP15.enable=false
+monitoring.delete.rollup.MO_ROLLUPDATA.enable=false
+monitoring.delete.rollup.MO_ROLLUP_DAY.enable=false
+monitoring.delete.rollup.MO_ROLLUP_HOUR.enable=false
+monitoring.delete.rollup.MO_ROLL_ORG15.enable=false
 monitoring.delete.rollup.MO_ROLL_ORG_D.enable=false
 monitoring.delete.rollup.MO_ROLL_ORG_H.enable=false
 monitoring.delete.usage.enable=false
