@@ -5,7 +5,7 @@ description: A how to guide for hardcoding downstream query params for http serv
 product: ag
 category: learn
 sub-nav-class: Mediation
-weight: 4
+weight: 05
 type: page
 nav-title: Add Query Params
 ---
@@ -13,7 +13,7 @@ nav-title: Add Query Params
 How to Add downstream query params
 ----------------------------------
 
-This is short and sweet.  A very simple script that appends a new string to the existing query string.  If you want an all new string ignoring anything inbound, that's a pretty simple code change.
+This is short and sweet.  It provides a very simple script that appends a new string to the existing query string.  If you want an all new string ignoring anything inbound, that's a pretty simple code change.
 
 ```javascript
 var msg = processContext.getVariable("message");
