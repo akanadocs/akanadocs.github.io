@@ -4,8 +4,8 @@ title: Platform Hardening - 7.2
 description: A guide on how to harden version 7.2 of the platform for secure deployments
 product: sp
 category: ref
-sub-nav-class: 
-weight: 14
+sub-nav-class: Platform Management
+weight: 16
 type: page
 nav-title: Platform Hardening 7.2
 ---

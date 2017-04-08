@@ -4,8 +4,8 @@ title: Platform IP Addresses
 description: A list of the IP addresses used by the SaaS platform
 product: sp
 category: ref
-sub-nav-class: 
-weight: 14
+sub-nav-class: Platform Management 
+weight: 17
 type: page
 nav-title: Platform IP Addresses
 ---

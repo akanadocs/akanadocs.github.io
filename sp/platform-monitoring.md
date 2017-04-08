@@ -4,8 +4,8 @@ title: Platform Monitoring
 description: A guide on how to monitor the platform using shell scripts and Nagios
 product: sp
 category: ref
-sub-nav-class: 
-weight: 4
+sub-nav-class: Platform Management
+weight: 14
 type: page
 nav-title: Platform Monitoring
 ---
