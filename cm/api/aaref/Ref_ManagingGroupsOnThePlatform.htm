@@ -370,7 +370,7 @@
 
 
 <h3><a name="groups_siteadmin"></a>Site Administrator Group</h3>
-<p>A Site Administrator has Admin control over many parts of the platform. There are parts of the user interface that require Site Administrator rights and are closed to other users. However, the Site Admin doesn't have global rights. For example, some operations are unique to an individual user, such as changing a password, and cannot be run by a Site Administrator.</p>
+<p>A Site Administrator has Admin control over many parts of the platform. There are parts of the user interface that require Site Administrator rights and are closed to other users. Site Admins essentially control the look and feel, and general configuration, of the portal.</p>
 <p>The Site Admin manages the following functions on the platform:</p>
 <ul>
   <li><strong>Agreements</strong>&#8212;Manage the platform signup legal agreement.</li>
@@ -378,7 +378,7 @@
   <li><strong>Settings</strong>&#8212;Configure settings for resources on the platform such as alerts, apps, APIs, connections, comments, discussions, groups, tickets, users, reviews, and business security.</li>
   <li><strong>Site</strong>&#8212;Configure basic site settings such as site URL, contact email address, and themes.</li>
   <li><strong>Site Admins</strong>&#8212;Manage site admins on the platform, including inviting and removing site admins.</li>
-  <li><strong>Users</strong>&#8212;Manage users on the platform, including activating and deleting users.</li>
+  <li><strong>Users</strong>&#8212;Manage users on the platform, including activating and deleting users. However, some operations are unique to an individual user, such as changing a password, and cannot be run by a Site Administrator.</li>
   <li><strong>Workflows</strong>&#8212;View, add, change, and delete custom and default workflows for platform resources such as tickets and API contracts.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -386,7 +386,7 @@
 
 <h3><a name="groups_bizadmin"></a>Business Administrator Group</h3>
 <p>In a federated environment, where a specific tenant has its own instance of the platform, the Business Administrator has some rights that are senior to those of the Site Administrator. There are parts of the user interface, and API operations, that require Business Administrator rights and are closed to other users. For example, Business Administrators can make certain choices that determine options that are available or not available on the platform.</p>
-<p>Although the Site Administrator has responsibility for configuration and settings for the available options, the Site Administrator cannot turn these features on and off; this is done by the Business Administrator. The Business Administrator has API Admin rights over all APIs in the business.</p>
+<p>The Business Administrator has Administrator rights for all APIs and apps in the business.</p>
 <!--<p>The Business Admin manages the following functions on the platform:</p>
 <ul>
   <li><strong>API Gateways</strong>&#8212;Adding, modifying, or deleting.</li>
@@ -423,7 +423,7 @@
     <tr>
       <td>Business Admins</td>
       <td>Manage the Business Admin group (invite, resend invite, remove)</td>
-      <td>Yes</td>
+      <td>No</td>
       <td>Yes</td>
     </tr>
     <tr>
@@ -467,7 +467,6 @@
   <li>Revoke an app's access tokens for one or more APIs.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
