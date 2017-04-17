@@ -370,17 +370,34 @@
 
 
 <h3><a name="groups_siteadmin"></a>Site Administrator Group</h3>
-<p>A Site Administrator has Admin control over many parts of the platform. There are parts of the user interface, and API operations, that require Site Administrator rights and are closed to other users. However, the Site Admin doesn't have global rights. For example, some operations are unique to an individual user, such as changing a password, and cannot be run by a Site Administrator.</p>
-<p>Essentially, the Site Administrator is responsible for configuring the site, including activities such as setting up integration with other login domains. Site Admins can also add or remove members of the various types of groups; API administrators, API Context Groups, app teams, independent groups, and the business administrator group. The Site Administrator can also add members to the site admin group.</p>
-<p>The Site Administrator cannot make configuration changes to apps or APIs. API Administrators or Businesss Administrators have full rights to the applicable API, and app team members or Business Administrators have full rights to the applicable app. Site Administrator rights for apps and APIs is limited to GET operations and to managing team member access.</p>
-<p class="apidoc_note"><strong>Note</strong>: Although a Site Admin can make another user an API Admin or Business Admin, the Site Admin cannot make himself or herself an API Admin or Business Admin, and cannot perform the functions of an API Admin with regard to the API or of a Business Administrator with regard to the business. Site configuration is the Site Admin's primary duty.</p>
+<p>A Site Administrator has Admin control over many parts of the platform. There are parts of the user interface that require Site Administrator rights and are closed to other users. However, the Site Admin doesn't have global rights. For example, some operations are unique to an individual user, such as changing a password, and cannot be run by a Site Administrator.</p>
+<p>The Site Admin manages the following functions on the platform:</p>
+<ul>
+  <li><strong>Agreements</strong>&#8212;Manage the platform signup legal agreement.</li>
+  <li><strong>Config</strong>&#8212;Manage site look and feel, including managing custom styles and resources.</li>
+  <li><strong>Settings</strong>&#8212;Configure settings for resources on the platform such as alerts, apps, APIs, connections, comments, discussions, groups, tickets, users, reviews, and business security.</li>
+  <li><strong>Site</strong>&#8212;Configure basic site settings such as site URL, contact email address, and themes.</li>
+  <li><strong>Site Admins</strong>&#8212;Manage site admins on the platform, including inviting and removing site admins.</li>
+  <li><strong>Users</strong>&#8212;Manage users on the platform, including activating and deleting users.</li>
+  <li><strong>Workflows</strong>&#8212;View, add, change, and delete custom and default workflows for platform resources such as tickets and API contracts.</li>
+</ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3><a name="groups_bizadmin"></a>Business Administrator Group</h3>
 <p>In a federated environment, where a specific tenant has its own instance of the platform, the Business Administrator has some rights that are senior to those of the Site Administrator. There are parts of the user interface, and API operations, that require Business Administrator rights and are closed to other users. For example, Business Administrators can make certain choices that determine options that are available or not available on the platform.</p>
-<p>Although the Site Administrator has responsibility for configuration and settings for the available options, the Site Administrator cannot turn these features on and off; this is done by the Business Administrator. However, the Business Administrator cannot make changes to resources on the platform, such as apps, APIs, and users. The Business Administrator has API Admin rights over all APIs in the business.</p>
-<p>In the platform user interface, there is an Administration section available only to Site Administrators and Business Administrators. The table below shows which functions each type of administrator has access to, and for what purpose.</p>
+<p>Although the Site Administrator has responsibility for configuration and settings for the available options, the Site Administrator cannot turn these features on and off; this is done by the Business Administrator. The Business Administrator has API Admin rights over all APIs in the business.</p>
+<!--<p>The Business Admin manages the following functions on the platform:</p>
+<ul>
+  <li><strong>API Gateways</strong>&#8212;Adding, modifying, or deleting.</li>
+  <li><strong>Business Admins</strong>&#8212;Manage business admins on the platform, including inviting and removing business admins.</li>
+  <li><strong>Deployment Zones</strong>&#8212;Adding, modifying, or deleting.</li>
+  <li><strong>Domains</strong>&#8212;Adding, modifying, or deleting.</li>
+  <li><strong>Forums</strong>&#8212;Moderating.</li>
+  <li><strong>Licenses</strong>&#8212;Adding, modifying, or deleting.</li>
+  <li><strong>Scopes</strong>&#8212;Adding, modifying, or deleting.</li>
+</ul>
+--><p>In the platform user interface, there is an Administration section available only to Site Administrators and Business Administrators. The table below shows which functions each type of administrator has access to, and for what purpose.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
     <tr>
@@ -450,6 +467,7 @@
   <li>Revoke an app's access tokens for one or more APIs.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
