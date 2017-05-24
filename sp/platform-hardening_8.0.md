@@ -1,19 +1,20 @@
 ---
 layout: page
-title: Platform Hardening 8.0
-description: A guide on how to harden version 8.0 and greater of the platform for secure deployments
+title: Platform Hardening 8.0.x
+description: A guide on how to harden the platform for secure deployments (version 8.0.x).
 product: sp
 category: ref
 sub-nav-class: Platform Management 
-weight: 15
+no-nav: true
+weight: 17
 type: page
-nav-title: Platform Hardening 8.0
+nav-title: Platform Hardening 8.0.x
 ---
 
-Akana Platform Hardening Guide
+Akana Platform Hardening Guide Version 8.0.x
 -------------------------------------
 
-> This document applies to versions 8.0 and later only, please see [here](platform-hardening_2.0.html) for 7.2 and earlier.
+> This document applies to versions 8.0 and later only. For a summary of available versions, please refer to <a href="platform-hardening_all.htm">Akana Platform Hardening Documentation</a>.
 
 <h3 style="color: grey;">Table of Contents</h3>
 <ol class="table_of_contents">
