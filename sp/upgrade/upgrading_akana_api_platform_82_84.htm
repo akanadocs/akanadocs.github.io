@@ -13,6 +13,7 @@ nav-title: Upgrade 8.2 to 8.4
 <p>Learn how to upgrade from Akana API Platform 8.2x to 8.4x.</p>
 <p><strong>Note</strong>: If you're upgrading Policy Manager for DataPower, follow the steps in this document that you would use for upgrading Network Director.</p>
 <p><strong>Note</strong>: This document covers instructions for the combined features available in version 8.4x. For versions prior to 8.4x, see <a href="http://docs.akana.com/ag/assets/AAP_80_82_Upgrade_Guide.pdf" title="8.0 to 8.2 upgrade guide" target="_blank">http://docs.akana.com/ag/assets/AAP_80_82_Upgrade_Guide.pdf</a>.</p>
+<p><strong>Micro-Upgrade</strong>: If you're upgrading to a micro version&#8212;for example, 8.4.1 to 8.4.4, or 8.2.14 to 8.2.19&#8212;it's important to follow through the entire upgrade procedure. For additional notes and information about upgrading to a micro version, see <a href="upgrading_micro.htm">Micro-Version Upgrade</a>.</p>
 
 <p>
 <a href="../admin_console/using_admin_console.htm" class="button secondary">Using Admin Console</a>
@@ -83,6 +84,7 @@ nav-title: Upgrade 8.2 to 8.4
   <li><a href="#03_05">Step 3-5: Repeat configuration actions for additional containers and restart all containers</a></li>
   <li><a href="#03_06">Step 3-6: Post-Upgrade task when upgrading to 8.4: delete and install object mappings</a></li>
   <li><a href="#03_07">Step 3-7: Post-Upgrade Task for upgrades to 8.4: MongoDB Updates</a></li>
+  <li><a href="#03_08">Step 3-8: Conditional, MongoDB/OAuth: Post-Upgrade Task for Data Migration</a></li>
 </ol>
 
 
@@ -108,7 +110,7 @@ nav-title: Upgrade 8.2 to 8.4
 <a name="01_00"></a><h4>Overview</h4>
 <p>There are some steps you might need to take before starting the upgrade process, and some information you'll need to consider to determine how to proceed, including:</p>
 <ul>
-  <li>Review the Akana API Platform release notes</li>
+  <li>Review the Akana API Platform release notes.</li>
   <li>Plan the upgrade for additional features.</li>
   <li>Gather ZIP files and create folder.</li>
 </ul>
@@ -455,7 +457,6 @@ There are several ways you can start a container: Windows, as Windows service, o
 <a name="02_11"></a><h4>Step 2-11: Launch the Akana Administration Console</h4>
 <p>Now it's time to launch the Administration Console and complete the installation tasks.</p>
 <p><strong>Note</strong>: The rest of the installation tasks are completed on containers running PM/CM only. There is no need to run them on Network Director containers.</p>
-<!--<p>{<span class="apidoc_red">possible grouping break?</span>}}</p>-->
 <h5>To launch the Akana Administration Console</h5>
 <ol>
   <li>Launch the Akana Administration Console for the updated container instance:
@@ -792,10 +793,29 @@ PUT
 
 
 
+<a name="03_08"></a><h4>Step 3-8: Conditional, MongoDB/OAuth: Post-Upgrade Task for Data Migration</h4>
+<p><strong>Note</strong>: This task was introduced in version 8.4.4 and is applicable for upgrades to 8.4.4 and later versions.</p>
+<p>If you’re migrating from RDBMS to MongoDB and you use OAuth, you’ll need to run a data migration task, introduced in the upgrade to version 8.4.4, to ensure that OAuth tokens issued before the upgrade can still be used.</p>
+<p>After migrating the data, you'll need to update a configuration property and restart the container. Follow the steps below.</p>
+
+<h5>To migrate OAuth data to MongoDB</h5>
+<ol>
+  <li>In the Akana Administration Console for the Policy Manager/Community Manager instance, <strong>Configuration Actions</strong>, run the <strong>Migrate OAuth Data to MongoDB</strong> task, as shown below.
+  <p><img src="images/03_08_01.jpg" alt="Migrate OAuth Data to MongoDB configuration task" /></p></li>
+  <li>In the Akana Administration Console, click the <strong>Configuration</strong> tab.</li>
+  <li>Under <strong>Configuration Categories</strong>, find the <strong>com.soa.oauth.provider.server</strong> category.</li>
+  <li>Find the <strong>com.soa.oauth.provider.server.config.datasource</strong> property and change the value from <strong>JDBC</strong> to <strong>NOSQL</strong>.</li>
+  <li>Click <strong>Apply Changes</strong>.</li>
+  <li>Restart the Policy Manager/Community Manager container and then, when PM/CM is started, restart the Network Director container.</li>
+</ol>
+<p>After updating this property, the server for the OAuth Provider is now the NOSQL database (MongoDB).</p>
+<p><a href="#top">back to top</a></p>
+
+
+
 
 <div class = "divider1"></div>
-<a name="h_upgrade_tasks_reference"></a>
-<h3>Upgrade Procedures/Reference</h3>
+<a name="h_upgrade_tasks_reference"></a><h3>Upgrade Procedures/Reference</h3>
 
 
 
@@ -833,7 +853,6 @@ PUT
 
 
 
-
 <div class = "divider1"></div>
 
 
@@ -844,11 +863,11 @@ PUT
   <tr>
     <td width="40%" valign="top"><p><strong>All Versions/Latest Version</strong></p>
       <ul>
-<!--        <li><a href="../platform_install/installing_akana_api_platform_v84.htm">Installing the Akana API Platform 8.4x</a></li>-->
         <li><a href="../platform_install/implementation_planning.htm">Planning Your Implementation</a></li>
         <li><a href="../platform_install/install_cm_jython_script.htm">Installation Jython Script</a></li>
         <li><a href="../platform_install/install_es_config.htm">Installing and Configuring Elasticsearch</a></li>
         <li><a href="../platform_install/install_es_secure_tc.htm">Configuring Elasticsearch with Transport Client security</a></li>
+        <li><a href="upgrading_micro.htm">Micro-Version Upgrade Notes</a></li>
       </ul>
     </td>
     <td width="30%" valign="top"><p><strong>Version 8.2:</strong></p>
