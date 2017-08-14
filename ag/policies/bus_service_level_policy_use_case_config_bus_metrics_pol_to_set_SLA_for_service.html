@@ -1,0 +1,55 @@
+---
+layout: page
+title: Business Service Level Policy Use Case - Configuring a Business Metrics policy to set SLA for a service
+description: Learn how to configure a Business Metrics policy to set SLA for a service.
+product: ag
+category: learn
+weight: 05
+sub-nav-class: Policies - Integration
+type: page
+nav-title: Business Service Level Policy Use Case - Configuring a Business Metrics policy to set SLA for a service
+---
+<h2 id="top">Configuring a Business Metrics policy to set SLA for a service</h2>
+<p>The following use case illustrates how to configure a Business Metrics policy to set SLA for a service.</p>
+<h5 class="stamp">Supported Platforms: 8.0 and greater.</h5>
+<div id="toc-marker"></div>
+<h3>Configuration</h3>
+<ol>
+  <li>Create a physical service.</li>
+  <li>Virtualize the physical service.
+  <p><img src="images/bus_service_level_polic_usecase1a.jpg"  alt="Virtualizing the physical service" /></p></li>
+  <li>Configure the Business Metrics Policy:
+<ol>
+  <li>Select any dataset.
+  <p><img src="images/bus_service_level_polic_usecase1b.jpg" alt="Configuring the Business Metrics Policy" /></p></li>
+  <li>Provide dimensions and metrics configuration:
+  <p><img src="images/bus_service_level_polic_usecase1c.jpg"  alt="Providing dimensions and metrics configuration" /></p>
+  <p><img src="images/bus_service_level_polic_usecase1d.jpg"  alt="Providing dimensions and metrics configuration" /></p></li>
+  <li>Activate the policy.
+  <p><img src="images/bus_service_level_polic_usecase1e.jpg"  alt="Activating the policy" /></p></li>
+</ol>
+</li>
+  <li>In the Policies &gt; <strong>QoS</strong> section, click <strong>Add Policy</strong> to configure a Business Service Level Policy.
+  <ol>
+  <li>Select the dataset you created, as shown below:
+  <p><img src="images/bus_service_level_polic_usecase1f.jpg"  alt="Selecting the dataset" /></p></li>
+  <li>Select Filters (by dimensions).
+  <p><img src="images/bus_service_level_polic_usecase1g.jpg"  alt="Selecting dimensions" /></p></li>
+  <li>Select desired condition based on the metrics in the dataset (data is loaded into the metrics as per the configuration in Business Metrics Policy).
+  <p><img src="images/bus_service_level_polic_usecase1h.jpg"  alt="Selecting conditions based on the metrics" /></p></li>
+  <li>Select the alert code.</li>
+  <li>Select the Days and Durations for which the alert will be triggered.
+  <p><img src="images/bus_service_level_polic_usecase1i.jpg"  alt="selecting Days and Durations" /></p></li>
+  <li>Activate the policy.
+  <p><img src="images/bus_service_level_polic_usecase1j.jpg"  alt="Activating the policy" /></p></li>
+</ol>
+</li>
+  <li>In the <strong>Operational Policies</strong> section, attach the Business Metrics Policy.</li>
+  <li>In the <strong>QoS Policies section</strong>, attach the Business Service Level Policy.
+    <p><img src="images/bus_service_level_polic_usecase1k.jpg" alt="Attaching the policy" /></p></li>
+  <li>Send several requests to the virtual service so that the condition described in the Business Service Level Policy is crossed.</li>
+  <li>See alerts at the service level.</li>
+  <li>See SLA cleared alerts at the service level. The results should be similar to the illustration below.
+    <p><img src="images/bus_service_level_polic_usecase1l.jpg" alt="Reviewing the alerts" /></p></li>
+</ol>
+<p><a href="#top">Back to top</a></p>
