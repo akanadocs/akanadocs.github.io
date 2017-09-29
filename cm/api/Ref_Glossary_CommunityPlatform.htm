@@ -427,8 +427,8 @@
 
 
 
-<dt><a name="gl_oauth_authorizationendpoint"></a>Authorization endpoint (OAuth)</dt>
-<dd>Users connect to the authorization endpoint; apps connect to the <a href="#gl_oauth_tokenendpoint">token endpoint</a>.</dd>
+<dt>Authorization endpoint (OAuth)</dt>
+<dd>See <a href="#gl_oauth_authorizationendpoint">OAuth authorization endpoint</a>.</dd>
 
 
 
@@ -945,12 +945,12 @@ When adding an app version, you can specify a custom identity name for the app v
 
 
 <dt><a name="gl_jsonwebkeyset"></a>JSON Web Key Set</dt>
-<dd>A <a href="#gl_json">JSON</a> data structure that represents a set of <a href="#gl_jsonwebkey">Jason Web Keys</a>.</dd>
+<dd>A <a href="#gl_json">JSON</a> data structure that represents a set of <a href="#gl_jsonwebkey">JSON Web Keys</a>.</dd>
 
 
 
-<dt><a name="gl_jsonwebkey"></a>JWK</dt>
-<dd>See <a href="#gl_json">JSON Web Key</a>.</dd>
+<dt>JWK</dt>
+<dd>See <a href="#gl_jsonwebkey">JSON Web Key</a>.</dd>
 
 
 
@@ -1083,6 +1083,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 <dt><a name="gl_oauth_authorizationendpoint"></a>OAuth authorization endpoint</dt>
 <dd>The endpoint for the OAuth Authorization Server. This is the endpoint on the authorization server where the resource owner provides credentials, such as username and password, in and grants authorization to the client app to access the resources or a specified subset of the resources.</dd>
 <dd>When setting up an OAuth domain, Site Admins must specify this value. Additionally, if an API is using a third-party OAuth provider rather than an OAuth domain set up on the platform, the API Admin must specify this value in the OAuth setup wizard.</dd>
+<dd>Users connect to the authorization endpoint; apps connect to the <a href="#gl_oauth_tokenendpoint">token endpoint</a>.</dd>
 
 
 
@@ -1175,7 +1176,10 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_oauth_tokenendpoint"></a>OAuth token endpoint</dt>
-<dd>In OAuth 2.0, the token endpoint is the endpoint on the <a href="#gl_oauth_authorizationserver">authorization server</a> where the client app sends the authorization code, client ID, and client secret and receives in exchange an access token which allows the app to access the approved resources. For more information, see <a href="http://tools.ietf.org/html/rfc6749" target="_blank">the OAuth 2.0 specification</a> (external site).</dd>
+<dd>In OAuth 2.0, the token endpoint is the endpoint on the <a href="#gl_oauth_authorizationserver">authorization server</a> where the client app sends the authorization code, client ID, and client secret and receives in exchange an access token which allows the app to access the approved resources.</dd>
+<dd>The token endpoint first authenticates the client application. It then allows the client application to send the code received from the authorization endpoint; in exchange, it generates an access token and sends it to the client application.</dd>
+<dd>Users connect to the <a href="#gl_oauth_authorizationendpoint">authorization endpoint</a>; apps connect to the token endpoint.</dd>
+<dd>For more information, see <a href="http://tools.ietf.org/html/rfc6749" target="_blank">the OAuth 2.0 specification</a> (external site).</dd>
 
 
 
@@ -1619,9 +1623,8 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 
-<dt><a name="gl_oauth_tokenendpoint"></a>token endpoint (OAuth)</dt>
-<dd>The token endpoint first authenticates the client application. It then allows the client application to send the code received from the authorization endpoint; in exchange, it generates an access token and sends it to the client application.</dd>
-<dd>Users connect to the <a href="#gl_oauth_authorizationendpoint">authorization endpoint</a>; apps connect to the token endpoint.</dd>
+<dt>token endpoint (OAuth)</dt>
+<dd>See <a href="#gl_oauth_tokenendpoint">authorization token endpoint</a>.</dd>
 
 
 
