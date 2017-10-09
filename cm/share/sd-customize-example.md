@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Example Developer Theme Customization
+title: Simple Dev Theme Customization Example
 description: A step by step guide to customizing the Developer (SimpleDev) theme
 product: cm
 category: ref
-sub-nav-class:
 weight: 11
 type: page
-nav-title: Example Developer Theme Customization
+nav-title: SimpleDev Customization Example
+sub-nav-class: Customization
 ---
 
 ## Example SimpleDev Customization
