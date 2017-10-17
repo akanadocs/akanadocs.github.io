@@ -19,7 +19,7 @@
   <wsdl:message name="promoteRequestMessage">
     <wsdl:part name="AssetID" type="xs:string">
     </wsdl:part>
-    <wsdl:part name="body" type="nms1:AssetEnvironment">
+    <wsdl:part name="parameter0" type="nms1:AssetEnvironment">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="getAssetEnvironmentsResponseMessage">
@@ -65,7 +65,7 @@ Content-Type: application/json
     <shttp:operation inputSerialization="application/json,application/xml,application/vnd.soa.v84+json,application/vnd.soa.v84+xml" location="/assetenvironments/{AssetID}" method="POST" outputSerialization="application/json,application/xml,application/vnd.soa.v84+json,application/vnd.soa.v84+xml"/>
       <wsdl:input>
     <shttp:input name="AssetID" part="AssetID" type="path"><wsdl:documentation><sdoc:description xmlns:sdoc="http://soa.com/wsdl/doc"><![CDATA[The asset Id.]]></sdoc:description><sdoc:required xmlns:sdoc="http://soa.com/wsdl/doc">false</sdoc:required><sdoc:multiple xmlns:sdoc="http://soa.com/wsdl/doc">false</sdoc:multiple></wsdl:documentation></shttp:input>
-    <shttp:input name="body" part="body" type="entity"/>
+    <shttp:input name="parameter0" part="parameter0" type="entity"/>
       </wsdl:input>
       <wsdl:output>
     <shttp:output name="promoteResponse" part="promoteResponse" type="entity"/>

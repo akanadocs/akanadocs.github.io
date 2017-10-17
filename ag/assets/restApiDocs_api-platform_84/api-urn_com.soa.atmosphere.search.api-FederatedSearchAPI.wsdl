@@ -31,10 +31,10 @@
 <xs:complexType name="rssTextInput"><xs:all><xs:element name="title" type="xs:string"/><xs:element name="description" type="xs:string"/><xs:element name="name" type="xs:string"/><xs:element name="link" type="xs:anyURI"/></xs:all></xs:complexType>
 <xs:complexType name="rssSkipHours"><xs:sequence><xs:element maxOccurs="unbounded" minOccurs="0" name="hour" nillable="true" type="xs:string"/></xs:sequence></xs:complexType>
 <xs:complexType name="rssSkipDays"><xs:sequence><xs:element maxOccurs="unbounded" minOccurs="0" name="day" nillable="true" type="xs:string"/></xs:sequence></xs:complexType>
-<xs:complexType name="rssSource"><xs:simpleContent><xs:extension base="xs:string"><xs:attribute name="url" type="xs:string" use="required"/></xs:extension></xs:simpleContent></xs:complexType>
 <xs:complexType name="rssEnclosure"><xs:sequence/><xs:attribute name="url" type="xs:string" use="required"/><xs:attribute name="length" type="xs:string" use="required"/><xs:attribute name="type" type="xs:string" use="required"/></xs:complexType>
 <xs:complexType name="rssGuid"><xs:simpleContent><xs:extension base="xs:string"><xs:attribute name="isPermaLink" type="xs:boolean"/></xs:extension></xs:simpleContent></xs:complexType>
 <xs:complexType name="rssItem"><xs:all><xs:element minOccurs="0" name="title" type="xs:string"/><xs:element minOccurs="0" name="link" type="xs:anyURI"/><xs:element minOccurs="0" name="description" type="xs:string"/><xs:element minOccurs="0" name="author" type="xs:string"/><xs:element maxOccurs="unbounded" minOccurs="0" name="category" nillable="true" type="rssCategory"/><xs:element minOccurs="0" name="comments" type="xs:anyURI"/><xs:element minOccurs="0" name="enclosure" type="rssEnclosure"/><xs:element minOccurs="0" name="guid" type="rssGuid"/><xs:element name="pubDate" type="xs:string"/><xs:element minOccurs="0" name="source" type="rssSource"/><xs:any maxOccurs="unbounded" minOccurs="0" namespace="##other" processContents="lax"/></xs:all></xs:complexType>
+<xs:complexType name="rssSource"><xs:simpleContent><xs:extension base="xs:string"><xs:attribute name="url" type="xs:string" use="required"/></xs:extension></xs:simpleContent></xs:complexType>
 <xs:complexType name="aliasedDocument"><xs:sequence><xs:element minOccurs="0" name="alias" type="xs:string"/><xs:element minOccurs="0" ref="document"/></xs:sequence></xs:complexType>
 <xs:complexType name="document"><xs:sequence><xs:element maxOccurs="unbounded" minOccurs="0" name="allFields" type="field"/><xs:element minOccurs="0" name="id" type="xs:string"/><xs:element minOccurs="0" name="indexName" type="xs:string"/></xs:sequence></xs:complexType>
 <xs:complexType name="field"><xs:sequence><xs:element name="binary" type="xs:boolean"/><xs:element name="boost" type="xs:int"/><xs:element name="indexed" type="xs:boolean"/><xs:element minOccurs="0" name="name" type="xs:string"/><xs:element name="stored" type="xs:boolean"/><xs:element minOccurs="0" name="value" type="xs:string"/></xs:sequence></xs:complexType>
@@ -45,7 +45,7 @@
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="indexRequestMessage">
-    <wsdl:part name="body" element="nms2:IndexableDocuments">
+    <wsdl:part name="parameter0" element="nms2:IndexableDocuments">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="searchResponseMessage">
@@ -162,7 +162,7 @@
 <wsdl:documentation><sdoc:displayName xmlns:sdoc="http://soa.com/wsdl/doc">POST /federatedsearch/index</sdoc:displayName></wsdl:documentation>
     <shttp:operation inputSerialization="application/json,application/vnd.soa.v71+json,application/vnd.soa.v72+json,application/vnd.soa.v80+json,application/vnd.soa.v81+json" location="/federatedsearch/index" method="POST" outputSerialization="application/json,application/vnd.soa.v71+json,application/vnd.soa.v72+json,application/vnd.soa.v80+json,application/vnd.soa.v81+json"/>
       <wsdl:input>
-    <shttp:input name="body" part="body" type="entity"/>
+    <shttp:input name="parameter0" part="parameter0" type="entity"/>
       </wsdl:input>
       <wsdl:output>
     <shttp:output name="indexResponse" part="indexResponse" type="entity"/>

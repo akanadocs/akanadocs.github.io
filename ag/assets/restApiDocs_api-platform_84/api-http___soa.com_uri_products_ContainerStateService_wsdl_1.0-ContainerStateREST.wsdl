@@ -12,7 +12,7 @@
   <wsdl:message name="reportStateRequestMessage">
     <wsdl:part name="key" type="xs:string">
     </wsdl:part>
-    <wsdl:part name="body" type="nms1:State">
+    <wsdl:part name="parameter0" type="nms1:State">
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="ContainerStateRESTPortType">
@@ -30,7 +30,7 @@
     <shttp:operation inputSerialization="application/xml,application/json" location="/containers/{key}/state" method="PUT"/>
       <wsdl:input>
     <shttp:input name="key" part="key" type="path"><wsdl:documentation><sdoc:description xmlns:sdoc="http://soa.com/wsdl/doc"><![CDATA[The container key]]></sdoc:description><sdoc:required xmlns:sdoc="http://soa.com/wsdl/doc">true</sdoc:required><sdoc:multiple xmlns:sdoc="http://soa.com/wsdl/doc">false</sdoc:multiple></wsdl:documentation></shttp:input>
-    <shttp:input name="body" part="body" type="entity"><wsdl:documentation><sdoc:description xmlns:sdoc="http://soa.com/wsdl/doc"><![CDATA[The current state]]></sdoc:description><sdoc:required xmlns:sdoc="http://soa.com/wsdl/doc">true</sdoc:required><sdoc:multiple xmlns:sdoc="http://soa.com/wsdl/doc">false</sdoc:multiple></wsdl:documentation></shttp:input>
+    <shttp:input name="parameter0" part="parameter0" type="entity"><wsdl:documentation><sdoc:description xmlns:sdoc="http://soa.com/wsdl/doc"><![CDATA[The current state]]></sdoc:description><sdoc:required xmlns:sdoc="http://soa.com/wsdl/doc">true</sdoc:required><sdoc:multiple xmlns:sdoc="http://soa.com/wsdl/doc">false</sdoc:multiple></wsdl:documentation></shttp:input>
       </wsdl:input>
       <wsdl:output>
     <shttp:output name="" part="" type="entity"/>

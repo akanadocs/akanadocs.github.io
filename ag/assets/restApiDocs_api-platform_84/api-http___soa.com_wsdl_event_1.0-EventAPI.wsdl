@@ -13,7 +13,7 @@
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="postEventRequestMessage">
-    <wsdl:part name="body" element="nms1:Event">
+    <wsdl:part name="parameter0" element="nms1:Event">
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="EventAPIPortType">
@@ -30,7 +30,7 @@
 <wsdl:documentation><sdoc:displayName xmlns:sdoc="http://soa.com/wsdl/doc">POST /events</sdoc:displayName></wsdl:documentation>
     <shttp:operation inputSerialization="text/xml,application/vnd.soa.v71+xml,application/vnd.soa.v72+xml,application/vnd.soa.v80+xml,application/vnd.soa.v81+xml" location="/events" method="POST" outputSerialization="text/plain"/>
       <wsdl:input>
-    <shttp:input name="body" part="body" type="entity"/>
+    <shttp:input name="parameter0" part="parameter0" type="entity"/>
       </wsdl:input>
       <wsdl:output>
     <shttp:output name="postEventResponse" part="postEventResponse" type="entity"/>

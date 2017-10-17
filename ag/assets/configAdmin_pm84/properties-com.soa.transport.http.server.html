@@ -21,6 +21,12 @@
 											<p class='propertydefault'>Default: connection, pragma, trailer, transfer-encoding, keep-alive, expect, upgrade, via, protocol, server, content-length, content-type, date</p>
 									</div>
 							<div class="property">
+					<strong class='propertyname'>Blocked HEAD Headers (jetty.transport.factory.blockHeadHeaders)</strong>
+											<p class='propertydesc'>The headers that will not be forwarded through the transport in the case of a HEAD request.   The value is a comma-separated list of header names.</p>
+										
+											<p class='propertydefault'>Default: connection, trailer, transfer-encoding, keep-alive, date</p>
+									</div>
+							<div class="property">
 					<strong class='propertyname'>Enable TRACE (jetty.transport.factory.enableTrace)</strong>
 											<p class='propertydesc'>Enable HTTP TRACE.</p>
 										

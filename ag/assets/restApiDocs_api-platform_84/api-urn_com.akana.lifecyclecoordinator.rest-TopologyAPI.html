@@ -63,11 +63,11 @@
 																																		<div class="col-md-4">boolean</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
-																																			<div class="col-md-4"><div class="clickable link" data-target="updateTopology-body">topology</div></div>
-										<div id="updateTopology-body" class="container-fluid col-md-12 well model" style="display: none;">
+																																			<div class="col-md-4"><div class="clickable link" data-target="updateTopology-parameter0">topology</div></div>
+										<div id="updateTopology-parameter0" class="container-fluid col-md-12 well model" style="display: none;">
 																					<strong>topology {</strong>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">name</strong>
@@ -201,7 +201,7 @@
 																							</div>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">name</strong>
-																									<span class="property-type">( string )</span>
+																									<span class="property-type">( string, <em>required</em> )</span>
 																							</div>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">address</strong>
@@ -230,6 +230,10 @@
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">userAuthenticationSource</strong>
 																									<span class="property-type">( boolean )</span>
+																							</div>
+																						<div style="margin-left:8px;" class="">
+												<strong class="property-name">displayName</strong>
+																									<span class="property-type">( string )</span>
 																							</div>
 																						<strong>}</strong><br/>
 																					<strong>credentials {</strong>
@@ -408,11 +412,11 @@
 								<div class="col-md-4">Model</div>
 							</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
-																																			<div class="col-md-4"><div class="clickable link" data-target="addTopology-body">topology</div></div>
-										<div id="addTopology-body" class="container-fluid col-md-12 well model" style="display: none;">
+																																			<div class="col-md-4"><div class="clickable link" data-target="addTopology-parameter0">topology</div></div>
+										<div id="addTopology-parameter0" class="container-fluid col-md-12 well model" style="display: none;">
 																					<strong>topology {</strong>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">name</strong>
@@ -546,7 +550,7 @@
 																							</div>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">name</strong>
-																									<span class="property-type">( string )</span>
+																									<span class="property-type">( string, <em>required</em> )</span>
 																							</div>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">address</strong>
@@ -575,6 +579,10 @@
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">userAuthenticationSource</strong>
 																									<span class="property-type">( boolean )</span>
+																							</div>
+																						<div style="margin-left:8px;" class="">
+												<strong class="property-name">displayName</strong>
+																									<span class="property-type">( string )</span>
 																							</div>
 																						<strong>}</strong><br/>
 																					<strong>credentials {</strong>
@@ -896,6 +904,10 @@
 												<strong class="property-name">userAuthenticationSource</strong>
 																									<span class="property-type">( boolean )</span>
 																							</div>
+																						<div style="margin-left:8px;" class="">
+												<strong class="property-name">displayName</strong>
+																									<span class="property-type">( string )</span>
+																							</div>
 																						<strong>}</strong><br/>
 																					<strong>credentials {</strong>
 																						<div style="margin-left:8px;" class="">
@@ -1067,7 +1079,7 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
 																								<div class="col-md-2"></div>
@@ -1116,8 +1128,97 @@
 					</div>
 				</div>
 				
-				<div class="GET operation container-fluid">
+				<div class="PUT operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-7-details">
+						<h5>
+							<strong class="http-method">PUT</strong>
+															<span class="path">/topologies/{topology-name}/tenants</span>
+																					<span class="pull-right" style="margin-right:8px;">Update a Tenant</span>
+													</h5>
+					</div>
+
+					<div id="operation-7-details" class="container-fluid operation-detail" style="display: none">
+
+												<div class="row">
+							<h6>Update an existing Tenant in the specified Topology</h6>
+						</div>
+						
+												<div>
+							<h5>Parameters</h5>
+							
+														<div class="row">
+								<div class="col-md-12">
+									<strong>Accepts </strong>
+																			<span>application/json </span>
+																	</div>
+							</div>
+													</div>
+												
+						<div class="container-fluid">
+							<div class="underline row">
+								<div class="col-md-2">Name</div>
+								<div class="col-md-2">Type</div>
+								<div class="col-md-4">Description</div>
+								<div class="col-md-4">Model</div>
+							</div>
+														<div class="row">
+								<div class="col-md-2">topology-name</div>
+								<div class="col-md-2">path</div>
+																<div class="col-md-4"></div>
+																																		<div class="col-md-4">string</div>
+																								</div>
+														<div class="row">
+								<div class="col-md-2">parameter0</div>
+								<div class="col-md-2">entity</div>
+																<div class="col-md-4"></div>
+																								<div class="col-md-2"></div>
+															</div>
+													</div>
+						
+												<div class="">
+							<h5>Reponse</h5>
+
+														<div class="row">
+								<div class="col-md-12">
+									<strong>Produces </strong>
+																			<span>application/json</span>
+																	</div>
+							</div>
+							
+						</div>
+						
+												<div class="container-fluid">
+							<div class="underline row">
+								<div class="col-md-2">Status Code</div>
+								<div class="col-md-4">Reason</div>
+								<div class="col-md-6">Model</div>
+							</div>
+														<div class="row">
+								<div class="col-md-2">200</div>
+								<div class="col-md-4">Tenant Updated</div>
+																											<div class="col-md-6 clickable link" data-target="updateTenant-response-200">any</div>
+										<div id="updateTenant-response-200" class="container-fluid col-md-12 well model" style="display: none; margin-left:8px;">
+																					<strong>any {</strong>
+																						<strong>}</strong><br/>
+																				</div>
+																								</div>
+														<div class="row">
+								<div class="col-md-2">400</div>
+								<div class="col-md-4">Invalid Tenant</div>
+																	<div class="col-md-2"></div>
+															</div>
+														<div class="row">
+								<div class="col-md-2">404</div>
+								<div class="col-md-4">Topology or Tenant not found</div>
+																	<div class="col-md-2"></div>
+															</div>
+													</div>
+						
+					</div>
+				</div>
+				
+				<div class="GET operation container-fluid">
+					<div class='operation-heading clickable row' data-target="operation-8-details">
 						<h5>
 							<strong class="http-method">GET</strong>
 															<span class="path">/topologies/{topology-name}/tenants</span>
@@ -1125,7 +1226,7 @@
 													</h5>
 					</div>
 
-					<div id="operation-7-details" class="container-fluid operation-detail" style="display: none">
+					<div id="operation-8-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6>Get all Tenants defined for the specified Topology</h6>
@@ -1185,7 +1286,7 @@
 				</div>
 				
 				<div class="GET operation container-fluid">
-					<div class='operation-heading clickable row' data-target="operation-8-details">
+					<div class='operation-heading clickable row' data-target="operation-9-details">
 						<h5>
 							<strong class="http-method">GET</strong>
 															<span class="path">/topologies/{topology-name}/filters</span>
@@ -1193,7 +1294,7 @@
 													</h5>
 					</div>
 
-					<div id="operation-8-details" class="container-fluid operation-detail" style="display: none">
+					<div id="operation-9-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6>Get the AssetFilters for the specified topology</h6>
@@ -1252,95 +1353,6 @@
 					</div>
 				</div>
 				
-				<div class="PUT operation container-fluid">
-					<div class='operation-heading clickable row' data-target="operation-9-details">
-						<h5>
-							<strong class="http-method">PUT</strong>
-															<span class="path">/topologies/{topology-name}/tenants</span>
-																					<span class="pull-right" style="margin-right:8px;">Update a Tenant</span>
-													</h5>
-					</div>
-
-					<div id="operation-9-details" class="container-fluid operation-detail" style="display: none">
-
-												<div class="row">
-							<h6>Update an existing Tenant in the specified Topology</h6>
-						</div>
-						
-												<div>
-							<h5>Parameters</h5>
-							
-														<div class="row">
-								<div class="col-md-12">
-									<strong>Accepts </strong>
-																			<span>application/json </span>
-																	</div>
-							</div>
-													</div>
-												
-						<div class="container-fluid">
-							<div class="underline row">
-								<div class="col-md-2">Name</div>
-								<div class="col-md-2">Type</div>
-								<div class="col-md-4">Description</div>
-								<div class="col-md-4">Model</div>
-							</div>
-														<div class="row">
-								<div class="col-md-2">topology-name</div>
-								<div class="col-md-2">path</div>
-																<div class="col-md-4"></div>
-																																		<div class="col-md-4">string</div>
-																								</div>
-														<div class="row">
-								<div class="col-md-2">body</div>
-								<div class="col-md-2">entity</div>
-																<div class="col-md-4"></div>
-																								<div class="col-md-2"></div>
-															</div>
-													</div>
-						
-												<div class="">
-							<h5>Reponse</h5>
-
-														<div class="row">
-								<div class="col-md-12">
-									<strong>Produces </strong>
-																			<span>application/json</span>
-																	</div>
-							</div>
-							
-						</div>
-						
-												<div class="container-fluid">
-							<div class="underline row">
-								<div class="col-md-2">Status Code</div>
-								<div class="col-md-4">Reason</div>
-								<div class="col-md-6">Model</div>
-							</div>
-														<div class="row">
-								<div class="col-md-2">200</div>
-								<div class="col-md-4">Tenant Updated</div>
-																											<div class="col-md-6 clickable link" data-target="updateTenant-response-200">any</div>
-										<div id="updateTenant-response-200" class="container-fluid col-md-12 well model" style="display: none; margin-left:8px;">
-																					<strong>any {</strong>
-																						<strong>}</strong><br/>
-																				</div>
-																								</div>
-														<div class="row">
-								<div class="col-md-2">400</div>
-								<div class="col-md-4">Invalid Tenant</div>
-																	<div class="col-md-2"></div>
-															</div>
-														<div class="row">
-								<div class="col-md-2">404</div>
-								<div class="col-md-4">Topology or Tenant not found</div>
-																	<div class="col-md-2"></div>
-															</div>
-													</div>
-						
-					</div>
-				</div>
-				
 				<div class="POST operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-10-details">
 						<h5>
@@ -1381,7 +1393,7 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
 																								<div class="col-md-2"></div>
@@ -1475,7 +1487,7 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
 																								<div class="col-md-2"></div>
@@ -1635,7 +1647,7 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
 																								<div class="col-md-2"></div>
@@ -1792,7 +1804,7 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
 																								<div class="col-md-2"></div>
@@ -1850,86 +1862,12 @@
 					<div class='operation-heading clickable row' data-target="operation-16-details">
 						<h5>
 							<strong class="http-method">GET</strong>
-															<span class="path">/topologies/{topology-name}/filters/{filter-name}</span>
-																					<span class="pull-right" style="margin-right:8px;">Get an AssetFilter</span>
-													</h5>
-					</div>
-
-					<div id="operation-16-details" class="container-fluid operation-detail" style="display: none">
-
-												<div class="row">
-							<h6>Get the specified AssetFilter for the specified Topology</h6>
-						</div>
-						
-												<div>
-							<h5>Parameters</h5>
-							
-													</div>
-												
-						<div class="container-fluid">
-							<div class="underline row">
-								<div class="col-md-2">Name</div>
-								<div class="col-md-2">Type</div>
-								<div class="col-md-4">Description</div>
-								<div class="col-md-4">Model</div>
-							</div>
-														<div class="row">
-								<div class="col-md-2">topology-name</div>
-								<div class="col-md-2">path</div>
-																<div class="col-md-4"></div>
-																																		<div class="col-md-4">string</div>
-																								</div>
-														<div class="row">
-								<div class="col-md-2">filter-name</div>
-								<div class="col-md-2">path</div>
-																<div class="col-md-4"></div>
-																																		<div class="col-md-4">string</div>
-																								</div>
-													</div>
-						
-												<div class="">
-							<h5>Reponse</h5>
-
-														<div class="row">
-								<div class="col-md-12">
-									<strong>Produces </strong>
-																			<span>application/json</span>
-																	</div>
-							</div>
-							
-						</div>
-						
-												<div class="container-fluid">
-							<div class="underline row">
-								<div class="col-md-2">Status Code</div>
-								<div class="col-md-4">Reason</div>
-								<div class="col-md-6">Model</div>
-							</div>
-														<div class="row">
-								<div class="col-md-2">200</div>
-								<div class="col-md-4">AssetFilter Found</div>
-																	<div class="col-md-2"></div>
-															</div>
-														<div class="row">
-								<div class="col-md-2">404</div>
-								<div class="col-md-4">Topology or AssetFilter not found</div>
-																	<div class="col-md-2"></div>
-															</div>
-													</div>
-						
-					</div>
-				</div>
-				
-				<div class="GET operation container-fluid">
-					<div class='operation-heading clickable row' data-target="operation-17-details">
-						<h5>
-							<strong class="http-method">GET</strong>
 															<span class="path">/topologies/{topology-name}/tenants/{tenant-name}</span>
 																					<span class="pull-right" style="margin-right:8px;">Get a Tenant</span>
 													</h5>
 					</div>
 
-					<div id="operation-17-details" class="container-fluid operation-detail" style="display: none">
+					<div id="operation-16-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6>Get the specified Tenant from the specified Topology</h6>
@@ -1987,6 +1925,80 @@
 														<div class="row">
 								<div class="col-md-2">404</div>
 								<div class="col-md-4">Topology or Tenant not found</div>
+																	<div class="col-md-2"></div>
+															</div>
+													</div>
+						
+					</div>
+				</div>
+				
+				<div class="GET operation container-fluid">
+					<div class='operation-heading clickable row' data-target="operation-17-details">
+						<h5>
+							<strong class="http-method">GET</strong>
+															<span class="path">/topologies/{topology-name}/filters/{filter-name}</span>
+																					<span class="pull-right" style="margin-right:8px;">Get an AssetFilter</span>
+													</h5>
+					</div>
+
+					<div id="operation-17-details" class="container-fluid operation-detail" style="display: none">
+
+												<div class="row">
+							<h6>Get the specified AssetFilter for the specified Topology</h6>
+						</div>
+						
+												<div>
+							<h5>Parameters</h5>
+							
+													</div>
+												
+						<div class="container-fluid">
+							<div class="underline row">
+								<div class="col-md-2">Name</div>
+								<div class="col-md-2">Type</div>
+								<div class="col-md-4">Description</div>
+								<div class="col-md-4">Model</div>
+							</div>
+														<div class="row">
+								<div class="col-md-2">topology-name</div>
+								<div class="col-md-2">path</div>
+																<div class="col-md-4"></div>
+																																		<div class="col-md-4">string</div>
+																								</div>
+														<div class="row">
+								<div class="col-md-2">filter-name</div>
+								<div class="col-md-2">path</div>
+																<div class="col-md-4"></div>
+																																		<div class="col-md-4">string</div>
+																								</div>
+													</div>
+						
+												<div class="">
+							<h5>Reponse</h5>
+
+														<div class="row">
+								<div class="col-md-12">
+									<strong>Produces </strong>
+																			<span>application/json</span>
+																	</div>
+							</div>
+							
+						</div>
+						
+												<div class="container-fluid">
+							<div class="underline row">
+								<div class="col-md-2">Status Code</div>
+								<div class="col-md-4">Reason</div>
+								<div class="col-md-6">Model</div>
+							</div>
+														<div class="row">
+								<div class="col-md-2">200</div>
+								<div class="col-md-4">AssetFilter Found</div>
+																	<div class="col-md-2"></div>
+															</div>
+														<div class="row">
+								<div class="col-md-2">404</div>
+								<div class="col-md-4">Topology or AssetFilter not found</div>
 																	<div class="col-md-2"></div>
 															</div>
 													</div>
@@ -2338,7 +2350,7 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
 																								<div class="col-md-2"></div>
@@ -2517,11 +2529,11 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
-																																			<div class="col-md-4"><div class="clickable link" data-target="updatePromotionProfile-body">profile</div></div>
-										<div id="updatePromotionProfile-body" class="container-fluid col-md-12 well model" style="display: none;">
+																																			<div class="col-md-4"><div class="clickable link" data-target="updatePromotionProfile-parameter0">profile</div></div>
+										<div id="updatePromotionProfile-parameter0" class="container-fluid col-md-12 well model" style="display: none;">
 																					<strong>profile {</strong>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">name</strong>
@@ -2716,80 +2728,8 @@
 					</div>
 				</div>
 				
-				<div class="DELETE operation container-fluid">
-					<div class='operation-heading clickable row' data-target="operation-26-details">
-						<h5>
-							<strong class="http-method">DELETE</strong>
-															<span class="path">/topologies/{topology-name}/environments/{environment-name}/assets</span>
-																					<span class="pull-right" style="margin-right:8px;">Delete assets for an Environment</span>
-													</h5>
-					</div>
-
-					<div id="operation-26-details" class="container-fluid operation-detail" style="display: none">
-
-												<div class="row">
-							<h6>Delete all assets associated with the specified environment. This will also delete all mapping information for assets associated with the specified environment</h6>
-						</div>
-						
-												<div>
-							<h5>Parameters</h5>
-							
-													</div>
-												
-						<div class="container-fluid">
-							<div class="underline row">
-								<div class="col-md-2">Name</div>
-								<div class="col-md-2">Type</div>
-								<div class="col-md-4">Description</div>
-								<div class="col-md-4">Model</div>
-							</div>
-														<div class="row">
-								<div class="col-md-2">topology-name</div>
-								<div class="col-md-2">path</div>
-																<div class="col-md-4"></div>
-																																		<div class="col-md-4">string</div>
-																								</div>
-														<div class="row">
-								<div class="col-md-2">environment-name</div>
-								<div class="col-md-2">path</div>
-																<div class="col-md-4"></div>
-																																		<div class="col-md-4">string</div>
-																								</div>
-													</div>
-						
-												<div class="">
-							<h5>Reponse</h5>
-
-							
-						</div>
-						
-												<div class="container-fluid">
-							<div class="underline row">
-								<div class="col-md-2">Status Code</div>
-								<div class="col-md-4">Reason</div>
-								<div class="col-md-6">Model</div>
-							</div>
-														<div class="row">
-								<div class="col-md-2">200</div>
-								<div class="col-md-4">Assets Deleted</div>
-																											<div class="col-md-6 clickable link" data-target="deleteEnvironmentAssets-response-200">any</div>
-										<div id="deleteEnvironmentAssets-response-200" class="container-fluid col-md-12 well model" style="display: none; margin-left:8px;">
-																					<strong>any {</strong>
-																						<strong>}</strong><br/>
-																				</div>
-																								</div>
-														<div class="row">
-								<div class="col-md-2">404</div>
-								<div class="col-md-4">Topology or Environment Not found</div>
-																	<div class="col-md-2"></div>
-															</div>
-													</div>
-						
-					</div>
-				</div>
-				
 				<div class="POST operation container-fluid">
-					<div class='operation-heading clickable row' data-target="operation-27-details">
+					<div class='operation-heading clickable row' data-target="operation-26-details">
 						<h5>
 							<strong class="http-method">POST</strong>
 															<span class="path">/topologies/{topology-name}/environments/{environment-name}/profiles</span>
@@ -2797,7 +2737,7 @@
 													</h5>
 					</div>
 
-					<div id="operation-27-details" class="container-fluid operation-detail" style="display: none">
+					<div id="operation-26-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6>Add a PromotionProfile to the specified Environment in the specified Topology</h6>
@@ -2834,11 +2774,11 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
-																																			<div class="col-md-4"><div class="clickable link" data-target="addPromotionProfile-body">profile</div></div>
-										<div id="addPromotionProfile-body" class="container-fluid col-md-12 well model" style="display: none;">
+																																			<div class="col-md-4"><div class="clickable link" data-target="addPromotionProfile-parameter0">profile</div></div>
+										<div id="addPromotionProfile-parameter0" class="container-fluid col-md-12 well model" style="display: none;">
 																					<strong>profile {</strong>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">name</strong>
@@ -2957,6 +2897,78 @@
 														<div class="row">
 								<div class="col-md-2">409</div>
 								<div class="col-md-4">PromotionProfile already exists</div>
+																	<div class="col-md-2"></div>
+															</div>
+													</div>
+						
+					</div>
+				</div>
+				
+				<div class="DELETE operation container-fluid">
+					<div class='operation-heading clickable row' data-target="operation-27-details">
+						<h5>
+							<strong class="http-method">DELETE</strong>
+															<span class="path">/topologies/{topology-name}/environments/{environment-name}/assets</span>
+																					<span class="pull-right" style="margin-right:8px;">Delete assets for an Environment</span>
+													</h5>
+					</div>
+
+					<div id="operation-27-details" class="container-fluid operation-detail" style="display: none">
+
+												<div class="row">
+							<h6>Delete all assets associated with the specified environment. This will also delete all mapping information for assets associated with the specified environment</h6>
+						</div>
+						
+												<div>
+							<h5>Parameters</h5>
+							
+													</div>
+												
+						<div class="container-fluid">
+							<div class="underline row">
+								<div class="col-md-2">Name</div>
+								<div class="col-md-2">Type</div>
+								<div class="col-md-4">Description</div>
+								<div class="col-md-4">Model</div>
+							</div>
+														<div class="row">
+								<div class="col-md-2">topology-name</div>
+								<div class="col-md-2">path</div>
+																<div class="col-md-4"></div>
+																																		<div class="col-md-4">string</div>
+																								</div>
+														<div class="row">
+								<div class="col-md-2">environment-name</div>
+								<div class="col-md-2">path</div>
+																<div class="col-md-4"></div>
+																																		<div class="col-md-4">string</div>
+																								</div>
+													</div>
+						
+												<div class="">
+							<h5>Reponse</h5>
+
+							
+						</div>
+						
+												<div class="container-fluid">
+							<div class="underline row">
+								<div class="col-md-2">Status Code</div>
+								<div class="col-md-4">Reason</div>
+								<div class="col-md-6">Model</div>
+							</div>
+														<div class="row">
+								<div class="col-md-2">200</div>
+								<div class="col-md-4">Assets Deleted</div>
+																											<div class="col-md-6 clickable link" data-target="deleteEnvironmentAssets-response-200">any</div>
+										<div id="deleteEnvironmentAssets-response-200" class="container-fluid col-md-12 well model" style="display: none; margin-left:8px;">
+																					<strong>any {</strong>
+																						<strong>}</strong><br/>
+																				</div>
+																								</div>
+														<div class="row">
+								<div class="col-md-2">404</div>
+								<div class="col-md-4">Topology or Environment Not found</div>
 																	<div class="col-md-2"></div>
 															</div>
 													</div>
@@ -3250,7 +3262,7 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
 																																		<div class="col-md-4">string</div>
@@ -3431,7 +3443,7 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
 																								<div class="col-md-2"></div>
@@ -3631,6 +3643,97 @@
 														<div class="row">
 								<div class="col-md-2">404</div>
 								<div class="col-md-4">Topology, environment or profile not found</div>
+																	<div class="col-md-2"></div>
+															</div>
+													</div>
+						
+					</div>
+				</div>
+				
+				<div class="POST operation container-fluid">
+					<div class='operation-heading clickable row' data-target="operation-35-details">
+						<h5>
+							<strong class="http-method">POST</strong>
+															<span class="path">/topologies/{topology-name}/environments/{environment-name}/assets/apis/{api-version-id}/promote</span>
+																					<span class="pull-right" style="margin-right:8px;">Promote an API</span>
+													</h5>
+					</div>
+
+					<div id="operation-35-details" class="container-fluid operation-detail" style="display: none">
+
+												<div class="row">
+							<h6>Request promotion of an api version from the specified Environment in the specified Topology</h6>
+						</div>
+						
+												<div>
+							<h5>Parameters</h5>
+							
+														<div class="row">
+								<div class="col-md-12">
+									<strong>Accepts </strong>
+																			<span>application/json </span>
+																	</div>
+							</div>
+													</div>
+												
+						<div class="container-fluid">
+							<div class="underline row">
+								<div class="col-md-2">Name</div>
+								<div class="col-md-2">Type</div>
+								<div class="col-md-4">Description</div>
+								<div class="col-md-4">Model</div>
+							</div>
+														<div class="row">
+								<div class="col-md-2">topology-name</div>
+								<div class="col-md-2">path</div>
+																<div class="col-md-4"></div>
+																																		<div class="col-md-4">string</div>
+																								</div>
+														<div class="row">
+								<div class="col-md-2">environment-name</div>
+								<div class="col-md-2">path</div>
+																<div class="col-md-4"></div>
+																																		<div class="col-md-4">string</div>
+																								</div>
+														<div class="row">
+								<div class="col-md-2">api-version-id</div>
+								<div class="col-md-2">path</div>
+																<div class="col-md-4"></div>
+																																		<div class="col-md-4">string</div>
+																								</div>
+													</div>
+						
+												<div class="">
+							<h5>Reponse</h5>
+
+														<div class="row">
+								<div class="col-md-12">
+									<strong>Produces </strong>
+																			<span>application/json</span>
+																	</div>
+							</div>
+							
+						</div>
+						
+												<div class="container-fluid">
+							<div class="underline row">
+								<div class="col-md-2">Status Code</div>
+								<div class="col-md-4">Reason</div>
+								<div class="col-md-6">Model</div>
+							</div>
+														<div class="row">
+								<div class="col-md-2">200</div>
+								<div class="col-md-4">Promotion requested</div>
+																	<div class="col-md-2"></div>
+															</div>
+														<div class="row">
+								<div class="col-md-2">400</div>
+								<div class="col-md-4">Promotion was not allowed for this asset</div>
+																	<div class="col-md-2"></div>
+															</div>
+														<div class="row">
+								<div class="col-md-2">404</div>
+								<div class="col-md-4">Topology, environment or asset not found</div>
 																	<div class="col-md-2"></div>
 															</div>
 													</div>

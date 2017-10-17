@@ -122,11 +122,11 @@ Content-Type: application/json
 								<div class="col-md-4">Model</div>
 							</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
-																																			<div class="col-md-4"><div class="clickable link" data-target="requestContract-body">Contract</div></div>
-										<div id="requestContract-body" class="container-fluid col-md-12 well model" style="display: none;">
+																																			<div class="col-md-4"><div class="clickable link" data-target="requestContract-parameter0">Contract</div></div>
+										<div id="requestContract-parameter0" class="container-fluid col-md-12 well model" style="display: none;">
 																					<strong>Contract {</strong>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">ContractID</strong>
@@ -1315,11 +1315,11 @@ Date: Tue, 30 Sep 2014 00:00:00 GMT
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
-																																			<div class="col-md-4"><div class="clickable link" data-target="updateContract-body">Contract</div></div>
-										<div id="updateContract-body" class="container-fluid col-md-12 well model" style="display: none;">
+																																			<div class="col-md-4"><div class="clickable link" data-target="updateContract-parameter0">Contract</div></div>
+										<div id="updateContract-parameter0" class="container-fluid col-md-12 well model" style="display: none;">
 																					<strong>Contract {</strong>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">ContractID</strong>
@@ -2019,11 +2019,11 @@ Date: Tue, 30 Sep 2014 00:00:00 GMT
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
-																																			<div class="col-md-4"><div class="clickable link" data-target="requestAutoConnectContract-body">Contract</div></div>
-										<div id="requestAutoConnectContract-body" class="container-fluid col-md-12 well model" style="display: none;">
+																																			<div class="col-md-4"><div class="clickable link" data-target="requestAutoConnectContract-parameter0">Contract</div></div>
+										<div id="requestAutoConnectContract-parameter0" class="container-fluid col-md-12 well model" style="display: none;">
 																					<strong>Contract {</strong>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">ContractID</strong>
@@ -2787,11 +2787,11 @@ Date: Tue, 30 Sep 2014 00:00:00 GMT
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
-																																			<div class="col-md-4"><div class="clickable link" data-target="saveContractScope-body">ContractScope</div></div>
-										<div id="saveContractScope-body" class="container-fluid col-md-12 well model" style="display: none;">
+																																			<div class="col-md-4"><div class="clickable link" data-target="saveContractScope-parameter0">ContractScope</div></div>
+										<div id="saveContractScope-parameter0" class="container-fluid col-md-12 well model" style="display: none;">
 																					<strong>ContractScope {</strong>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">Restricted</strong>
@@ -3316,11 +3316,11 @@ apicontract.status.activated
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
-																																			<div class="col-md-4"><div class="clickable link" data-target="executeWorkflowAction-body">Action</div></div>
-										<div id="executeWorkflowAction-body" class="container-fluid col-md-12 well model" style="display: none;">
+																																			<div class="col-md-4"><div class="clickable link" data-target="executeWorkflowAction-parameter0">Action</div></div>
+										<div id="executeWorkflowAction-parameter0" class="container-fluid col-md-12 well model" style="display: none;">
 																					<strong>Action {</strong>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">UserID</strong>
@@ -4576,7 +4576,13 @@ apicontract.status.activated
 																							</div>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">value</strong>
-																									<span class="property-type">( anyType )</span>
+																									<span class="property-type">( stringArray )</span>
+																							</div>
+																						<strong>}</strong><br/>
+																					<strong>stringArray {</strong>
+																						<div style="margin-left:8px;" class="">
+												<strong class="property-name">item</strong>
+																									<span class="property-type">( Collection of  string )</span>
 																							</div>
 																						<strong>}</strong><br/>
 																					<strong>APISettings {</strong>
@@ -4658,6 +4664,10 @@ apicontract.status.activated
 																							</div>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">PrivateAPIResourceLevelPermissionsSupport</strong>
+																									<span class="property-type">( string )</span>
+																							</div>
+																						<div style="margin-left:8px;" class="">
+												<strong class="property-name">ValidateUniqueContextPath</strong>
 																									<span class="property-type">( string )</span>
 																							</div>
 																						<strong>}</strong><br/>

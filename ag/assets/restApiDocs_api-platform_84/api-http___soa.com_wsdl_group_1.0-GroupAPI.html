@@ -63,11 +63,11 @@
 								<div class="col-md-4">Model</div>
 							</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
-																																			<div class="col-md-4"><div class="clickable link" data-target="addGroup-body">AddGroupRequest</div></div>
-										<div id="addGroup-body" class="container-fluid col-md-12 well model" style="display: none;">
+																																			<div class="col-md-4"><div class="clickable link" data-target="addGroup-parameter0">AddGroupRequest</div></div>
+										<div id="addGroup-parameter0" class="container-fluid col-md-12 well model" style="display: none;">
 																					<strong>AddGroupRequest {</strong>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">Group</strong>
@@ -581,11 +581,11 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
-																																			<div class="col-md-4"><div class="clickable link" data-target="modifyGroup-body">Group</div></div>
-										<div id="modifyGroup-body" class="container-fluid col-md-12 well model" style="display: none;">
+																																			<div class="col-md-4"><div class="clickable link" data-target="modifyGroup-parameter0">Group</div></div>
+										<div id="modifyGroup-parameter0" class="container-fluid col-md-12 well model" style="display: none;">
 																					<strong>Group {</strong>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">GroupID</strong>
@@ -1081,11 +1081,11 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
-																																			<div class="col-md-4"><div class="clickable link" data-target="addRating-body">Rating</div></div>
-										<div id="addRating-body" class="container-fluid col-md-12 well model" style="display: none;">
+																																			<div class="col-md-4"><div class="clickable link" data-target="addRating-parameter0">Rating</div></div>
+										<div id="addRating-parameter0" class="container-fluid col-md-12 well model" style="display: none;">
 																					<strong>Rating {</strong>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">ID</strong>
@@ -1192,7 +1192,7 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
 																								<div class="col-md-2"></div>
@@ -1581,11 +1581,11 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
-																																			<div class="col-md-4"><div class="clickable link" data-target="inviteMemberToGroup-body">MembershipRequest</div></div>
-										<div id="inviteMemberToGroup-body" class="container-fluid col-md-12 well model" style="display: none;">
+																																			<div class="col-md-4"><div class="clickable link" data-target="inviteMemberToGroup-parameter0">MembershipRequest</div></div>
+										<div id="inviteMemberToGroup-parameter0" class="container-fluid col-md-12 well model" style="display: none;">
 																					<strong>MembershipRequest {</strong>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">MembershipRequestID</strong>
@@ -1944,8 +1944,85 @@
 					</div>
 				</div>
 				
-				<div class="PUT operation container-fluid">
+				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-18-details">
+						<h5>
+							<strong class="http-method">GET</strong>
+															<span class="path">/groups/{ID}/ratings/{userID}</span>
+																					<span class="pull-right" style="margin-right:8px;">getRating</span>
+													</h5>
+					</div>
+
+					<div id="operation-18-details" class="container-fluid operation-detail" style="display: none">
+
+						
+												<div>
+							<h5>Parameters</h5>
+							
+													</div>
+												
+						<div class="container-fluid">
+							<div class="underline row">
+								<div class="col-md-2">Name</div>
+								<div class="col-md-2">Type</div>
+								<div class="col-md-4">Description</div>
+								<div class="col-md-4">Model</div>
+							</div>
+														<div class="row">
+								<div class="col-md-2">ID</div>
+								<div class="col-md-2">path</div>
+																<div class="col-md-4"></div>
+																																		<div class="col-md-4">string</div>
+																								</div>
+														<div class="row">
+								<div class="col-md-2">userID</div>
+								<div class="col-md-2">path</div>
+																<div class="col-md-4"></div>
+																																		<div class="col-md-4">string</div>
+																								</div>
+													</div>
+						
+												<div class="">
+							<h5>Reponse</h5>
+
+														<div class="row">
+								<div class="col-md-12">
+									<strong>Produces </strong>
+																			<span>text/xml</span>
+																			<span>application/json</span>
+																			<span>application/vnd.soa.v71+json</span>
+																			<span>application/vnd.soa.v72+json</span>
+																			<span>application/vnd.soa.v80+json</span>
+																			<span>application/vnd.soa.v71+xml</span>
+																			<span>application/vnd.soa.v72+xml</span>
+																			<span>application/vnd.soa.v80+xml</span>
+																	</div>
+							</div>
+							
+						</div>
+						
+												<div class="container-fluid">
+							<div class="underline row">
+								<div class="col-md-2">Status Code</div>
+								<div class="col-md-4">Reason</div>
+								<div class="col-md-6">Model</div>
+							</div>
+														<div class="row">
+								<div class="col-md-2">200</div>
+								<div class="col-md-4">Success</div>
+																											<div class="col-md-6 clickable link" data-target="getRating-response-200">any</div>
+										<div id="getRating-response-200" class="container-fluid col-md-12 well model" style="display: none; margin-left:8px;">
+																					<strong>any {</strong>
+																						<strong>}</strong><br/>
+																				</div>
+																								</div>
+													</div>
+						
+					</div>
+				</div>
+				
+				<div class="PUT operation container-fluid">
+					<div class='operation-heading clickable row' data-target="operation-19-details">
 						<h5>
 							<strong class="http-method">PUT</strong>
 															<span class="path">/groups/{ID}/ratings/{userID}</span>
@@ -1953,7 +2030,7 @@
 													</h5>
 					</div>
 
-					<div id="operation-18-details" class="container-fluid operation-detail" style="display: none">
+					<div id="operation-19-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
@@ -1994,11 +2071,11 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
-																																			<div class="col-md-4"><div class="clickable link" data-target="updateRating-body">Rating</div></div>
-										<div id="updateRating-body" class="container-fluid col-md-12 well model" style="display: none;">
+																																			<div class="col-md-4"><div class="clickable link" data-target="updateRating-parameter0">Rating</div></div>
+										<div id="updateRating-parameter0" class="container-fluid col-md-12 well model" style="display: none;">
 																					<strong>Rating {</strong>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">ID</strong>
@@ -2060,83 +2137,6 @@
 												<strong class="property-name">Rating</strong>
 																									<span class="property-type">( int )</span>
 																							</div>
-																						<strong>}</strong><br/>
-																				</div>
-																								</div>
-													</div>
-						
-					</div>
-				</div>
-				
-				<div class="GET operation container-fluid">
-					<div class='operation-heading clickable row' data-target="operation-19-details">
-						<h5>
-							<strong class="http-method">GET</strong>
-															<span class="path">/groups/{ID}/ratings/{userID}</span>
-																					<span class="pull-right" style="margin-right:8px;">getRating</span>
-													</h5>
-					</div>
-
-					<div id="operation-19-details" class="container-fluid operation-detail" style="display: none">
-
-						
-												<div>
-							<h5>Parameters</h5>
-							
-													</div>
-												
-						<div class="container-fluid">
-							<div class="underline row">
-								<div class="col-md-2">Name</div>
-								<div class="col-md-2">Type</div>
-								<div class="col-md-4">Description</div>
-								<div class="col-md-4">Model</div>
-							</div>
-														<div class="row">
-								<div class="col-md-2">ID</div>
-								<div class="col-md-2">path</div>
-																<div class="col-md-4"></div>
-																																		<div class="col-md-4">string</div>
-																								</div>
-														<div class="row">
-								<div class="col-md-2">userID</div>
-								<div class="col-md-2">path</div>
-																<div class="col-md-4"></div>
-																																		<div class="col-md-4">string</div>
-																								</div>
-													</div>
-						
-												<div class="">
-							<h5>Reponse</h5>
-
-														<div class="row">
-								<div class="col-md-12">
-									<strong>Produces </strong>
-																			<span>text/xml</span>
-																			<span>application/json</span>
-																			<span>application/vnd.soa.v71+json</span>
-																			<span>application/vnd.soa.v72+json</span>
-																			<span>application/vnd.soa.v80+json</span>
-																			<span>application/vnd.soa.v71+xml</span>
-																			<span>application/vnd.soa.v72+xml</span>
-																			<span>application/vnd.soa.v80+xml</span>
-																	</div>
-							</div>
-							
-						</div>
-						
-												<div class="container-fluid">
-							<div class="underline row">
-								<div class="col-md-2">Status Code</div>
-								<div class="col-md-4">Reason</div>
-								<div class="col-md-6">Model</div>
-							</div>
-														<div class="row">
-								<div class="col-md-2">200</div>
-								<div class="col-md-4">Success</div>
-																											<div class="col-md-6 clickable link" data-target="getRating-response-200">any</div>
-										<div id="getRating-response-200" class="container-fluid col-md-12 well model" style="display: none; margin-left:8px;">
-																					<strong>any {</strong>
 																						<strong>}</strong><br/>
 																				</div>
 																								</div>
@@ -2471,7 +2471,7 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
 																																		<div class="col-md-4">string</div>
@@ -2701,11 +2701,11 @@
 																																		<div class="col-md-4">string</div>
 																								</div>
 														<div class="row">
-								<div class="col-md-2">body</div>
+								<div class="col-md-2">parameter0</div>
 								<div class="col-md-2">entity</div>
 																<div class="col-md-4"></div>
-																																			<div class="col-md-4"><div class="clickable link" data-target="executeWorkflowAction-body">Action</div></div>
-										<div id="executeWorkflowAction-body" class="container-fluid col-md-12 well model" style="display: none;">
+																																			<div class="col-md-4"><div class="clickable link" data-target="executeWorkflowAction-parameter0">Action</div></div>
+										<div id="executeWorkflowAction-parameter0" class="container-fluid col-md-12 well model" style="display: none;">
 																					<strong>Action {</strong>
 																						<div style="margin-left:8px;" class="">
 												<strong class="property-name">UserID</strong>
