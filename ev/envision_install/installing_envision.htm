@@ -11,7 +11,8 @@ nav-title: Installing Envision 1.2
 ---
 <h2 id="top">Installing Envision 1.2</h2>
 <p>Learn how to install the Envision 1.2 analytics and monitoring solution.</p>
-<p><a href="../envision_reference/env_toc.html" class="button secondary">Envision Reference</a></p>
+<p><strong>Note</strong>: When installing Envision, make sure that Policy Manager is installed in the same container. The platform does not support running Envision without Policy Manager in the same container.</p>
+<p><!--<a href="../envision_install/installing_envision_features.html" class="button secondary">Installing Envision Features (Main Topic)</a>-->  <a href="../envision_reference/env_toc.html" class="button secondary">Envision Reference</a></p>
 <h5 class="stamp">Supported Platforms: 8.2 (with PM Analytics Plugin 8.2), 8.4 (with PM Analytics Plugin 8.4)</h5>
 <div class = "divider1"></div>
 <h3 style="color: gray;">Table of Contents</h3>
@@ -29,7 +30,7 @@ nav-title: Installing Envision 1.2
   <li><a href="#in_ev_start_mongodb">Step 3: Start MongoDB</a></li>
   <li><a href="#in_ev_install_akana_platform">Step 4: Install Akana Platform</a></li>
   <li><a href="#in_ev_create_container_pm">Step 5: Run Configurator to create a Policy Manager container</a></li>
-  <li><a href="#in_ev_download_env_zip">Step 6: Download Envision ZIP File</a></li>
+  <li><a href="#in_ev_download_env_zip">Step 6: Download ZIP files for Envision and the PM Analytics Plug-In</a></li>
   <li><a href="#in_ev_new_install_ev">Step 7: Install Envision into the Policy Manager container</a></li>
   <li><a href="#in_ev_install_configure_sample_data_sets">Step 8: Install and Configure Sample Data Sets</a></li>
   <li><a href="#in_ev_launch_env_console">Step 9: Launch Envision Console</a></li>
@@ -55,6 +56,7 @@ nav-title: Installing Envision 1.2
 <ul class="table_of_contents">
   <li><a href="#database_and_container_shutdown">Database and Container Shutdown Procedure</a></li>
   <li><a href="#ca_configure_ev_timezone">Configuration Action: Configure Envision Time Zone</a></li>
+  <li><a href="#supported_mongodb_versions">Supported MongoDB versions</a></li>
 </ul>
 
 
@@ -71,7 +73,7 @@ nav-title: Installing Envision 1.2
 <ul>
   <li>Installation of version 8.2 or 8.4 of the Akana Platform.</li>
   <li>Installation of the corresponding version (same release number) of the PM Analytics Plugin.</li>
-  <li>Installation and setup of a MongoDB database.</li>
+  <li>Installation and setup of a MongoDB database. For information on supported versions, see <a href="#supported_mongodb_versions">Supported MongoDB versions</a>.</li>
   <li>Setting up at least one Policy Manager container.</li>
   <li>Installation and configuration of the Envision feature on the Policy Manager container.</li>
 </ul>
@@ -122,20 +124,28 @@ nav-title: Installing Envision 1.2
 
 
 
-<a name="in_ev_download_env_zip"></a><h3>Step 6: Download Envision ZIP File</h3>
-<p>The Envision ZIP file must be installed to the Akana Platform. Download the Envision self-extracting ZIP file from the Akana Customer Support site.</p>
+<a name="in_ev_download_env_zip"></a>
+<h3>Step 6: Download ZIP files for Envision and the PM Analytics Plug-In</h3>
+<p>Envision and the PM Analytics Plug-In must be installed to the Akana Platform. Download the ZIP files from the Akana Customer Support site.</p>
 <ol>
   <li>Log in to the <a href="https://library.akana.com/display/MAIN/Downloads" title="Akana support site" target="_blank">Akana support site</a>.</li>
   <li>Go to <strong>Downloads</strong> &gt; <strong>Envision</strong> &gt; <strong>1.2</strong>.</li>
   <li>Download the Envision ZIP file:
-  <p><strong>akana-envision-1.2.xxxx.zip</strong></p></li>
+    <p><strong>akana-envision-1.2.xxxx.zip</strong></p></li>
+  <li>Go to <strong>Downloads</strong> &gt; <strong>Envision</strong> &gt; <strong>PM Analytics Plugin</strong>.</li>
+  <li>Go to the folder for  the version corresponding to your platform version, and download the applicable Envision ZIP file for your platform version:
+    <ul>
+      <li><strong>PM-AnalyticsPlugin8.2</strong> &gt; <strong>akana-pm-envision-8.0.xxx.zip</strong></li>
+      <li><strong>PM-AnalyticsPlugin8.4</strong> &gt; <strong>akana-pm-envision-8.0.xxx.zip</strong></li>
+      </ul>
+    </li>
 </ol>
 <p><a href="#top">back to top</a></p>
 
 
 
 <a name="in_ev_new_install_ev"></a><h3>Step 7: Install Envision into the Policy Manager container</h3>
-<p>For instructions to install Envision into the Policy Manager container, follow <a href="#existing_steps">Existing Policy Manager installation: Steps for installing Envision</a>, steps 2 through 8.</p>
+<p>For instructions to install Envision into the Policy Manager container, follow <a href="#existing_steps">Existing Policy Manager installation: Steps for installing Envision</a>.</p>
 <p><a href="#top">back to top</a></p>
 
 
@@ -165,6 +175,13 @@ nav-title: Installing Envision 1.2
 
 
 
+<!--<a name="11_review_ref_guide"></a><h3>Step 11: Review Reference Guide</h3>
+<p>To learn about Envision functionality and how to configure various monitoring scenarios, refer to <a href="../envision_reference/env_toc.html">Envision Reference</a>.</p>
+<p><a href="#top">back to top</a></p>
+-->
+
+
+
 <div class = "divider1"></div>
 <a name="h_install_procedure_existing"></a><h3>Installation Procedure: Adding Envision to an existing installation</h3>
 
@@ -173,20 +190,20 @@ nav-title: Installing Envision 1.2
 
 <a name="existing_prerequisites"></a><h3>Prerequisites</h3>
 <p>You'll need the following:</p>
-<p>Akana Policy Manager/Envision ZIP files. For example:</p>
 <ul>
-  <li>akana-pm-envision-8.0.219.zip</li>
-  <li>akana-envision-1.2.2470.zip</li>
+  <li>Akana Envision and PM Analytics Plug-In ZIP files. For example:
+    <ul>
+      <li>akana-pm-envision-8.0.xxx.zip</li>
+      <li>akana-envision-1.2.xxxx.zip</li>
+    </ul>
+  </li>
+  <li>MongoDB. For example, MongoDB Community 3.2. For information on supported versions, see <a href="#supported_mongodb_versions">Supported MongoDB versions</a>.</li>
 </ul>
-<p>MongoDB for example, MongoDB Community 3.2)</p>
-
-
-
 <a name="existing_steps"></a><h3>Existing Policy Manager installation: Steps for installing Envision</h3>
 <p>The steps below assume an existing installation of Akana API Platform 8.2x or 8.4x. The installation should already have the <strong>Akana MongoDB Support</strong> feature enabled for all Akana containers.</p>
 <p>These steps are for manual installation of the Envision feature. If you want to use the automation script to enable this feature, please consult with your Akana Professional Services representative.</p>
 <ol>
-  <li>Unzip akana-pm-envision-8.0.219.zip and akana-envision-1.2.2470.zip to Akana installation folder for all Akana instances. For example: /opt/akana_sw/sm8.</li>
+  <li>Unzip akana-pm-envision-8.0.xxx.zip and akana-envision-1.2.xxxx.zip to the Akana installation folder for all Akana instances. For example: /opt/akana_sw/sm8.</li>
   <li>Choose one Policy Manager container for installation of Envision. It must be installed directly on one of the PM containers.</li>
   <li>Restart the designated Policy Manager container.</li>
   <li>After restart, you'll see the following Envision features in the Akana Administration Console for the container:
@@ -209,9 +226,9 @@ nav-title: Installing Envision 1.2
     </ul>
   </li>
 
-  <li>Repeat steps 3 through 5 above for all other containers, such as Community Manager or Network Director containers. For non-PM containers, install <strong>only</strong> the following feature:
+  <li>Repeat steps 3 through 5 above for all Network Director containers, but install <strong>only</strong> the following feature:
     <ul>
-      <li>Akana Envision Metrics Collector  </li>
+      <li>Akana Envision Metrics Collector</li>
     </ul>
   </li>
   <li>Log in to the Envision portal running on http://{PM/Envision URL}/analytics.</li>
@@ -241,4 +258,16 @@ nav-title: Installing Envision 1.2
 <p>Data aggregation for Envision requires that you set up a Policy Manager rollup time zone to match the Envision time zone setting. When Envision retrieves data for a chart, it selects only records that match exactly the time zone set in this configuration action. If the Envision time zone isn't set, or is set incorrectly, charts might include data for an incorrect time period, or might not show any data at all, because of time zone differences.</p>
 <p><img src="images/ca_configure_ev_timezone.jpg" alt="Configuring the global time zone for rollups" /></p>
 <p>Set the <strong>Default Time Zone</strong>, <strong>Rollup Time Zone</strong>, and <strong>Time Zone Alias</strong>, as needed.</p>
+<p><a href="#top">back to top</a></p>
+
+
+
+<a name="supported_mongodb_versions"></a>
+<h3>Supported MongoDB versions</h3>
+<p>Akana recommends using Envision with the following MongoDB versions:</p>
+<ul>
+  <li>3.2.12</li>
+  <li>3.2.13</li>
+</ul>
+<p>The Akana API Platform does not yet support version 3.2.14 or later 3.2.x versions, or version 3.4.</p>
 <p><a href="#top">back to top</a></p>
