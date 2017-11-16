@@ -16,11 +16,9 @@ nav-title: Installing Akana API Platform 8.4x
 <p>
 <a href="../admin_console/using_admin_console.htm" class="button secondary">Using Admin Console</a>
 <a href="../admin_console/installing_tools.htm" class="button secondary">Installing Tools</a>
-<a href="../admin_console/installing_plugins.htm" class="button secondary">Installing Plug-ins</a></p>
-
-<p>
-<a href="../../ag/assets/PM_ConfigurationCategories_6x_7x.pdf" class="button secondary">Configuration Categories</a>
-<a href="../admin_console/config_actions.htm" class="button secondary">Configuration Actions</a></p>
+<a href="../admin_console/installing_plugins.htm" class="button secondary">Installing Plug-ins</a>
+<a href="../admin_console/config_actions.htm" class="button secondary">Configuration Actions</a>
+</p>
 
 <h5 class="stamp">Supported Platforms: 8.4x</h5>
 <div class = "divider1"></div>
@@ -54,6 +52,7 @@ nav-title: Installing Akana API Platform 8.4x
 
 <ol class="table_of_contents">
   <li><a href="#supported_databases">Supported databases</a></li>
+  <li><a href="#database_notes">Database notes</a></li>
   <li><a href="#database_drivers">Database drivers</a></li>
   <li><a href="#installation_folder_structure">Installation folder structure</a></li>
   <li><a href="#clear_configurator_cache">Clear Configurator cache</a></li>
@@ -75,7 +74,6 @@ nav-title: Installing Akana API Platform 8.4x
   <li><a href="#installation_scenarios">Sample installation scenarios</a></li>
   <li><a href="#fn_scheduled_jobs">Feature notes: Scheduled jobs</a></li>
   <li><a href="#fn_embedded_es_node">Feature Notes: Akana Embedded Elasticsearch Node feature</a></li>
-  <li><a href="#related_topics">Related Topics</a></li>
 </ol>
 
 
@@ -452,10 +450,20 @@ nav-title: Installing Akana API Platform 8.4x
 <p>Akana API Platform 8.4.x supports the following database versions: </p>
 <ul>
   <li>Oracle 11g, 12c. See <a href="#notes_database_oracle">Database notes: Oracle</a> below.</li>
-  <li>MySQL 5.6. If you're running MySQL and are using the Repository Manager feature, see <a href="#notes_database_mysql_rm">Database notes: MySQL with Repository Manager</a> below.</li>
+  <li>MySQL 5.6. <strong>Note</strong>:
+    <ul>
+      <li>If you're using MySQL, there are specific configuration requirements for certain MySQL properties. See <a href="#notes_database_mysql_settings">MySQL: database settings for the API Platform</a> below.</li>
+      <li>If you're running MySQL and are using the Repository Manager feature, see <a href="#notes_database_mysql_rm">Database notes: MySQL with Repository Manager</a> below.</li>
+    </ul>
+  </li>
   <li>Microsoft SQL Server 2012 and 2014 (supported in version 8.4.2 and later)</li>
 </ul>
 
+
+
+<a name="database_notes"></a>
+<h3>Database notes</h3>
+<p>This section includes notes and additional information relating to installation with supported databases.</p>
 
 <a name="notes_database_oracle"></a><h5>Database notes: Oracle</h5>
 <p>Please note the following if you're working with an Oracle database:</p>
@@ -466,8 +474,27 @@ nav-title: Installing Akana API Platform 8.4x
 </ul>
 
 
-<a name="notes_database_mysql_rm"></a>
-<h5>Database notes: MySQL with Lifecycle Repository</h5>
+<a name="notes_database_mysql_settings"></a><h5>MySQL: database settings for the API Platform</h5>
+<p>If you're using MySQL 5.6, the settings below are required for the API Platform. You'll need to configure these settings in the <strong>my.ini</strong> file <strong>before</strong> loading the database schema in MySQL.</p>
+<p>Specific properties are listed below, with references to the applicable MySQL documentation:</p>
+<ul>
+  <li>innodb_large_prefix=ON; (<a href="http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_large_prefix" title="http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_large_prefix" target="_blank">http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_large_prefix</a>)</li>
+  <li>innodb_file_format=barracuda; (<a href="http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_file_format" title="http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_file_format" target="_blank">http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_file_format</a>)</li>
+  <li>innodb_file_per_table=ON; (<a href="http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_file_per_table" title="http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_file_per_table" target="_blank">http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_file_per_table</a>)</li>
+  <li>Optional, for better performance: 
+  <p>innodb_flush_log_at_trx_commit=0; (<a href="http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_flush_log_at_trx_commit" title="http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_flush_log_at_trx_commit" target="_blank">http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_flush_log_at_trx_commit</a>) </p></li>
+  <li>max_allowed_packet=1073741824; (<a href="http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_max_allowed_packet" title="http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_max_allowed_packet" target="_blank">http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_max_allowed_packet</a>)</li>
+</ul>
+<p>For more information, refer to <a href="install_mysql_dbsettings.htm">MySQL Database Properties</a>.</p>
+<p>If you're using MySQL 5.7, there is one additional flag required in the <strong>my.ini</strong> file:</p>
+<ul>
+  <li>optimizer_switch='derived_merge=off'</li>
+</ul>
+<p>Also, the <strong>sql-mode</strong> value should not contain NO_ZERO_DATE attribute. Below is an example for <strong>sql-mode</strong>:</p>
+<pre>sql-mode="STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</pre>
+
+
+<a name="notes_database_mysql_rm"></a><h5>Database notes: MySQL with Lifecycle Repository</h5>
 <p>For Akana API Platform 8.4 installs using the Lifecycle Repository feature, the Lifecycle Manager database user requires specific additional grants when using MySQL. These grants are required for successful completion of the <strong>Initialize Repository Database</strong> configuration task; otherwise, the task fails.</p>
 <p>The Lifecycle Repository feature is part of the following installation features:</p>
 <ul>
@@ -737,7 +764,7 @@ credential.password = password
 default.host=localhost
 default.port=9900</pre>
 <p>To run the properties file in a Linux environment, go to the <strong>{release_directory}/bin</strong> folder and run the following command:</p>
-<pre>startup.sh configurator -Dsilent=true -Dproperties={properties file path}/{filename}.properties</pre>
+<pre>startup.sh configurator -Dsilent=true -Dproperties={full path to properties file}/{filename}.properties</pre>
 <p>For example:</p>
 <pre>startup.sh configurator -Dsilent=true -Dproperties=properties/pmcm_silentinstall.properties</pre>
 <p>Then:</p>
@@ -994,13 +1021,18 @@ default.port=9900</pre>
 
 
 <h3 id="related_topics">Related Topics</h3>
-<table width="98%" border="0" cellspacing="0" cellpadding="2" class="doctable">
+<table width="1012" border="0" cellspacing="0" cellpadding="2" class="doctable">
   <tr>
+    <td width="300" valign="top"><p><strong>All Versions:</strong></p>
+      <ul>
+        <li><a href="install_cm_jython_script.htm">Installation Jython Script</a></li>
+        <li><a href="implementation_planning.htm">Planning Your Implementation</a></li>
+        <li><a href="install_mysql_dbsettings.htm">MySQL Database Properties</a></li>
+		</ul>
+    </td>
     <td width="300" valign="top"><p><strong>Version 8.2:</strong></p>
       <ul>
         <li><a href="installing_akana_api_platform_v82.htm">Installing the Akana API Platform 8.2x</a></li>
-        <li><a href="install_cm_jython_script.htm">Installation Jython Script</a></li>
-        <li><a href="implementation_planning.htm">Planning Your Implementation</a></li>
       </ul>
     </td>
     <td width="300" valign="top"><p><strong>Version 8.0:</strong></p>
