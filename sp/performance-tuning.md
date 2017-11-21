@@ -50,7 +50,7 @@ This document describes the performance tuning parameters for the Akana API Gate
 There are several optional deployment choices that can improve the performance of the product.
 
 #### <a name="install-features-on-separate-containers"></a>Installing features on separate containers
-API traffic and Internal and External Web traffic should be handled on separate containers to facilitate the independent scaling of these capabilities. To this end, the Akana Network Director, Akana Community Manager, and Akana Policy Manager Console features should be installed on different containers. 
+API traffic and internal and external web traffic should be handled on separate containers to facilitate the independent scaling of these capabilities. To this end, the Akana Network Director, Akana Community Manager, and Akana Policy Manager Console features should be installed on different containers. 
 
 You might also want to dedicate containers for the Akana Policy Manager Services feature. This feature provides the backend APIs to support the Network Directors and is often installed in the same containers as the Akana Policy Manager Console and/or Akana Community Manager features. The decision to install it on its own container can be driven by security requirements (e.g. network topology) or the minimization of load on the Web traffic containers. 
 
