@@ -40,7 +40,21 @@ nav-title: Promotion Guide
       <li><a href="#05_05">Filters</a></li>
     </ol>
   </li>
-  <li><a href="#topology_api">Topology API</a></li>
+  <li><a href="#dz_configurations">Deployment Zone Configurations</a>
+(8.4.12 and later)  
+  <ol>
+      <li><a href="#06_01">Using Filters with Deployment Zone Configurations</a>
+      </li><li><a href="#06_02">Default Endpoint Propagation</a></li>
+      <li><a href="#06_03">Using Rules with Deployment Zone Configurations</a>
+      </li><li><a href="#06_04">Duplicate Endpoints</a></li>
+    </ol>
+  </li>
+  <li><a href="#topology_api">Topology API</a>
+    <ol>
+      <li><a href="#topologyapi_01">Finding the Topology API Documentation</a></li>
+      <li><a href="#topologyapi_02">Using the Topology API</a></li>
+    </ol>
+  </li>
   <li><a href="#lm_console">Lifecycle Manager Console</a>
     <ol>
       <li><a href="#07_01">Logging In</a></li>
@@ -48,7 +62,6 @@ nav-title: Promotion Guide
       <li><a href="#07_03">Promotion Requests</a></li>
     </ol>
   </li>
-<!--  <li><a href="#related_topics">Related Topics</a></li>-->
 </ol>
 <div class = "divider1"></div>
 
@@ -60,8 +73,7 @@ nav-title: Promotion Guide
 
 
 
-<a name="core_components"></a>
-<h3>Core Components and Component Interaction</h3>
+<a name="core_components"></a><h3>Core Components and Component Interaction</h3>
 <p>The core components in the promotion process are as follows:</p>
 <ul>
   <li>Promotion Package</li>
@@ -177,6 +189,8 @@ vsep.listenerName = "https"</td>
 <p>The topology asset model reflects the conceptual topology model defined earlier in this document with asset types for Environment, Tenant and Promotion Profile. The following diagram shows the asset structure for a Topology with three Environments (each box representing an asset):</p>
 <p><img src="images/promotion_05.jpg" alt="Topology asset model, three environments" /></p>
 <p>In addition to the relationships shown, Tenant assets contain connection information and credentials as classifiers while Promotion Profile assets hold Rules as a JSON artifact. Asset Filters are managed implicitly and optionally referenced by Promotion Profile assets.</p>
+
+
 <h5>Promotable Asset Model</h5>
 <p>Promotable assets such as APIs are represented by specific asset-types. These asset types reference an Environment asset and contain <strong>Iteration</strong> assets representing each promotion of that asset. Note that there is a difference between <strong>versions</strong> of assets such as APIs and <strong>iterations</strong>: a single version of an API may be promoted multiple times, resulting in multiple iterations of that version. In the following asset diagram, the asset AnAPI/v1 has been promoted from development to integration test and then to production environments once, followed by another promotion from development to integration test. This resulted in two iterations in the development and integration test environments with a single iteration at production. Notice that the iteration at production indicates that its source iteration is iteration 1 in integration test, even though there is a newer iteration (iteration 2) in that environment.</p>
 <p><img src="images/promotion_06.jpg" alt="Promotable asset model" /></p>
@@ -187,7 +201,7 @@ vsep.listenerName = "https"</td>
   <li>The status of the promotion. Values for the status are:
     <ul>
       <li><strong>Promotion Pending</strong>: Promotion has been requested but has not been completed. It may be pending one or more approvals.
-      <p><strong>Note</strong>: In the case where an approval process is in place and a promotion request is rejected, the Iteration will remain in a Promotion Pending state. However, the API platform UI will show it as <strong>Promotion Rejected</strong>, allowing promotion to be requested again</p>.</li>
+      <p><strong>Note</strong>: In the case where an approval process is in place and a promotion request is rejected, the Iteration will remain in a Promotion Pending state. However, the API platform UI will show it as <strong>Promotion Rejected</strong>, allowing promotion to be requested again.</p></li>
       <li><strong>Promoted</strong>: Promotion has completed.</li>
       <li><strong>Promotion Failed</strong>: There was a failure in the promotion process. Promotion can be requested again for assets in this state. The next promotion attempt will replace the failed iteration.</li>
     </ul>
@@ -300,7 +314,7 @@ vsep.listenerName = "https"</td>
 
 <a name="05_03"></a><h4>PromotionProfiles</h4>
 <p>PromotionProfiles are defined within the <strong>promotionProfiles</strong> property of an Environment. The <strong>targetEnvironment</strong> property of a PromotionProfile must correspond to the <strong>name</strong> of another Environment in the Topology.</p>
-<p>A PromotionProfile may optionally specify one or more filters by specifying filter names within the <strong>filterNames</strong> array property.</p>
+<p>A PromotionProfile can optionally specify one or more filters by specifying filter names within the <strong>filterNames</strong> array property.</p>
 <p>Rule definitions might optionally be provided using the <strong>rules</strong> array property.</p>
 <p class="apidoc_note"><strong>Note</strong>: A PromotionProfile cannot create a cycle between Environments.</p>
 
@@ -314,12 +328,7 @@ vsep.listenerName = "https"</td>
 }</pre>
 <p>Note the use of '\' to escape the double quotes in the condition and action.
 </p>
-<p>Here is another example Rule that changes the container that hosts an API's virtual service endpoints (<strong>vsep</strong>):</p>
-<pre>{
-  "scope":"vsep",
-  "condition":"vsep.containerKey == '54f85de7-8d3c-41a2-96c7-84e8d1ac' ",
-  "action":"vsep.containerKey = '6db90a54-fd66-4ac2-b670-c236e771' "
-}</pre>
+
 
 
 <a name="05_05"></a><h4>Filters</h4>
@@ -355,7 +364,7 @@ vsep.listenerName = "https"</td>
   }
 ]
 </pre>
-<p>With these filters defined, different transition paths between source and target Environments may be defined as in the following example <strong>promotionProfiles</strong> property for an Environment:</p>
+<p>With these filters defined, different transition paths between source and target Environments can be defined as in the following example <strong>promotionProfiles</strong> property for an Environment:</p>
 <pre>{
   "promotionProfiles":[
     {
@@ -390,6 +399,155 @@ vsep.listenerName = "https"</td>
 
 
 
+<a name="dz_configurations"></a><h3>Deployment Zone Configurations
+</h3><h5 class="stamp">API Platform Version: 8.4.12 and later</h5>
+<p>Within a promotion profile, deployment zone configurations can be used to tailor the propagation of an API's endpoints to the target environment. During API promotion, applicable deployment zone configurations are selected based on:</p>
+<ul>
+  <li>The name of an API endpoint's deployment zone in the source environment.</li>
+  <li>Optionally, filters that apply to the metadata of the API.</li>
+</ul>
+<p>A deployment zone configuration contains a list of deployment zone names in the target environment. When a deployment zone configuration is determined to be applicable for an endpoint of the API being promoted, the endpoint is populated into the specified target environment deployment zones.</p>
+<p><strong>Note</strong>: The target deployment zone must have a listener that matches the listener name of the endpoint. If necessary, use rules in the deployment zone configuration to adjust listener names.</p>
+<p>The structure of the deployment zone configurations allows endpoints in a source environment to be fanned out to a target environment. For example, a staging environment might only support a single deployment zone while the production environment supports many deployment zones across different geographic regions.</p>
+<p>Consider the following example PromotionProfile:</p>
+<pre>{
+  "name":"Default Production Promotion",
+  "targetEnvironment":"production",
+  "deploymentZoneConfigurations":[
+    {
+      "sourceDeploymentZoneName":"StagingDZ",
+      "targetDeploymentZoneNames":[
+        "ProdWestDZ",
+        "ProdEastDZ"
+      ]
+    }
+  ]
+}</pre>
+<p>In this example, a single deployment zone configuration has been defined to propagate endpoints in in the <strong>StagingDZ1</strong> deployment zone in the source environment to both <strong>ProdWestDZ</strong> and <strong>ProdEastDZ</strong> in the target environment.</p>
+
+
+<a name="06_01"></a><h4>Using Filters with deployment zone configurations
+</h4><p>The filtering capability of deployment zone configurations allows for target deployment zones to be determined based on the metadata of the API. For example, security metadata associated with the API might determine the specific deployment zones that the API is deployed to.</p>
+<p>In the following example, the filters named <strong>PII</strong> and <strong>Not PII</strong> are used in selecting the deployment zones an API's endpoints are propagated to in the target environment, based on whether the API is marked as processing personal identity information.</p>
+<pre>"deploymentZoneConfigurations": [
+  {
+    "filterNames": [
+      "pii"
+    ],
+    "sourceDeploymentZoneName": "StagingDZ",
+    "targetDeploymentZoneNames": [
+      "PIIDZ"
+    ]
+  },
+  {
+    "filterNames": [
+      "not-pii"
+    ],
+    "sourceDeploymentZoneName": "StagingDZ",
+    "targetDeploymentZoneNames": [
+      "NotPIIDZ"
+    ]
+  }
+]
+</pre>
+
+
+<p>For the above example, the filters in the topology are defined as shown below.</p>
+<pre>"filters": [
+  {
+    "name": "pii",
+    "classifier-criteria": [
+      {
+        "classifierName": "pii",
+        "values": [
+          {
+            "value": "true"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "not-pii",
+    "classifier-criteria": [
+      {
+        "classifierName": "pii",
+        "values": [
+          {
+            "value": "false"
+          }
+        ]
+      }
+    ]
+  }
+]
+</pre>
+
+
+<a name="06_02"></a><h4>Default Endpoint Propagation</h4>
+<p>If an endpoint's source deployment zone doesn't match a defined deployment zone configuration, the promotion processing will propagate the endpoint to a deployment zone in the target environment with the same name, if one exists. You can think of this as an implicit deployment zone configuration for every deployment zone in the source environment of the form:</p>
+<pre>{
+  "sourceDeploymentZoneName":"{source DeploymentZone name}",
+  "targetDeploymentZoneNames":[
+    "{source DeploymentZone name}"
+  ]
+}</pre>
+
+
+
+
+<p>You can disable endpoints from a source deployment zone completely by defining a deployment zone configuration that specifies no target deployment zone names. For example:</p>
+<pre>{
+  "sourceDeploymentZoneName":"TestDZ",
+  "targetDeploymentZoneNames":[
+
+  ]
+}</pre>
+
+
+
+<a name="06_03"></a><h4>Using Rules with deployment zone configurations
+</h4><p>A deployment zone configuration can optionally contain RuleDefinitions to be applied to the properties of the endpoints being promoted with this deployment zone configuration.</p>
+<p>At this level, you can use rules to alter a listener name, the endpoint's path, or its vanity host. The properties available for modification are:</p>
+<dl>
+<dt>listenerName</dt>
+<dd>The name of the endpoint's listener; for example, <strong>http</strong>. It must match a listener associated with the target deployment zone.</dd>
+<dt>path</dt>
+<dd>The endpoint-specific path. If the endpoint in the source environment did not have an endpoint-specific path, this will be set to <strong>NO_VALUE</strong>. A rule can set the path property to another value, or to <strong>NO_VALUE</strong> indicating that the target endpoint will not have a specific path.</dd>
+<dt>vanityHostName</dt>
+<dd>A host name (CNAME) specific to the endpoint. If the endpoint in the source environment did not have a vanity host name, this will be set to <strong>NO_VALUE</strong>. A rule can set the vanityHostName property to another value, or to <strong>NO_VALUE</strong> which indicates that the target endpoint will not have a vanity host name.</dd>
+<dt>DISABLED</dt>
+<dd>This property provides a means of disabling an endpoint via a rule. If you set the value of DISABLED to <strong>true</strong>, the endpoint is not propagated to the target environment.</dd>
+</dl>
+
+<p>In the example shown below, a rule is provided with a deployment zone configuration that will disable the propagation of endpoints that do not have a vanity host name in the source environment.</p>
+<pre>{
+  "sourceDeploymentZoneName":"StagingDZ",
+  "targetDeploymentZoneNames":[
+    "ProdDZ"
+  ],
+  "rules":[
+    {
+      "scope":"vsep",
+      "condition":"vsep.vanityHostName == 'NO_VALUE'",
+      "action":"vsep.DISABLED = 'true'"
+    }
+  ]
+}</pre>
+
+
+<a name="06_04"></a><h4>Duplicate Endpoints</h4>
+<p>Care should be taken to avoid duplicating endpoints across environments using the same underlying Gateways. This situation can occur if the target deployment zone has the same underlying Gateway as the source deployment zone (leading to the same host name and port) and has no options set for altering the Gateway host name or path. This situation will result in the promotion of the API failing.</p>
+<p>There are several ways you can help make sure there are no duplicate endpoints:</p>
+<ul>
+  <li>Enable random prefixes in the target deployment zone.</li>
+  <li>Provide a custom hostname for the Gateway in the target deployment zone that differs from the source deployment zone.</li>
+  <li>Use a rule in the deployment zone configuration to alter the vanity host name or path of the endpoints being promoted.</li>
+</ul>
+<p><a href="#top">Back to top</a></p>
+
+
+
 <a name="topology_api"></a><h3>Topology API</h3>
 <p>In this section:</p>
 <ul>
@@ -397,7 +555,8 @@ vsep.listenerName = "https"</td>
   <li>Using the Topology API</li>
 </ul>
 
-<h4>Finding the Topology API Documentation</h4>
+
+<a name="topologyapi_01"></a><h4>Finding the Topology API Documentation</h4>
 <p>You can find the Topology API documentation in the following locations:</p>
 <ul>
   <li>In your deployment:
@@ -410,7 +569,9 @@ vsep.listenerName = "https"</td>
   </li>
   <li>On the <a href="../../ag/assets/restApiDocs_api-platform_84/api-urn_com.akana.lifecyclecoordinator.rest-TopologyAPI.html" title="Topology API on Akana docs site">Akana docs site</a>.</li>
 </ul>
-<h4>Using the Topology API</h4>
+
+
+<a name="topologyapi_02"></a><h4>Using the Topology API</h4>
 <p>The first step is to create a Topology. This is done by POST-ing the complete Topology JSON document to <strong>...lc/api/topologies</strong>. This can be done programmatically or with a browser plugin such as Firefox RESTClient:</p>
 <p><img src="images/promotion_10.jpg" alt="Creating the topology" /></p>
 <p>Note the inclusion of the content-type and basicAuth headers.</p>
