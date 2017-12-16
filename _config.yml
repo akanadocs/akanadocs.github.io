@@ -1,10 +1,12 @@
 baseurl:
 MAXWEIGHT: 30
 
+plugins:
+  - jekyll-sitemap
+  - jekyll-coffeescript
+  - jekyll-paginate
+future: true
 github: [metadata]
 kramdown:
   input: GFM
   hard_wrap: false
-gems:
-  - jekyll-coffeescript
-  - jekyll-paginate
