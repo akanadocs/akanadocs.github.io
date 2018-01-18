@@ -329,13 +329,12 @@ nav-title: Installing Akana API Platform 8.2
 
 
 <a name="create_cm_tenant_using_jython"></a><h3>Step 9: Create developer portal tenant using the Jython script</h3>
-<p>The next step is to create the tenant for the developer portal. To do this, you'll:</p>
+<p>The next step is to create the tenant for the developer portal. To do this, you'll need to do one or more of the following:</p>
 <ol>
-  <li>Conditional, Linux users only: Export the JAVA_HOME location to your installation directory. See <a href="#linux_java_home_variable">Linux install: exporting the JAVA_HOME variable</a>.</li>
-  <li>All users: Run a Jython script at the command line. The script includes various parameters that you can use to specify values for your tenant, such as the tenant name, the theme you want to use, the Administrator login, the &quot;from&quot; email address for notifications that the developer portal sends to users, and other values. See <a href="#9a_jython_script">Developing and running the Jython script</a> below.</li>
-  <li>Conditional, for custom tenant name: If you choose a tenant name other than the default (<strong>atmosphere</strong>), update a configuration setting to the new value, in the Akana Administration Console for the CM container. See <a href="#9b_update_config">Conditional: updating configuration setting for new tenant name</a> below.</li>
+  <li><strong>Conditional, Linux users only</strong>: Export the JAVA_HOME location to your installation directory. See <a href="#linux_java_home_variable">Linux install: exporting the JAVA_HOME variable</a>.</li>
+  <li><strong>All users</strong>: Run a Jython script at the command line. The script includes various parameters that you can use to specify values for your tenant, such as the tenant name, the theme you want to use, the Administrator login, the &quot;from&quot; email address for notifications that the developer portal sends to users, and other values. See <a href="#9a_jython_script">Developing and running the Jython script</a> below.</li>
+  <li><strong>Conditional, for custom tenant name</strong>: If you choose a tenant name other than the default (<strong>atmosphere</strong>), update a configuration setting to the new value, in the Akana Administration Console for the CM container. See <a href="#9b_update_config">Conditional: updating configuration setting for new context root</a> below.</li>
 </ol>
-<p>For full details of the various parameters that make up the Jython script, and the values you can choose, see <a href="install_cm_jython_script.htm">Installation Jython Script</a>.</p>
 
 <a name="9a_jython_script"></a><h4>Developing and running the Jython script</h4>
 <p>In composing your script, refer to the examples below:</p>
@@ -344,6 +343,10 @@ nav-title: Installing Akana API Platform 8.2
   <li>Example 2: An example with each parameter on a separate line, with sample values.</li>
   <li>Example 3: Jython script example for Unix.</li>
 </ul>
+<p>For detailed information about the various parameters that make up the Jython script, and the values you can choose, see <a href="install_cm_jython_script.htm#jython_script_elements">Jython Script Elements</a>.</p>
+
+<p class="apidoc_note"><strong>Note</strong>: The default value for the context path in the <strong>consoleAddress</strong> parameter is <strong>atmosphere</strong>. If you change the value, as in Example 2 below where the value is set to <strong>acmepaymentscorp</strong>, there is an additional step you'll need to take before running the developer portal, to update the <strong>atmosphere.context.root</strong> value in the Akana Administration Console. See <a href="#9b_update_config">Conditional: updating configuration setting for new context root</a> below.</p>
+
 <p><strong>Example 1: Template script with placeholders</strong></p>
 <p>In the template script below, a few line breaks have been added for clarity. Replace the values enclosed in curly brackets with the values for your implementation (remove the curly brackets).</p>
 <pre>jython.bat ../scripts/Lib/soa/atmosphere/tenant.py -a -v --url {CM_URL} 
@@ -367,8 +370,6 @@ nav-title: Installing Akana API Platform 8.2
 --contactEmailAddress support@acmepaymentscorp.com 
 --fromEmailAddress notifications@acmepaymentscorp.com</pre>
 
-<p class="apidoc_note"><strong>Note</strong>: In the default Jython script, shown in Example 1 above, the <strong>consoleAddress</strong> is set to <strong>atmosphere</strong>. If you change the value, as in Example 2 above where the value is changed to <strong>acmepaymentscorp</strong>, there is an additional step you'll need to take before running the developer portal, to update a value in Policy Manager. See <a href="#9b_update_config">Conditional: updating configuration setting for new tenant name</a> below.</p>
-
 <p><strong>Example 3: Unix example</strong></p>
 <pre>./jython.sh ../scripts/Lib/soa/atmosphere/tenant.py -a -v --url http://lxc1-pm8x-22.local.akana.com:9900 
 --tenantName EnterpriseAPI --tenantId enterpriseapi --address http://lxc1-pm8x-22.local.akana.com:9900 
@@ -385,9 +386,10 @@ nav-title: Installing Akana API Platform 8.2
 </ol>
 <p><strong>Note</strong>: If you get a 404, make sure that the container is started. <a href="#starting_container">Start the container</a> and run the script again.</p>
 
-<a name="9b_update_config"></a><h4>Conditional: updating configuration setting for new tenant name</h4>
+<a name="9b_update_config"></a><h4>Conditional: updating configuration setting for new context root</h4>
+<p>The default value for the context path in the <strong>consoleAddress</strong> parameter is <strong>atmosphere</strong>. If you use a different value in the Jython script, you'll need to change a configuration setting before running the developer portal. Follow the instructions below. For example, if you choose <strong>/</strong> as the context root (<strong>consoleAddress</strong> value of <strong>{CM_URL}/</strong>), change this configuration setting to <strong>/</strong>.</p>
 <p>The default tenant name is <strong>atmosphere</strong>. If you use a different tenant name in the Jython script, you'll need to change a configuration setting before running the developer portal. Follow the instructions below.</p>
-<h5>To update the configuration setting for the new tenant name</h5>
+<h5>To update the configuration setting for the new context root</h5>
 <ol>
   <li>Log in to the Akana Administration Console for the CM container.</li>
   <li>Click the <strong>Configuration</strong> tab.</li>
