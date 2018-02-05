@@ -243,11 +243,20 @@ nav-title: Installing Akana API Platform 8.4x
 <ol>
   <li>Start the configuration step, either by clicking <strong>Configure</strong> at the end of the installation process or by choosing <strong>Installed Features</strong> &gt; <strong>Complete Configuration</strong> as shown above. Configuration steps vary depending on the features you're installing. The tasks below apply to the PM/CM container scenario.</li>
   <li>At the <strong>Manage PKI Keys wizard</strong>, choose key management options and other values and then click <strong>Finish</strong>. Review the summary and then click <strong>Go to Next Task</strong>.
-  <p>For more information on this wizard, see <a href="#install_tasks_manage_pki_keys">Installation wizard: Manage PKI Keys</a> below.</p></li>
+    <p>For more information on this wizard, see <a href="#install_tasks_manage_pki_keys">Installation wizard: Manage PKI Keys</a> below.</p></li>
   <li>At the <strong>Configure Database Options Wizard</strong>, specify your database and other values. Since this is the first container, select <strong>Create new database</strong>/ For subsequent containers, you'll use the same database, so for a subsequent container you'd select <strong>Use existing database</strong>.
-    <p><strong>Note</strong>: You'll need to have your database driver in place, in the <strong>{installation}\instances\{containername}\deploy</strong> folder, before running this wizard. See <a href="#database_drivers">Database drivers</a>.</p>
-<p>If you're using a new Oracle database, see <a href="#notes_database_oracle">Database notes: Oracle</a> for additional Oracle-specific information about DBA permissions and password configuration.</p>
-  <p>For more information on this wizard, see <a href="#install_tasks_add_database">Installation wizard: Add Database</a> below.</p></li>
+    <p><strong>Notes</strong>: </p>
+    <ul>
+      <li>You'll need to have your database driver in place, in the <strong>{installation}\instances\{containername}\deploy</strong> folder, before running this wizard. See <a href="#database_drivers">Database drivers</a>.</li>
+      <li><strong>Oracle</strong>: If you're using a new Oracle database, see <a href="#notes_database_oracle">Database notes: Oracle</a> for additional Oracle-specific information about DBA permissions and password configuration.</li>
+      <li><strong>MySQL</strong>: If your installation will include Lifecycle Manager, you'll need to add the required grants to the DB user before continuing to Step 4. For details, see <a href="#notes_database_mysql_rm">Database notes: MySQL with Lifecycle Repository</a>.</li>
+    </ul>
+    </li>
+</ol>
+<blockquote>
+  <p>For more information on this wizard, see <a href="#install_tasks_add_database">Installation wizard: Add Database</a> below.</p>
+</blockquote>
+<ol>
   <li>At the <strong>Manage Schemas wizard</strong>, check the checkbox for the Policy Manager schema, as shown below, and click <strong>Finish</strong>. Review the summary and then click <strong>Go to Next Task</strong>.
     <p>For more information on this wizard, see <a href="#install_tasks_manage_schemas">Installation wizard: Manage Schemas</a> below.</p></li>
   <li>At the <strong>Define Policy Manager Administrator Credentials</strong> <strong>Wizard</strong>, specify Administrator credentials (username and password). Click <strong>Finish</strong>. Review the summary and then click <strong>Go to Next Task</strong>.
@@ -354,7 +363,7 @@ nav-title: Installing Akana API Platform 8.4x
 --tenantName {tenantid} 
 --tenantId {tenantid} 
 --address {CM_URL} 
---consoleAddress {CM_URL/{tenantid} 
+--consoleAddress {CM_URL/{context_path} 
 --theme default 
 --themeImpl default
 --email {emailaddress} 
@@ -401,7 +410,7 @@ nav-title: Installing Akana API Platform 8.4x
 
 <a name="9b_update_config"></a><h4>Conditional: updating configuration setting for new context root</h4>
 <p>The default value for the context path in the <strong>consoleAddress</strong> parameter is <strong>atmosphere</strong>. If you use a different value in the Jython script, you'll need to change a configuration setting before running the developer portal. Follow the instructions below. For example, if you choose <strong>/</strong> as the context root (<strong>consoleAddress</strong> value of <strong>{CM_URL}/</strong>), change this configuration setting to <strong>/</strong>.</p>
-<p>The default tenant name is <strong>atmosphere</strong>. If you use a different tenant name in the Jython script, you'll need to change a configuration setting before running the developer portal. Follow the instructions below.</p>
+
 <h5>To update the configuration setting for the new context root</h5>
 <ol>
   <li>Log in to the Akana Administration Console for the CM container.</li>
@@ -455,17 +464,22 @@ nav-title: Installing Akana API Platform 8.4x
   <li>MySQL 5.6. <strong>Note</strong>:
     <ul>
       <li>If you're using MySQL, there are specific configuration requirements for certain MySQL properties. See <a href="#notes_database_mysql_settings">MySQL: database settings for the API Platform</a> below.</li>
-      <li>If you're running MySQL and are using the Repository Manager feature, see <a href="#notes_database_mysql_rm">Database notes: MySQL with Repository Manager</a> below.</li>
+      <li>If you're running MySQL and are using the Llifecycle Repository feature, see <a href="#notes_database_mysql_rm">Database notes: MySQL with Lifecycle Repository</a> below.</li>
     </ul>
   </li>
-  <li>Microsoft SQL Server 2012 and 2014 (supported in version 8.4.2 and later)</li>
+  <li>Microsoft SQL Server 2012 and 2014 (supported in version 8.4.2 and later). Note that you'll need to modify a specific property in the Akana Administration Console; see <a href="#notes_database_ms_sql_server">Database notes: Microsoft SQL Server</a> below.</li>
 </ul>
 
 
 
-<a name="database_notes"></a>
-<h3>Database notes</h3>
-<p>This section includes notes and additional information relating to installation with supported databases.</p>
+<a name="database_notes"></a><h3>Database notes</h3>
+<p>This section includes notes and additional information relating to installation with supported databases. It includes:</p>
+<ul>
+  <li><a href="#notes_database_oracle">Database notes: Oracle</a></li>
+  <li><a href="#notes_database_ms_sql_server">Database notes: Microsoft SQL Server</a></li>
+  <li><a href="#notes_database_mysql_settings">MySQL: database settings for the API Platform</a></li>
+  <li><a href="#notes_database_mysql_rm">Database notes: MySQL with Lifecycle Repository</a></li>
+</ul>
 
 <a name="notes_database_oracle"></a><h5>Database notes: Oracle</h5>
 <p>Please note the following if you're working with an Oracle database:</p>
@@ -476,7 +490,20 @@ nav-title: Installing Akana API Platform 8.4x
 </ul>
 
 
+<a name="notes_database_ms_sql_server"></a><h5>Database notes: Microsoft SQL Server</h5>
+<p>If you're using Microsoft SQL Server, you must configure a setting in the Akana Administration Console. The quartz trigger property must be set to <strong>True</strong>.</p>
+<h5>To update the quartz trigger property for Microsoft SQL Server</h5>
+<ol>
+  <li>Log in to the Akana Administration Console for the CM container.</li>
+  <li>Click the <strong>Configuration</strong> tab.</li>
+  <li>On the left, under <strong>Configuration Categories</strong>, find the <strong>com.soa.scheduler.quartz</strong> category.</li>
+  <li>On the right, find the<strong>org.quartz.jobStore.acquireTriggersWithinLock</strong> property, and set it to <strong>True</strong>.</li>
+  <li>Save your changes.</li>
+</ol>
+
+
 <a name="notes_database_mysql_settings"></a><h5>MySQL: database settings for the API Platform</h5>
+<p><strong>MySQL 5.6:</strong></p>
 <p>If you're using MySQL 5.6, the settings below are required for the API Platform. You'll need to configure these settings in the <strong>my.ini</strong> file <strong>before</strong> loading the database schema in MySQL.</p>
 <p>Specific properties are listed below, with references to the applicable MySQL documentation:</p>
 <ul>
@@ -488,12 +515,14 @@ nav-title: Installing Akana API Platform 8.4x
   <li>max_allowed_packet=1073741824; (<a href="http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_max_allowed_packet" title="http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_max_allowed_packet" target="_blank">http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_max_allowed_packet</a>)</li>
 </ul>
 <p>For more information, refer to <a href="install_mysql_dbsettings.htm">MySQL Database Property Settings</a>.</p>
+<p><strong>MySQL 5.7:</strong></p>
 <p>If you're using MySQL 5.7, there is one additional flag required in the <strong>my.ini</strong> file:</p>
 <ul>
   <li>optimizer_switch='derived_merge=off'</li>
 </ul>
 <p>Also, the <strong>sql-mode</strong> value should not contain NO_ZERO_DATE attribute. Below is an example for <strong>sql-mode</strong>:</p>
 <pre>sql-mode="STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</pre>
+<!--<p>Above info is from EB 9/7/16</p>-->
 
 
 <a name="notes_database_mysql_rm"></a><h5>Database notes: MySQL with Lifecycle Repository</h5>
@@ -510,9 +539,9 @@ nav-title: Installing Akana API Platform 8.4x
   <li>ALTER ROUTINE</li>
 </ul>
 <p>You'll need to run the following MySQL statement to add the correct permissions:</p>
-<pre>GRANT CREATE ROUTINE, TRIGGER ON {database_instance_name}.* TO '{database_user}'@'%';</pre>
+<pre>GRANT ALTER ROUTINE, CREATE ROUTINE, TRIGGER ON {database_instance_name}.* TO '{database_user}'@'%';</pre>
 <p>For example:</p>
-<pre>GRANT CREATE ROUTINE, TRIGGER ON LXC1PM8X21.* TO 'LXC1PM8X21'@'%';</pre>
+<pre>GRANT ALTER ROUTINE, CREATE ROUTINE, TRIGGER ON LXC1PM8X21.* TO 'LXC1PM8X21'@'%';</pre>
 <p>In the above, <strong>LXC1PM8X21</strong> is both the database instance name and the database user name.</p>
 <p>Use the following command to confirm the change:</p>
 <pre>mysql> show grants for 'LXC1PM8X21'@'%';</pre>
@@ -1025,12 +1054,13 @@ default.port=9900</pre>
 <h3 id="related_topics">Related Topics</h3>
 <table width="1012" border="0" cellspacing="0" cellpadding="2" class="doctable">
   <tr>
-    <td width="300" valign="top"><p><strong>All Versions:</strong></p>
+    <td width="300" valign="top"><p><strong><!--Version 8.4 / -->All Versions:</strong></p>
       <ul>
+<!--        <li><a href="installing_akana_api_platform_v84.htm">Installing the Akana API Platform 8.4x</a></li>-->
         <li><a href="install_cm_jython_script.htm">Installation Jython Script</a></li>
         <li><a href="implementation_planning.htm">Planning Your Implementation</a></li>
         <li><a href="install_mysql_dbsettings.htm">MySQL Database Property Settings</a></li>
-		</ul>
+      </ul>
     </td>
     <td width="300" valign="top"><p><strong>Version 8.2:</strong></p>
       <ul>
