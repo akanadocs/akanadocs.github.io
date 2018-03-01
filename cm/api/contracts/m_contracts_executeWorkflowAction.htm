@@ -114,14 +114,14 @@
 
                 ObjInnerli.attr("role", "menuitem");
 
-                if ( classsnpages[j].u == '/cm/api/contracts/m_contracts_executeWorkflowAction.htm' ) {
+                if ( classsnpages[j].u == '/cm/api/contracts/m_contracts_getContractAPIDetails.htm' ) {
                     ObjInnera.addClass("soa-ui-dc-container-main-left-nav-item-selected soa-ui-dc-container-main-left-nav-item-link");
                 } else {
                     ObjInnera.addClass("soa-ui-dc-container-main-left-nav-item-link");
                 }
 
-                if ( "/docs-test" ) {
-                    ObjInnera.attr("href", "/docs-test".concat(classsnpages[j].u) );
+                if ( "" ) {
+                    ObjInnera.attr("href", "".concat(classsnpages[j].u) );
                 } else {
                     ObjInnera.attr("href", classsnpages[j].u );
                 }
@@ -143,15 +143,15 @@
             var Obja = $('<a></a>');
             var Objp = $('<p></p>');
 
-            if ( pages[i].u == '/cm/api/contracts/m_contracts_executeWorkflowAction.htm' || 
+            if ( pages[i].u == '/cm/api/contracts/m_contracts_getContractAPIDetails.htm' || 
                     ( 'contracts' != '' && pages[i].sc == 'contracts' ) ) {
                 Objli.addClass("soa-ui-dc-container-main-left-nav-item-selected");
             }
 
             Obja.addClass("soa-ui-dc-container-main-left-nav-item-link");
 
-            if ( "/docs-test" ) {
-                Obja.attr("href", "/docs-test".concat(pages[i].u) );
+            if ( "" ) {
+                Obja.attr("href", "".concat(pages[i].u) );
             } else {
                 Obja.attr("href", pages[i].u );
             }
