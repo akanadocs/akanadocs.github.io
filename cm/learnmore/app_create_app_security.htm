@@ -97,7 +97,7 @@ nav-title: App Security
   <li>You'll need to obtain access to an API and you must configure credentials correctly in order to make a successful call to the API.</li>
 </ul>
 <h4><strong>Set Values in App Details &gt; Security:</strong></h4>
-<p>On the app's <strong>Details</strong> page, the <strong>Security</strong> section includes the <strong>Show Keys</strong> function that displays the Shared Secret and Public Key options for generating or importing the credentials required to authenticate your app in the Sandbox or <!-- #BeginLibraryItem "/Library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> implementations. When deciding on the type of security credentials you'll use for your app, it's a good idea to review the API documentation for APIs you'll want your app to use, to verify what the API supports and any requirements it might have.</p>
+<p>On the app's <strong>Details</strong> page, the <strong>Security</strong> section includes the <strong>Show Keys</strong> function that displays the Shared Secret and Public Key options for generating or importing the credentials required to authenticate your app in the Sandbox or Live implementations. When deciding on the type of security credentials you'll use for your app, it's a good idea to review the API documentation for APIs you'll want your app to use, to verify what the API supports and any requirements it might have.</p>
 <p>When an app is initially created using the <strong>Add New App</strong> function, a shared secret is either provided, or is generated automatically. You can view the Shared Secret in the <strong>App Details</strong> &gt; <strong>Security</strong> section by clicking <strong>Show Keys</strong> and selecting <strong>Click to View</strong>. You can use the <strong>Regenerate Key</strong> option to issue a new shared secret.</p>
 <p><strong>Note</strong>: Depending on the platform settings specified by your Administrator, the shared secret displayed on the app's <strong>Details</strong> page might be encrypted. If the shared secret is encrypted and you need the actual value, you can decrypt it using the app's private key.</p>
 <p>If you would like to use PKI-based encryption, you can use the <strong>Public Key</strong> option. The <strong>Import Credentials</strong> function allows you to upload a Certificate Signing Request (CSR) with your public key embedded or an X.509 Certificate (CER).</p>
@@ -230,7 +230,7 @@ public class AppSharedSecretDecryptionTest {
    */
   public static void main(String[] args) {
     try {
-      // Copy encrypted shared secret from portal's App <strong>Details</strong> page using View Shared Secret button "Click TO View" button
+      // Copy encrypted shared secret from portal's App <strong>Details</strong> page using View Shared Secret button "Click to View" button
       String encryptedSharedSecret = "--copy--encrypted--shared--secret--from--portal--here";
       
       // base64 decode to take away encoding cover to get encrypted bytes
@@ -321,7 +321,7 @@ Example: JKS</li>
 
 
 <a name="ss_view"></a><h3>How do I view a shared secret?</h3>
-<p>Display of the app's shared secret is affected by one of the security settings for the developer portal, controlled by the Site Admin. Shared Secret display can be <strong>Plain Text</strong> or <strong>Encrypted</strong>. See <a href="site_admin_settings.htm#settings_config_apps">General App Settings</a> (Site Admin help).</p>
+<p>Display of the app's shared secret, in Test Client and on the App Details page, is affected by one of the security settings for the developer portal, controlled by the Site Admin. Shared Secret display can be <strong>Plain Text</strong> or <strong>Encrypted</strong>. See <a href="site_admin_settings.htm#settings_config_apps_01">General App Settings</a> (Site Admin help).</p>
 <p>The behavior is one of the following:</p>
 <table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
@@ -333,21 +333,21 @@ Example: JKS</li>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Plain Text</strong></td>
+      <td><a name="ss_view_01"></a><strong>Plain Text</strong></td>
       <td>Not needed</td>
-      <td> The shared secret is displayed, both in the App Details page and in Test Client, and can be copied to the clipboard. See <a href="#ss_display_plaintext">Shared secret display: Plain text</a> below.</td>
+      <td> The shared secret is displayed, both in the App Details page and in Test Client, and can be copied. See <a href="#ss_display_plaintext">Shared secret display: Plain text</a> below.</td>
     </tr>
     <tr>
-      <td><strong>Encrypted</strong></td>
+      <td><a name="ss_view_02"></a><strong>Encrypted</strong></td>
       <td>Not available/not trusted</td>
-      <td><p>The shared secret is displayed, encrypted, and cannot be copied. You'll see the following message:</p>
+      <td><p>The shared secret is not displayed. You'll see the following message:</p>
         <pre>Shared Secret available, but configuration restricts display to encrypted value. Upload app certificate, view encrypted value, copy, and decrypt.</pre>
         <p>In this scenario, you'll need to upload the app certificate before you can copy the encrypted shared secret. This is an additional security measure. In addition, if the certificate authority isn't set up as a trusted certificate authority for the platform, you'll need to get the Site Admin to set up the certificate authority in Policy Manager. The Site Admin will need to follow the instructions in <a href="http://docs.akana.com/ag/security_config/certificate_authority.html#configure_certificate_authority" title="Link to Policy Manager help, Configure Certificate Authority">Configure Certificate Authority</a> (Policy Manager help) to set up the certificate authority. See <a href="#ss_display_encrypted_nocert">Shared secret display: Encrypted, no certificate available</a> below.</p></td>
     </tr>
     <tr>
-      <td><strong>Encrypted</strong></td>
+      <td><a name="ss_view_03"></a><strong>Encrypted</strong></td>
       <td>Available and trusted</td>
-      <td><p>You can copy the shared secret, then decrypt it. See <a href="#ss_display_encrypted_cert">Shared secret display: Encrypted, certificate available</a> below. For more information, see <a href="#ss_encrypted">What do I do if the shared secret is encrypted? </a></p></td>
+      <td><p>You can copy the encrypted shared secret, then decrypt it. See <a href="#ss_display_encrypted_cert">Shared secret display: Encrypted, certificate available</a> below. For more information, see <a href="#ss_encrypted">What do I do if the shared secret is encrypted? </a></p></td>
     </tr>
   </tbody>
 </table>
@@ -359,18 +359,24 @@ Example: JKS</li>
   </li>
   <li>In the <strong>Security</strong> section, click <strong>Show Keys</strong> to display the key generation options.</li>
   <li>Select <strong>Click to View</strong> to display the current shared secret.</li>
+  <li>Conditional: if the shared secret is encrypted but there is no certificate available, follow the instructions in <a href="#ss_view_02">Encrypted, certificate not available/not trusted</a> above.</li>
+  <li>Copy the shared secret. If it's encrypted, follow the instructions in <a href="#ss_encrypted">What do I do if the shared secret is encrypted?</a> above.</li>
 </ol>
 
 <a name="ss_display_options"></a><h5>Shared secret display options</h5>
 <p>The examples below illustrate the different scenarios you might encounter in viewing&nbsp;your app's shared secret.</p>
 
 <a name="ss_display_plaintext"></a><p><strong>Plain text:</strong></p>
+<p>In this scenario, you can just copy the shared secret.</p>
 <p><img src="assets/ss_display_plaintext.jpg" alt="Shared secret display, plain text" /></p>
 
-<a name="ss_display_encrypted_nocert"></a><p><strong>Encrypted, no certificate available:</strong></p>
+<a name="ss_display_encrypted_nocert"></a>
+<p><strong>Encrypted, no certificate uploaded/available:</strong></p>
+<p>Click <strong>Import Credentials</strong> to upload the certificate. For more information, see <a href="#ss_view_02">Encrypted, certificate not available/not trusted</a> above.</p>
 <p><img src="assets/ss_display_encrypted_no_cert.jpg" alt="Shared secret display, encrypted, certificate not available" /></p>
 
 <a name="ss_display_encrypted_cert"></a><p><strong>Encrypted, certificate available:</strong></p>
+<p>Copy the shared secret and then decrypt it: see <a href="#ss_encrypted">What do I do if the shared secret is encrypted?</a></p>
 <p><img src="assets/ss_display_encrypted_cert.jpg" alt="Shared secret display, encrypted, certificate available" /></p>
 <p><a href="#top">Back to top</a></p>
 
