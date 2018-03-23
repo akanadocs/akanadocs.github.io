@@ -21,33 +21,45 @@ nav-title: Promotion Guide
   <li><a href="#core_components">Core Components and Component Interaction</a></li>
   <li><a href="#topology_model">Topology Model</a>
     <ol>
-      <li><a href="#03_01">Topology</a></li>
-      <li><a href="#03_02">Tenants</a></li>
-      <li><a href="#03_03">Environments</a></li>
-      <li><a href="#03_04">Promotion Profiles</a></li>
-      <li><a href="#03_05">Asset Filters</a></li>
-      <li><a href="#03_06">Rules</a></li>
-      <li><a href="#03_07_01">Asset Model</a></li>
+      <li><a href="#s03_01">Topology</a></li>
+      <li><a href="#s03_02">Tenants</a></li>
+      <li><a href="#s03_03">Environments</a></li>
+      <li><a href="#s03_04">Promotion Profiles</a></li>
+      <li><a href="#s03_05">Asset Filters</a></li>
+      <li><a href="#s03_06">Rules</a></li>
+      <li><a href="#s03_07_00">Asset Model</a></li>
     </ol>
   </li>
-  <li><a href="#lc_installation">Lifecycle Coordinator Installation</a></li>
+  <li><a href="#lc_installation">Lifecycle Coordinator Installation</a>
+   <ol>
+      <li><a href="#lc_install_feature">Installing the Lifecycle Coordinator feature</a></li>
+      <li><a href="#lc_install_secure_api">Securing the Topology REST API</a></li>
+      <li><a href="#com_soa_promotion">Remote container address (com.soa.promotion)</a></li>
+      <li><a href="#com_akana_lifecycle_coordinator">Properties to secure the Topology REST API (com.akana.lifecycle.coordinator)</a> (8.4.15 and later)</li>
+      <li><a href="#config_preserveKeys">Unique ID Mapping behavior</a></li>
+      <li><a href="#config_defaultFromEmail">Default "From Email" setting</a></li>
+      <li><a href="#config_tenant_synch_interval">Tenant Synchronization Interval</a> (8.4.16 and later)</li>
+    </ol>
+  </li>
+
   <li><a href="#topology_config">Topology Configuration</a>
     <ol>
-      <li><a href="#05_01">Tenants</a></li>
-      <li><a href="#05_02">Environments</a></li>
-      <li><a href="#05_03">PromotionProfiles</a></li>
-      <li><a href="#05_04">Rules</a></li>
-      <li><a href="#05_05">Filters</a></li>
-      <li><a href="#05_06">Organization Mapping</a> (8.4.13 and later)</li>
+      <li><a href="#s05_01">Tenants</a></li>
+      <li><a href="#s05_02">Environments</a></li>
+      <li><a href="#s05_03">Promotion Profiles</a></li>
+      <li><a href="#s05_04">Rules</a></li>
+      <li><a href="#s05_05">Filters</a></li>
+      <li><a href="#s05_06">Organization Mapping</a> (8.4.13 and later)</li>
+      <li><a href="#s05_07">Policy Mapping</a> (8.4.16 and later)</li>
     </ol>
   </li>
   <li><a href="#dz_configurations">Deployment Zone Configurations</a>
-(8.4.12 and later)  
+(8.4.12 and later)
   <ol>
-      <li><a href="#06_01">Using Filters with Deployment Zone Configurations</a>
-      </li><li><a href="#06_02">Default Endpoint Propagation</a></li>
-      <li><a href="#06_03">Using Rules with Deployment Zone Configurations</a>
-      </li><li><a href="#06_04">Duplicate Endpoints</a></li>
+      <li><a href="#s06_01">Using Filters with Deployment Zone Configurations</a></li>
+      <li><a href="#s06_02">Default Endpoint Propagation</a></li>
+      <li><a href="#s06_03">Using Rules with Deployment Zone Configurations</a></li>
+      <li><a href="#s06_04">Duplicate Endpoints</a></li>
     </ol>
   </li>
   <li><a href="#topology_api">Topology API</a>
@@ -58,9 +70,9 @@ nav-title: Promotion Guide
   </li>
   <li><a href="#lm_console">Lifecycle Manager Console</a>
     <ol>
-      <li><a href="#07_01">Logging In</a></li>
-      <li><a href="#07_02">Viewing Assets and Iterations</a></li>
-      <li><a href="#07_03">Promotion Requests</a></li>
+      <li><a href="#s07_01">Logging In</a></li>
+      <li><a href="#s07_02">Viewing Assets and Iterations</a></li>
+      <li><a href="#s07_03">Promotion Requests</a></li>
     </ol>
   </li>
 </ol>
@@ -68,21 +80,21 @@ nav-title: Promotion Guide
 
 
 
-<a name="overview"></a><h3>Overview</h3>
+<h3 id="overview">Overview</h3>
 <p>Promotion is the process of propagating versions of a software asset, such as an API, through a series of environments that correspond to the stages of the asset's lifecycle. For example, an API might originate in a development environment, be promoted on to a QA test environment, and finally be promoted to the production environment. Each environment has its own data model that is controlled independently. The Lifecycle Coordinator is a separate configurable component that governs the promotion process and the transfer of data between environments.</p>
 <p><a href="#top">Back to top</a></p>
 
 
 
-<a name="core_components"></a><h3>Core Components and Component Interaction</h3>
+<h3 id="core_components">Core Components and Component Interaction</h3>
 <p>The core components in the promotion process are as follows:</p>
 <ul>
-  <li>Promotion Package</li>
-  <li>Source Environment</li>
-  <li>Target Environment</li>
-  <li>Lifecycle Coordinator</li>
+  <li><a href="#promotion_package">Promotion Package</a></li>
+  <li><a href="#source_environment">Source Environment</a></li>
+  <li><a href="#target_environment">Target Environment</a></li>
+  <li><a href="#lifecycle_coordinator">Lifecycle Coordinator</a></li>
 </ul>
-<h4>Promotion Package</h4>
+<h4 id="promotion_package">Promotion Package</h4>
 <p>The Promotion Package holds the data that needs to be promoted from the Source Environment to the Target Environment. The package contains two different artifacts:</p>
 <ul>
   <li><strong>The environment data</strong>: The portion of the Source Environment's data model that needs to be promoted.</li>
@@ -90,13 +102,13 @@ nav-title: Promotion Guide
 </ul>
 
 
-<h4>Source Environment</h4>
+<h4 id="source_environment">Source Environment</h4>
 <p>The Source Environment is the data container that holds the original information that needs to be promoted to the Target Environment. The Source Environment can be managed by its own product instance or it can be managed as a single tenant in a multi-tenant product instance.</p>
 
-<h4>Target Environment</h4>
+<h4 id="target_environment">Target Environment</h4>
 <p>The Target Environment is the data container that is the destination of the promoted data from the Source Environment. The Target Environment can be managed by its own product instance or it can be managed as a single tenant in a multi-tenant product instance.</p>
 
-<h4>Lifecycle Coordinator</h4>
+<h4 id="lifecycle_coordinator">Lifecycle Coordinator</h4>
 <p>The Lifecycle Coordinator is the component that requests an extraction, or export, of a promotion package from a Source Environment and then initiates the population, or import, of the promotion package to a Target Environment.</p>
 <p>The Coordinator processes the manifests contained in the Promotion Package and in the Target Environment's promotion response to maintain a model that reflects the relationship between objects in both environments. On subsequent promotions of the same objects from the Source Environment the Coordinator consults its model and generate a new manifest that will be delivered to the Target Environment.</p>
 <p>The Lifecycle Coordinator is a separate component from the environments but can be co-deployed on the same instance.</p>
@@ -117,28 +129,28 @@ nav-title: Promotion Guide
 
 
 
-<a name="topology_model"></a><h3>Topology Model</h3>
+<h3 id="topology_model">Topology Model</h3>
 
-<a name="03_01"></a><h4>Topology</h4>
+<h4 id="s03_01">Topology</h4>
 <p>A Topology defines a sequence of Environments and the specific behavior for promotion between these Environments.</p>
 <p><img src="images/promotion_04.jpg" alt="Promotion behavior between environments" /></p>
 
-<a name="03_02"></a><h4>Tenants</h4>
+<h4 id="s03_02">Tenants</h4>
 <p>Tenants are defined at the top level of the Topology and represent a Community Manager (CM) tenant that may be local (within the same container) or remote from the Lifecycle Coordinator. Tenants are referenced by Environments via an id assigned to the tenant in its definition. While an Environment must reference a tenant, the same Tenant may be referenced by more than one Environment. Tenants contain information allowing the Lifecycle Coordinator to communicate with the associated CM Tenant, this includes the tenant's address, name and admin credentials.</p>
 <p>A Tenant that is local may also indicate that it should be used to as an authentication source for users approving promotion requests with the Lifecycle Coordinator.</p>
 
-<a name="03_03"></a><h4>Environments</h4>
-<p>An Environment represents a logical container to which an asset is deployed at a particular stage of its lifecycle. An Environment must specify the Tenant that supports it.</p>
+<h4 id="s03_03">Environments</h4>
+<p>An Environment represents a logical container to which an asset is deployed at a specific stage of its lifecycle. An Environment must specify the Tenant that supports it.</p>
 <p>Environments also define the possible transitions to the next Environment in the form of Promotion Profiles. At this time, only a single target Environment can be specified in the promotion chain (Environment fan-out is not currently supported).</p>
 
-<a name="03_04"></a><h4>Promotion Profiles</h4>
-<p>Promotion Profiles represent a transition to the next (<strong>target</strong>) Environment. A Promotion Profile specifies a target Environment and optionally a set of Rules to be applied to the manifest of the promotion package of the asset prior to promotion into the target Environment. A Promotion Profile might also, optionally, specify an Asset Filter. This allows multiple Promotion Profiles to be defined within an Environment with mutually exclusive filters, each with a different rule set. When promotion of an asset is requested from a source Environment, and more than one Promotion Profile exists, the Promotion Profile with an Asset Filter that the asset complies with is used. In the case where only one Promotion Profile exists (with no Asset Filter specified), that Promotion Profile is automatically selected for the promotion.</p>
+<h4 id="s03_04">Promotion Profiles</h4>
+<p>Promotion Profiles represent a transition to the next (<strong>target</strong>) Environment. A promotionProfile specifies a target Environment and optionally a set of Rules to be applied to the manifest of the promotion package of the asset prior to promotion into the target Environment. A promotionProfile might also, optionally, specify an Asset Filter. This allows multiple promotionProfiles to be defined within an Environment with mutually exclusive filters, each with a different rule set. When promotion of an asset is requested from a source Environment, and more than one promotionProfile exists, the promotionProfile with an Asset Filter that the asset complies with is used. In the case where only one promotionProfile exists (with no Asset Filter specified), that promotionProfile is automatically selected for the promotion.</p>
 
-<a name="03_05"></a><h4>Asset Filters</h4>
+<h4 id="s03_05">Asset Filters</h4>
 <p>Asset Filters contain a set of criteria for the custom properties of the assets being promoted. For example, an API asset may use a custom property indicating that it is PCI compliant. An Asset Filter can define criteria for that property such that only API assets that are PCI compliant will match the filter. This Asset Filter can then be assigned to a Promotion Profile such that a different set of Rules are applied to PCI-compliant and non-compliant API assets.</p>
 <p class="apidoc_note"><strong>Note</strong>: the use of Asset Filters requires custom properties to be enabled for the tenants involved in the promotion.</p>
 
-<a name="03_06"></a><h4>Rules</h4>
+<h4 id="s03_06">Rules</h4>
 <p>A Promotion Profile may optionally contain a set of rules to guide the need for changes in relationships and properties when assets are promoted. A rule consists of a condition and a behavior. The rule is provided a context when evaluated made up of an asset's properties. The condition of the rule is a Boolean expression evaluated against that context. The behavior of the rule is an expression that alters that context. The expression language used by the rule engine is JEXL. A set of syntax examples can be found at <a href="#" title="https://commons.apache.org/proper/commons-jexl/reference/syntax.html" target="_blank">https://commons.apache.org/proper/commons-jexl/reference/syntax.html</a>. Each asset in a promotion package is run through the rule engine. If any asset meets the condition of the rule, the behavior is performed against it. Some examples of rules are below.</p
 >
 <table cellspacing="0px" class="doctable" style="width: 98%;">
@@ -184,21 +196,22 @@ vsep.listenerName = "https"</td>
   </tbody>
 </table>
 
-<a name="03_07_00"></a><h4>Asset Model</h4>
+<h4 id="s03_07_00">Asset Model</h4>
 <p>The Lifecycle Coordinator component is an extension of the Lifecycle Repository core functionality. As such, it uses an internal asset model to represent the topology and the assets promoted through the topology. Within the Lifecycle Coordinator, promotion requests result in the submission of an asset into the target environment, allowing for customized governance to be defined for this process.</p>
 <p>In this section:</p>
 <ul>
-  <li><a href="#03_07_01">Topology Asset Model</a></li>
-  <li><a href="#03_07_02">Promotable Asset Model</a></li>
-  <li><a href="#03_07_03">OrgGroup Assignment</a></li>
+  <li><a href="#s03_07_01">Topology Asset Model</a></li>
+  <li><a href="#s03_07_02">Promotable Asset Model</a></li>
+  <li><a href="#s03_07_03">OrgGroup Assignment</a></li>
 </ul>
-<a name="03_07_01"></a><h5>Topology Asset Model</h5>
+
+<h5 id="s03_07_01">Topology Asset Model</h5>
 <p>The topology asset model reflects the conceptual topology model defined earlier in this document with asset types for Environment, Tenant and Promotion Profile. The following diagram shows the asset structure for a Topology with three Environments (each box representing an asset):</p>
 <p><img src="images/promotion_05.jpg" alt="Topology asset model, three environments" /></p>
 <p>In addition to the relationships shown, Tenant assets contain connection information and credentials as classifiers while Promotion Profile assets hold Rules as a JSON artifact. Asset Filters are managed implicitly and optionally referenced by Promotion Profile assets.</p>
 
 
-<a name="03_07_02"></a><h5>Promotable Asset Model</h5>
+<h5 id="s03_07_02">Promotable Asset Model</h5>
 <p>Promotable assets such as APIs are represented by specific asset-types. These asset types reference an Environment asset and contain <strong>Iteration</strong> assets representing each promotion of that asset. Note that there is a difference between <strong>versions</strong> of assets such as APIs and <strong>iterations</strong>: a single version of an API may be promoted multiple times, resulting in multiple iterations of that version. In the following asset diagram, the asset <strong>AnAPI (v1)</strong> has been promoted from development to integration test and then to production environments once, followed by another promotion from development to integration test. This resulted in two iterations in the development and integration test environments with a single iteration at production. Notice that the iteration at production indicates that its source iteration is iteration 1 in integration test, even though there is a newer iteration (iteration 2) in that environment.</p>
 <p><img src="images/promotion_06.jpg" alt="Promotable asset model" /></p>
 <p>Iterations contain several items:</p>
@@ -221,7 +234,7 @@ vsep.listenerName = "https"</td>
   <li>A relationship to the Promotion Profile selected for promotion of the asset.</li>
 </ul>
 
-<a name="03_07_03"></a><h5>OrgGroup Assignment</h5>
+<h5 id="s03_07_03">OrgGroup Assignment</h5>
 <h5 class="stamp">API Platform Version: 8.4.13 and later</h5>
 <p>When promotion is requested for an asset such as an API, the asset is assigned an owning OrgGroup within Lifecycle Coordinator. These OrgGroups correspond to the asset's Organization in the corresponding API Platform environment. This approach allows promotion approvers to be assigned at an organizational level within the Lifecycle Coordinator topology.</p>
 <span class="apidoc_note"><strong>Note</strong>: OrgGroups are synchronized with the tenant Organization when a topology is created or updated. If an asset is promoted with an Organization for which there is no corresponding OrgGroup, Lifecycle Coordinator synchronizes the Organizations for the corresponding tenant in an attempt to resolve the missing OrgGroup.</span>
@@ -230,22 +243,134 @@ vsep.listenerName = "https"</td>
 
 
 
-<a name="lc_installation"></a><h3>Lifecycle Coordinator Installation</h3>
-<p>For an on-premise installation of the Akana API Platform, the Lifecycle Coordinator feature must be separately installed from the admin console:</p>
+<h3 id="lc_installation">Lifecycle Coordinator Installation</h3>
+<p>This section includes:</p>
+<ul>
+  <li><a href="#lc_install_feature">Installing the Lifecycle Coordinator feature</a></li>
+  <li><a href="#lc_install_secure_api">Securing the Topology REST API</a></li>
+  <li><a href="#com_soa_promotion">Remote container address (com.soa.promotion)</a></li>
+  <li><a href="#com_akana_lifecycle_coordinator">Properties to secure the Topology REST API (com.akana.lifecycle.coordinator)</a></li>
+  <li><a href="#config_preserveKeys">Unique ID Mapping behavior</a></li>
+  <li><a href="#config_defaultFromEmail">Default "From Email" setting</a></li>
+  <li><a href="#config_tenant_synch_interval">Tenant Synchronization Interval</a></li>
+</ul>
+<h4 id="lc_install_feature">Installing the Lifecycle Coordinator feature</h4>
+<p>For an on-premise installation of the Akana API Platform, the Lifecycle Coordinator feature must be separately installed from the Akana Administration Console:</p>
 <p><img src="images/promotion_07.jpg" alt="Lifecycle Coordinator feature" /></p>
 <p>Installing Lifecycle Coordinator implicitly installs the Lifecycle Repository feature as well. After selecting Lifecycle Coordinator for installation, the user is guided through a number of configuration tasks for the Lifecycle Repository feature.</p>
-<p>In addition to these required tasks there is also a task to secure the Topology REST API, as shown below.</p>
+
+
+<h4 id="lc_install_secure_api">Securing the Topology REST API</h4>
+<p>There is also a task to secure the Topology REST API, as shown below.</p>
 <p><img src="images/promotion_08.jpg" alt="Set Topology API Credentials task" /></p>
 <p>This sets up the credentials for basic authentication on calls to the Topology REST API.</p>
-<h5>Remote Configuration</h5>
-<p>In the case where the Lifecycle Coordinator is installed remotely, a URL to the remote container hosting the Lifecycle Coordinator instance must be configured for each container hosting tenants from which promotion can be requested. To set this, in the Akana Administration Console, open the <strong>Configuration</strong> tab, select the <strong>com.soa.promotion</strong> category, and set the <strong>remote.promoter.address</strong> property to the host address of the container hosting the Lifecycle Coordinator instance:</p>
-<p><img src="images/promotion_09.jpg" alt="Setting remote.provider.address" /></p>
+
+
+<h4 id="com_soa_promotion">Remote container address (com.soa.promotion)</h4>
+<p>If the Lifecycle Coordinator is installed remotely, a URL to the remote container hosting the Lifecycle Coordinator instance must be configured for each container hosting tenants from which promotion can be requested.</p>
+<p>To set this up:</p>
+<ol>
+  <li>In the Akana Administration Console, open the <strong>Configuration</strong> tab.</li>
+  <li>Select the <strong>com.soa.promotion</strong> category.</li>
+  <li>Set the <strong>remote.promoter.address</strong> property to the host address of the container hosting the Lifecycle Coordinator instance. An example is shown below.
+<p><img src="images/promotion_09.jpg" alt="Setting remote.provider.address" /></p></li>
+  <li>Save the changes.</li>
+</ol>
+
+<h4 id="com_akana_lifecycle_coordinator">Properties to secure the Topology REST API (com.akana.lifecycle.coordinator)</h4>
+<p class="stamp">API Platform Version: 8.4.15 and later</p>
+<p>You can set up the global configuration properties for Lifecycle Coordinator in the Akana Admin Console.</p>
+<p>With the three properties listed below, you can configure the Topology REST API to require basic authentication for all requests.</p>
+<ol>
+  <li>In the Akana Administration Console, open the <strong>Configuration</strong> tab.</li>
+  <li>Select the <strong>com.akana.lifecycle.coordinator</strong> category.</li>
+  <li>Set the properties. For details, see <a href="#lc_property_details">com.akana.lifecycle.coordinator properties</a> below.
+    </li>
+  <li>Save the changes.</li>
+</ol>
+<h5 id="lc_property_details"><strong>com.akana.lifecycle.coordinator</strong> properties</h5>
+<dl>
+<dt>lifecycle.coordinator.config.apiUser</dt>
+<dd>This field and the next are used to set the <strong>global</strong> basic authentication credentials for the Topology REST API. If  this property is left empty, the Topology API will not require authentication of requests.</dd>
+<dt>lifecycle.coordinator.config.apiPassword properties</dt>
+<dd>If a value was set for lifecycle.coordinator.config.apiUser, specify the password.</dd>
+<dt>lifecycle.coordinator.config.enableTenantScopedAuthentication</dt>
+<dd>Boolean. Used to allow delegation of authentication to the primary tenant  in the topology being acted on. The primary tenant is the tenant marked as the <strong>userAuthenticationSource</strong> in the topology. If no tenant is marked as the userAuthenticationSource, the initial tenant in the topology is used for authentication.</dd>
+</dl>
+
+<p>The following table summarizes the authentication behavior.</p>
+<table cellspacing="0px" class="doctable" style="width: 98%;">
+  <thead>
+    <tr>
+      <th width="20%">Global Credentials Set</th>
+      <th width="20%">Tenant Scoped Authentication Enabled</th>
+      <th width="59%">Behavior</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>No</td>
+      <td>N/A</td>
+      <td>Requests are not authenticated</td>
+    </tr>
+    <tr>
+      <td>Yes</td>
+      <td>false</td>
+      <td>Requests must specify global credentials</td>
+    </tr>
+    <tr>
+      <td>Yes</td>
+      <td>true</td>
+      <td><p>Requests can specify either of these:</p>
+        <ul>
+          <li>The email and password of a site admin user in the primary tenant of the topology being acted on.</li>
+          <li>The global credentials</li>
+        </ul>        </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<p><strong>Note</strong>: Requests for the <strong>getTopologies</strong> method (<span class="apidoc_code">GET /lc/api/topologies</span>) must specify the global credentials since there is no specific topology being acted on.</p>
+
+
+<h4 id="config_preserveKeys">Unique ID Mapping behavior</h4>
+<p><span class="stamp">API Platform Version: 8.4.14 and later</span></p>
+<p>The property <strong>lifecycle.coordinator.config.preserveKeys</strong> in the <strong>com.akana.lifecycle.coordinator</strong> configuration category is used to configure the default behavior for preserving the unique IDs of an API's constituent elements as the API is promoted across environments.</p>
+<p>If this property is set to <strong>true</strong>, the unique IDs of the underlying Services and Organization are preserved. If it's set to <strong>false</strong>, these elements will be assigned new unique IDs when they are promoted, and a mapping between the keys used in each environment will be stored with the topology in Lifecycle Coordinator.</p>
+<p><strong>Note</strong>:  If multiple tenants referenced in the same topology exist in the same API Platform instance (that is, share the same database), the value should be changed to <strong>false</strong>, since there might be some overlap in key values. If <strong>preserveKeys</strong> is set to true, any overlap in key values would cause promotion errors.</p>
+
+
+<h4 id="config_defaultFromEmail">Default "From Email" setting</h4>
+<p>You can set the default <strong>from</strong> email address used in emails sent from Lifecycle Coordinator, in the <strong>repository.config.defaultFromEmail property</strong> of the <strong>com.soa.repository</strong> configuration category.</p>
+<p>You can also override the <strong>from</strong> email address for a specific topology. To do this, go into the topology library as an admin user or superuser, click <strong>Support Center</strong>, click <strong>Configure Library</strong> and set the <strong>Sender Email</strong> field, as shown below.</p>
+<p><img src="images/promotion_lm_from_email.jpg" alt="Setting From Email in LM" /></p>
+
+
+<h4 id="config_tenant_synch_interval">Tenant Synchronization Interval</h4>
+<h5 class="stamp">API Platform Version: 8.4.16 and later</h5>
+<p>Lifecycle Coordinator periodically updates cached policy and organization information for tenants referenced in a topology. The specific interval for this update is controlled by the following property:</p>
+<dl>
+<dt>Configuration category</dt>
+<dd>com.soa.repository</dd>
+
+
+<dt>Configuration property</dt>
+<dd>repository.config.tenantSyncInterval</dd>
+
+
+<dt>Explanation:</dt>
+<dd>Sets the interval between updates to cached policy and organizational information. The value is set in milliseconds.</dd>
+
+
+<dt>Default value:</dt>
+<dd>300000 (5 minutes)</dd>
+</dl>
 <p><a href="#top">Back to top</a></p>
 
 
 
-
-<a name="topology_config"></a><h3>Topology Configuration</h3>
+<h3 id="topology_config">Topology Configuration</h3>
 <p>The Lifecycle Coordinator feature provides a REST API for maintaining topologies. This allows topologies to be defined in JSON structure. The following example shows the definition of a topology consisting of two environments supported by two local tenants.</p>
 <pre>{
   "name":"Topology1",
@@ -293,7 +418,7 @@ vsep.listenerName = "https"</td>
 
 
 
-<a name="05_01"></a><h4>Tenants</h4>
+<h4 id="s05_01">Tenants</h4>
 <p>Tenant definitions in the topology provide the Lifecycle Coordinator the necessary information to communicate with the specified tenant. Tenants can be either local (on the same container as the Lifecycle Coordinator) or remote. When defining a tenant:</p>
 <ul>
   <li><strong>Local</strong> tenant: Specify the tenantId in the <strong>id</strong> property, as in the topology example above.</li>
@@ -317,27 +442,28 @@ vsep.listenerName = "https"</td>
 <p>The Boolean <strong>userAuthenticationSource</strong> property is used to indicate that authentication for the underlying Lifecycle Repository library console is to be delegated to the specified tenant. This means that users of the specified tenant may log-in to the topology library using their email and password for that tenant.</p>
 <p>Only one tenant may have the <strong>userAuthenticationSource</strong> property set to <strong>true</strong> and that tenant must be local to the Lifecycle Coordinator.</p>
 
-<a name="05_02"></a><h4>Environments</h4>
+<h4 id="s05_02">Environments</h4>
 <p>Environments reference a corresponding tenant and hold one or more promotionProfiles representing transitions to other environments.</p>
 
 
 <h5>Environment Names</h5>
 <p>The <strong>name</strong> property for an environment must be unique within the topology and should not be changed once defined. This is because this name is used as a key for mapping information between environments stored by the Lifecycle Coordinator. Given the invariability of the environment name, a <strong>displayName</strong> property is also supported. The display name is what appears to users in the API Platform UI and may be changed without affecting mapping information.</p>
 
-<a name="05_03"></a><h4>PromotionProfiles</h4>
-<p>PromotionProfiles are defined within the <strong>promotionProfiles</strong> property of an Environment. The <strong>targetEnvironment</strong> property of a PromotionProfile must correspond to the <strong>name</strong> of another Environment in the Topology.</p>
+<h4 id="s05_03">Promotion Profiles</h4>
+<p>Promotion Profiles are defined within the <strong>promotionProfiles</strong> property of an Environment. The <strong>targetEnvironment</strong> property of a PromotionProfile must correspond to the <strong>name</strong> of another Environment in the Topology.</p>
 <p>A PromotionProfile can optionally specify one or more filters by specifying filter names within the <strong>filterNames</strong> array property.</p>
 <p>Rule definitions might optionally be provided using the <strong>rules</strong> array property.</p>
 <p class="apidoc_note"><strong>Note</strong>: A PromotionProfile cannot create a cycle between Environments.</p>
 
-<a name="05_04"></a><h4>Rules</h4>
+
+<h4 id="s05_04">Rules</h4>
 <p>Rules are defined inline within the <strong>rules</strong> array property of a PromotionProfile. Each Rule consists of a <strong>scope</strong> property indicating the property in the archive manifest it applies to, an optional <strong>condition</strong> property indicating the conditions for which the Rule applies and a required <strong>action</strong> property indicating the action to perform on the manifest property.</p>
 <p>Examples in this section:</p>
 <ul>
-  <li><a href="#05_04_01">Rule example #1</a>: changes the hostname for the physical service endpoint.</li>
-  <li><a href="#05_04_02">Rule example #2</a>: changes the name of the OAuth provider for a promoted API in the target environment.</li>
+  <li><a href="#s05_04_01">Rule example #1</a>: changes the hostname for the physical service endpoint.</li>
+  <li><a href="#s05_04_02">Rule example #2</a>: changes the name of the OAuth provider for a promoted API in the target environment.</li>
 </ul>
-<a name="05_04_01"></a><h5>Rule example #1</h5>
+<h5 id="s05_04_01">Rule example #1</h5>
 <p>In this example, the rule changes the host name of the physical service endpoint (<strong>psep</strong>) for an API:</p>
 <pre>{
   "scope":"psep",
@@ -346,7 +472,7 @@ vsep.listenerName = "https"</td>
 }</pre>
 <p>Note the use of '\' to escape the double quotes in the condition and action.</p>
 
-<a name="05_04_02"></a><h5>Rule example #2</h5>
+<h5 id="s05_04_02">Rule example #2</h5>
 <p>The example below changes the name of the OAuth provider for a promoted API in the target environment.</p>
 <p><strong>Note</strong>: Only use this rule if the configuration of the source and target OAuth Providers is identical, including scope definition. If the configuration is not identical, using this rule might cause promotion errors.</p>
 <pre>{
@@ -356,7 +482,7 @@ vsep.listenerName = "https"</td>
 }</pre>
 
 
-<a name="05_05"></a><h4>Filters</h4>
+<h4 id="s05_05">Filters</h4>
 <p>The <strong>filters</strong> property of a Topology allows asset filters to be defined for use in PromotionProfile selection. Filters contain criteria which apply to the classifiers associated with an asset.</p>
 <p>Filters correspond to the <strong>custom properties</strong> for an API in the API Platform UI.</p>
 <p>The following example defines filters used to differentiate between APIs that are PCI compliant and those that are not based on a <strong>pci-compliant</strong> classifier:</p>
@@ -424,8 +550,7 @@ vsep.listenerName = "https"</td>
 
 
 
-<a name="05_06"></a>
-<h4>Organization Mapping</h4>
+<h4 id="s05_06">Organization Mapping</h4>
 <h5 class="stamp">API Platform Version: 8.4.13 and later</h5>
 <p>Lifecycle Coordinator attempts to assign APIs in the target environment tenant to an Organization matching the name of the Organization in the source environment tenant. If it doesn't find an Organization of the same name, it assigns the API to the tenant Organization.</p>
 <p>Within a promotion profile, you can define a rule to create a mapping of Organizations when promoting to the target environment. To do this, define a rule that modifies the <strong>api.orgName</strong> property.</p>
@@ -435,12 +560,107 @@ vsep.listenerName = "https"</td>
   "condition":"api.orgName == 'GroupA'",
   "action":"api.orgName = 'GroupB'"
 }</pre>
+
+
+
+<h4 id="s05_07">Policy Mapping</h4>
+<h5 class="stamp">API Platform Version: 8.4.16 and later</h5>
+<p>A Promotion Profile can optionally contain a set of PolicyMappings that you can use to tailor the propagation and validation of policy references when an API is promoted to the target environment. You can use PolicyMappings to:</p>
+<ul>
+  <li>Map a policy reference in the source environment to a policy in the target environment.</li>
+  <li>Remove a policy reference altogether when an API is promoted.</li>
+</ul>
+<p>A PolicyMapping has one of these two properties:</p>
+<ul>
+  <li><strong>sourcePolicy</strong>&#8212;Used to identify a specific policy in the source environment by either name or unique id.</li>
+  <li><strong>sourcePolicyFilter</strong>&#8212;Used to specify a group of policies by type or subtype.</li>
+</ul>
+<p>Additionally, a PolicyMapping can specify a <strong>targetPolicy</strong> in the target environment either by name or unique id.  If a PolicyMapping does not specify a <strong>targetPolicy</strong> property, references to policies matching the <strong>sourcePolicy</strong> or <strong>sourcePolicyFilter</strong> property are ignored when an API is propagated to the next environment.</p>
+<p>The following PromotionProfile shows an example of a PolicyMapping that maps references to the DetailedAuditPolicy in the source environment to the BasicAuditPolicy in the target environment:</p>
+<pre>{
+  "name": "Default Production Promotion",
+  "description": "Dev to production default profile",
+  "targetEnvironment": "production",
+  "rules": [],
+  "policyMappings": [
+    {
+      "sourcePolicy": {
+        "policyName": "DetailedAuditing"
+      },
+      "targetPolicy": {
+        "policyName": "BasicAuditing"
+      }
+    }
+  ]
+}</pre>
+
+<p>In this example, the PolicyMapping uses the unique ids of the source and target policies:</p>
+<pre>{
+  "sourcePolicy": {
+    "policyId": "urn:uuid:852afbc5-101e-11e8-887b-abe2ebb3db33"
+  },
+  "targetPolicy": {
+    "policyId": "urn:uuid:763b7ca5-304f-16e8-457b-c542e456db33"
+  }
+}</pre>
+<p>You can accomplish a  one-to-many mapping of policies using a policy filter:</p>
+<pre>{
+  "sourcePolicyFilter": {
+    "policyType": "Operational Policy",
+    "policySubtype" : "policy.auditservice"
+  },
+  "targetPolicy": {
+    "policyName": "BasicAuditing"
+    }
+}</pre>
+<p>A specific policy is disabled on promotion by omitting the targetPolicy property in the PolicyMapping:</p>
+<pre>{
+  "sourcePolicy": {
+    "policyName": " DetailedAuditing "
+  }
+}</pre>
+
+<h5>Default Mappings</h5>
+<p>Policies that are available by default within a tenant, such as DetailedAuditing, BasicAuditing, and CORSAllowAll, are implicitly mapped to the corresponding default policies in the target tenant and do not need an explicit PolicyMapping. You can think of this default mapping as being of the form:</p>
+<pre>{
+  "sourcePolicy": {
+    "policyId": "&lt;source tenant id&gt;-&lt;policy name&gt;"
+  },
+  "targetPolicy": {
+    "policyId": "&lt;target tenant id&gt;-&lt;policy name&gt;"
+  }
+}
+</pre>
+
+<h5 id="s05_07_03">Tenant name change: original-tenant-name property</h5>
+<p>Default policy mappings are determined based on the tenant name. If the name of a tenant was changed since its original creation (in the Developer Portal, <strong>Admin</strong> > <strong>Site</strong>), it's important to include the original tenant name in the tenant definition in the topology, using the <strong>original-tenant-name</strong> property. An example is shown below.</p>
+<pre>{ 
+  "id": "devtenant", 
+  "name": "DevelopmentTenant", 
+  "address": "http://devacmepaymentscorptenant:9457", 
+  "properties": [ 
+    { 
+      "name": "original-tenant-name", 
+      "value": "Tenant1" 
+    } 
+  ], 
+  ... 
+}</pre>
+
+
+<h5>Policy Validation</h5>
+<p>When an API is promoted, policy references must do one of the following:</p>
+<ul>
+  <li>Reference a default policy, such as DetailedAuditing</li>
+  <li>Match the unique ID of an existing policy in the target environment</li>
+  <li>Match a PolicyMapping defined for the selected PromotionProfile </li>
+</ul>
+<p>If none of the above criteria are met, a validation error is returned to the promoting user and the promotion is aborted.</p>
 <p><a href="#top">Back to top</a></p>
 
 
 
-<a name="dz_configurations"></a><h3>Deployment Zone Configurations
-</h3>
+<h3 id="dz_configurations">Deployment Zone Configurations</h3>
 <h5 class="stamp">API Platform Version: 8.4.12 and later</h5>
 <p>Within a promotion profile, deployment zone configurations can be used to tailor the propagation of an API's endpoints to the target environment. During API promotion, applicable deployment zone configurations are selected based on:</p>
 <ul>
@@ -467,7 +687,7 @@ vsep.listenerName = "https"</td>
 <p>In this example, a single deployment zone configuration has been defined to propagate endpoints in in the <strong>StagingDZ1</strong> deployment zone in the source environment to both <strong>ProdWestDZ</strong> and <strong>ProdEastDZ</strong> in the target environment.</p>
 
 
-<a name="06_01"></a><h4>Using Filters with deployment zone configurations
+<h4 id="s06_01">Using Filters with deployment zone configurations
 </h4><p>The filtering capability of deployment zone configurations allows for target deployment zones to be determined based on the metadata of the API. For example, security metadata associated with the API might determine the specific deployment zones that the API is deployed to.</p>
 <p>In the following example, the filters named <strong>PII</strong> and <strong>Not PII</strong> are used in selecting the deployment zones an API's endpoints are propagated to in the target environment, based on whether the API is marked as processing personal identity information.</p>
 <pre>"deploymentZoneConfigurations": [
@@ -525,7 +745,7 @@ vsep.listenerName = "https"</td>
 </pre>
 
 
-<a name="06_02"></a><h4>Default Endpoint Propagation</h4>
+<h4 id="s06_02">Default Endpoint Propagation</h4>
 <p>If an endpoint's source deployment zone doesn't match a defined deployment zone configuration, the promotion processing will propagate the endpoint to a deployment zone in the target environment with the same name, if one exists. You can think of this as an implicit deployment zone configuration for every deployment zone in the source environment of the form:</p>
 <pre>{
   "sourceDeploymentZoneName":"{source DeploymentZone name}",
@@ -533,9 +753,6 @@ vsep.listenerName = "https"</td>
     "{source DeploymentZone name}"
   ]
 }</pre>
-
-
-
 
 <p>You can disable endpoints from a source deployment zone completely by defining a deployment zone configuration that specifies no target deployment zone names. For example:</p>
 <pre>{
@@ -547,7 +764,7 @@ vsep.listenerName = "https"</td>
 
 
 
-<a name="06_03"></a><h4>Using Rules with deployment zone configurations
+<h4 id="s06_03">Using Rules with deployment zone configurations
 </h4><p>A deployment zone configuration can optionally contain RuleDefinitions to be applied to the properties of the endpoints being promoted with this deployment zone configuration.</p>
 <p>At this level, you can use rules to alter a listener name, the endpoint's path, or its vanity host. The properties available for modification are:</p>
 <dl>
@@ -577,7 +794,7 @@ vsep.listenerName = "https"</td>
 }</pre>
 
 
-<a name="06_04"></a><h4>Duplicate Endpoints</h4>
+<h4 id="s06_04">Duplicate Endpoints</h4>
 <p>Care should be taken to avoid duplicating endpoints across environments using the same underlying Gateways. This situation can occur if the target deployment zone has the same underlying Gateway as the source deployment zone (leading to the same host name and port) and has no options set for altering the Gateway host name or path. This situation will result in the promotion of the API failing.</p>
 <p>There are several ways you can help make sure there are no duplicate endpoints:</p>
 <ul>
@@ -589,7 +806,7 @@ vsep.listenerName = "https"</td>
 
 
 
-<a name="topology_api"></a><h3>Topology API</h3>
+<h3 id="topology_api">Topology API</h3>
 <p>In this section:</p>
 <ul>
   <li>Finding the Topology API Documentation</li>
@@ -597,7 +814,7 @@ vsep.listenerName = "https"</td>
 </ul>
 
 
-<a name="topologyapi_01"></a><h4>Finding the Topology API Documentation</h4>
+<h4 id="topologyapi_01">Finding the Topology API Documentation</h4>
 <p>You can find the Topology API documentation in the following locations:</p>
 <ul>
   <li>In your deployment:
@@ -612,7 +829,7 @@ vsep.listenerName = "https"</td>
 </ul>
 
 
-<a name="topologyapi_02"></a><h4>Using the Topology API</h4>
+<h4 id="topologyapi_02">Using the Topology API</h4>
 <p>The first step is to create a Topology. This is done by POST-ing the complete Topology JSON document to <strong>...lc/api/topologies</strong>. This can be done programmatically or with a browser plugin such as Firefox RESTClient:</p>
 <p><img src="images/promotion_10.jpg" alt="Creating the topology" /></p>
 <p>Note the inclusion of the content-type and basicAuth headers.</p>
@@ -630,11 +847,11 @@ vsep.listenerName = "https"</td>
 
 
 
-<a name="lm_console"></a><h3>Lifecycle Manager Console</h3>
+<h3 id="lm_console">Lifecycle Manager Console</h3>
 <p>The Lifecycle Manager (<strong>LM</strong>) console is useful for accessing promoted assets and their iterations as well as approving promotion requests. Within Lifecycle Manager, a topology is represented as a <strong>library</strong> and the elements of a Topology along with the entities being promoted are represented as <strong>assets</strong>.</p>
 
 
-<a name="07_01"></a><h4>Logging In</h4>
+<h4 id="s07_01">Logging In</h4>
 <p>The first step is to log in to the library that corresponds with the topology. There are two options:</p>
 <ul>
   <li>If the admin user password has been set, you can log into the library as the Lifecycle Repository super user at the URL below:
@@ -642,7 +859,9 @@ vsep.listenerName = "https"</td>
   <li>If the topology was configured to delegate authentication to a local tenant, you can log in at the URL below, using the tenant email and password for a user in the designated local tenant:
   <pre>{container-base-url}/lm/application/access/challenge.do</pre></li>
 </ul>
-<a name="07_02"></a><h4>Viewing Assets and Iterations</h4>
+
+
+<h4 id="s07_02">Viewing Assets and Iterations</h4>
 <p>The left pane of the LM console contains a search box which can be used for finding assets by name:</p>
 <p><img src="images/promotion_11.jpg" alt="Finding assets by name" /></p>
 <p>The search results include separate LM assets for each environment to which a promotable entity has been promoted or is pending promotion. Clicking on an asset in the search results brings up a details page:</p>
@@ -663,7 +882,7 @@ vsep.listenerName = "https"</td>
 <p>Additionally, in the case of a promotion failure (generally due to an invalid rule) error details are stored in the Artifacts section of the iteration asset:</p>
 <p><img src="images/promotion_14.jpg" alt="Error details" /></p>
 
-<a name="07_03"></a><h4>Promotion Requests</h4>
+<h4 id="s07_03">Promotion Requests</h4>
 <p>The configuration of the topology library can optionally be customized to require approvals for a promotion request. For assistance with customization, contact Akana Professional Services.</p>
 <p>In this scenario, a user with the required authorization role has a pending request notification message in the left pane after logging into the LM console:</p>
 <p><img src="images/promotion_15.jpg" alt="Pending requests" /></p>
