@@ -194,6 +194,7 @@ document {
 }
 .soa-ui-dc-container-main {
   margin-bottom: 30px;
+  margin-top: 15px;
 }
 .soa-ui-dc-container-main-left,
 .soa-ui-dc-container-main-content {
@@ -209,7 +210,7 @@ document {
 .soa-ui-dc-top-bar-wrapper {
   background: #F8F8F8;
   border-bottom: 1px solid #252525;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
 .soa-ui-dc-top-bar-wrapper .top-bar {
   position: relative;
@@ -220,8 +221,8 @@ document {
 }
 .soa-ui-dc-logo {
   float: left;
-  padding-left: 40px;
-  margin-top: -2px;
+  padding-left: 53px;
+  margin-top: 28px;
 }
 .soa-ui-dc-topnav {
   list-style: none;
@@ -232,7 +233,7 @@ document {
   position: absolute;
   width: 850px;
   top: 0;
-  margin-left: 80px;
+  margin-left: 102px;
 }
 .soa-ui-dc-topnav-container {
   left: 156px;
@@ -270,10 +271,10 @@ a.soa-ui-dc-topnav-item-link {
 }
 a.soa-ui-dc-topnav-item-link:hover,
 .soa-ui-dc-topnav-item-active a.soa-ui-dc-topnav-item-link {
-  color: #cb2026;
+  color: #002b49;
 }
 .soa-ui-dc-topnav-item-link.soa-ui-dc-icon {
-  background: url(images/DC-Sprites_product-icons.png) no-repeat;
+  background: url(images/DC-Sprites_product-icons-002b49.png) no-repeat;
   padding-left: 35px;
 }
 .soa-ui-dc-topnav-item-link.soa-ui-dc-icon:before {
@@ -360,7 +361,7 @@ a.soa-ui-dc-subnav-item-link.soa-ui-dc-subnav-item-link-active {
 .soa-ui-dc-topsearch-container {
   position: absolute;
   right: 0;
-  margin-top: 12px;
+  margin-top: 34px;
   margin-right: 40px;
   z-index: 99;
 }
@@ -382,7 +383,7 @@ a.soa-ui-dc-subnav-item-link.soa-ui-dc-subnav-item-link-active {
   padding: 0 0 14px;
 }
 .soa-ui-dc-content-header.soa-ui-dc-icon {
-  background: url(images/DC-Sprites_product-icons.png) no-repeat;
+  background: url(images/DC-Sprites_product-icons-002b49.png) no-repeat;
   color: #cb2026;
   display: inline-block;
   font-size: 17px;
@@ -460,10 +461,10 @@ a.soa-ui-dc-content-nav-item-link {
 }
 a.soa-ui-dc-content-nav-item-link:hover,
 .ui-tabs-active .soa-ui-dc-content-nav-item-link {
-  color: #cb2026;
+  color: #002b49;
 }
 .soa-ui-dc-content-nav-item-link.soa-ui-dc-icon {
-  background: url(images/DC-Sprites_product-icons.png) no-repeat;
+  background: url(images/DC-Sprites_product-icons-002b49.png) no-repeat;
   padding-left: 53px;
 }
 .soa-ui-dc-content-nav-item-link.soa-ui-dc-content-nav-item-link-soaplatform {
@@ -768,7 +769,7 @@ a.soa-ui-dc-container-main-left-nav-item-link {
 }
 pre {
   padding: 10px 20px !important;
-  margin: 10px 0 !important;
+  margin: 10px 0;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.07) inset;
 }
 code {
