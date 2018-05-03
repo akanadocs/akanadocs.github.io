@@ -11,6 +11,7 @@ nav-title: JOSE Security
 ---
 <h2 id="top">Using the JOSE Security Policy</h2>
 <p>Learn how to use the JOSE security policy to sign and encrypt JSON message content.</p>
+<p><strong>Note</strong>: The platform now includes an updated policy (version 8.4.17 and later), <a href="policy_op_jose_security_v2.htm">JOSE Security Policy v2 (Unencoded Payload Support)</a>, which supports the newer JSON Web Signature (JWS) Unencoded Payload Option specification (<a href="https://tools.ietf.org/html/rfc7797">https://tools.ietf.org/html/rfc7797</a>). In general, if you're creating a new policy, it's best to choose the newer policy rather than this legacy JOSE Security policy. If you're still using the legacy policy, we recommend that you migrate to the new policy as soon as possible.</p>
 
 <p>
   <a href="about_policies_view.htm" class="button secondary">About Policies</a>  
@@ -77,7 +78,7 @@ nav-title: JOSE Security
   <p><img src="images/jose_audit_options.jpg" alt="JOSE security policy, audit options" /></p></li>
 	<li>Specify values. For information about the fields, refer to <a href="#jose_config_audit_options">Configuring JOSE Security Audit Options</a> below.</li>
 	<li>When done, click <strong>Finish</strong>.</li>
-  <li>At the <strong>Completion Summary</strong> page, click <strong>Close</strong>.</li>
+	<li>At the <strong>Completion Summary</strong> page, click <strong>Close</strong>.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
 
@@ -327,3 +328,21 @@ nav-title: JOSE Security
 <p>Copy the response content into the JSON Web Token debugger at <a href="https://jwt.io/" target="_blank">https://jwt.io/</a>. In the right pane, you'll see the response message, as in the example below.</p>
 <p><img src="images/jose_07_token.jpg" alt="Viewing the token" /></p>
 <p><a href="#top">Back to top</a></p>
+
+
+
+<div class = "divider1"></div>
+
+
+
+<h3 id="related_topics">Related Topics</h3>
+<div class="relatedlinks">
+<ul>
+	<li><a href="about_policies_view.htm">About Policies</a></li>
+	<li><a href="policy_management.htm">Managing Policies</a></li>
+	<li><a href="policies_operational_about.htm">About Operational Policies</a></li>
+</ul>
+<ul>
+	<li><a href="http://docs.akana.com/cm/learnmore/basics_glossary.htm">Glossary of Terms for the Developer Portal</a></li>
+</ul>
+</div>
