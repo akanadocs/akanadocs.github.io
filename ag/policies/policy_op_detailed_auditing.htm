@@ -18,7 +18,7 @@ nav-title: Detailed Auditing
 <a href="policies_operational_about.htm" class="button secondary">About Operational Policies</a>
 </p>
 
-<h5 class="stamp">Supported Platforms: 7.x, 8.0</h5>
+
 
 <div class = "divider1"></div>
 
@@ -27,8 +27,9 @@ nav-title: Detailed Auditing
 <h3 style="color: gray;">Table of Contents</h3>
 <ol class="table_of_contents">
 	<li><a href="#introduction">Introduction</a></li>
+	<li><a href="#detailed_auditing_policy_create">Creating a Detailed Auditing Policy</a></li>
 	<li><a href="#configuration">Configuration</a></li>
-	<li><a href="#uc_policy_qos_detailed_auditing_pm">Detailed Auditing Policy: use case for Policy Manager</a></li>
+	<li><a href="#uc_policy_op_detailed_auditing_pm">Detailed Auditing Policy: use case for Policy Manager</a></li>
 </ol>
 <div class = "divider1"></div>
 
@@ -51,7 +52,21 @@ nav-title: Detailed Auditing
 	<li><strong>Consumer</strong>: Audits consumer identity sent with a request message.</li>
 	<li><strong>End User</strong>: Audits end-user identity sent with a request message.</li>
 </ul>
-<p><img src="images/detailedauditing1.jpg" width="453" height="463" alt="" /></p>
+<p><img src="images/detailedauditing1.jpg" alt="" /></p>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="detailed_auditing_policy_create">Creating a Detailed Auditing Policy</h3>
+<p>The first step in creating a policy is to define the basic policy information. Then, you can configure the policy details.</p>
+<h5>To add an operational policy</h5>
+<ol>
+<li>Go to <strong>Workbench</strong> &gt; <strong>Browse</strong> &gt; <strong>Organization</strong>, and select <strong>Policies</strong> &gt; <strong>Operational Policies</strong>. The <strong>Policies Summary</strong> is displayed.</li>
+<li>Click <strong>Add Policy</strong>.</li>
+<li>Choose the policy type and click <strong>Next</strong>.</li>
+<li>Specify a name (required) and description (optional) and click <strong>Finish</strong>. At the <strong>Completion Summary</strong>, Click <strong>Close</strong>. The <strong>Add Policy</strong> Wizard creates a draft policy instance that you can then configure on the <strong>Policy Details</strong> page.</li>
+</ol>
+<p>For more information, see <a href="policy_management.htm#add_policy">Add Policy</a>.</p>
 <p><a href="#top">back to top</a></p>
 
 
@@ -70,14 +85,14 @@ nav-title: Detailed Auditing
 
 
 
-<h3 id="uc_policy_qos_detailed_auditing_pm">Detailed Auditing Policy: use case for Policy Manager</h3>
+<h3 id="uc_policy_op_detailed_auditing_pm">Detailed Auditing Policy: use case for Policy Manager</h3>
 <p>This section includes the following usage scenario for the Detailed Auditing Policy:</p>
 <ul>
-	<li><a href="#uc_policy_qos_detailed_auditing_pm_01">Audit Entire Message and Message Metrics</a></li>
+	<li><a href="#uc_policy_op_detailed_auditing_pm_01">Audit Entire Message and Message Metrics</a></li>
 </ul>
 
 
-<h4 id="uc_policy_qos_detailed_auditing_pm_01">Audit Entire Message and Message Metrics</h4>
+<h4 id="uc_policy_op_detailed_auditing_pm_01">Audit Entire Message and Message Metrics</h4>
 <p>Audit entire message and message metrics of each exchange in usage logs of Monitoring tab.</p>
 <ol>
 	<li>Create a physical service in the <strong>Policy Manager Management Console</strong> using <strong>Create Physical Service</strong>.</li>
