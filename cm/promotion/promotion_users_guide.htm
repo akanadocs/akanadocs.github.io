@@ -462,11 +462,35 @@ vsep.listenerName = "https"</td>
 }</pre>
 <p class="apidoc_note"><strong>Note</strong>: The address value is unique to the tenant. It corresponds to the value specified for the <strong>address</strong> parameter when the tenant was created.</p>
 
-<h5>Tenant Names</h5>
+<h5 id="s05_01_tenantnames">Tenant Names</h5>
 <p>Tenants require a <strong>name</strong> property which is used to identify the tenant by environments within the topology. This name must be unique within the topology, but need not correspond to the actual tenant name.</p>
-<h5>Delegated Authentication</h5>
-<p>The Boolean <strong>userAuthenticationSource</strong> property is used to indicate that authentication for the underlying Lifecycle Repository library console is to be delegated to the specified tenant. This means that users of the specified tenant may log-in to the topology library using their email and password for that tenant.</p>
-<p>Only one tenant may have the <strong>userAuthenticationSource</strong> property set to <strong>true</strong> and that tenant must be local to the Lifecycle Coordinator.</p>
+
+<h5 id="s05_01_delegatedauth">Delegated Authentication</h5>
+<p>The Boolean <strong>userAuthenticationSource</strong> property is used to indicate that authentication for the underlying Lifecycle Repository library console is to be delegated to the specified tenant. This means that users of the specified tenant can log in to the topology library using their email and password for that tenant.</p>
+<p>Only one tenant can have the <strong>userAuthenticationSource</strong> property set to <strong>true</strong>, and that tenant must be local to the Lifecycle Coordinator.</p>
+
+<h5 id="s05_01_tenantproperties">Tenant Properties (8.4.18 and later)</h5>
+<p>Tenant definitions can contain optional properties, as shown in the example below.</p>
+<pre>{
+  "name":"ProductionTenant",
+  "id":"tenant2",
+  "address":"http://myProductionTenant:9900",
+  "credentials":{
+    "email":"administrator2@example.com",
+    "password":"password2"
+  },
+  "properties":[
+    {
+      "name":"virtual-address",
+      "value":"http://myCompany:9950"
+    }
+  ]
+}</pre>
+<p>The optional properties available for a tenant are:</p>
+<ul>
+  <li><strong>virtual-address</strong>: This property can be used when the URL used to access a remote tenant is different from the tenant's address attribute. For example, this property would be used if the tenant is fronted by a load balancer. If the <strong>virtual-address</strong> property is provided, the URL set in the value of this property is used for all communications with the tenant.</li>
+</ul>
+
 
 <h4 id="s05_02">Environments</h4>
 <p>Environments reference a corresponding tenant and hold one or more promotionProfiles representing transitions to other environments.</p>
@@ -994,6 +1018,7 @@ vsep.listenerName = "https"</td>
 	<li><a href="#s08_01_04_policies">Policies</a></li>
 	<li><a href="#s08_01_05_virtual_host">Virtual Host</a></li>
 	<li><a href="#s08_01_06_path">Path</a></li>
+	<li><a href="#s08_01_06b_dzs">Deployment Zones</a></li>
 	<li><a href="#s08_01_07_anon_access">Allow Anonymous Access</a></li>
 	<li><a href="#s08_01_08_approval_req">Approval Required</a></li>
 	<li><a href="#s08_01_09_debug_mode">Debug Mode Enabled</a></li>
@@ -1057,6 +1082,17 @@ vsep.listenerName = "https"</td>
 <p>The <strong>path</strong> classifier supports the Lifecycle Manager concept of <strong>context parameters</strong>. This allows aspects of the API such as the API name or values of custom properties to be used within the path.</p>
 <p>For example, setting the path value to <strong>/{catalog_asset.name_normalized}</strong> indicates that the path should consist of the API's name. If an API had a custom classifier called <strong>visibility</strong> set to a value <strong>external</strong>, using a value of <strong>/rest/{catalog_asset.classifier.visibility}</strong> for the path would result in endpoint paths set to <strong>/rest/external</strong>.</p>
 <p>The available parameters are specified in the Lifecycle Manager Configuration guide (available on the Akana Library site, in the Documentation folder for your <a href="https://library.roguewave.com/display/MAIN/Lifecycle+Manager" title="Link to Lifecycle Manager download" target="_blank">Lifecycle Manager installation</a>). Note that the context asset for parameter resolution is the API asset.</p>
+
+
+<h5 id="s08_01_06b_dzs">Deployment Zones</h5>
+<h5 class="stamp">API Platform Version: 8.4.18 and later</h5>
+<p>A Runtime Configuration asset can include a Deployment Zones classifier. This allows deployment zones to be designated for deployment of API implementations that match the filter of the Runtime Configuration asset.</p>
+<p>When the Deployment Zones classifier is edited, a list of Deployment Zones defined in the associated tenant is displayed. Any number of these deployment zones can be selected. Then, matching API implementations are deployed in the selected deployment zones.</p>
+<p>If the Deployment Zones classifier is left empty, the deployment zones of a matching API implementation will not be affected.  However, setting the classifier to a value of <strong>NONE</strong> will result in matching API implementations having no deployment zones enabled.</p>
+<p> Settings designated in the <strong>Path</strong> and <strong>Virtual Host</strong> classifiers are applied to the endpoints in the designated deployment zones.</p>
+<p><strong>Deployment Zone Replacement Behavior</strong></p>
+<p>By default, the deployment zones specified on the Runtime Configuration asset replace those already enabled for a matching API implementation.</p>
+<p>Using Configuration Designer, it is possible to customize the <strong>Apply Runtime Configuration API</strong> post-processing task by setting the <strong>Preserve Existing Deployment Zones</strong> property <strong>to</strong> true. This indicates that any existing deployment zones enabled for a matching API implementation will be merged with those specified on the Runtime Configuration asset.</p>
 
 <h5 id="s08_01_07_anon_access">Allow Anonymous Access</h5>
 <p>This classifier is used to set the <strong>allow anonymous access</strong> value of the implementation. Leaving this classifier unset indicates that the <strong>allow anonymous access</strong> value of the implementation should not be modified.</p>
