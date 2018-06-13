@@ -74,8 +74,8 @@ nav-title: Installing Akana API Platform 8.4x
   <li><a href="#installation_scenarios">Sample installation scenarios</a></li>
   <li><a href="#fn_scheduled_jobs">Feature notes: Scheduled jobs</a></li>
   <li><a href="#fn_embedded_es_node">Feature Notes: Akana Embedded Elasticsearch Node feature</a></li>
+  <li><a href="#optional_additional_features">Optional additional features</a></li>
 </ol>
-
 
 
 
@@ -119,7 +119,7 @@ nav-title: Installing Akana API Platform 8.4x
   <li><strong>Akana Platform ZIP file</strong>: choose the appropriate file for the operating system you're using:
 <ul>
       <li><strong>Windows</strong> (includes JRE: <strong>akana-platform-win-jre-8.4.xxx.zip</strong></li>
-      <li><strong>Linux</strong> ( includes JRE): <strong>akana-platform-linux-jre-8.4.xxx.zip</strong></li>
+      <li><strong>Linux</strong> (includes JRE): <strong>akana-platform-linux-jre-8.4.xxx.zip</strong></li>
       <li><strong>Windows, Linux, or Solaris</strong> (does not include JRE; provide your own JRE, version 1.8): <strong>akana-platform-8.4.xxx.zip</strong></li>
     </ul>
   </li>
@@ -210,8 +210,6 @@ nav-title: Installing Akana API Platform 8.4x
       <li>Akana Community Manager Simple Developer Theme</li>
     </ul>
   </li>
-</ol>
-<ol>
   <li>Click <strong>Install Feature</strong>; then, at the Resolution Summary, click <strong>Install Feature</strong> again.</li>
   <li>Review the installation summary. To continue to the configuration step, click <strong>Configure</strong>.</li>
 </ol>
@@ -227,7 +225,7 @@ nav-title: Installing Akana API Platform 8.4x
 </ul>
 <p><strong>Note</strong>: Before configuring the database, make sure you have the applicable database driver in place. See <a href="#database_drivers">Database drivers</a>.</p>
 <p>Pending installation tasks for this installation scenario are shown below.</p>
-<table width="98%" border="0" cellspacing="0" cellpadding="2" class="doctable">
+<table class="doctable">
   <tr>
     <td rowspan="5" width="20%" align="left" valign="top"><img src="images_84/06_01_PendingInstallationTasks.jpg" alt="Pending installation tasks" /></td>
     <td  rowspan="5" width="80%" align="left" valign="top"><ul>
@@ -236,8 +234,7 @@ nav-title: Installing Akana API Platform 8.4x
       <li><strong>Manage Schemas</strong>: Manages the database schemas for the container.</li>
       <li><strong>Create Policy Manager Admin User</strong>: Creates the top-level Policy Manager user.</li>
       <li><strong>Provisioning</strong>: Initializes resources associated with the features installed on the container.</li>
-    </ul></td
-  >
+    </ul></td>
   </tr>
 </table>
 
@@ -246,11 +243,11 @@ nav-title: Installing Akana API Platform 8.4x
   <li>Start the configuration step, either by clicking <strong>Configure</strong> at the end of the installation process or by choosing <strong>Installed Features</strong> &gt; <strong>Complete Configuration</strong> as shown above. Configuration steps vary depending on the features you're installing. The tasks below apply to the PM/CM container scenario.</li>
   <li>At the <strong>Manage PKI Keys wizard</strong>, choose key management options and other values and then click <strong>Finish</strong>. Review the summary and then click <strong>Go to Next Task</strong>.
     <p>For more information on this wizard, see <a href="#install_tasks_manage_pki_keys">Installation wizard: Manage PKI Keys</a> below.</p></li>
-  <li>At the <strong>Configure Database Options Wizard</strong>, specify your database and other values. Since this is the first container, select <strong>Create new database</strong>/ For subsequent containers, you'll use the same database, so for a subsequent container you'd select <strong>Use existing database</strong>.
-    <p><strong>Notes</strong>: </p>
+  <li>At the <strong>Configure Database Options Wizard</strong>, specify your database and other values. Since this is the first container, select <strong>Create new database</strong>/ For subsequent containers, you'll use the same database, so for a subsequent container you'd select <strong>Use existing database</strong>. Be sure to follow any applicable database-specific notes from the list below.
+<p><strong>Notes</strong>: </p>
     <ul>
       <li>You'll need to have your database driver in place, in the <strong>{installation}\instances\{containername}\deploy</strong> folder, before running this wizard. See <a href="#database_drivers">Database drivers</a>.</li>
-      <li><strong>Oracle</strong>: If you're using a new Oracle database, see <a href="#notes_database_oracle">Database notes: Oracle</a> for additional Oracle-specific information about DBA permissions and password configuration.</li>
+      <li><strong>Oracle</strong>: If you're using a new Oracle database, see <a href="#notes_database_oracle">Database notes: Oracle</a> for additional Oracle-specific information about DBA permissions, password configuration, and database table updates.</li>
       <li><strong>Microsoft SQL Server</strong>: For additional notes, refer to <a href="#notes_database_ms_sql_server">Database notes: Microsoft SQL Server</a> below.</li>
       <li><strong>MySQL</strong>: If your installation will include Lifecycle Manager, you'll need to add the required grants to the DB user before continuing to Step 4. For details, see <a href="#notes_database_mysql_rm">Database notes: MySQL with Lifecycle Repository</a>.</li>
     </ul>
@@ -339,11 +336,17 @@ nav-title: Installing Akana API Platform 8.4x
 
 <h3 id="create_cm_tenant_using_jython">Step 9: Create Community Manager tenant using the Jython script</h3>
 <p>The next step is to create the tenant for the developer portal. To do this, you'll need to do the following, in sequence.</p>
-<table cellspacing="0px" class="doctable" style="width: 98%;">
-  <tbody>
-    <tr>
-      <td width="25%"><strong>Conditional, Linux users only</strong></td>
-      <td width="75%">Export the JAVA_HOME location to your installation directory. See <a href="#linux_java_home_variable">Linux install: exporting the JAVA_HOME variable</a>.</td>
+<table class="doctable">
+<thead>
+  <tr>
+      <th><strong>Scenario</strong></th>
+      <th>Action</th>
+      </tr>
+</thead>
+<tbody>
+  <tr>
+      <td><strong>Conditional, Linux users only</strong></td>
+      <td>Export the JAVA_HOME location to your installation directory. See <a href="#linux_java_home_variable">Linux install: exporting the JAVA_HOME variable</a>.</td>
       </tr>
     <tr>
       <td><strong>All users</strong></td>
@@ -481,7 +484,7 @@ nav-title: Installing Akana API Platform 8.4x
   <li>MySQL 5.6. <strong>Note</strong>:
     <ul>
       <li>If you're using MySQL, there are specific configuration requirements for certain MySQL properties. See <a href="#notes_database_mysql_settings">MySQL: database settings for the API Platform</a> below.</li>
-      <li>If you're running MySQL and are using the Llifecycle Repository feature, see <a href="#notes_database_mysql_rm">Database notes: MySQL with Lifecycle Repository</a> below.</li>
+      <li>If you're running MySQL and are using the Lifecycle Repository feature, see <a href="#notes_database_mysql_rm">Database notes: MySQL with Lifecycle Repository</a> below.</li>
     </ul>
   </li>
   <li>Microsoft SQL Server 2012, 2014 (supported in version 8.4.2 and later), and 2016 (supported in version 8.4.15 and later). Note that you'll need to modify a specific property in the Akana Administration Console; see <a href="#notes_database_ms_sql_server">Database notes: Microsoft SQL Server</a> below.</li>
@@ -501,19 +504,19 @@ nav-title: Installing Akana API Platform 8.4x
 <h4 id="notes_database_oracle">Database notes: Oracle</h4>
 <p>Please note the following if you're working with an Oracle database:</p>
 <ul>
-  <li><a href="#note_oracle_password">Oracle password</a></li>
-  <li><a href="#note_oracle_12c">Database permissions, Oracle 12c only</a></li>
   <li><a href="#note_oracle_drivers">Database drivers</a></li>
+  <li><a href="#note_oracle_password">Oracle password</a></li>
+  <li><a href="#note_oracle_12c">Database permissions, Oracle 12c or later</a></li>
 </ul>
+
+<h5 id="note_oracle_drivers">Database drivers</h5>
+<p>For Oracle database drivers, see <a href="#database_drivers">Database drivers</a> below.</p>
 
 <h5 id="note_oracle_password">Oracle password</h5>
 <p>If you're creating a new Oracle database using the <strong>Create New Database</strong> wizard (standard installation procedure), make sure the Oracle database password does not start with a number or special character.</p>
 
-<h5 id="note_oracle_12c">Database permissions, Oracle 12c only</h5>
-<p>When using Oracle 12c to configure a new database, the DBA must GRANT SELECT ON SYS.USER$ TO SYSTEM; (substitute the SYSTEM user for the user specified for the Administrator credentials). This is because Oracle 12c introduced restricted access to SYS.USER$, which the platform uses to query on.</p>
-
-<h5 id="note_oracle_drivers">Database drivers</h5>
-<p>For Oracle database drivers, see <a href="#database_drivers">Database drivers</a> below.</p>
+<h5 id="note_oracle_12c">Database permissions, Oracle 12c or later</h5>
+<p>When using Oracle 12c or later to configure a new database, the DBA must GRANT SELECT ON SYS.USER$ TO SYSTEM; (substitute the SYSTEM user for the user specified for the Administrator credentials). This is because Oracle 12c introduced restricted access to SYS.USER$, which the platform uses to query on.</p>
 
 
 <h4 id="notes_database_ms_sql_server">Database notes: Microsoft SQL Server</h4>
@@ -610,10 +613,15 @@ ALTER DATABASE {db.instance.name}
   <p><strong>mysql-connector-java-5.1.40-bin.jar</strong></p>
   <p>Downloadable from: <a href="https://mvnrepository.com/artifact/mysql/mysql-connector-java/5.1.40" title="download location for MySQL database driver" target="_blank">https://mvnrepository.com/artifact/mysql/mysql-connector-java/5.1.40</a></p>
   </li>
+  <li><strong>Oracle 12c Release 2</strong>: install this file:
+<p><strong>Ojdbc8.jar</strong></p>
+  <p>Downloadable from: <a href="http://www.oracle.com/technetwork/database/features/jdbc/jdbc-ucp-122-3110062.html" title="download location for Oracle 12c R2 database driver" target="_blank">http://www.oracle.com/technetwork/database/features/jdbc/jdbc-ucp-122-3110062.html</a> (download requires accepting the agreement and logging in).</p>
+  <p>Also, for Oracle 12c and later, see <a href="#note_oracle_12c">note about database permissions needed</a>.</p>
+  </li>
   <li><strong>Oracle 12c</strong>: install this file:
     <p><strong>Ojdbc7.jar</strong></p>
-  <p>Downloadable from: <a href="http://www.oracle.com/technetwork/database/features/jdbc/jdbc-drivers-12c-download-1958347.html" title="download location for Oracle 12c database driver" target="_blank">http://www.oracle.com/technetwork/database/features/jdbc/jdbc-drivers-12c-download-1958347.html</a> (requires accepting the agreement and logging in).</p>
-    <p>Also, for Oracle 12c, see <a href="#note_oracle_12c">note about database permissions needed</a>.</p>
+  <p>Downloadable from: <a href="http://www.oracle.com/technetwork/database/features/jdbc/jdbc-drivers-12c-download-1958347.html" title="download location for Oracle 12c database driver" target="_blank">http://www.oracle.com/technetwork/database/features/jdbc/jdbc-drivers-12c-download-1958347.html</a> (download requires accepting the agreement and logging in).</p>
+    <p>Also, for Oracle 12c and later, see <a href="#note_oracle_12c">note about database permissions needed</a>.</p>
   </li>
   <li><strong>Oracle 11g</strong>: install this file:
     <p><strong>Ojdbc5.jar</strong></p>
@@ -1046,7 +1054,7 @@ default.port=9945
   <li>Akana Embedded Elasticsearch Node</li>
   <li>Akana OAuth Provider</li>
   <li>Akana Policy Manager Console</li>
-  <li>Akana Policy Manager Services (Includes Akana Management Services, Akana Security Services, and Akana Scheduled Jobs. For more information on this feature see <a href="../admin_console/using_pmservices_feature.htm">Using the Policy Manager Services Feature</a>.)</li>
+  <li>Akana Policy Manager Services (Includes Akana Management Services, Akana Security Services, and Akana Scheduled Jobs. For more information on this feature see <a href="../admin_console/using_pmservices_feature.htm">Using the Policy Manager Services Feature</a>)</li>
   <li>Akana Community Manager</li>
 </ul>
 
@@ -1100,6 +1108,17 @@ default.port=9945
 <p>However, bear in mind that we do not recommend using Elasticsearch Embedded mode in a production environment.</p>
 <p>If you are running an external Elasticsearch server with Transport Client mode, it's not necessary to install the <strong>Akana Embedded Elasticsearch Node</strong> feature.</p>
 <p>For more information on installing and configuring Elasticsearch, see <a href="http://docs.akana.com/cm/learnmore/site_admin_es.htm">Elasticsearch: Information for Site Admins</a> (developer portal help).</p>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="optional_additional_features">Optional Additional Features</h3>
+<p>The platform installation includes some optional additional features:</p>
+<ul>
+  <li><strong>Admin Monitoring tool</strong>: an optional plug-in, this tool provides a way to view the monitored attributes published by different components in the product. This tool is used mainly to monitor thread pools and usage data queues. For more information on this tool, see <a href="../admin_console/using_admin_monitoring_tool.htm">Using the Admin Monitoring Tool</a>.
+  <p><strong>Note</strong>: The product also includes the <strong>Container Health</strong> tool (Akana Administration Console for the container &gt; <strong>Health</strong> tab), which is part of basic installation and also allows you to create your own monitoring dashboard. We recommend using the Container Health tool.</p></li>
+  <li><strong>Additional themes</strong>: As part of setting up Community Manager you'll need to set up at least one <a href="../../cm/learnmore/basics_glossary.htm#gl_theme">theme</a>. However, you might want to use more than one. For example, you might install Hermosa Theme for the full functionality of the developer portal and have a separate <a href="../../cm/learnmore/basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a> instance for your app developers to connect to APIs (streamlined UI with app and API functionality but without Site Admin functions).</li>
+</ul>
 <p><a href="#top">back to top</a></p>
 
 
