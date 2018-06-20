@@ -1,0 +1,293 @@
+---
+layout: page
+title: Using the HTTP Message Validation Policy in Policy Manager
+description: Learn how to use the HTTP Message Validation policy to validate HTTP messages based on criteria contained in the API description document (Swagger, RAML, or WADL) that was used to define the API.
+product: ag
+category: learn
+sub-nav-class: Policies - Operational
+weight: 04
+type: page
+nav-title: HTTP Message Validation
+---
+<h2 id="top">Using the HTTP Message Validation in Policy Manager</h2>
+<p>Learn how to use the HTTP Message Validation policy to validate HTTP messages based on criteria contained in the API description document (Swagger, RAML, or WADL) that was used to define the API.</p>
+
+<p>
+	<a href="about_policies_view.htm" class="button secondary">About Policies</a>  
+	<a href="policy_management.htm" class="button secondary">Managing Policies</a>  
+	<a href="policies_operational_about.htm" class="button secondary">About Operational Policies</a>
+</p>
+
+<h5 class="stamp">Supported Platforms: 8.4.19 and later</h5>
+
+<div class = "divider1"></div>
+
+
+
+<h3 style="color: gray;">Table of Contents</h3>
+<ol class="table_of_contents">
+	<li><a href="#introduction">Introduction</a></li>
+	<li><a href="#http_message_validation_create">Creating an HTTP Message Validation Policy</a></li>
+	<li><a href="#http_message_config">Configuring the HTTP Message Validation Policy</a></li>
+	<li><a href="#http_message_options">HTTP Message Validation Policy options</a>
+		<ul>
+			<li><a href="#format_keyword_options"><strong>Format</strong> keyword options</a></li>
+			</ul>
+		</li>
+	<li><a href="#policy_attach">Attaching the policy</a></li>
+</ol>
+<div class = "divider1"></div>
+
+
+
+<h3 id="introduction">Introduction</h3>
+<p>The HTTP Message Validation Policy allows you to validate HTTP messages based on criteria specified in the API description document that was used to create the API in the developer portal (Swagger, RAML, or WADL).</p>
+<p>It includes:</p>
+<ul>
+	<li>Validation of form, query, and header parts.</li>
+	<li>Complete validation of JSON message payloads based on JSON Schemas contained in the Swagger or RAML documents&nbsp;used to define the API.</li>
+</ul>
+<p>For information about the JSON Schema rules for HTTP message validation, see:</p>
+<ul>
+	<li><a href="https://tools.ietf.org/html/draft-wright-json-schema-01" title="JSON Schema specification" target="_blank">https://tools.ietf.org/html/draft-wright-json-schema-01</a></li>
+	<li><a href="https://tools.ietf.org/html/draft-wright-json-schema-validation-01" title="JSON Schema specification" target="_blank">https://tools.ietf.org/html/draft-wright-json-schema-validation-01</a></li>
+</ul>
+
+
+<h3 id="http_message_validation_create">Creating an HTTP Message Validation Policy</h3>
+<p>The first step in creating a policy is to define the basic policy information. Then, you can configure the policy details.</p>
+
+<h5>To add an operational policy</h5>
+<ol>
+	<li>Go to <strong>Workbench</strong> &gt; <strong>Browse</strong> &gt; <strong>Organization</strong>, and select <strong>Policies</strong> &gt; <strong>Operational Policies</strong>. The <strong>Policies Summary</strong> is displayed.</li>
+	<li>Click <strong>Add Policy</strong>.</li>
+	<li>Choose the policy type and click <strong>Next</strong>.</li>
+	<li>Specify a name (required) and description (optional) and click <strong>Finish</strong>. At the <strong>Completion Summary</strong>, Click <strong>Close</strong>. The <strong>Add Policy</strong> Wizard creates a draft policy instance that you can then configure on the <strong>Policy Details</strong> page.</li>
+</ol>
+<p>For more information, see <a href="policy_management.htm#add_policy">Add Policy</a>.</p>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="http_message_config">Configuring the HTTP Message Validation Policy</h3>
+<p>Once you've defined the basic policy information, you can configure the technical details that determine how the policy works when it's attached to a service.</p>
+
+<h5 id="proc_config_http_message">To configure an HTTP Message Validation Policy</h5>
+<ol>
+	<li>Go to <strong>Workbench</strong> &gt; <strong>Browse</strong> &gt; <strong>Organization</strong> and select the <strong>Policies</strong> &gt; <strong>Operational Policies</strong> folder. The <strong>Policies Summary</strong> is displayed.</li>
+	<li>Find the policy on the list and double-click to go to the <strong>Details</strong> page for the policy.</li>
+	<li>In the second panel, click <strong>Modify</strong> to access the <strong>Specify HTTP Message Validation Policy Options</strong> page.</li>
+	<li>Choose one or more validation scopes to determine which messages in a transaction should be validated by the policy. <strong>Request</strong> is the default. For details, see <a href="#http_message_options_scope">Validation Scope</a> below.</li>
+	<li>Choose one or more processing options. For details, see <a href="#http_message_options_proc">Processing Options</a> below.</li>
+	<li>Click <strong>Finish</strong>.</li>
+</ol>
+<p>After you've configured your policy, you can attach it to a web service, operation, or binding.</p>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="http_message_options">HTTP Message Validation Policy options</h3>
+<p><img src="images/http_message_validation.jpg" alt="Specify HTTP Message Validation Policy Options" /></p>
+<p>On this page, you can specify:</p>
+<ul>
+	<li><a href="#http_message_options_scope">Validation Scope</a>: Which messages the policy is applied to.</li>
+	<li><a href="#http_message_options_proc">Processing Options</a>: Configuration settings to fine-tune how the policy works.</li>
+</ul>
+<p>Refer to the field descriptions below.</p>
+
+
+<h4 id="http_message_options_scope">Validation Scope</h4>
+<p>Identifies which messages in a transaction should be validated by the policy. Choose one or more of the following (<strong>Request</strong> is the default value):</p>
+<ul>
+	<li><strong>Request</strong>: All input messages, coming in from client applications, are validated.</li>
+	<li><strong>Response</strong>: All normal output messages, being returned from the API endpoint, are validated.</li>
+	<li><strong>Fault</strong>: Error responses returned from the API endpoint are validated.</li>
+</ul>
+
+
+<h4 id="http_message_options_proc">Processing Options</h4>
+<p>This section has options to enable or disable several features of the message validation and reporting of detected errors.</p>
+
+<dl>
+<dt>Fail early</dt>
+<dd>If this option is enabled, the policy stops processing the message after the first validation error. If not enabled (the default), the policy continues to test all remaining validation rules and report any other errors in the message.</dd>
+<dd>This option enables you to reduce the overhead of message validating by terminating validation at the first error. A typical use is in a production environment where processing speed is particularly important.</dd>
+<dd><strong>Note</strong>: If the policy encounters a significant issue, such as a type validation error, it fails even if this setting is cleared.</dd>
+<dd><strong>Key benefit</strong>: Enabled: efficiency. Disabled: more detailed validation errors.</dd>
+
+
+
+<dt>Enable format validation</dt>
+<dd>If this option is enabled, the policy applies stricter validation by enabling the <strong>format</strong> JSON Schema keyword. For example, the rules for date-time formats and for email addresses are strict. If disabled (the default), less strict validation is applied.</dd>
+<dd>Per the JSON Schema specification, this validation is optional. For more information, see <a href="https://tools.ietf.org/html/draft-wright-json-schema-validation-01#page-14" title="Semantic validation with the format keyword" target="new">https://tools.ietf.org/html/draft-wright-json-schema-validation-01#page-14: Section 8: Semantic Validation with "Format"</a>. For valid values, see <a href="#format_keyword_options">Format keyword options</a> below.</dd>
+<dd><strong>Key benefit</strong>: Enabled: stricter adherence to JSON Schema rules. Disabled: less processing overhead.</dd>
+
+<dt>Verbose errors</dt>
+<dd>If this option is enabled, detailed validation error messages are returned to the API client application. If disabled (the default), a generic summary error message is returned.</dd>
+<dd><strong>Note</strong>: The Gateway container log always contains all message validation error details.</dd>
+<dd><strong>Key benefit</strong>: Enabled: more detailed error messaging. Disabled: less processing overhead.</dd>
+
+
+<dt>Coerce strings</dt>
+<dd>With this option enabled, the policy treats strings as numeric, boolean, or null values as appropriate for validation purposes. For example, if a string looks like a number and the validation rules expect a number, the rule will pass. By default, all validation is applied to values exactly as they are presented.</dd>
+<dd><strong>Key benefit</strong>: Enabled: efficiency. Disabled: stricter validation.</dd>
+
+
+<dt>Exact decimals</dt>
+<dd>Controls how decimal numbers are compared. Normal comparison of decimal numbers treats values such as 2.25 and 2.250 as being equal. If this option is enabled, the number of significant digits becomes a factor in the comparison of decimal numbers; values such as 1.1 and 1.100 are not considered equal, since they do not have the same number of significant digits. With this option disabled, decimal numbers are compared based on their actual value without regard to the number of trailing significant zeroes.</dd>
+<dd><strong>Key benefit</strong>: Enabled: stricter validation. Disabled: more relaxed validation.</dd>
+
+
+<dt>Treat [null] as [&nbsp;]</dt>
+<dd>With this option enabled, the policy treats an array of null ([null]) the same as an empty array ([]). An empty array in JSON schema is often defined as a null array. By default, strict JSON Schema rules are applied, so these two arrays are not equal.</dd>
+<dd><strong>Key benefit</strong>: Enabled: more relaxed validation. Disabled: stricter adherence to JSON Schema rules.</dd>
+
+
+</dl>
+
+
+<h4 id="format_keyword_options">Format keyword options</h4>
+<p>Refer to the tables below for the validation specification for <strong>format</strong> keyword options.</p>
+<ul>
+	<li><a href="#format_keyword_supported">Supported options</a></li>
+	<li><a href="#format_keyword_not_supported">Options not yet implemented/supported</a></li>
+</ul>
+
+<h5 id="format_keyword_supported">Supported options</h5>
+<p>If you're using the <strong>format</strong> keyword, you can use any of the options below.</p>
+<table class="doctable">
+	<thead>
+		<tr>
+			<th>value</th>
+			<th>Validation spec</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>int32</td>
+			<td>32-bit signed integer</td>
+		</tr>
+		<tr>
+			<td>int64</td>
+			<td>64-bit signed integer</td>
+		</tr>
+		<tr>
+			<td>float</td>
+			<td>Single-precision floating point</td>
+		</tr>
+		<tr>
+			<td>double</td>
+			<td>Double-precision floating point</td>
+		</tr>
+		<tr>
+			<td>binary</td>
+			<td>All strings validate true</td>
+		</tr>
+		<tr>
+			<td>password</td>
+			<td>All strings validate true</td>
+		</tr>
+		<tr>
+			<td>byte</td>
+			<td>Standard Base64 encoded strings</td>
+		</tr>
+		<tr>
+			<td>date</td>
+			<td>yyyy-mm-dd</td>
+		</tr>
+		<tr>
+			<td>date-time</td>
+			<td>RFC 3339</td>
+		</tr>
+		<tr>
+			<td>email</td>
+			<td>RFC 5322, section 3.4.1</td>
+		</tr>
+		<tr>
+			<td>hostname</td>
+			<td>RFC 1034, section 3.1</td>
+		</tr>
+		<tr>
+			<td>ipv4</td>
+			<td>RFC 2673, section 3.2</td>
+		</tr>
+		<tr>
+			<td>ipv6</td>
+			<td>RFC 2373, section 2.2</td>
+		</tr>
+		<tr>
+			<td>uri</td>
+			<td>URIs (absolute) as per RFC 3986</td>
+			</tr>
+		<tr>
+			<td>uri-reference</td>
+			<td>URI Reference (URI or relative URI) as per RFC 3986</td>
+		</tr>
+		<tr>
+			<td>base64</td>
+			<td>Standard <strong>base64</strong> encoding for RFC 3548 or RFC 4648</td>
+			</tr>
+		<tr>
+			<td>base64url</td>
+			<td>Standard <strong>base64url</strong> with URL and Filename Safe Alphabet (RFC 4648 sec 5 Table 2: <strong>The "URL and Filename safe" Base 64 Alphabet</strong>)</td>
+		</tr>
+		<tr>
+			<td>regex</td>
+			<td>Regular Expressions (java.util.regex.Pattern rules)</td>
+		</tr>
+		<tr>
+			<td>time</td>
+			<td>ISO-8601 extended local time format.</td>
+		</tr>
+		<tr>
+			<td>uuid</td>
+			<td>RFC 4122</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<h5 id="format_keyword_not_supported">Options not yet implemented/supported</h5>
+<p>The following options for the <strong>format</strong> keyword are not yet available.</p>
+<table class="doctable">
+	<thead>
+		<tr>
+			<th>value</th>
+			<th>Validation spec</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>json-pointer</td>
+			<td>(not yet supported)</td>
+		</tr>
+		<tr>
+			<td>uri-template</td>
+			<td>(not yet implemented)</td>
+		</tr>
+	</tbody>
+</table>
+<p><a href="#top">Back to top</a></p>
+
+
+<h3 id="policy_attach">Attaching the Policy</h3>
+<p>To use the HTTP Message Validation Policy, go to the <strong>Policies</strong> folder in the Root Organization and attach the policy to a web service, binding, or binding operation.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<div class = "divider1"></div>
+
+
+
+<h3 id="related_topics">Related Topics</h3>
+<div class="relatedlinks">
+<ul>
+	<li><a href="about_policies_view.htm">About Policies</a></li>
+	<li><a href="policy_management.htm">Managing Policies</a></li>
+	<li><a href="policies_operational_about.htm">About Operational Policies</a></li>
+</ul>
+<ul>
+	<li><a href="http://docs.akana.com/cm/learnmore/basics_glossary.htm">Glossary of Terms for the Developer Portal</a></li>
+</ul>
+</div>
