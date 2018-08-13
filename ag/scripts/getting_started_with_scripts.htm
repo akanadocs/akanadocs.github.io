@@ -45,7 +45,7 @@ nav-title: Getting Started with Scripts
 
 <a name="script_contexts"></a><h3>Script Contexts</h3>
 <p>There are several ways that you can configure your script definitions:</p>
-<ul class="usingOrderedList">
+<ul>
   <li>You can define a script object in the <strong>Scripts</strong> section, using the <strong>Add Script</strong> function. This is useful for building a library of scripts you can reuse in your Process or QoS Script Policy definitions. </li>
   <li> You can create a process, add a Script Activity, and then import an existing script. </li>
   <li>You can create a QoS or Operational Script Policy and then, from within that context, define a new script or import an existing script.</li>
@@ -109,7 +109,7 @@ nav-title: Getting Started with Scripts
 <p>The platform includes some pre-defined methods that you can use in your scripts. From the script workspace, to access the list of pre-defined methods, type CTRL+Space, choose from the list below, and then type a period (.) after the method.</p>
 <p><img src="images/scripts_default_methods.jpg" width="254" height="178" alt="Default methods for scripts" /></p>
 <p>The pre-defined methods are:</p>
-<ul class="usingOrderedList">
+<ul>
   <li><strong>recorder</strong>: Provides an interface for recording content in the Policy Manager usage log pages. </li>
   <li><strong>auditLog: </strong> Provides logging functions to the process audit log. If auditing is enabled for the virtual service operation that is invoking the process statements logged using this variable, log information will be inserted into the audited message log for the operation&rsquo;s execution. In Policy Manager, you can find this information on the <strong>Monitoring</strong> tab for the service, in the <strong>Logs</strong> sub-tab. </li>
   <li><strong>messageContext</strong>: Provides information about the platform's message handler framework's processing of a message. From the context you can get information such as the message being processed, the role of the message in a message exchange (IN, OUT, FAULT), and properties that can be changed and read by the chain of handlers that process the message.</li>
