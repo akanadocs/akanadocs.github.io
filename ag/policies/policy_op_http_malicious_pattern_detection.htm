@@ -17,18 +17,17 @@ nav-title: HTTP Malicious Pattern Detection
 <a href="policy_management.htm" class="button secondary">Managing Policies</a>  
 <a href="policies_operational_about.htm" class="button secondary">About Operational Policies</a>
 </p>
+<p>For information about using policies in the context of the developer portal, see <a href="../../cm/learnmore/bus_admin_organizations.htm#h_business_policies">Business Policies</a>.</p>
 
 
 
 <div class = "divider1"></div>
-
-
-
 <h3 style="color: gray;">Table of Contents</h3>
 <ol class="table_of_contents">
 	<li><a href="#introduction">Introduction</a></li>
 	<li><a href="#examples">Examples</a></li>
 	<li><a href="#configuration">Configuration</a></li>
+	<li><a href="#example">Policy Example</a></li>
 </ol>
 <div class = "divider1"></div>
 
@@ -106,6 +105,15 @@ nav-title: HTTP Malicious Pattern Detection
 
 
 
+<h3 id="example">Policy Example</h3>
+<!--<p>The illustration below shows a usage example for the Malicious Pattern Detection policy. In this example, the policy looks for SQL injections and other attempts to query or change database tables.</p>-->
+<p>One example of using the Malicious Pattern Detection policy is to look for SQL injections and other attempts to query or change database tables.</p>
+<p>Any input field (path parameter, query parameter, header) could potentially be used to send a database query, instead of a required request parameter. For example, a field expecting an integer could instead have an escape character and then a database SQL query.</p>
+<p><img src="images/http_mal_pattern_detection_example01.jpg" alt="HTTP Malicious Pattern Detection policy, example" /></p>
+<p><a href="#top">Back to top</a></p>
+
+
+
 <div class = "divider1"></div>
 
 
@@ -118,6 +126,6 @@ nav-title: HTTP Malicious Pattern Detection
 	<li><a href="policies_operational_about.htm">About Operational Policies</a></li>
 </ul>
 <ul>
-	<li><a href="http://docs.akana.com/cm/learnmore/basics_glossary.htm">Glossary of Terms for the Developer Portal</a></li>
+	<li><a href="../../cm/learnmore/basics_glossary.htm">Glossary of Terms for the Developer Portal</a></li>
 </ul>
 </div>

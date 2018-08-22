@@ -15,13 +15,11 @@ nav-title: Managing Policies
 <p>
 <a href="about_policies_view.htm" class="button secondary">About Policies</a>
 </p>
+<p>For information about using policies in the context of the developer portal, see <a href="../../cm/learnmore/bus_admin_organizations.htm#h_business_policies">Business Policies</a>.</p>
 
 
 
 <div class = "divider1"></div>
-
-
-
 <h3 style="color: gray;">Table of Contents</h3>
 <ol class="table_of_contents">
 	<li><a href="#add_policy">Add Policy</a></li>
@@ -186,7 +184,7 @@ nav-title: Managing Policies
 
 <h5 id="eg_01">Example #1</h5>
 <p>In the example below, a JSONPath expression is used in the Detailed Auditing Policy. This expression identifies instances of all lastfour digits in card numbers, for filtering; the policy removes this information from the log. </p>
-<p><strong>Note</strong>: An alternative treatment for card information is to use the <a href="using_the_auditing_message_policy.htm">Auditing Message Policy</a> to mask the information (xxxx).</p>
+<p><strong>Note</strong>: An alternative treatment for card information is to use the <a href="policy_op_auditing_message.htm">Auditing Message Policy</a> to mask the information (xxxx).</p>
 <p><img src="images/auditing_service_filter_settings_jsonpath.jpg" alt="Using JSONPath in policies" /></p>
 <p>The JSONPath expression:</p>
 <pre>
@@ -209,7 +207,7 @@ $.cardNumber[*].lastfour</pre>
 	<li>In JSON: filters for credit card expiration date and, if found, does not log that information.</li>
 	<li>In XML: filters for the PaymentCard object and, if found, does not log that information.</li>
 </ul>
-<p><strong>Note</strong>: An alternative treatment for card information is to use the <a href="using_the_auditing_message_policy.htm">Auditing Message Policy</a> to mask the information (xxxx).</p>
+<p><strong>Note</strong>: An alternative treatment for card information is to use the <a href="policy_op_auditing_message.htm">Auditing Message Policy</a> to mask the information (xxxx).</p>
 <p>The policy definition:</p>
 <p><img src="images/auditing_service_filter_settings_xpath.jpg" alt="UsingXPath in policies" /></p>
 <p>The XPath expression:</p>
@@ -223,4 +221,23 @@ $.cardNumber[*].lastfour</pre>
   SeriesCode="123"&gt;
      &lt;CardHolderName&gt;John Doe&lt;/CardHolderName&gt;
    &lt;/PaymentCard&gt;'</pre>
+
 <p><a href="#top">Back to top</a></p>
+
+
+
+<div class = "divider1"></div>
+
+
+
+<h3 id="related_topics">Related Topics</h3>
+<div class="relatedlinks">
+<ul>
+	<li><a href="about_policies_view.htm">About Policies</a></li>
+	<li><a href="policy_management.htm">Managing Policies</a></li>
+	<li><a href="policies_operational_about.htm">About Operational Policies</a></li>
+</ul>
+<ul>
+	<li><a href="../../cm/learnmore/basics_glossary.htm">Glossary of Terms for the Developer Portal</a></li>
+</ul>
+</div>
