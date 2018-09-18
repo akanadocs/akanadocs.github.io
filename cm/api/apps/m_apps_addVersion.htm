@@ -68,8 +68,9 @@ no-catalog: true
 Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->{hostname}<!-- #EndLibraryItem -->
 Accept: */*
 Content-Type: application/json; charset=UTF-8
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
-<p><strong>Sample request body</strong></p>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<p><strong>Sample request body #1</strong></p>
+<p>Includes optional tags and description.</p>
 <pre>
 {
   &quot;Name&quot;:&quot;1.0&quot;,
@@ -84,6 +85,12 @@ Content-Type: application/json; charset=UTF-8
   &quot;InitialEnvironment&quot;:&quot;Sandbox&quot;,
   &quot;Visibility&quot;:&quot;Public&quot;,
   &quot;WebsiteAddress&quot;:&quot;&quot;
+}</pre>
+<p><strong>Sample request body #2</strong></p>
+<p>Includes the minimum content needed to add a new app version; the <strong>Name</strong> field, which corresponds to the <strong>Version ID</strong> field in the developer portal user interface.</p>
+<pre>
+{
+  &quot;Name&quot;:&quot;NEW_VERSION_ID&quot;
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -144,7 +151,7 @@ The unique ID for a specific app.<!-- #EndLibraryItem --></td>
       <td>ApplicationVersion</td>
       <td>Body</td>
       <td><a href="../obj/o_apps_ApplicationVersion.htm">ApplicationVersion</a></td>
-      <td>Optional</td>
+      <td>Required</td>
       <td>Information about the app version, such as name, description, and tags.</td>
     </tr>
     </tbody>
