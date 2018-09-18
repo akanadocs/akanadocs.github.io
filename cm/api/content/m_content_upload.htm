@@ -12,14 +12,14 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>POST&nbsp;/content/upload</h2>
+<h2><a name="top" id="top"></a>POST&nbsp;/content/{path}</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_content_upload.lbi" -->
 Uploads a single file of existing content to the platform, or uploads a ZIP file of existing content and unzips it to the specified location.<!-- #EndLibraryItem --></p>
 
-<p class="apidoc_note"><strong>Note</strong>: When creating or uploading content files, you can use the <span class="apidoc_code"><a href="m_content_upload.htm">POST&nbsp;/content/upload</a></span> operation to upload a single file, or multiple files in a ZIP, using the <strong>multipart/form-data</strong> content type. You can use the <span class="apidoc_code"><a href="m_content_add.htm">POST&nbsp;/content/{path}</a></span> operation to create a new folder with a default JSON table of contents file in it, as in the example below, or to create a new file. If you are creating a new file, it cannot be empty; you must include the file contents in the payload, and must use the <strong>application/x-www-form-urlencoded</strong> content type.</p>
+<p class="apidoc_note"><strong>Note</strong>: When creating or uploading content files, you can use the <span class="apidoc_code"><a href="m_content_upload.htm">POST&nbsp;/content/{path}</a></span> operation (with <strong>multipart/form-data</strong> content type) to upload a single file, or multiple files in a ZIP. You can use the <span class="apidoc_code"><a href="m_content_add.htm">POST&nbsp;/content/{path}</a></span> operation (with <strong>application/x-www-form-urlencoded</strong> content-type) to create a new folder with a default JSON table of contents file in it, as in the example below, or to create a new file. If you are creating a new file, it cannot be empty; you must include the file contents in the payload, and must use the <strong>application/x-www-form-urlencoded</strong> content type.</p>
 
 <p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or other authorized user.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
