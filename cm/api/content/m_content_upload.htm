@@ -59,15 +59,21 @@ Uploads a single file of existing content to the platform, or uploads a ZIP file
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to upload a ZIP file of content for the specified API.</p>
-<p><strong>Request URL</strong></p>
+<p><strong>Request URL #1</strong></p>
+<p>Uploads an API documentation ZIP file and unzips it.</p>
 <pre>https://api.acmepaymentscorp.com/content/api/api19427.acmepaymentscorp/documents?unpack=true&amp;wrapInHTML=true</pre>
+<p><strong>Request URL #2</strong></p>
+<pre>https://api.acmepaymentscorp.com/content/help?unpack=true</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST /content/api/api19427.acmepaymentscorp/documents?unpack=true&amp;wrapInHTML=true HTTP/1.1
 Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>The request body is the ZIP file.</p>
+<p><strong>Sample request #2 in Postman</strong></p>
+<p>In the example below, the content being uploaded is a ZIP file to be placed in the content/help folder for display in SimpleDev theme. The <strong>index.zip</strong> file is uploaded to the <strong>content/help</strong> folder and unzipped (<strong>unpack=true</strong> parameter).</p>
+<p><img src="../assets/content_upload_postman_01.jpg" alt="Content Upload in Postman: URL, uploaded ZIP file, successful result" /></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -84,13 +90,14 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
   </thead>
   <tbody>
     <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td>Not applicable.</td>
-      </tr>
+    	<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+    	<td>Not applicable.</td>
+   	</tr>
     <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_multipart_form-data.lbi" --><strong><a href="../aaref/Ref_MediaTypes.htm#mediatype_multipartformdata">multipart/form-data</a></strong><!-- #EndLibraryItem --></td>
-    </tr>
+    	<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
+    	<td><p><!-- #BeginLibraryItem "/Library/hdrval_multipart_form-data.lbi" --><strong><a href="../aaref/Ref_MediaTypes.htm#mediatype_multipartformdata">multipart/form-data</a></strong><!-- #EndLibraryItem --></p>
+    		<p>In the form data, you must include a key of <strong>File</strong>; the value for the key is the individual file or ZIP file with the content you want to upload to the specified location, as shown above in Postman. If you're uploading a ZIP file, include the <strong>unpack=true</strong> query parameter. Refer to Sample Request #2 above.</p></td>
+   	</tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
       <td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>

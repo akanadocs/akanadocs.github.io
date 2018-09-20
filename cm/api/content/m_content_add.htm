@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Add Content | Content Service | Akana API Platform API
-description:  Adds a single file of new content to the platform, or adds a new directory. When adding a directory, it must include at least one file with some content that is valid for the specified file type.
+description:  Adds a single file of new content to the platform, or adds a new directory.
 product: cm
 category: ref
 nav-title: Add Content 
@@ -16,8 +16,7 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_content_add.lbi" -->
-Adds a single file of new content to the platform, or adds a new directory. When adding a directory, it must include at least one file with some content that is valid for the specified file type.<!-- #EndLibraryItem --></p>
+<p>Adds a single file of new content to the platform, or adds a new directory.</p>
 <p class="apidoc_note"><strong>Note</strong>: When creating or uploading content files, you can use the <span class="apidoc_code"><a href="m_content_upload.htm">POST&nbsp;/content/{path}</a></span> operation (with <strong>multipart/form-data</strong> content type) to upload a single file, or multiple files in a ZIP. You can use the <span class="apidoc_code"><a href="m_content_add.htm">POST&nbsp;/content/{path}</a></span> operation (with <strong>application/x-www-form-urlencoded</strong> content-type) to create a new folder with a default JSON table of contents file in it, as in the example below, or to create a new file. If you are creating a new file, it cannot be empty; you must include the file contents in the payload, and must use the <strong>application/x-www-form-urlencoded</strong> content type.</p>
 
 <p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or other authorized user.</p>
@@ -71,7 +70,9 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body (request URL #1)</strong></p>
 <pre>body=%7B%7D</pre>
-
+<p><strong>Sample request #3 in Postman</strong></p>
+<p>The example below creates the help folder for a corresponding SimpleDev theme, in Postman. In this example, CSRF is turned off, so only the content-type header is required. The <strong>path</strong> path parameter and <strong>folder</strong> form parameters are used.</p>
+<p><img src="../assets/content_add_postman_01.jpg" alt="Content Upload in Postman: URL, uploaded ZIP file, successful result" /></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <!-- InstanceEndEditable -->
