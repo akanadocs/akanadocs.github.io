@@ -1,0 +1,687 @@
+---
+layout: page
+title: Upgrading Akana API Platform 8.4x to 2018.0.x
+description: Provides instructions for upgrading from Akana API Platform 8.2 to Akana API Platform 8.4.
+product: sp
+category: ref
+sub-nav-class: Upgrade - Akana API Platform
+weight: 4
+type: page
+nav-title: Upgrade 8.4x to 2018.0.x
+---
+<h2 id="top">Upgrading Akana API Platform from Version 8.4x to Version 2018.0.x</h2>
+<p>Learn how to upgrade from Akana API Platform 8.4x to 2018.0.0.</p>
+<p>In previous versions, upgrade instructions addressed upgrading existing containers. When moving to version 2018.0.x, we recommend that you create new containers. These instructions address the scenario of upgrading from an 8.4x version to 2018.0.0 by creating new containers.</p>
+<p>This upgrade addresses a simple container scenario of:</p>
+<ul>
+	<li>One container with Policy Manager and Community Manager installed</li>
+	<li>One container running the API Gateway (Network Director)</li>
+</ul>
+<p>The documentation includes some notes and additional information that would be applicable if you're creating other container scenarios&#8212;for example, if you have multiple PM/CM containers, or a separate Scheduled Jobs container&#8212;but the main path is to create these two containers.</p>
+<p><strong>Note</strong>: If you're upgrading Policy Manager for DataPower, follow the steps in this document that you would use for upgrading Network Director.</p>
+<p><strong>Note</strong>: This document covers instructions for 2018.0.0. For 8.4x, see <a href="upgrading_akana_api_platform_82_84.htm">Upgrading Akana API Platform from Version 8.2 to Version 8.4x</a>.</p>
+
+<p>
+<a href="../admin_console/using_admin_console.htm" class="button secondary">Using Admin Console</a>
+<a href="../admin_console/installing_tools.htm" class="button secondary">Installing Tools</a>
+<a href="../admin_console/installing_plugins.htm" class="button secondary">Installing Plug-ins</a></p>
+
+<p><a href="../admin_console/config_actions.htm" class="button secondary">Configuration Actions</a></p>
+
+<h5 class="stamp">Supported Platforms: 2018.0.x</h5>
+<div class = "divider1"></div>
+<h3 style="color: gray;">Table of Contents</h3>
+
+
+
+<h5 style="color: gray;"><a href="#h_upgrade_planning">Planning the Upgrade</a></h5>
+<ol class="table_of_contents">
+	<li><a href="#s01_00">Overview</a></li>
+	<li><a href="#s01_01">Step 1-1: Review release notes</a></li>
+	<li><a href="#s01_02">Step 1-2: Plan the upgrade</a></li>
+	<li><a href="#s01_03">Step 1-3: Install and configure Elasticsearch (if not already done)</a></li>
+</ol>
+
+
+
+<h5 style="color: gray;"><a href="#h_upgrade_performing">Performing the Upgrade</a></h5>
+<ol class="table_of_contents">
+	<li><a href="#s02_00">Overview</a></li>
+	<li><a href="#s02_01">Step 2-1: Gather ZIP file or files and download to a temporary folder</a></li>
+	<li><a href="#s02_02">Step 2-2: Shut down, back up, and delete the previous version</a></li>
+	<li><a href="#s02_03">Step 2-3: Extract installation files in the correct sequence</a></li>
+	<li><a href="#s02_04">Step 2-4: Verify that Elasticsearch is running</a></li>
+	<li><a href="#s02_05">Step 2-5: Create and configure the first container</a></li>
+	<li><a href="#s02_06">Step 2-6: Create and configure additional containers</a></li>
+</ol>
+
+
+
+<h5 style="color: gray;"><a href="#h_post_upgrade_tasks">Post-Upgrade Tasks</a></h5>
+<ol class="table_of_contents">
+	<li><a href="#s03_01">Step 3-1: Check for pending installation tasks</a></li>
+	<li><a href="#s03_02">Step 3-2: Perform configuration actions</a></li>
+	<li><a href="#s03_03">Step 3-3: Update container properties</a></li>
+	<li><a href="#s03_04">Step 3-4: Check system health</a></li>
+	<li><a href="#s03_05">Step 3-5: Configure Elasticsearch</a></li>
+	<li><a href="#s03_06">Step 3-6: Restart all containers</a></li>
+	<li><a href="#s03_07">Step 3-7: Configure API Gateway/Network Director</a></li>
+</ol>
+
+
+
+<h5 style="color: gray;"><a href="#h_upgrade_tasks_reference">Upgrade Procedures/Reference:</a></h5>
+<ol class="table_of_contents">
+	<li><a href="#launch_console">Launching the Akana Administration Console</a></li>
+	<li><a href="#check_features_installed">Checking that features were installed correctly</a></li>
+	<li><a href="#sched_jobs_off">Turning the scheduled jobs off</a></li>
+	<li><a href="#sched_jobs_on">Turning the scheduled jobs back on</a></li>
+	<li><a href="#unreg-rereg_win">Unregistering and re-registering the Windows service</a></li>
+	<li><a href="#clear_cache">Clearing Configurator cache</a></li>
+	<li><a href="#s02_09">Starting a container</a></li>
+	<li><a href="#s02_12">Refreshing the repository</a></li>
+	<li><a href="#ts_02_error_new_containers">Upgrading by creating new containers: notes</a></li>
+	<li><a href="#tech_support_contact">Contacting Rogue Wave Technical Support</a></li>
+</ol>
+
+
+
+
+<div class = "divider1"></div>
+<h3 id="h_upgrade_planning">Planning the Upgrade</h3>
+
+
+
+
+<h3 id="s01_00">Overview</h3>
+<p>In previous versions, upgrade instructions addressed upgrading existing containers. When moving to version 2018.0.0, we recommend that you create new containers. These instructions address the scenario of creating new containers for your 2018.0.x installation.</p>
+<p>There are some steps you might need to take before starting the upgrade process, and some information you'll need to consider to determine how to proceed, including:</p>
+<ul>
+	<li><a href="#s01_01">Step 1-1: Review release notes</a></li>
+	<li><a href="#s01_02">Step 1-2: Plan the upgrade</a></li>
+	<li><a href="#s01_03">Step 1-3: Install and configure Elasticsearch (if not already done)</a></li>
+	<li>Check if there are any constraints or requirements associated with the type of database you're using, such as permissions required. For details, see <a href="../platform_install/installing_akana_api_platform_v84.htm#database_notes">Database Notes</a> (installation doc).</li>
+</ul>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="s01_01">Step 1-1: Review release notes</h3>
+<p>Review the release notes so that you are aware of changes to the platform. Check for upgrade notes.</p>
+<p>Release notes are available from the Rogue Wave Support Center (<a href="https://library.roguewave.com" target="_blank">https://library.roguewave.com</a>).</p>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="s01_02">Step 1-2: Plan the upgrade</h3>
+<p>Before you start downloading and installing, plan your upgrade. In particular, you'll need to:</p>
+<ol>
+	<li>Decide what containers you'll have, and which features will be installed in which containers. For a recommended simple configuration, see <a href="../deployment/deployment_clustered.htm">Sample Deployment Scenario</a>.</li>
+	<li>Determine where you'll install Elasticsearch, needed for the search feature. For full information on Elasticsearch, see <a href="../platform_install/install_es_config.htm">Installing and Configuring Elasticsearch</a>.</li>
+	<li>If you have a specific add-on feature installed, such as the Integration Services option pack, SiteMinder Security Provider, or SAML Web SSO Security Provider feature, it's important that you download the new release version package for the same feature.</li>
+	<li>Take all steps needed to save out container settings so that you can reproduce the configuration on the new container, where applicable. You'll need this information for <a href="#s03_03">Step 3-3: Update container properties</a>. Save:
+		<ul>
+			<li>The context root. </li>
+			<li>All other container properties that you've customized.</li>
+		</ul>
+	</li>
+</ol>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="s01_03">Step 1-3: Install and configure Elasticsearch (if not already done)</h3>
+<p>Version 2018.0.0 requires standalone Elasticsearch.</p>
+<p>For instructions, see <a href="../platform_install/install_es_config.htm">Installing and Configuring Elasticsearch</a>.</p>
+<p><a href="#top">back to top</a></p>
+
+
+
+<div class = "divider1"></div>
+<h3 id="h_upgrade_performing">Performing the Upgrade</h3>
+
+
+
+
+<h3 id="s02_00">Overview</h3>
+<p><strong>Note</strong>: The instructions in this document are for upgrade from Akana API Platform 8.4x to Akana API Platform 2018.x. If you're upgrading from an earlier version, you'll need to perform additional steps first, to upgrade to version 8.4. See <a href="upgrading_akana_api_platform_82_84.htm">Upgrading Akana API Platform from Version 8.2 to Version 8.4x</a>.</p>
+<p>At a high level, to perform the upgrade, you'll complete the following actions:</p>
+<ol>
+	<li>Shut down the previous version, make a complete backup, and then delete the contents of the original installation folder.</li>
+	<li>Extract installation files in the correct sequence.</li>
+	<li>Verify that Elasticsearch is running.</li>
+	<li>Create containers.</li>
+	<li>Configure the containers and test the installation</li>
+</ol>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="s02_01">Step 2-1: Gather ZIP file or files and download to a temporary folder</h3>
+<p>The first step is to download the required ZIP files to a temporary folder. From there, you'll unzip the files into your installation folder. You'll need to:</p>
+<ul>
+	<li>Create a temporary folder for the downloaded ZIP file.</li>
+	<li>Create a folder for your 2018.0.x installation; for example, <strong>aap2018</strong>.</li>
+	<li>Download the ZIP file for version 2018.0.0. </li>
+</ul>
+<p>For detailed instructions on this step, refer to the installation guide, <a href="../platform_install/installing_akana_api_platform.htm#gather_zip_files">Gather ZIP file or files and download to a temporary folder</a>.</p>
+<p><strong>Note</strong>: For notes about limitations and extra steps for specific databases, see <a href="../platform_install/installing_akana_api_platform.htm#supported_databases">Supported databases</a> (installation doc). If you're using a MySQL database with API Platform and the Lifecycle Repository feature, see <a href="../platform_install/installing_akana_api_platform.htm#notes_database_mysql_rm">Database notes: MySQL with Lifecycle Repository</a>.</p>
+<p>Depending on the scenario, you might also need one or more of the following files:</p>
+<ul>
+	<li><strong>Plug-ins</strong>: The ZIP file, and any updates, for any plug-ins you want to use in your installation.</li>
+	<li><strong>Updates</strong>: not applicable to version 2018.0.0 itself, but for future updates.</li>
+</ul>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="s02_02">Step 2-2: Shut down, back up, and delete the previous version</h3>
+<ol>
+	<li>Shut down all containers in your installation.</li>
+	<li>Copy the entire installation folder structure to a secure backup location.</li>
+	<li>Make sure you have a backup of your database also.</li>
+	<li>When you're completely sure that the backup is complete, successful, and secure, delete the contents of your original installation folder.</li>
+	<li>Create a new folder for your new installation, or use the existing, empty folder.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h3 id="s02_03">Step 2-3: Extract installation files in the correct sequence</h3>
+<p>The next step is to extract the files, following the exact sequence below.</p>
+<p><strong>Note</strong>: You'll need a password to unzip the files. If you don't know the password, contact your Akana representative.</p>
+<h5>To unzip the installation files</h5>
+<ol>
+	<li>In the temporary folder that you created for the downloaded ZIP file in step 2-1, unzip the downloaded ZIP file.</li>
+	<li>Unzip the Akana Platform 2018.0.0 file to the folder for your installation.</li>
+	
+	<li>When the previous step is complete, unzip the Akana API Platform 2018.0.0 file to the folder for your installation.
+		<p>For example:</p>
+<pre>unzip -o /akana/downloads/akana-platform-linux-jre-2018.0.0.18.zip -d /akana/aap2018
+unzip -o /akana/downloads/akana-api-platform-2018.0.0.340.zip -d /akana/aap2018</pre>
+<p>For information about the folders and folder contents for the Akana Platform, see <a href="../platform_install/installing_akana_api_platform.htm#installation_folder_structure">Installation folder structure</a>.</p></li>
+<li>If applicable, unzip any add-on products, such as the SAML Web SSO Security Provider.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h3 id="s02_04">Step 2-4: Verify that Elasticsearch is running</h3>
+<p>Elasticsearch is a separate installation. Make sure it's installed successfully and is running.</p>
+<p>For example, run this command:</p>
+<pre>
+ps -ef
+</pre>
+<p>If there is response content, Elasticsearch is running. For example:</p>
+<pre>/usr/share/elasticsearch/modules/x-pack/x-pack-ml/platform/linux-x86_64/bin/controller</pre>
+<p>See also:</p>
+<ul>
+	<li> Elasticsearch website: <a href="https://www.elastic.co/">https://www.elastic.co/</a>.</li>
+	<li>Information about configuring Elasticsearch with the Akana API Platform: <a href="../platform_install/install_es_config.htm">Installing and Configuring Elasticsearch</a>.</li>
+</ul>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h3 id="s02_05">Step 2-5: Create and configure the first container</h3>
+<p>Create the first Community Manager/Policy Manager container. For features to install, see <a href="../platform_install/installing_akana_api_platform.htm#features_cm_pm">Community Manager/Policy Manager container features with access to MongoDB</a>. Follow the linked steps in the Installation Guide.</p>
+<p><strong>Note</strong>: In creating the containers, make sure that you set up at least one container running Policy Manager before you set up the Network Director container.</p>
+
+<h5 id="proc_container_first">To create and configure the first container</h5>
+<ol>
+	<li>Run Configurator to create the first container, either via the GUI or using silent install. See <a href="../platform_install/installing_akana_api_platform.htm#run_configurator_pm">Step 3: Run Configurator to create the first container</a>.</li>
+	<li>Conditional: if you saved configuration properties from your old container, copy them to the new container, then start it.</li>
+	<li>Install Policy Manager/Community Manager. See <a href="../platform_install/installing_akana_api_platform.htm#install_pm_cm">Step 4: Install Policy Manager/Community Manager features on the container</a> (installation doc).</li>
+	<li>At the <strong>Installation Complete</strong> summary, click <strong>Configure</strong> to complete pending tasks. See <a href="../platform_install/installing_akana_api_platform.htm#configure_pm">Step 6: Complete pending tasks to configure container features</a>. The pending tasks are:
+		<ol>
+			<li>Manage PKI Keys wizard (<strong>Generate PKI Keys &amp; X.509 Certificate</strong> page).
+				<p>See <a href="../platform_install/installing_akana_api_platform.htm#install_tasks_manage_pki_keys">Installation wizard: Manage PKI Keys</a> (installation doc).</p>
+			</li>
+			<li>Configure Database Options wizard (<strong>Select Database Options</strong> page): here, choose Use Existing Database and put in the values and credentials for the database from your prior version of the Akana API Platform.
+				<p>See <a href="../platform_install/installing_akana_api_platform.htm#install_tasks_add_database">Installation wizard: Add Database</a> (installation doc).</p>
+				<p><strong>Note</strong>: Depending on the database you're using, you might need to put a database driver in place, or take some other steps.</p>
+				<p>See <a href="../platform_install/installing_akana_api_platform.htm#database_notes">Database notes</a> and <a href="../platform_install/installing_akana_api_platform.htm#database_drivers">Database drivers</a> (installation doc).</p>
+			</li>
+			<li>Manage Schemas wizard (<strong>Install Schemas</strong> page): Manages the database schemas for the container.
+				<p>See <a href="../platform_install/installing_akana_api_platform.htm#install_tasks_manage_schemas">Installation wizard: Manage Schemas</a> (installation doc).</p>
+			</li>
+			<li>Create Policy Manager Admin User (<strong>Define Policy Manager Administrator Credentials</strong> page): Creates the top-level Policy Manager user.
+				<p>See <a href="../platform_install/installing_akana_api_platform.htm#install_tasks_create_pm_admin_user">Installation wizard: Define Policy Manager Administrator Credentials</a> (installation doc).</p>
+			</li>
+			<li>Provisioning: Initializes resources associated with the features installed on the container.
+				<p>See <a href="../platform_install/installing_akana_api_platform.htm#install_tasks_provisioning">Installation wizard: Provisioning</a> (installation doc).</p>
+			</li>
+		</ol>
+	</li>
+	<li>At the Restart prompt, to install the plug-ins before restarting, press <strong>Cancel</strong>.
+	</li>
+	<li>If applicable, install plug-ins. See <a href="../platform_install/installing_akana_api_platform.htm#install_plugins">Step 5: (as needed) Install plug-ins on the container</a>.</li>
+	<li>Restart the container. For instructions, see:
+		<ul>
+			<li><a href="../platform_install/installing_akana_api_platform.htm#starting_container">Starting a container</a></li>
+			<li><a href="../platform_install/installing_akana_api_platform.htm#stopping_container">Stopping a container</a></li>
+		</ul>
+	</li>
+</ol>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="s02_06">Step 2-6: Create and configure additional containers</h3>
+<p>Once you have the first container set up, it's time to create and configure additional containers. Essentially you'll follow the same set of steps as above, for these additional containers:</p>
+<ol>
+	<li>Optional: Subsequent Community Manager/Policy Manager containers. If you're following the sample deployment scenario, see <a href="../platform_install/installing_akana_api_platform.htm#features_cm_pm">Community Manager/Policy Manager container features with access to MongoDB</a>.</li>
+	<li>Network Director container. For features to install, see <a href="../platform_install/installing_akana_api_platform.htm#features_nd_oauth">API Gateway/Internal Gateway (Network Director)</a>. For Network Director, pending tasks include:
+		<ol>
+			<li><strong>WS-Metadata Exchange Options</strong>: see <a href="../platform_install/installing_akana_api_platform.htm#install_tasks_nd_configure_wsmex">Installation wizard, ND container: Configure WS-Metadata Exchange Options</a>.</li>
+			<li>Manage PKI Keys wizard (<strong>Select Key Management Option</strong> page): see <a href="../platform_install/installing_akana_api_platform.htm#install_tasks_manage_pki_keys">Installation wizard: Manage PKI Keys</a>.</li>
+		</ol>
+	</li>
+	<li>OAuth container. For features to install, see <a href="../platform_install/installing_akana_api_platform.htm#features_oauth_alone">OAuth Provider</a>.</li>
+	<li>Scheduled Jobs container. For features to install, see <a href="../platform_install/installing_akana_api_platform.htm#features_sched_jobs">Job Scheduler</a>.</li>
+</ol>
+<p>Create containers in this sequence:</p>
+<ol>
+	<li>First, create all Policy Manager/Community Manager containers.</li>
+	<li>Then, create all Network Director containers.
+	<p>You can create a Network Director container using either <a href="../admin_console/using_network_director_feature.htm#container_gui">GUI</a> or <a href="../admin_console/using_network_director_feature.htm#container_silent">Silent</a> options. For instructions on how to install a Network Director Container (<strong>ND1</strong>), install and configure the Network Director feature, and register the <strong>ND1</strong> container in Policy Manager, refer to <a href="../admin_console/using_network_director_feature.htm">Using Network Director Feature</a>.</p></li>
+</ol>
+<p>For details about the features and plug-ins to install for additional container configurations, see <a href="../platform_install/installing_akana_api_platform.htm#container_features">Container features</a>.</p>
+<p><a href="#top">back to top</a></p>
+
+
+
+
+<div class = "divider1"></div>
+<h3 id="h_post_upgrade_tasks">Post-Upgrade Tasks</h3>
+
+
+
+
+<h3 id="s03_00">Post-upgrade tasks: overview</h3>
+<p>Once you've completed the product version update, there are additional post-upgrade tasks you'll need to complete. Some of these steps are conditional depending on platform features you're using. They include:</p>
+<ul>
+	<li><a href="#s03_01">Step 3-1: Check for pending installation tasks</a></li>
+	<li><a href="#s03_02">Step 3-2: Perform configuration actions</a></li>
+	<li><a href="#s03_03">Step 3-3: Update container properties</a></li>
+	<li><a href="#s03_04">Step 3-4: Check system health</a></li>
+	<li><a href="#s03_05">Step 3-5: Configure Elasticsearch</a></li>
+	<li><a href="#s03_06">Step 3-6: Restart all containers</a></li>
+	<li><a href="#s03_07">Step 3-7: Configure API Gateway/Network Director</a></li>
+</ul>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="s03_01">Step 3-1: Check for pending installation tasks</h3>
+<p>When you've created all containers, check for pending installation tasks in each container.</p>
+<p>In the Akana Administration Console, under <strong>Installed Features</strong>, check at the bottom of the page under <strong>Pending Installation Tasks</strong>.</p>
+<p>If any are listed, click <strong>Complete Configuration</strong>.</p>
+<p>An example is shown below.</p>
+<table class="doctable">
+	<tr>
+		<td rowspan="5" width="20%" align="left" valign="top"><img src="images/06_01_PendingInstallationTasks.jpg" alt="Pending installation tasks" /></td>
+		<td rowspan="5" width="80%" align="left" valign="top"><ul>
+			<li><strong>Manage PKI keys</strong>: Specifies key management options.</li>
+			<li><strong>Add Database</strong>: Creates the database for the installation.</li>
+			<li><strong>Manage Schemas</strong>: Manages the database schemas for the container.</li>
+			<li><strong>Create Policy Manager Admin User</strong>: Creates the top-level Policy Manager user.</li>
+			<li><strong>Provisioning</strong>: Initializes resources associated with the features installed on the container.</li>
+		</ul></td>
+	</tr>
+</table>
+<p><strong>Note</strong>: All these configuration actions are also available under <strong>Configuration</strong> &gt; <strong>Configuration Actions</strong>. For more information on configuration actions, see <a href="../admin_console/config_actions.htm">Using Configuration Actions</a>.</p>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="s03_02">Step 3-2: Perform configuration actions</h3>
+<p>If you're upgrading from a previous version, it's a good idea to run the following configuration actions, even if they were not listed under Pending Installation Tasks:</p>
+<ul>
+	<li><a href="#proc_provisioning">Provisioning</a> (must be completed for each container running PM/CM)</li>
+	<li><a href="#proc_upgrade_cm_models">Upgrade CM Models</a> (once per installation)</li>
+	<li><a href="#proc_rebuild_cm_styles">Rebuild CM Styles</a> (once per installation)</li>
+</ul>
+
+
+<h5 id="proc_provisioning">To perform provisioning</h5>
+<ol>
+	<li>In the Akana Administration Console, click the <strong>Configuration</strong> tab.</li>
+	<li>In the <strong>Configuration Actions</strong> section, choose the <strong>Provisioning</strong> configuration action, as shown below.
+	<p><img src="images/03_01_Manual_Provisioning.jpg" alt="Running Provisioning manually" /></p></li>
+	<li>On the <strong>Provisioning</strong> page, make sure <strong>Perform Provisioning</strong> is checked, as shown below, and then click <strong>Finish</strong>.
+		<p><strong>Note</strong>: Make sure the Provisioning task is 100% complete before moving to the next task.</p>
+	<p><img src="images/03_02_provisioning.jpg" alt="Provisioning Summary" /></p>
+	</li>
+	<li>When provisioning is 100% complete, click <strong>Close</strong>.</li>
+</ol>
+
+<h5 id="proc_upgrade_cm_models">To complete the Upgrade CM Models configuration action</h5>
+<ol>
+	<li>In the Akana Administration Console, click the <strong>Configuration</strong> tab.</li>
+	<li>In the <strong>Configuration Actions</strong> section, choose <strong>Upgrade CM Models</strong>.</li>
+	<li>When done, click <strong>Close</strong>.</li>
+</ol>
+
+<p>The <strong>Rebuild CM Styles</strong> task makes sure that you have the latest style updates, for all themes and tenants.</p>
+
+<h5 id="proc_rebuild_cm_styles">To rebuild CM styles</h5>
+<ol>
+	<li>In the Akana Administration Console, click the <strong>Configuration</strong> tab.</li>
+	<li>In the <strong>Configuration Actions</strong> section, choose <strong>Rebuild CM Styles</strong>.</li>
+	<li>When done, click <strong>Finish</strong>.</li>
+</ol>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="s03_03">Step 3-3: Update container properties</h3>
+<p>When you've created the new container and installed the features, it's time to set the configuration properties. You'll need to transfer any customized settings that were set on the old container, to the new container.</p>
+<p>Use the setting values that you saved out in <a href="#s01_02">Step 1-2: Plan the upgrade</a>, point #4, and set them on the new container.</p>
+<p>For example, if you customized the Content Root value for the developer portal, you'll need to re-set it.</p>
+<p> In the Akana Administration Console for each container with Community Manager installed:</p>
+<p><strong>Configuration</strong> &gt; <strong>com.soa.atmosphere.console</strong> &gt; atmosphere.context.root.</p>
+<p>For example, <strong>/acmepaymentscorp</strong>.</p>
+<p>For detailed instructions, see <a href="../platform_install/installing_akana_api_platform.htm#s9b_update_config">Conditional: updating configuration setting for new context root</a> (installation doc).</p>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="s03_04">Step 3-4: Check system health</h3>
+<p>Log into the Akana Administration Console for the PM/CM container and check the system health (Health tab).</p>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="s03_05">Step 3-5: Configure Elasticsearch</h3>
+<p>The developer portal is now available, but search will not work until you configure Elasticsearch.</p>
+<p><strong>Note</strong>: These steps assume that Elasticsearch is already installed and configured. See <a href="#s01_03">Step 1-3: Install and configure Elasticsearch (if not already done)</a>.</p>
+<p>Steps:</p>
+<ol>
+	<li><a href="#proc_es_config_global">Configure global settings</a></li>
+	<li><a href="#proc_es_index_clear">Clear the Elasticsearch index</a></li>
+	<li><a href="#proc_es_check_status">Check Elasticsearch status</a></li>
+	<li><a href="#proc_container_restart">Restart the container</a></li>
+	<li><a href="#proc_search_verify">Verify that search is working</a></li>
+</ol>
+
+<h5 id="proc_es_config_global">Configure global settings</h5>
+<p>As part of installation or upgrade, you'll need to configure a couple of global settings in the Akana Administration Console so that the Elasticsearch feature will work correctly.</p>
+<p>In the Akana Administration Console for any one container:</p>
+<p><strong>Configuration</strong> &gt; <strong>Configuration Actions</strong> &gt; <strong>Configure Elasticsearch Global Configuration</strong>.</p>
+<p>For instructions, see <a href="../platform_install/install_es_config.htm#config_es_ac">How do I configure Elasticsearch?</a></p>
+
+<h5 id="proc_es_index_clear">Clear the Elasticsearch index</h5>
+<p>You'll need to clear out the old Elasticsearch index so it can be refreshed. To do this, empty the INDEX_STATUS table in the database by running this database command:</p>
+<pre>delete from {database_name}.INDEX_STATUS;</pre>
+<p><strong>For example:</strong></p>
+<p><img src="images_201800/es_delete_index.jpg" alt="Clearing the Elasticsearch index" /></p>
+
+<h5 id="proc_es_check_status">Check Elasticsearch status</h5>
+<p>You can use the Elasticsearch API to check the status of your Elasticsearch, to make sure all is running smoothly. In the below, substitute the node where Elasticsearch is running:</p>
+<pre>GET {protocol}://{hostname}:{port}/</pre>
+<p>The response is a JSON object with information about your Elasticsearch. For more information, refer to the Elasticsearch website: <a href="https://www.elastic.co/guide/en/cloud-enterprise/2.0/ece-getting-started-connect.html" title="Link to Elasticsearch API" target="_blank">Connect to Elasticsearch</a>.</p>
+
+<h5 id="proc_container_restart">Restart the container</h5>
+<p>Stop and restart the container.</p>
+<p>For instructions, see:</p>
+<ul>
+	<li><a href="../platform_install/installing_akana_api_platform.htm#starting_container">Starting a container</a></li>
+	<li><a href="../platform_install/installing_akana_api_platform.htm#stopping_container">Stopping a container</a></li>
+</ul>
+
+<h5 id="proc_search_verify">Verify that search is working</h5>
+<p>Log in to the developer portal user interface and verify that search is now working. For example, search for an API or an app.</p>
+<p>This completes the Elasticsearch steps.</p>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="s03_06">Step 3-6: Restart all containers</h3>
+<p>After running the configuration actions on all containers, stop and restart all containers.</p>
+<p>For instructions, see:</p>
+<ul>
+	<li><a href="../platform_install/installing_akana_api_platform.htm#starting_container">Starting a container</a></li>
+	<li><a href="../platform_install/installing_akana_api_platform.htm#stopping_container">Stopping a container</a></li>
+</ul>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="s03_07">Step 3-7: Configure API Gateway/Network Director</h3>
+<p>In your new Policy Manager/Community Manager container, you'll need to move the hosted services from the old Network Director container for the previous version, over to the new Network Director container. Follow the steps below.</p>
+
+<h5 id="proc_move_hosted_svcs">To move hosted services to the new Network Director container</h5>
+<ol>
+	<li>In Policy Manager, find where the old Network Director container is still displayed.</li>
+	<li>Change the Network Director name (not necessary, but helps to differentiate). For example, <strong>nd_old</strong>.</li>
+	<li>Add a new Network Director container (<strong>Containers</strong> &gt; <strong>Add Container</strong>). For instructions, see <a href="../container_management/container_management.htm#add_container">Add Container</a>.
+		<p>For <strong>Metadata URL</strong>, use the same URL as the old container, and provide an instance name.</p></li>
+	<li>Go back to the old Network Director container and do the following:
+		<ul>
+			<li>Choose <strong>Clone Hosted Services</strong>.</li>
+			<li>Check <strong>Preserve Virtual Service Access Point Paths</strong>.</li>
+			<li>Choose to clone to the new container, click through the summary page, and then click <strong>Finish</strong>.</li>
+			</ul>
+		</li>
+	
+	<li>In the developer portal user interface, modify the deployment zone to use the new Network Directory (<strong>Admin</strong> &gt; Deployment Zones). For instructions, see <a href="../../cm/learnmore/bus_admin_dzs.htm#dz_edit">How do I make changes to a deployment zone?</a> (developer portal help).</li>
+	<li>Test to make sure that the new Network Director is working correctly.</li>
+	<li>Delete the old listener.</li>
+</ol>
+<p><a href="#top">back to top</a></p>
+
+
+
+<div class = "divider1"></div>
+<h3 id="h_upgrade_tasks_reference">Upgrade Procedures/Reference</h3>
+
+
+
+
+<h3 id="launch_console">Launching the Akana Administration Console</h3>
+<p>Installation and configuration tasks are performed in the Akana Administration Console for the container. First you create the container, and then you install features into the container and configure them.</p>
+<h5>To launch the Akana Administration Console</h5>
+<ol>
+	<li>Launch the Akana Administration Console for the container instance:
+<pre>http://{hostname}:{port}/admin</pre></li>
+	<li>Log in to the Akana Administration Console as an Administrator. The Akana Administration Console launches and displays the <strong>Available Features</strong> tab. See <a href="../platform_install/installing_akana_api_platform.htm#install_features">Installation Features</a>.</li>
+</ol>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="check_features_installed">Checking that features were installed correctly</h3>
+<p>When you've installed features in a container, it's a good idea to check to make sure that features have been installed correctly.</p>
+<ol>
+	<li>In the Akana Administration Console, go to<strong> Installed Features</strong>.</li>
+	<li>Look at the <strong>Version</strong> column to make sure each feature has the correct version number. An example is shown below.
+<p><img src="images_201800/ac_features_installed.jpg" alt="Features installed tab: 2018.0.0" /></p>
+	</li>
+</ol>
+<p>If there are any issues, check that you followed all steps correctly.</p>
+<p>If needed, <a href="#tech_support_contact">contact Technical Support</a>.</p>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="sched_jobs_off">Turning the scheduled jobs off</h3>
+<p>If you turn off the scheduled jobs, turn off these two jobs, for all containers with Policy Manager installed, in this sequence:</p>
+<ol>
+	<li>com.soa.scheduler.quartz</li>
+	<li>simple.scheduler.enabled</li>
+</ol>
+
+<h5>To turn off scheduled jobs</h5>
+<ol>
+	<li>Log in to the Akana Administration Console using Administrator credentials.</li>
+	<li>Click the <strong>Configuration</strong> tab.</li>
+	<li>In the <strong>Configuration Categories</strong> section, find <strong>com.soa.scheduler.quartz</strong>. </li>
+	<li>Locate the <strong>org.quartz.scheduler.enabled</strong> property and change it to <strong>false</strong>.</li>
+	<li>Click <strong>Apply Changes</strong>.</li>
+	<li>In the <strong>Configuration Categories</strong> section, find <strong>com.soa.scheduler</strong>. </li>
+	<li>Locate the <strong>simple.scheduler.enabled</strong> property and change it to <strong>false</strong>, as shown below.
+			<p><img src="images/02_01_config_categ.jpg" alt="Turning off scheduled jobs" /></p></li>
+	<li>Click <strong>Apply Changes</strong>.</li>
+</ol>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="sched_jobs_on">Turning the scheduled jobs back on</h3>
+<p>If you turned the scheduled jobs off, and are ready to turn them back on again, turn them on in this sequence, the reverse of the sequence in which you turned them off, for all containers with Policy Manager installed:</p>
+<ol>
+	<li>simple.scheduler.enabled</li>
+	<li>com.soa.scheduler.quartz</li>
+</ol>
+
+<h5>To turn scheduled jobs back on</h5>
+<ol>
+	<li>Log in to the Akana Administration Console using Administrator credentials.</li>
+	<li>Click the <strong>Configuration</strong> tab.</li>
+	<li>In the Configuration Categories section, find <strong>com.soa.scheduler</strong>. </li>
+	<li>Locate the <strong>simple.scheduler.enabled</strong> property and change it to <strong>true</strong>.</li>
+	<li>Click <strong>Apply Changes</strong>.</li>
+	<li>In the <strong>Configuration Categories</strong> section, find <strong>com.soa.scheduler.quartz</strong>. </li>
+	<li>Locate the <strong>org.quartz.scheduler.enabled</strong> property and change it to <strong>true</strong>.</li>
+	<li>Click <strong>Apply Changes</strong>.</li>
+</ol>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="unreg-rereg_win">Unregistering and re-registering the Windows service</h3>
+<p>If your containers are registered as a Windows service, so that the container will start automatically when Windows starts, you must unregister the old version and register the new version, for each container.</p>
+<p>If you're not sure which containers are registered as a Windows service, you can check in the Windows Control Panel (<strong>Administrative Tools</strong> &gt; <strong>Services</strong>). To change the services, you must run as Administrator.</p>
+
+<h5 id="proc_register_unregister_windows">To unregister and register the Windows service</h5>
+<ol>
+	<li>Open a command prompt in Administrator mode (If you don't use Administrator mode, Windows prompts for Admin permission before unregistering/registering the service, but doesn't actually start the service).</li>
+	<li>Unregister the previous version as a windows service:
+		<pre>.\{install_folder}\bin\unregisterContainerServiceYAJWS.bat {instance_name}</pre></li>
+	<li>Register the new version as a Windows service:
+	<pre>.\{install_folder}\bin\registerContainerServiceYAJWS.bat {instance_name}</pre></li>
+	<li>If you're running in Administrator mode, Windows registers the service and also starts it.</li>
+	<li>Repeat steps 2 and 3 for each additional container that's registered as a Windows service.</li>
+</ol>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="clear_cache">Clearing Configurator cache</h3>
+<p>Before performing the upgrade, make sure the configurator cache is clear. At this point, there won't be any cache unless you launched the Configurator at the end of <a href="#s02_03">Step 2-3</a>. To be sure, follow the steps below.</p>
+<h5>To clear configurator cache</h5>
+<ol>
+	<li>Locate the configurator cache folder: \instances\configurator\cache, as shown below.
+<p><img src="images/02_05_configurator_cache.jpg" alt="Configurator cache folder" /></p></li>
+	<li>Delete the folder if it exists (if there is no cache, the folder will not be there).</li>
+</ol>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="s02_09">Starting a container</h3>
+<p>There are several ways you can start a container: Windows, as Windows service, or Unix. Follow the applicable procedure:</p>
+<ul>
+	<li><a href="#container_start_win">To start the container (Windows)</a></li>
+	<li><a href="#container_start_win_svc">To start the container (as Windows service)</a></li>
+	<li><a href="#container_start_unix">To start the container (Unix)</a></li>
+	<li><a href="#container_start_unix_bg">To start the container (Unix, Background</a></li>
+</ul>
+
+<h5 id="container_start_win">To start the container (Windows)</h5>
+<ol>
+	<li>Navigate to the <strong>\{install_folder}\bin\</strong> folder.</li>
+	<li>Type the following:
+<pre>startup {instance_name}</pre></li>
+</ol>
+
+<h5 id="container_start_win_svc">To start the container (as Windows service)</h5>
+<ol>
+	<li>Launch the Program Group (<strong>Settings</strong> &gt; <strong>Control Panel</strong> &gt; <strong>Administrative Tools</strong> &gt; <strong>Services</strong>).</li>
+	<li>Select the Akana Container Instance (the instance name is displayed as the Container Key).</li>
+	<li>From the <strong>Actions</strong> menu, select <strong>Start</strong>.</li>
+</ol>
+
+<h5 id="container_start_unix">To start the container (Unix)</h5>
+<ol>
+	<li>Navigate to the <strong>/{install_folder}/bin/</strong> folder.</li>
+	<li>Type the following:
+<pre>startup.sh {instance_name}</pre></li>
+</ol>
+
+<h5 id="container_start_unix_bg">To start the container (Unix, Background)</h5>
+<ol>
+	<li>Navigate to the /bin folder.</li>
+	<li>Type the following:
+<pre>startup.sh {instance_name} -bg</pre></li>
+</ol>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="s02_12">Refreshing the repository</h3>
+<p>Verify that the repository is there. Refresh if needed.</p>
+<h5>To verify/refresh the repository</h5>
+<ol>
+	<li>Click the <strong>Repository</strong> tab and verify that the <strong>Akana Platform Repository</strong> and the <strong>Akana API Platform Repository</strong> are both present, as shown below.
+		<p><img src="images_201800/repository.jpg" alt="Repository tab: 2018.0.0" /></p></li>
+	<li>Conditional: if you don't see both these repositories, click <strong>Refresh</strong> to update.</li>
+</ol>
+<p>Further installation steps are conditional:</p>
+<ul>
+	<li>If your container <strong>doesn't</strong> have Policy Manager features installed (Akana Policy Manager Console and Akana Policy Manager Services), the upgrade is complete. </li>
+	<li>If your container <strong>does</strong> have Policy Manager features installed (Akana Policy Manager Console and Akana Policy Manager Services), continue.</li>
+</ul>
+<p><a href="#top">back to top</a></p>
+
+
+
+<h3 id="ts_02_error_new_containers">Upgrading by creating new containers: notes</h3>
+<p>When you're upgrading by creating new containers, it's important that you delete the existing container from the Policy Manager workbench before creating the new container.</p>
+<p>If you don't delete the old container before creating the new one, you might encounter an error on the provisioning step, similar to the one shown below (<strong>WSDL binding cannot be disassociated from service</strong>):</p>
+<pre>[425] com.digev.fw.exception.GException: Wsdl binding [uddi:4b0aba1c-8ca7-e61c-5575-25361578c179] 
+cannot be disassociated from service [uddi:soa.com:metadataattachment-servicekey]. 
+Binding is attached to service endpoint.</pre>
+<p>If you encounter this message, delete the old container, and then retry the provisioning.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h3 id="tech_support_contact">Contacting Rogue Wave Technical Support</h3>
+<p>If you need to contact Technical Support, submit an email to <a href="mailto:support@akana.com">support@akana.com</a>.</p>
+<p>When sending a support query, please provide the following information:</p>
+<ul>
+	<li>Your name</li>
+	<li>Email address</li>
+	<li>Subject</li>
+	<li>As much information as possible regarding your question.</li>
+</ul>
+<p>You'll receive an acknowledgment email and one of our support staff will contact you.</p>
+<p>You can also access the Support site at <a href="https://servicedesk.akana.com/servicedesk/customer/user/login" title="Akana technical support site" target="_blank">https://servicedesk.akana.com/servicedesk/customer/user/login</a>.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<div class = "divider1"></div>
+
+
+
+<h3 id="related_topics">Related Topics</h3>
+<div class="relatedlinks" id="install">
+<ul>
+	<li><a href="../upgrade/upgrading_akana_api_platform_84_2018.htm">Upgrading Akana API Platform from Version 8.4x to Version 2018.0.x</a></li>
+	<li><a href="../upgrade/upgrading_akana_api_platform_82_84.htm">Upgrading Akana API Platform from Version 8.2 to Version 8.4x</a></li>
+	<li><a href="../upgrade/upgrading_min_downtime.htm">Use Case: Upgrading with Minimum Downtime</a></li>
+	<li><a href="upgrading_micro.htm">Micro-Version Upgrade</a></li>
+</ul>
+<ul>
+	<li><a href="../platform_install/installing_akana_api_platform.htm">Installing the Akana API Platform 2018.0.0</a></li>
+	<li><a href="../platform_install/installing_akana_api_platform_v84.htm">Installing the Akana API Platform 8.4x</a></li>
+	<li><a href="../platform_install/installing_akana_api_platform_v82.htm">Installing the Akana API Platform 8.2x</a></li>
+	<li><a href="../platform_install/implementation_planning.htm">Planning Your Implementation</a></li>
+	<li><a href="../platform_install/install_cm_jython_script.htm">Installation Jython Script</a></li>
+	<li><a href="../platform_install/install_es_config.htm">Installing and Configuring Elasticsearch</a></li>
+	<li><a href="../platform_install/install_es_secure_tc.htm">Configuring Elasticsearch with security</a></li>
+</ul>
+</div>

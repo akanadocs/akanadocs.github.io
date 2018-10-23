@@ -3,7 +3,7 @@ layout: page
 title: Hybrid Installation Scenario
 description: A use case for hybrid installation
 product: sp
-category: ref
+category: gs
 weight: 90
 sub-nav-class: Installation - Akana API Platform
 type: page
@@ -93,11 +93,11 @@ nav-title: Hybrid Installation Scenario
 <h4 id="prereq_01">Hybrid server</h4>
 <p>The hybrid server is the hardware or virtual machine used for API Gateway installation and configuration.</p>
 <p>Your hybrid server must meet the Akana API Platform hardware requirements, including CPU, operating system, and memory configuration.</p>
-<p>For information on the system requirements, refer to <a href="../system_requirements/system_requirements_akana_platform_84x.htm">System Requirements for Akana Platform 8.4x</a> (the applicable sections are <strong>Akana Platform Host</strong> and <strong>Memory Configuration</strong> only).</p>
+<p>For information on the system requirements, refer to <a href="../system_requirements/system_requirements_all.htm">System Requirements for Akana Platform</a> and choose the correct version for your installation (the applicable sections are <strong>Akana Platform Host</strong> and <strong>Memory Configuration</strong> only).</p>
 
 
 <h4 id="prereq_02">Download of Akana software packages (Akana Platform and Akana API Platform)</h4>
-<p>You'll need to download several ZIP files from the Rogue Wave Support Center. Note that this site requires a login.</p>
+<p>You'll need to download several ZIP files from the Rogue Wave Support Center. Note that this site is for Akana customers and requires a login.</p>
 <p>The file names given in this document are examples. Always download the latest version available, to get the latest features and updates.</p>
 <p>Log in to the Rogue Wave Support Center (<a href="https://library.roguewave.com" target="_blank">https://library.roguewave.com</a>). In the <strong>My Resources section</strong>, click <strong>Product Downloads</strong>, then click <strong>Akana - Product Downloads</strong>.</p>
 <p>Choose the Akana Platform:</p>
@@ -120,7 +120,7 @@ nav-title: Hybrid Installation Scenario
 <ul>
 	<li>Verify connectivity between the hybrid server and Akana SaaS.
 		<p><strong>Note</strong>: the hybrid Gateway will call out to the Akana SaaS platform. The metadata exchange service mentioned under <a href="#metadata_ex_url">Step 5 of Configuring the Network Director</a> must be accessible from the hybrid server.</p></li>
-	<li>Verify the file handles O/S setting. For instructions, see <a href="http://docs.akana.com/sp/performance-tuning.html#os-file-handles" title="http://docs.akana.com/sp/performance-tuning.html#os-file-handles">Configuring O/S File Handles</a> in the Performance Tuning doc.</li>
+	<li>Verify the file handles O/S setting. For instructions, see <a href="../../sp/performance-tuning.html#os-file-handles" title="../../sp/performance-tuning.html#os-file-handles">Configuring O/S File Handles</a> in the Performance Tuning doc.</li>
 </ul>
 <p>A sample hybrid deployment requires Akana containers for the following Akana Platform component:</p>
 <ul>
@@ -264,7 +264,7 @@ proxy=https://proxy.customer.local:8880</pre>
 	<p>Example 2, <strong>com.soa.http.proxy-portyes.cfg</strong>:</p>
 	<pre>url=https://platform-eu.apiportal.akana.com:443
 proxy=https://proxy.customer.local:8880</pre>
-	<p>This example includes two files because some platform services have the port number, <strong>:443</strong>, explicitly in the URL, whereas others do not.</p></li>
+	<p>This example includes two files because some platform services have the port number, <strong>:443</strong>, explicitly in the URL, whereas others <!--(or perhaps only wsmex) -->do not.</p></li>
 	<li>Place these files in the <strong>{ND instance directory}/deploy</strong> folder.
 <p>This will give you the <strong>com.soa.http.proxy property</strong> in the Akana Administration Console for the ND container (instructing ND to use the proxy for given hosts). ND should now be able to access the required Platform services through the proxy.</p></li>
 </ol>
@@ -277,13 +277,20 @@ proxy=https://proxy.customer.local:8880</pre>
 
 
 <h3 id="related_topics">Related Topics</h3>
-<div class="relatedlinks">
+<div class="relatedlinks" id="install">
 <ul>
-	<li><a href="installing_akana_api_platform_v84.htm">Installing the Akana API Platform 8.4x</a></li>
-	<li><a href="install_cm_jython_script.htm">Installation Jython Script</a></li>
-	<li><a href="implementation_planning.htm">Planning Your Implementation</a></li>
+	<li><a href="../upgrade/upgrading_akana_api_platform_84_2018.htm">Upgrading Akana API Platform from Version 8.4x to Version 2018.0.x</a></li>
+	<li><a href="../upgrade/upgrading_akana_api_platform_82_84.htm">Upgrading Akana API Platform from Version 8.2 to Version 8.4x</a></li>
+	<li><a href="../upgrade/upgrading_min_downtime.htm">Use Case: Upgrading with Minimum Downtime</a></li>
+	<li><a href="upgrading_micro.htm">Micro-Version Upgrade</a></li>
 </ul>
 <ul>
-	<li><a href="installing_akana_api_platform_v82.htm">Installing the Akana API Platform 8.2x</a></li>
+	<li><a href="../platform_install/installing_akana_api_platform.htm">Installing the Akana API Platform 2018.0.0</a></li>
+	<li><a href="../platform_install/installing_akana_api_platform_v84.htm">Installing the Akana API Platform 8.4x</a></li>
+	<li><a href="../platform_install/installing_akana_api_platform_v82.htm">Installing the Akana API Platform 8.2x</a></li>
+	<li><a href="../platform_install/implementation_planning.htm">Planning Your Implementation</a></li>
+	<li><a href="../platform_install/install_cm_jython_script.htm">Installation Jython Script</a></li>
+	<li><a href="../platform_install/install_es_config.htm">Installing and Configuring Elasticsearch</a></li>
+	<li><a href="../platform_install/install_es_secure_tc.htm">Configuring Elasticsearch with security</a></li>
 </ul>
 </div>

@@ -5,7 +5,7 @@ description: A guide to install and configure the API Gateway to manage a simple
 product: sp
 category: gs	
 sub-nav-class: API Management
-weight: 4
+weight: 14
 type: page
 nav-title: Managing a Simple API using Policy Manager 7.x
 ---
@@ -16,7 +16,7 @@ Getting Started: Managing a Simple API
 
 <h3 style="color: grey;">Table of Contents</h3>
 <ol class="table_of_contents">
-	<li><a href="#Installing">Install the Platform</a></li>
+	<li><a href="#Installing">Install the Platform</a> </li>
 	<li><a href="#Containers">Create and start the Policy Manager and Network Director containers</a></li>
 	<li><a href="#Config">Configure the Policy Manager and Network Director containers</a></li>
 	<li><a href="#register-nd">Register Network Director in Policy Manager</a></li>

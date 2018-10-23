@@ -3,7 +3,7 @@ layout: page
 title: Installing Akana API Platform 8.2
 description: Learn how to download, install, and configure the Akana API Platform 8.2.
 product: sp
-category: ref
+category: gs
 weight: 06
 sub-nav-class: Installation - Akana API Platform
 type: page
@@ -418,7 +418,7 @@ nav-title: Installing Akana API Platform 8.2
   <li>Paste the URL in the browser. The browser redirects to the default landing page; for example: <strong>http://localhost:9901/atmosphere/#/home/landing</strong>.</li>
   <li>Log in, using the username and password from the Jython script.</li>
 </ol>
-<p>For information about tasks relating to the developer portal, including Site Admin tasks such as configuring platform login, setting up domains, and choosing platform settings, as well as user tasks such as adding apps and APIs, refer to the platform help: <a href="http://docs.akana.com/cm/learning.html" title="Learning about Community Manager" target="_blank">http://docs.akana.com/cm/learning.html</a>.</p>
+<p>For information about tasks relating to the developer portal, including Site Admin tasks such as configuring platform login, setting up domains, and choosing platform settings, as well as user tasks such as adding apps and APIs, refer to the platform help: <a href="../../cm/learning.html" title="Learning about Community Manager" target="_blank">../../cm/learning.html</a>.</p>
 <p><a href="#top">back to top</a></p>
 
 
@@ -860,7 +860,7 @@ default.host=rhe12345.akana.local
 default.port=9945
 <strong>container.key=</strong>AAP82</pre>
 <p>To run the properties file in a Linux environment, go to the <strong>{release_directory}/bin</strong> folder and run the following command:</p>
-<pre>startup.sh configurator -Dsilent=true -Dproperties={properties file path}/{filename}.properties</pre>
+<pre>startup.sh configurator -Dsilent=true -Dproperties={full path to properties file}/{filename}.properties</pre>
 <p>For example:</p>
 <pre>startup.sh configurator -Dsilent=true -Dproperties=properties/pm_silentinstall.properties</pre>
 <p>Then:</p>
@@ -906,16 +906,20 @@ default.port=9945
 
 
 <h3 id="related_topics">Related Topics</h3>
-<div class="relatedlinks">
+<div class="relatedlinks" id="install">
 <ul>
-	<li><a href="installing_akana_api_platform_v84.htm">Installing the Akana API Platform 8.4x</a></li>
-<!--	<li><a href="installing_akana_api_platform_v82.htm">Installing the Akana API Platform 8.2x</a></li>-->
+	<li><a href="../upgrade/upgrading_akana_api_platform_84_2018.htm">Upgrading Akana API Platform from Version 8.4x to Version 2018.0.x</a></li>
+	<li><a href="../upgrade/upgrading_akana_api_platform_82_84.htm">Upgrading Akana API Platform from Version 8.2 to Version 8.4x</a></li>
+	<li><a href="../upgrade/upgrading_min_downtime.htm">Use Case: Upgrading with Minimum Downtime</a></li>
+	<li><a href="upgrading_micro.htm">Micro-Version Upgrade</a></li>
 </ul>
 <ul>
-	<li><a href="install_cm_jython_script.htm">Installation Jython Script</a></li>
-	<li><a href="implementation_planning.htm">Planning Your Implementation</a></li>
-	<li><a href="install_es_config.htm">Installing and Configuring Elasticsearch</a></li>
-	<li><a href="install_es_secure_tc.htm">Configuring Elasticsearch with Transport Client security</a></li>
-	<li><a href="install_mysql_dbsettings.htm">MySQL Database Property Settings</a></li>
+	<li><a href="../platform_install/installing_akana_api_platform.htm">Installing the Akana API Platform 2018.0.0</a></li>
+	<li><a href="../platform_install/installing_akana_api_platform_v84.htm">Installing the Akana API Platform 8.4x</a></li>
+	<li><a href="../platform_install/installing_akana_api_platform_v82.htm">Installing the Akana API Platform 8.2x</a></li>
+	<li><a href="../platform_install/implementation_planning.htm">Planning Your Implementation</a></li>
+	<li><a href="../platform_install/install_cm_jython_script.htm">Installation Jython Script</a></li>
+	<li><a href="../platform_install/install_es_config.htm">Installing and Configuring Elasticsearch</a></li>
+	<li><a href="../platform_install/install_es_secure_tc.htm">Configuring Elasticsearch with security</a></li>
 </ul>
 </div>
