@@ -3,7 +3,7 @@
 	<head>
 		            <meta http-equiv="Content-type" content="text/html; charset=utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>Reference Material | Akana OAuth API</title>
+            <title>OAuth Endpoints | Reference Material | Akana OAuth API</title>
             <link rel="stylesheet" href="/docs-test/style/bootstrap/bootstrap.min.css" type="text/css" />
             <link rel="stylesheet" href="/docs-test/style/compiled/bootstrap-overrides.css" type="text/css" />
             <link rel="stylesheet" href="/docs-test/style/compiled/theme.css" type="text/css" />
@@ -114,7 +114,7 @@
 
                 ObjInnerli.attr("role", "menuitem");
 
-                if ( classsnpages[j].u == '/cm/api_oauth/Ref_API_Reference.htm' ) {
+                if ( classsnpages[j].u == '/cm/api_oauth/aaref/Ref_HTTPHeaders.htm' ) {
                     ObjInnera.addClass("soa-ui-dc-container-main-left-nav-item-selected soa-ui-dc-container-main-left-nav-item-link");
                 } else {
                     ObjInnera.addClass("soa-ui-dc-container-main-left-nav-item-link");
@@ -143,8 +143,8 @@
             var Obja = $('<a></a>');
             var Objp = $('<p></p>');
 
-            if ( pages[i].u == '/cm/api_oauth/Ref_API_Reference.htm' || 
-                    ( 'Ref' != '' && pages[i].sc == 'Ref' ) ) {
+            if ( pages[i].u == '/cm/api_oauth/aaref/Ref_HTTPHeaders.htm' || 
+                    ( 'aaref' != '' && pages[i].sc == 'aaref' ) ) {
                 Objli.addClass("soa-ui-dc-container-main-left-nav-item-selected");
             }
 
@@ -336,44 +336,80 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<h2 id="top">OAuth API Reference Material</h2>
-<p>Supplementary reference material is available in the following articles.</p>
+<h2 id="top">OAuth Endpoints</h2>
+<p>This topic summarizes the important endpoints for the Akana API Platform OAuth API.</p>
+<p>These endpoints are used by client applications and Resource Servers to communicate with the OAuth Authorization Server to issue and validate access and refresh tokens.</p>
+<p>Refer to the table below.</p>
 <table class="tableparmsresponse">
-<thead>
-  <tr>
-  <th>Topic</th>
-  <th>Topic</th>
-	<th>Topic</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-  	<td><a href="aaref/Ref_OAuth_Endpoints.htm">OAuth Endpoints</a></td>
-    <td><a href="aaref/Ref_OAuthParameters.htm">OAuth Parameters</a></td>
-    <td><a href="aaref/Ref_OAuth_UsingTheGrantAdminAPI.htm">OAuth: Using the Grant Admin API</a></td>
-    </tr>
-  <tr>
-  	<td><a href="aaref/Ref_OAuth_ClientAuthenticationWithOAuthProvider.htm">OAuth: Client Authentication with the Platform's OAuth Provider</a></td>
-    <td><a href="aaref/Ref_OAuth_RevokingAGrant.htm">OAuth: Revoking a Grant</a></td>
-    <td><a href="aaref/Ref_OAuthWellKnownConfiguration.htm">OAuth Well-Known Configuration Information</a></td>
-    </tr>
-  <tr>
-  	<td><a href="aaref/Ref_OAuthGETorPOST.htm">OAuth Operations: GET or POST?</a></td>
-    <td><a href="aaref/Ref_OAuth_Tokens_10a.htm">OAuth: Using Tokens with OAuth 1.0a</a></td>
-    <td>&nbsp;</td>
-  </tr>
-</tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Name</th>
+			<th style="width:80%">Endpoint</th>
+		</tr>
+		<tr>
+			<td>OpenID Connect Well-Known Configuration Endpoint</td>
+			<td><p>https://{oauth-provider-url}/.well-known/openid-configuration</p>
+				<p>For example:</p>
+				<p>https://acmepaymentscorp/.well-known/openid-configuration</p>
+				<p>See: <a href="../oauth_discovery/m_oauth_getOpenIdConnectWellknownConfiguration.htm">GET&nbsp;/.well-known/openid-configuration</a></p>
+				<p><strong>Note</strong>: When you use the Akana API Platform as an OAuth Provider, the well-known configuration is only populated after an Akana OAuth Provider domain is configured in Community Manager.</p></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Issuer</td>
+			<td><p>{protocol}://{hostname}</p>
+				<p>For example:</p>
+				<p>https://acmepaymentscorp</p></td>
+		</tr>
+		<tr>
+			<td>Authorization Endpoint</td>
+			<td><p>https://{oauth-provider-url}/oauth/auz/authorize</p>
+				<p>For example:</p>
+				<p>https://acmepaymentscorp/oauth/auz/authorize</p>
+				<p>See: <a href="../oauth_auz/m_auz_requestResourceOwnerAuthorizationGET.htm">GET&nbsp;/oauth/auz/authorize</a></p></td>
+		</tr>
+		<tr>
+			<td>Token Endpoint</td>
+			<td><p>https://{oauth-provider-url}/oauth/oauth20/token</p>
+				<p>For example:</p>
+				<p>https://acmepaymentscorp/oauth/oauth20/token</p></td>
+		</tr>
+		<tr>
+			<td>Token Revocation Endpoint</td>
+			<td> <p>https://{oauth-provider-url}/oauth/admin/token/revoke
+
+</p>
+				<p>For example:</p>
+				<p>https://acmepaymentscorp/oauth/admin/token/revoke</p>
+				<p>See: <a href="../oauth_tokenadmin/m_admin_revokeToken.htm">PUT&nbsp;oauth/admin/token/revoke</a></p></td>
+		</tr>
+		<tr>
+			<td height="23">UserInfo Endpoint</td>
+			<td><p>https://{oauth-provider-url}/oauth/userinfo</p>
+				<p>For example:</p>
+				<p>https://acmepaymentscorp/oauth/userinfo</p>
+				<p>See: <a href="../oauth_userinfo/m_userinfo_getAuthenticatedUserInfoPOST.htm">POST&nbsp;/oauth/userinfo</a></p></td>
+		</tr>
+		<tr>
+			<td>JWKS URI</td>
+			<td>https://{oauth-provider-url}/oauth/jwks
+				<p>For example:</p>
+				<p>https://acmepaymentscorp/oauth/jwks</p>
+				<p>See: <a href="../oauth_jwks/m_jwks_getPublicJwkSet.htm">GET&nbsp;/oauth/jwks</a></p></td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
+
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="index.htm">OAuth Services: Overview</a></li>
-
-  <li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
-  <li><a href="Ref_DocConventions.htm">Documentation Conventions</a></li>
+  <li><a href="../index.htm">OAuth Services: Overview</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 
 <hr />
