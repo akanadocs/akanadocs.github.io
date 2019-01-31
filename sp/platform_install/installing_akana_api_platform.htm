@@ -261,8 +261,8 @@ nav-title: Installing Akana API Platform 2018.0.0
 			<li>Akana Community Manager (includes Akana Community Manager APIs)</li>
 			<li>Akana Community Manager OAuth Provider (Should be installed for any Community Manager container) </li>
 			<li>Akana Community Manager Scheduled Jobs </li>
-			<li>Akana Management Services<!-- {<span class="apidoc_red">MM: ML had this, EN didn't. If you have scheduled jobs on another container do you not need it? Just need it somewhere?</span>}--></li>
-			<li>Akana OAuth Provider<!-- {<span class="apidoc_red">MM: ML installs this. When do we need Akana CM Oauth Provider vs Akana OAuth Provider?</span>}--></li>
+			<li>Akana Management Services</li>
+			<li>Akana OAuth Provider</li>
 			<li>Akana Policy Manager Console </li>
 			<li>Akana Policy Manager Services&#8212;this feature bundle includes the Akana Scheduled Jobs feature which adds jobs to the Quartz scheduler. It also includes Akana Security Services<!--(security.services)-->. This feature is needed on all containers except Network Director.</li>
 		</ul>
@@ -986,7 +986,9 @@ default.port=9945
 	<pre>.\sm70\bin\unregisterContainerServiceYAJWS.bat{instance_name}</pre></li>
 <li>Register the new version as a Windows service:
 <pre>.\{<strong>aap201800</strong>_foldername}\bin\registerContainerServiceYAJWS.bat {instance_name}</pre>
-<p>If you're running in Administrator mode, Windows registers the service and also starts it.</p></li>
+<p>If you're running in Administrator mode, Windows registers the service and also starts it.</p>
+<p><strong>Note</strong>: The product also includes files <strong>unregisterContainerService.bat</strong> and <strong>registerContainerService.bat</strong>. These are present for compatibility with earlier versions. Do <strong>not</strong> use those files; use the versions listed above.</p>
+</li>
 <li>Repeat steps 2 and 3 for each additional container that's registered as a Windows service.</li>
 </ol>
 <p><a href="#top">back to top</a></p>
