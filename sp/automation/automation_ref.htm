@@ -13,7 +13,7 @@ nav-title: Automation Reference
 <p>Learn how to use automation recipes to manage tasks such as creating, deploying, or updating containers.</p>
 <p><a href="../platform_install/installing_akana_api_platform.htm" class="button secondary">Installing the Akana API Platform 2018.0.x</a></p>
 
-<h5 class="stamp">Supported Platforms: 2018.0.x</h5>
+<h5 class="stamp">Supported Platforms: 8.4.x and later</h5>
 <div class = "divider1"></div>
 
 
@@ -380,7 +380,7 @@ nav-title: Automation Reference
 <h4 id="tasks">Tasks</h4>
 <p>A recipe's Tasks Section controls the execution of workflow tasks in an autonomous way. Workflow tasks would generally be associated with a wizard-style user interface. Tasks are modeled as a series of steps, each of which is executed by providing it with a set of properties.</p>
 <p>Tasks and steps provide metadata through the <a href="../../ag/assets/platform_restapi_201800/api-urn_com.soa.admin.service.tasks.jaxrs-TaskService.html" title="Link to Tasks service in Platform REST API" target="_blank">Tasks Service</a>, which is part of the Akana Platform REST API and defines the properties required to complete each step of a task.</p>
-<p>By listing the properties to be provided to individual steps, recipes can execute any arbitrary tasks without specific knowledge of the internals of the work to be done.</p>
+<p>Because recipes list the properties to be provided to individual steps, you can use then to execute tasks without knowing the details of the work to be done.</p>
 <pre>"tasks":{
   "type":"array",
   "description":"Task workflow actions",
