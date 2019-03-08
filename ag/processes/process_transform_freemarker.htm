@@ -22,7 +22,15 @@ nav-title: Using FreeMarker
 
 
 <ol class="table_of_contents">
-	<li><a href="#freemarker_01">FreeMarker Introduction</a></li>
+	<li><a href="#freemarker_01">FreeMarker Introduction</a>
+		<ul>
+			<li><a href="#freemarker_01_01">FreeMarker templates</a></li>
+			<li><a href="#freemarker_01_02">Dot Notation</a></li>
+			<li><a href="#freemarker_01_02b">Array Notation</a></li>
+			<li><a href="#freemarker_01_03">Downloading the template-tester utilities</a></li>
+		</ul>
+		</li>
+	
 	<li><a href="#freemarker_02">Developing a FreeMarker Activity: Overview</a></li>
 	<li><a href="#freemarker_03">Extracting data from XML</a></li>
 	<li><a href="#freemarker_04">Creating an XML Document</a></li>
@@ -31,9 +39,6 @@ nav-title: Using FreeMarker
 	<li><a href="#freemarker_07">FreeMarker version</a></li>
 	<li><a href="#freemarker_08">Using FreeMarker in the Process Editor Transformation Activity</a></li>
 </ol>
-
-
-
 <div class = "divider1"></div>
 
 
@@ -44,7 +49,8 @@ nav-title: Using FreeMarker
 <p>FreeMarker is very powerful, and its capabilities are not documented here. For a comprehensive description of the template language, see <a href="https://freemarker.apache.org/" title="Link to Freemarker home page" target="_blank">https://freemarker.apache.org/</a>.</p>
 <p>The important thing with FreeMarker is to understand the concept. Essentially what FreeMarker does is to provide a means of creating a template that outputs text with the ability to insert content in the template based on extracting information from an input data model. In the context of the platform, the data model is built from the source message and process context. FreeMarker provides a language for specifying how to insert content from the data model, and it provides a set of control directives for actions such as looping through content and using conditionals.</p>
 
-<h5>FreeMarker templates</h5>
+
+<h4 id="freemarker_01_01">FreeMarker templates</h4>
 <p>At its core, a FreeMarker template is just the text that is going to be output. For example, the template below would simply output that piece of static text.</p>
 <pre>&lt;html&gt;
   &lt;body&gt;
@@ -59,13 +65,28 @@ nav-title: Using FreeMarker
 &lt;/html&gt;</pre>
 <p>The template above extracts the user value from the data model and uses it to generate a personalized piece of html. That is, of course, assuming that your data model contains a scalar value stored as user.</p>
 
-<h5>Dot Notation</h5>
+
+<h4 id="freemarker_01_02">Dot Notation</h4>
 <p>The data model is hierarchical, so if the user value is actually an object, you would access the inner values using a dot notation. For example:</p>
 <pre>${user.name.lastname}</pre>
 <p>This is a very important point. The value that you insert <strong>must</strong> be a scalar value. If your user value was a complex object, and you tried <strong>${user}</strong> in your template, the template rendering would fail with an error something like the below:</p>
 <pre>"${...}" content: Expected a string or something automatically convertible to string (number, date or boolean), but this has evaluated to an extended_hash.</pre>
 <p>The FreeMarker process activity replaces the content of the specified message variable with the result of running a template over the data model.</p>
+<p>You can also use the special &quot;D&quot; prefix to define a default namespace so that you can use dot notation. See <a href="#ex_airportapi_01">Airport API example: Approach 1</a> below.</p>
 <p>This document provides a couple of examples showing ways that you can use this activity for some common use cases.</p>
+
+
+<h4 id="freemarker_01_02b">Array Notation</h4>
+<p>You can also address elements using array notation rather than dot notation.</p>
+<p>You can access the XML document structure by using the <strong>contentAsXml</strong> helper method, and then addressing the elements. For any XML document using namespaces, the first step is to define the namespaces using the FreeMarker <strong>ns_prefixes</strong> tag. Using that, it's possible to address elements using array notation.</p>
+<p>See <a href="#ex_notation_array">Example using array notation</a> below.</p>
+
+
+<h4 id="freemarker_01_03">Downloading the template-tester utilities</h4>
+<p>If you're developing FreeMarker templates locally and want to run the commands to test your templates outside the platform, you can download the FreeMarker JAR file from the FreeMarker section of the AkanaInc GitHub project at <a href="https://github.com/akanainc/freemarker-activity/tree/master/tools" title="Link to the FreeMarker section of the AkanaInc GitHub project" target="_blank">https://github.com/akanainc/freemarker-activity/tree/master/tools</a>. Go to the <strong>\release</strong> folder and download  <strong>template-tester.jar</strong>.</p>
+<p>The JAR file includes a couple of simple utilities for quickly testing a template against content you provide without installing the Akana FreeMarker Activity for the Akana API Gateway.</p>
+<p>The tools mimic the Akana FreeMarker Activity helper methods, creating a top-level object in the data model called <span class="apidoc_code">message</span> and adding the following methods: <span class="apidoc_code">contentAsXml</span>, <span class="apidoc_code">contentAsString</span>, and a limited <span class="apidoc_code">getProperty</span> methods.</p>
+<p>For more information about the FreeMarker utilities, refer to the readme.md file at the above URL.</p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -87,6 +108,7 @@ nav-title: Using FreeMarker
 <p>You can access any of the properties in each context using a dot notation that skips the get prefix on the property. For example, a method in the script API of <strong>getTransportHeaders()</strong> can be accessed as a property using <strong>message.transportHeaders</strong>. This accesses the transportHeaders property of the default message context.</p>
 <p><strong>Note</strong>: while many properties directly return a scalar value, this example returns a Headers map. To use this in a template, you'd need to find a specific instance of a header using something like the following:</p>
 <pre>${message.transportHeaders.get("User-Agent").value}</pre>
+
 <h5>JSON to XML: simple example</h5>
 <p>The example below shows a very simple template for processing a JSON document, with example input and output.</p>
 <p><strong>Template:</strong></p>
@@ -107,7 +129,15 @@ nav-title: Using FreeMarker
 
 <h3 id="freemarker_03">Extracting data from XML</h3>
 <p>FreeMarker provides an easy way to extract some elements from an XML document with a complex structure and use their values to generate JSON, or even HTML, without having to become an XSLT expert. FreeMarker doesn't eliminate the need for XSLT, but it does provide a simpler alternative for many common uses.</p>
-<p>We'll use an example of a fairly simply document that will be enough to show a lot of the common approaches and pitfalls:</p>
+<p>This section includes two examples:</p>
+<ul>
+	<li><a href="#freemarker_03_01">Borrower example</a></li>
+	<li><a href="#freemarker_03_02">Airport API example</a></li>
+</ul>
+
+
+<h4 id="freemarker_03_01">Borrower example</h4>
+<p>For this example, we'll use a fairly simply document that will be enough to show a lot of the common approaches and pitfalls:</p>
 <pre>&lt;br:add xmlns:br="http://demo.akana.com/borrower"&gt;
   &lt;br:borrower&gt;
     &lt;br:id&gt;111-11-1111&lt;/br:id&gt;
@@ -123,7 +153,7 @@ nav-title: Using FreeMarker
 &lt;/br:add&gt;</pre>
 <p>The basic idea is that we are going to access the XML document structure by using the <strong>contentAsXml</strong> helper method, and then addressing the elements. For any XML document using namespaces, the first step is to define the namespaces using the FreeMarker <strong>ns_prefixes</strong> tag. Using that, it's possible to address elements using array notation (not dot notation).</p>
 
-<h5>Example using array notation</h5>
+<h5 id="ex_notation_array">Example using array notation</h5>
 <p>Below is an example using array notation, with sample output.</p>
 <p><strong>Example:</strong></p>
 <pre>&lt;#ftl ns_prefixes={&quot;br&quot;:&quot;http://demo.akana.com/borrower&quot;}&gt;
@@ -142,6 +172,34 @@ nav-title: Using FreeMarker
 </pre>
 <p>The above has the same effect as the first template, but is much more readable.</p>
 <p class="apidoc_note"><strong>Note</strong>: if you have multiple namespaces in your message, pick the one you'll need to access the most for your default, and then remember that you'll have to use array notation with the prefixes to address elements in other namespaces.</p>
+
+
+<h4 id="freemarker_03_02">Airport API example</h4>
+<p>For this example, we'll use a fairly simply document that will be enough to show a lot of the common approaches and pitfalls:</p>
+<pre>&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:sch=&quot;https://soa.smext.abc.org/asws/schemas&quot;&gt;
+  &lt;soapenv:Header /&gt;
+  &lt;soapenv:Body&gt;
+    &lt;sch:GET_getAirportStatus_InputMessage&gt;
+      &lt;sch:airportCode&gt;jfk&lt;/sch:airportCode&gt;
+    &lt;/sch:GET_getAirportStatus_InputMessage&gt;
+  &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;</pre>
+<p>For this example, there are two approaches you could use to get the value of the input parameter, airportCode, using FreeMarker. Both are shown below.</p>
+
+<h5 id="ex_airportapi_01">Airport API example: Approach 1</h5>
+<p>The example below uses dot notation (see <a href="#freemarker_01_02">Dot Notation</a> above).</p>
+<pre>&lt;#ftl ns_prefixes={&quot;D&quot;:&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;,&quot;sc&quot;:&quot;https://soa.smext.abc.org/asws/schemas&quot;}&gt;
+&lt;#assign xmlmsg = message.contentAsXml&gt;
+
+{ &quot;airportCode&quot;: &quot;${xmlmsg.Envelope.Body[&quot;sc:GET_getAirportStatus_InputMessage&quot;][&quot;sc:airportCode&quot;]}&quot; }
+</pre>
+
+<h5 id="ex_airportapi_02">Airport API example: Approach 2</h5>
+<p>The example below uses the FreeMarker <strong>ns_prefixes</strong> tag so that elements can be addressed using array notation (see <a href="#freemarker_01_02b">Array Notation</a> above).</p>
+<pre>&lt;#ftl ns_prefixes={&quot;se&quot;:&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;,&quot;sc&quot;:&quot;https://soa.smext.abc.org/asws/schemas&quot;}&gt;
+
+{ &quot;airportCode&quot; : &quot;${message.contentAsXml[&quot;se:Envelope&quot;][&quot;se:Body&quot;][&quot;sc:GET_getAirportStatus_InputMessage&quot;][&quot;sc:airportCode&quot;]}&quot; }
+</pre>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -307,6 +365,7 @@ nav-title: Using FreeMarker
 	<li>In the Process Editor toolbar, click the <strong>Transformation</strong> tool (see <a href="#freemarker_tool">Note: Choosing the Transformation Tool</a> below), and drag it into the Process Editor workspace. For more information, see <a href="process_reference.htm#transformationactivity">Transformation Activity</a>.</li>
 	<li>In the workspace, double-click the Transformation tool to access the Transformation Details Editor. See <a href="#freemarker_09">Using FreeMarker in the Transformation Details Editor</a> below.</li>
 </ol>
+
 <h5 id="freemarker_tool">Note: Choosing the Transformation Tool</h5>
 <p>Make sure you choose the Transformation activity: <img src="images/transformation_activity_icon.jpg" style="vertical-align:bottom" alt="icon" />.</p>
 <p>In some cases, the Process Editor toolbar might also include the FreeMarker plug-in tool: <img src="images/icon_freemarker_plugin.jpg" style="vertical-align:bottom" alt="icon" />. Do <strong>not</strong> use the plug-in; it is a custom activity that is not guaranteed to be available in all environments, and has been superseded by the transformation activity. Always use the Transformation activity.</p>
