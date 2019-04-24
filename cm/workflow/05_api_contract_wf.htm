@@ -111,6 +111,7 @@ nav-title: API Contract Workflow
 	<li><a href="#contract_f_05">invokeApiVersionAction</a></li>
 	<li><a href="#contract_f_06">updateContractActiveStatus</a></li>
 	<li><a href="#contract_f_07">syncConnectedAppVersionsInOAuthProvider</a></li>
+	<li><a href="#contract_f_08">verifyAppAccessLimitedToOnlySandboxOrLiveAPIs</a></li>
 </ul>
 
 
@@ -440,6 +441,46 @@ nav-title: API Contract Workflow
 <pre>&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
   &lt;arg name="action"&gt;Reset&lt;/arg&gt;
 &lt;/function&gt;</pre>
+
+
+<h4 id="contract_f_08">verifyAppAccessLimitedToOnlySandboxOrLiveAPIs</h4>
+<p><strong>Valid in version: 2018.0.10 and later</strong></p>
+<p><strong>Note</strong>: This function is not part of the default contract workflow. It's a custom function that you can use to modify the default behavior&nbsp;in the developer portal. For information about using custom workflows, see <a href="01_overview_cm_wf.htm">Custom Workflows in the Developer Portal</a>.</p>
+<p>For information about setting up a custom workflow in the developer portal, see <a href="../learnmore/site_admin_workflows.htm#how_do_i_set_up_and_manage_custom_workflows">How do I set up and manage custom workflows?</a></p>
+<p>By default, an app version can request a contract with an API in any API environments that are available.</p>
+<p>If you want to implement custom behavior so that an app version can only have contracts in one environment, you can use this function. If you add this function into your contract workflow, and then assign the revised workflow as your default, when an app requests a contract with an API in a specific environment (Sandbox or Live), the function checks that the app doesn't already have one or more contracts in a different environment. With this function in place, one app version can have contracts in the Sandbox environment, or in the Live environment, but not both.</p>
+<p><strong>Note</strong>: The limitation to only allow access in one environment is applied at the app version level, not the app level.</p>
+<h5>Parameters</h5>
+<p>None.</p>
+<h5>Examples/Notes/Additional Information</h5>
+<p>An example of one instance of where this function is added into the Contracts workflow is shown below (line 11). In this example, the check is done in a scenario where a manual approval is needed for a Sandbox API, which is controlled by platform API configuration settings. In this scenario, when a contract is requested with an API in the Sandbox environment and manual approval is needed, the function would check that the app version making the request doesn't already have a contract with any API in the Live environment. If you're modifying the workflow, you would need to add the function in as many parts of the workflow as needed to make sure that you get the expected results.</p>
+<pre>01 &lt;action id="104" name="Manual Approval Needed for Production API" auto="TRUE"&gt;
+02   &lt;restrict-to&gt;
+03     &lt;conditions type="AND"&gt;
+04       &lt;condition type="isAtmosphereProductionApiContract" /&gt;
+05     &lt;/conditions&gt;
+06   &lt;/restrict-to&gt;
+07    &lt;results&gt;
+08     &lt;unconditional-result old-status="Pending" status="Pending Approval" step="300" owner="${caller}"/&gt;
+09   &lt;/results&gt;
+10   &lt;post-functions&gt;
+11     &lt;function type="verifyAppAccessLimitedToOnlySandboxOrLiveAPIs" /&gt;
+12     
+13     &lt;function type="updateAPIContractStatus"&gt;
+14       &lt;arg name="status"&gt;&amp;AtmoContractStatusPendingApproval;&lt;/arg&gt;
+15     &lt;/function&gt;
+16     &lt;function type="sendNotification"&gt;
+17         &lt;arg name="notificationType"&gt;com.soa.notification.type.api.access.requested.both.apiadmin&lt;/arg&gt;
+18         &lt;arg name="role"&gt;ApiAdmin&lt;/arg&gt;
+19       &lt;arg name="status"&gt;&amp;AtmoContractStatusPendingApproval;&lt;/arg&gt;
+20     &lt;/function&gt;
+21     &lt;function type="sendNotification"&gt;
+22       &lt;arg name="notificationType"&gt;com.soa.notification.type.api.access.requested.production.appteam&lt;/arg&gt;
+23       &lt;arg name="role"&gt;AppAdmin&lt;/arg&gt;
+24       &lt;arg name="status"&gt;&amp;AtmoContractStatusPendingApproval;&lt;/arg&gt;
+25     &lt;/function&gt;
+26   &lt;/post-functions&gt;
+27 &lt;/action&gt;</pre>
 <p><a href="#top">Back to top</a></p>
 
 
