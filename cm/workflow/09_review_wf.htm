@@ -1,4 +1,15 @@
----
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Customizing Workflows in the API Platform</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../../style/reset.css" rel="stylesheet" type="text/css" />
+<link href="../../style/base.css" rel="stylesheet" type="text/css" />
+<link href="../../style/document.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="documentation">
+<!-----
 layout: page
 title: Review Workflow | Customizing Workflows in the API Platform
 description: Information about initial actions, reserved actions, functions, conditions, and variables for the Review workflow.
@@ -8,7 +19,7 @@ sub-nav-class: Workflows
 weight: 09
 type: page
 nav-title: Review Workflow
----
+----->
 <h2 id="top">Review Workflow</h2>
 <p>This section provides information about functions, conditions, and variable resolvers for the review workflow, as well as initial actions and reserved actions.</p>
 
@@ -24,6 +35,7 @@ nav-title: Review Workflow
 	<li><a href="#rev_vr_00">Review Workflow: Variable Resolvers</a> (none)</li>
 </ol>
 <div class = "divider1"></div>
+<!--<p>{\atmosphere\com.soa.atmosphere.impl\META-INF\resources\templates\default-review-workflow.xml}</p>-->
 
 
 
@@ -36,6 +48,7 @@ nav-title: Review Workflow
 
 <h4 id="rev_ia_01">@StartReview</h4>
 <p>This is how the reviews get introduced into the workflow. If you are customizing the initial behavior when a review is added, this is where the customization needs to go.</p>
+<!--<p>{\atmosphere\com.soa.atmosphere.impl\src\com\soa\review\workflow\ReviewWorkflowConstants.java}</p>-->
 <p><a href="#top">Back to top</a></p>
 
 
@@ -61,6 +74,7 @@ nav-title: Review Workflow
 
 <h4 id="rev_ra_03">@cancel</h4>
 <p>Used to cancel the review and end the workflow.</p>
+<!--<p>{\com.soa.atmosphere.impl\META-INF\resources\templates\teamWorkflowDefinition.xml}</p>-->
 <p><a href="#top">Back to top</a></p>
 
 
@@ -74,6 +88,7 @@ nav-title: Review Workflow
 	<li><a href="#rev_f_04">cancelOldReviewForTheSubjectBySameUser</a></li>
 	<li><a href="#rev_f_05">sendNotification</a></li>
 </ul>
+<!--<p>{\atmosphere\com.soa.atmosphere.impl\src\com\soa\review\workflow\ReviewWorkflowFunctions.java}</p>-->
 
 
 <h4 id="rev_f_01">markPublished</h4>
@@ -207,39 +222,39 @@ nav-title: Review Workflow
 
 <h5>Parameters</h5>
 <table class="doctable">
-  <thead>
-    <tr>
-      <th width="20%">Name</th>
-      <th width="80%">Description/Values</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>subjectType</td>
-      <td><p>Indicates the type of resource the notification relates to.  Applicable to anywhere a review can be added. Valid values:</p>
-        <ul>
-        	<li>apiversion</li>
-        	<li>app-version</li>
-        	<li>group</li>
-        </ul>      </td>
-    </tr>
-    <tr>
-      <td>Role</td>
-      <td><p>The role to which the notifications will be sent&#8212;only users who hold this role for the type of resource as specified in the subjectType parameter. Valid values:</p>
-        <ul>
-        	<li>ApiAdmin</li>
-        	<li>AppAdmin</li>
-        </ul>      </td>
-    </tr>
-    <tr>
-      <td>notificationType</td>
-      <td><p>The type of notification being sent. Can be any valid notification existing in the platform. For example:</p>
-        <ul>
-        	<li>com.soa.notification.type.api.review.created (for an API)</li>
-        	<li>com.soa.notification.type.app.review.created (for an app)</li>
-        </ul>      </td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Description/Values</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>subjectType</td>
+			<td><p>Indicates the type of resource the notification relates to.  Applicable to anywhere a review can be added. Valid values:</p>
+				<ul>
+					<li>apiversion</li>
+					<li>app-version</li>
+					<li>group</li>
+				</ul>      </td>
+		</tr>
+		<tr>
+			<td>Role</td>
+			<td><p>The role to which the notifications will be sent&#8212;only users who hold this role for the type of resource as specified in the subjectType parameter. Valid values:</p>
+				<ul>
+					<li>ApiAdmin</li>
+					<li>AppAdmin</li>
+				</ul>      </td>
+		</tr>
+		<tr>
+			<td>notificationType</td>
+			<td><p>The type of notification being sent. Can be any valid notification existing in the platform. For example:</p>
+				<ul>
+					<li>com.soa.notification.type.api.review.created (for an API)</li>
+					<li>com.soa.notification.type.app.review.created (for an app)</li>
+				</ul>      </td>
+		</tr>
+	</tbody>
 </table>
 
 <h5>Examples/Notes/Additional Information</h5>
@@ -281,6 +296,7 @@ nav-title: Review Workflow
 <ul>
 	<li><a href="#rev_c_01">isAutoPublishEnabled</a></li>
 </ul>
+<!--<p>{\atmosphere\com.soa.atmosphere.impl\src\com\soa\review\workflow\ReviewWorkflowConditions.java}</p>-->
 
 
 
@@ -292,6 +308,7 @@ nav-title: Review Workflow
 
 <h3 id="rev_vr_00">Review Workflow: Variable Resolvers</h3>
 <p>There are currently no variable resolvers for Akana API Platform workflows relating to reviews.</p>
+<!--<p>{\atmosphere\com.soa.atmosphere.impl\src\com\soa\review\workflow\ReviewWorkflowVariableResolver.java}</p>-->
 <p><a href="#top">Back to top</a></p>
 
 
@@ -303,16 +320,16 @@ nav-title: Review Workflow
 
 
 <h3 id="related_topics">Related Topics</h3>
-<div class="relatedlinks">
+<div class="relatedlinks" id="cm_workflow">
 <ul>
 	<li><a href="01_overview_cm_wf.htm">Custom Workflows in the Developer Portal</a></li>
 	<li><a href="02_general.htm">Workflow General Reference: Functions, Conditions, and Variables</a></li>
 	<li><a href="03_app_version_wf.htm">App Version Workflow</a></li>
 	<li><a href="04_api_version_wf.htm">API Version Workflow</a></li>
 	<li><a href="05_api_contract_wf.htm">API Contract Workflow</a></li>
+	<li><a href="06_ticket_wf.htm">Ticket Workflow</a></li>
 </ul>
 <ul>
-	<li><a href="06_ticket_wf.htm">Ticket Workflow</a></li>
 	<li><a href="07_group_membership_wf.htm">Group Membership Workflow</a></li>
 	<li><a href="08_user_wf.htm">User Workflow</a></li>
 	<li><a href="09_review_wf.htm">Review Workflow</a></li>
@@ -320,3 +337,10 @@ nav-title: Review Workflow
 	<li><a href="11_comments_wf.htm">Comments Workflow</a></li>
 </ul>
 </div>
+
+
+
+
+</div>
+</body>
+</html>

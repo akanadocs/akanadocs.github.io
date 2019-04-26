@@ -1,4 +1,15 @@
----
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Customizing Workflows in the API Platform</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../../style/reset.css" rel="stylesheet" type="text/css" />
+<link href="../../style/base.css" rel="stylesheet" type="text/css" />
+<link href="../../style/document.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="documentation">
+<!-----
 layout: page
 title: API Version Workflow | Customizing Workflows in the API Platform
 description: Information about initial actions, reserved actions, functions, conditions, and variables for the API Version workflow.
@@ -8,7 +19,7 @@ sub-nav-class: Workflows
 weight: 04
 type: page
 nav-title: API Version Workflow
----
+----->
 <h2 id="top">API Version Workflow</h2>
 <p>This section provides information about functions, conditions, and variables for the API version workflow, as well as initial actions and reserved actions.</p>
 
@@ -38,7 +49,7 @@ nav-title: API Version Workflow
 
 <h4 id="apiv_ia_01">@Create</h4>
 <p>Starts the workflow, for a new API version.</p>
-<p>For more information, see <a href="01_overview_cm_wf.htm#01_11_ia">Workflow Initial Actions</a>.</p>
+<p>For more information, see <a href="01_overview_cm_wf.htm#s01_11_ia">Workflow Initial Actions</a>.</p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -55,6 +66,7 @@ nav-title: API Version Workflow
 	<li><a href="#apiv_f_01">exportAPIVersion</a></li>
 	<li><a href="#apiv_f_02">exportAPIAllVersions</a></li>
 </ul>
+<!--<p>{\com.soa.atmosphere.impl\src\com\soa\api\workflow\impl\APIVersionWorkflowFunctions.java}</p>-->
 
 
 
@@ -110,6 +122,7 @@ nav-title: API Version Workflow
 
 <h3 id="apiv_c_00">API Version Workflow: Conditions</h3>
 <p>There are no conditions for the API version workflow.</p>
+<!--<p>{\com.soa.atmosphere.impl\src\com\soa\api\workflow\impl\APIVersionWorkflowConditions.java}</p>-->
 <p><a href="#top">Back to top</a></p>
 
 
@@ -120,6 +133,7 @@ nav-title: API Version Workflow
 <ul>
 	<li><a href="#apiv_vr_01">${api.dn}</a></li>
 </ul>
+<!--<p>{\com.soa.atmosphere.impl\src\com\soa\api\workflow\impl\APIVersionWorkflowVariableResolver.java}</p>-->
 
 
 <h4 id="apiv_vr_01">${api.dn}</h4>
@@ -135,16 +149,16 @@ nav-title: API Version Workflow
 
 
 <h3 id="related_topics">Related Topics</h3>
-<div class="relatedlinks">
+<div class="relatedlinks" id="cm_workflow">
 <ul>
 	<li><a href="01_overview_cm_wf.htm">Custom Workflows in the Developer Portal</a></li>
 	<li><a href="02_general.htm">Workflow General Reference: Functions, Conditions, and Variables</a></li>
 	<li><a href="03_app_version_wf.htm">App Version Workflow</a></li>
 	<li><a href="04_api_version_wf.htm">API Version Workflow</a></li>
 	<li><a href="05_api_contract_wf.htm">API Contract Workflow</a></li>
+	<li><a href="06_ticket_wf.htm">Ticket Workflow</a></li>
 </ul>
 <ul>
-	<li><a href="06_ticket_wf.htm">Ticket Workflow</a></li>
 	<li><a href="07_group_membership_wf.htm">Group Membership Workflow</a></li>
 	<li><a href="08_user_wf.htm">User Workflow</a></li>
 	<li><a href="09_review_wf.htm">Review Workflow</a></li>
@@ -152,3 +166,10 @@ nav-title: API Version Workflow
 	<li><a href="11_comments_wf.htm">Comments Workflow</a></li>
 </ul>
 </div>
+
+
+
+
+</div>
+</body>
+</html>
