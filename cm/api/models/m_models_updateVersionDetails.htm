@@ -1,0 +1,251 @@
+---
+layout: apipage
+title: Update Version Details | Models Service | Akana API Platform API
+description: Updates information about the specified model object version.
+product: cm
+category: ref
+nav-title: Update Version Details 
+no-nav: api
+sub-nav: true
+sub-nav-class: models
+no-catalog: true
+---
+
+<div class="apidocContent">
+<!-- InstanceBeginEditable name="Heading" -->
+<h2 id="top">PUT&nbsp;/api/models/versions/{ModelVersionID}</h2>
+<!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
+<p><!-- #BeginLibraryItem "/Library/desc_updateVersionDetails.lbi" -->Updates information about the specified model object version.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/permission_modify.lbi" -->Must have Modify permission for the resource. <!-- #EndLibraryItem --></p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>This topic includes the following sections:</p>
+<div class="relatedlinks">
+<ul>
+	<li><a href="#httpmethod">HTTP Method</a></li>
+	<li><a href="#endpoint">URL</a></li>
+	<li><a href="#samplerequest">Sample Request</a></li>
+	<li><a href="#requestheaders">Request Headers</a></li>
+	<li><a href="#requestparameters">Request Parameters</a></li>
+</ul>
+<ul>
+	<li><a href="#response">Response</a></li>
+	<li><a href="#sampleresponse">Sample Response</a></li>
+	<li><a href="#responseheaders">Response Headers</a></li>
+	<li><a href="#responsebody">Response Body</a></li>
+	<li><a href="#errorcodes">Error Codes/Messages</a></li>
+</ul>
+</div><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<!-- InstanceBeginEditable name="HTTP Method" -->
+<p class="httpverb">PUT</p>
+<!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+<h3 id="endpoint">URL</h3>
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->models/versions/{ModelVersionID}</pre>
+<!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<!-- InstanceBeginEditable name="Sample Request" -->
+<h3 id="samplerequest">Sample Request</h3>
+<p id="id_samplerequest">The example below shows a request to update the specified model version.</p>
+<p><strong>Request URL</strong></p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->models/versions/79d2f19b-02a0-4f45-b936-04c20fd5e9b3.acmepaymentscorp</pre>
+<p><strong>Sample request headers</strong></p>
+<pre>Accept: application/json
+Content-Type: application/json
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<p><strong>Sample request body</strong></p>
+<pre>{
+  "ModelVersionID" : "79d2f19b-02a0-4f45-b936-04c20fd5e9b3.acmepaymentscorp",
+  "ModelID" : "589a932c-b5f6-4167-8758-0cf2532789f3.acmepaymentscorp",
+  "Name" : "Check Purchase",
+  "Description" : "Check purchase version 3 (updated)",
+  "Tag" : [ ],
+  "Visibility" : "Public",
+  "Created" : "2019-05-09T14:35:47Z",
+  "Updated" : "2019-05-09T15:13:01Z",
+  "State" : "com.akana.model.state.draft"
+}</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Headers" -->
+<h3 id="requestheaders">Request Headers</h3>
+<p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th>Header</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
+			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+		</tr>
+	</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Parameters" -->
+<h3 id="requestparameters">Request Parameters</h3>
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th>Parameter</th>
+			<th>Parm Type</th>
+			<th>Data Type</th>
+			<th>Required</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_modelversionid">ModelVersionID</a></td>
+			<td>Path</td>
+			<td>String</td>
+			<td>Required</td>
+			<td><!-- #BeginLibraryItem "/Library/o_id_ModelVersionID.lbi" -->The unique ID for a specific version of a model object defined for a business organization. Same format as <a href="../aaref/Ref_IDsOnThePlatform.htm#id_modelid">ModelID</a>.<!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td>ModelVersion</td>
+			<td>Body</td>
+			<td><a href="../obj/o_schema_ModelVersion.htm">ModelVersion</a></td>
+			<td>Required</td>
+			<td><!-- #BeginLibraryItem "/Library/o_schema_ModelVersion.lbi" -->Contains information about a version for model objects defined at the organization level.<!-- #EndLibraryItem --></td>
+		</tr>
+	</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Description" -->
+<h3 id="response">Response</h3>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the updated model version.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Sample Response" -->
+<h3 id="sampleresponse">Sample Response</h3>
+<p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
+<p><strong>Sample response headers</strong></p>
+<pre>HTTP/1.1 200 OK
+Date: Thu, 09 May 2019 15:15:54 GMT
+Content-Type: application/json</pre>
+<p><strong>Sample response body</strong></p>
+<pre>{
+  "ModelVersionID": "79d2f19b-02a0-4f45-b936-04c20fd5e9b3.acmepaymentscorp",
+  "ModelID": "589a932c-b5f6-4167-8758-0cf2532789f3.acmepaymentscorp",
+  "Name": "Check Purchase",
+  "Description": "Check purchase version 3 (updated)",
+  "Tag": [],
+  "Visibility": "Public",
+  "Created": "2019-05-09T14:35:47Z",
+  "Updated": "2019-05-09T15:15:56Z",
+  "State": "com.akana.model.state.draft"
+}</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Headers" -->
+<h3 id="responseheaders">Response Headers</h3>
+<p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th>Header</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+		</tr>
+	</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Body" -->
+<h3 id="responsebody">Response Body</h3>
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>ModelVersion</td>
+			<td><a href="../obj/o_schema_ModelVersion.htm">ModelVersion</a></td>
+			<td><!-- #BeginLibraryItem "/Library/o_schema_ModelVersion.lbi" -->Contains information about a version for model objects defined at the organization level.<!-- #EndLibraryItem --></td>
+		</tr>
+	</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<h3 id="errorcodes">Error Codes/Messages</h3>
+<p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<!-- InstanceBeginEditable name="Error Messages" -->
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th>Item</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
+			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+			<td>An error occurred processing the call.</td>
+		</tr>
+	</tbody>
+</table>
+<!-- InstanceEndEditable -->
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<div class="relatedlinks">
+<ul>
+	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
+	<li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
+</ul>
+<ul>
+	<li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
+	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
+</ul> 
+</div><!-- #EndLibraryItem --></div>

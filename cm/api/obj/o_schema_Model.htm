@@ -1,0 +1,135 @@
+---
+layout: apipage
+title: Model Object | Schema Service | Akana API Platform API
+description: Contains information about a model object defined at the organization level.
+product: cm
+category: ref
+nav-title: Model Object 
+no-nav: api
+sub-nav: true
+sub-nav-class: obj
+no-catalog: true
+---
+
+<div class="apidocContent">
+<h2 id="top">Model Object</h2>
+<p><!-- #BeginLibraryItem "/Library/o_schema_Model.lbi" -->Contains information about a model object defined at the organization level.<!-- #EndLibraryItem --></p>
+<p class="usedby">This object is used by the following operations:</p>
+<ul>
+	<li><span class="apidoc_code"><a href="../models/m_models_createModel.htm">POST&nbsp;/api/models</a></span> (in the response)</li>
+	<li><span class="apidoc_code"><a href="../models/m_models_getModel.htm">GET&nbsp;/api/models/{ModelID}</a></span> (in the response)</li>
+	<li><span class="apidoc_code"><a href="../models/m_models_updateModel.htm">PUT&nbsp;/api/models/{ModelID}</a></span> (in request and response)</li>
+	<li>Operations that reference the <a href="o_schema_Models.htm">Models</a> object</li>
+</ul>
+
+<p>The properties included in the <strong>Model</strong> object are listed below.</p>
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th>Property</th>
+			<th>Type</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_modelid">ModelID</a></td>
+			<td>string</td>
+			<td><!-- #BeginLibraryItem "/Library/o_id_ModelID.lbi" -->The unique ID for a model object defined for a business organization.<!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td>string</td>
+			<td>Name of the model object.</td>
+		</tr>
+		<tr>
+			<td>Description</td>
+			<td>string</td>
+			<td>Description of the model object.</td>
+		</tr>
+		<tr>
+			<td>Summary</td>
+			<td>string</td>
+			<td>Summary description of the model object, if applicable.</td>
+		</tr>
+		<tr>
+			<td>ModelCategory</td>
+			<td>string</td>
+			<td>Category that the model object is assigned to.</td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_latestversionid">LatestVersionID</a></td>
+			<td>string</td>
+			<td><!-- #BeginLibraryItem "/Library/o_ID_LatestVersionID.lbi" -->The ID for the latest version of a versioned resource that's available to the requesting user.<!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td>Tag</td>
+			<td>string[&nbsp;]</td>
+			<td>One or more user-defined tags assigned to the model object.</td>
+		</tr>
+		<tr>
+			<td>Visibility</td>
+			<td>string</td>
+			<td><!-- #BeginLibraryItem "/Library/parm_Visibility_all.lbi" --> The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a> setting for this resource. For a list of valid values, see <a href="../aaref/Ref_Values.htm#values_visibilitysettings">Visibility Settings</a>.<!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td>Created</td>
+			<td>dateTime</td>
+			<td><!-- #BeginLibraryItem "/Library/o_Created.lbi" --> The date/time stamp when the resource was first created. Used only in response messages.<!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td>Updated</td>
+			<td>dateTime</td>
+			<td><!-- #BeginLibraryItem "/Library/o_Updated.lbi" --> The date/time stamp when the resource was last updated. Used only in response messages.<!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td>State</td>
+			<td>string</td>
+			<td>The state value for the model object; for example, <strong>com.akana.model.state.active</strong>. For valid values, see <a href="../aaref/Ref_Values.htm#values_modelstate">Model State values</a>.</td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_businessid">BusinessID</a></td>
+			<td>string</td>
+			<td><p><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" --> The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.<!-- #EndLibraryItem --></p>
+				<p>It is the BusinessID for the business that the model object is defined for.</p></td>
+		</tr>
+		<tr>
+			<td>Links</td>
+			<td><a href="o_dn_model_Links.htm">Links</a>[&nbsp;]</td>
+			<td><p><!-- #BeginLibraryItem "/Library/o_dn_model_Links.lbi" -->Contains information about links relating to a resource on the platform.<!-- #EndLibraryItem --></p>
+				<p>One or more links applicable to the model object.</p></td>
+		</tr>
+		<tr>
+			<td>ModelVersion</td>
+			<td><a href="o_schema_ModelVersion.htm">ModelVersion</a></td>
+			<td><!-- #BeginLibraryItem "/Library/o_schema_ModelVersion.lbi" -->Contains information about a version for model objects defined at the organization level.<!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td>ModelVersions</td>
+			<td><a href="o_schema_ModelVersions.htm">ModelVersions</a></td>
+			<td><!-- #BeginLibraryItem "/Library/o_schema_ModelVersions.lbi" -->Contains information about versions for model objects defined at the organization level.<!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td>TargetResources</td>
+			<td><a href="o_dn_model_TargetResources.htm">TargetResources</a></td>
+			<td><!-- #BeginLibraryItem "/Library/o_dn_model_TargetResources.lbi" -->Contains information about one or more resources associated with the current resource. Used only in response messages.<!-- #EndLibraryItem --></td>
+		</tr>
+	</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<div class="relatedlinks">
+<ul>
+	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
+	<li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
+</ul>
+<ul>
+	<li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
+	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
+</ul> 
+</div><!-- #EndLibraryItem --></div>

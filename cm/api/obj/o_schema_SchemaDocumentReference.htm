@@ -1,0 +1,73 @@
+---
+layout: apipage
+title: SchemaDocumentReference Object | Schema Service | Akana API Platform API
+description: Contains information about references included within a schema document uploaded to the platform.
+product: cm
+category: ref
+nav-title: SchemaDocumentReference Object 
+no-nav: api
+sub-nav: true
+sub-nav-class: obj
+no-catalog: true
+---
+
+<div class="apidocContent">
+<h2 id="top">SchemaDocumentReference Object</h2>
+<p><!-- #BeginLibraryItem "/Library/o_schema_SchemaDocumentReference.lbi" -->Contains information about references included within a schema document uploaded to the platform.<!-- #EndLibraryItem --></p>
+<p class="usedby">This object is used by the following operations:</p>
+<ul>
+	
+	<li><span class="apidoc_code"><a href="../models/m_models_readFileDetails.htm">POST&nbsp;/api/models/readfiledetails</a></span> (in the response)</li>
+	<li>Operations that reference the <a href="o_schema_AddModelRequest.htm">AddModelRequest</a> object</li>
+</ul>
+
+<p>The properties included in the <strong>SchemaDocumentReference</strong> object are listed below.</p>
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th>Property</th>
+			<th>Type</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_dropboxid">DropboxFileId</a></td>
+			<td>long</td>
+			<td>Unique ID for the API description document file uploaded to the Dropbox.</td>
+		</tr>
+		<tr>
+			<td>FileName</td>
+			<td>string</td>
+			<td>Filename for the API description document file uploaded to the Dropbox.</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>SchemaImports</td>
+			<td><a href="o_schema_SchemaImports.htm">SchemaImports</a>[&nbsp;]</td>
+			<td><p><!-- #BeginLibraryItem "/Library/o_schema_SchemaImports.lbi" -->Contains information about a model schema import.<!-- #EndLibraryItem --></p>
+				<p>One or more.</p></td>
+		</tr>
+		<tr>
+			<td>RequireModelName</td>
+			<td>boolean</td>
+			<td>Indicates whether the model name must be provided. If a model name is not required and not provided, the name is taken from the filename.</td>
+		</tr>
+	</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<div class="relatedlinks">
+<ul>
+	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
+	<li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
+</ul>
+<ul>
+	<li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
+	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
+</ul> 
+</div><!-- #EndLibraryItem --></div>

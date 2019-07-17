@@ -1,0 +1,74 @@
+---
+layout: apipage
+title: Security Domain Object | Security Domain Service | Akana API Platform API
+description: Contains configuration information about a security domain on the platform.
+product: cm
+category: ref
+nav-title: Security Domain Object 
+no-nav: api
+sub-nav: true
+sub-nav-class: obj
+no-catalog: true
+---
+
+<div class="apidocContent">
+<h2 id="top">SecurityDomain Object</h2>
+<p><!-- #BeginLibraryItem "/Library/o_securitydomains_SecurityDomain.lbi" -->Contains configuration information about a security domain on the platform.<!-- #EndLibraryItem --></p>
+
+<p>The properties included in the <strong>SecurityDomain</strong> object are listed below.</p>
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th>Property</th>
+			<th>Type</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Name</td>
+			<td>String</td>
+			<td>The name of the security domain.</td>
+		</tr>
+		<tr>
+			<td>Description</td>
+			<td>String</td>
+			<td>Brief description for the security domain.</td>
+		</tr>
+		<tr>
+			<td>IdentitySystemType</td>
+			<td>String</td>
+			<td><p>The type of domain. For valid values, see <a href="../aaref/Ref_Values.htm#values_identitysystemtype">IdentitySystemType values for domains</a>:</p>
+				<ul class="apidoctable_ul">
+					<li>com.akana.securitydomain.external.oauth.provider</li>
+					<li>            com.soa.securitydomain.fb.connector</li>
+					<li>            com.soa.securitydomain.google.connector</li>
+					<li>            com.soa.securitydomain.oauth.provider</li>
+					<li>            com.soa.securitydomain.openid.relyingparty</li>
+					<li>            com.soa.securitydomain.pingfederate.provider</li>
+				</ul></td>
+		</tr>
+		<tr>
+			<td>DomainConfiguration</td>
+			<td>String</td>
+			<td>A string of URL-escaped name/value pairs containing the domain configuration information.</td>
+		</tr>
+	</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<div class="relatedlinks">
+<ul>
+	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
+	<li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
+</ul>
+<ul>
+	<li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
+	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
+</ul> 
+</div><!-- #EndLibraryItem --></div>

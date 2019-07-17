@@ -1,0 +1,143 @@
+---
+layout: apipage
+title: Example - Adding an App Avatar | How-To Material | Akana API Platform API
+description: This example walks you through adding an avatar for an app in the&nbsp;Akana API Platform, using the platform API.
+product: cm
+category: ref
+nav-title: Example - Adding an App Avatar 
+no-nav: api
+sub-nav: true
+sub-nav-class: aaex
+no-catalog: true
+---
+
+<div class="apidocContent">
+<h2 id="top">Example: Adding an App Avatar</h2>
+<p>This example walks you through adding an avatar for an app in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, using the platform API.</p>
+<p>An app team member or a Business Admin can perform this task.</p>
+<p>It includes:</p>
+<ul>
+	<li><a href="#s01">Overview</a></li>
+	<li><a href="#s02">Instructions</a></li>
+	<li><a href="#s03">Training video</a></li>
+</ul>
+
+
+
+<h3 id="s01">Overview</h3>
+<p>This exercise assumes that you already have:</p>
+<ul>
+	<li>A valid login for the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->.</li>
+	<li>An app that you're authorized to access. You'll need to know the App&nbsp;ID.</li>
+	<li>An avatar image in an accessible location. Recommended sizing is 75 x 75 pixels.</li>
+</ul>
+<p>Essentially, you'll do the following:</p>
+<ul>
+	<li>Log in: <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span>.</li>
+	<li>Upload the image to the dropbox: <span class="apidoc_code"><a href="../dropbox/m_dropbox_addPicture.htm">POST&nbsp;/api/dropbox/pictures</a></span>.</li>
+	<li>Optional: Assign the image dimensions: <span class="apidoc_code"><a href="../dropbox/m_dropbox_cropPicture.htm">PUT&nbsp;/api/dropbox/pictures/{PictureID}</a></span>. Note we recommend uploading the recommended size and you won't need to assign image dimensions.</li>
+	<li>Optional: check how the image will look at the specified dimensions: <span class="apidoc_code"><a href="../dropbox/m_dropbox_getPicture.htm">GET&nbsp;/api/dropbox/pictures/{PictureID}</a></span>.</li>
+	<li>Update the app to include the new image: <span class="apidoc_code"><a href="../apps/m_apps_modifyApp.htm">PUT&nbsp;/api/apps/{AppID}</a></span>.</li>
+	<li>Log out.</li>
+</ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3 id="s02">Instructions</h3>
+<p>Follow the detailed instructions below.</p>
+<h4>To add an app avatar in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;using the API</h4>
+<ol>
+	<li>Log in via the API, <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span> operation, using your own email and password in the body of the operation instead of the placeholder values given below.
+		<ul>
+			<li>HTTP method: POST</li>
+			<li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem --></span>login</strong></li>
+			<li>Accept header: <strong>application/json</strong></li>
+			<li>Content-Type header: <strong>application/json</strong></li>
+			<li>CSRF header: include it if needed. If you are not sure whether it's needed or not, refer to <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
+			<li>Request Body:
+			<pre>{
+  "email":"MyEmailAddress",
+  "password":"MyPassword"
+}</pre>
+			</li>
+		</ul>
+	</li>
+	<li>Upload the image to the dropbox, using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_addPicture.htm">POST&nbsp;/api/dropbox/pictures</a></span> operation. In your API call, you'll need to specify the name and path for the image.
+		<ul>
+			<li>HTTP method: POST</li>
+			<li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem --></span>dropbox/pictures</strong></li>
+			<li>Content-Type header: <strong>multipart/form-data</strong></li>
+			<li>CSRF header: include it if needed. Usually needed for POST operations. If you are not sure, refer to <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
+		</ul>
+	</li>
+	<li>Optional: Specify the sizing dimensions, using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_cropPicture.htm">PUT&nbsp;/api/dropbox/pictures/{PictureID}</a><a href="../dropbox/m_dropbox_addPicture.htm"></a></span> operation. Note that if you make sure your image is the correct size, outside the platform, you can skip this step.
+	<p>In your API call, specify the PictureID (DropboxID) that was returned by the previous operation.
+	<ul>
+		<li>HTTP method: POST</li>
+		<li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem --></span>dropbox/pictures/{PictureID}</strong></li>
+		<li>Accept header: <strong>application/json</strong></li>
+		<li>Content-Type header: <strong>application/x-www-form-urlencoded</strong></li>
+		<li>CSRF header: include it if needed. If you are not sure whether it's needed or not, refer to <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
+		<li>The request body includes the dimensions of the file. Define the following keys: x, y, w, h (X and Y axes, height and width).
+			See the example below from Postman.
+			<p><img src="../assets/dropbox_cropPicture.jpg" alt="Setting the image dimensions in Crop Picture" /></p></li>
+	</ul>
+	</li>
+	<li>Optional: Review the new image to see how it will look as the avatar, using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_getPicture.htm">GET&nbsp;/api/dropbox/pictures/{PictureID}</a></span> operation. In your API call, specify the PictureID (DropboxID). The image is returned.
+		<ul>
+		<li>HTTP method: GET</li>
+		<li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem --></span>dropbox/pictures/{PictureID}</strong></li>
+		<li>Accept header: <strong>image/jpeg</strong></li>
+		<li>CSRF header: include it if needed. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
+	</ul>
+	</li>
+	<li>Modify the app definition to include the new image, using the <span class="apidoc_code"><a href="../apps/m_apps_modifyApp.htm">PUT&nbsp;/api/apps/{AppID}</a><a href="../dropbox/m_dropbox_addPicture.htm"></a></span> operation. In your API call, you'll need to specify the AppID, and in the body you'll need to include the app name and the DropboxID.
+		<ul>
+		<li>HTTP method: POST</li>
+		<li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem --></span>apps/{AppID}</strong></li>
+		<li>Accept header: <strong>text/plain</strong></li>
+		<li>Content-Type header: <strong>multipart/form-data</strong></li>
+		<li>CSRF header: include it if needed. Usually needed for POST operations. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
+		<li>Request Body:
+		<pre>{
+  &quot;Name&quot;: &quot;MyAppName&quot;,
+  &quot;PictureID&quot;:&quot;1234&quot;
+}</pre></li>
+	</ul>
+	</li>
+	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_logout.htm">POST&nbsp;/api/login/logout</a></span> operation. Use the following values:
+		<ul>
+			<li>URL: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/logout</strong></li>
+			<li>Accept header: <strong>application/json</strong></li>
+			<li>Content-Type header: <strong>application/x-www-form-urlencoded</strong></li>
+		</ul>
+	</li>
+</ol>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3 id="s03">Training video</h3>
+<p>The training video below walks you through all the steps in this example and shows the results in the browser.</p>
+<ul>
+	<li><a href="../assets/vid_ex_AddAppAvatar.mp4" target="_blank">Example: Adding an App Avatar&#8212;video</a> (on this website)</li>
+</ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<div class="relatedlinks">
+<ul>
+	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
+	<li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
+</ul>
+<ul>
+	<li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
+	<li><a href="Ref_Ex_Overview.htm">Examples: Overview</a></li>
+</ul> 
+</div><!-- #EndLibraryItem --></div>

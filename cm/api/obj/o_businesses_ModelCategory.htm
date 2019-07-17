@@ -1,0 +1,67 @@
+---
+layout: apipage
+title: ModelCategory Object | Businesses Service | Akana API Platform API
+description: Contains information about a category defined for model objects in the business.
+product: cm
+category: ref
+nav-title: ModelCategory Object 
+no-nav: api
+sub-nav: true
+sub-nav-class: obj
+no-catalog: true
+---
+
+<div class="apidocContent">
+<h2 id="top">ModelCategory Object</h2>
+<p><!-- #BeginLibraryItem "/Library/o_businesses_ModelCategory.lbi" -->Contains information about a category defined for model objects in the business.<!-- #EndLibraryItem --></p>
+<p class="usedby">This object is used by the following operations:</p>
+<ul>
+	<li><span class="apidoc_code"><a href="../businesses/m_businesses_addModelCategory.htm">POST&nbsp;/api/businesses/{BusinessID}/modelcategories</a></span> (in request and response)</li>
+	<li><span class="apidoc_code"><a href="../businesses/m_businesses_getModelCategory.htm">GET&nbsp;/api/businesses/{BusinessID}/modelcategories/{CategoryName}</a></span> (in response)</li>
+	<li><span class="apidoc_code"><a href="../businesses/m_businesses_updateModelCategory.htm">PUT&nbsp;/api/businesses/{BusinessID}/modelcategories/{CategoryName}</a></span> (in request and response)</li>
+</ul>
+
+<p>The properties included in the <strong>ModelCategory</strong> object are listed below.</p>
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th>Property</th>
+			<th>Type</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Name</td>
+			<td>Integer</td>
+			<td>The name of the model category.</td>
+		</tr>
+		<tr>
+			<td>Description</td>
+			<td>Integer</td>
+			<td>Text description of the model category.</td>
+		</tr>
+		<tr>
+			<td>Deleted</td>
+			<td>boolean</td>
+			<td>Indicates whether the model category has been marked for deletion. If a category is marked for deletion but is still in use, it continues to be valid for existing model objects assigned to the category; however, new model objects cannot be assigned to it.</td>
+		</tr>
+	</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<div class="relatedlinks">
+<ul>
+	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
+	<li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
+</ul>
+<ul>
+	<li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
+	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
+</ul> 
+</div><!-- #EndLibraryItem --></div>
