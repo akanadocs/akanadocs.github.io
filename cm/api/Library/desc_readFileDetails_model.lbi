@@ -1,1 +1,0 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">Reads the contents of a schema definition file to the Dropbox, and returns a list of models defined in the schema.
