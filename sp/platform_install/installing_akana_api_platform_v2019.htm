@@ -153,7 +153,6 @@ nav-title: Installing Akana API Platform 2019.0.x
 	<li>A temporary download location for the download ZIP file.</li>
 	<li>A folder for your installation; for example, <strong>AAP2019</strong>.</li>
 </ul>
-<!--<p><strong>Note</strong>: The version numbering for the Akana Platform and Akana API Platform files does not necessarily match. For example, Akana API Platform 2018.0.9 requires Akana Platform 2018.0.8. For version compatibility, check the release notes for the version you're installing.{xxx commenting this out for 2019.0.0. When it becomes applicable to 2019.0.x we can un-comment}</p>-->
 
 <h5 id="proc_download_zips">To download the installation ZIP file or files</h5>
 <ol>
@@ -223,7 +222,9 @@ nav-title: Installing Akana API Platform 2019.0.x
 <ul>
 	<li><strong>Linux</strong> (includes JRE): <strong>akana-platform-linux-jre-2019.0.0.5.zip</strong></li>
 	<li><strong>Windows</strong> (includes JRE): <strong>akana-platform-win-jre-2019.0.0.5.zip</strong></li>
-	<li><strong></strong><strong>Windows, Linux, or Solaris</strong> (does not include JRE; provide your own JRE, version 1.8): <strong>akana-platform-2019.0.0.5.zip</strong></li>
+	<li><strong></strong><strong>Windows, Linux, or Solaris</strong> (does not include JRE; provide your own JRE, version 1.8): <strong>akana-platform-2019.0.0.5.zip</strong>
+	<p><strong>Note</strong>: If you're running on Windows and using your own JRE, be sure to set your JAVA_HOME system variable. The platform uses this when registering Windows services.</p>
+	</li>
 </ul>
 <p><a href="#top">back to top</a></p>
 
@@ -253,8 +254,8 @@ nav-title: Installing Akana API Platform 2019.0.x
 			<li>Akana Community Manager (installing this feature also installs the Akana Community Manager APIs feature)</li>
 			<li>Akana Community Manager OAuth Provider (Should be installed for any Community Manager container) </li>
 			<li>Akana Community Manager Scheduled Jobs </li>
-			<li>Akana Management Services<!-- {<span class="apidoc_red">MM: ML had this, EN didn't. If you have scheduled jobs on another container do you not need it? Just need it somewhere?</span>}--></li>
-			<li>Akana OAuth Provider<!-- {<span class="apidoc_red">MM: ML installs this. When do we need Akana CM OAuth Provider vs Akana OAuth Provider?</span>}--></li>
+			<li>Akana Management Services</li>
+			<li>Akana OAuth Provider</li>
 			<li>Akana Policy Manager Console </li>
 			<li>Akana Policy Manager Services&#8212;this feature bundle includes the Akana Scheduled Jobs feature which adds jobs to the Quartz scheduler. It also includes Akana Security Services<!--(security.services)-->. This feature is needed on all containers except Network Director.</li>
 		</ul>
@@ -747,7 +748,7 @@ Query OK, 0 rows affected (0.00 sec)</pre>
 		<p><strong>mysql-connector-java-5.1.40-bin.jar</strong></p>
 		<p>Downloadable from: <a href="https://mvnrepository.com/artifact/mysql/mysql-connector-java/5.1.40" title="download location for MySQL database driver" target="_blank">https://mvnrepository.com/artifact/mysql/mysql-connector-java/5.1.40</a></p>
 		</li>
-	<li><strong>Oracle 12c Release 2</strong>: install this file:
+	<li><strong>Oracle 12c Release 2, Oracle 18c (18.3) supported in 2019.1.0 and later</strong>: install this file:
 	<p><strong>Ojdbc8.jar</strong></p>
 		<p>Downloadable from: <a href="http://www.oracle.com/technetwork/database/features/jdbc/jdbc-ucp-122-3110062.html" title="download location for Oracle 12c R2 database driver" target="_blank">http://www.oracle.com/technetwork/database/features/jdbc/jdbc-ucp-122-3110062.html</a> (download requires accepting the agreement and logging in).</p>
 		<p>Also, for Oracle 12c and later, see <a href="#note_oracle_12c">note about database permissions needed</a>.</p>
