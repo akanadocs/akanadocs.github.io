@@ -82,6 +82,10 @@ no-catalog: true
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
 		</tr>
 		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
+		</tr>
+		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
 		</tr>
@@ -131,12 +135,12 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
-Date: Tue, 02 Apr 2019 14:02:05 GMT</pre>
+Date: Wed, 25 Sep 2019 14:06:31 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>
 {
   "ReadRequestCSRFSupport":"com.soa.feature.disabled",
-  "WriteRequestCSRFSupport":"com.soa.feature.enabled",
+  "WriteRequestCSRFSupport":"com.soa.feature.disabled",
   "AllowUserEnum":"com.soa.feature.enabled",
   "EncryptChallengeAnswers":"com.soa.feature.disabled",
   "ChallengeCount":3,
@@ -144,8 +148,10 @@ Date: Tue, 02 Apr 2019 14:02:05 GMT</pre>
   "SiteAdminModifyEmail":"com.soa.feature.enabled",
   "AuthTokenCookieDomain":"com.soa.auth.token.cookie.domain.hostname",
   "CaptchaSupport":"com.soa.feature.disabled",
+  "CaptchaSiteKey":"6Lc9Hy0UAAAAAC3Qdtggv9VZJ0F4k-t2Hd5r799G",
   "ExternalDocSupport":"com.soa.feature.enabled",
-  "XssKeywords":"onload,onerror,onmouseout,onmouseover,eval"
+  "XssKeywords":"onload,onerror,onmouseout,onmouseover,eval",
+  "AllowedFileTypes":"*"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->

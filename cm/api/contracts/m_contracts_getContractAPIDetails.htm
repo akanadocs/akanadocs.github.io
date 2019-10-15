@@ -56,10 +56,11 @@ Returns information about the API that's part of a specific app/API contract.<!-
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the API details for the specified contract.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->contracts/cd0cf225-d142-4cf6-b97c-70b05ac90f50.acmepaymentscorp/apidetails</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.rcoaless/apidetails</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
-</pre>
+<!-- #BeginLibraryItem "/Library/hdr_cookie.lbi" -->Cookie: AtmoAuthToken_{fedmemberid}=TokenID{ID}<!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -84,6 +85,10 @@ Returns information about the API that's part of a specific app/API contract.<!-
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -132,111 +137,67 @@ Returns information about the API that's part of a specific app/API contract.<!-
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Accept: application/json</pre>
+<pre>Status Code: 200 OK
+Content-Type: application/json
+Date: Wed, 04 Sep 2019 18:33:33 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  &quot;API&quot; : {
-    &quot;APIID&quot; : &quot;f13ca921-2978-46fd-8212-74950f3df335.acmepaymentscorp&quot;,
-    &quot;Name&quot; : &quot;ACME Payments API&quot;,
-    &quot;Description&quot; : &quot;Payments API for ACME payment type.&quot;,
-    &quot;Visibility&quot; : &quot;Limited&quot;,
-    &quot;LatestVersionID&quot; : &quot;ea248844-b49d-4c3f-909d-8e16d8c98b65.acmepaymentscorp&quot;,
-    &quot;IsFollowed&quot; : false,
-    &quot;RatingSummary&quot; : {
-      &quot;Five&quot; : 0,
-      &quot;Four&quot; : 0,
-      &quot;Three&quot; : 0,
-      &quot;Two&quot; : 0,
-      &quot;One&quot; : 0
+  "API": {
+    "APIID": "7fe2ca8a-d6cd-40a6-b32f-a5515dbd6579.rcoaless",
+    "Name": "ACME Payments API",
+    "Description": "ACME Payments API",
+    "Visibility": "Public",
+    "LatestVersionID": "9daf2b49-0b00-45c2-8ccf-db5ef3d478af.rcoaless",
+    "IsFollowed": false,
+    "RatingSummary": {
+      "Five": 0,
+      "Four": 0,
+      "Three": 0,
+      "Two": 0,
+      "One": 0
     },
-    &quot;AdminGroupID&quot; : &quot;apiadmin-f13ca921-2978-46fd-8212-74950f3df335.acmepaymentscorp&quot;,
-    &quot;Created&quot; : &quot;2014-09-29T14:28:13Z&quot;,
-    &quot;Updated&quot; : &quot;2014-09-29T20:58:33Z&quot;,
-    &quot;AvatarURL&quot; : &quot;http://{hostname}/api/apis/f13ca921-2978-46fd-8212-74950f3df335.acmepaymentscorp/avatar&quot;
+    "AdminGroupID": "apiadmin-7fe2ca8a-d6cd-40a6-b32f-a5515dbd6579.rcoaless",
+    "Created": "2019-09-04T15:03:18Z",
+    "Updated": "2019-09-04T18:25:35Z",
+    "AvatarURL": "https://rcoaless.apiportal.akana.com:443/api/apis/avatar/_V7gG2uATIoNFEcG8w2-13pw",
+    "BusinessID": "tenantbusiness.rcoaless",
+    "OrganizationKey": "uddi:204baa12-cf25-11e9-bddb-d3399bf759f0"
   },
-  &quot;APIVersion&quot; : {
-    &quot;APIVersionID&quot; : &quot;ea248844-b49d-4c3f-909d-8e16d8c98b65.acmepaymentscorp&quot;,
-    &quot;APIID&quot; : &quot;f13ca921-2978-46fd-8212-74950f3df335.acmepaymentscorp&quot;,
-    &quot;Name&quot; : &quot;1.0&quot;,
-    &quot;Description&quot; : &quot;First release&quot;,
-    &quot;Type&quot; : &quot;shttp&quot;,
-    &quot;Tag&quot; : [ &quot;payments&quot; ],
-    &quot;Visibility&quot; : &quot;Limited&quot;,
-    &quot;Created&quot; : &quot;2014-09-29T14:28:13Z&quot;,
-    &quot;Updated&quot; : &quot;2014-09-29T20:58:33Z&quot;,
-    &quot;State&quot; : &quot;com.soa.api.state.open&quot;,
-    &quot;ProductionEndpointAccessAutoApproved&quot; : true,
-    &quot;SandboxEndpointAccessAutoApproved&quot; : true,
-    &quot;RatingSummary&quot; : {
-      &quot;Five&quot; : 0,
-      &quot;Four&quot; : 0,
-      &quot;Three&quot; : 0,
-      &quot;Two&quot; : 0,
-      &quot;One&quot; : 0
+  "APIVersion": {
+    "APIVersionID": "9daf2b49-0b00-45c2-8ccf-db5ef3d478af.rcoaless",
+    "APIID": "7fe2ca8a-d6cd-40a6-b32f-a5515dbd6579.rcoaless",
+    "Name": "v1",
+    "Description": "ACME Payments API",
+    "Environment": "Production",
+    "Tag": [],
+    "Visibility": "Public",
+    "Created": "2019-09-04T15:03:18Z",
+    "Updated": "2019-09-04T18:25:35Z",
+    "State": "com.soa.api.state.open",
+    "ProductionEndpointAccessAutoApproved": true,
+    "SandboxEndpointAccessAutoApproved": false,
+    "RatingSummary": {
+      "Five": 0,
+      "Four": 0,
+      "Three": 0,
+      "Two": 0,
+      "One": 0
     },
-    &quot;SandboxAnonymousAccessAllowed&quot; : false,
-    &quot;ProductionAnonymousAccessAllowed&quot; : false,
-    &quot;ResourceLevelPermissionsSupported&quot; : true,
-    &quot;APIOwnedImplementations&quot; : true,
-    &quot;ProductionServiceKey&quot; : &quot;uddi:d8ca2768-47e4-11e4-9e0d-97e86ff16f76&quot;,
-    &quot;SandboxServiceKey&quot; : &quot;uddi:d9a2d469-47e4-11e4-9e0d-97e86ff16f76&quot;
+    "SandboxAnonymousAccessAllowed": false,
+    "ProductionAnonymousAccessAllowed": true,
+    "ResourceLevelPermissionsSupported": false,
+    "APIOwnedImplementations": true,
+    "ProductionServiceKey": "uddi:2118e544-cf25-11e9-bddb-d3399bf759f0",
+    "APIDesign": {
+      "BindingType": [
+        "binding.http"
+      ],
+      "CommonDesign": true,
+      "DesignServiceKey": "uddi:2052aef3-cf25-11e9-bddb-d3399bf759f0"
+    }
   }
 }</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<p><strong>Sample response headers: <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></strong></p>
-<pre>Accept: application/vnd.soa.v71+xml</pre>
-<p><strong>Sample response body: <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;ContractAPI xmlns=&quot;http://soa.com/xsd/contract/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/user/1.0&quot; xmlns:ns3=&quot;http://soa.com/xsd/app/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/legals/1.0&quot; 
-xmlns:ns5=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns6=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns7=&quot;http://soa.com/xsd/business/1.0&quot; xmlns:ns8=&quot;http://soa.com/xsd/api/1.0&quot;&gt;
-  &lt;ns8:API&gt;
-    &lt;ns8:APIID&gt;f13ca921-2978-46fd-8212-74950f3df335.acmepaymentscorp&lt;/ns8:APIID&gt;
-    &lt;ns8:Name&gt;ACME Payments API&lt;/ns8:Name&gt;
-    &lt;ns8:Description&gt;Payments API for ACME payment type.&lt;/ns8:Description&gt;
-    &lt;ns8:Visibility&gt;Limited&lt;/ns8:Visibility&gt;
-    &lt;ns8:LatestVersionID&gt;ea248844-b49d-4c3f-909d-8e16d8c98b65.acmepaymentscorp&lt;/ns8:LatestVersionID&gt;
-    &lt;ns8:IsFollowed&gt;false&lt;/ns8:IsFollowed&gt;
-    &lt;ns6:RatingSummary&gt;
-      &lt;ns6:Five&gt;0&lt;/ns6:Five&gt;
-      &lt;ns6:Four&gt;0&lt;/ns6:Four&gt;
-      &lt;ns6:Three&gt;0&lt;/ns6:Three&gt;
-      &lt;ns6:Two&gt;0&lt;/ns6:Two&gt;
-      &lt;ns6:One&gt;0&lt;/ns6:One&gt;
-    &lt;/ns6:RatingSummary&gt;
-    &lt;ns8:AdminGroupID&gt;apiadmin-f13ca921-2978-46fd-8212-74950f3df335.acmepaymentscorp&lt;/ns8:AdminGroupID&gt;
-    &lt;ns8:Created&gt;2014-09-29T14:28:13Z&lt;/ns8:Created&gt;
-    &lt;ns8:Updated&gt;2014-09-29T20:58:33Z&lt;/ns8:Updated&gt;
-    &lt;ns8:AvatarURL&gt;http://{hostname}/api/apis/f13ca921-2978-46fd-8212-74950f3df335.acmepaymentscorp/avatar&lt;/ns8:AvatarURL&gt;
-  &lt;/ns8:API&gt;
-  &lt;ns8:APIVersion&gt;
-    &lt;ns8:APIVersionID&gt;ea248844-b49d-4c3f-909d-8e16d8c98b65.acmepaymentscorp&lt;/ns8:APIVersionID&gt;
-    &lt;ns8:APIID&gt;f13ca921-2978-46fd-8212-74950f3df335.acmepaymentscorp&lt;/ns8:APIID&gt;
-    &lt;ns8:Name&gt;1.0&lt;/ns8:Name&gt;
-    &lt;ns8:Description&gt;First release&lt;/ns8:Description&gt;
-    &lt;ns8:Type&gt;shttp&lt;/ns8:Type&gt;
-    &lt;ns8:Tag&gt;payments&lt;/ns8:Tag&gt;
-    &lt;ns8:Visibility&gt;Limited&lt;/ns8:Visibility&gt;
-    &lt;ns8:Created&gt;2014-09-29T14:28:13Z&lt;/ns8:Created&gt;
-    &lt;ns8:Updated&gt;2014-09-29T20:58:33Z&lt;/ns8:Updated&gt;
-    &lt;ns8:State&gt;com.soa.api.state.open&lt;/ns8:State&gt;
-    &lt;ns8:ProductionEndpointAccessAutoApproved&gt;true&lt;/ns8:ProductionEndpointAccessAutoApproved&gt;
-    &lt;ns8:SandboxEndpointAccessAutoApproved&gt;true&lt;/ns8:SandboxEndpointAccessAutoApproved&gt;
-    &lt;ns6:RatingSummary&gt;
-      &lt;ns6:Five&gt;0&lt;/ns6:Five&gt;
-      &lt;ns6:Four&gt;0&lt;/ns6:Four&gt;
-      &lt;ns6:Three&gt;0&lt;/ns6:Three&gt;
-      &lt;ns6:Two&gt;0&lt;/ns6:Two&gt;
-      &lt;ns6:One&gt;0&lt;/ns6:One&gt;
-    &lt;/ns6:RatingSummary&gt;
-    &lt;ns8:SandboxAnonymousAccessAllowed&gt;false&lt;/ns8:SandboxAnonymousAccessAllowed&gt;
-    &lt;ns8:ProductionAnonymousAccessAllowed&gt;false&lt;/ns8:ProductionAnonymousAccessAllowed&gt;
-    &lt;ns8:ResourceLevelPermissionsSupported&gt;true&lt;/ns8:ResourceLevelPermissionsSupported&gt;
-    &lt;ns8:APIOwnedImplementations&gt;true&lt;/ns8:APIOwnedImplementations&gt;
-    &lt;ns8:ProductionServiceKey&gt;uddi:d8ca2768-47e4-11e4-9e0d-97e86ff16f76&lt;/ns8:ProductionServiceKey&gt;
-    &lt;ns8:SandboxServiceKey&gt;uddi:d9a2d469-47e4-11e4-9e0d-97e86ff16f76&lt;/ns8:SandboxServiceKey&gt;
-  &lt;/ns8:APIVersion&gt;
-&lt;/ContractAPI&gt;</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back t</a><a href="#top">o top</a></p>
 <!-- InstanceEndEditable -->
 
 

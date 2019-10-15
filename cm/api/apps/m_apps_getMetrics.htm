@@ -60,9 +60,7 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for metric information for a specific app version. The <strong>Time Interval</strong>, <strong>Duration</strong>, and <strong>Time Zone</strong> parameters are specified in the URL.</p>
 <p><strong>Sample request URL</strong></p>
-<p><!-- #BeginLibraryItem "/Library/_linebreakinURL_note.lbi" --> <span class="apidoc_note"><strong>Note</strong>: In the sample URL below, a line break has been added for display reasons.</span><!-- #EndLibraryItem --></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/7FZJvSXlIP12IHKF3DufbL1W.acmepaymentscorp/metrics?Duration=1d&amp;Duration=1d
-&amp;Environment=Sandbox</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/7FZJvSXlIP12IHKF3DufbL1W.acmepaymentscorp/metrics?Duration=1d&amp;Duration=1d&amp;Environment=Sandbox</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET /api/apps/versions/7FZJvSXlIP12IHKF3DufbL1W.acmepaymentscorp/metrics?Duration=1d&amp;Duration=1d
 &amp;Environment=Sandbox HTTP/1.1
@@ -89,6 +87,10 @@ Accept: */*
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>

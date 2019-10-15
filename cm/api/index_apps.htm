@@ -64,9 +64,13 @@ Deletes the avatar associated with an app version's public profile.<!-- #EndLibr
 		</tr>
 		<tr>
 			<td>delete app version</td>
-			<td><a href="apps/m_apps_deleteAppVersion.htm">DELETE&nbsp;/api/apps/versions/{AppVersionID}/{Comment}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_deleteAppVersion.lbi" -->
-Deletes the specified version of an app.<!-- #EndLibraryItem --></td>
+			<td><a href="apps/m_apps_deleteAppVersion.htm">DELETE&nbsp;/api/apps/versions/{AppVersionID}</a></td>
+			<td><!-- #BeginLibraryItem "/Library/desc_deleteAppVersion.lbi" -->Deletes the specified version of an app (returns JSON) (recommended).<!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td>delete app version string</td>
+			<td><a href="apps/m_apps_deleteAppVersionString.htm">DELETE&nbsp;/api/apps/versions/{AppVersionID}</a></td>
+			<td><!-- #BeginLibraryItem "/Library/desc_deleteAppVersionString.lbi" -->Deletes the specified version of an app (no response content). Deprecated in version 2019.1.0. Use <span class="apidoc_code"><a href="apps/m_apps_deleteAppVersion.htm">DELETE&nbsp;/api/apps/versions/{AppVersionID}</a> </span>(returns JSON) instead.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td>export app</td>
@@ -280,7 +284,7 @@ Changes one or more values for an app (Name and/or Description).<!-- #EndLibrary
 			<td>modify version</td>
 			<td><a href="apps/m_apps_modifyVersion.htm">PUT&nbsp;/api/apps/versions/{AppVersionID}</a></td>
 			<td><!-- #BeginLibraryItem "/Library/desc_modifyVersion.lbi" -->
-				Changes one or more values associated with an app version.<!-- #EndLibraryItem --></td>
+Changes one or more values associated with an app version.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td>regenerate shared secret</td>

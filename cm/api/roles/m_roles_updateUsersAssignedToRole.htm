@@ -57,7 +57,8 @@ no-catalog: true
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
 Content-Type: application/json<!-- #BeginLibraryItem "/Library/hdr_cookie.lbi" -->
-Cookie: AtmoAuthToken_{fedmemberid}=TokenID{ID}<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+Cookie: AtmoAuthToken_{fedmemberid}=TokenID{ID}<!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
   "users":[
@@ -93,6 +94,10 @@ Cookie: AtmoAuthToken_{fedmemberid}=TokenID{ID}<!-- #EndLibraryItem --><!-- #Beg
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p>
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_83.lbi" --><strong>application/vnd.soa.v83+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_83.lbi" --><strong>application/vnd.soa.v83+xml</strong><!-- #EndLibraryItem --></p></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>

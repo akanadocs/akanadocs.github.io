@@ -64,6 +64,7 @@ no-catalog: true
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
+<!-- #BeginLibraryItem "/Library/hdr_cookie.lbi" -->Cookie: AtmoAuthToken_{fedmemberid}=TokenID{ID}<!-- #EndLibraryItem -->
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body: application/json</strong></p>
 <pre>{
@@ -259,6 +260,10 @@ AtmoAuthToken_acmepaymentscorp={TokenID_Content}
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_83.lbi" --><strong>application/vnd.soa.v83+json</strong><!-- #EndLibraryItem -->, or <!-- #BeginLibraryItem "/Library/hdrval_appxml_83.lbi" --><strong>application/vnd.soa.v83+xml</strong><!-- #EndLibraryItem --></p></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -637,7 +642,7 @@ AtmoAuthToken_acmepaymentscorp=TokenID%3D68b24a75-c5dc-11e5-b708-...</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http400">400</a></td>
-			<td><!-- #BeginLibraryItem "/Library/http_400.lbi" --> Bad request: Returned if the client sends invalid parameters or body content.<!-- #EndLibraryItem --> For example, you might get this response if you send malformed XML in your request.</td>
+			<td><!-- #BeginLibraryItem "/Library/http_400.lbi" -->Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.<!-- #EndLibraryItem -->For example, you might get this response if you send malformed XML in your request.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
@@ -649,7 +654,8 @@ AtmoAuthToken_acmepaymentscorp=TokenID%3D68b24a75-c5dc-11e5-b708-...</pre>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http405">405</a></td>
-			<td><!-- #BeginLibraryItem "/Library/http_405.lbi" -->Method Not Allowed. For example, you might get this if you specified an invalid Accept header or omitted a required Content-Type header, or used the wrong HTTP verb.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/http_405.lbi" -->
+Method Not Allowed. You might get this if there is an error in the URL, or if you used the wrong HTTP verb.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>

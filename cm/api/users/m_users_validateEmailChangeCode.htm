@@ -61,10 +61,8 @@ Accept: application/json
 Content-Type: application/json
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
-<p>Line break added for display purposes.</p>
 <pre>{
-  "changeCode":"pKhdsgdTvdL6DwI7gWgRCZrK8AUzc1I4sH6W9pCRslY6NkcMscqpzapHV5rIxbKnfKuq51EOIhqVT
-WsigIerWx_hdTy8iwiNq6gvKRdpK6OIlw-HaZ-jk1D4FTZctoiLLzrFl0mkKqlNrCy4iM91Xg65Zppp6dYSuWQHeZSHvx6dF4Pp0",
+  "changeCode":"pKhdsgdTvdL6DwI7gWgRCZrK8AUzc1I4sH6W9pCRslY6NkcMscqpzapHV5rIxbKnfKuq51EOIhqVTWsigIerWx_hdTy8iwiNq6gvKRdpK6OIlw-HaZ-jk1D4FTZctoiLLzrFl0mkKqlNrCy4iM91Xg65Zppp6dYSuWQHeZSHvx6dF4Pp0",
   "newEmailAddress":"jmead@acmepaymentscorp.com"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -90,6 +88,10 @@ WsigIerWx_hdTy8iwiNq6gvKRdpK6OIlw-HaZ-jk1D4FTZctoiLLzrFl0mkKqlNrCy4iM91Xg65Zppp6
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
 			<td><p>Any one of the following media types is valid for the request Content-Type:</p>
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></p></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -141,7 +143,6 @@ WsigIerWx_hdTy8iwiNq6gvKRdpK6OIlw-HaZ-jk1D4FTZctoiLLzrFl0mkKqlNrCy4iM91Xg65Zppp6
 <pre>Content-Type: application/json
 Date: Thu, 18 Apr 2019 17:51:15 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<p>Line break added for display purposes.</p>
 <pre>{
   "newEmailAddress":"jmead@acmepaymentscorp.com",
   "userName":"JaneMead",

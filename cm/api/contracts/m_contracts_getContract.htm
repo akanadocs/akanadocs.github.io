@@ -55,10 +55,13 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for information about the specified contract.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->contracts/6e56a1d4-308d-4269-a4d7-b47781664921.acmepaymentscorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.rcoaless</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Content-Type: application/json
-</pre>
+<pre>GET&nbsp;/api/contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.rcoaless HTTP/1.1
+Host: {hostname}
+Accept: application/json
+<!-- #BeginLibraryItem "/Library/hdr_cookie.lbi" -->Cookie: AtmoAuthToken_{fedmemberid}=TokenID{ID}<!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -83,6 +86,10 @@ no-catalog: true
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -133,21 +140,47 @@ no-catalog: true
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
-Date: Tue, 30 Sep 2014 00:00:00 GMT</pre>
-<p><strong>Sample response body: application/json</strong></p>
+Date: Wed, 04 Sep 2019 18:20:20 GMT</pre>
+<p><strong>Sample response body #1: application/json</strong></p>
+<p>In this example, there are no policies assigned to the contract.</p>
 <pre>{
-  &quot;ContractID&quot; : &quot;6e56a1d4-308d-4269-a4d7-b47781664921.acmepaymentscorp&quot;,
-  &quot;APIVersionID&quot; : &quot;b9ef39d6-5eb4-45dd-9a53-d126c83935d7.acmepaymentscorp&quot;,
-  &quot;RuntimeID&quot; : &quot;5GeZHyOZUlk8ISehxqO2swA6.acmepaymentscorp&quot;,
-  &quot;Environment&quot; : &quot;Production&quot;,
-  &quot;State&quot; : &quot;apicontract.status.activated&quot;,
-  &quot;ContractScope&quot; : {
-    &quot;Restricted&quot; : true,
-    &quot;LicenseID&quot; : [ &quot;0876cfb9-a308-4f24-a8b2-fc20493f0afb.acmepaymentscorp&quot; ]
+  "ContractID": "e31f8041-ff77-4153-8d4b-4a86795b2865.rcoaless",
+  "APIVersionID": "9daf2b49-0b00-45c2-8ccf-db5ef3d478af.rcoaless",
+  "RuntimeID": "wbN3rqWphd4z6LtgwI5oMRbrZoYrwQ4OvKrBn19o.rcoaless",
+  "Environment": "Production",
+  "State": "apicontract.status.activated",
+  "ContractScope": {
+    "Restricted": false
   },
-  &quot;Updated&quot; : &quot;2014-09-30T18:19:59Z&quot;,
-  &quot;UpdatedInMillis&quot; : 1412101199000,
-  &quot;Status&quot; : &quot;com.soa.apicontract.inforce&quot;
+  "Updated": "2019-09-04T18:07:32Z",
+  "UpdatedInMillis": 1567620452000,
+  "Status": "com.soa.apicontract.inforce"
+}</pre>
+<p><strong>Sample response body #2: application/json</strong></p>
+<p>In this example, there is a policy assigned to the contract. The contract has not yet been activated.</p>
+<pre>{
+  "ContractID": "66176dea-874b-439b-9f3b-104ac0595245.rcoaless",
+  "APIVersionID": "9daf2b49-0b00-45c2-8ccf-db5ef3d478af.rcoaless",
+  "RuntimeID": "ZkJqWIs4TWzU9sWla7tsrJUdJr38xTKwMXxffV95.rcoaless",
+  "Environment": "Production",
+  "Policies": {
+    "Policy": [
+      {
+        "PolicyKey": "uddi:34d9e157-c73c-4d86-a1e6-d9d07e994cba",
+        "Name": "Bandwidth Quota QOS Policy",
+        "Description": "Bandwidth Quota",
+        "PolicyType": "Service Level Policy",
+        "PolicySubType": "policy.qos.bandwidthquota"
+      }
+    ]
+  },
+  "State": "apicontract.status.approved",
+  "ContractScope": {
+    "Restricted": false
+  },
+  "Updated": "2019-09-06T21:13:10Z",
+  "UpdatedInMillis": 1567804390000,
+  "Status": "com.soa.apicontract.draft"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->

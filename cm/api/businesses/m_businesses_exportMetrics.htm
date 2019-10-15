@@ -51,7 +51,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
-<p id="id_samplerequest">The example below shows a request to export the business data. All options are included (line breaks added for display purposes).</p>
+<p id="id_samplerequest">The example below shows a request to export the business data.</p>
 <p><strong>Request URL</strong></p>
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->businesses/tenantbusiness.acmepaymentscorp/metrics/export</pre>
 <p><strong>Sample request headers</strong></p>
@@ -82,6 +82,10 @@ Host: {hostname}
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hdrval_contenttype_any.lbi" --><strong>Any format (*/*)</strong><!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>

@@ -60,12 +60,13 @@ no-catalog: true
 <ul>
 	<li><a href="#samplerequest_01">Sample request body #1: Activates a contract.</a></li>
 	<li><a href="#samplerequest_02">Sample request body #2: Suspends an active contract.</a></li>
-	<li><a href="#samplerequest_03">Sample request body #3: Cancels a contract.</a></li>
+	<li><a href="#samplerequest_03">Sample request body #3: Reactivates a suspended contract (resumes).</a></li>
+	<li><a href="#samplerequest_04">Sample request body #4: Cancels a contract.</a></li>
 </ul>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->contracts/contract25519.acmepaymentscorp/actions</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.acmepaymentscorp/actions</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/contracts/contract25519.acmepaymentscorp/actions HTTP/1.1
+<pre>POST /api/contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.acmepaymentscorp/actions HTTP/1.1
 Host: {hostname}
 Accept: */*
 Content-Type: application/json; charset=UTF-8
@@ -85,6 +86,13 @@ Content-Type: application/json; charset=UTF-8
 }</pre>
 
 <p id="samplerequest_03"><strong>Sample request body #3</strong></p>
+<p>Reactivates a suspended contract (resumes).</p>
+<pre>{
+  "ActionName":"apicontract.action.resume",
+  "Comments":"Ending the temporary suspension. All good."
+}</pre>
+
+<p id="samplerequest_04"><strong>Sample request body #4</strong></p>
 <p>Cancels a contract.</p>
 <pre>{
   &quot;ActionName&quot;:&quot;apicontract.action.cancel&quot;
@@ -116,6 +124,10 @@ Content-Type: application/json; charset=UTF-8
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -170,14 +182,34 @@ Content-Type: application/json; charset=UTF-8
 
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
-<p id="id_sampleresponse">The sample response below shows a successful response to a request for an API contract.</p>
+<p id="id_samplesponse">Examples below:</p>
+<ul>
+	<li><a href="#sampleresponse_01">Sample response body #1: Contract is activated.</a></li>
+	<li><a href="#sampleresponse_02">Sample response body #2: Contract is suspended.</a></li>
+	<li><a href="#sampleresponse_03">Sample response body #3: Contract is resumed (reactivated).</a></li>
+	<li><a href="#sampleresponse_04">Sample response body #4: Contract is cancelled.</a></li>
+</ul>
+
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
 Content-Type: text/plain
-Date: Wed, 10 Jul 2013 19:57:49 GMT
-</pre>
-<p><strong>Sample response body</strong></p>
+Date: Wed, 10 Jul 2013 19:57:49 GMT</pre>
+
+<p id="sampleresponse_01"><strong>Sample response body #1</strong></p>
+<p>Contract is activated.</p>
 <pre>apicontract.status.activated</pre>
+
+<p id="sampleresponse_02"><strong>Sample response body #2</strong></p>
+<p>Contract is suspended.</p>
+<pre>apicontract.status.suspended</pre>
+
+<p id="sampleresponse_03"><strong>Sample response body #3</strong></p>
+<p>Contract is resumed.</p>
+<pre>apicontract.status.activated</pre>
+
+<p id="sampleresponse_04"><strong>Sample response body #4</strong></p>
+<p>Contract is cancelled.</p>
+<pre>apicontract.status.cancelled</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <!-- InstanceEndEditable -->
@@ -244,6 +276,11 @@ Date: Wed, 10 Jul 2013 19:57:49 GMT
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
 			<td>The resource could not be found.</td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http405">405</a></td>
+			<td><!-- #BeginLibraryItem "/Library/http_405.lbi" -->
+Method Not Allowed. You might get this if there is an error in the URL, or if you used the wrong HTTP verb.<!-- #EndLibraryItem --> You would also get this if you provided incorrect values in the body of the request message.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http409">409</a></td>

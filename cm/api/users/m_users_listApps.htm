@@ -90,6 +90,10 @@ no-catalog: true
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
 		</tr>
 		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
+		</tr>
+		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
 		</tr>
@@ -196,7 +200,7 @@ no-catalog: true
 Content-Type: application/vnd.soa.v81+json
 Expires: Tue, 09 Apr 2019 21:09:24 GMT</pre>
 <p><a id="sample_response_01"></a><strong>Sample response body #1</strong></p>
-<p>The example below shows the response to <a href="#id_samplerequest_01">Request URL #1</a>. The user has two apps.</p>
+<p>The example below shows the response to <a href="#id_samplerequest_01">Request URL #1</a> (no optional parameters included). The user has two apps.</p>
 <pre>{
   "Application":[
     {
@@ -210,7 +214,7 @@ Expires: Tue, 09 Apr 2019 21:09:24 GMT</pre>
       "Updated":"2019-04-09T19:52:35Z",
       "TeamID":"appteam-98dd5f5d-dea6-4c10-a873-1b708e80fa0c.acmepaymentscorp",
       "Image":{
-        "Url":"http://test.acmepaymentscorp.com:7900/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
+        "Url":"http://test.acmepaymentscorp.com/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
       },
       "Connections":0,
       "Followers":1,
@@ -227,7 +231,7 @@ Expires: Tue, 09 Apr 2019 21:09:24 GMT</pre>
       "Updated":"2019-04-09T19:13:09Z",
       "TeamID":"appteam-f44f511f-e743-4148-8fdf-dd79f0c4bd0e.acmepaymentscorp",
       "Image":{
-        "Url":"http://test.acmepaymentscorp.com:7900/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
+        "Url":"http://test.acmepaymentscorp.com/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
       },
       "Connections":0,
       "Followers":1,
@@ -236,7 +240,7 @@ Expires: Tue, 09 Apr 2019 21:09:24 GMT</pre>
   ]
 }</pre>
 <p><a id="sample_response_02"></a><strong>Sample response body #2</strong></p>
-<p>The example below shows the response to <a href="#id_samplerequest_02">Request URL #2</a>. The user is the same, with two apps. However, the request includes the optional <strong>IncludeTags</strong> parameter, so tags are included in the response.</p>
+<p>The example below shows the response to <a href="#id_samplerequest_02">Request URL #2</a>. The user is the same as in the previous example, with two apps. However, the request includes the optional <strong>IncludeTags</strong> parameter, so tags are included in the response.</p>
 <pre>{
     "Application": [
         {
@@ -254,7 +258,7 @@ Expires: Tue, 09 Apr 2019 21:09:24 GMT</pre>
             "Updated": "2019-04-09T19:52:35Z",
             "TeamID": "appteam-98dd5f5d-dea6-4c10-a873-1b708e80fa0c.acmepaymentscorp",
             "Image": {
-                "Url": "http://test.acmepaymentscorp.com:7900/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
+                "Url": "http://test.acmepaymentscorp.com/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
             },
             "Connections": 0,
             "Followers": 1,
@@ -278,7 +282,7 @@ Expires: Tue, 09 Apr 2019 21:09:24 GMT</pre>
             "Updated": "2019-04-09T19:13:09Z",
             "TeamID": "appteam-f44f511f-e743-4148-8fdf-dd79f0c4bd0e.acmepaymentscorp",
             "Image": {
-                "Url": "http://test.acmepaymentscorp.com:7900/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
+                "Url": "http://test.acmepaymentscorp.com/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
             },
             "Connections": 0,
             "Followers": 1,

@@ -81,6 +81,10 @@ Exports the transaction log for the specified API version to a <a href="../Ref_G
 			<td><!-- #BeginLibraryItem "/Library/hdrval_textcsv.lbi" --><strong>text/csv</strong><!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
+		</tr>
+		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
 		</tr>
@@ -160,9 +164,41 @@ The ending point for the date range of metric information requested. Format: YYY
 			<td>string</td>
 			<td>Optional</td>
 			<td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->
-The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the metric information. For example, you might want metric information for a 24-hour period or only for an hour. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.<!-- #EndLibraryItem --></td>
+				The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the metric information. For example, you might want metric information for a 24-hour period or only for an hour. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.<!-- #EndLibraryItem --></td>
 		</tr>
-	</tbody>
+		<tr>
+			<td><p>OperationName</p>
+				<p>Version: 2019.1.0</p></td>
+			<td>Query</td>
+			<td>string</td>
+			<td>Optional</td>
+			<td>The specific operation for which information should be returned.</td>
+		</tr>
+		<tr>
+			<td><p>Status</p>
+				<p>Version: 2019.1.0</p></td>
+			<td>Query</td>
+			<td>integer</td>
+			<td>Required</td>
+			<td><!-- #BeginLibraryItem "/Library/parm_Status.lbi" -->One more more specific HTTP status values. If Status is specified, only transactions with that status are included in the results. For valid values, see <a href="../aaref/Ref_Values.htm#values_status">Status (HTTP)</a>.<!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td><p>FromResponseTime</p>
+				<p>Version: 2019.1.0</p></td>
+			<td>Query</td>
+			<td>integer</td>
+			<td>Required</td>
+			<td>The beginning time of a range.</td>
+		</tr>
+		<tr>
+			<td><p>ToResponseTime</p>
+				<p>Version: 2019.1.0</p></td>
+			<td>Query</td>
+			<td>integer</td>
+			<td>Required</td>
+			<td>The ending time of a range.</td>
+		</tr>
+		</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->

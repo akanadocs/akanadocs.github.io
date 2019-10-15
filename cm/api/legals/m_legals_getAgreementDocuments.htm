@@ -83,6 +83,10 @@ no-catalog: true
 			<td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
+		</tr>
+		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
 		</tr>
@@ -291,7 +295,7 @@ The response body is in the form of an RSS channel, and includes the items liste
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http400">400</a></td>
-			<td><!-- #BeginLibraryItem "/Library/http_400.lbi" --> Bad request: Returned if the client sends invalid parameters or body content.<!-- #EndLibraryItem --> For example, you might get this response if you don't include a parameter; either the <strong>AgreementType</strong> or <strong>ResourceID</strong> parameter must be present.</td>
+			<td><!-- #BeginLibraryItem "/Library/http_400.lbi" -->Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.<!-- #EndLibraryItem -->For example, you might get this response if you don't include a parameter; either the <strong>AgreementType</strong> or <strong>ResourceID</strong> parameter must be present.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http404">404</a></td>

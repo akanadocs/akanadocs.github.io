@@ -23,7 +23,7 @@ no-catalog: true
 	<li>Call <a href="m_tenantadmin_getEnvironmentPromotionContext.htm"><span class="apidoc_code">GET&nbsp;/api/tenants/{FedMemberID}/{environment}/promotion/context</span></a> (this operation) which returns an <strong>EnvironmentContext</strong> object.</li>
 	<li>Pass the response <strong>EnvironmentContext</strong> object to the Topology API to update the environment context (<span class="apidoc_code">PUT /{topology-name}/environments/{environment-name}/context). G</span>o to the generated REST API documentation for your version (see <a href="../../../ag/apidoc_restApiDocs.htm">REST API Documentation</a>) and review the Topology API generated documentation.</li>
 </ol>
-<p>For more information, see <a href="../../promotion/promotion_users_guide.htm#env_decoupled_00">Support for Decoupled Environments in a Topology</a> (Lifecycle Coordinator Promotion Guide).</p>
+<p>For more information, see <a href="../../../promotion/promotion_users_guide.htm#env_decoupled_00">Support for Decoupled Environments in a Topology</a> (Lifecycle Coordinator Promotion Guide).</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must have Modify permission for the tenant; <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -83,6 +83,10 @@ GET
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->,<!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>

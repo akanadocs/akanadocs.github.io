@@ -59,11 +59,7 @@ no-catalog: true
 Content-Type: text/plain
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
-<p>In the example below, line breaks have been added for display purposes.</p>
-<pre>{\n  "type": "object",\n  "required": [\n    "name",\n    "photoUrls"\n  ],\n  "properties": {\n    "id": {\n      "type": "integer",\n
-      "format": "int64"\n    },\n    "category": {\n      "$ref": "#/definitions/Category"\n    },\n    "name": {\n      "type": "string",\n
-      "example": "doggie"\n    },\n    "photoUrls": {\n      "type": "array",\n      "xml": {\n        "name": "photoUrl",\n
-        "wrapped": true\n      },\n      "items": {\n        "type": "string"\n      }\n    }\n  }\n}</pre>
+<pre>{\n  "type": "object",\n  "required": [\n    "name",\n    "photoUrls"\n  ],\n  "properties": {\n    "id": {\n      "type": "integer",\n      "format": "int64"\n    },\n    "category": {\n      "$ref": "#/definitions/Category"\n    },\n    "name": {\n      "type": "string",\n      "example": "doggie"\n    },\n    "photoUrls": {\n      "type": "array",\n      "xml": {\n        "name": "photoUrl",\n        "wrapped": true\n      },\n      "items": {\n        "type": "string"\n      }\n    }\n  }\n}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -86,6 +82,10 @@ Content-Type: text/plain
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>

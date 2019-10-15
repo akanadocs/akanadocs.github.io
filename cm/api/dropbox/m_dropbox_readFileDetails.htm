@@ -13,7 +13,7 @@ no-catalog: true
 
 <div class="apidocContent">
 <!-- InstanceBeginEditable name="Heading" -->
-<h2 id="top">POST&nbsp;/api/dropbox/readfiledetails </h2>
+<h2 id="top">POST&nbsp;/api/dropbox/readfiledetails</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
@@ -95,6 +95,10 @@ Accept: application/vnd.soa.v81+json
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hdrval_multipart_form-data.lbi" --><strong><a href="../aaref/Ref_MediaTypes.htm#mediatype_multipartformdata">multipart/form-data</a></strong><!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -229,7 +233,8 @@ Content-Type: application/vnd.soa.v81+json</pre>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http405">405</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/http_405.lbi" -->Method Not Allowed. For example, you might get this if you specified an invalid Accept header or omitted a required Content-Type header, or used the wrong HTTP verb.<!-- #EndLibraryItem --></p>
+			<td><p><!-- #BeginLibraryItem "/Library/http_405.lbi" -->
+Method Not Allowed. You might get this if there is an error in the URL, or if you used the wrong HTTP verb.<!-- #EndLibraryItem --></p>
 				<p>You would also get it if the URL was incorrect, including case.</p></td>
 		</tr>
 		<tr>

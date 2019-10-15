@@ -69,7 +69,9 @@ Content-Type: application/json
   "ChallengeCount":"3",
   "UserModifyEmail":"com.soa.feature.enabled",
   "SiteAdminModifyEmail":"com.soa.feature.enabled",
-  "ExternalDocSupport":"com.soa.feature.enabled"
+  "ExternalDocSupport":"com.soa.feature.enabled",
+  &quot;XssKeywords&quot;:&quot;onload,onerror,onmouseout,onmouseover&quot;,
+  &quot;AllowedFileTypes&quot;:&quot;*&quot;
 }</pre>
 
 <p><strong>Sample request body #2</strong></p>
@@ -86,7 +88,26 @@ Content-Type: application/json
   "ChallengeCount":"3",
   "UserModifyEmail":"com.soa.feature.enabled",
   "SiteAdminModifyEmail":"com.soa.feature.enabled",
-  "ExternalDocSupport":"com.soa.feature.enabled"
+  "ExternalDocSupport":"com.soa.feature.enabled",
+  &quot;XssKeywords&quot;:&quot;onload,onerror,onmouseout,onmouseover&quot;,
+  &quot;AllowedFileTypes&quot;:&quot;*&quot;
+}</pre>
+<p><strong>Sample request body #3</strong></p>
+<p>The example below limits the file types that user can upload in comments on the platform (<strong>AllowedFileTypes</strong> value) to image types.</p>
+<pre>{
+  "ReadRequestCSRFSupport":"com.soa.feature.disabled",
+  "WriteRequestCSRFSupport":"com.soa.feature.disabled",
+  "AllowUserEnum":"com.soa.feature.enabled",
+  "EncryptChallengeAnswers":"com.soa.feature.disabled",
+  "ChallengeCount":3,
+  "UserModifyEmail":"com.soa.feature.enabled",
+  "SiteAdminModifyEmail":"com.soa.feature.enabled",
+  "AuthTokenCookieDomain":"com.soa.auth.token.cookie.domain.hostname",
+  "CaptchaSupport":"com.soa.feature.disabled",
+  "CaptchaSiteKey":"6Lc9Hy0UAAAAAC3Qdtzuv9VZJ0F4k-t2Hd5r799G",
+  "ExternalDocSupport":"com.soa.feature.enabled",
+  "XssKeywords":"onload,onerror,onmouseout,onmouseover",
+  "AllowedFileTypes":"image/gif,image/jpg,image/png"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -119,6 +140,10 @@ Content-Type: application/json
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -177,7 +202,7 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/vnd.soa.v81+json
-Date: Tue, 02 Apr 2019 14:17:37 GMT</pre>
+Date: Wed, 25 Sep 2019 14:14:40 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <p>In this example, CAPTCHA support is enabled, so the <strong>CaptchaSiteKey</strong>&nbsp;and <strong>CaptchaSiteSecret</strong> values are included&nbsp;in the response.</p>
 <pre>{
@@ -192,8 +217,9 @@ Date: Tue, 02 Apr 2019 14:17:37 GMT</pre>
   "CaptchaSupport":"com.soa.feature.enabled",
   "CaptchaSiteKey":"6Ldg9C4UABCKSOxM1rnpmzJpnV1_Qio2hhM-N7kN",
   "CaptchaSiteSecret":"6Mdg9C9UAAAAALWkzXgOi5skclfimvdYPW0adPiB",
-  "ExternalDocSupport":"com.soa.feature.enabled",
-  "XssKeywords":"onload,onerror,onmouseout,onmouseover"
+  &quot;ExternalDocSupport&quot;:&quot;com.soa.feature.enabled&quot;,
+  &quot;XssKeywords&quot;:&quot;onload,onerror,onmouseout,onmouseover&quot;,
+  &quot;AllowedFileTypes&quot;:&quot;*&quot;
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -258,8 +284,7 @@ Date: Tue, 02 Apr 2019 14:17:37 GMT</pre>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http400">400</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/http_400.lbi" -->
-Bad request: Returned if the client sends invalid parameters or body content.<!-- #EndLibraryItem --></p>
+			<td><p><!-- #BeginLibraryItem "/Library/http_400.lbi" -->Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.<!-- #EndLibraryItem --></p>
 				<p>In this operation, you'd get a 400 response if you sent an incorrect JSON object in the request.</p></td>
 		</tr>
 	</thead>
@@ -270,7 +295,8 @@ Bad request: Returned if the client sends invalid parameters or body content.<!-
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http405">405</a></td>
-			<td><!-- #BeginLibraryItem "/Library/http_405.lbi" -->Method Not Allowed. For example, you might get this if you specified an invalid Accept header or omitted a required Content-Type header, or used the wrong HTTP verb.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/http_405.lbi" -->
+Method Not Allowed. You might get this if there is an error in the URL, or if you used the wrong HTTP verb.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>

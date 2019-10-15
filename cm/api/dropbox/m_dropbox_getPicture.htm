@@ -64,6 +64,7 @@ no-catalog: true
 <pre>GET&nbsp;/api/dropbox/pictures/1542?size=512 HTTP/1.1
 Host: {hostname}
 Accept: image/png,image/*;q=0.8,*/*;q=0.5
+<!-- #BeginLibraryItem "/Library/hdr_cookie.lbi" -->Cookie: AtmoAuthToken_{fedmemberid}=TokenID{ID}<!-- #EndLibraryItem -->
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -85,6 +86,10 @@ Accept: image/png,image/*;q=0.8,*/*;q=0.5
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
 			<td><strong>image/jpeg</strong></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>

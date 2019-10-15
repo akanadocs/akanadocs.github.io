@@ -18,7 +18,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_updateModelCategory.lbi" -->Updates information about a model category defined for a business organization.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/Library/permission_modify.lbi" -->Must have Modify permission for the resource. <!-- #EndLibraryItem --><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/Library/permission_modify.lbi" -->Must have Modify permission for the resource. <!-- #EndLibraryItem --><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
@@ -86,6 +86,10 @@ Content-Type: application/json
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>

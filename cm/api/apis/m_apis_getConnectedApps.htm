@@ -85,6 +85,10 @@ Accept: application/json
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
 		</tr>
 		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
+		</tr>
+		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
 		</tr>
@@ -224,7 +228,7 @@ Content-Type: application/vnd.soa.v81+json</pre>
               ]
             },
             {
-              "Title":"App Test Postman",
+              "Title":"App GenTest Postman",
               "Guid":"5ebd683b-5509-4dfc-8ad8-03a76686da6d.acmepaymentscorp",
               "Category":[
                 {
@@ -395,7 +399,7 @@ Content-Type: application/vnd.soa.v81+xml</pre>
           &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app-version&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
-          &lt;Title&gt;App Test Postman&lt;/Title&gt;
+          &lt;Title&gt;App GenTest Postman&lt;/Title&gt;
           &lt;Guid&gt;5ebd683b-5509-4dfc-8ad8-03a76686da6d.acmepaymentscorp&lt;/Guid&gt;
           &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;

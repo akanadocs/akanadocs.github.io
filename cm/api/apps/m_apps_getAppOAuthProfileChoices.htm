@@ -58,9 +58,8 @@ Returns information about the choices available for a specific app, for the app'
 <p>Requests all properties.</p>
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/7mUCQU4xmU18TKMMbjqauA2k.acmepaymentscorp/oauthprofile/choices</pre>
 <p><strong>Request URL #2</strong></p>
-<p>Uses the optional <strong>OAuthClientProperty</strong> parameter to request two specific properties (line break added for display purposes).</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/7mUCQU4xmU18TKMMbjqauA2k.acmepaymentscorp/oauthprofile/choices
-?OAuthClientProperty=grant_types_supported&amp;OAuthClientProperty=id_token_signing_alg_values_supported</pre>
+<p>Uses the optional <strong>OAuthClientProperty</strong> parameter to request two specific properties.</p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/7mUCQU4xmU18TKMMbjqauA2k.acmepaymentscorp/oauthprofile/choices?OAuthClientProperty=grant_types_supported&amp;OAuthClientProperty=id_token_signing_alg_values_supported</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET /api/apps/versions/6NGw7XEtXYy8KZwF7EOxvT2V.acmepaymentscorp/oauthprofile/choices HTTP/1.1
 Host: {hostname}
@@ -85,6 +84,10 @@ Accept: application/json</pre>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>

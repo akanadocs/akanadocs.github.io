@@ -91,6 +91,10 @@ Accept: application/json</pre>
 				<p><strong>application/rss+xml</strong></p></td>
 		</tr>
 		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
+		</tr>
+		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
 		</tr>
@@ -248,7 +252,7 @@ Date: Tue, 09 Apr 2019 21:16:07 GMT</pre>
           ]
         },
         "Image":{
-          "Url":"http://test.acmepaymentscorp.com:7900/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
+          "Url":"http://test.acmepaymentscorp.com/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
         },
         "Followers":1
       },
@@ -296,7 +300,7 @@ Date: Tue, 09 Apr 2019 21:16:07 GMT</pre>
           ]
         },
         "Image":{
-          "Url":"http://test.acmepaymentscorp.com:7900/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
+          "Url":"http://test.acmepaymentscorp.com/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
         },
         "Followers":1
       }
@@ -365,7 +369,7 @@ Date: Tue, 09 Apr 2019 21:16:07 GMT</pre>
           ]
         },
         "Image":{
-          "Url":"http://test.acmepaymentscorp.com:7900/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
+          "Url":"http://test.acmepaymentscorp.com/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
         },
         "Followers":1
       },
@@ -433,7 +437,7 @@ Date: Tue, 09 Apr 2019 21:16:07 GMT</pre>
           ]
         },
         "Image":{
-          "Url":"http://test.acmepaymentscorp.com:7900/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
+          "Url":"http://test.acmepaymentscorp.com/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g"
         },
         "Followers":1
       }
@@ -549,7 +553,8 @@ Date: Tue, 09 Apr 2019 21:16:07 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http405">405</a></td>
-			<td><!-- #BeginLibraryItem "/Library/http_405.lbi" -->Method Not Allowed. For example, you might get this if you specified an invalid Accept header or omitted a required Content-Type header, or used the wrong HTTP verb.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/http_405.lbi" -->
+Method Not Allowed. You might get this if there is an error in the URL, or if you used the wrong HTTP verb.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>

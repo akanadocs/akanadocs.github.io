@@ -82,6 +82,10 @@ Returns information about app versions, for the ID specified in the required Ide
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
 		</tr>
 		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
+		</tr>
+		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
 		</tr>
@@ -162,44 +166,6 @@ Date: Wed, 17 Jun 2015 00:39:58 GMT</pre>
     }
   } ]
 }</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<p><strong>Sample response headers: application/xml</strong></p>
-<pre>Status Code: 200 OK
-Content-Type: application/vnd.soa.v72+xml
-Date: Wed, 17 Jun 2015 00:49:30 GMT</pre>
-<p><strong>Sample response body: application/xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;ApplicationVersions xmlns=&quot;http://soa.com/xsd/app/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/resource/1.0&quot; 
-xmlns:ns3=&quot;http://soa.com/xsd/dnmodel/1.0&quot;&gt;
-  &lt;ApplicationVersion&gt;
-    &lt;RuntimeID&gt;92KnWI9uFCT82f0Esuvx9985.acmepaymentscorp&lt;/RuntimeID&gt;
-    &lt;AppID&gt;69763031-06ca-4f42-aead-71871cd64f3d.acmepaymentscorp&lt;/AppID&gt;
-    &lt;Name&gt;v3&lt;/Name&gt;
-    &lt;Description&gt;Paid version; extra features, no ads.&lt;/Description&gt;
-    &lt;WebsiteAddress&gt;http://www.crosfhocalsitedeluxe.com&lt;/WebsiteAddress&gt;
-    &lt;Visibility&gt;Public&lt;/Visibility&gt;
-    &lt;InitialEnvironment&gt;Sandbox&lt;/InitialEnvironment&gt;
-    &lt;CurrentEnvironment&gt;Sandbox&lt;/CurrentEnvironment&gt;
-    &lt;Created&gt;2015-06-17T00:36:48Z&lt;/Created&gt;
-    &lt;Updated&gt;2015-06-17T00:36:50Z&lt;/Updated&gt;
-    &lt;State&gt;com.soa.app.state.sandbox&lt;/State&gt;
-    &lt;ns2:RatingSummary&gt;
-      &lt;ns2:Five&gt;0&lt;/ns2:Five&gt;
-      &lt;ns2:Four&gt;0&lt;/ns2:Four&gt;
-      &lt;ns2:Three&gt;0&lt;/ns2:Three&gt;
-      &lt;ns2:Two&gt;0&lt;/ns2:Two&gt;
-      &lt;ns2:One&gt;0&lt;/ns2:One&gt;
-    &lt;/ns2:RatingSummary&gt;
-    &lt;Identity&gt;acmepaymentscorp-92KnWI9uFCT82f0Esuvx9985&lt;/Identity&gt;
-    &lt;ns3:TargetResources&gt;
-      &lt;ns3:TargetResource&gt;
-        &lt;ns3:Name&gt;crosfhocal&lt;/ns3:Name&gt;
-        &lt;ns3:ID&gt;69763031-06ca-4f42-aead-71871cd64f3d.acmepaymentscorp&lt;/ns3:ID&gt;
-        &lt;ns3:Type&gt;app&lt;/ns3:Type&gt;
-      &lt;/ns3:TargetResource&gt;
-    &lt;/ns3:TargetResources&gt;
-  &lt;/ApplicationVersion&gt;
-&lt;/ApplicationVersions&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

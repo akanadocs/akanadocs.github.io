@@ -64,7 +64,8 @@ no-catalog: true
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/apps/app16964.acmepaymentscorp HTTP/1.1
 Host: {hostname}
-Accept: application/json, text/javascript, */*; q=0.01
+Accept: application/json, text/javascript, */*; q=0.01<!-- #BeginLibraryItem "/Library/hdr_cookie.lbi" -->
+Cookie: AtmoAuthToken_{fedmemberid}=TokenID{ID}<!-- #EndLibraryItem -->
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -86,6 +87,10 @@ Accept: application/json, text/javascript, */*; q=0.01
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -192,7 +197,7 @@ Date: Tue, 09 Apr 2019 21:32:19 GMT</pre>
     "State": "com.soa.app.state.active",
     "Created": "2019-04-09T18:57:22Z",
     "Updated": "2019-04-09T19:13:09Z",
-    "AvatarURL": "http://test.acmepaymentscorp.com:7900/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g",
+    "AvatarURL": "http://test.acmepaymentscorp.com/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g",
     "BusinessID": "tenantbusiness.acmepaymentscorp",
     "TargetResources": {
         "TargetResource": [
@@ -231,7 +236,7 @@ Date: Tue, 09 Apr 2019 21:32:19 GMT</pre>
   "State":"com.soa.app.state.active",
   "Created":"2019-04-09T18:57:22Z",
   "Updated":"2019-04-09T19:13:09Z",
-  "AvatarURL":"http://test.acmepaymentscorp.com:7900/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g",
+  "AvatarURL":"http://test.acmepaymentscorp.com/api/apps/avatar/_VTSYjyKyfCubBKF8selZU1g",
   "AppSettings":{
     "PublicAppSupport":"com.soa.feature.enabled",
     "PublicAppBoardSupport":"com.soa.feature.enabled",

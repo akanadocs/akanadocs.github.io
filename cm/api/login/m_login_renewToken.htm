@@ -99,6 +99,10 @@ Xy1Jly8eEfdvHoCuebRT-1NjKzdEvLyvum1NpPjYDJhg</pre>
 			<td><!-- #BeginLibraryItem "/Library/hdrval_form-urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
+		</tr>
+		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
 		</tr>
@@ -127,30 +131,12 @@ Xy1Jly8eEfdvHoCuebRT-1NjKzdEvLyvum1NpPjYDJhg</pre>
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows a new cookie returned. In this example, the CSRF feature is turned on, so an updated CSRF-token cookie is also returned.</p>
 <h5>Sample response headers</h5>
-<!-- #BeginLibraryItem "/Library/_linebreakincode_note.lbi" -->
-<p class="apidoc_note"><strong>Note</strong>: In the example below, line breaks have been added for display reasons. If there is any indentation within a parameter, it indicates a line break, not spaces in the content.</p>
-<!-- #EndLibraryItem -->
 <pre>HTTP/1.1 200 OK
 Date: Thu, 14 Jan 2016 15:21:41 GMT
 Cache-Control: no-cache, no-store
 Content-Type: application/json
-Set-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3D8326e23b-bad
-2-11e5-ace7-fd6479c3027f%2Cclaimed_id%3Durn%3A
-acmepaymentscorp%3Auser%3Aacmepaymentscorp%3A4fa1a6c9-c846-4186
--87c1-7dab542aad22%2CissueTime%3D1452784901125%2C
-expirationTime%3D1452786401093%2CUserName%3DadminAcmepaymentscorp
-%2CUserFDN%3D4fa1a6c9-c846-4186-87c1-7dab542aad22%252Eacmepaymentscorp%2CattributesIncluded
-%3Dfalse%2Csig%3DJ7q_mNi6LwldidXL4sgzziIm38_CJJIssWmaaYXhuZxGoe
-RTAIu1ZpoH243jwNWGW8nrDurMr5TkknQBaosiotkhCSN0KrLGdhItabLw_I
-7uNThhSTEnbyHJlIwGWbMfAwwub0LFcBlcrlmzvCm7eqEW7Wn7hkJ_U_k9
-AMJ-e6Y;path=/;expires=Thu, 14 Jan 2016 15:46:41 GMT;HttpOnly
-Csrf-Token_acmepaymentscorp=TokenID%3D8326e23b-bad2-11e5-ace7-fd6479c3027f%2C
-expirationTime%3D1452786701133%2CUserFDN%3D4fa1
-a6c9-c846-4186-87c1-7dab542aad22%252Eacmepaymentscorp%2Csig%3D
-V6ZK40pZsUufn-vtUv_J7G4Wqoyj0WfPaAMbvwqtpbB9t6SOHf_tTbiXh9oylz
-DXj-OV0-GVl8nbghGbMqKd5KrMNqki1SAUemsjS57wvB0expQT4h0
-cVsjoa65syaCMyZwlnkBmY0CNrj8J8LM8ZloK4lxMveDGFfRpv65r31A;
-path=/;expires=Thu, 14-Jan-2016 15:46:41 GMT</pre>
+Set-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3D8326e23b-bad2-11e5-ace7-fd6479c3027f%2Cclaimed_id%3Durn%3Aacmepaymentscorp%3Auser%3Aacmepaymentscorp%3A4fa1a6c9-c846-4186-87c1-7dab542aad22%2CissueTime%3D1452784901125%2CexpirationTime%3D1452786401093%2CUserName%3DadminAcmepaymentscorp%2CUserFDN%3D4fa1a6c9-c846-4186-87c1-7dab542aad22%252Eacmepaymentscorp%2CattributesIncluded%3Dfalse%2Csig%3DJ7q_mNi6LwldidXL4sgzziIm38_CJJIssWmaaYXhuZxGoeRTAIu1ZpoH243jwNWGW8nrDurMr5TkknQBaosiotkhCSN0KrLGdhItabLw_I7uNThhSTEnbyHJlIwGWbMfAwwub0LFcBlcrlmzvCm7eqEW7Wn7hkJ_U_k9AMJ-e6Y;path=/;expires=Thu, 14 Jan 2016 15:46:41 GMT;HttpOnly
+Csrf-Token_acmepaymentscorp=TokenID%3D8326e23b-bad2-11e5-ace7-fd6479c3027f%2CexpirationTime%3D1452786701133%2CUserFDN%3D4fa1a6c9-c846-4186-87c1-7dab542aad22%252Eacmepaymentscorp%2Csig%3DV6ZK40pZsUufn-vtUv_J7G4Wqoyj0WfPaAMbvwqtpbB9t6SOHf_tTbiXh9oylzDXj-OV0-GVl8nbghGbMqKd5KrMNqki1SAUemsjS57wvB0expQT4h0cVsjoa65syaCMyZwlnkBmY0CNrj8J8LM8ZloK4lxMveDGFfRpv65r31A;path=/;expires=Thu, 14-Jan-2016 15:46:41 GMT</pre>
 <h5>Sample response body</h5>
 <pre>{
   &quot;pendingNotifications&quot; : 0,

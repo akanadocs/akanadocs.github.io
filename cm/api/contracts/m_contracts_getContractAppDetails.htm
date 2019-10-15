@@ -56,10 +56,11 @@ Returns information about the app that's part of a specific app/API contract.<!-
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the app details for the specified contract.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->contracts/cd0cf225-d142-4cf6-b97c-70b05ac90f50.acmepaymentscorp/appdetails</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.rcoaless/appdetails</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
-</pre>
+<pre>Status Code: 200 OK
+Content-Type: application/json
+Date: Wed, 04 Sep 2019 18:36:04 GMT</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -84,6 +85,10 @@ Returns information about the app that's part of a specific app/API contract.<!-
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
 				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a></td>
+			<td>The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -132,52 +137,58 @@ Returns information about the app that's part of a specific app/API contract.<!-
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Accept: application/json</pre>
+<pre>Status Code: 200 OK
+Accept: application/json
+Date: Wed, 04 Sep 2019 18:30:02 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  &quot;Application&quot; : {
-    &quot;AppID&quot; : &quot;edd68f66-3153-4169-a49f-a4315e76e304.acmepaymentscorp&quot;,
-    &quot;Name&quot; : &quot;crosfhocal&quot;,
-    &quot;Description&quot; : &quot;s&quot;,
-    &quot;Visibility&quot; : &quot;Public&quot;,
-    &quot;DefaultVersionID&quot; : &quot;7Mt79Ae96mR1fBfWr88PAa4O.acmepaymentscorp&quot;,
-    &quot;IsFollowed&quot; : true,
-    &quot;RatingSummary&quot; : {
-      &quot;Five&quot; : 0,
-      &quot;Four&quot; : 0,
-      &quot;Three&quot; : 0,
-      &quot;Two&quot; : 0,
-      &quot;One&quot; : 0
+  "Application": {
+    "AppID": "3c2b354d-9d72-4f39-a32c-f04b151b5a5f.rcoaless",
+    "Name": "ACME Payments App",
+    "Description": "",
+    "Summary": "ACME Payments App",
+    "Visibility": "Public",
+    "DefaultVersionID": "wbN3rqWphd4z6LtgwI5oMRbrZoYrwQ4OvKrBn19o.rcoaless",
+    "IsFollowed": true,
+    "RatingSummary": {
+      "Five": 0,
+      "Four": 0,
+      "Three": 0,
+      "Two": 0,
+      "One": 0
     },
-    &quot;State&quot; : &quot;com.soa.app.state.active&quot;,
-    &quot;Created&quot; : &quot;2014-09-29T14:28:06Z&quot;,
-    &quot;Updated&quot; : &quot;2014-09-29T20:58:33Z&quot;,
-    &quot;AvatarURL&quot; : &quot;http://{hostname}/api/apps/edd68f66-3153-4169-a49f-a4315e76e304.acmepaymentscorp/avatar&quot;,
-    &quot;TeamID&quot; : &quot;appteam-edd68f66-3153-4169-a49f-a4315e76e304.acmepaymentscorp&quot;
+    "State": "com.soa.app.state.active",
+    "Created": "2019-09-04T15:02:38Z",
+    "Updated": "2019-09-04T18:07:32Z",
+    "AvatarURL": "https://rcoaless.apiportal.akana.com:443/api/apps/3c2b354d-9d72-4f39-a32c-f04b151b5a5f.rcoaless/avatars/6abd867f-1dd2-4c4a-bbbc-a2acc89f7fb9.png",
+    "TeamID": "appteam-3c2b354d-9d72-4f39-a32c-f04b151b5a5f.rcoaless",
+    "BusinessID": "tenantbusiness.rcoaless"
   },
-  &quot;ApplicationVersion&quot; : {
-    &quot;RuntimeID&quot; : &quot;7Mt79Ae96mR1fBfWr88PAa4O.acmepaymentscorp&quot;,
-    &quot;AppID&quot; : &quot;edd68f66-3153-4169-a49f-a4315e76e304.acmepaymentscorp&quot;,
-    &quot;Name&quot; : &quot;1.0&quot;,
-    &quot;Description&quot; : &quot;s&quot;,
-    &quot;WebsiteAddress&quot; : &quot;&quot;,
-    &quot;Visibility&quot; : &quot;Public&quot;,
-    &quot;InitialEnvironment&quot; : &quot;Sandbox&quot;,
-    &quot;CurrentEnvironment&quot; : &quot;Sandbox&quot;,
-    &quot;Tag&quot; : [ ],
-    &quot;HasKeyInfo&quot; : false,
-    &quot;Created&quot; : &quot;2014-09-29T14:28:06Z&quot;,
-    &quot;Updated&quot; : &quot;2014-09-29T20:58:33Z&quot;,
-    &quot;State&quot; : &quot;com.soa.app.state.review&quot;,
-    &quot;SecurityMechanisms&quot; : [ &quot;com.soa.security.mechanism.sharedsecret&quot; ],
-    &quot;RatingSummary&quot; : {
-      &quot;Five&quot; : 0,
-      &quot;Four&quot; : 0,
-      &quot;Three&quot; : 0,
-      &quot;Two&quot; : 0,
-      &quot;One&quot; : 0
+  "ApplicationVersion": {
+    "RuntimeID": "wbN3rqWphd4z6LtgwI5oMRbrZoYrwQ4OvKrBn19o.rcoaless",
+    "AppID": "3c2b354d-9d72-4f39-a32c-f04b151b5a5f.rcoaless",
+    "Name": "v1",
+    "Description": "",
+    "WebsiteAddress": "",
+    "Visibility": "Public",
+    "InitialEnvironment": "Sandbox",
+    "CurrentEnvironment": "Sandbox",
+    "Tag": [],
+    "HasKeyInfo": false,
+    "Created": "2019-09-04T15:02:38Z",
+    "Updated": "2019-09-04T18:07:32Z",
+    "State": "com.soa.app.state.sandbox",
+    "SecurityMechanisms": [
+      "com.soa.security.mechanism.sharedsecret"
+    ],
+    "RatingSummary": {
+      "Five": 0,
+      "Four": 0,
+      "Three": 0,
+      "Two": 0,
+      "One": 0
     },
-    &quot;Identity&quot; : &quot;acmepaymentscorp-7Mt79Ae96mR1fBfWr88PAa4O&quot;
+    "Identity": "rcoaless-wbN3rqWphd4z6LtgwI5oMRbrZoYrwQ4OvKrBn19o"
   }
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>

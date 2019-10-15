@@ -116,50 +116,54 @@ no-catalog: true
 			</tr>
 		<tr>
 			<td><a href="#values_groupstates">Group States</a></td>
-			<td><a href="#values_ticketlabel">Ticket Label values</a></td>
+			<td><a href="#values_status">Status (HTTP)</a></td>
 			</tr>
 		<tr>
 			<td><a href="#values_grouptypes">Group Types</a></td>
-			<td><a href="#values_ticketstate">Ticket State values</a></td>
+			<td><a href="#values_ticketlabel">Ticket Label values</a></td>
 			</tr>
 		<tr>
 			<td><a href="#values_identitysystemtype">IdentitySystemType values for domains</a></td>
-			<td><a href="#values_ticketvisibility">Ticket Visibility values</a><a href="#values_timeintervals"></a></td>
+			<td><a href="#values_ticketstate">Ticket State values</a></td>
 			</tr>
 		<tr>
 			<td><a href="#values_idsystemtype">IdSystemType values for Login Connector Type</a></td>
-			<td><a href="#values_timeintervals">Time Intervals</a></td>
+			<td><a href="#values_ticketvisibility">Ticket Visibility values</a><a href="#values_timeintervals"></a></td>
 			</tr>
 		<tr>
 			<td><a href="#values_laasintegrationsupport">LaaSIntegrationSupport values</a></td>
-			<td><a href="#values_useractions">User Actions on a Resource</a></td>
+			<td><a href="#values_timeintervals">Time Intervals</a></td>
 			</tr>
 		<tr>
 			<td><a href="#values_legalagreementtype">Legal Agreement Types</a></td>
-			<td><a href="#values_userpreferences">User Preferences</a></td>
+			<td><a href="#values_useractions">User Actions on a Resource</a></td>
 			</tr>
 		<tr>
 			<td><a href="#values_legaldocumentstate">Legal Document States</a></td>
-			<td><a href="#values_usersignupstate">User Signup State values</a></td>
+			<td><a href="#values_userpreferences">User Preferences</a></td>
 			</tr>
 		<tr>
 			<td><a href="#values_licensestate">LicenseState values</a></td>
-			<td><a href="#values_userstatus">User Status</a></td>
+			<td><a href="#values_usersignupstate">User Signup State values</a></td>
 			</tr>
 		<tr>
 			<td><a href="#values_logininstructiontype">Login Instruction Types</a></td>
-			<td><a href="#values_visibilitysettings">Visibility Settings</a></td>
+			<td><a href="#values_userstatus">User Status</a></td>
 			</tr>
 		<tr>
 			<td><a href="#values_loginstate">Login State</a></td>
-			<td><a href="#values_workflowactions">Workflow Actions</a></td>
+			<td><a href="#values_visibilitysettings">Visibility Settings</a></td>
 			</tr>
 		<tr>
 			<td><a href="#values_loginstatus">Login Status</a></td>
-			<td><a href="#values_workflowstates">Workflow States</a></td>
+			<td><a href="#values_workflowactions">Workflow Actions</a></td>
 			</tr>
 		<tr>
 			<td><a href="#values_mediatype">MediaType</a></td>
+			<td><a href="#values_workflowstates">Workflow States</a></td>
+			</tr>
+		<tr>
+			<td>&nbsp;</td>
 			<td><a href="#values_workflow_objecttype">Workflow ObjectTypes</a></td>
 			</tr>
 	</tbody>
@@ -1622,6 +1626,97 @@ no-catalog: true
 	<li>com.akana.tenant.state.active</li>
 	<li>com.akana.tenant.state.suspended</li>
 </ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="values_status">Status (HTTP)</h3>
+<p>One more more specific HTTP status values. If Status is specified, only transactions with that status are included in the results. To specify multiple statuses, include multiple Status query parms, one for each status.</p>
+<p>Valid <strong>Status </strong> values:</p>
+<div class="relatedlinks">
+<ul>
+	<li>200</li>
+	<li>201</li>
+	<li>202</li>
+	<li>203</li>
+	<li>204</li>
+	<li>205</li>
+	<li>206</li>
+	<li>207</li>
+	<li>208</li>
+	<li>226</li>
+</ul>
+<ul>
+	<li>300</li>
+	<li>301</li>
+	<li>302</li>
+	<li>303</li>
+	<li>304</li>
+	<li>305</li>
+	<li>306</li>
+	<li>307</li>
+	<li>308</li>
+	<li>400</li>
+</ul>
+<ul>
+	<li>401</li>
+	<li>402</li>
+	<li>403</li>
+	<li>404</li>
+	<li>405</li>
+	<li>406</li>
+	<li>407</li>
+	<li>408</li>
+	<li>409</li>
+	<li>410</li>
+</ul>
+<ul>
+	<li>411</li>
+	<li>412</li>
+	<li>413</li>
+	<li>414</li>
+	<li>415</li>
+	<li>416</li>
+	<li>417</li>
+	<li>418</li>
+	<li>420</li>
+	<li>422</li>
+</ul>
+<ul>
+	<li>423</li>
+	<li>424</li>
+	<li>425</li>
+	<li>426</li>
+	<li>428</li>
+	<li>429</li>
+	<li>431</li>
+	<li>444</li>
+	<li>449</li>
+	<li>450</li>
+</ul>
+<ul>
+	<li>451</li>
+	<li>499</li>
+	<li>500</li>
+	<li>501</li>
+	<li>502</li>
+	<li>503</li>
+	<li>504</li>
+	<li>505</li>
+	<li>506</li>
+	<li>507</li>
+</ul>
+<ul>
+	<li>508</li>
+	<li>509</li>
+	<li>510</li>
+	<li>511</li>
+	<li>520</li>
+	<li>522</li>
+	<li>524</li>
+	<li>598</li>
+	<li>599</li>
+</ul>
+</div>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

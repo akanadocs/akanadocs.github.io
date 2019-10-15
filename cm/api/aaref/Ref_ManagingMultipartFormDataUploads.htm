@@ -97,21 +97,11 @@ no-catalog: true
 
 <h3 id="fileupload_example_apps_savekeyinfo">Apps Service: Save Key Info</h3>
 <p>One example of an operation that uses this media type in the Content-Type request header, in the application service, uploads the app's certificate signing request (CSR) or security certificate: <span class="apidoc_code"><a href="../apps/m_apps_saveKeyInfo.htm">POST&nbsp;/api/apps/versions/{AppVersionID}/keyinfo</a></span>.</p>
-<p>An example of the multipart-form data header for this operation is shown below. Line breaks have been added to the Cookie header and the CSRF token for display purposes.</p>
+<p>An example of the multipart-form data header for this operation is shown below.</p>
 <pre>POST http://{hostname}/api/apps/versions/9vQtwz5cVjB4Lb0tW7YDoRGm.acmepaymentscorp/keyinfo?wrapInHTML=true HTTP/1.1
 Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3Db1f87d98-a01e-11e4-a4c8-c152b79a9472%2Cclaimed_id
-%3Durn%3Aacmepaymentscorp%3Auser%3Aacmepaymentscorp%3A7222fcd1-fe4b-4b80-ad25-ec86981c7962%2C
-issueTime%3D1421701444022%2CexpirationTime%3D1421703244005%2CAttributesIncluded%3Dfalse%2C
-UserFDN%3D7222fcd1-fe4b-4b80-ad25-ec86981c7962%252Eacmepaymentscorp%2CUserName%3D
-adminacmepaymentscorp%2Csig%3DNE567Vbh1ZdIE1Yx6HlnQF9zFwy2-xKqq-EquYiugI-k2_jzUR9rvV0x
-kyLDg8_CBL68dAqCfq1VXSghLjvFV2nreg4WLlR-mhBrOa209ZT7pgryPCTg-wlEL3e_zq-9lsoGxPPRSyCvRXqwz
-urhLLM_9GWokQoZUYsXrTP6Jx8; Csrf-Token_acmepaymentscorp=TokenID%3Db1f87d98-a01e-11e4-a4c8-c
-152b79a9472%2CexpirationTime%3D1421703244028%2CUserFDN%3D7222fcd1-fe4b-4b80-ad25-ec86981c79
-62%252Eacmepaymentscorp%2Csig%3DIid5J_crulvfYk5hHYGUt6fCbZvpp4nACDBA7JIqIMGbDZXaaItzW87rrPx
-PBazCQ-N8BacJcrEsib8bWmeGNZPqWgtXiFtRZcHBakb5zyFwLuSCE9RQK5lu8mg2iFfRH9Cm_ER
-MqGUW2q28agiMT36tJWZ6SN9F8-JG6tRnYjA
+Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3Db1f87d98-a01e-11e4-a4c8-c152b79a9472%2Cclaimed_id%3Durn%3Aacmepaymentscorp%3Auser%3Aacmepaymentscorp%3A7222fcd1-fe4b-4b80-ad25-ec86981c7962%2CissueTime%3D1421701444022%2CexpirationTime%3D1421703244005%2CAttributesIncluded%3Dfalse%2CUserFDN%3D7222fcd1-fe4b-4b80-ad25-ec86981c7962%252Eacmepaymentscorp%2CUserName%3Dadminacmepaymentscorp%2Csig%3DNE567Vbh1ZdIE1Yx6HlnQF9zFwy2-xKqq-EquYiugI-k2_jzUR9rvV0xkyLDg8_CBL68dAqCfq1VXSghLjvFV2nreg4WLlR-mhBrOa209ZT7pgryPCTg-wlEL3e_zq-9lsoGxPPRSyCvRXqwzurhLLM_9GWokQoZUYsXrTP6Jx8; Csrf-Token_acmepaymentscorp=TokenID%3Db1f87d98-a01e-11e4-a4c8-c152b79a9472%2CexpirationTime%3D1421703244028%2CUserFDN%3D7222fcd1-fe4b-4b80-ad25-ec86981c7962%252Eacmepaymentscorp%2Csig%3DIid5J_crulvfYk5hHYGUt6fCbZvpp4nACDBA7JIqIMGbDZXaaItzW87rrPxPBazCQ-N8BacJcrEsib8bWmeGNZPqWgtXiFtRZcHBakb5zyFwLuSCE9RQK5lu8mg2iFfRH9Cm_ERMqGUW2q28agiMT36tJWZ6SN9F8-JG6tRnYjA
 Content-Type: multipart/form-data; boundary=---------------------------138372179114855
 
 -----------------------------138372179114855
@@ -140,18 +130,13 @@ testing
 -----------------------------138372179114855
 Content-Disposition: form-data; name="X-Csrf-Token_acmepaymentscorp"
 
-TokenID%3Db1f87d98-a01e-11e4-a4c8-c152b79a9472%2CexpirationTime%3D1421703244
-028%2CUserFDN%3D7222fcd1-fe4b-4b80-ad25-ec86981c7962%252Eacmepaymentscorp
-%2Csig%3DIid5J_crulvfYk5hHYGUt6fCbZvpp4nACDBA7JIqIMGbDZXaaItzW87rrPxPBaz
-CQ-N8BacJcrEsib8bWmeGNZPqWgtXiFtRZcHBakb5zyFwLuSCE9RQK5lu8mg2iFfRH9
-Cm_ERMqGUW2q28agiMT36tJWZ6SN9F8-JG6tRnYjA
+TokenID%3Db1f87d98-a01e-11e4-a4c8-c152b79a9472%2CexpirationTime%3D1421703244028%2CUserFDN%3D7222fcd1-fe4b-4b80-ad25-ec86981c7962%252Eacmepaymentscorp%2Csig%3DIid5J_crulvfYk5hHYGUt6fCbZvpp4nACDBA7JIqIMGbDZXaaItzW87rrPxPBazCQ-N8BacJcrEsib8bWmeGNZPqWgtXiFtRZcHBakb5zyFwLuSCE9RQK5lu8mg2iFfRH9Cm_ERMqGUW2q28agiMT36tJWZ6SN9F8-JG6tRnYjA
 -----------------------------138372179114855--</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="fileupload_example_dropbox_addpicture">Dropbox Service: Add Picture</h3>
 <p>The example below illustrates how you might use Postman to upload the avatar for a user.</p>
-
 <p><strong>Note</strong>: In this example, the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csrf_header">CSRF header</a> setting  is not enabled for POST operations in the platform settings, so the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a>  header is not required. If you need to include this header for your own implementation, see <a href="Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</p>
 <h5>Prerequisites</h5>
 <ul>
