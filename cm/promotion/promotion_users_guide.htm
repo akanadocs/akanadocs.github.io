@@ -10,7 +10,7 @@ type: page
 nav-title: LC Promotion Guide
 ---
 <h2 id="top">Lifecycle Coordinator Promotion Guide</h2>
-<p>Provides information about how to use the Lifecycle Coordinator feature to manage the promotion feature.</p>
+<p>Provides information about how to use the Lifecycle Coordinator feature to manage promotion of assets, such as apps and APIs, from one environment to another. such as from Development to Testing.</p>
 <p><a href="../../sp/install_lc/install_promotion.htm" class="button secondary">Lifecycle Coordinator Installation</a> 
 <a href="promotion_samples.htm" class="button secondary">Sample Topologies</a></p>
 
@@ -45,6 +45,8 @@ nav-title: LC Promotion Guide
 			<li><a href="#s05_approval_proc">Approval Processes</a> (2018.0.0 and later)</li>
 			<li><a href="#s05_07">Policy Mapping</a> (8.4.16 and later)</li>
 			<li><a href="#resource_mapping">Resource Mappings (Scope Mapping)</a> (2018.0.0 and later)</li>
+			<li><a href="#mapping_visibility_api">API Visibility Mapping</a> (2019.1.0 and later)</li>
+			<li><a href="#mapping_visibility_app">App Visibility Mapping</a> (2019.1.0 and later)</li>
 			<li><a href="#asset_notification">Asset Notifications</a> (8.4.17 and later)</li>
 			<li><a href="#properties_element">Properties</a> (8.4.17 and later)</li>
 		</ol>
@@ -680,6 +682,36 @@ vsep.listenerName = "https"</td>
 <p>With the <strong>validate-api-resources</strong> property set to <strong>true</strong>, promotion of an API with an unmatched resource reference will be aborted. A validation error is displayed to the user attempting to promote the resource.</p>
 
 
+<h4 id="mapping_visibility_api">API Visibility Mapping</h4>
+<p class="stamp"><strong>API Platform Version: 2019.1.0 and later</strong></p>
+<p>A PromotionProfile can include a set of ResourceMappings that can be used to tailor the visibility of an API version when the API is promoted to the target environment.</p>
+<p>For example, in the source tenant the API version visibility might be set to Public, but you might want to set it to Private in the target tenant. You could accomplish that with the rule shown below.</p>
+<pre>"rules":[
+  {
+    "scope":"apiVersion",
+    "condition":"apiVersion.visibility == 'Public'",
+    "action":"apiVersion.visibility = 'Private'"
+  }
+]</pre>
+
+
+
+
+
+
+<h4 id="mapping_visibility_app">App Visibility Mapping</h4>
+<p class="stamp"><strong>API Platform Version: 2019.1.0 and later</strong></p>
+<p>A PromotionProfile can include a set of ResourceMappings that can be used to tailor the visibility of an app version when the app is promoted to the target environment.</p>
+<p>For example, in the source tenant the app version visibility might be set to Registered Users, but you might want to set it to Private in the target tenant. You could accomplish that with the rule shown below.</p>
+<pre>"rules":[
+  {
+    "scope":"appVersion",
+    "condition":"appVersion.visibility == 'Registered Users'",
+    "action":"appVersion.visibility = 'Private'"
+  }
+]</pre>
+
+
 <h4 id="asset_notification">Asset Notifications</h4>
 <p class="stamp"><strong>API Platform Version: 8.4.17 and later</strong></p>
 <p>A PromotionProfile can optionally specify updates to be made to instances of an API, within environments of a topology, on completion of a successful promotion. These updates are implemented as changes to the values of custom properties on the API within a specified environment.</p>
@@ -709,7 +741,25 @@ vsep.listenerName = "https"</td>
 
 <h4 id="properties_element">Properties</h4>
 <p class="stamp"><strong>API Platform Version: 8.4.17 and later</strong></p>
-<p>A PromotionProfile can optionally specify properties to further refine export/import behavior. These are defined in an optional <strong>properties</strong> element, as in the following example:</p>
+<p>A PromotionProfile can optionally specify properties to further refine export/import behavior. These are defined in an optional <strong>properties</strong> element, as shown in the examples below.</p>
+<p>You can set the following properties on a PromotionProfile:</p>
+<ul>
+	<li><strong>export-pki</strong>
+<p>This option indicates that the PKI keys and certificate for an API will be included in the promotion if they exist. Note that if the target environment for a promotion is on a different container from the source environment, the API's certificate or an ancestor in the chain must be trusted by the target container's certificate authority, or it will be ignored when importing the API.</p>
+<p>A value of <strong>true</strong> indicates that PKI keys and certificate should be promoted. The default value for this property is <strong>false</strong>.</p></li>
+	<li><strong>match-policies-by-name</strong>
+<p>Setting this property to a value of <strong>true</strong> indicates that custom policies in the source and target environments are to be implicitly mapped by policy name (regardless of their unique keys).</p>
+<p>For example, without this property present, an API referencing a policy named <strong>MyCustomAuditingPolicy</strong> in the source environment will fail validation even if there is a policy with the same name in the target environment, unless there is a policy mapping explicitly defined between the policies. With the property set to <strong>true</strong>, the API will pass validation and will be assigned the policy with the same name in the target environment.</p>
+	</li>
+	<li><strong>preserve-outbound-identities</strong>
+		<p><strong>API Platform Version: 2019.1.0 and later</strong></p>
+<!--		<p>{ATMO-30197}</p>-->
+		<p>Setting this property to a value of <strong>true</strong> indicates that the outbound identities of an existing service are not changed as a result of the promotion process.</p>
+<p>For example, without this property present, the target API identity mapping is overwritten with the values set in the source API. With the property set to <strong>true</strong>, the identities in the target API are not affected by promoting the API. The original values are preserved in the target API.</p>
+	</li>
+</ul>
+
+<p>Example #1: sets the <strong>export-pki</strong> value.</p>
 <pre>{
   "name":"Default Production Promotion",
   "description":"Dev to production default profile",
@@ -721,16 +771,63 @@ vsep.listenerName = "https"</td>
     }
   ]
 }</pre>
-<p>You can set the following properties on a PromotionProfile:</p>
-<ul>
-	<li><strong>export-pki</strong>
-<p>This option indicates that the PKI keys and certificate for an API will be included in the promotion if they exist. Note that if the target environment for a promotion is on a different container from the source environment, the API's certificate or an ancestor in the chain must be trusted by the target container's certificate authority, or it will be ignored when importing the API.</p>
-<p>A value of <strong>true</strong> indicates that PKI keys and certificate should be promoted. The default value for this property is <strong>false</strong>.</p></li>
-	<li><strong>match-policies-by-name</strong>
-<p>Setting this property to a value of <strong>true</strong> indicates that custom policies in the source and target environments are to be implicitly mapped by policy name (regardless of their unique keys).</p>
-<p>For example, without this property present, an API referencing a policy named <strong>MyCustomAuditingPolicy</strong> in the source environment will fail validation even if there is a policy with the same name in the target environment, unless there is a policy mapping explicitly defined between the policies. With the property set to <strong>true</strong>, the API will pass validation and will be assigned the policy with the same name in the target environment.</p>
-	</li>
-</ul>
+<p>Example #2: Sets <strong>match-policies-by-name</strong> and <strong>preserve-outbound-identities</strong>.</p>
+<pre>{
+  "name":"Topology",
+  "environments":[
+    {
+      "name":"dev1",
+      "displayName":"dev1",
+      "description":"Development environment",
+      "tenant":"dev1",
+      "initialEnvironment":true,
+      "promotionProfiles":[
+        {
+          "name":"Default Testing Promotion",
+          "description":"Dev to Testing default profile",
+          "targetEnvironment":"test1",
+          "properties":[
+            {
+              "name":"match-policies-by-name",
+              "value":"true"
+            },
+            {
+              "name":"preserve-outbound-identities",
+              "value":"true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name":"test1",
+      "displayName":"test1",
+      "description":"Testing environment",
+      "tenant":"test1"
+    }
+  ],
+  "tenants":[
+    {
+      "name":"dev1",
+      "userAuthenticationSource":true,
+      "id":"dev1",
+      "credentials":{
+        "email":"administrator@open.akana.com",
+        "password":"password"
+      }
+    },
+    {
+      "name":"test1",
+      "id":"test1",
+      "address":"http://open.akana.com:9910",
+      "consoleAddress":"http://open.akana.com:9910/atmosphere",
+      "credentials":{
+        "email":"administrator@open.akana.com",
+        "password":"password"
+      }
+    }
+  ]
+}</pre>
 
 
 <h3 id="dz_configurations">Deployment Zone Configurations</h3>

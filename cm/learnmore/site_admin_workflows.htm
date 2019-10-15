@@ -195,8 +195,20 @@ nav-title: Custom Workflows
 <ol>
 	<li>Log in as the Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
 	<li>Go to <strong>Workflows</strong>.</li>
-	<li>Find the workflow on the list and click <strong>View</strong>. The workflow XML file is displayed in a separate window.</li>
+	<li>Find the workflow on the list and click <strong>Download</strong>.</li>
+	<li>Choose <strong>Open With</strong>, choose the application you want to open the file with, such as a browser or application, and click <strong>OK</strong>.</li>
+	<li>Click <strong>OK</strong> to view the file in the specified application.</li>
 </ol>
+
+<h5 id="proc_workflow_download">To download a workflow document from the developer portal</h5>
+<p>If you're going to customize a workflow, it's best to download the latest default from the developer portal as a starting point. Follow the steps below.</p>
+<ol>
+	<li>Log in as the Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
+	<li>Go to <strong>Workflows</strong>.</li>
+	<li>Find the workflow on the list and click <strong>Download</strong>.</li>
+	<li>Choose <strong>Save File</strong>, specify the location, and click <strong>Save</strong>.</li>
+</ol>
+<p><strong>Note</strong>: When you download the file, it's best to change the file name so that later, when you upload the customized file, it doesn't overwrite the default.</p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -501,7 +513,7 @@ nav-title: Custom Workflows
 
 
 <h3 id="workflow_custom_specify_oauth_grants">How do I specify a custom workflow for OAuth grants?</h3>
-<p>If you have a custom workflow for OAuth grants, you'll need to specify the custom workflow as the Grant Workflow Definition in your OAuth Provider domain definition (Administration &gt; Domains &gt; Add Domain &gt; OAuth Provider) in the Branding tab (Tab #6).</p>
+<p>If you have a custom workflow for OAuth grants, you'll need to specify the custom workflow as the Grant Workflow Definition in your OAuth Provider domain definition, on the <strong>Branding</strong> page. See <a href="bus_admin_domains.htm#domain_oauth_provider_branding">What are the settings on the OAuth/OIDC Provider Branding page and what options should I choose?</a></p>
 <p>The custom workflow applies for all APIs that use the OAuth Provider domain definition.</p>
 <p>For instructions for setting up the OAuth Provider domain, including the custom workflow, see <a href="bus_admin_domains.htm#domain_oauth_provider_configure">How do I set up and configure an OAuth Provider domain?</a></p>
 <p><a href="#top">Back to top</a></p>

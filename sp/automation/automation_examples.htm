@@ -11,11 +11,11 @@ nav-title: Automation Examples
 ---
 <h2 id="top">Automation Examples</h2>
 <p>Simple examples of using automation to install the platform.</p>
-<p><strong>Note</strong>: Automation is valid for Linux only. It is not valid for Windows at this time.</p>
+<p><strong>Note</strong>: Certain automation processes are limited to Linux only, though most are valid for both Windows and Linux. See <a href="automation_ref.htm#ov_automation_windows">Running automation recipes on Windows</a>.</p>
 <p><a href="automation_ref.htm" class="button secondary">Automation Reference</a> 
-<a href="../platform_install/installing_akana_api_platform_all.htm" class="button secondary">Installing the Akana API Platform (all versions)</a></p>
+	<a href="../platform_install/installing_akana_api_platform_all.htm" class="button secondary">Installing the Akana API Platform (all versions)</a></p>
 
-<h5 class="stamp">Supported Platforms: 2018.0.x</h5>
+<h5 class="stamp">Supported Platforms: 2018.0.x and later</h5>
 <div class = "divider1"></div>
 
 
@@ -68,7 +68,7 @@ nav-title: Automation Examples
 <ol class="table_of_contents">
 	<li><a href="#ts_properties_commandline">Providing property values at the command line</a></li>
 	<li><a href="#resource_download_extract">Downloading and extracting the installation files</a></li>
-	<li><a href="#ts_automation">Running automation recipes: troubleshooting</a></li>
+	<li><a href="#cluster_support">Cluster support</a></li>
 </ol>
 <div class = "divider1"></div>
 
@@ -78,7 +78,7 @@ nav-title: Automation Examples
 
 
 
-<h3 id="overview_e2e"><strong>Automation recipe examples: overview</strong></h3>
+<h3 id="overview_e2e">Automation recipe examples: overview</h3>
 <p>General notes about the examples included in this document:</p>
 <ul>
 	<li>In these examples, the user home directory is /home/user. Substitute your own directory.</li>
@@ -117,7 +117,7 @@ nav-title: Automation Examples
 <p>For detailed instructions on downloading and extracting the files, refer to the sections in the installation documentation:</p>
 <ul>
 	<li><a href="../platform_install/installing_akana_api_platform_v2018.htm#gather_zip_files">Step 1: Gather ZIP file or files and download to a temporary folder</a></li>
-	<li><a href="../platform_install/installing_akana_api_platform_v2018.htm#unzip_files">Step 2: Extract installation files in the correct sequence</a></li>
+	<li><a href="../platform_install/installing_akana_api_platform_v2018.htm#unzip_files">Step 2: Extract installation files</a></li>
 </ul>
 <p>For abbreviated instructions for the specific files used in these examples, see <a href="#resource_download_extract">Downloading and extracting the installation files</a>.</p>
 <p>The illustration below shows copying the files from another location so that the four files are in the <strong>akana</strong> directory.</p>
@@ -481,16 +481,18 @@ CONTAINER_NAME=pm01</pre>
 
 
 
-<h3 id="ts_automation">Running automation recipes: troubleshooting</h3>
-<p>This section provides information about errors you might run into when running automation, and possible reasons/resolution.</p>
+<h3 id="cluster_support">Cluster support</h3>
+<p>To define your customer, you can use automation recipes to capture the configuration of an existing container, as covered in <a href="automation_ref.htm#running_recipes_remotely">Running Recipes Remotely</a> and <a href="automation_ref.htm#recipes_extracting_properties">Extracting and Analyzing Recipes</a>. Then, you can run an automation recipe against each member of the cluster.</p>
+<p>The approach is the same as running a recipe remotely against any container, whether the container is clustered or not.</p>
+<p>Some advantages of using automation for managing clusters:</p>
 <ul>
-	<li><a href="#ts_auto_typeerror">Problem: TypeError</a></li>
+	<li>This approach  supports the trend towards &quot;configuration as code&quot;&#8212;recipes and configuration can be managed as first-class artifacts.</li>
+	<li>Recipes can be executed remotely, allowing for fine-grained control of cluster members.</li>
+	<li>The use of recipes allows configuration tasks to be automated across the cluster, in addition to remote management of container configuration properties.</li>
 </ul>
-
-<h5 id="ts_auto_typeerror">Problem: TypeError</h5>
-<p>You might encounter a TypeError such as the example shown below if you try to create the properties file on Windows. Automation is not currently valid for Windows.</p>
-<pre>TypeError: cannot concatenate 'unicode' and 'NoneType' objects</pre>
 <p><a href="#top">back to top</a></p>
+
+
 
 <div class = "divider1"></div>
 
