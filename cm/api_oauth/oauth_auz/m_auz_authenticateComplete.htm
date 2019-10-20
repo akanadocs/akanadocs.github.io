@@ -352,9 +352,8 @@
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_oauth_auz_authenticateComplete.lbi" -->Supports redirect from the identity provider after the resource owner's login with the identity provider is complete.<!-- #EndLibraryItem --></p>
-<p><strong>Note</strong>: There are three related operations that render the authorization page:</p>
+<p><strong>Note</strong>: There are these related operations that render the authorization page:</p>
 <ul>
-  <li><span class="apidoc_code"><a href="m_-auz_authenticateCompleteWithStaticCallbackUri.htm">GET&nbsp;/oauth/auz/grants/provider/authcomplete{domainid:(/[^/]+?)?}</a></span> is fully documented and is really all you need. It maintains the static callback URI, as explained above, by relaying the GrantID in an optional query parameter.</li>
   <li><span class="apidoc_code">GET&nbsp;/oauth/auz/grants/provider/authcomplete{domainid:(/[^/]+?)?}</span> (this operation) performs the same action using HTTP GET. You can use this if you do not need to maintain a static callback URI. The GrantID is a path parameter.</li>
   <li><span class="apidoc_code"><a href="m_auz_authenticateCompletePOST.htm">POST&nbsp;/oauth/auz/grants/provider/authcomplete{domainid:(/[^/]+?)?}</a></span> performs the same action using HTTP POST. You can use this if you do not need to maintain a static callback URI and prefer to use HTTP POST. The GrantID is relayed in form URL-encoded POST content.</li>
 </ul>

@@ -378,11 +378,6 @@
     		Authenticates the resource owner. For SSO login, this operation renders the login domain; for LDAP domain, it accepts LDAP credentials such as username and password.<!-- #EndLibraryItem --></td>
     	</tr>
     <tr>
-      <td>authorize client by resource owner</td>
-      <td><a href="oauth_auz/m_-auz_authorizeClientByResourceOwner.htm">POST&nbsp;/oauth/auz/grants</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_oauth_auz_authorizeClientByResourceOwner.lbi" -->Authorizes the grant. The resource owner authorizes the client app based on the <a href="Ref_Glossary_CommunityPlatform.htm#gl_oauth_scope">OAuth scopes</a> that have been configured. As a result of this operation, the grant status changes from Pending to Active.<!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
       <td>complete resource owner authorization</td>
       <td><a href="oauth_auz/m_auz_completeResourceOwnerAuthorization.htm">GET&nbsp;/oauth/auz/grants/{GrantID}/auzcomplete</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_oauth_auz_completeResourceOwnerAuthorization.lbi" -->
