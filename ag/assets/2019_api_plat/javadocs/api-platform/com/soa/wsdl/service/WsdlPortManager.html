@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.wsdl.service</div>
-<h2 title="Interface WsdlPortManager" class="title">Interface WsdlPortManager</h2>
+<h1 title="Interface WsdlPortManager" class="title">Interface WsdlPortManager</h1>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h3>Method Summary</h3>
+<h2>Method Summary</h2>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -190,13 +190,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h3>Method Detail</h3>
+<h2>Method Detail</h2>
 <a name="getWSDL-java.lang.String-java.util.Properties-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getWSDL</h4>
+<h3>getWSDL</h3>
 <pre>javax.wsdl.Definition&nbsp;getWSDL(java.lang.String&nbsp;accessPointKey,
                               java.util.Properties&nbsp;properties)
                        throws com.digev.fw.exception.GException</pre>
@@ -216,7 +216,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getWSDLs</h4>
+<h3>getWSDLs</h3>
 <pre>java.util.Map&lt;java.lang.String,javax.wsdl.Definition&gt;&nbsp;getWSDLs(java.util.List&lt;java.lang.String&gt;&nbsp;accessPointKeys,
                                                                java.util.Properties&nbsp;properties)
                                                         throws com.digev.fw.exception.GException</pre>
@@ -231,7 +231,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>saveWSDL</h4>
+<h3>saveWSDL</h3>
 <pre>void&nbsp;saveWSDL(java.lang.String&nbsp;accessPointKey,
               javax.wsdl.Definition&nbsp;definition,
               boolean&nbsp;update)
@@ -251,7 +251,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>deleteWSDL</h4>
+<h3>deleteWSDL</h3>
 <pre>boolean&nbsp;deleteWSDL(java.lang.String&nbsp;accessPointKey)
             throws com.digev.fw.exception.GException</pre>
 <div class="block">Deletes WSDL port from system metadata store.</div>
@@ -270,7 +270,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>deleteWSDLs</h4>
+<h3>deleteWSDLs</h3>
 <pre>boolean&nbsp;deleteWSDLs(java.util.List&lt;java.lang.String&gt;&nbsp;accessPointKeys)
              throws com.digev.fw.exception.GException</pre>
 <div class="block">Optimized method for deleting multiple Wsdls, @see <a href="../../../../com/soa/wsdl/service/WsdlPortManager.html#deleteWSDL-java.lang.String-"><code>deleteWSDL(String)</code></a></div>
@@ -288,7 +288,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>existsWSDL</h4>
+<h3>existsWSDL</h3>
 <pre>boolean&nbsp;existsWSDL(java.lang.String&nbsp;accessPointKey)
             throws com.digev.fw.exception.GException</pre>
 <div class="block">Checks for the existance of WSDL for a port in the metadata store.</div>
@@ -306,7 +306,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getImplementedBinding</h4>
+<h3>getImplementedBinding</h3>
 <pre><a href="../../../../com/soa/wsdl/model/WsdlBinding.html" title="interface in com.soa.wsdl.model">WsdlBinding</a>&nbsp;getImplementedBinding(java.lang.String&nbsp;accessPointKey)
                            throws com.digev.fw.exception.GException</pre>
 <div class="block">Returns the binding a give port implements.</div>
@@ -324,7 +324,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>deleteWsdlForService</h4>
+<h3>deleteWsdlForService</h3>
 <pre>void&nbsp;deleteWsdlForService(com.soa.service.model.ServiceKey&nbsp;serviceKey)
                    throws com.digev.fw.exception.GException</pre>
 <div class="block">Deletes the WSDL for a service. Use with extreme caution.</div>
@@ -341,7 +341,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>getWSDLs</h4>
+<h3>getWSDLs</h3>
 <pre>java.util.Map&lt;java.lang.String,javax.wsdl.Definition&gt;&nbsp;getWSDLs(java.util.List&lt;java.lang.String&gt;&nbsp;accessPointKeys,
                                                                java.util.Properties&nbsp;properties,
                                                                java.util.Map&lt;<a href="../../../../com/soa/wsdl/model/WsdlBinding.html" title="interface in com.soa.wsdl.model">WsdlBinding</a>,javax.wsdl.Definition&gt;&nbsp;wsdlBindingsToDefs)

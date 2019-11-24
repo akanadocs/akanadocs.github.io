@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.message.handler.wsdl</div>
-<h2 title="Interface WSDLHandlerContext" class="title">Interface WSDLHandlerContext</h2>
+<h1 title="Interface WSDLHandlerContext" class="title">Interface WSDLHandlerContext</h1>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -124,7 +124,7 @@ extends <a href="../../../../../com/soa/message/handler/HandlerContext.html" tit
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h3>Method Summary</h3>
+<h2>Method Summary</h2>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -189,7 +189,7 @@ extends <a href="../../../../../com/soa/message/handler/HandlerContext.html" tit
 <li class="blockList"><a name="methods.inherited.from.class.com.soa.message.handler.HandlerContext">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;com.soa.message.handler.<a href="../../../../../com/soa/message/handler/HandlerContext.html" title="interface in com.soa.message.handler">HandlerContext</a></h3>
+<h2>Methods inherited from interface&nbsp;com.soa.message.handler.<a href="../../../../../com/soa/message/handler/HandlerContext.html" title="interface in com.soa.message.handler">HandlerContext</a></h2>
 <code><a href="../../../../../com/soa/message/handler/HandlerContext.html#clone--">clone</a>, <a href="../../../../../com/soa/message/handler/HandlerContext.html#getProperty-java.lang.String-">getProperty</a>, <a href="../../../../../com/soa/message/handler/HandlerContext.html#getPropertyNames--">getPropertyNames</a>, <a href="../../../../../com/soa/message/handler/HandlerContext.html#setProperty-java.lang.String-java.lang.Object-">setProperty</a></code></li>
 </ul>
 </li>
@@ -205,13 +205,13 @@ extends <a href="../../../../../com/soa/message/handler/HandlerContext.html" tit
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h3>Method Detail</h3>
+<h2>Method Detail</h2>
 <a name="getServiceName--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getServiceName</h4>
+<h3>getServiceName</h3>
 <pre>javax.xml.namespace.QName&nbsp;getServiceName()</pre>
 <div class="block">Returns the name of the service the handler should specifically
  handle. This is an optional property. If no service is identified,
@@ -228,7 +228,7 @@ extends <a href="../../../../../com/soa/message/handler/HandlerContext.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getServiceKey</h4>
+<h3>getServiceKey</h3>
 <pre>java.lang.String&nbsp;getServiceKey()</pre>
 <div class="block">Returns the unique key of the service the handler should specifically
  handle. This is an optional property. If no service is identified,
@@ -245,7 +245,7 @@ extends <a href="../../../../../com/soa/message/handler/HandlerContext.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getPortName</h4>
+<h3>getPortName</h3>
 <pre>java.lang.String&nbsp;getPortName()</pre>
 <div class="block">Returns the name of the port the handler should specifically handle.
  This is an optional property. If no port is identified, the handler
@@ -262,7 +262,7 @@ extends <a href="../../../../../com/soa/message/handler/HandlerContext.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getOperationName</h4>
+<h3>getOperationName</h3>
 <pre>java.lang.String&nbsp;getOperationName()</pre>
 <div class="block">Returns the name of the operation the handler should specifically
  handle. This is an optional property. If no operation is identified,
@@ -279,7 +279,7 @@ extends <a href="../../../../../com/soa/message/handler/HandlerContext.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getInterfaceName</h4>
+<h3>getInterfaceName</h3>
 <pre>javax.xml.namespace.QName&nbsp;getInterfaceName()</pre>
 <div class="block">Returns the name of the interface the operation specified in the
  getOperationName() method is defined in. This is an optional property
@@ -296,7 +296,7 @@ extends <a href="../../../../../com/soa/message/handler/HandlerContext.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getParameterType</h4>
+<h3>getParameterType</h3>
 <pre><a href="../../../../../com/soa/message/ParameterType.html" title="class in com.soa.message">ParameterType</a>&nbsp;getParameterType()</pre>
 <div class="block">Returns the parameter type (IN, OUT, FAULT) the handler should 
  specifically handle. This is an optional property. If no operation is
@@ -314,7 +314,7 @@ extends <a href="../../../../../com/soa/message/handler/HandlerContext.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getMessageName</h4>
+<h3>getMessageName</h3>
 <pre>java.lang.String&nbsp;getMessageName()</pre>
 <div class="block">Returns the name of the message the handler should specifically handle.
  This is an optional property. If the parameter type is IN or OUT, then
@@ -332,7 +332,7 @@ extends <a href="../../../../../com/soa/message/handler/HandlerContext.html" tit
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>getWSDLDefinition</h4>
+<h3>getWSDLDefinition</h3>
 <pre>javax.wsdl.Definition&nbsp;getWSDLDefinition()</pre>
 <div class="block">Returns a WSDL document for additional context.</div>
 <dl>

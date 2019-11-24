@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.message.handler</div>
-<h2 title="Class ChainHandler" class="title">Class ChainHandler</h2>
+<h1 title="Class ChainHandler" class="title">Class ChainHandler</h1>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -137,7 +137,7 @@ implements <a href="../../../../com/soa/message/handler/MessageHandler.html" tit
 <li class="blockList"><a name="constructor.summary">
 <!--   -->
 </a>
-<h3>Constructor Summary</h3>
+<h2>Constructor Summary</h2>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
 <caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
@@ -154,7 +154,7 @@ implements <a href="../../../../com/soa/message/handler/MessageHandler.html" tit
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h3>Method Summary</h3>
+<h2>Method Summary</h2>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -227,7 +227,7 @@ implements <a href="../../../../com/soa/message/handler/MessageHandler.html" tit
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.Object</h3>
+<h2>Methods inherited from class&nbsp;java.lang.Object</h2>
 <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li>
 </ul>
 </li>
@@ -243,13 +243,13 @@ implements <a href="../../../../com/soa/message/handler/MessageHandler.html" tit
 <li class="blockList"><a name="constructor.detail">
 <!--   -->
 </a>
-<h3>Constructor Detail</h3>
+<h2>Constructor Detail</h2>
 <a name="ChainHandler--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>ChainHandler</h4>
+<h3>ChainHandler</h3>
 <pre>public&nbsp;ChainHandler()</pre>
 </li>
 </ul>
@@ -260,13 +260,13 @@ implements <a href="../../../../com/soa/message/handler/MessageHandler.html" tit
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h3>Method Detail</h3>
+<h2>Method Detail</h2>
 <a name="setHandlers-java.util.List-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setHandlers</h4>
+<h3>setHandlers</h3>
 <pre>public&nbsp;void&nbsp;setHandlers(java.util.List&lt;<a href="../../../../com/soa/message/handler/MessageHandler.html" title="interface in com.soa.message.handler">MessageHandler</a>&gt;&nbsp;handlers)</pre>
 <div class="block">Configures the list of MessageHandlers this handler will invoke.</div>
 <dl>
@@ -280,7 +280,7 @@ implements <a href="../../../../com/soa/message/handler/MessageHandler.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>addHandler</h4>
+<h3>addHandler</h3>
 <pre>public&nbsp;void&nbsp;addHandler(<a href="../../../../com/soa/message/handler/MessageHandler.html" title="interface in com.soa.message.handler">MessageHandler</a>&nbsp;handler)</pre>
 <div class="block">Adds a MessageHandler to the chain. The handlers is added to the end of the chain.</div>
 <dl>
@@ -294,7 +294,7 @@ implements <a href="../../../../com/soa/message/handler/MessageHandler.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>addHandlerAt</h4>
+<h3>addHandlerAt</h3>
 <pre>public&nbsp;void&nbsp;addHandlerAt(<a href="../../../../com/soa/message/handler/MessageHandler.html" title="interface in com.soa.message.handler">MessageHandler</a>&nbsp;handler,
                          int&nbsp;index)</pre>
 <div class="block">Adds a MessageHandler to the chain at the given position.</div>
@@ -310,7 +310,7 @@ implements <a href="../../../../com/soa/message/handler/MessageHandler.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>removeHandler</h4>
+<h3>removeHandler</h3>
 <pre>public&nbsp;void&nbsp;removeHandler(<a href="../../../../com/soa/message/handler/MessageHandler.html" title="interface in com.soa.message.handler">MessageHandler</a>&nbsp;handler)</pre>
 <div class="block">Removes a MessageHandler from the chain.</div>
 <dl>
@@ -324,7 +324,7 @@ implements <a href="../../../../com/soa/message/handler/MessageHandler.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getHandlers</h4>
+<h3>getHandlers</h3>
 <pre>public&nbsp;java.util.List&lt;<a href="../../../../com/soa/message/handler/MessageHandler.html" title="interface in com.soa.message.handler">MessageHandler</a>&gt;&nbsp;getHandlers()</pre>
 <div class="block">Returns the list of handlers in the chain. The returned list is a copy and
  changes will not be reflected in the ChainHandler.</div>
@@ -339,7 +339,7 @@ implements <a href="../../../../com/soa/message/handler/MessageHandler.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setHandleOutInReverse</h4>
+<h3>setHandleOutInReverse</h3>
 <pre>public&nbsp;void&nbsp;setHandleOutInReverse(boolean&nbsp;handleInReverse)</pre>
 <div class="block">Configures whether the handlers in the chain should be called in reverse
  for out/fault messages.</div>
@@ -355,7 +355,7 @@ implements <a href="../../../../com/soa/message/handler/MessageHandler.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setCloseInReverse</h4>
+<h3>setCloseInReverse</h3>
 <pre>public&nbsp;void&nbsp;setCloseInReverse(boolean&nbsp;closeInReverse)</pre>
 <div class="block">Configures whether the handlers in the chain should be closed in reverse
  order.</div>
@@ -371,7 +371,7 @@ implements <a href="../../../../com/soa/message/handler/MessageHandler.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>handleMessage</h4>
+<h3>handleMessage</h3>
 <pre>public&nbsp;boolean&nbsp;handleMessage(<a href="../../../../com/soa/message/handler/MessageContext.html" title="interface in com.soa.message.handler">MessageContext</a>&nbsp;context)
                       throws com.digev.fw.exception.GException,
                              <a href="../../../../com/soa/message/handler/MessageFaultException.html" title="class in com.soa.message.handler">MessageFaultException</a></pre>
@@ -412,7 +412,7 @@ implements <a href="../../../../com/soa/message/handler/MessageHandler.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>close</h4>
+<h3>close</h3>
 <pre>public&nbsp;void&nbsp;close(<a href="../../../../com/soa/message/handler/MessageContext.html" title="interface in com.soa.message.handler">MessageContext</a>&nbsp;context)
            throws com.digev.fw.exception.GException</pre>
 <div class="block">Closes all configured handlers.</div>
@@ -432,7 +432,7 @@ implements <a href="../../../../com/soa/message/handler/MessageHandler.html" tit
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>toString</h4>
+<h3>toString</h3>
 <pre>public&nbsp;java.lang.String&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>

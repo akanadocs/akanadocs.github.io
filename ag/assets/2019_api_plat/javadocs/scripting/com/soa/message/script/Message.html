@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.message.script</div>
-<h2 title="Interface Message" class="title">Interface Message</h2>
+<h1 title="Interface Message" class="title">Interface Message</h1>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -207,7 +207,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h3>Method Summary</h3>
+<h2>Method Summary</h2>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -429,13 +429,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h3>Method Detail</h3>
+<h2>Method Detail</h2>
 <a name="getID--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getID</h4>
+<h3>getID</h3>
 <pre>java.lang.String&nbsp;getID()</pre>
 <div class="block">Returns the ID of the message (if any). An ID is typically used when
  the message is part of an asynchronous exchange. It may not be
@@ -453,7 +453,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getCorrelationID</h4>
+<h3>getCorrelationID</h3>
 <pre>java.lang.String&nbsp;getCorrelationID()</pre>
 <div class="block">Returns a correlation identifier (if any) that can be used to correlate
  this message with another. The most common example is for correlating an
@@ -470,7 +470,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setCorrelationID</h4>
+<h3>setCorrelationID</h3>
 <pre>void&nbsp;setCorrelationID(java.lang.String&nbsp;id)</pre>
 <div class="block">Changes the correlation ID of the message. The most common use is
  for asynchronous messaging. The request message ID would be set as the
@@ -486,7 +486,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getContent</h4>
+<h3>getContent</h3>
 <pre>byte[]&nbsp;getContent()
            throws com.digev.fw.exception.GException</pre>
 <div class="block">Returns the content of the message.</div>
@@ -504,7 +504,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getProtocolHeader</h4>
+<h3>getProtocolHeader</h3>
 <pre>java.lang.String&nbsp;getProtocolHeader(java.lang.String&nbsp;headerName)
                             throws com.digev.fw.exception.GException</pre>
 <div class="block">Returns the protocol header with the given name associated with a normalized message.
@@ -526,7 +526,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setProtocolHeader</h4>
+<h3>setProtocolHeader</h3>
 <pre>void&nbsp;setProtocolHeader(java.lang.String&nbsp;headerName,
                        org.w3c.dom.Node&nbsp;headerValue)
                 throws com.digev.fw.exception.GException</pre>
@@ -549,7 +549,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setProtocolHeader</h4>
+<h3>setProtocolHeader</h3>
 <pre>void&nbsp;setProtocolHeader(java.lang.String&nbsp;headerName,
                        java.lang.String&nbsp;headerValue)
                 throws com.digev.fw.exception.GException</pre>
@@ -572,7 +572,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getTransportHeaders</h4>
+<h3>getTransportHeaders</h3>
 <pre><a href="../../../../com/soa/message/script/Headers.html" title="class in com.soa.message.script">Headers</a>&nbsp;getTransportHeaders()</pre>
 <div class="block">Returns the transport headers associated with the message (if any).</div>
 <dl>
@@ -587,7 +587,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>createTransportHeaders</h4>
+<h3>createTransportHeaders</h3>
 <pre><a href="../../../../com/soa/message/script/Headers.html" title="class in com.soa.message.script">Headers</a>&nbsp;createTransportHeaders()
                         throws com.digev.fw.exception.GException</pre>
 <div class="block">Creates a new Headers set and associates it with the message.</div>
@@ -604,7 +604,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setTransportHeaders</h4>
+<h3>setTransportHeaders</h3>
 <pre>void&nbsp;setTransportHeaders(<a href="../../../../com/soa/message/script/Headers.html" title="class in com.soa.message.script">Headers</a>&nbsp;headers)</pre>
 <div class="block">Replaces the set of transport headers associated with the message.</div>
 <dl>
@@ -618,7 +618,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getContentAsString</h4>
+<h3>getContentAsString</h3>
 <pre>java.lang.String&nbsp;getContentAsString()
                              throws com.digev.fw.exception.GException</pre>
 <div class="block">Returns the content of the message as a string.</div>
@@ -637,7 +637,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getContent</h4>
+<h3>getContent</h3>
 <pre>byte[]&nbsp;getContent(javax.xml.transform.Source&nbsp;src)
            throws com.digev.fw.exception.GException</pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">For internal use.
@@ -659,7 +659,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setStringContent</h4>
+<h3>setStringContent</h3>
 <pre>void&nbsp;setStringContent(java.lang.String&nbsp;content)
                throws com.digev.fw.exception.GException</pre>
 <div class="block">Changes the message content with a String.</div>
@@ -677,7 +677,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setContent</h4>
+<h3>setContent</h3>
 <pre>void&nbsp;setContent(byte[]&nbsp;content)
          throws com.digev.fw.exception.GException</pre>
 <div class="block">Changes the message content.</div>
@@ -695,7 +695,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getProperty</h4>
+<h3>getProperty</h3>
 <pre>java.lang.Object&nbsp;getProperty(java.lang.String&nbsp;name)</pre>
 <div class="block">Returns the property with the given name.</div>
 <dl>
@@ -711,7 +711,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setProperty</h4>
+<h3>setProperty</h3>
 <pre>void&nbsp;setProperty(java.lang.String&nbsp;name,
                  java.lang.Object&nbsp;property)</pre>
 <div class="block">Associates a property with the message.</div>
@@ -727,7 +727,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getPropertyNames</h4>
+<h3>getPropertyNames</h3>
 <pre>java.util.Set&nbsp;getPropertyNames()</pre>
 <div class="block">Returns the names of the properties associated with the message. Changes made to
  the Set are reflected in the message, so if a name is removed from the
@@ -744,7 +744,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isNormalized</h4>
+<h3>isNormalized</h3>
 <pre>boolean&nbsp;isNormalized()</pre>
 <div class="block">Returns whether the message is normalized or not.</div>
 <dl>
@@ -758,7 +758,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>canNormalize</h4>
+<h3>canNormalize</h3>
 <pre>boolean&nbsp;canNormalize()</pre>
 <div class="block">Returns whether the message can be normalized or not. Some types of messages
  may not support normalization. Only messages that originate from external 
@@ -776,7 +776,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>normalize</h4>
+<h3>normalize</h3>
 <pre><a href="../../../../com/soa/message/script/Message.html" title="interface in com.soa.message.script">Message</a>&nbsp;normalize()
            throws com.digev.fw.exception.GException</pre>
 <div class="block">Normalizes the message. All defined message parts are taken from their
@@ -798,7 +798,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>normalizeToXML</h4>
+<h3>normalizeToXML</h3>
 <pre><a href="../../../../com/soa/message/script/Message.html" title="interface in com.soa.message.script">Message</a>&nbsp;normalizeToXML()
                 throws com.digev.fw.exception.GException</pre>
 <div class="block">Normalizes the message to an XML format. All defined message parts are taken from 
@@ -821,7 +821,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getContentType</h4>
+<h3>getContentType</h3>
 <pre>java.lang.String&nbsp;getContentType()</pre>
 <div class="block">Returns the type of content of the message, i.e., application/xml, 
  application/json.</div>
@@ -836,7 +836,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setContentType</h4>
+<h3>setContentType</h3>
 <pre>void&nbsp;setContentType(java.lang.String&nbsp;contentType)</pre>
 <div class="block">Changes the type of content of the message, i.e., application/xml, 
  application/json.</div>
@@ -851,7 +851,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getSecuritySubjects</h4>
+<h3>getSecuritySubjects</h3>
 <pre>com.soa.security.script.SubjectMap&nbsp;getSecuritySubjects()</pre>
 <div class="block">Map of categories to <code>Subject</code>s. Changes to the returned
  map are reflected in the message.</div>
@@ -866,7 +866,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getSecuritySubjects</h4>
+<h3>getSecuritySubjects</h3>
 <pre>com.soa.security.script.SubjectMap&nbsp;getSecuritySubjects(boolean&nbsp;createIfNotExist)</pre>
 <div class="block">Map of categories to <code>Subject</code>s. Changes to the returned
  map are reflected in the message. If the createIfNotExist flag is true then a map will
@@ -887,7 +887,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getPart</h4>
+<h3>getPart</h3>
 <pre>java.lang.Object&nbsp;getPart(java.lang.String&nbsp;name)</pre>
 <div class="block">Returns the message part (parameter) with the given name.</div>
 <dl>
@@ -903,7 +903,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>addPart</h4>
+<h3>addPart</h3>
 <pre>void&nbsp;addPart(java.lang.String&nbsp;name,
              java.lang.Object&nbsp;part)</pre>
 <div class="block">Adds a value for a part (parameter) with the given name.</div>
@@ -919,7 +919,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>removePart</h4>
+<h3>removePart</h3>
 <pre>void&nbsp;removePart(java.lang.String&nbsp;name)</pre>
 <div class="block">Removes the value for the part (parameter) with the given name.</div>
 <dl>
@@ -933,7 +933,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getPartNames</h4>
+<h3>getPartNames</h3>
 <pre>java.lang.String[]&nbsp;getPartNames()</pre>
 <div class="block">Returns the names of all parts (parameters) that have been assigned a value.</div>
 <dl>
@@ -947,7 +947,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getContentPartName</h4>
+<h3>getContentPartName</h3>
 <pre>java.lang.String&nbsp;getContentPartName()</pre>
 <div class="block">When using parts in a message one of those parts can be considered the
  content of the message (see <a href="../../../../com/soa/message/script/Message.html#getContent--"><code>getContent()</code></a>). This method will return
@@ -963,7 +963,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>setContentPartName</h4>
+<h3>setContentPartName</h3>
 <pre>void&nbsp;setContentPartName(java.lang.String&nbsp;name)</pre>
 <div class="block">When using parts in a message one of those parts can be considered the
  content of the message (see <a href="../../../../com/soa/message/script/Message.html#getContent--"><code>getContent()</code></a>). This method can be

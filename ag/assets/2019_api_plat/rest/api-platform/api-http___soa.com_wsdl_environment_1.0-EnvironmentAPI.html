@@ -14,8 +14,8 @@
 		<div class='header'></div>
 		<div class=''>
 			<div class="info container-fluid">
-				<h2 class="info-title">Environment API</h2>
-				<h4 class="info-fullname light">{http://soa.com/wsdl/environment/1.0}EnvironmentAPI</h4>
+				<h1 class="info-title">Environment API</h1>
+				<h3 class="info-fullname light">{http://soa.com/wsdl/environment/1.0}EnvironmentAPI</h3>
 
 									<p><p>The Environment service provides operations for finding information about the configured environments.</p></p>
 							</div>
@@ -25,11 +25,11 @@
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-1-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/environments</span>
 							                             														<span class="pull-right">getEnvironments</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-1-details" class="container-fluid operation-detail" style="display: none">
@@ -38,11 +38,11 @@
 							<h6><p>Returns environments within the given scope. The scopes are &ldquo;global&rdquo; (all environments),
 &ldquo;local&rdquo; (only those defined in the local system/tenant), and &ldquo;default&rdquo; (default local
 environment). The scope parameter is optional, the default value is &ldquo;global&rdquo;.</p>
-<h4>Request:</h4>
+<h3>Request:</h3>
 <pre><code>GET /environments?Scope=local HTTP/1.1
 Accept: application/json
 </code></pre>
-<h4>Response:</h4>
+<h3>Response:</h3>
 <pre><code>HTTP/1.1 200 OK
 
 {
@@ -61,7 +61,7 @@ Accept: application/json
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -81,7 +81,7 @@ Accept: application/json
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">

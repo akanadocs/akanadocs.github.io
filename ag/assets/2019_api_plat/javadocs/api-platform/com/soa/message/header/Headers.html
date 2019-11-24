@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.message.header</div>
-<h2 title="Interface Headers" class="title">Interface Headers</h2>
+<h1 title="Interface Headers" class="title">Interface Headers</h1>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -122,7 +122,7 @@ extends java.lang.Cloneable</pre>
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h3>Method Summary</h3>
+<h2>Method Summary</h2>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -213,13 +213,13 @@ extends java.lang.Cloneable</pre>
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h3>Method Detail</h3>
+<h2>Method Detail</h2>
 <a name="getHeaders--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getHeaders</h4>
+<h3>getHeaders</h3>
 <pre><a href="../../../../com/soa/message/header/Header.html" title="interface in com.soa.message.header">Header</a>[]&nbsp;getHeaders()</pre>
 <div class="block">Get all defined Headers</div>
 <dl>
@@ -233,7 +233,7 @@ extends java.lang.Cloneable</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getHeader</h4>
+<h3>getHeader</h3>
 <pre><a href="../../../../com/soa/message/header/Header.html" title="interface in com.soa.message.header">Header</a>&nbsp;getHeader(java.lang.String&nbsp;name)</pre>
 <div class="block">Lookup a Header by name</div>
 <dl>
@@ -252,7 +252,7 @@ extends java.lang.Cloneable</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getDateHeader</h4>
+<h3>getDateHeader</h3>
 <pre><a href="../../../../com/soa/message/header/Header.html" title="interface in com.soa.message.header">Header</a>&nbsp;getDateHeader(java.lang.String&nbsp;name)</pre>
 <div class="block">Lookup a Header by name.  This method indicates that the field value will
  be interpreted as a date.</div>
@@ -270,7 +270,7 @@ extends java.lang.Cloneable</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>addHeader</h4>
+<h3>addHeader</h3>
 <pre><a href="../../../../com/soa/message/header/Header.html" title="interface in com.soa.message.header">Header</a>&nbsp;addHeader(<a href="../../../../com/soa/message/header/Header.html" title="interface in com.soa.message.header">Header</a>&nbsp;header)
           throws com.digev.fw.exception.GException</pre>
 <div class="block">Add a Header to the collection</div>
@@ -292,7 +292,7 @@ extends java.lang.Cloneable</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>addHeader</h4>
+<h3>addHeader</h3>
 <pre><a href="../../../../com/soa/message/header/Header.html" title="interface in com.soa.message.header">Header</a>&nbsp;addHeader(java.lang.String&nbsp;name,
                  java.lang.String&nbsp;value)
           throws com.digev.fw.exception.GException</pre>
@@ -316,7 +316,7 @@ extends java.lang.Cloneable</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setHeader</h4>
+<h3>setHeader</h3>
 <pre><a href="../../../../com/soa/message/header/Header.html" title="interface in com.soa.message.header">Header</a>&nbsp;setHeader(java.lang.String&nbsp;name,
                  java.lang.String&nbsp;value)
           throws com.digev.fw.exception.GException</pre>
@@ -339,7 +339,7 @@ extends java.lang.Cloneable</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setHeader</h4>
+<h3>setHeader</h3>
 <pre><a href="../../../../com/soa/message/header/Header.html" title="interface in com.soa.message.header">Header</a>&nbsp;setHeader(java.lang.String&nbsp;name,
                  java.util.Date&nbsp;value)
           throws com.digev.fw.exception.GException</pre>
@@ -362,7 +362,7 @@ extends java.lang.Cloneable</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setHeader</h4>
+<h3>setHeader</h3>
 <pre><a href="../../../../com/soa/message/header/Header.html" title="interface in com.soa.message.header">Header</a>&nbsp;setHeader(<a href="../../../../com/soa/message/header/Header.html" title="interface in com.soa.message.header">Header</a>&nbsp;header)
           throws com.digev.fw.exception.GException</pre>
 <div class="block">Set the value of a specific header</div>
@@ -379,7 +379,7 @@ extends java.lang.Cloneable</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>removeHeader</h4>
+<h3>removeHeader</h3>
 <pre><a href="../../../../com/soa/message/header/Header.html" title="interface in com.soa.message.header">Header</a>&nbsp;removeHeader(java.lang.String&nbsp;name)</pre>
 <div class="block">Remove a specific header</div>
 <dl>
@@ -396,7 +396,7 @@ extends java.lang.Cloneable</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>containsHeader</h4>
+<h3>containsHeader</h3>
 <pre>boolean&nbsp;containsHeader(java.lang.String&nbsp;name)</pre>
 <div class="block">Convenience method to check for the existence of a specific header in
  this collection.</div>
@@ -414,7 +414,7 @@ extends java.lang.Cloneable</pre>
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>clear</h4>
+<h3>clear</h3>
 <pre>void&nbsp;clear()</pre>
 <div class="block">Clear the collection</div>
 </li>

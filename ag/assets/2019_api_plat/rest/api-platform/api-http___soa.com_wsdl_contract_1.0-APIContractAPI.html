@@ -14,8 +14,8 @@
 		<div class='header'></div>
 		<div class=''>
 			<div class="info container-fluid">
-				<h2 class="info-title">APIContractAPI</h2>
-				<h4 class="info-fullname light">{http://soa.com/wsdl/contract/1.0}APIContractAPI</h4>
+				<h1 class="info-title">APIContractAPI</h1>
+				<h3 class="info-fullname light">{http://soa.com/wsdl/contract/1.0}APIContractAPI</h3>
 
 									<p><p>The Contracts service provides operations for managing API access contracts in the Akana API Platform.</p></p>
 							</div>
@@ -25,11 +25,11 @@
 				
 				<div class="POST operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-1-details">
-						<h5>
+						<h4>
 							<strong class="http-method">POST</strong>
 												            <span class="path">/contracts</span>
 							                             														<span class="pull-right">requestContract</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-1-details" class="container-fluid operation-detail" style="display: none">
@@ -45,7 +45,7 @@ is revised, a new contract is created that is a revision of the existing contrac
 In this scenario, the @Revise initial action is used to start the workflow for the revised contract. When there is a revised
 contract in place, any subsequent requests to create a contract for the app/API/environment combination will fail, since only
 one revised contract is allowed at one time.</p>
-<h4>Sample Request</h4>
+<h3>Sample Request</h3>
 <pre><code>POST /api/contracts HTTP/1.1
 Host: {hostname}
 Accept: application/json
@@ -73,7 +73,7 @@ X-Csrf-Token_{tenant}: {TokenID}
   }
 }
 </code></pre>
-<h4>Sample Response</h4>
+<h3>Sample Response</h3>
 <pre><code>HTTP/1.1 200 OK
 Date: Wed, 01 Oct 2014 00:00:00 GMT
 Content-Type: application/json
@@ -95,7 +95,7 @@ Content-Type: application/json
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 														<div class="row">
 								<div class="col-md-12">
@@ -438,7 +438,7 @@ Content-Type: application/json
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -786,18 +786,18 @@ Content-Type: application/json
 				
 				<div class="DELETE operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-2-details">
-						<h5>
+						<h4>
 							<strong class="http-method">DELETE</strong>
 												            <span class="path">/contracts/{ContractID}</span>
 							                             														<span class="pull-right">deleteContract</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-2-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 														<div class="row">
 								<div class="col-md-12">
@@ -823,7 +823,7 @@ Content-Type: application/json
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -852,11 +852,11 @@ Content-Type: application/json
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-3-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/contracts/{ContractID}</span>
 							                             														<span class="pull-right">getContract</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-3-details" class="container-fluid operation-detail" style="display: none">
@@ -868,7 +868,7 @@ GET /api/apis/versions/{APIVersionID}/contracts. This operation returns a specif
 you can use this operation to get information about the contract.
 <strong>Authorization Roles/Permissions:</strong> To complete this operation successfully, a user must be a member of the applicable team
 (App team member or API Admin) or a Site Admin.</p>
-<h4>Sample Response</h4>
+<h3>Sample Response</h3>
 <pre><code>HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Tue, 30 Sep 2014 00:00:00 GMT
@@ -891,7 +891,7 @@ Date: Tue, 30 Sep 2014 00:00:00 GMT
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -911,7 +911,7 @@ Date: Tue, 30 Sep 2014 00:00:00 GMT
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -1256,11 +1256,11 @@ Date: Tue, 30 Sep 2014 00:00:00 GMT
 				
 				<div class="PUT operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-4-details">
-						<h5>
+						<h4>
 							<strong class="http-method">PUT</strong>
 												            <span class="path">/contracts/{ContractID}</span>
 							                             														<span class="pull-right">updateContract</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-4-details" class="container-fluid operation-detail" style="display: none">
@@ -1269,7 +1269,7 @@ Date: Tue, 30 Sep 2014 00:00:00 GMT
 							<h6><p>Updates information about an app/API contract.
 <strong>Authorization Roles/Permissions:</strong> To complete this operation successfully, a user must be a member of the applicable team (App
 team member or API Admin).</p>
-<h4>Sample Request</h4>
+<h3>Sample Request</h3>
 <pre><code>Accept: application/json
 Content-Type: application/json
 X-Csrf-Token_{tenant}: {TokenID}
@@ -1287,7 +1287,7 @@ X-Csrf-Token_{tenant}: {TokenID}
   "Status" : "com.soa.apicontract.inforce"
 }
 </code></pre>
-<h4>Sample Response</h4>
+<h3>Sample Response</h3>
 <pre><code>HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Tue, 30 Sep 2014 00:00:00 GMT
@@ -1307,7 +1307,7 @@ Date: Tue, 30 Sep 2014 00:00:00 GMT
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 														<div class="row">
 								<div class="col-md-12">
@@ -1656,7 +1656,7 @@ Date: Tue, 30 Sep 2014 00:00:00 GMT
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -2004,18 +2004,18 @@ Date: Tue, 30 Sep 2014 00:00:00 GMT
 				
 				<div class="POST operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-5-details">
-						<h5>
+						<h4>
 							<strong class="http-method">POST</strong>
 												            <span class="path">/contracts/{ContractID}</span>
 							                             														<span class="pull-right">requestAutoConnectContract</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-5-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 														<div class="row">
 								<div class="col-md-12">
@@ -2360,7 +2360,7 @@ Date: Tue, 30 Sep 2014 00:00:00 GMT
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -2702,11 +2702,11 @@ Date: Tue, 30 Sep 2014 00:00:00 GMT
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-6-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/contracts/reserveID</span>
 							                             														<span class="pull-right">getNewReserveContractDN</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-6-details" class="container-fluid operation-detail" style="display: none">
@@ -2714,7 +2714,7 @@ Date: Tue, 30 Sep 2014 00:00:00 GMT
 						
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -2743,11 +2743,11 @@ Date: Tue, 30 Sep 2014 00:00:00 GMT
 				
 				<div class="POST operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-7-details">
-						<h5>
+						<h4>
 							<strong class="http-method">POST</strong>
 												            <span class="path">/contracts/{ContractDN}/actions</span>
 							                             														<span class="pull-right">executeWorkflowAction</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-7-details" class="container-fluid operation-detail" style="display: none">
@@ -2763,7 +2763,7 @@ app admin, and so forth. Depending on the combination of action name and Contrac
 For example, Activate can only be done by an API admin or business admin; Resubmit can be done by app team members or API admins.
 Custom workflow definitions could require different roles for different actions.</li>
 </ul>
-<h4>Sample Request</h4>
+<h3>Sample Request</h3>
 <pre><code>POST /api/contracts/contract25519.acmepaymentscorp/actions HTTP/1.1
 Host: {hostname}
 Accept: */*
@@ -2775,7 +2775,7 @@ X-Csrf-Token_{tenant}: {TokenID}
   "Comments":"Granting production access (activating)."
 }
 </code></pre>
-<h4>Sample Response</h4>
+<h3>Sample Response</h3>
 <pre><code>HTTP/1.1 200 OK
 Content-Type: text/plain
 Date: Wed, 10 Jul 2013 19:57:49 GMT
@@ -2785,7 +2785,7 @@ apicontract.status.activated
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 														<div class="row">
 								<div class="col-md-12">
@@ -2855,7 +2855,7 @@ apicontract.status.activated
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -2884,18 +2884,18 @@ apicontract.status.activated
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-8-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/contracts/{ContractID}/apidetails</span>
 							                             														<span class="pull-right">getContractAPIDetails</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-8-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -2915,7 +2915,7 @@ apicontract.status.activated
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -4215,18 +4215,18 @@ apicontract.status.activated
 				
 				<div class="PUT operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-9-details">
-						<h5>
+						<h4>
 							<strong class="http-method">PUT</strong>
 												            <span class="path">/contracts/{ContractDN}/scope</span>
 							                             														<span class="pull-right">saveContractScope</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-9-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 														<div class="row">
 								<div class="col-md-12">
@@ -4279,7 +4279,7 @@ apicontract.status.activated
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -4625,18 +4625,18 @@ apicontract.status.activated
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-10-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/contracts/{ContractID}/appdetails</span>
 							                             														<span class="pull-right">getContractAppDetails</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-10-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -4656,7 +4656,7 @@ apicontract.status.activated
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -5076,11 +5076,11 @@ apicontract.status.activated
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-11-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/contracts/{ContractDN}/package</span>
 							                             														<span class="pull-right">export</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-11-details" class="container-fluid operation-detail" style="display: none">
@@ -5090,13 +5090,13 @@ apicontract.status.activated
 <strong>Authorization Roles/Permissions:</strong> To complete this operation successfully, a user must be a member of the applicable
 team (App team member or API Admin) or a Site Admin or Business Admin.</p>
 <p>The response content is sent as the export file named in the Content-Disposition header.</p>
-<h4>Sample Request</h4>
+<h3>Sample Request</h3>
 <pre><code>GET /api/contracts/{contract}/package?migration.export.include.apis=true&amp;migration.export.include.apps=true&amp;migration.export.include.licenses=true&amp;migration.qospolicy.export=true&amp;download=true&amp;wrapInHTML=true HTTP/1.1
 Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 X-Csrf-Token_{tenant}: {TokenID}
 </code></pre>
-<h5>Additional Query Parameters</h5>
+<h4>Additional Query Parameters</h4>
 <p>| Name                               |  Type   |  Required  |  Description |
 |&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&ndash;|
 | download                           | string  | Optional   | If set to true (the default), the content is downloaded. If set to false, the user is prompted for content disposition. |
@@ -5104,7 +5104,7 @@ X-Csrf-Token_{tenant}: {TokenID}
 | migration.export.include.apis      | boolean | Optional   | If specified with a true value, APIs are included in the export file |
 | migration.export.include.licenses  | boolean | Optional   | If specified with a true value, Licenses are included in the export file |
 | migration.qospolicy.export         | boolean | Optional   | If specified with a true value, Quality of Service policies are included in the export file |</p>
-<h4>Sample Response</h4>
+<h3>Sample Response</h3>
 <pre><code>HTTP/1.1 200 OK
 Content-Type: application/octet-stream
 Content-Disposition: attachment;filename=apicontract-export.zip
@@ -5112,7 +5112,7 @@ Content-Disposition: attachment;filename=apicontract-export.zip
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -5132,7 +5132,7 @@ Content-Disposition: attachment;filename=apicontract-export.zip
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">

@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.message.handler.script</div>
-<h2 title="Interface MessageContext" class="title">Interface MessageContext</h2>
+<h1 title="Interface MessageContext" class="title">Interface MessageContext</h1>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -161,7 +161,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h3>Method Summary</h3>
+<h2>Method Summary</h2>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -244,13 +244,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h3>Method Detail</h3>
+<h2>Method Detail</h2>
 <a name="getProperty-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getProperty</h4>
+<h3>getProperty</h3>
 <pre>@MethodParameters(parameterNames="name")
 java.lang.Object&nbsp;getProperty(java.lang.String&nbsp;name)</pre>
 <div class="block">Returns the property with the given name.</div>
@@ -268,7 +268,7 @@ java.lang.Object&nbsp;getProperty(java.lang.String&nbsp;name)</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setProperty</h4>
+<h3>setProperty</h3>
 <pre>@MethodParameters(parameterNames={"name","property"})
 void&nbsp;setProperty(java.lang.String&nbsp;name,
                                                                        java.lang.Object&nbsp;property)</pre>
@@ -285,7 +285,7 @@ void&nbsp;setProperty(java.lang.String&nbsp;name,
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getPropertyNames</h4>
+<h3>getPropertyNames</h3>
 <pre>java.util.Set&lt;java.lang.String&gt;&nbsp;getPropertyNames()</pre>
 <div class="block">Returns the names of the properties associated with the context. Changes made to
  the Set are reflected in the context, so if a name is removed from the
@@ -302,7 +302,7 @@ void&nbsp;setProperty(java.lang.String&nbsp;name,
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getMessage</h4>
+<h3>getMessage</h3>
 <pre><a href="../../../../../com/soa/message/script/Message.html" title="interface in com.soa.message.script">Message</a>&nbsp;getMessage()</pre>
 <div class="block">Returns the message.</div>
 <dl>
@@ -316,7 +316,7 @@ void&nbsp;setProperty(java.lang.String&nbsp;name,
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getExchange</h4>
+<h3>getExchange</h3>
 <pre><a href="../../../../../com/soa/message/script/Exchange.html" title="interface in com.soa.message.script">Exchange</a>&nbsp;getExchange()</pre>
 <div class="block">Returns the exchange the message is part of.</div>
 <dl>
@@ -330,7 +330,7 @@ void&nbsp;setProperty(java.lang.String&nbsp;name,
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getParameterType</h4>
+<h3>getParameterType</h3>
 <pre>int&nbsp;getParameterType()</pre>
 <div class="block">Returns the type of message.</div>
 <dl>
@@ -345,7 +345,7 @@ void&nbsp;setProperty(java.lang.String&nbsp;name,
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getMessageName</h4>
+<h3>getMessageName</h3>
 <pre>java.lang.String&nbsp;getMessageName()</pre>
 <div class="block">Returns the name of the message as defined in WSDL. This is an optional
  property. If the parameter type is IN or OUT, then
@@ -363,7 +363,7 @@ void&nbsp;setProperty(java.lang.String&nbsp;name,
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isMessageReadOnly</h4>
+<h3>isMessageReadOnly</h3>
 <pre>boolean&nbsp;isMessageReadOnly()</pre>
 <div class="block">Returns whether the message in the context is read-only or can be
  modified. Handlers must not alter a message when read-only.</div>
@@ -378,7 +378,7 @@ void&nbsp;setProperty(java.lang.String&nbsp;name,
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isConsumer</h4>
+<h3>isConsumer</h3>
 <pre>boolean&nbsp;isConsumer()</pre>
 <div class="block">Returns whether or not the message is being handled from a consumer's perspective.</div>
 <dl>
@@ -392,7 +392,7 @@ void&nbsp;setProperty(java.lang.String&nbsp;name,
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>isProvider</h4>
+<h3>isProvider</h3>
 <pre>boolean&nbsp;isProvider()</pre>
 <div class="block">Returns whether or not the message is being handled from a provider's perspective.</div>
 <dl>

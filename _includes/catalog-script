@@ -118,7 +118,7 @@
                 if (snClasses.length > 1) {
                     var Objli = $('<li></li>');
                     Objli.addClass("soa-ui-dc-content-catalog-subheading");
-                    var ObjliH3 = $('<h3></h3>');
+                    var ObjliH3 = $('<h2></h2>');
                     ObjliH3.text(snClasses[i]);
                     Objli.append(ObjliH3);
                     ObjUl.append(Objli);
@@ -136,8 +136,8 @@
                     var ObjAvDiv = $('<div></div>');
                     var ObjDetDiv = $('<div></div>');
                     var ObjSecDiv = $('<div></div>');
-                    var ObjDetDivH4 = $('<h4></h4>');
-                    var ObjAvDivH4 = $('<h4></h4>');
+                    var ObjDetDivH4 = $('<h3></h3>');
+                    var ObjAvDivH4 = $('<h3></h3>');
                     var ObjP = $('<p></p>');
 
                     ObjAvDivH4.addClass("soa-ui-dc-icon-imgtxt soa-ui-dc-document-type");
@@ -190,7 +190,7 @@
             if (snClasses.length > 0) {
                 var Objli = $('<li></li>');
                 Objli.addClass("soa-ui-dc-content-catalog-subheading");
-                var ObjliH3 = $('<h3></h3>');
+                var ObjliH3 = $('<h2></h2>');
                 ObjliH3.text("Miscellaneous");
                 Objli.append(ObjliH3);
                 ObjUl.append(Objli);
@@ -203,8 +203,8 @@
                 var ObjAvDiv = $('<div></div>');
                 var ObjDetDiv = $('<div></div>');
                 var ObjSecDiv = $('<div></div>');
-                var ObjDetDivH4 = $('<h4></h4>');
-                var ObjAvDivH4 = $('<h4></h4>');
+                var ObjDetDivH4 = $('<h3></h3>');
+                var ObjAvDivH4 = $('<h3></h3>');
                 var ObjP = $('<p></p>');
 
                 ObjAvDivH4.addClass("soa-ui-dc-icon-imgtxt soa-ui-dc-document-type");
@@ -252,7 +252,7 @@
     $(document).ready(function() {
         var title = catalog(".soa-ui-dc-content-catalog");
         $(".soa-ui-dc-content-catalog").find("ul").show();
-        $("#top").replaceWith("<h2 id=\"top\">" + title + "</h2>");
+        $("#top").replaceWith("<h1 id=\"top\">" + title + "</h1>");
         // $(".soa-ui-dc-container-main-content > div > p").replaceWith("<p>New content</p>");
     });
 </script>

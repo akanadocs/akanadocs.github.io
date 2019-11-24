@@ -14,8 +14,8 @@
 		<div class='header'></div>
 		<div class=''>
 			<div class="info container-fluid">
-				<h2 class="info-title">Domain (Identity System) Management API</h2>
-				<h4 class="info-fullname light">{http://soa.com/uri/products/domainadmin/wsdl/1.0}DomainMgmtService</h4>
+				<h1 class="info-title">Domain (Identity System) Management API</h1>
+				<h3 class="info-fullname light">{http://soa.com/uri/products/domainadmin/wsdl/1.0}DomainMgmtService</h3>
 
 									<p>This API is used to manage PM security domains, or identity systems.</p>
 							</div>
@@ -25,18 +25,18 @@
 				
 				<div class="POST operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-1-details">
-						<h5>
+						<h4>
 							<strong class="http-method">POST</strong>
 												            <span class="path">/domains</span>
 							                             														<span class="pull-right">Add a domain</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-1-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Add a domain.</p>
-<h4>Request</h4>
+<h3>Request</h3>
 <pre><code>POST /rest/domains HTTP/1.1
 Content-Type: application/json
 
@@ -56,7 +56,7 @@ Content-Type: application/json
     "SupportsLoginProcess" : true
 }
 </code></pre>
-<h4>Response</h4>
+<h3>Response</h3>
 <pre><code>HTTP/1.1 200 OK
 {
     "DomainName" : "LDAP1",
@@ -77,7 +77,7 @@ Content-Type: application/json
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 														<div class="row">
 								<div class="col-md-12">
@@ -164,7 +164,7 @@ Content-Type: application/json
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -259,27 +259,27 @@ Content-Type: application/json
 				
 				<div class="DELETE operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-2-details">
-						<h5>
+						<h4>
 							<strong class="http-method">DELETE</strong>
 												            <span class="path">/domains/{domainName}</span>
 							                             														<span class="pull-right">Delete a domain</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-2-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Delete a domain.</p>
-<h4>Request</h4>
+<h3>Request</h3>
 <pre><code>DELETE /rest/domains/LDAP1 HTTP/1.1
 </code></pre>
-<h4>Response</h4>
+<h3>Response</h3>
 <pre><code>HTTP/1.1 200 OK
 </code></pre></h6>
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -299,7 +299,7 @@ Content-Type: application/json
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 							
 						</div>
@@ -332,18 +332,18 @@ Content-Type: application/json
 				
 				<div class="POST operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-3-details">
-						<h5>
+						<h4>
 							<strong class="http-method">POST</strong>
 												            <span class="path">/domains/{domainName}</span>
 							                             														<span class="pull-right">Modify a domain</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-3-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Modify a domain.</p>
-<h4>Request</h4>
+<h3>Request</h3>
 <pre><code>POST /rest/domains/LDAP1 HTTP/1.1
 {
     "DomainName" : "LDAP1",
@@ -361,7 +361,7 @@ Content-Type: application/json
     "SupportsLoginProcess" : true
 }
 </code></pre>
-<h4>Response</h4>
+<h3>Response</h3>
 <pre><code>HTTP/1.1 200 OK
 {
     "DomainName" : "LDAP1",
@@ -382,7 +382,7 @@ Content-Type: application/json
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 														<div class="row">
 								<div class="col-md-12">
@@ -475,7 +475,7 @@ Content-Type: application/json
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -575,21 +575,21 @@ Content-Type: application/json
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-4-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/domains/{domainName}</span>
 							                             														<span class="pull-right">Get domain details</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-4-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Retrieves a domain's configuration.</p>
-<h4>Request</h4>
+<h3>Request</h3>
 <pre><code>GET /rest/domains/Local%20Domain HTTP/1.1
 </code></pre>
-<h4>Response</h4>
+<h3>Response</h3>
 <pre><code>HTTP/1.1 200 OK
 {
     "DomainName" : "Local Domain",
@@ -607,7 +607,7 @@ Content-Type: application/json
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -627,7 +627,7 @@ Content-Type: application/json
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">

@@ -1,8 +1,8 @@
 <!-- left nav -->
 			<div class="soa-ui-dc-container-main-left nocontent">
-				<h3 class="soa-ui-dc-container-main-left-header">
+				<h2 class="soa-ui-dc-container-main-left-header">
 					<a href="{{ site.baseurl }}/cm/api/index.htm" class="soa-ui-dc-container-main-left-header-link">EAP API</a>	
-				</h3>
+				</h2>
 
 			</div>
 

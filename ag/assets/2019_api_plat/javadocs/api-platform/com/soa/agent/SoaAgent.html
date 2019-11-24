@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.agent</div>
-<h2 title="Interface SoaAgent" class="title">Interface SoaAgent</h2>
+<h1 title="Interface SoaAgent" class="title">Interface SoaAgent</h1>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -118,7 +118,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h3>Method Summary</h3>
+<h2>Method Summary</h2>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -178,13 +178,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h3>Method Detail</h3>
+<h2>Method Detail</h2>
 <a name="open--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>open</h4>
+<h3>open</h3>
 <pre><a href="../../../com/soa/agent/MessageContext.html" title="interface in com.soa.agent">MessageContext</a>&nbsp;open()</pre>
 <div class="block">Returns a new MessageContext to be used for subsequent calls to the
  agent. Upon completion of the calls, <a href="#close()">close()</a>
@@ -200,7 +200,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>handleInMessage</h4>
+<h3>handleInMessage</h3>
 <pre><a href="../../../com/soa/agent/ExchangeStatus.html" title="enum in com.soa.agent">ExchangeStatus</a>&nbsp;handleInMessage(<a href="../../../com/soa/agent/MessageContext.html" title="interface in com.soa.agent">MessageContext</a>&nbsp;context)
                         throws <a href="../../../com/soa/agent/AgentException.html" title="class in com.soa.agent">AgentException</a></pre>
 <div class="block">Processes the IN message of an operation.</div>
@@ -231,7 +231,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>handleOutMessage</h4>
+<h3>handleOutMessage</h3>
 <pre><a href="../../../com/soa/agent/ExchangeStatus.html" title="enum in com.soa.agent">ExchangeStatus</a>&nbsp;handleOutMessage(<a href="../../../com/soa/agent/MessageContext.html" title="interface in com.soa.agent">MessageContext</a>&nbsp;context)
                          throws <a href="../../../com/soa/agent/AgentException.html" title="class in com.soa.agent">AgentException</a></pre>
 <div class="block">Processes the OUT message of an operation. Assumes the message is
@@ -265,7 +265,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>handleResponseMessage</h4>
+<h3>handleResponseMessage</h3>
 <pre><a href="../../../com/soa/agent/ExchangeStatus.html" title="enum in com.soa.agent">ExchangeStatus</a>&nbsp;handleResponseMessage(<a href="../../../com/soa/agent/MessageContext.html" title="interface in com.soa.agent">MessageContext</a>&nbsp;context)
                               throws <a href="../../../com/soa/agent/AgentException.html" title="class in com.soa.agent">AgentException</a></pre>
 <div class="block">Processes the message returned by the service implementation for an 
@@ -298,7 +298,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>handleFaultMessage</h4>
+<h3>handleFaultMessage</h3>
 <pre><a href="../../../com/soa/agent/ExchangeStatus.html" title="enum in com.soa.agent">ExchangeStatus</a>&nbsp;handleFaultMessage(<a href="../../../com/soa/agent/MessageContext.html" title="interface in com.soa.agent">MessageContext</a>&nbsp;context)
                            throws <a href="../../../com/soa/agent/AgentException.html" title="class in com.soa.agent">AgentException</a></pre>
 <div class="block">Processes the FAULT message of an operation.</div>
@@ -325,7 +325,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>close</h4>
+<h3>close</h3>
 <pre>void&nbsp;close(<a href="../../../com/soa/agent/MessageContext.html" title="interface in com.soa.agent">MessageContext</a>&nbsp;context)</pre>
 <div class="block">Gives the agent the opportunity to release any resources allocated
  during processing of a message context.</div>

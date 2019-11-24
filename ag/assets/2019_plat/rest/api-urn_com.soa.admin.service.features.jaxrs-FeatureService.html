@@ -14,8 +14,8 @@
 		<div class='header'></div>
 		<div class=''>
 			<div class="info container-fluid">
-				<h2 class="info-title">Feature Administration Service</h2>
-				<h4 class="info-fullname light">{urn:com.soa.admin.service.features.jaxrs}FeatureService</h4>
+				<h1 class="info-title">Feature Administration Service</h1>
+				<h3 class="info-fullname light">{urn:com.soa.admin.service.features.jaxrs}FeatureService</h3>
 
 									<p>This API is used to administer the installation,removal, and resolution of features.</p>
 							</div>
@@ -25,11 +25,11 @@
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-1-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path"></span>
 							                             														<span class="pull-right">Get Installed Features</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-1-details" class="container-fluid operation-detail" style="display: none">
@@ -40,7 +40,7 @@
 						
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -131,22 +131,22 @@
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-2-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/updates</span>
 							                             														<span class="pull-right">Get Available Updates</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-2-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Fetch information on any updates available for installed features.</p>
-<h4>Sample Request</h4>
+<h3>Sample Request</h3>
 <pre><code>GET /admin/features/updates HTTP/1.1
 Accept: application/json
 </code></pre>
-<h4>Sample Response</h4>
+<h3>Sample Response</h3>
 <p>The response is a resolution report that calls out any new dependencies that need to be installed for the
 deployed features set.</p>
 <pre><code>HTTP/1.1 200 OK
@@ -183,7 +183,7 @@ Content-Type:application/json; charset=UTF-8
 						
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -330,22 +330,22 @@ Content-Type:application/json; charset=UTF-8
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-3-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/installed</span>
 							                             														<span class="pull-right">Get Installed Features</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-3-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Fetch information on all installed features.</p>
-<h4>Sample Request</h4>
+<h3>Sample Request</h3>
 <pre><code>GET /admin/features HTTP/1.1
 Accept: application/json
 </code></pre>
-<h4>Sample Response</h4>
+<h3>Sample Response</h3>
 <pre><code>HTTP/1.1 200 OK
 Content-Type:application/json; charset=UTF-8
 
@@ -389,7 +389,7 @@ Content-Type:application/json; charset=UTF-8
 						
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -480,22 +480,22 @@ Content-Type:application/json; charset=UTF-8
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-4-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/categories</span>
 							                             														<span class="pull-right">Get Feature Categories</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-4-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Get all feature categories.</p>
-<h4>Sample Request</h4>
+<h3>Sample Request</h3>
 <pre><code>GET /admin/features/categories HTTP/1.1
 Accept: application/json
 </code></pre>
-<h4>Sample Response</h4>
+<h3>Sample Response</h3>
 <pre><code>HTTP/1.1 200 OK
 Content-Type:application/json; charset=UTF-8
 
@@ -518,7 +518,7 @@ Content-Type:application/json; charset=UTF-8
 						
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -561,11 +561,11 @@ Content-Type:application/json; charset=UTF-8
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-5-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/resolve</span>
 							                             														<span class="pull-right">Get Outstanding Resolutions</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-5-details" class="container-fluid operation-detail" style="display: none">
@@ -576,7 +576,7 @@ Content-Type:application/json; charset=UTF-8
 						
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -723,18 +723,18 @@ Content-Type:application/json; charset=UTF-8
 				
 				<div class="POST operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-6-details">
-						<h5>
+						<h4>
 							<strong class="http-method">POST</strong>
 												            <span class="path">/install</span>
 							                             														<span class="pull-right">Install Features</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-6-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Install a set of features represented by the result of a resolve operation.</p>
-<h4>Sample Request</h4>
+<h3>Sample Request</h3>
 <pre><code>POST /admin/features/install HTTP/1.1
 Content-Type: application/json
 Accept: application/json
@@ -800,7 +800,7 @@ Accept: application/json
   } ]
 }
 </code></pre>
-<h4>Sample Response</h4>
+<h3>Sample Response</h3>
 <pre><code>HTTP/1.1 200 OK
 Content-Type:application/json; charset=UTF-8
 
@@ -818,7 +818,7 @@ Content-Type:application/json; charset=UTF-8
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 														<div class="row">
 								<div class="col-md-12">
@@ -962,7 +962,7 @@ Content-Type:application/json; charset=UTF-8
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -1139,22 +1139,22 @@ Content-Type:application/json; charset=UTF-8
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-7-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/available</span>
 							                             														<span class="pull-right">Get Available Features</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-7-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Get all features that are available for deployment.</p>
-<h4>Sample Request</h4>
+<h3>Sample Request</h3>
 <pre><code>GET /admin/features/available HTTP/1.1
 Accept: application/json
 </code></pre>
-<h4>Sample Response</h4>
+<h3>Sample Response</h3>
 <p>The following example has been truncated for brevity.  The resolve link provides the location
 for client to perform a resolve of a set of selected features.</p>
 <pre><code>HTTP/1.1 200 OK
@@ -1207,7 +1207,7 @@ Content-Type:application/json; charset=UTF-8
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -1233,7 +1233,7 @@ Content-Type:application/json; charset=UTF-8
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -1324,25 +1324,25 @@ Content-Type:application/json; charset=UTF-8
 				
 				<div class="POST operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-8-details">
-						<h5>
+						<h4>
 							<strong class="http-method">POST</strong>
 												            <span class="path">/resolve</span>
 							                             														<span class="pull-right">Resolve Features</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-8-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Resolve a feature set.</p>
-<h4>Sample Request</h4>
+<h3>Sample Request</h3>
 <pre><code>{
     "features":[
         {"name":"Akana Community Manager","version":"8.3.0","symbolicName":"com.soa.atmosphere.feature"}
     ]
 }
 </code></pre>
-<h4>Sample Response</h4>
+<h3>Sample Response</h3>
 <p>The following response is for an ongoing reolve operation.  Once completed, the response
 will also contain a resolution report listing all added, optional, and required resources that
 should be installed to deploy the selected feature set.</p>
@@ -1361,7 +1361,7 @@ Content-Type:application/json; charset=UTF-8
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 														<div class="row">
 								<div class="col-md-12">
@@ -1449,7 +1449,7 @@ Content-Type:application/json; charset=UTF-8
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -1596,22 +1596,22 @@ Content-Type:application/json; charset=UTF-8
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-9-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/installed/{id}</span>
 							                             														<span class="pull-right">Get Feature Detail</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-9-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Fetch detailed information for an installed feature.</p>
-<h4>Sample Request</h4>
+<h3>Sample Request</h3>
 <pre><code>GET /admin/features/installed/com.soa.admin.console HTTP/1.1
 Accept: application/json
 </code></pre>
-<h4>Sample Response</h4>
+<h3>Sample Response</h3>
 <pre><code>HTTP/1.1 200 OK
 Content-Type:application/json; charset=UTF-8
 
@@ -1632,7 +1632,7 @@ Content-Type:application/json; charset=UTF-8
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -1652,7 +1652,7 @@ Content-Type:application/json; charset=UTF-8
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -1738,11 +1738,11 @@ Content-Type:application/json; charset=UTF-8
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-10-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/resolve/{id}</span>
 							                             														<span class="pull-right">Get Resolution Detail</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-10-details" class="container-fluid operation-detail" style="display: none">
@@ -1758,11 +1758,11 @@ UNKNOWN -> RESOLVING -> RESOLVED</p>
 <li><strong>RESOLVING</strong> Features are actively being resolved.</li>
 <li><strong>RESOLVED</strong> When the resolve operation completes successfully.</li>
 </ul>
-<h4>Sample Request</h4>
+<h3>Sample Request</h3>
 <pre><code>GET /admin/features/resolve/ResolutionReport-1 HTTP/1.1
 Accept: application/json
 </code></pre>
-<h4>Sample Response</h4>
+<h3>Sample Response</h3>
 <p>The sample response below has been truncated for brevity.</p>
 <pre><code>HTTP/1.1 200 OK
 Content-Type:application/json; charset=UTF-8
@@ -1840,7 +1840,7 @@ Content-Type:application/json; charset=UTF-8
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -1860,7 +1860,7 @@ Content-Type:application/json; charset=UTF-8
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -2012,24 +2012,24 @@ Content-Type:application/json; charset=UTF-8
 				
 				<div class="DELETE operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-11-details">
-						<h5>
+						<h4>
 							<strong class="http-method">DELETE</strong>
 												            <span class="path">/installed/{id}</span>
 							                             														<span class="pull-right">Remove a Feature</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-11-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Remove a specific feature and its dependencies from the system.</p>
-<h4>Sample Request</h4>
+<h3>Sample Request</h3>
 <pre><code>DELETE /admin/features/installed/{id} HTTP/1.1
 </code></pre></h6>
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -2049,7 +2049,7 @@ Content-Type:application/json; charset=UTF-8
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 							
 						</div>
@@ -2077,11 +2077,11 @@ Content-Type:application/json; charset=UTF-8
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-12-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/install/{id}</span>
 							                             														<span class="pull-right">Get Install Status</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-12-details" class="container-fluid operation-detail" style="display: none">
@@ -2107,11 +2107,11 @@ tasks.</li>
 <li><strong>COMPLETE</strong> The install has completed successfully and all features are now available for
 configuration, if necessary.  The returned status contains a final report on the installation.</li>
 </ul>
-<h4>Sample Request</h4>
+<h3>Sample Request</h3>
 <pre><code>GET /admin/features/install/c8e29be1-19c0-4132-a6bb-01b2a3a3efc6 HTTP/1.1
 Accept: application/json
 </code></pre>
-<h4>Sample Response</h4>
+<h3>Sample Response</h3>
 <p>The following response shows an installation in progress.</p>
 <pre><code>HTTP/1.1 200 OK
 Content-Type:application/json; charset=UTF-8
@@ -2130,7 +2130,7 @@ Content-Type:application/json; charset=UTF-8
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -2150,7 +2150,7 @@ Content-Type:application/json; charset=UTF-8
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">

@@ -14,8 +14,8 @@
 		<div class='header'></div>
 		<div class=''>
 			<div class="info container-fluid">
-				<h2 class="info-title">Health Service</h2>
-				<h4 class="info-fullname light">{urn:com.soa.admin.health.jaxrs}JAXRSHealthService</h4>
+				<h1 class="info-title">Health Service</h1>
+				<h3 class="info-fullname light">{urn:com.soa.admin.health.jaxrs}JAXRSHealthService</h3>
 
 									<p><p>The Health Service provides an API to manage and query any health-related measurable attributes
 in the system.</p></p>
@@ -26,11 +26,11 @@ in the system.</p></p>
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-1-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path"></span>
 							                             														<span class="pull-right">getMetadata</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-1-details" class="container-fluid operation-detail" style="display: none">
@@ -38,7 +38,7 @@ in the system.</p></p>
 						
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -214,11 +214,11 @@ in the system.</p></p>
 				
 				<div class="POST operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-2-details">
-						<h5>
+						<h4>
 							<strong class="http-method">POST</strong>
 												            <span class="path">/measurables</span>
 							                             														<span class="pull-right">createConfiguration</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-2-details" class="container-fluid operation-detail" style="display: none">
@@ -230,18 +230,18 @@ using the OSGi MonitorAdmin service interfaces.  A health configuration allows a
 from different Monitorable instances to be combined into a hierarchy, and thresholds may
 then be placed on those attributes.  The state of the hierarchy will then reflect the combined
 state of all the component attributes with respect to their configured thresholds.</p>
-<h4>Request:</h4>
+<h3>Request:</h3>
 <pre><code>POST /admin/health HTTP/1.1
 Content-Type: application/json
 
 {"name":"My Health Variables"}
 </code></pre>
-<h4>Responses:</h4>
+<h3>Responses:</h3>
 <ul>
 <li>HTTP/1.1 201 Created</li>
 <li>HTTP/1.1 300 Bad Request if a name or ID is not provided by the client</li>
 </ul>
-<h4>Sample Response:</h4>
+<h3>Sample Response:</h3>
 <pre><code>201 Created
 Content-Type: application/json
 Location: http://localhost:9905/admin/health/measurables/my.health.variables
@@ -271,7 +271,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 						</div>
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 														<div class="row">
 								<div class="col-md-12">
@@ -433,7 +433,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -598,11 +598,11 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-3-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/available</span>
 							                             														<span class="pull-right">getAvailable</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-3-details" class="container-fluid operation-detail" style="display: none">
@@ -610,7 +610,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 						
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -775,11 +775,11 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-4-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/measurables</span>
 							                             														<span class="pull-right">getMeasurables</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-4-details" class="container-fluid operation-detail" style="display: none">
@@ -787,7 +787,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 						
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -952,18 +952,18 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-5-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/measurables/{id}</span>
 							                             														<span class="pull-right">getMetadataDetail</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-5-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -1013,7 +1013,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -1178,18 +1178,18 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 				
 				<div class="DELETE operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-6-details">
-						<h5>
+						<h4>
 							<strong class="http-method">DELETE</strong>
 												            <span class="path">/measurables/{id}</span>
 							                             														<span class="pull-right">deleteMetadata</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-6-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -1209,7 +1209,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 							
 						</div>
@@ -1232,18 +1232,18 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-7-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/measurables/{id}/configuration</span>
 							                             														<span class="pull-right">getOptions</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-7-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -1263,7 +1263,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -1330,18 +1330,18 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 				
 				<div class="PUT operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-8-details">
-						<h5>
+						<h4>
 							<strong class="http-method">PUT</strong>
 												            <span class="path">/measurables/{id}/configuration</span>
 							                             														<span class="pull-right">updateOptions</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-8-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 														<div class="row">
 								<div class="col-md-12">
@@ -1411,7 +1411,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -1478,18 +1478,18 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-9-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/measurables/{id}/children</span>
 							                             														<span class="pull-right">getMetadataChildren</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-9-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -1509,7 +1509,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -1684,18 +1684,18 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 				
 				<div class="PUT operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-10-details">
-						<h5>
+						<h4>
 							<strong class="http-method">PUT</strong>
 												            <span class="path">/measurables/{id}/children</span>
 							                             														<span class="pull-right">setMetadataChildren</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-10-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 														<div class="row">
 								<div class="col-md-12">
@@ -1727,7 +1727,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -1902,18 +1902,18 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-11-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/measurables/{id}/values</span>
 							                             														<span class="pull-right">getMeasurableValues</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-11-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -1933,7 +1933,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -1982,18 +1982,18 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-12-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/measurables/{parent}/children/{child}</span>
 							                             														<span class="pull-right">getMetadataChild</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-12-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -2019,7 +2019,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -2184,18 +2184,18 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 				
 				<div class="PUT operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-13-details">
-						<h5>
+						<h4>
 							<strong class="http-method">PUT</strong>
 												            <span class="path">/measurables/{parent}/children/{child}</span>
 							                             														<span class="pull-right">updateMetadataChild</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-13-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -2363,7 +2363,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -2528,18 +2528,18 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 				
 				<div class="DELETE operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-14-details">
-						<h5>
+						<h4>
 							<strong class="http-method">DELETE</strong>
 												            <span class="path">/measurables/{parent}/children/{child}</span>
 							                             														<span class="pull-right">deleteMetadataChild</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-14-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -2571,18 +2571,18 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-15-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/measurables/{parent}/children/{child}/variables/{var}</span>
 							                             														<span class="pull-right">getVariable</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-15-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -2614,7 +2614,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -2727,18 +2727,18 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-16-details">
-						<h5>
+						<h4>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/measurables/{parent}/children/{child}/variables/{var}/threshold</span>
 							                             														<span class="pull-right">getThreshold</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-16-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -2770,7 +2770,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -2845,18 +2845,18 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 				
 				<div class="PUT operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-17-details">
-						<h5>
+						<h4>
 							<strong class="http-method">PUT</strong>
 												            <span class="path">/measurables/{parent}/children/{child}/variables/{var}/threshold</span>
 							                             														<span class="pull-right">updateThreshold</span>
-													</h5>
+													</h4>
 					</div>
 
 					<div id="operation-17-details" class="container-fluid operation-detail" style="display: none">
 
 						
 												<div>
-							<h5>Parameters</h5>
+							<h4>Parameters</h4>
 							
 													</div>
 												
@@ -2940,7 +2940,7 @@ Location: http://localhost:9905/admin/health/measurables/my.health.variables
 													</div>
 						
 												<div class="">
-							<h5>Reponse</h5>
+							<h4>Reponse</h4>
 
 														<div class="row">
 								<div class="col-md-12">

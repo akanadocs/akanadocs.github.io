@@ -13,7 +13,7 @@
                 </button>
             </li>
         </ul>
-        <h3 class="soa-ui-dc-content-header">Search Results</h3>
+        <h2 class="soa-ui-dc-content-header">Search Results</h2>
         <div id="soa-control-dc-search-results-target"></div>
     </div>
 </div>
