@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.soap.message</div>
-<h1 title="Interface SOAPMessage" class="title">Interface SOAPMessage</h1>
+<h2 title="Interface SOAPMessage" class="title">Interface SOAPMessage</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -123,7 +123,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h2>Method Summary</h2>
+<h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -313,7 +313,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 <li class="blockList"><a name="methods.inherited.from.class.com.soa.message.Message">
 <!--   -->
 </a>
-<h2>Methods inherited from interface&nbsp;com.soa.message.<a href="../../../../com/soa/message/Message.html" title="interface in com.soa.message">Message</a></h2>
+<h3>Methods inherited from interface&nbsp;com.soa.message.<a href="../../../../com/soa/message/Message.html" title="interface in com.soa.message">Message</a></h3>
 <code><a href="../../../../com/soa/message/Message.html#addAttachment-javax.activation.DataHandler-com.soa.message.header.Headers-">addAttachment</a>, <a href="../../../../com/soa/message/Message.html#addPart-java.lang.String-java.lang.Object-">addPart</a>, <a href="../../../../com/soa/message/Message.html#arePartsEmpty--">arePartsEmpty</a>, <a href="../../../../com/soa/message/Message.html#canCarryBindingHeaders--">canCarryBindingHeaders</a>, <a href="../../../../com/soa/message/Message.html#canNormalize--">canNormalize</a>, <a href="../../../../com/soa/message/Message.html#copy--">copy</a>, <a href="../../../../com/soa/message/Message.html#getAttachments--">getAttachments</a>, <a href="../../../../com/soa/message/Message.html#getBindingURI--">getBindingURI</a>, <a href="../../../../com/soa/message/Message.html#getContent--">getContent</a>, <a href="../../../../com/soa/message/Message.html#getContentPartName--">getContentPartName</a>, <a href="../../../../com/soa/message/Message.html#getContentType--">getContentType</a>, <a href="../../../../com/soa/message/Message.html#getCorrelationID--">getCorrelationID</a>, <a href="../../../../com/soa/message/Message.html#getID--">getID</a>, <a href="../../../../com/soa/message/Message.html#getPart-java.lang.String-">getPart</a>, <a href="../../../../com/soa/message/Message.html#getPartNames--">getPartNames</a>, <a href="../../../../com/soa/message/Message.html#getParts--">getParts</a>, <a href="../../../../com/soa/message/Message.html#getProperties--">getProperties</a>, <a href="../../../../com/soa/message/Message.html#getProperty-java.lang.String-">getProperty</a>, <a href="../../../../com/soa/message/Message.html#getPropertyNames--">getPropertyNames</a>, <a href="../../../../com/soa/message/Message.html#getSecuritySubject--">getSecuritySubject</a>, <a href="../../../../com/soa/message/Message.html#getTransportHeaders--">getTransportHeaders</a>, <a href="../../../../com/soa/message/Message.html#isNormalized--">isNormalized</a>, <a href="../../../../com/soa/message/Message.html#normalize--">normalize</a>, <a href="../../../../com/soa/message/Message.html#normalizeCopy--">normalizeCopy</a>, <a href="../../../../com/soa/message/Message.html#normalizeCopyToXML--">normalizeCopyToXML</a>, <a href="../../../../com/soa/message/Message.html#normalizeToXML--">normalizeToXML</a>, <a href="../../../../com/soa/message/Message.html#setAttachments-com.soa.message.MessageAttachments-">setAttachments</a>, <a href="../../../../com/soa/message/Message.html#setContent-javax.xml.transform.Source-">setContent</a>, <a href="../../../../com/soa/message/Message.html#setContentPartName-java.lang.String-">setContentPartName</a>, <a href="../../../../com/soa/message/Message.html#setContentType-java.lang.String-">setContentType</a>, <a href="../../../../com/soa/message/Message.html#setCorrelationID-java.lang.String-">setCorrelationID</a>, <a href="../../../../com/soa/message/Message.html#setID-java.lang.String-">setID</a>, <a href="../../../../com/soa/message/Message.html#setProperties-java.util.Map-">setProperties</a>, <a href="../../../../com/soa/message/Message.html#setProperty-java.lang.String-java.lang.Object-">setProperty</a>, <a href="../../../../com/soa/message/Message.html#setSecuritySubject-javax.security.auth.Subject-">setSecuritySubject</a>, <a href="../../../../com/soa/message/Message.html#setTransportHeaders-com.soa.message.header.Headers-">setTransportHeaders</a></code></li>
 </ul>
 </li>
@@ -329,13 +329,13 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h2>Method Detail</h2>
+<h3>Method Detail</h3>
 <a name="isVersionKnown--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>isVersionKnown</h3>
+<h4>isVersionKnown</h4>
 <pre>boolean&nbsp;isVersionKnown()</pre>
 <div class="block">Returns whether the version of the message is known at this time. If
  the message has been configured with an entire envelope that hasn't
@@ -353,7 +353,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getVersion</h3>
+<h4>getVersion</h4>
 <pre><a href="../../../../com/soa/soap/message/SOAPVersion.html" title="interface in com.soa.soap.message">SOAPVersion</a>&nbsp;getVersion()
                 throws com.digev.fw.exception.GException</pre>
 <div class="block">Returns the SOAP version. If the version is unknown (see
@@ -371,7 +371,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setVersion</h3>
+<h4>setVersion</h4>
 <pre>void&nbsp;setVersion(<a href="../../../../com/soa/soap/message/SOAPVersion.html" title="interface in com.soa.soap.message">SOAPVersion</a>&nbsp;version)
          throws com.digev.fw.exception.GException</pre>
 <div class="block">Changes the version of the message. WARNING: this must only be
@@ -391,7 +391,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getBody</h3>
+<h4>getBody</h4>
 <pre><a href="../../../../com/soa/soap/message/SOAPElement.html" title="interface in com.soa.soap.message">SOAPElement</a>&nbsp;getBody()
              throws com.digev.fw.exception.GException</pre>
 <div class="block">Returns the body of the SOAP message.</div>
@@ -409,7 +409,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getBodyParts</h3>
+<h4>getBodyParts</h4>
 <pre>java.util.Iterator&nbsp;getBodyParts()
                          throws com.digev.fw.exception.GException</pre>
 <div class="block">Get the body parts of the message as an iterator across all SOAPElements
@@ -430,7 +430,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getBodyPartNames</h3>
+<h4>getBodyPartNames</h4>
 <pre><a href="../../../../com/soa/soap/message/SOAPPartsIterator.html" title="interface in com.soa.soap.message">SOAPPartsIterator</a>&nbsp;getBodyPartNames()
                             throws com.digev.fw.exception.GException</pre>
 <div class="block">Gets the names of the body parts of the message. Names are returned in
@@ -451,7 +451,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>createHeader</h3>
+<h4>createHeader</h4>
 <pre><a href="../../../../com/soa/soap/message/SOAPElement.html" title="interface in com.soa.soap.message">SOAPElement</a>&nbsp;createHeader(javax.xml.namespace.QName&nbsp;name)
                   throws com.digev.fw.exception.GException</pre>
 <div class="block">Creates an empty SOAP header holder that can be filled and then
@@ -473,7 +473,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>createHeader</h3>
+<h4>createHeader</h4>
 <pre><a href="../../../../com/soa/soap/message/SOAPElement.html" title="interface in com.soa.soap.message">SOAPElement</a>&nbsp;createHeader(javax.xml.namespace.QName&nbsp;name,
                          java.lang.String&nbsp;prefix)
                   throws com.digev.fw.exception.GException</pre>
@@ -498,7 +498,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>createHeader</h3>
+<h4>createHeader</h4>
 <pre><a href="../../../../com/soa/soap/message/SOAPElement.html" title="interface in com.soa.soap.message">SOAPElement</a>&nbsp;createHeader(org.w3c.dom.Element&nbsp;value)
                   throws com.digev.fw.exception.GException</pre>
 <div class="block">Inserts the given Element as a SOAP header.</div>
@@ -517,7 +517,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getHeader</h3>
+<h4>getHeader</h4>
 <pre><a href="../../../../com/soa/soap/message/SOAPElement.html" title="interface in com.soa.soap.message">SOAPElement</a>&nbsp;getHeader(javax.xml.namespace.QName&nbsp;name)
                throws com.digev.fw.exception.GException</pre>
 <div class="block">Returns the SOAP header with the given eleemnt QName.</div>
@@ -537,7 +537,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>removeHeader</h3>
+<h4>removeHeader</h4>
 <pre><a href="../../../../com/soa/soap/message/SOAPElement.html" title="interface in com.soa.soap.message">SOAPElement</a>&nbsp;removeHeader(javax.xml.namespace.QName&nbsp;name)
                   throws com.digev.fw.exception.GException</pre>
 <div class="block">Removes the SOAP header with the given QName.</div>
@@ -558,7 +558,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getHeaderNames</h3>
+<h4>getHeaderNames</h4>
 <pre>java.util.Set&nbsp;getHeaderNames()
                       throws com.digev.fw.exception.GException</pre>
 <div class="block">Returns the names of all SOAP headers.</div>
@@ -579,7 +579,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getTransportProperty</h3>
+<h4>getTransportProperty</h4>
 <pre>java.lang.Object&nbsp;getTransportProperty(java.lang.String&nbsp;propertyName)</pre>
 <div class="block">Returns the transport specific property with the given name.</div>
 <dl>
@@ -595,7 +595,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setTransportProperty</h3>
+<h4>setTransportProperty</h4>
 <pre>void&nbsp;setTransportProperty(java.lang.String&nbsp;propertyName,
                           java.lang.Object&nbsp;property)</pre>
 <div class="block">Associates a transport specific property with the message. All transport
@@ -614,7 +614,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setTransportProperties</h3>
+<h4>setTransportProperties</h4>
 <pre>void&nbsp;setTransportProperties(java.util.Map&nbsp;properties)</pre>
 <div class="block">Performs a one step replacement of transport properties. All transport
  properties added through this interface will also be available through
@@ -631,7 +631,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>hasChanged</h3>
+<h4>hasChanged</h4>
 <pre>boolean&nbsp;hasChanged()</pre>
 <div class="block">Returns whether the message has changed since it was constructed.</div>
 <dl>
@@ -645,7 +645,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getEnvelope</h3>
+<h4>getEnvelope</h4>
 <pre>javax.xml.transform.Source&nbsp;getEnvelope()
                                 throws com.digev.fw.exception.GException</pre>
 <div class="block">Returns a Source representation of the SOAP envelope. WARNING: Do not
@@ -665,7 +665,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setEnvelope</h3>
+<h4>setEnvelope</h4>
 <pre>void&nbsp;setEnvelope(javax.xml.transform.Source&nbsp;envelope)
           throws com.digev.fw.exception.GException</pre>
 <div class="block">Replaces the SOAP envelope entirely. Any modifications done through
@@ -690,7 +690,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setEnvelope</h3>
+<h4>setEnvelope</h4>
 <pre>void&nbsp;setEnvelope(javax.xml.transform.Source&nbsp;envelope,
                  <a href="../../../../com/soa/soap/message/SOAPVersion.html" title="interface in com.soa.soap.message">SOAPVersion</a>&nbsp;version)
           throws com.digev.fw.exception.GException</pre>
@@ -712,7 +712,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>isFault</h3>
+<h4>isFault</h4>
 <pre>boolean&nbsp;isFault()
          throws com.digev.fw.exception.GException</pre>
 <div class="block">Returns whether or not this SOAP message is a fault.</div>
@@ -732,7 +732,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setStyle</h3>
+<h4>setStyle</h4>
 <pre>void&nbsp;setStyle(java.lang.String&nbsp;style)</pre>
 <div class="block">Sets the encoding style, RPC or DOCUMENT, of the message.</div>
 <dl>
@@ -746,7 +746,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getStyle</h3>
+<h4>getStyle</h4>
 <pre>java.lang.String&nbsp;getStyle()</pre>
 <div class="block">Returns the encoding style, RPC or DOCUMENT, of the message.</div>
 <dl>
@@ -760,7 +760,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setMessageType</h3>
+<h4>setMessageType</h4>
 <pre>void&nbsp;setMessageType(javax.xml.namespace.QName&nbsp;messageType)</pre>
 <div class="block">Sets the QName of the schema type of the message. Used in RPC style
  messages.</div>
@@ -775,7 +775,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setPartNames</h3>
+<h4>setPartNames</h4>
 <pre>void&nbsp;setPartNames(java.util.List&lt;java.lang.String&gt;&nbsp;partNames)</pre>
 <div class="block">Sets the names of the parts in the message. Used in RPC style messages.</div>
 <dl>
@@ -789,7 +789,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getMessageType</h3>
+<h4>getMessageType</h4>
 <pre>javax.xml.namespace.QName&nbsp;getMessageType()</pre>
 <div class="block">Returns the QName of the schema type of the message. Used in RPC
  style messages.</div>
@@ -804,7 +804,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setMessageName</h3>
+<h4>setMessageName</h4>
 <pre>void&nbsp;setMessageName(java.lang.String&nbsp;messageName)</pre>
 <div class="block">Sets the name of the message in WSDL. Used in RPC style messages.</div>
 <dl>
@@ -818,7 +818,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getMessageName</h3>
+<h4>getMessageName</h4>
 <pre>java.lang.String&nbsp;getMessageName()</pre>
 <div class="block">Returns the name of the message in WSDL. Used in RPC style messages.</div>
 <dl>
@@ -832,7 +832,7 @@ extends <a href="../../../../com/soa/message/Message.html" title="interface in c
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>clone</h3>
+<h4>clone</h4>
 <pre>java.lang.Object&nbsp;clone()</pre>
 <div class="block">Performs a shallow copy of the SOAPMessage.</div>
 <dl>

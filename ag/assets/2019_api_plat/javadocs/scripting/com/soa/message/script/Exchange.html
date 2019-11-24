@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.message.script</div>
-<h1 title="Interface Exchange" class="title">Interface Exchange</h1>
+<h2 title="Interface Exchange" class="title">Interface Exchange</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -151,7 +151,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h2>Method Summary</h2>
+<h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -335,13 +335,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h2>Method Detail</h2>
+<h3>Method Detail</h3>
 <a name="getExchangeID--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getExchangeID</h3>
+<h4>getExchangeID</h4>
 <pre>java.lang.String&nbsp;getExchangeID()</pre>
 <div class="block">Returns a unique identifier for the exchange between the two parties.</div>
 <dl>
@@ -355,7 +355,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getProperty</h3>
+<h4>getProperty</h4>
 <pre>java.lang.Object&nbsp;getProperty(java.lang.String&nbsp;name)</pre>
 <div class="block">Returns the property with the given name.</div>
 <dl>
@@ -372,7 +372,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setProperty</h3>
+<h4>setProperty</h4>
 <pre>void&nbsp;setProperty(java.lang.String&nbsp;name,
                  java.lang.Object&nbsp;property)</pre>
 <div class="block">Adds or replaces a property.</div>
@@ -388,7 +388,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getPropertyNames</h3>
+<h4>getPropertyNames</h4>
 <pre>java.util.Set&nbsp;getPropertyNames()</pre>
 <div class="block">Returns the names of the properties associated with the context. Changes made to
  the Set are reflected in the context, so if a name is removed from the
@@ -405,7 +405,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getServiceName</h3>
+<h4>getServiceName</h4>
 <pre>javax.xml.namespace.QName&nbsp;getServiceName()</pre>
 <div class="block">Returns the name of the service being invoked.</div>
 <dl>
@@ -419,7 +419,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getEndpointName</h3>
+<h4>getEndpointName</h4>
 <pre>java.lang.String&nbsp;getEndpointName()</pre>
 <div class="block">Returns the name of the endpoint being called.</div>
 <dl>
@@ -433,7 +433,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getBinding</h3>
+<h4>getBinding</h4>
 <pre>java.lang.String&nbsp;getBinding()</pre>
 <div class="block">Returns a URI identifying the type of binding used in the exchange.
  This is typically the namespace of the WSDL binding extension.</div>
@@ -448,7 +448,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getInterfaceName</h3>
+<h4>getInterfaceName</h4>
 <pre>javax.xml.namespace.QName&nbsp;getInterfaceName()</pre>
 <div class="block">Returns the name of the interface being called.</div>
 <dl>
@@ -462,7 +462,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getOperationName</h3>
+<h4>getOperationName</h4>
 <pre>java.lang.String&nbsp;getOperationName()</pre>
 <div class="block">Returns the name of the operation being invoked.</div>
 <dl>
@@ -476,7 +476,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getStatus</h3>
+<h4>getStatus</h4>
 <pre>int&nbsp;getStatus()</pre>
 <div class="block">Returns the status of the exchange (0=ACTIVE, 1=DONE, 2=ERROR).</div>
 <dl>
@@ -490,7 +490,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getInMessage</h3>
+<h4>getInMessage</h4>
 <pre><a href="../../../../com/soa/message/script/Message.html" title="interface in com.soa.message.script">Message</a>&nbsp;getInMessage()</pre>
 <div class="block">Returns the in message that is part of the exchange (if any).</div>
 <dl>
@@ -505,7 +505,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getOutMessage</h3>
+<h4>getOutMessage</h4>
 <pre><a href="../../../../com/soa/message/script/Message.html" title="interface in com.soa.message.script">Message</a>&nbsp;getOutMessage()</pre>
 <div class="block">Returns the out message that is part of the exchange (if any).</div>
 <dl>
@@ -520,7 +520,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getFaultMessage</h3>
+<h4>getFaultMessage</h4>
 <pre><a href="../../../../com/soa/message/script/Message.html" title="interface in com.soa.message.script">Message</a>&nbsp;getFaultMessage()</pre>
 <div class="block">Returns the fault message that is part of the exchange (if any).</div>
 <dl>
@@ -535,7 +535,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getPattern</h3>
+<h4>getPattern</h4>
 <pre>java.lang.String&nbsp;getPattern()</pre>
 <div class="block">Returns the message exchange pattern to be used.</div>
 <dl>
@@ -549,7 +549,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>isAsync</h3>
+<h4>isAsync</h4>
 <pre>boolean&nbsp;isAsync()</pre>
 <div class="block">Returns whether the exchange should be completed asynchronously or not.</div>
 <dl>
@@ -563,7 +563,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setServiceName</h3>
+<h4>setServiceName</h4>
 <pre>void&nbsp;setServiceName(javax.xml.namespace.QName&nbsp;name)</pre>
 <div class="block">Changes the name of the service to invoke. This should only be used
  for exchanges that have not already begun.</div>
@@ -578,7 +578,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setServiceName</h3>
+<h4>setServiceName</h4>
 <pre>void&nbsp;setServiceName(java.lang.String&nbsp;name)</pre>
 <div class="block">Changes the name of the service to invoke. This should only be used
  for exchanges that have not already begun.</div>
@@ -593,7 +593,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setEndpointName</h3>
+<h4>setEndpointName</h4>
 <pre>void&nbsp;setEndpointName(java.lang.String&nbsp;name)</pre>
 <div class="block">Changes the name of the endpoint to invoke. This should only be used
  for exchanges that have not already begun.</div>
@@ -608,7 +608,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setInterfaceName</h3>
+<h4>setInterfaceName</h4>
 <pre>void&nbsp;setInterfaceName(javax.xml.namespace.QName&nbsp;name)</pre>
 <div class="block">Changes the name of the interface to call. This should only be used
  for exchanges that have not already begun.</div>
@@ -623,7 +623,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setInterfaceName</h3>
+<h4>setInterfaceName</h4>
 <pre>void&nbsp;setInterfaceName(java.lang.String&nbsp;name)</pre>
 <div class="block">Changes the name of the interface to call. This should only be used
  for exchanges that have not already begun.</div>
@@ -638,7 +638,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setOperationName</h3>
+<h4>setOperationName</h4>
 <pre>void&nbsp;setOperationName(java.lang.String&nbsp;name)</pre>
 <div class="block">Changes the name of the operation to invoke. This should only be used
  for exchanges that have not already begun.</div>
@@ -653,7 +653,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setInMessage</h3>
+<h4>setInMessage</h4>
 <pre>void&nbsp;setInMessage(<a href="../../../../com/soa/message/script/Message.html" title="interface in com.soa.message.script">Message</a>&nbsp;msg)
            throws com.digev.fw.exception.GException</pre>
 <div class="block">Changes the message used as input to the exchange.</div>
@@ -672,7 +672,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setOutMessage</h3>
+<h4>setOutMessage</h4>
 <pre>void&nbsp;setOutMessage(<a href="../../../../com/soa/message/script/Message.html" title="interface in com.soa.message.script">Message</a>&nbsp;msg)
             throws com.digev.fw.exception.GException</pre>
 <div class="block">Changes the message used as output from the exchange.</div>
@@ -691,7 +691,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setFaultMessage</h3>
+<h4>setFaultMessage</h4>
 <pre>void&nbsp;setFaultMessage(<a href="../../../../com/soa/message/script/Message.html" title="interface in com.soa.message.script">Message</a>&nbsp;msg)
               throws com.digev.fw.exception.GException</pre>
 <div class="block">Changes the message used as a fault from the exchange.</div>
@@ -710,7 +710,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>createInMessage</h3>
+<h4>createInMessage</h4>
 <pre><a href="../../../../com/soa/message/script/Message.html" title="interface in com.soa.message.script">Message</a>&nbsp;createInMessage()
                  throws com.digev.fw.exception.GException</pre>
 <div class="block">Create a new <a href="../../../../com/soa/message/script/Message.html" title="interface in com.soa.message.script"><code>Message</code></a> to be used as the input to the exchange.</div>
@@ -729,7 +729,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>createOutputMessage</h3>
+<h4>createOutputMessage</h4>
 <pre><a href="../../../../com/soa/message/script/Message.html" title="interface in com.soa.message.script">Message</a>&nbsp;createOutputMessage()
                      throws com.digev.fw.exception.GException</pre>
 <div class="block">Create a new <a href="../../../../com/soa/message/script/Message.html" title="interface in com.soa.message.script"><code>Message</code></a> to be used as the output from the exchange.</div>
@@ -748,7 +748,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>createFaultMessage</h3>
+<h4>createFaultMessage</h4>
 <pre><a href="../../../../com/soa/message/script/Message.html" title="interface in com.soa.message.script">Message</a>&nbsp;createFaultMessage()
                     throws com.digev.fw.exception.GException</pre>
 <div class="block">Create a new <a href="../../../../com/soa/message/script/Message.html" title="interface in com.soa.message.script"><code>Message</code></a> to be used as the fault for the exchange.</div>

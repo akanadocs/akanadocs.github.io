@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.message</div>
-<h1 title="Interface TransactedExchange" class="title">Interface TransactedExchange</h1>
+<h2 title="Interface TransactedExchange" class="title">Interface TransactedExchange</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h2>Method Summary</h2>
+<h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -205,13 +205,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h2>Method Detail</h2>
+<h3>Method Detail</h3>
 <a name="getExchangeId--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getExchangeId</h3>
+<h4>getExchangeId</h4>
 <pre>java.lang.String&nbsp;getExchangeId()</pre>
 <div class="block">Returns the message exchange ID.</div>
 <dl>
@@ -225,7 +225,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getParentExchange</h3>
+<h4>getParentExchange</h4>
 <pre><a href="../../../com/soa/message/TransactedExchange.html" title="interface in com.soa.message">TransactedExchange</a>&nbsp;getParentExchange()</pre>
 <div class="block">Returns the parent, or originating, exchange (if any).</div>
 <dl>
@@ -239,7 +239,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>addChildExchange</h3>
+<h4>addChildExchange</h4>
 <pre><a href="../../../com/soa/message/TransactedExchange.html" title="interface in com.soa.message">TransactedExchange</a>&nbsp;addChildExchange(java.lang.String&nbsp;exchangeId)</pre>
 <div class="block">Adds a message exchange to this exchange as a child.</div>
 <dl>
@@ -256,7 +256,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>addChildExchange</h3>
+<h4>addChildExchange</h4>
 <pre>void&nbsp;addChildExchange(<a href="../../../com/soa/message/TransactedExchange.html" title="interface in com.soa.message">TransactedExchange</a>&nbsp;transactedExchange)</pre>
 <div class="block">Adds a message exchange to this exchange as a child.</div>
 <dl>
@@ -271,7 +271,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getChildExchanges</h3>
+<h4>getChildExchanges</h4>
 <pre>java.util.List&lt;<a href="../../../com/soa/message/TransactedExchange.html" title="interface in com.soa.message">TransactedExchange</a>&gt;&nbsp;getChildExchanges()</pre>
 <div class="block">Returns the list of child exchanges.</div>
 <dl>
@@ -285,7 +285,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>isTransactionTrackingEnabled</h3>
+<h4>isTransactionTrackingEnabled</h4>
 <pre>boolean&nbsp;isTransactionTrackingEnabled()</pre>
 <div class="block">Returns whether or not transaction tracking is enabled.</div>
 <dl>
@@ -299,7 +299,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setIsTransactionTrackingEnabled</h3>
+<h4>setIsTransactionTrackingEnabled</h4>
 <pre>void&nbsp;setIsTransactionTrackingEnabled(boolean&nbsp;isTransactionTrackingEnabled)</pre>
 <div class="block">Changes whether or not transaction tracking is enabled.</div>
 <dl>
@@ -313,7 +313,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getProperty</h3>
+<h4>getProperty</h4>
 <pre>java.lang.Object&nbsp;getProperty(java.lang.String&nbsp;name)</pre>
 <div class="block">Returns the property with the given name.</div>
 <dl>
@@ -330,7 +330,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setProperty</h3>
+<h4>setProperty</h4>
 <pre>void&nbsp;setProperty(java.lang.String&nbsp;name,
                  java.lang.Object&nbsp;property)</pre>
 <div class="block">Adds or replaces a property.</div>
@@ -346,7 +346,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getPropertyNames</h3>
+<h4>getPropertyNames</h4>
 <pre>java.util.Set&nbsp;getPropertyNames()</pre>
 <div class="block">Returns the names of the properties associated with the exchange. Changes made to
  the Set are reflected in the exchange, so if a name is removed from the
@@ -363,7 +363,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>getProperties</h3>
+<h4>getProperties</h4>
 <pre>java.util.Map&nbsp;getProperties()</pre>
 <div class="block">Provides direct access to the Map of properties for the exchange.</div>
 <dl>

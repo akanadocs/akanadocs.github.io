@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.process.bpel.runtime.script</div>
-<h1 title="Interface ProcessContext" class="title">Interface ProcessContext</h1>
+<h2 title="Interface ProcessContext" class="title">Interface ProcessContext</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -166,7 +166,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h2>Method Summary</h2>
+<h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -289,13 +289,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h2>Method Detail</h2>
+<h3>Method Detail</h3>
 <a name="getProcessId--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getProcessId</h3>
+<h4>getProcessId</h4>
 <pre>java.lang.String&nbsp;getProcessId()</pre>
 <div class="block">Returns the unique ID of the running process that is executing the activity.</div>
 <dl>
@@ -309,7 +309,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getService</h3>
+<h4>getService</h4>
 <pre>javax.xml.namespace.QName&nbsp;getService()</pre>
 <div class="block">Returns the name of the service for which the activity is performed.</div>
 <dl>
@@ -323,7 +323,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getInterface</h3>
+<h4>getInterface</h4>
 <pre>javax.xml.namespace.QName&nbsp;getInterface()</pre>
 <div class="block">Returns the interface name of the service for which the activity is performed.</div>
 <dl>
@@ -337,7 +337,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getOperation</h3>
+<h4>getOperation</h4>
 <pre>java.lang.String&nbsp;getOperation()</pre>
 <div class="block">Returns the name of the operation for which the activity is performed.</div>
 <dl>
@@ -351,7 +351,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getCreatingExchange</h3>
+<h4>getCreatingExchange</h4>
 <pre><a href="../../../../../../com/soa/message/script/Exchange.html" title="interface in com.soa.message.script">Exchange</a>&nbsp;getCreatingExchange()</pre>
 <div class="block">Returns the message exchange implementing the operation invocation for which 
  the activity is performed. Note, if the activity would like to change the
@@ -370,7 +370,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getVariableNames</h3>
+<h4>getVariableNames</h4>
 <pre>java.util.List&lt;java.lang.String&gt;&nbsp;getVariableNames()</pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Please use <a href="../../../../../../com/soa/process/bpel/runtime/script/ProcessContext.html#getVarNames--"><code>getVarNames()</code></a> instead. 
  Returns the names of the variables in the context of the process. Changes to the list
@@ -387,7 +387,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getVarNames</h3>
+<h4>getVarNames</h4>
 <pre>java.lang.String[]&nbsp;getVarNames()</pre>
 <div class="block">Returns the names of the variables in the context of the process. Changes to the list
  will not result in changes to the real variables. New or removed variables after 
@@ -403,7 +403,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getVariable</h3>
+<h4>getVariable</h4>
 <pre>@MethodParameters(parameterNames="name")
 java.lang.Object&nbsp;getVariable(java.lang.String&nbsp;name)</pre>
 <div class="block">Returns the value of the variable with the given name.</div>
@@ -420,7 +420,7 @@ java.lang.Object&nbsp;getVariable(java.lang.String&nbsp;name)</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setVariable</h3>
+<h4>setVariable</h4>
 <pre>@MethodParameters(parameterNames={"name","value"})
 void&nbsp;setVariable(java.lang.String&nbsp;name,
                                                                     java.lang.Object&nbsp;value)
@@ -440,7 +440,7 @@ void&nbsp;setVariable(java.lang.String&nbsp;name,
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getSubjectCategories</h3>
+<h4>getSubjectCategories</h4>
 <pre>java.util.Set&lt;java.lang.String&gt;&nbsp;getSubjectCategories()</pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Please use <a href="../../../../../../com/soa/process/bpel/runtime/script/ProcessContext.html#getAuthSubjectCategories--"><code>getAuthSubjectCategories()</code></a> instead. 
  Returns the categories of subjects associated with the process.</span></div>
@@ -455,7 +455,7 @@ void&nbsp;setVariable(java.lang.String&nbsp;name,
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getAuthSubjectCategories</h3>
+<h4>getAuthSubjectCategories</h4>
 <pre>java.lang.String[]&nbsp;getAuthSubjectCategories()</pre>
 <div class="block">Returns the categories of subjects associated with the process.</div>
 <dl>
@@ -469,7 +469,7 @@ void&nbsp;setVariable(java.lang.String&nbsp;name,
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getSubject</h3>
+<h4>getSubject</h4>
 <pre>@MethodParameters(parameterNames="category")
 com.soa.security.script.Subject&nbsp;getSubject(java.lang.String&nbsp;category)</pre>
 <div class="block">Returns the Subject with the given subject category.</div>
@@ -486,7 +486,7 @@ com.soa.security.script.Subject&nbsp;getSubject(java.lang.String&nbsp;category)<
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>changeSubjectCategory</h3>
+<h4>changeSubjectCategory</h4>
 <pre>@MethodParameters(parameterNames={"oldCategory","newCategory"})
 void&nbsp;changeSubjectCategory(java.lang.String&nbsp;oldCategory,
                                                                                            java.lang.String&nbsp;newCategory)</pre>
@@ -503,7 +503,7 @@ void&nbsp;changeSubjectCategory(java.lang.String&nbsp;oldCategory,
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>throwFault</h3>
+<h4>throwFault</h4>
 <pre>@MethodParameters(parameterNames="faultName")
 void&nbsp;throwFault(java.lang.String&nbsp;faultName)
                                                        throws java.lang.Exception</pre>
@@ -522,7 +522,7 @@ void&nbsp;throwFault(java.lang.String&nbsp;faultName)
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>throwFault</h3>
+<h4>throwFault</h4>
 <pre>@MethodParameters(parameterNames={"faultName","fault"})
 void&nbsp;throwFault(java.lang.String&nbsp;faultName,
                                                                         java.lang.Object&nbsp;fault)

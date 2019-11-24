@@ -14,8 +14,8 @@
 		<div class='header'></div>
 		<div class=''>
 			<div class="info container-fluid">
-				<h1 class="info-title">Contract Management API</h1>
-				<h3 class="info-fullname light">{http://soa.com/uri/products/ContractsManager/wsdl/1.0}ContractAdminService</h3>
+				<h2 class="info-title">Contract Management API</h2>
+				<h4 class="info-fullname light">{http://soa.com/uri/products/ContractsManager/wsdl/1.0}ContractAdminService</h4>
 
 									<p>The API used to manage PM contracts</p>
 							</div>
@@ -25,21 +25,21 @@
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-1-details">
-						<h4>
+						<h5>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/contracts</span>
 							                             														<span class="pull-right">Fetch contracts for the given criteria.</span>
-													</h4>
+													</h5>
 					</div>
 
 					<div id="operation-1-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Fetch contracts based on given provider service or provider organization or consumer organization.</p>
-<h3>Request:</h3>
+<h4>Request:</h4>
 <pre><code>GET /rest/contracts?providerOrg=uddi:f005b0b2-1079-11e5-a330-a83ecc4e96f2  HTTP/1.1
 </code></pre>
-<h3>Response:</h3>
+<h4>Response:</h4>
 <pre><code>HTTP/1.1 200 OK
 Content-Type: application/xml
 
@@ -84,7 +84,7 @@ Content-Type: application/xml
 						</div>
 						
 												<div>
-							<h4>Parameters</h4>
+							<h5>Parameters</h5>
 							
 													</div>
 												
@@ -116,7 +116,7 @@ Content-Type: application/xml
 													</div>
 						
 												<div class="">
-							<h4>Reponse</h4>
+							<h5>Reponse</h5>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -237,18 +237,18 @@ Content-Type: application/xml
 				
 				<div class="POST operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-2-details">
-						<h4>
+						<h5>
 							<strong class="http-method">POST</strong>
 												            <span class="path">/contracts</span>
 							                             														<span class="pull-right">Create a contract</span>
-													</h4>
+													</h5>
 					</div>
 
 					<div id="operation-2-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Creates a contract in the given organization with given parameters.  Note that this operation accepts XML content only in order to accommodate attached policies.</p>
-<h3>Request:</h3>
+<h4>Request:</h4>
 <pre><code>POST /rest/contracts  HTTP/1.1
 Content-Type: application/xml
 
@@ -275,7 +275,7 @@ Content-Type: application/xml
     &lt;/ns5:AddContractContext&gt;
 &lt;/ns2:ContractSpec&gt;
 </code></pre>
-<h3>Response:</h3>
+<h4>Response:</h4>
 <pre><code>HTTP/1.1 201 Created
 Content-Type: application/xml
 Location: /rest/contracts/dfde5141-10b2-11e5-93d5-eb4e298f7990:1041
@@ -283,7 +283,7 @@ Location: /rest/contracts/dfde5141-10b2-11e5-93d5-eb4e298f7990:1041
 						</div>
 						
 												<div>
-							<h4>Parameters</h4>
+							<h5>Parameters</h5>
 							
 														<div class="row">
 								<div class="col-md-12">
@@ -619,7 +619,7 @@ Location: /rest/contracts/dfde5141-10b2-11e5-93d5-eb4e298f7990:1041
 													</div>
 						
 												<div class="">
-							<h4>Reponse</h4>
+							<h5>Reponse</h5>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -653,24 +653,24 @@ Location: /rest/contracts/dfde5141-10b2-11e5-93d5-eb4e298f7990:1041
 				
 				<div class="DELETE operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-3-details">
-						<h4>
+						<h5>
 							<strong class="http-method">DELETE</strong>
 												            <span class="path">/contracts/{key}</span>
 							                             														<span class="pull-right">Remove specified contract</span>
-													</h4>
+													</h5>
 					</div>
 
 					<div id="operation-3-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Remove the contract with given key.</p>
-<h3>Request:</h3>
+<h4>Request:</h4>
 <pre><code>DELETE /rest/contracts/dfde5141-10b2-11e5-93d5-eb4e298f7990:1041 HTTP/1.1
 </code></pre></h6>
 						</div>
 						
 												<div>
-							<h4>Parameters</h4>
+							<h5>Parameters</h5>
 							
 													</div>
 												
@@ -690,7 +690,7 @@ Location: /rest/contracts/dfde5141-10b2-11e5-93d5-eb4e298f7990:1041
 													</div>
 						
 												<div class="">
-							<h4>Reponse</h4>
+							<h5>Reponse</h5>
 
 							
 						</div>
@@ -713,21 +713,21 @@ Location: /rest/contracts/dfde5141-10b2-11e5-93d5-eb4e298f7990:1041
 				
 				<div class="GET operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-4-details">
-						<h4>
+						<h5>
 							<strong class="http-method">GET</strong>
 												            <span class="path">/contracts/{key}</span>
 							                             														<span class="pull-right">Get contract details.</span>
-													</h4>
+													</h5>
 					</div>
 
 					<div id="operation-4-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Get contract information based on given key along with policy information based on the include flag given. Note that this operation produces XML content only in order to accommodate attached policies.</p>
-<h3>Request:</h3>
+<h4>Request:</h4>
 <pre><code>GET /rest/contracts/d92830eb-1125-11e5-93d5-eb4e298f7990:1043?includepolicy=true HTTP/1.1
 </code></pre>
-<h3>Response:</h3>
+<h4>Response:</h4>
 <pre><code>HTTP/1.1 200 OK
 Content-Type: application/xml
 
@@ -774,7 +774,7 @@ Content-Type: application/xml
 						</div>
 						
 												<div>
-							<h4>Parameters</h4>
+							<h5>Parameters</h5>
 							
 													</div>
 												
@@ -800,7 +800,7 @@ Content-Type: application/xml
 													</div>
 						
 												<div class="">
-							<h4>Reponse</h4>
+							<h5>Reponse</h5>
 
 														<div class="row">
 								<div class="col-md-12">
@@ -1049,18 +1049,18 @@ Content-Type: application/xml
 				
 				<div class="PUT operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-5-details">
-						<h4>
+						<h5>
 							<strong class="http-method">PUT</strong>
 												            <span class="path">/contracts/{key}</span>
 							                             														<span class="pull-right">Update contract resource scope.</span>
-													</h4>
+													</h5>
 					</div>
 
 					<div id="operation-5-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Change the organization, container, service, operation of a given contract in effect changing the management of contract scope.</p>
-<h3>Request:</h3>
+<h4>Request:</h4>
 <pre><code>PUT /rest/contracts/9eaa8b14-10b5-11e5-93d5-eb4e298f7990:1042  HTTP/1.1
 Content-Type: application/xml
 
@@ -1076,13 +1076,13 @@ Content-Type: application/xml
     &lt;ns6:ContractKey&gt;9eaa8b14-10b5-11e5-93d5-eb4e298f7990:1042&lt;/ns6:ContractKey&gt;
 &lt;/ns2:ResourceSet&gt;
 </code></pre>
-<h3>Response:</h3>
+<h4>Response:</h4>
 <pre><code>HTTP/1.1 200 OK
 </code></pre></h6>
 						</div>
 						
 												<div>
-							<h4>Parameters</h4>
+							<h5>Parameters</h5>
 							
 														<div class="row">
 								<div class="col-md-12">
@@ -1188,7 +1188,7 @@ Content-Type: application/xml
 													</div>
 						
 												<div class="">
-							<h4>Reponse</h4>
+							<h5>Reponse</h5>
 
 							
 						</div>
@@ -1211,18 +1211,18 @@ Content-Type: application/xml
 				
 				<div class="PUT operation container-fluid">
 					<div class='operation-heading clickable row' data-target="operation-6-details">
-						<h4>
+						<h5>
 							<strong class="http-method">PUT</strong>
 												            <span class="path">/contracts/{key}/workflow</span>
 							                             														<span class="pull-right">Perform Workflow Action</span>
-													</h4>
+													</h5>
 					</div>
 
 					<div id="operation-6-details" class="container-fluid operation-detail" style="display: none">
 
 												<div class="row">
 							<h6><p>Performs a workflow action on the contract with the given key. The available workflow actions are based on the current workflow process in use for contracts in the system.</p>
-<h3>Request:</h3>
+<h4>Request:</h4>
 <pre><code>PUT /rest/contracts/d92830eb-1125-11e5-93d5-eb4e298f7990:1043/workflow HTTP/1.1
 Content-Type: application/json
 
@@ -1232,13 +1232,13 @@ Content-Type: application/json
     "UserName" : "jdoe"
 }
 </code></pre>
-<h3>Response:</h3>
+<h4>Response:</h4>
 <pre><code>HTTP/1.1 200 OK
 </code></pre></h6>
 						</div>
 						
 												<div>
-							<h4>Parameters</h4>
+							<h5>Parameters</h5>
 							
 														<div class="row">
 								<div class="col-md-12">

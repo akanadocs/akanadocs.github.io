@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.soap</div>
-<h1 title="Interface ISoapClient" class="title">Interface ISoapClient</h1>
+<h2 title="Interface ISoapClient" class="title">Interface ISoapClient</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -119,7 +119,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h2>Method Summary</h2>
+<h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -220,13 +220,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h2>Method Detail</h2>
+<h3>Method Detail</h3>
 <a name="invokeRequestReply-java.lang.String-java.lang.Object:A-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>invokeRequestReply</h3>
+<h4>invokeRequestReply</h4>
 <pre>java.lang.Object&nbsp;invokeRequestReply(java.lang.String&nbsp;operation,
                                     java.lang.Object[]&nbsp;parameters)
                              throws java.rmi.RemoteException</pre>
@@ -250,7 +250,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>createProxy</h3>
+<h4>createProxy</h4>
 <pre>java.lang.Object&nbsp;createProxy(java.lang.Class&nbsp;interfaceClass,
                              java.lang.ClassLoader&nbsp;classLoader)</pre>
 <div class="block">Creates a proxy interface of the specified class to use as a stub as an
@@ -271,7 +271,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>createProxy</h3>
+<h4>createProxy</h4>
 <pre>java.lang.Object&nbsp;createProxy(java.lang.Class&nbsp;interfaceClass)</pre>
 <div class="block">Creates a proxy interface of the specified class to use as a stub as an
  alternative to using the dynamic interface. The class must conform to
@@ -291,7 +291,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setInHeaders</h3>
+<h4>setInHeaders</h4>
 <pre>void&nbsp;setInHeaders(java.util.Map&nbsp;headers)</pre>
 <div class="block">Sets protocol headers that will be sent with subsequent invocations.
  The headers must be cleared in this interface to cease sending them
@@ -308,7 +308,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>clearInHeaders</h3>
+<h4>clearInHeaders</h4>
 <pre>void&nbsp;clearInHeaders()</pre>
 <div class="block">Clears the protocol headers being sent with subsequent invocations.</div>
 </li>
@@ -318,7 +318,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getOutHeaders</h3>
+<h4>getOutHeaders</h4>
 <pre>java.util.Map&nbsp;getOutHeaders()</pre>
 <div class="block">Returns the protocol headers included in the response of the last 
  invocation.</div>
@@ -334,7 +334,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setInAttachments</h3>
+<h4>setInAttachments</h4>
 <pre>void&nbsp;setInAttachments(java.util.Map&nbsp;attachments)</pre>
 <div class="block">Sets attachments that will be sent with subsequent invocations.
  The attachments must be cleared in this interface to cease sending them
@@ -351,7 +351,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getOutAttachments</h3>
+<h4>getOutAttachments</h4>
 <pre>java.util.Map&nbsp;getOutAttachments()</pre>
 <div class="block">Returns the attachments included in the response of the last 
  invocation.</div>
@@ -367,7 +367,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>clearInAttachments</h3>
+<h4>clearInAttachments</h4>
 <pre>void&nbsp;clearInAttachments()</pre>
 <div class="block">Clears the attachments being sent with subsequent invocations.</div>
 </li>
@@ -377,7 +377,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setSecuritySubjects</h3>
+<h4>setSecuritySubjects</h4>
 <pre>void&nbsp;setSecuritySubjects(java.util.Map&nbsp;subjects)</pre>
 <div class="block">Sets the security subjects associated with subsequent invocations.
  The subjects must be cleared in this interface to cease sending them
@@ -395,7 +395,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>clearSecuritySubjects</h3>
+<h4>clearSecuritySubjects</h4>
 <pre>void&nbsp;clearSecuritySubjects()</pre>
 <div class="block">Clears the security subjects being sent with subsequent invocations.</div>
 </li>
@@ -405,7 +405,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>setConvertCase</h3>
+<h4>setConvertCase</h4>
 <pre>void&nbsp;setConvertCase(boolean&nbsp;convertCase)</pre>
 <div class="block">Typically Java operation names are lower case and WSDL operations are
  upper case. This requires a case conversion to take place for the 

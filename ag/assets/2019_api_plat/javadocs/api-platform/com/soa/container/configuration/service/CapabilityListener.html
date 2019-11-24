@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.container.configuration.service</div>
-<h1 title="Interface CapabilityListener" class="title">Interface CapabilityListener</h1>
+<h2 title="Interface CapabilityListener" class="title">Interface CapabilityListener</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -115,7 +115,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h2>Method Summary</h2>
+<h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -166,13 +166,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h2>Method Detail</h2>
+<h3>Method Detail</h3>
 <a name="setConfigContext-com.soa.container.configuration.service.ContainerConfigContext-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setConfigContext</h3>
+<h4>setConfigContext</h4>
 <pre>void&nbsp;setConfigContext(com.soa.container.configuration.service.ContainerConfigContext&nbsp;context)</pre>
 </li>
 </ul>
@@ -181,7 +181,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getInterestedCapabilities</h3>
+<h4>getInterestedCapabilities</h4>
 <pre>java.lang.String[]&nbsp;getInterestedCapabilities()</pre>
 <div class="block">Returns the capabilities this listener wants to be notified about.</div>
 <dl>
@@ -196,7 +196,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>capabilityUpdated</h3>
+<h4>capabilityUpdated</h4>
 <pre>boolean&nbsp;capabilityUpdated(<a href="../../../../../com/soa/container/configuration/model/CapabilityConfiguration.html" title="class in com.soa.container.configuration.model">CapabilityConfiguration</a>&nbsp;capability)
                    throws com.digev.fw.exception.GException</pre>
 <div class="block">Indicates a capability has changed.</div>
@@ -224,7 +224,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>retry</h3>
+<h4>retry</h4>
 <pre>boolean&nbsp;retry()</pre>
 <div class="block">Triggers a configuration retry if the listener previously returned
  false when updating it's configuration.</div>
@@ -241,7 +241,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>rollback</h3>
+<h4>rollback</h4>
 <pre>void&nbsp;rollback(long&nbsp;rollbackTo)</pre>
 <div class="block">Indicates the capability configuration will be rolled back to the
  specified date. Therefore the next time capabilityUpdated will be called

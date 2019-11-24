@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.json.xml</div>
-<h1 title="Class Xml2JSONSerializer" class="title">Class Xml2JSONSerializer</h1>
+<h2 title="Class Xml2JSONSerializer" class="title">Class Xml2JSONSerializer</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -123,7 +123,7 @@ extends java.lang.Object</pre>
 <li class="blockList"><a name="constructor.summary">
 <!--   -->
 </a>
-<h2>Constructor Summary</h2>
+<h3>Constructor Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
 <caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
@@ -140,7 +140,7 @@ extends java.lang.Object</pre>
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h2>Method Summary</h2>
+<h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -202,7 +202,7 @@ extends java.lang.Object</pre>
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h2>Methods inherited from class&nbsp;java.lang.Object</h2>
+<h3>Methods inherited from class&nbsp;java.lang.Object</h3>
 <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
 </ul>
 </li>
@@ -218,13 +218,13 @@ extends java.lang.Object</pre>
 <li class="blockList"><a name="constructor.detail">
 <!--   -->
 </a>
-<h2>Constructor Detail</h2>
+<h3>Constructor Detail</h3>
 <a name="Xml2JSONSerializer--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>Xml2JSONSerializer</h3>
+<h4>Xml2JSONSerializer</h4>
 <pre>public&nbsp;Xml2JSONSerializer()</pre>
 </li>
 </ul>
@@ -235,13 +235,13 @@ extends java.lang.Object</pre>
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h2>Method Detail</h2>
+<h3>Method Detail</h3>
 <a name="serialize-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>serialize</h3>
+<h4>serialize</h4>
 <pre>public&nbsp;java.lang.String&nbsp;serialize(java.lang.String&nbsp;xml)</pre>
 <div class="block">Converts an XML string to a JSON string.</div>
 <dl>
@@ -257,7 +257,7 @@ extends java.lang.Object</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>serialize</h3>
+<h4>serialize</h4>
 <pre>public&nbsp;void&nbsp;serialize(java.lang.String&nbsp;xml,
                       java.io.Writer&nbsp;out)
                throws java.io.IOException</pre>
@@ -275,7 +275,7 @@ extends java.lang.Object</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setRemoveNamespacePrefixes</h3>
+<h4>setRemoveNamespacePrefixes</h4>
 <pre>public&nbsp;void&nbsp;setRemoveNamespacePrefixes(boolean&nbsp;remove)</pre>
 <div class="block">Indicates whether namespace prefixes in XML element names should be
  removed when generating JSON names or not. The default is false.</div>
@@ -290,7 +290,7 @@ extends java.lang.Object</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setIgnoreNamespaces</h3>
+<h4>setIgnoreNamespaces</h4>
 <pre>public&nbsp;void&nbsp;setIgnoreNamespaces(boolean&nbsp;ignore)</pre>
 <div class="block">Indicates whether namespace declarations should be converted to 
  JSON attributes or not (ignored entirely). The default is false.</div>
@@ -306,7 +306,7 @@ extends java.lang.Object</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setForceTopLevelObject</h3>
+<h4>setForceTopLevelObject</h4>
 <pre>public&nbsp;void&nbsp;setForceTopLevelObject(boolean&nbsp;force)</pre>
 <div class="block">Indicates whether the root XML element should be a named JSON object
  inside an outer set of {}'s or treated anonymously as the root JSON
@@ -325,7 +325,7 @@ extends java.lang.Object</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setArrayElements</h3>
+<h4>setArrayElements</h4>
 <pre>public&nbsp;void&nbsp;setArrayElements(javax.xml.namespace.QName[]&nbsp;elements)</pre>
 <div class="block">Without direction JSON arrays are found by inspecting an XML element's
  children to see if there are more than one and if they are the same
@@ -346,7 +346,7 @@ extends java.lang.Object</pre>
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>setCreateArrayObjects</h3>
+<h4>setCreateArrayObjects</h4>
 <pre>public&nbsp;void&nbsp;setCreateArrayObjects(boolean&nbsp;createArrayObjects)</pre>
 <div class="block">Sets whether an outer JSON object using the name of the XML elements used as the 
  array contents should be created. For example if the input XML is 

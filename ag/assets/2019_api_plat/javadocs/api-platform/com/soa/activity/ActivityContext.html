@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.activity</div>
-<h1 title="Interface ActivityContext" class="title">Interface ActivityContext</h1>
+<h2 title="Interface ActivityContext" class="title">Interface ActivityContext</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -114,7 +114,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h2>Method Summary</h2>
+<h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -234,13 +234,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h2>Method Detail</h2>
+<h3>Method Detail</h3>
 <a name="getActivityName--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getActivityName</h3>
+<h4>getActivityName</h4>
 <pre>java.lang.String&nbsp;getActivityName()</pre>
 <div class="block">Returns the name of the activity.</div>
 <dl>
@@ -254,7 +254,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getProcessId</h3>
+<h4>getProcessId</h4>
 <pre>java.lang.String&nbsp;getProcessId()</pre>
 <div class="block">Returns the unique ID of the running process that is executing the activity.</div>
 <dl>
@@ -268,7 +268,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getService</h3>
+<h4>getService</h4>
 <pre>javax.xml.namespace.QName&nbsp;getService()</pre>
 <div class="block">Returns the name of the service for which the activity is performed.</div>
 <dl>
@@ -282,7 +282,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getInterface</h3>
+<h4>getInterface</h4>
 <pre>javax.xml.namespace.QName&nbsp;getInterface()</pre>
 <div class="block">Returns the interface name of the service for which the activity is performed.</div>
 <dl>
@@ -296,7 +296,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getOperation</h3>
+<h4>getOperation</h4>
 <pre>java.lang.String&nbsp;getOperation()</pre>
 <div class="block">Returns the name of the operation for which the activity is performed.</div>
 <dl>
@@ -310,7 +310,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getCreatingExchange</h3>
+<h4>getCreatingExchange</h4>
 <pre><a href="../../../com/soa/message/Exchange.html" title="interface in com.soa.message">Exchange</a>&nbsp;getCreatingExchange()</pre>
 <div class="block">Returns the message exchange implementing the operation invocation for which 
  the activity is performed. Note, if the activity would like to change the
@@ -329,7 +329,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getMessage</h3>
+<h4>getMessage</h4>
 <pre><a href="../../../com/soa/message/Message.html" title="interface in com.soa.message">Message</a>&nbsp;getMessage()</pre>
 <div class="block">Returns the message that is the subject of the activity. Depending on where in
  the process the activity is being performed it may be the input message of
@@ -346,7 +346,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getVariableNames</h3>
+<h4>getVariableNames</h4>
 <pre>java.util.List&lt;java.lang.String&gt;&nbsp;getVariableNames()</pre>
 <div class="block">Returns the names of the variables in the context of the process. Changes to the list
  will not result in changes to the real variables. New or removed variables after 
@@ -362,7 +362,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getVariable</h3>
+<h4>getVariable</h4>
 <pre>java.lang.Object&nbsp;getVariable(java.lang.String&nbsp;name)</pre>
 <div class="block">Returns the value of the variable with the given name.</div>
 <dl>
@@ -378,7 +378,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setVariable</h3>
+<h4>setVariable</h4>
 <pre>void&nbsp;setVariable(java.lang.String&nbsp;name,
                  java.lang.Object&nbsp;value)</pre>
 <div class="block">Adds or changes the value of the variable with the given name.</div>
@@ -394,7 +394,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getSubjectCategories</h3>
+<h4>getSubjectCategories</h4>
 <pre>java.util.Set&lt;java.lang.String&gt;&nbsp;getSubjectCategories()</pre>
 <div class="block">Returns the categories of subjects associated with the process.</div>
 <dl>
@@ -408,7 +408,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getSubject</h3>
+<h4>getSubject</h4>
 <pre>javax.security.auth.Subject&nbsp;getSubject(java.lang.String&nbsp;category)</pre>
 <div class="block">Returns the Subject with the given subject category.</div>
 <dl>
@@ -424,7 +424,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setSubject</h3>
+<h4>setSubject</h4>
 <pre>void&nbsp;setSubject(java.lang.String&nbsp;category,
                 javax.security.auth.Subject&nbsp;subject)</pre>
 <div class="block">Adds or replaces the Subject with the given subject category.</div>
@@ -440,7 +440,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setFault</h3>
+<h4>setFault</h4>
 <pre>void&nbsp;setFault(<a href="../../../com/soa/message/Message.html" title="interface in com.soa.message">Message</a>&nbsp;fault)</pre>
 <div class="block">Changes the fault message returned by an activity (if any).</div>
 <dl>
@@ -455,7 +455,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setFaultName</h3>
+<h4>setFaultName</h4>
 <pre>void&nbsp;setFaultName(java.lang.String&nbsp;faultName)</pre>
 <div class="block">Changes the name of the fault message returned by an activity (if any).</div>
 <dl>
@@ -469,7 +469,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>getAuditLogger</h3>
+<h4>getAuditLogger</h4>
 <pre>com.soa.log.Logger&nbsp;getAuditLogger()</pre>
 <div class="block">Provides audit logging capabilities. This is different than the system logging capabilities
  provided by <code>Logger</code>. The audit log statements are governed by and viewed

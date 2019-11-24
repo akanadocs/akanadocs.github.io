@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.policy.wspolicy</div>
-<h1 title="Class ReflectionAssertionMarshaller" class="title">Class ReflectionAssertionMarshaller</h1>
+<h2 title="Class ReflectionAssertionMarshaller" class="title">Class ReflectionAssertionMarshaller</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -131,7 +131,7 @@ implements <a href="../../../../com/soa/policy/wspolicy/AssertionMarshaller.html
 <li class="blockList"><a name="constructor.summary">
 <!--   -->
 </a>
-<h2>Constructor Summary</h2>
+<h3>Constructor Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
 <caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
@@ -148,7 +148,7 @@ implements <a href="../../../../com/soa/policy/wspolicy/AssertionMarshaller.html
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h2>Method Summary</h2>
+<h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -197,7 +197,7 @@ implements <a href="../../../../com/soa/policy/wspolicy/AssertionMarshaller.html
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h2>Methods inherited from class&nbsp;java.lang.Object</h2>
+<h3>Methods inherited from class&nbsp;java.lang.Object</h3>
 <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
 </ul>
 </li>
@@ -213,13 +213,13 @@ implements <a href="../../../../com/soa/policy/wspolicy/AssertionMarshaller.html
 <li class="blockList"><a name="constructor.detail">
 <!--   -->
 </a>
-<h2>Constructor Detail</h2>
+<h3>Constructor Detail</h3>
 <a name="ReflectionAssertionMarshaller--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>ReflectionAssertionMarshaller</h3>
+<h4>ReflectionAssertionMarshaller</h4>
 <pre>public&nbsp;ReflectionAssertionMarshaller()</pre>
 </li>
 </ul>
@@ -230,13 +230,13 @@ implements <a href="../../../../com/soa/policy/wspolicy/AssertionMarshaller.html
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h2>Method Detail</h2>
+<h3>Method Detail</h3>
 <a name="setBindings-java.util.Map-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setBindings</h3>
+<h4>setBindings</h4>
 <pre>public&nbsp;void&nbsp;setBindings(java.util.Map&lt;javax.xml.namespace.QName,java.lang.String&gt;&nbsp;bindings)</pre>
 <div class="block">Sets the bindings, or mappings, of Java Assertion implementations to
  QNames.</div>
@@ -252,7 +252,7 @@ implements <a href="../../../../com/soa/policy/wspolicy/AssertionMarshaller.html
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>getSupportedAssertions</h3>
+<h4>getSupportedAssertions</h4>
 <pre>public&nbsp;javax.xml.namespace.QName[]&nbsp;getSupportedAssertions()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/soa/policy/wspolicy/AssertionMarshaller.html#getSupportedAssertions--">AssertionMarshaller</a></code></span></div>
 <div class="block">Returns an array of QNames, each representing the name of an assertion
@@ -271,7 +271,7 @@ implements <a href="../../../../com/soa/policy/wspolicy/AssertionMarshaller.html
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>marshal</h3>
+<h4>marshal</h4>
 <pre>public&nbsp;void&nbsp;marshal(<a href="../../../../com/soa/policy/wspolicy/Assertion.html" title="interface in com.soa.policy.wspolicy">Assertion</a>&nbsp;assertion,
                     org.w3c.dom.Element&nbsp;element)
              throws com.digev.fw.exception.GException</pre>
@@ -306,7 +306,7 @@ implements <a href="../../../../com/soa/policy/wspolicy/AssertionMarshaller.html
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>unmarshal</h3>
+<h4>unmarshal</h4>
 <pre>public&nbsp;<a href="../../../../com/soa/policy/wspolicy/Assertion.html" title="interface in com.soa.policy.wspolicy">Assertion</a>&nbsp;unmarshal(org.w3c.dom.Element&nbsp;element)
                     throws com.digev.fw.exception.GException</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/soa/policy/wspolicy/AssertionMarshaller.html#unmarshal-org.w3c.dom.Element-">AssertionMarshaller</a></code></span></div>
@@ -341,7 +341,7 @@ implements <a href="../../../../com/soa/policy/wspolicy/AssertionMarshaller.html
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>unmarshal</h3>
+<h4>unmarshal</h4>
 <pre>public&nbsp;<a href="../../../../com/soa/policy/wspolicy/Assertion.html" title="interface in com.soa.policy.wspolicy">Assertion</a>&nbsp;unmarshal(org.w3c.dom.Element&nbsp;element,
                            <a href="../../../../com/soa/policy/wspolicy/Policy.html" title="class in com.soa.policy.wspolicy">Policy</a>&nbsp;subPolicy)
                     throws com.digev.fw.exception.GException</pre>

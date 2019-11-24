@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.policy.wspolicy.handler</div>
-<h1 title="Class WSPHandlerChainFactory" class="title">Class WSPHandlerChainFactory</h1>
+<h2 title="Class WSPHandlerChainFactory" class="title">Class WSPHandlerChainFactory</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -129,7 +129,7 @@ extends java.lang.Object</pre>
 <li class="blockList"><a name="field.summary">
 <!--   -->
 </a>
-<h2>Field Summary</h2>
+<h3>Field Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
 <caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
@@ -152,7 +152,7 @@ extends java.lang.Object</pre>
 <li class="blockList"><a name="constructor.summary">
 <!--   -->
 </a>
-<h2>Constructor Summary</h2>
+<h3>Constructor Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
 <caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
@@ -171,7 +171,7 @@ extends java.lang.Object</pre>
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h2>Method Summary</h2>
+<h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -212,7 +212,7 @@ extends java.lang.Object</pre>
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h2>Methods inherited from class&nbsp;java.lang.Object</h2>
+<h3>Methods inherited from class&nbsp;java.lang.Object</h3>
 <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
 </ul>
 </li>
@@ -228,13 +228,13 @@ extends java.lang.Object</pre>
 <li class="blockList"><a name="field.detail">
 <!--   -->
 </a>
-<h2>Field Detail</h2>
+<h3>Field Detail</h3>
 <a name="EFFECTIVE_POLICY_PROP">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>EFFECTIVE_POLICY_PROP</h3>
+<h4>EFFECTIVE_POLICY_PROP</h4>
 <pre>public static final&nbsp;java.lang.String EFFECTIVE_POLICY_PROP</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -247,7 +247,7 @@ extends java.lang.Object</pre>
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>POLICY_MARSHALLER_PROP</h3>
+<h4>POLICY_MARSHALLER_PROP</h4>
 <pre>public static final&nbsp;java.lang.String POLICY_MARSHALLER_PROP</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -262,13 +262,13 @@ extends java.lang.Object</pre>
 <li class="blockList"><a name="constructor.detail">
 <!--   -->
 </a>
-<h2>Constructor Detail</h2>
+<h3>Constructor Detail</h3>
 <a name="WSPHandlerChainFactory-com.soa.collection.PartialOrderComparator-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>WSPHandlerChainFactory</h3>
+<h4>WSPHandlerChainFactory</h4>
 <pre>public&nbsp;WSPHandlerChainFactory(com.soa.collection.PartialOrderComparator&lt;<a href="../../../../../com/soa/policy/wspolicy/handler/WSPHandlerFactory.html" title="interface in com.soa.policy.wspolicy.handler">WSPHandlerFactory</a>&gt;&nbsp;c)</pre>
 <div class="block">Configures a comparator to be used for sorting handler factories. The order
  of the factories dictates the order of the handlers put in the
@@ -286,13 +286,13 @@ extends java.lang.Object</pre>
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h2>Method Detail</h2>
+<h3>Method Detail</h3>
 <a name="create-com.soa.message.handler.HandlerContext-com.soa.message.handler.HandlerRole-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>create</h3>
+<h4>create</h4>
 <pre>public&nbsp;<a href="../../../../../com/soa/message/handler/MessageHandler.html" title="interface in com.soa.message.handler">MessageHandler</a>&nbsp;create(<a href="../../../../../com/soa/message/handler/HandlerContext.html" title="interface in com.soa.message.handler">HandlerContext</a>&nbsp;context,
                              <a href="../../../../../com/soa/message/handler/HandlerRole.html" title="class in com.soa.message.handler">HandlerRole</a>&nbsp;role)
                       throws com.digev.fw.exception.GException</pre>
@@ -319,7 +319,7 @@ extends java.lang.Object</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>clear</h3>
+<h4>clear</h4>
 <pre>public&nbsp;void&nbsp;clear()</pre>
 <div class="block">Breaks the association between this factory and the MessageHandler
  created by the factory. This will cause the handler to no longer be
@@ -331,7 +331,7 @@ extends java.lang.Object</pre>
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>factoryAdded</h3>
+<h4>factoryAdded</h4>
 <pre>public&nbsp;void&nbsp;factoryAdded(<a href="../../../../../com/soa/policy/wspolicy/handler/WSPHandlerFactory.html" title="interface in com.soa.policy.wspolicy.handler">WSPHandlerFactory</a>&nbsp;factory,
                          java.util.Map&lt;java.lang.String,java.lang.Object&gt;&nbsp;properties)
                   throws com.digev.fw.exception.GException</pre>
@@ -353,7 +353,7 @@ extends java.lang.Object</pre>
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>factoryRemoved</h3>
+<h4>factoryRemoved</h4>
 <pre>public&nbsp;void&nbsp;factoryRemoved(<a href="../../../../../com/soa/policy/wspolicy/handler/WSPHandlerFactory.html" title="interface in com.soa.policy.wspolicy.handler">WSPHandlerFactory</a>&nbsp;factory,
                            java.util.Map&lt;java.lang.String,java.lang.Object&gt;&nbsp;properties)</pre>
 <div class="block">Removes a factory from the chain factory. All chains created by this factory

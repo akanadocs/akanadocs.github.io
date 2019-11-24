@@ -87,7 +87,7 @@
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.message</div>
-<h1 title="Interface MessageProperties" class="title">Interface MessageProperties</h1>
+<h2 title="Interface MessageProperties" class="title">Interface MessageProperties</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -116,7 +116,7 @@
 <li class="blockList"><a name="field.summary">
 <!--   -->
 </a>
-<h2>Field Summary</h2>
+<h3>Field Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
 <caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
@@ -247,13 +247,13 @@
 <li class="blockList"><a name="field.detail">
 <!--   -->
 </a>
-<h2>Field Detail</h2>
+<h3>Field Detail</h3>
 <a name="BINDING_FAULT_ID">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>BINDING_FAULT_ID</h3>
+<h4>BINDING_FAULT_ID</h4>
 <pre>static final&nbsp;java.lang.String BINDING_FAULT_ID</pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Fault identifier can be found using <a href="../../../com/soa/message/MessageProperties.html#FAULT_CODE"><code>FAULT_CODE</code></a>.</span></div>
 <div class="block">Binding specific fault identifier (if any).</div>
@@ -268,7 +268,7 @@
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>BINDING_FAULT_MSG</h3>
+<h4>BINDING_FAULT_MSG</h4>
 <pre>static final&nbsp;java.lang.String BINDING_FAULT_MSG</pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Fault message can be found using <a href="../../../com/soa/message/MessageProperties.html#FAULT_STRING"><code>FAULT_STRING</code></a>.</span></div>
 <div class="block">Binding specific fault message (if any).</div>
@@ -283,7 +283,7 @@
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>CONTENT_TYPE</h3>
+<h4>CONTENT_TYPE</h4>
 <pre>static final&nbsp;java.lang.String CONTENT_TYPE</pre>
 <div class="block">The Message has no standard way to hold a mime content type.  This property
  is used to hold the value as a String (with any parameters concatenated if necessary).  
@@ -300,7 +300,7 @@
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>TRANSPORT_HEADERS</h3>
+<h4>TRANSPORT_HEADERS</h4>
 <pre>static final&nbsp;java.lang.String TRANSPORT_HEADERS</pre>
 <div class="block">The Message property that holds the transport headers. The value of the property is  
  an instance of <a href="../../../com/soa/message/header/Headers.html" title="interface in com.soa.message.header"><code>Headers</code></a>.</div>
@@ -315,7 +315,7 @@
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>TRANSPORT_PARAMETERS</h3>
+<h4>TRANSPORT_PARAMETERS</h4>
 <pre>static final&nbsp;java.lang.String TRANSPORT_PARAMETERS</pre>
 <div class="block">The Message property that holds the incoming transport (form and query) parameters. The 
  value of the property is a Map with Strings for keys and a String[] values since 
@@ -332,7 +332,7 @@
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>BINDING_HEADERS</h3>
+<h4>BINDING_HEADERS</h4>
 <pre>static final&nbsp;java.lang.String BINDING_HEADERS</pre>
 <div class="block">The property that holds the protocol headers if the message is normalized.  The
  value of the property is a Map but the Map values are protocol-dependant.  In the case of SOAP the
@@ -348,7 +348,7 @@
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>TRANSPORT_QUERY</h3>
+<h4>TRANSPORT_QUERY</h4>
 <pre>static final&nbsp;java.lang.String TRANSPORT_QUERY</pre>
 <div class="block">The Message property that holds the transport query string, if any.  The value is an 
  ENCODED string which has all special characters escaped as per RFC 2396.</div>
@@ -363,7 +363,7 @@
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>TRANSPORT_QUERY_MAP</h3>
+<h4>TRANSPORT_QUERY_MAP</h4>
 <pre>static final&nbsp;java.lang.String TRANSPORT_QUERY_MAP</pre>
 <div class="block">The Message property that holds the transport query as a Map<String,String[]>, if any.  This
  is only used on the outgoing (client) side.  The transport will automatically convert
@@ -380,7 +380,7 @@
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>TRANSPORT_STREAM</h3>
+<h4>TRANSPORT_STREAM</h4>
 <pre>static final&nbsp;java.lang.String TRANSPORT_STREAM</pre>
 <div class="block">The Message property that holds the transport stream as an InputStream, if available.</div>
 <dl>
@@ -394,7 +394,7 @@
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>SECURITY_SUBJECTS</h3>
+<h4>SECURITY_SUBJECTS</h4>
 <pre>static final&nbsp;java.lang.String SECURITY_SUBJECTS</pre>
 <div class="block">The Message property that holds a Map of all JAAS security subjects associated
  with the message keyed by subject category (String).</div>
@@ -409,7 +409,7 @@
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>PROTOCOL_TYPE</h3>
+<h4>PROTOCOL_TYPE</h4>
 <pre>static final&nbsp;java.lang.String PROTOCOL_TYPE</pre>
 <div class="block">The Message property that holds the protocol binding type.  The value will 
  be one of the URIs defined in the WSDL 2.0 spec.</div>
@@ -425,7 +425,7 @@
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>PRE_CONFIGURED</h3>
+<h4>PRE_CONFIGURED</h4>
 <pre>static final&nbsp;java.lang.String PRE_CONFIGURED</pre>
 <div class="block">Boolean property that, when true, indicates that the message has been pre-configured
  with binding information (headers and properties).</div>
@@ -440,7 +440,7 @@
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>FAULT_NAME</h3>
+<h4>FAULT_NAME</h4>
 <pre>static final&nbsp;java.lang.String FAULT_NAME</pre>
 <div class="block">The message property that holds the WSDL name of the fault in a message (String)</div>
 <dl>
@@ -454,7 +454,7 @@
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>BINDING_FAULT</h3>
+<h4>BINDING_FAULT</h4>
 <pre>static final&nbsp;java.lang.String BINDING_FAULT</pre>
 <div class="block">The message property value for property FAULT_NAME that indicates that
  the fault has no name because it is not an application fault but a
@@ -470,7 +470,7 @@
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>FAULT_CODE</h3>
+<h4>FAULT_CODE</h4>
 <pre>static final&nbsp;java.lang.String FAULT_CODE</pre>
 <div class="block">The message property that holds the QName of the fault code of a fault.
  (QName)</div>
@@ -485,7 +485,7 @@
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>FAULT_STRING</h3>
+<h4>FAULT_STRING</h4>
 <pre>static final&nbsp;java.lang.String FAULT_STRING</pre>
 <div class="block">The message property that holds the string of a fault.
  (String)</div>
@@ -500,7 +500,7 @@
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>MESSAGE_SIZE</h3>
+<h4>MESSAGE_SIZE</h4>
 <pre>static final&nbsp;java.lang.String MESSAGE_SIZE</pre>
 <div class="block">A Message property that can be used to report the size of the Message. The size
  may not have been calculated previously and the property would be null. It is 

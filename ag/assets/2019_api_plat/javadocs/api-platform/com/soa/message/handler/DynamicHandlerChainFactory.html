@@ -93,7 +93,7 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.soa.message.handler</div>
-<h1 title="Class DynamicHandlerChainFactory" class="title">Class DynamicHandlerChainFactory</h1>
+<h2 title="Class DynamicHandlerChainFactory" class="title">Class DynamicHandlerChainFactory</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -133,7 +133,7 @@ implements <a href="../../../../com/soa/message/handler/HandlerFactory.html" tit
 <li class="blockList"><a name="constructor.summary">
 <!--   -->
 </a>
-<h2>Constructor Summary</h2>
+<h3>Constructor Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
 <caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
@@ -157,7 +157,7 @@ implements <a href="../../../../com/soa/message/handler/HandlerFactory.html" tit
 <li class="blockList"><a name="method.summary">
 <!--   -->
 </a>
-<h2>Method Summary</h2>
+<h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
 <caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
@@ -211,7 +211,7 @@ implements <a href="../../../../com/soa/message/handler/HandlerFactory.html" tit
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h2>Methods inherited from class&nbsp;java.lang.Object</h2>
+<h3>Methods inherited from class&nbsp;java.lang.Object</h3>
 <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
 </ul>
 </li>
@@ -227,13 +227,13 @@ implements <a href="../../../../com/soa/message/handler/HandlerFactory.html" tit
 <li class="blockList"><a name="constructor.detail">
 <!--   -->
 </a>
-<h2>Constructor Detail</h2>
+<h3>Constructor Detail</h3>
 <a name="DynamicHandlerChainFactory--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>DynamicHandlerChainFactory</h3>
+<h4>DynamicHandlerChainFactory</h4>
 <pre>public&nbsp;DynamicHandlerChainFactory()</pre>
 <div class="block">Default constructor</div>
 </li>
@@ -243,7 +243,7 @@ implements <a href="../../../../com/soa/message/handler/HandlerFactory.html" tit
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>DynamicHandlerChainFactory</h3>
+<h4>DynamicHandlerChainFactory</h4>
 <pre>public&nbsp;DynamicHandlerChainFactory(com.soa.collection.PartialOrderComparator&lt;<a href="../../../../com/soa/message/handler/HandlerFactory.html" title="interface in com.soa.message.handler">HandlerFactory</a>&gt;&nbsp;c)</pre>
 <div class="block">Constructs with a comparator.</div>
 <dl>
@@ -259,13 +259,13 @@ implements <a href="../../../../com/soa/message/handler/HandlerFactory.html" tit
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
-<h2>Method Detail</h2>
+<h3>Method Detail</h3>
 <a name="setHandleOutInReverse-boolean-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setHandleOutInReverse</h3>
+<h4>setHandleOutInReverse</h4>
 <pre>public&nbsp;void&nbsp;setHandleOutInReverse(boolean&nbsp;handleInReverse)</pre>
 <div class="block">Configures whether the handlers in the chain should be called in reverse
  for out/fault messages.</div>
@@ -281,7 +281,7 @@ implements <a href="../../../../com/soa/message/handler/HandlerFactory.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>setCloseInReverse</h3>
+<h4>setCloseInReverse</h4>
 <pre>public&nbsp;void&nbsp;setCloseInReverse(boolean&nbsp;closeInReverse)</pre>
 <div class="block">Configures whether the handlers in the chain should be closed in reverse
  order.</div>
@@ -297,7 +297,7 @@ implements <a href="../../../../com/soa/message/handler/HandlerFactory.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>create</h3>
+<h4>create</h4>
 <pre>public&nbsp;<a href="../../../../com/soa/message/handler/MessageHandler.html" title="interface in com.soa.message.handler">MessageHandler</a>&nbsp;create(<a href="../../../../com/soa/message/handler/HandlerContext.html" title="interface in com.soa.message.handler">HandlerContext</a>&nbsp;context,
                              <a href="../../../../com/soa/message/handler/HandlerRole.html" title="class in com.soa.message.handler">HandlerRole</a>&nbsp;role)
                       throws com.digev.fw.exception.GException</pre>
@@ -326,7 +326,7 @@ implements <a href="../../../../com/soa/message/handler/HandlerFactory.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>clear</h3>
+<h4>clear</h4>
 <pre>public&nbsp;void&nbsp;clear()</pre>
 <div class="block">Breaks the association between this factory and the MessageHandler
  created by the factory. This will cause the handler to no longer be
@@ -338,7 +338,7 @@ implements <a href="../../../../com/soa/message/handler/HandlerFactory.html" tit
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h3>factoryAdded</h3>
+<h4>factoryAdded</h4>
 <pre>public&nbsp;void&nbsp;factoryAdded(<a href="../../../../com/soa/message/handler/HandlerFactory.html" title="interface in com.soa.message.handler">HandlerFactory</a>&nbsp;factory,
                          java.util.Map&lt;java.lang.String,java.lang.Object&gt;&nbsp;properties)
                   throws com.digev.fw.exception.GException</pre>
@@ -357,7 +357,7 @@ implements <a href="../../../../com/soa/message/handler/HandlerFactory.html" tit
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h3>factoryRemoved</h3>
+<h4>factoryRemoved</h4>
 <pre>public&nbsp;void&nbsp;factoryRemoved(<a href="../../../../com/soa/message/handler/HandlerFactory.html" title="interface in com.soa.message.handler">HandlerFactory</a>&nbsp;factory,
                            java.util.Map&lt;java.lang.String,java.lang.Object&gt;&nbsp;properties)</pre>
 <div class="block">Removes a HandlerFactory.</div>
