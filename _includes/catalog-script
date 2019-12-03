@@ -252,7 +252,7 @@
     $(document).ready(function() {
         var title = catalog(".soa-ui-dc-content-catalog");
         $(".soa-ui-dc-content-catalog").find("ul").show();
-        $("#top").replaceWith("<h2 id=\"top\">" + title + "</h2>");
+        $("#top").replaceWith("<h1 id=\"top\">" + title + "</h1>");
         // $(".soa-ui-dc-container-main-content > div > p").replaceWith("<p>New content</p>");
     });
 </script>
