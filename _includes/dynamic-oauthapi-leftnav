@@ -1,8 +1,8 @@
 <!-- left nav -->
 			<div class="soa-ui-dc-container-main-left nocontent">
-				<h2 class="soa-ui-dc-container-main-left-header">
+				<h3 class="soa-ui-dc-container-main-left-header">
 					<a href="{{ site.baseurl }}/cm/api_oauth/index.htm" class="soa-ui-dc-container-main-left-header-link">OAuth API</a>	
-				</h2>
+				</h3>
 
 			</div>
 

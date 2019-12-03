@@ -1,6 +1,6 @@
 <!-- left nav -->
 			<div class="soa-ui-dc-container-main-left nocontent">
-				<h2 class="soa-ui-dc-container-main-left-header">
+				<h3 class="soa-ui-dc-container-main-left-header">
 					{% case page.category %}
 					{% when 'gs' %}
 					<a href="{{ site.baseurl }}/{{ page.product }}/getting-started.html" class="soa-ui-dc-container-main-left-header-link">Getting Started</a>
@@ -11,7 +11,7 @@
 					{% else %}
 					<div id="soa-ui-dc-container-main-left-header-replace"></div>
 					{% endcase %}			
-				</h2>
+				</h3>
 
 			</div>
 <!-- End left nav -->
