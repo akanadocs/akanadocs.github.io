@@ -1,7 +1,7 @@
 ---
 layout: page
 title: How to Manage API Visibility with Licenses
-description: A how to guide for creating a simple setup to use licenses to control the visibility of APIs.
+description: A how-to guide for creating a simple setup to use licenses to control the visibility of APIs.
 product: cm
 category: learn
 sub-nav-class: API Documentation
@@ -12,35 +12,55 @@ no-nav:
 no-catalog:
 ---
 <h1 id="top">How to Manage API Visibility with Licenses</h1>
+<p>A how-to guide for creating a simple setup to use licenses to control the visibility of APIs.</p>
+<div class = "divider1"></div>
+
+
+
+<h2 style="color: gray;">Table of Contents</h2>
+<ol class="table_of_contents">
+	<li><a href="#overview">Overview</a></li>
+	<li><a href="#s01_set_up_scopes_licenses">Step 1 - Set up Scopes and Licenses</a></li>
+	<li><a href="#s02_configure_api">Step 2 - Configure API to use Licenses and Map Scopes</a></li>
+	<li><a href="#s03_define_group">Step 3 - Define a Group for Admin users</a></li>
+	<li><a href="#s04_assign_admin_license">Step 4 - Assign the Admin license to the group</a></li>
+	<li><a href="#s05_invite_users">Step 5 - Invite users to the group</a></li>
+	<li><a href="#s06_set_doc_visibility">Next Steps - documentation visibility</a></li>
+</ol>
+<div class = "divider1"></div>
+
+
+
+<h2 id="overview">Overview</h2>
 <p>This article describes how to create a really simple environment that uses licenses to control visibility and access to the operations of an API. This is typically used in conjunction with <a href="howto_control_content_visibility.html">content visibility controls</a> and <a href="howto_control_doc_file_visibility.html">documentation file visibility controls</a> to provide a comprehensive solution.</p>
 <p>This article provides a simple set of instructions to get you started. For a comprehensive guide to the documentation visibility controls, refer to <a href="../learnmore/api_admin_documentation_tagging.htm">API Documentation Tagging</a>.</p>
 <p>The licenses feature is extremely powerful, and as such can be a little hard to understand. In this example, we are going to create a <strong>public</strong> API, and then use license restrictions to make some operations within the API <strong>private</strong>, granting access to these operations to members of an admin group.</p>
 <p>Notes:</p>
 <ul>
 	<li>Making an operation private will hide it within product features such as the Test Client and automatically-generated Swagger documentation.</li>
-	<li>Once you choose to use license for an API, all user generated documentation will be hidden by default unless you choose to expose it using content and file visibility controls (see links above).</li>
+	<li>Once you choose to use license for an API, all user-generated documentation will be hidden by default unless you choose to expose it using content and file visibility controls (see links above).</li>
 </ul>
 <p><a href="#top">Back to top</a></p>
 
 
 
 <h2 id="s01_set_up_scopes_licenses">Step 1 - Set up Scopes and Licenses</h2>
-<p>To keep things really simple we are going to define 2 scopes; user, and admin, and use these scopes in 2 licenses; User, and Admin.</p>
-<p><strong>Note</strong>: the admin license will include both scopes to provide comprehensive access.</p>
+<p>To keep things really simple we are going to define two scopes, <strong>User</strong> and <strong>Admin</strong>, and then we will use these scopes in two licenses, <strong>User</strong> and <strong>Admin</strong>.</p>
+<p><strong>Note</strong>: the <strong>Admin</strong> license will include both scopes to provide comprehensive access.</p>
 <ul>
 	<li>Log in as a Site Admin or Business Admin.</li>
 	<li>
-	Use <strong>Config</strong> &gt; <strong>Scopes</strong> (<code>/#/system/scopes</code>) to add two new scopes, one named <strong>user</strong> and one named <strong>admin</strong>.
+	Use <strong>Config</strong> &gt; <strong>Scopes</strong> (<code>/#/system/scopes</code>) to add two new scopes, one named <strong>User</strong> and one named <strong>Admin</strong>.
 	<ul>
-	<li><strong>user</strong> scope&#8212;take all the defaults, except for marking it public</li>
-	<li><strong>admin</strong> scope&#8212;use all the defaults, ensure the scope is marked private</li>
+	<li><strong>User</strong> scope&#8212;take all the defaults, except for marking it public</li>
+	<li><strong>Admin</strong> scope&#8212;use all the defaults, ensure the scope is marked private</li>
 </ul>
 </li>
 	<li>
 Use <strong>Config</strong> &gt; <strong>Licenses</strong> (<code>/#/system/licenses</code>) to add two new licenses, one named <strong>User</strong> and one named <strong>Admin</strong>.
 <ul>
-	<li><strong>User</strong> license&#8212;check both environments, visibility - <strong>public</strong>, add a term that includes ONLY the <strong>user</strong> scope.</li>
-	<li><strong>Admin</strong> license&#8212;check both environments, visibility - <strong>private</strong>, add a term that includes BOTH the <strong>user</strong> and <strong>admin</strong> scopes.</li>
+	<li><strong>User</strong> license&#8212;check both environments, visibility - <strong>public</strong>, add a term that includes ONLY the <strong>User</strong> scope.</li>
+	<li><strong>Admin</strong> license&#8212;check both environments, visibility - <strong>private</strong>, add a term that includes BOTH the <strong>User</strong> and <strong>Admin</strong> scopes.</li>
 </ul>
 </li>
 </ul>
@@ -53,15 +73,15 @@ Use <strong>Config</strong> &gt; <strong>Licenses</strong> (<code>/#/system/lice
 <p>To determine which operations are public and which are private you will map scopes using the <strong>Scope Mapping</strong> tool from the API details page.</p>
 <ul>
 	<li>Select <strong>operation-specific mapping</strong>.</li>
-	<li>Choose the <strong>user</strong> scope for the operations you want to be public.</li>
-	<li>Choose the <strong>admin</strong> scope for operations you want to be private.</li>
+	<li>Choose the <strong>User</strong> scope for the operations you want to be public.</li>
+	<li>Choose the <strong>Admin</strong> scope for operations you want to be private.</li>
 </ul>
 <p><a href="#top">Back to top</a></p>
 
 
 
 <h2 id="s03_define_group">Step 3 - Define a Group for Admin users</h2>
-<p>At this point your API will be visible to all users and the operations to which you assigned the <strong>user</strong> scope will be visible, but any other operations will be hidden.</p>
+<p>At this point your API will be visible to all users and the operations to which you assigned the <strong>User</strong> scope will be visible, but any other operations will be hidden.</p>
 <ul>
 	<li>Choose <strong>Visibility</strong> from the API left nav, and select <strong>groups</strong> under that nav option.</li>
 	<li>
