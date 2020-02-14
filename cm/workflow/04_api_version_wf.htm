@@ -12,9 +12,9 @@ nav-title: API Version Workflow
 <h1 id="top">API Version Workflow</h1>
 <p>This section provides information about functions, conditions, and variables for the API version workflow, as well as initial actions and reserved actions.</p>
 <p>Note: API version workflow is optional. If no custom workflow is in place, the API version behavior is the default behavior described in the online help for the developer portal. See <a href="../learnmore/apiadmin_.htm">API Administration</a>.</p>
-
-
+<!--<p>{<span class="apidoc_red">C:\SVN\akana\trunk\products\api-portal\com.soa.atmosphere.impl\src\com\soa\api\workflow\impl</span>}</p>-->
 <hr class="divide_hr" />
+
 
 
 <h2 style="color: gray;">Table of Contents</h2>
@@ -27,7 +27,6 @@ nav-title: API Version Workflow
 	<li><a href="#apiv_eg_01">API Version Workflow: Customization Example</a></li>
 </ol>
 <hr class="divide_hr" />
-
 
 
 
@@ -61,6 +60,17 @@ nav-title: API Version Workflow
 	<li><a href="#apiv_ra_11">apiversion.action.approve</a></li>
 	<li><a href="#apiv_ra_12">apiversion.action.reject</a></li>
 	<li><a href="#apiv_ra_13">apiversion.action.resubmit</a></li>
+	<li><a href="#apiv_ra_14">@AddDeploymentZones</a> (Valid in version: 2019.1.7 and later)</li>
+	<li><a href="#apiv_ra_15">@ModifyAutoConnectSettings</a> (Valid in version: 2019.1.7 and later)</li>
+	<li><a href="#apiv_ra_16">@ModifyImplementationInfo</a> (Valid in version: 2019.1.7 and later)</li>
+	<li><a href="#apiv_ra_17">@AddApiImplementation</a> (Valid in version: 2019.1.7 and later)</li>
+	<li><a href="#apiv_ra_18">@ModifyPolicies</a> (Valid in version: 2019.1.7 and later)</li>
+	<li><a href="#apiv_ra_19">@ModifyDeployments</a> (Valid in version: 2019.1.7 and later)</li>
+	<li><a href="#apiv_ra_20">@ModifyDebugOptions</a> (Valid in version: 2019.1.7 and later)</li>
+	<li><a href="#apiv_ra_21">@ModifyOutboundIdentities</a> (Valid in version: 2019.1.7 and later)</li>
+	<li><a href="#apiv_ra_22">@ModifyExtensionProperties</a> (Valid in version: 2019.1.7 and later)</li>
+	<li><a href="#apiv_ra_23">@DeleteAPIImplementation</a> (Valid in version: 2019.1.7 and later)</li>
+	<li><a href="#apiv_ra_24">@ModifyLegals</a> (Valid in version: 2019.1.7 and later)</li>
 </ul>
 
 
@@ -206,6 +216,61 @@ nav-title: API Version Workflow
 <p><strong>Valid in version: 2019.1.0 and later</strong></p>
 <p>Used to resubmit a new or revised API version for approval.</p>
 <p>Same as <strong>apiversion.action.submit.approval</strong> above.</p>
+
+
+<h3 id="apiv_ra_14">@AddDeploymentZones</h3>
+<p><strong>Valid in version: 2019.1.7 and later</strong></p>
+<p>If you want to give users with one or more roles permission to add a deployment zone for an API version, you can use this reserved action. You can then specify which roles can perform the action.</p>
+
+
+<h3 id="apiv_ra_15">@ModifyAutoConnectSettings</h3>
+<p><strong>Valid in version: 2019.1.7 and later</strong></p>
+<p>If you want to give users with one or more roles permission to modify the auto-connect setting for an API version, you can use this reserved action. You can then specify which roles can perform the action.</p>
+
+
+<h3 id="apiv_ra_16">@ModifyImplementationInfo</h3>
+<p><strong>Valid in version: 2019.1.7 and later</strong></p>
+<p>If you want to give users with one or more roles permission to modify implementation information for an API version, you can use this reserved action. You can then specify which roles can perform the action.</p>
+
+
+<h3 id="apiv_ra_17">@AddApiImplementation</h3>
+<p><strong>Valid in version: 2019.1.7 and later</strong></p>
+<p>If you want to give users with one or more roles permission to add an implementation to an API version, you can use this reserved action. You can then specify which roles can perform the action.</p>
+
+
+<h3 id="apiv_ra_18">@ModifyPolicies</h3>
+<p><strong>Valid in version: 2019.1.7 and later</strong></p>
+<p>If you want to give users with one or more roles permission to add, modify, or delete the policy assignments for one or more of the implementations for an API version, you can use this reserved action. You can then specify which roles can perform the action.</p>
+
+
+<h3 id="apiv_ra_19">@ModifyDeployments</h3>
+<p><strong>Valid in version: 2019.1.7 and later</strong></p>
+<p>If you want to give users with one or more roles permission to modify deployments zone for an API version, you can use this reserved action. You can then specify which roles can perform the action.</p>
+
+
+<h3 id="apiv_ra_20">@ModifyDebugOptions</h3>
+<p><strong>Valid in version: 2019.1.7 and later</strong></p>
+<p>If you want to give users with one or more roles permission to modify the debug setting for one or more of the implementations for an API version, you can use this reserved action. You can then specify which roles can perform the action.</p>
+
+
+<h3 id="apiv_ra_21">@ModifyOutboundIdentities</h3>
+<p><strong>Valid in version: 2019.1.7 and later</strong></p>
+<p>If you want to give users with one or more roles permission to modify the outbound identities for an API version, you can use this reserved action. You can then specify which roles can perform the action.</p>
+
+
+<h3 id="apiv_ra_22">@ModifyExtensionProperties</h3>
+<p><strong>Valid in version: 2019.1.7 and later</strong></p>
+<p>If you want to give users with one or more roles permission to modify extension properties for an API version, you can use this reserved action. You can then specify which roles can perform the action.</p>
+
+
+<h3 id="apiv_ra_23">@DeleteAPIImplementation</h3>
+<p><strong>Valid in version: 2019.1.7 and later</strong></p>
+<p>If you want to give users with one or more roles permission to delete an implementation for an API version, you can use this reserved action. You can then specify which roles can perform the action.</p>
+
+
+<h3 id="apiv_ra_24">@ModifyLegals</h3>
+<p><strong>Valid in version: 2019.1.7 and later</strong></p>
+<p>If you want to give users with one or more roles permission to modify the legal agreement configuration for an API version, you can use this reserved action. You can then specify which roles can perform the action.</p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -217,6 +282,7 @@ nav-title: API Version Workflow
 	<li><a href="#apiv_f_02">exportAPIAllVersions</a></li>
 	<li><a href="#apiv_f_03">markApiVersionDeleted</a> (Valid in version: 2019.1.0 and later)</li>
 	<li><a href="#apiv_f_05">updateApiVersionStatus</a> (Valid in version: 2019.1.0 and later)</li>
+	<li><a href="#apiv_f_connectappsfrompreviousversion">connectAppsFromPreviousVersion</a> (Valid in version: 2020.0.0 and later)</li>
 </ul>
 <!--<p>{\com.soa.atmosphere.impl\src\com\soa\api\workflow\impl\APIVersionWorkflowFunctions.java}</p>-->
 
@@ -359,6 +425,21 @@ nav-title: API Version Workflow
   &lt;/post-functions&gt;
 &lt;/action&gt;
 </pre>
+
+
+<h3 id="apiv_f_connectappsfrompreviousversion">connectAppsFromPreviousVersion</h3>
+<p><strong>Valid in version: 2020.0.0 and later</strong></p>
+<p>When a new API version is created, connects all apps that are currently contracted to the API, to the new version.</p>
+
+<h4>Parameters</h4>
+<p>None.</p>
+<h4>Examples/Notes/Additional Information</h4>
+<p>The example below shows a workflow step that adds <strong>connectAppsFromPreviousVersion</strong> as a pre-function when an API version becomes active. This initiates API access for the apps that are connected to the existing API version.</p>
+<pre>&lt;step id="400" name="Active"&gt;
+  &lt;pre-functions&gt;
+    &lt;function type="connectAppsFromPreviousVersion"&gt;
+    &lt;/function&gt;
+  &lt;/pre-functions&gt;</pre>
 <p><a href="#top">Back to top</a></p>
 
 
