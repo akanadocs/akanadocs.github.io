@@ -143,7 +143,8 @@ nav-title: Configuration Actions
 <p><img src="images/ac_ca_add_database.jpg" alt="Add Database" /></p>
 <p>Use this action to perform the following actions:</p>
 <ul>
-	<li><strong>Create new database&#8212;</strong>Creates a new Policy Manager database and associated properties based on the selected database type. 
+	<li><strong>Create new database&#8212;</strong>Creates a new Policy Manager database and associated properties based on the selected database type.
+	<p>For Oracle, choose Oracle Service Name (not SID). See <a href="../platform_install/installing_akana_api_platform_v2019.htm#note_oracle_service_name">Use Oracle Service Name, not SID</a> (database notes, installation documentation).</p>
 	<p><strong>Note</strong>: If you're using Oracle 18c or later, it's important that you create the database first, and then, in the <strong>Configure Database Options</strong> wizard, choose the <strong>Use Existing Database</strong> option (see <a href="../../sp/platform_install/installing_akana_api_platform_v2019.htm#database_creation_oracle_18c">Database creation, Oracle 18c or later</a>).</p>
 	</li>
 	<li><strong>Use existing database&#8212;</strong>Uses an existing Policy Manager tablespace, and retains all tables created by any previous installation. </li>
@@ -167,7 +168,12 @@ A summary of property information is presented below for the <strong>Create new 
 	<tbody>
 	<tr>
 		<td><strong>Database Details</strong></td>
-		<td><p><strong>Database Type</strong>&#8212;Select the database type (MS SQL Server, MySQL, Oracle SID, or Oracle Service Name).</p>
+		<td><p><strong>Database Type</strong>&#8212;Select the database type:</p>
+			<ul>
+				<li>MS SQL Server</li>
+				<li>MySQL</li>
+				<li>For Oracle, Oracle SID and Oracle Service Name are offered. Choose Oracle SID.</li>
+			</ul>
 			<p><strong>Name</strong>&#8212;The database name.</p></td>
 	</tr>
 	<tr>
@@ -199,12 +205,7 @@ A summary of property information is presented below for the <strong>Create new 
 	</tr>
 	<tr>
 		<td><strong>Oracle SID</strong></td>
-		<td><p><strong>Username</strong>&#8212;Username for database access.</p>
-			<p><strong>Password</strong>&#8212;Password for database access.</p>
-			<p><strong>Hostname</strong>&#8212;Enter the name or IP address of the computer that is hosting the database. Default entry = {computer_name}.</p>
-			<p><strong>Port</strong>&#8212;Enter a port number. Port 1521 is the default port assigned in a standard Oracle installation.</p>
-			<p><strong>SID</strong>&#8212;Enter an existing Oracle instance.</p>
-			<p><strong>Tablespace</strong>&#8212;Enter a valid name for the new tablespace.</p></td>
+		<td><p>Instead of entering Oracle SID, choose Oracle Service Name.</p></td>
 	</tr>
 	<tr>
 		<td><strong>Oracle Service Name</strong></td>
