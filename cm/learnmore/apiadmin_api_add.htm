@@ -288,12 +288,17 @@ nav-title: Add an API
 <h2 id="api_add_advanced_options">What information should I specify in the Advanced Options?</h2>
 <p>When you're adding an API, the basic information that you need to specify is covered by the fields on the left side of the page.</p>
 <p>There are additional values that you usually won't need to change, that you can specify on the right side of the page. These options are not visible unless you click the <strong>Advanced Options</strong> slider button (blue dot), as shown below.</p>
-<p><img src="assets/api_add_advanced_options_dz.jpg" alt="Add API, Advanced Options" /></p>
+<p><img src="assets/api_add_advanced_options.jpg" alt="Add API, Advanced Options" /></p>
 
 <h4 id="api_advanced_options">API Advanced Options</h4>
 <dl>
 	<dt>Version ID (2018.0.2 and later)</dt>
-	<dd>You can specify a custom value for the API Version ID. If you don't specify a value, it defaults to <strong>v1</strong>.</dd>
+	<dd>You can specify a custom value for the API Version ID. If you don't specify a value, and you don't upload an API description document that specifies the version, the Version ID defaults to:
+		<ul>
+			<li>In versions prior to 2019.1.12: <strong>v1</strong> or <strong>0.0.0</strong></li>
+			<li>In version 2019.1.12 or later: <strong>1</strong></li>
+		</ul>
+	</dd>
 
 
 	<dt>Pattern</dt>
