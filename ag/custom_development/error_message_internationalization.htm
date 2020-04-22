@@ -1,0 +1,82 @@
+---
+layout: page
+title: Internationalizing Error Messages and UI copy
+description: Learn how to set up custom/internationalized runtime error messages and other UI copy components in the Akana Gateway.
+product: ag
+category: learn
+sub-nav-class: Custom Development
+weight: 06
+type: page
+nav-title: Internationalizing Error Messages
+---
+<h1 id="top">Internationalizing Error Messages</h1>
+<p>Learn how to set up custom/internationalized runtime error messages and other UI copy components in the Akana Gateway.</p>
+<p><strong>Note</strong>: The approach in this document is effective only for runtime error and informational messages and UI copy. It is not applicable to alert messages defined in the database.</p>
+<h4 class="stamp">API Platform Version: 2019.0.12 and later</h4>
+<hr class="divide_hr" />
+
+
+
+<h2 style="color: gray;">Table of Contents</h2>
+<ol class="table_of_contents">
+	<li><a href="#overview">Overview</a></li>
+	<li><a href="#s01_00">Step 1: Create the Java properties file</a></li>
+	<li><a href="#s02_00">Step 2: Deploy the files</a></li>
+	<li><a href="#s03_00">View configuration changes</a></li>
+</ol>
+<hr class="divide_hr" />
+
+
+
+<h2 id="overview">Overview</h2>
+<p>The out-of-the-box copy for the Akana Gateway, both messaging and UI copy, is in US English. However, you can override the default for some types of messages and UI copy by setting up a new Java properties file and updating the platform settings to reference the new file.</p>
+<p>In the properties file, you can define error message and UI copy keys and the applicable localization strings, set up as name/value pairs.</p>
+<p>The steps are:</p>
+<ol>
+	<li><a href="#s01_00">Step 1: Create the Java properties file</a> that specifies the new copy.</li>
+	<li><a href="#s02_00">Step 2: Upload the Java properties file</a> to the /deploy folder of your installation.</li>
+</ol>
+
+
+
+<h2 id="s01_00">Step 1: Create the Java properties file</h2>
+<p>To customize runtime error and informational messages and UI copy in the Akana Gateway, create a file using the name pattern and content specified below, and place it in the /deploy/ folder for the container.</p>
+
+
+<h4>File name</h4>
+<p>Use a file name that corresponds to the pattern <strong>com.akana.messages-{qualifier}.cfg</strong>, where {qualifier} is a unique string that identifies the file. For example, for Spanish, you might use: <strong>com.akana.messages-es.cfg</strong>.</p>
+<h4>Properties in the file</h4>
+<p>The file is a normal properties file that contains the localization strings corresponding to the appropriate keys.</p>
+<p>There are two custom properties that you can use:</p>
+<ul>
+	<li><strong>_locale</strong>: Required. Identifies the locale for the messages.</li>
+	<li><strong>_basename</strong>: Optional. Allows you to set the resource bundle base name, which helps identify the resources in use. Helps reduce the likelihood of collisions, and speeds up lookups.</li>
+</ul>
+
+
+
+<p>For example, the file below sets the <strong>_locale</strong> property and redefines the message content for one message:</p>
+<pre>_locale=en_us
+301300=message content</pre>
+<p>When you create the new properties file and add it to the /deploy/ folder, messages are returned based on the message key.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h2 id="s02_00">Step 2: Deploy the files</h2>
+<p>Go to the /deploy/ directory for the container, and add the file or files you created in Step 1.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h2 id="s03_00">View configuration changes</h2>
+<p>You can view the configuration changes that you've made, in the Akana Administration Console for the container.</p>
+<h4>To view configuration settings for messages</h4>
+<ol>
+	<li>Log in to the Akana Administration Console.</li>
+	<li>Click the <strong>Configuration</strong> tab.</li>
+	<li>On the left, under Configuration Categories, scroll down to find the <strong>com.akana.messages</strong> configuration category. You'll see settings. An example is shown below.
+		<p><img src="images/error_message_int.png" alt="Viewing the configuration settings"/></p>
+	</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
