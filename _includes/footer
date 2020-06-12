@@ -9,14 +9,14 @@
 			        <div class="wrapper" id="div1">
 			          <ul id="ul0">
 			            <li><strong>Solutions</strong></li>
-			            <li><a href="https://www.roguewave.com/products/akana/solutions/api-management">API Management</a></li>
-			            <li><a href="https://www.roguewave.com/products-services/akana/solutions/api-security">API Security</a></li>
-			            <li><a href="https://www.roguewave.com/products-services/akana/solutions/microservices">Microservices</a></li>
-			            <li><a href="https://www.roguewave.com/products-services/akana/solutions/fintech-api">Financial Services</a></li>
-			            <li><a href="https://www.roguewave.com/products-services/akana/solutions/integrated-soa-governance">Integrated SOA Governance</a></li>
-			            <li><a href="https://www.roguewave.com/products-services/akana/solutions/microsoft-and-akana">Microsoft APIs &amp; SOA</a></li>
-			            <li><a href="https://www.roguewave.com/products-services/akana/solutions/akana-and-ibm">IBM APIs &amp; SOA</a></li>
-			            <li><a href="https://www.roguewave.com/products-services/akana/solutions/enterprise-soa-and-mainframe-solutions">Mainframe APIs &amp; SOA</a></li>
+			            <li><a href="https://www.akana.com/solutions/api-management">API Management</a></li>
+			            <li><a href="https://www.akana.com/solutions/microservices">Microservices</a></li>
+			            <li><a href="https://www.akana.com/solutions/api-security">API Security</a></li>
+			            <li><a href="https://www.akana.com/solutions/integrations">Mediation and Integration</a></li>
+			            <li><a href="https://www.akana.com/solutions/digital-transformation">Digital Transformation</a></li>
+			            <li><a href="https://www.akana.com/solutions/api-governance">Governance</a></li>
+			            <li><a href="https://www.akana.com/solutions/financial-services">Financial Services</a></li>
+			            <li><a href="https://www.akana.com/solutions/cloud-native">Cloud Native Deployment</a></li>
 			          </ul>
 			        </div>
 			      </div>
@@ -24,13 +24,12 @@
 			        <div class="wrapper" id="div2">
 			          <ul id="ul1">
 			            <li><strong>Products</strong></li>
-			            <li><a href="https://www.roguewave.com/products-services/akana">Platform Overview</a></li>
-			            <li><a href="https://www.roguewave.com/products-services/akana/api-gateway">API Gateway</a></li>
-			            <li><a href="https://www.roguewave.com/products-services/akana/api-portal">API Portal</a></li>
-			            <li><a href="https://www.roguewave.com/products-services/akana/lifecycle-manager">Lifecycle Manager</a></li>
-			            <li><a href="https://www.roguewave.com/products-services/akana/api-analytics">API Analytics</a></li>
-			            <li><strong>Support</strong></li>
-			            <li><a href="https://www.akana.com/support">Customer Support</a></li>
+			            <li><a href="https://www.akana.com/products/api-platform">Platform Overview</a></li>
+			            <li><a href="https://www.akana.com/products/api-platform/api-gateway">API Gateway</a></li>
+			            <li><a href="https://www.akana.com/products/api-platform/developer-portal">API Developer Portal</a></li>
+			            <li><a href="https://www.akana.com/products/api-platform/lifecycle-management">Lifecycle Manager</a></li>
+			            <li><a href="https://www.akana.com/products/api-platform/api-analytics">API Analytics</a></li>
+			            <li><a href="https://www.akana.com/products/sola-mainframe">SOLA Mainframe APIs</a></li>
 			          </ul>
 			        </div>
 			      </div>
@@ -38,12 +37,12 @@
 			        <div class="wrapper" id="div3">
 			          <ul id="ul2">
 			            <li><strong>Resources</strong></li>
-			            <li><a href="https://www.roguewave.com/resources?keys=&field_resource_products_target_id=158&field_resource_topics_target_id=All&field_type_of_resource_value=All ">Resource Center</a></li>
-			            <li><a href="https://blog.akana.com/">Blog</a></li>
-			            <li><a href="https://www.roguewave.com/events?keys=&field_resource_products_target_id=158&field_resource_topics_target_id=All&field_eventtype_value=On-Demand%20Webinar">Webinars</a></li>
+			            <li><a href="https://www.akana.com/blog">Blog</a></li>
 			            <li><a href="http://docs.akana.com" rel="external">Documentation</a></li>
+			            <li><strong>Support</strong></li>
+			            <li><a href="https://www.akana.com/support">Customer Support</a></li>
 			            <li><strong>Partners</strong></li>
-			            <li><a href="https://www.roguewave.com/company/partners">Partners</a></li>        
+			            <li><a href="https://www.akana.com/partners">Partners</a></li>        
 			          </ul>
 			        </div>
 			      </div>
@@ -51,10 +50,10 @@
 			        <div class="wrapper" id="div5">
 			          <ul id="ul4">
 			            <li><strong>Company</strong></li>
-			            <li><a href="https://www.roguewave.com/company">About Us</a></li>
-			            <li><a href="https://www.roguewave.com/company/news">News</a></li>
-			            <li><a href="https://www.roguewave.com/company/careers">Careers</a></li>
-			            <li><a href="https://www.roguewave.com/company/contact-us">Contact Us</a></li>
+			            <li><a href="https://www.akana.com/about">About Us</a></li>
+			            <li><a href="https://www.akana.com/press">News</a></li>
+			            <li><a href="https://www.perforce.com/careers">Careers</a></li>
+			            <li><a href="https://www.akana.com/contact-us">Contact Us</a></li>
 			          </ul>
 			        </div>
 			      </div>
@@ -64,7 +63,7 @@
 			  <div class="row credits" id="div6">
 			    <div class="col-md-12">
 			      <div class="row social">
-			        <div class="col-md-12"> <a href="https://www.facebook.com/roguewaveinc" class="facebook"> <span class="socialicons ico1"></span> </a> <a href="https://twitter.com/roguewaveinc" class="twitter"> <span class="socialicons ico2"></span> </a>  <a href="https://www.linkedin.com/company/rogue-wave-software" class="pinterest"> <span class="socialicons ico5"></span> </a>  <a href="https://www.youtube.com/channel/UC4QdcCn-FDCqN7gao7wp24g" class="behance"> <span class="socialicons ico7"></span> </a> </div>
+			        <div class="col-md-12"><a href="https://twitter.com/akanaapi" class="twitter"> <span class="socialicons ico2"></span> </a>  <a href="https://www.linkedin.com/company/akana/" class="pinterest"> <span class="socialicons ico5"></span> </a>  <a href="https://www.youtube.com/channel/UC4QdcCn-FDCqN7gao7wp24g" class="behance"> <span class="socialicons ico7"></span> </a> </div>
 			      </div>
 			      <div class="row copyright" id="div7">
 			       
