@@ -66,15 +66,15 @@ nav-title: SAML Overview
 <p>As with other SSO solutions, SAML provides authentication and verification of end-users via the SAML Web Browser SSO Profile, so that applications can outsource this critical, sensitive, and complex task. At a high level, the exchange of information is as follows:</p>
 <ol>
 	<li>The end-user requests a service from an app.
-  <p>App = Service Provider; provides service to the end-user. Corresponds to Relying Party role in OpenID Connect; relies on the Identity Provider for verification of the user's identity.</p></li>
+	<p>App = Service Provider; provides service to the end-user. Corresponds to Relying Party role in OpenID Connect; relies on the Identity Provider for verification of the user's identity.</p></li>
 	<li>Before providing the service to the user, the app must authenticate the user. To do this, the app redirects the user to a supported SAML Identity Provider (IdP) of the end-user's choosing. The IdP:
-    <ol>
-    	<li>Requests authentication information from the user.</li>
-    	<li>Verifies the information.</li>
-    	<li>Logs the user in.</li>
-    	<li>Redirects the user back to the app.</li>
-    </ol>
-  <p>The Identity Provider provides user authentication services to the Service Provider. This role corresponds to the Asserting Party role in OpenID Connect. The Identity Provider sends the authentication information in the form of an XML document called a SAML Assertion.</p></li>
+		<ol>
+			<li>Requests authentication information from the user.</li>
+			<li>Verifies the information.</li>
+			<li>Logs the user in.</li>
+			<li>Redirects the user back to the app.</li>
+		</ol>
+	<p>The Identity Provider provides user authentication services to the Service Provider. This role corresponds to the Asserting Party role in OpenID Connect. The Identity Provider sends the authentication information in the form of an XML document called a SAML Assertion.</p></li>
 	<li>The app delivers the service to the end-user.</li>
 </ol>
 <p>Of course, before being able to authenticate their users via a SAML Identity Provider, the app must first set up an account with the SAML Identity Provider.</p>
@@ -98,23 +98,22 @@ nav-title: SAML Overview
 <p>The sequence diagram below shows the basic exchange of information between the consumer (via the User-Agent), the Service Provider, and the Identity Provider when the SAML Web Browser SSO profile is used for single sign-on.</p>
 <p><strong>Note</strong>: The diagram below is general to SAML. For specific options supported, refer to <a href="02_platform_saml_support.htm#s02_02">Supported SAML bindings for single sign-on</a>.</p>
 <p><img src="images/01_SAML_Diagram_06b.jpg" alt="SAML diagram" /></p>
-
 <p>In the above:</p>
 <ol>
 	<li><strong>Redirect to Identity Provider for SSO Service</strong>: Service Provider sends
 {<strong>AuthnRequest</strong>} request (authentication request) to Identity Provider. Three bindings are offered by the SAML specification:
 <ul>
-    	<li>HTTP POST. Sends the message content as a POST parameter in the payload. For more information, see <a href="08_glossary.htm#gl_http_post">HTTP POST</a>.</li>
-    	<li>HTTP Redirect. Redirects the user to the Identity Provider for login. Sends the message content in the URL. For more information, see <a href="08_glossary.htm#gl_http_redirect">HTTP Redirect</a>.</li>
-    	<li>HTTP Artifact (not currently supported by the Akana solution). Instead of sending the message content, sends a SAML Artifact to the content so the Identity Provider can retrieve it from an Artifact Resolution Service. For more information, see <a href="08_glossary.htm#gl_http_artifact">HTTP Artifact</a>.</li>
-      </ul>
-    </li>
+			<li>HTTP POST. Sends the message content as a POST parameter in the payload. For more information, see <a href="08_glossary.htm#gl_http_post">HTTP POST</a>.</li>
+			<li>HTTP Redirect. Redirects the user to the Identity Provider for login. Sends the message content in the URL. For more information, see <a href="08_glossary.htm#gl_http_redirect">HTTP Redirect</a>.</li>
+			<li>HTTP Artifact (not currently supported by the Akana solution). Instead of sending the message content, sends a SAML Artifact to the content so the Identity Provider can retrieve it from an Artifact Resolution Service. For more information, see <a href="08_glossary.htm#gl_http_artifact">HTTP Artifact</a>.</li>
+			</ul>
+		</li>
 	<li><strong>Redirect to Service Provider with SAML Assertion</strong>: Identity Provider sends {<strong>Response</strong>} message to Service Provider. Two bindings offered by the SAML specification:
 <ul>
-    	<li>HTTP POST</li>
-    	<li>HTTP Artifact</li>
-    </ul>
-    </li>
+			<li>HTTP POST</li>
+			<li>HTTP Artifact</li>
+		</ul>
+		</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
 
@@ -140,6 +139,7 @@ nav-title: SAML Overview
 <div class="relatedlinks">
 <ul>
 	<li><a href="00_overview_doc.htm">SAML Doc Table of Contents</a></li>
+<!--	<li><a href="01_overview_saml.htm">Overview of SAML</a></li>-->
 	<li><a href="02_platform_saml_support.htm">SAML Web Browser SSO Support</a></li>
 	<li><a href="03_saml_setup.htm">Setting Up the SAML Web Browser SSO Feature</a></li>
 </ul>
