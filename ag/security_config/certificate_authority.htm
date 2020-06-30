@@ -1,15 +1,16 @@
 ---
 layout: page
-title: Certificate Authority
-description: Learn how to view, configure, and manage the Certificate Authority (CA), and how to update an expired certificate.
+title: Certificate Authority (Policy Manager)
+description: Learn how to view, configure and manage the Policy Manager Certificate Authority, and how to update an expired certificate.
 product: ag
 category: learn
 sub-nav-class: Security Configuration
-weight: 02
+weight: 05
 type: page
+nav-title: Certificate Authority (PM)
 ---
-<h1 id="top">Certificate Authority</h1>
-<p>Learn how to view, configure and manage the Certificate Authority (CA), and how to update an expired certificate.</p>
+<h1 id="top">Certificate Authority (Policy Manager)</h1>
+<p>Learn how to view, configure and manage the Policy Manager Certificate Authority, and how to update an expired certificate.</p>
 <hr class="divide_hr" />
 
 
@@ -34,7 +35,7 @@ type: page
 
 
 <h2 id="about_certificate_authority">About Certificate Authority</h2>
-<p>A Certificate Authority (CA) is the Policy Manager CA Provider. The CA issues certificates and guarantees the validity of the binding between the certificate owner and its public key. The CA is a trusted authority, and any certificate issued by the CA identifies the owner of the certificate. Therefore, the private key that corresponds to the public key in the certificate is deemed to be known only by the specific owner.</p>
+<p>The Certificate Authority (CA) page allows you to configure the platform's Policy Manager CA Provider. The CA issues certificates and guarantees the validity of the binding between the certificate owner and its public key. The CA is a trusted authority, and any certificate issued by the CA identifies the owner of the certificate. Therefore, the private key that corresponds to the public key in the certificate is deemed to be known only by the specific owner.</p>
 <p>Only one Certificate Authority can be configured. A Certificate Authority can be regenerated, renewed, deleted, or exported. When the Certificate Authority is generated, a serial number and Issuer DN is assigned. The Issuer DN will be the same as the Subject DN.</p>
 <p>Two Certificate Authority options are supported: Policy Manager provides a simplified version of Certificate Authority that can issue and renew X.509 certificates, or one can be imported.</p>
 <p><strong>Note</strong>: The Policy Manager Certificate Authority is intended to be used in test environments for verifying features related to Policy Manager. For production environments, importing a formal CA is recommended (for example, VeriSign) that aligns with security policy requirements.</p>
@@ -379,4 +380,33 @@ The field display populates with the selected path.</li>
 		<p>In Policy Manager, on the right, choose <strong>Workbench</strong>. On the left, select the container. On the right, under <strong>Actions</strong>, choose <strong>Update Container Metadata</strong>. For more information, see <a href="../../sp/container_management/container_management.htm#update_metadata" target="_blank">Update Container Metadata</a>.</p></li>
 </ol>
 <p>Once you've completed the steps above, test to make sure that your container can communicate with the Network Director.</p>
-<p><a href="#top">back to top</a></p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<hr class="divide_hr" />
+
+
+
+<h2 id="related_topics">Related Topics</h2>
+<div class="relatedlinks" id="security_config"><!-- #BeginLibraryItem "/Library/relatedtopics_security_config.lbi" -->
+<ul>
+	<li><a href="security_configuration_toc.htm">Security Configuration Table of Contents</a></li>
+	<li><a href="policy_manager_domain.htm">Policy Manager Domain</a></li>
+	<li><a href="certificates_overview.htm">Managing Certificates in Policy Manager</a></li>
+	<li><a href="certificate_authority.htm">Certificate Authority</a></li>
+	<li><a href="trusted_ca_certificates.htm">Trusted CA Certificates</a></li>
+	<li><a href="certificate_expiration.htm">Managing Certificate Expiration</a></li>
+	<li><a href="user_certificate_renewal.htm">User Certificate Renewal</a></li>
+</ul>
+<ul>
+	<li><a href="identity_systems.htm">Identity Systems</a></li>
+	<li><a href="ids_claims_based.htm">Configure Claims-based Identity System</a></li>
+	<li><a href="ids_cookie_authentication_module.htm">Configure Cookie Authentication Module Identity System</a></li>
+	<li><a href="ids_directory_server.htm">Configure Directory Server (Active Directory) Identity System</a></li>
+	<li><a href="ids_kerberos.htm">Configure Kerberos Identity System</a></li>
+	<li><a href="ids_saml.htm">Configure SAML Identity System</a></li>
+	<li><a href="../ca_siteminder/ca_siteminder_integrate_with_pm.htm">CA SiteMinder</a></li>
+	<li><a href="identity_profiles.htm">Identity Profiles</a></li>
+	<li><a href="privacy.htm">Privacy</a></li>
+</ul><!-- #EndLibraryItem --></div>
