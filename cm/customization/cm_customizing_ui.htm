@@ -23,7 +23,6 @@ nav-title: Customizing the User Interface
 	<li><a href="#adding_new_views_or_widgets">Adding New Views or Widgets</a></li>
 	<li><a href="#altering_existing_widgets">Altering Existing Widgets</a></li>
 	<li><a href="#altering_existing_widgets_legacy_framework">Altering Existing Widgets – Legacy Framework</a></li>
-	<li><a href="#editing_the_custom_dashboard">Editing the Custom Dashboard</a></li>
 	<li><a href="#internationalization">Internationalization</a></li>
 	<li><a href="#examples">Examples</a></li>
 	<li><a href="#appendix">Appendix</a></li>
@@ -250,54 +249,6 @@ nav-title: Customizing the User Interface
 
 <pre>/resources/[VERSION]/widgets/HeaderWidget/header.tmpl.htm</pre>
 <p>Then just add a new header.tmpl.htm file with the same path under theme/default in your CMS Deployment Package.</p>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<h2 id="editing_the_custom_dashboard">Editing the Custom Dashboard</h2>
-<p>The developer portal includes a custom dashboard available on #/home/customdashboard (version 6.5.0 and later). This dashboard provides customers and their users with a way to create their own dashboard made up of a set of widgets.</p>
-<p>The architecture is very similar to the architecture described in the previous sections, with the exception that the metadata.json file has been effectively replaced by the ability to place widgets in to appropriate locations on the page:</p>
-
-<p class="apidoc_image_p"><img src="images/04_custom_dashboard.jpg" alt="custom dashboard" /></p>
-
-<p>The product ships with a set of prepackaged widgets, including:</p>
-<ul>
-<li>Top 5 APIs – a graph of the 5 APIs with the most traffic</li>
-<li>Notifications – a list of the user's notifications</li>
-<li>Documents – static content stored in the CMS.</li>
-</ul>
-<p>The Documents widget is especially powerful because it allows customers to write any static content and present it to the users of the Community Manager product.</p>
-<p>In addition to the prepackaged widgets, custom widgets can be built and deployed in the same way as conventional widgets – with the exception of requiring a metadata.json file. To create a custom dashboard widget:</p>
-<ol>
-<li>Write the CanJS view, controller and optional model</li>
-<li>Modify the widget_factory.json files to add the new widget</li>
-<li>Create a zip file with the structure described in the previous section</li>
-<li>Upload the zip file into the CMS</li>
-</ol>
-<p>The widget_factory.json file will look like the example shown below.</p>
-<p><strong>Note</strong>: In the example below, comments have been added to explain how the file is put together. Comments are not valid in a JSON file. If you use this example, remove the comments and validate the JSON before uploading your file to the developer portal.</p>
-<!--<p class="apidoc_image_p"><img src="images/code_03.jpg" alt="widget_factory.json file" /></p>
--->
-<pre>{
-  "WIDGETKEY": {
-    "widgets": [
-      {
-        "position": "html",
-        "view": PATH TO CANJS VIEW
-      }
-    ],
-    widgetContexts: [
-      {
-        "context" : "customdashboard",
-              // widgetContext provide a list of the views where this widget is
-              // available. In this case, it is &quot;customdashboard&quot;. The label is
-              // the name of the widget that appears in the UI and it must be 
-              // resolved to the right key via internationalization.
-        "label" : "label.Notifications"
-      }  
-    }
-}  
-}</pre>
 <p><a href="#top">Back to top</a></p>
 
 
