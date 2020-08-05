@@ -11,8 +11,7 @@ nav-title: API Version Workflow
 ---
 <h1 id="top">API Version Workflow</h1>
 <p>This section provides information about functions, conditions, and variables for the API version workflow, as well as initial actions and reserved actions.</p>
-<p><strong>Note</strong>: API version workflow is optional. If no custom workflow is in place, the API version behavior is the default behavior described in the online help for the developer portal. See <a href="../learnmore/apiadmin_.htm">API Administration</a>.</p>
-<!--<p>{<span class="apidoc_red">C:\SVN\akana\trunk\products\api-portal\com.soa.atmosphere.impl\src\com\soa\api\workflow\impl</span>}</p>-->
+<p><strong>Note</strong>: API version workflow is optional. If no custom workflow is in place, the API version behavior is the default behavior described in the online help for the developer portal. See <a href="../learnmore/apiadmin__toc.htm">API Administration</a>.</p>
 <hr class="divide_hr" />
 
 
@@ -313,7 +312,6 @@ nav-title: API Version Workflow
 
 
 <h4 id="apiv_ra_18">@ModifyApiDetails</h4>
-<!--<p>{<span class="apidoc_red">ATMO-31623</span>}</p>-->
 <p><strong>Valid in version: 2019.1.7 and later</strong></p>
 <p>If you want to give users with one or more roles permission to modify the API details for an API version, even after the API version is activated, you can use this reserved action. You can then specify which roles can perform the action.</p>
 <p>To modify API details in the developer portal: choose your API version and go to <strong>Details</strong>. In the top section, click <strong>Edit</strong>.</p>
@@ -371,6 +369,7 @@ nav-title: API Version Workflow
 	<li><a href="#apiv_f_02">exportAPIAllVersions</a></li>
 	<li><a href="#apiv_f_03">markApiVersionDeleted</a> (Valid in version: 2019.1.0 and later)</li>
 	<li><a href="#apiv_f_05">updateApiVersionStatus</a> (Valid in version: 2019.1.0 and later)</li>
+	<li><a href="#apiv_f_connectappsfrompreviousversion">connectAppsFromPreviousVersion</a> (Valid in version: 2020.1.0 and later)</li>
 </ul>
 <!--<p>{\com.soa.atmosphere.impl\src\com\soa\api\workflow\impl\APIVersionWorkflowFunctions.java}</p>-->
 
@@ -513,6 +512,22 @@ nav-title: API Version Workflow
   &lt;/post-functions&gt;
 &lt;/action&gt;
 </pre>
+
+
+<h3 id="apiv_f_connectappsfrompreviousversion">connectAppsFromPreviousVersion</h3>
+<p><strong>Valid in version: 2020.1.0 and later</strong></p>
+<p>When a new API version is created, connects all apps that are currently contracted to the API, to the new version.</p>
+<p>You can use this API workflow function so that when a new version of an existing API is created, all apps that have an existing connection to a previous version of the API are automatically connected to the new version. This makes it easier for apps to migrate to a new version of the API, and can help make it easier to retire older versions of the API.</p>
+
+<h4>Parameters</h4>
+<p>None.</p>
+<h4>Examples/Notes/Additional Information</h4>
+<p>The example below shows a workflow step that adds <strong>connectAppsFromPreviousVersion</strong> as a pre-function when an API version becomes active. This initiates API access for the apps that are connected to the existing API version.</p>
+<pre>&lt;step id="400" name="Active"&gt;
+  &lt;pre-functions&gt;
+    &lt;function type="connectAppsFromPreviousVersion"&gt;
+    &lt;/function&gt;
+  &lt;/pre-functions&gt;</pre>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -587,6 +602,7 @@ nav-title: API Version Workflow
 </ul>
 <p>Then, you can modify actions and roles as needed to achieve the results you want.</p>
 <p>When you have your custom workload ready, upload it to the developer portal and assign it as your default workflow for API versions. For instructions, see <a href="../learnmore/apiadmin_workflow_custom.htm#proc_workflow_custom">To implement a custom API version workflow</a> (developer portal documentation).</p>
+<p><strong>Note</strong>: For all other workflow templates, it's best to go into the developer portal (<strong>More</strong> &gt; <strong>Admin</strong> &gt; <strong>Workflows</strong>), and download the version that's there. This workflow is custom, and therefore not available via the developer portal, so it is provided here.</p>
 <p><a href="#top">Back to top</a></p>
 
 

@@ -20,6 +20,9 @@ nav-title: Basic Site Settings
 <h2 style="color: gray;">Table of Contents</h2>
 <ol class="table_of_contents">
 	<li><a href="#settings_config_site">How do I configure site settings?</a></li>
+	<li><a href="#theme_platform_define">What is a platform theme?</a></li>
+
+	<li><a href="#settings_theme_options">What themes are available?</a></li>
 	<li><a href="#settings_theme_add">How do I add a theme?</a></li>
 	<li><a href="#settings_theme_clone">How do I extend a platform theme?</a></li>
 	<li><a href="#settings_theme_edit">How do I edit a theme?</a></li>
@@ -114,28 +117,55 @@ nav-title: Basic Site Settings
 	</tbody>
 </table>
 
-<h4 id="to_configure_site_settings">To configure site settings:</h4>
+<h4 id="to_configure_site_settings">To configure site settings</h4>
 <ol>
-	<li>Log in as the Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
+	<li>Log in as a Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
 	<li>Go to <strong>Site</strong>.</li>
 	<li>Change the settings as needed. For explanations of your choices, refer to the table above.</li>
-	<li>When done, click <strong>Save</strong>.</li>
+	<li>When done, click <strong>Save</strong>.
+		<p>If needed, you can use the <strong>Reset</strong> button at any point before saving, to remove changes you just made.</p>
+	</li>
 </ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h2 id="theme_platform_define">What is a platform theme?</h2>
+<p>One theme is one instance of the developer portal, with a unique URL and a specific look and feel. As part of site configuration, the Site Admin has the option to configure more than one theme for the implementation. There are several themes available: see <a href="#settings_theme_options">What themes are available?</a></p>
+<p>You can define a separate instance for each theme; in addition, you can extend a theme, to create one or more custom themes that are based on the same standard theme. Each custom theme can then be modified independently of the others, so that there can be multiple instances of the same theme with different sets of customization applied to each.</p>
+<p>When creating the tenant, it's best to choose one theme, such as Hermosa, as a starting point. The Site Admin can create additional themes later, in the developer portal: <!-- #BeginLibraryItem "/Library/hdr_more_admin.lbi" -->&nbsp;<strong>More</strong> &gt; <strong>Admin</strong> &gt;&nbsp;<!-- #EndLibraryItem --><strong>Site</strong> &gt; <strong>Add Theme</strong>.</p>
+<p>For more information, see <a href="site_admin_site.htm#settings_theme_add">How do I add a theme?</a> and <a href="site_admin_site.htm#settings_theme_clone">How do I extend a platform theme?</a></p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h2 id="settings_theme_options">What themes are available?</h2>
+<p>Available themes are displayed in <!-- #BeginLibraryItem "/Library/hdr_more_admin.lbi" -->&nbsp;<strong>More</strong> &gt; <strong>Admin</strong> &gt;&nbsp;<!-- #EndLibraryItem --><strong>Site</strong> &gt; <strong>Add Theme</strong>, in the <strong>Theme Name</strong> drop-down list:</p>
+<p><img src="assets/add_theme.png" alt="Adding a theme: Themes drop-down list" /></p>
+<p>The following themes are available:</p>
+<ul>
+	<li><a href="basics_glossary.htm#gl_theme_simpledev">Simple Dev</a>&#8212;A simplified, streamlined user interface for developers, without Site Admin or Business Admin functionality.</li>
+	<li><a href="basics_glossary.htm#gl_theme_hermosa">Hermosa</a>&#8212;Offers access to all features, including Site Admin and Business Admin functionality. In most cases, this help documentation shows dialog boxes and navigation from Hermosa Theme.</li>
+	<li><a href="basics_glossary.htm#gl_theme_bonita">Bonita</a> (new in Version: 2020.1.0)&#8212;A simplified, streamlined user interface, based on Simple Dev&nbsp;theme and very similar to it, but with added functionality relating to APIs. See <a href="basics_theme_bonita.htm">Bonita Theme</a>.</li>
+	<li><a href="basics_glossary.htm#gl_devops">DevOps</a>&#8212;Used with the Lifecycle Coordinator product. See <a href="site_admin_lc.htm#lc_setup_how">How do I set up Lifecycle Coordinator?</a></li>
+	<li><a href="basics_glossary.htm#gl_theme_default">Default Theme</a> (deprecated in Version: 2020.1.0)&#8212;The original user interface, with full functionality. Replaced by Hermosa theme.</li>
+</ul>
 <p><a href="#top">Back to top</a></p>
 
 
 
 <h2 id="settings_theme_add">How do I add a theme?</h2>
 <p>You can add one or more <a href="basics_glossary.htm#gl_theme">themes</a> in the <strong>Site Settings</strong> page.</p>
-<h4 id="to_add_a_theme">To add a theme:</h4>
+<p><strong>Note</strong> (2020.1.0 and later): When you add or modify a theme, and save the updates in the <strong>Site Settings</strong> page, the platform generates default customization files for all current themes. If you have customization files already in place, those files are not affected. The default customization files, sometimes called scaffolding, are generated to help support any customization you might want to do in the future. </p>
+<h4 id="to_add_a_theme">To add a theme</h4>
 <ol>
-	<li>Log in as the Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
-	<li>Go to <strong>Site</strong>.</li>
+	<li>Log in as a Site Admin.</li>
+	<li>Go to<!-- #BeginLibraryItem "/Library/hdr_more_admin.lbi" -->&nbsp;<strong>More</strong> &gt; <strong>Admin</strong> &gt;&nbsp;<!-- #EndLibraryItem --><strong>Site</strong>.</li>
 	<li>At the bottom, in the Themes section, click <strong>Add Theme</strong>.</li>
 	<li>Specify settings (for help with field values, see <a href="#settings_theme_configure">How do I configure values for a theme?</a> below):
 <ul>
-			<li>Choose <strong>Standard Theme</strong> (<strong>hermosa</strong>, <strong>simpledev</strong>. or <strong>default</strong>), or <strong>Custom Theme</strong> (specify a custom theme name, and then specify the standard theme that it's based on).
-			<p><strong>Note</strong>: If you're setting up DevOps theme, see <a href="site_admin_lc.htm#lc_setup_how">How do I set up Lifecycle Coordinator?</a></p></li>
+			<li>Choose <strong>Standard Theme</strong> (for options, see <a href="#settings_theme_options">What themes are available?</a>), or <strong>Custom Theme</strong> (specify a custom theme name, and then specify the standard theme that it's based on).
+				<p><strong>Note</strong>: If you're setting up DevOps theme, see <a href="site_admin_lc.htm#lc_setup_how">How do I set up Lifecycle Coordinator?</a></p></li>
 			<li>Specify one or more comma-delimited virtual hosts for the theme.</li>
 			<li>Specify the full console address for the theme, including trailing backslash.</li>
 			<li>Specify the site title. This is important for SEO rankings.</li>
@@ -151,9 +181,9 @@ nav-title: Basic Site Settings
 
 <h2 id="settings_theme_clone">How do I extend a platform theme?</h2>
 <h4 class="stamp">Valid in Version: 2018.0.0</h4>
-<p>The developer portal has three out-of-the-box standard themes: <a href="basics_glossary.htm#gl_theme_default">Default Theme</a>, <a href="basics_glossary.htm#gl_theme_simpledev">Simple Dev</a>, and <a href="basics_glossary.htm#gl_theme_hermosa">Hermosa</a>.</p>
+<p>The developer portal includes several out-of-the-box standard themes. For a full list, see <a href="#settings_theme_options">What themes are available?</a></p>
 <p>You can extend a standard theme by defining one or more custom themes based on the same standard theme. By doing this, you can have two or more instances of the same platform theme, each with its own URL and potentially each with a different set of user-defined customizations. Each instance uses the same database.</p>
-<p>You can use this to define multiple access points into the platform, each with its own set of customizations applied via the <strong>custom.less</strong> file.</p>
+<p>You can use this to define multiple access points into the platform, each with its own set of customizations applied.</p>
 <p><strong>Sample scenario illustrating multiple customizations of look and feel:</strong></p>
 <p>Tenant ACMEPayments Corp has 10 partners; each partner has a different API on the platform, and each has an API admin who accesses the platform and exports metric information for the API.
 </p>
@@ -165,7 +195,7 @@ nav-title: Basic Site Settings
 <ul>
 	<li>For instructions, see <a href="#settings_theme_add">How do I add a theme?</a> In Step 4, choose <strong>Custom Theme</strong>.</li>
 	<li>You'll need to have a unique URL for each theme.</li>
-	<li>Each instance with a separate <strong>theme</strong> value can be customized later with a <strong>custom.less</strong> file. See <a href="site_admin_config.htm#i_want_to_customize_platform_styles">I want to customize platform styles. What do I do?</a></li>
+	<li>Each instance with a separate <strong>theme</strong> value can be customized later with a <strong>custom.less</strong> file. See <a href="site_admin_customization.htm#platform_styles_customize">I want to customize platform styles. What do I do?</a></li>
 </ul>
 <p><a href="#top">Back to top</a></p>
 
@@ -173,9 +203,10 @@ nav-title: Basic Site Settings
 
 <h2 id="settings_theme_edit">How do I edit a theme?</h2>
 <p>You can edit a theme in the <strong>Site Settings</strong> page.</p>
-<h4 id="to_edit_a_theme">To edit a theme:</h4>
+<p><strong>Note</strong> (2020.1.0 and later): When you add or modify a theme, and save the updates in the <strong>Site Settings</strong> page, the platform generates default customization files for all current themes. If you have customization files already in place, those files are not affected. The default customization files, sometimes called scaffolding, are generated to help support any customization you might want to do in the future. </p>
+<h4 id="to_edit_a_theme">To edit a theme</h4>
 <ol>
-	<li>Log in as the Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
+	<li>Log in as a Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
 	<li>Go to <strong>Site</strong>.</li>
 	<li>At the bottom, in the Themes section, find the theme.</li>
 	<li>To the right of the line, click the Actions icon and choose <strong>Edit Theme</strong>.</li>
@@ -190,9 +221,9 @@ nav-title: Basic Site Settings
 <h2 id="settings_theme_delete">How do I delete a theme?</h2>
 <p>You can delete a theme in the <strong>Site Settings</strong> page.</p>
 
-<h4 id="to_delete_a_theme">To delete a theme:</h4>
+<h4 id="to_delete_a_theme">To delete a theme</h4>
 <ol>
-	<li>Log in as the Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
+	<li>Log in as a Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
 	<li>Go to <strong>Site</strong>.</li>
 	<li>At the bottom, in the <strong>Themes</strong> section, find the theme.</li>
 	<li>To the right of the line, click the <strong>Actions</strong> icon and choose <strong>Delete Theme</strong>.</li>
@@ -229,7 +260,8 @@ nav-title: Basic Site Settings
 	</tr>
 	<tr>
 		<td>Theme Name</td>
-		<td><p>Custom themes allow you to have a different branding on a different virtual host for the same theme. The custom theme name is used in the path of the uploaded resources for the theme. If you choose Custom Theme, specify the out-of-the-box theme it will be based on. Available choices: <strong>hermosa</strong>, <strong>simpledev</strong>, or <strong>default</strong>.</p></td>
+		<td><p>Custom themes allow you to have a different branding on a different virtual host for the same theme. The custom theme name is used in the path of the uploaded resources for the theme. If you choose Custom Theme, specify the out-of-the-box theme it will be based on.</p>
+			<p>For information about the themes, see <a href="site_admin_site.htm#settings_theme_options">What themes are available?</a></p></td>
 	</tr>
 	<tr>
 		<td>Virtual Hosts / Vanity Hostnames</td>
@@ -268,7 +300,7 @@ nav-title: Basic Site Settings
 	<li>Download an existing certificate: see <a href="#settings_theme_security_download">How do I download an existing certificate already assigned to a theme?</a></li>
 	<li>Delete the certificate assigned to a theme: see <a href="#settings_theme_security_delete">How do I delete the certificate assigned to a theme?</a></li>
 </ul>
-<p class="apidoc_note"><strong>Note</strong>: The cert must be a trusted certificate; therefore, its certification path must be in the platform's trust store. See <a href="#sec_cert_to_trust_store">How do I get my security certificate added to the platform's trust store?</a></p>
+<p class="apidoc_note"><strong>Note</strong>: The cert must be a trusted certificate; therefore, its certification path must be in the platform's <a href="basics_glossary.htm#gl_truststore">trust store</a>. See <a href="#sec_cert_to_trust_store">How do I get my security certificate added to the platform's trust store?</a></p>
 <p>For on-premise implementations only: If you get the below error message, you'll need to first set up an HTTPS listener in Policy Manager, the underlying infrastructure:</p>
 <pre>No available HTTPS listeners.</pre>
 <p>To set up the listener, see <a href="../../ag/listeners/about_listeners.htm#proc_listener_add">Adding a Listener</a> (Policy Manager help).</p>
@@ -281,10 +313,10 @@ nav-title: Basic Site Settings
 <p>Once you've added a site theme, you can upload a <a href="basics_glossary.htm#gl_certificate">certificate</a> to add security to the theme.</p>
 <p class="apidoc_note"><strong>Note</strong>: The certificate must be a trusted certificate; therefore, its certification path must be in the platform's trust store. See <a href="#sec_cert_to_trust_store">How do I get my security certificate added to the platform's trust store?</a></p>
 <p>In general, changes that you make to a theme aren't saved until you click <strong>Save</strong>; however, certificates are an exception. When you upload the security certificate, it's attached to the theme immediately. </p>
-<p><img src="assets/settings_site_security.jpg" alt="Adding a certificate for a site theme" /></p>
+<p><img src="assets/settings_site_security.png" alt="Adding a certificate for a site theme" /></p>
 <h4>To add a certificate to a theme</h4>
 <ol>
-	<li>Log in as the Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
+	<li>Log in as a Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
 	<li>Go to <strong>Site</strong>.</li>
 	<li>At the bottom, in the <strong>Themes</strong> section, find the theme.</li>
 	<li>To the right of the line, click the <strong>Actions</strong> icon and choose <strong>Upload Certificate</strong>. The <strong>Import Private Key + X.509 Certificate from Keystore</strong> overlay appears.</li>
@@ -297,7 +329,7 @@ nav-title: Basic Site Settings
 		</ul>
 		</li>
 	<li>Click <strong>Finish</strong>. The key/certificate information is added to the theme immediately, and the <strong>Site Settings</strong> page is updated to display the security icon for the theme, as shown below.
-<p><img src="assets/settings_site_security_icon.jpg" alt="Site security icon" /></p></li>
+<p><img src="assets/settings_site_security_icon.png" alt="Site security icon" /></p></li>
 	<li>In the <strong>Site Settings</strong> page, click <strong>Save</strong>.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
@@ -305,7 +337,7 @@ nav-title: Basic Site Settings
 
 
 <h2 id="sec_cert_to_trust_store">How do I get my security certificate added to the platform's trust store?</h2>
-<p>If you're adding or updating a certificate for your theme, you'll need to make sure that the certification path is in the platform's trust store. This is required so that the certificate is a trusted certificate.</p>
+<p>If you're adding or updating a certificate for your theme, you'll need to make sure that the certification path is in the platform's <a href="basics_glossary.htm#gl_truststore">trust store</a>. This is required so that the certificate is a trusted certificate.</p>
 <p>To get the certificate added to the platform's trust store:</p>
 <ul>
 	<li>If you're using the SaaS (Software as a Service) Cloud platform, write a Support ticket to get your certificate added.</li>
@@ -333,14 +365,14 @@ nav-title: Basic Site Settings
 
 <h4>To view the security certificate for a theme</h4>
 <ol>
-	<li>Log in as the Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
+	<li>Log in as a Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
 	<li>Go to <strong>Site</strong>.</li>
 	<li>At the bottom, in the <strong>Themes</strong> section, find the theme.</li>
 	<li>To the right of the line, find the security icon for the theme, as shown below, and click it.
-		<p><img src="assets/settings_site_security_icon.jpg" alt="Site security icon" /></p>
+		<p><img src="assets/settings_site_security_icon.png" alt="Site security icon" /></p>
 	</li>
 	<li>Review the certificate. An example is shown below.
-		<p><img src="assets/settings_site_security_view_cert.jpg" alt="Viewing the certificate for a theme" /></p></li>
+		<p><img src="assets/settings_site_security_view_cert.png" alt="Viewing the certificate for a theme" /></p></li>
 	<li>When done, click <strong>OK</strong> to close the <strong>View Certificate</strong> page.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
@@ -350,14 +382,14 @@ nav-title: Basic Site Settings
 <h2 id="settings_theme_security_update">How do I update the security for a theme?</h2>
 <h4 class="stamp">Valid in Version: 2018.0.0</h4>
 <p>Once you've uploaded the security certificate for a theme, you can edit the certificate (upload a different one), download it, or delete it.</p>
-<p class="apidoc_note"><strong>Note</strong>: If you're updating the certificate, the new certificate must be a trusted certificate; therefore, its certification path must be in the platform's trust store. See <a href="#sec_cert_to_trust_store">How do I get my security certificate added to the platform's trust store?</a></p>
+<p class="apidoc_note"><strong>Note</strong>: If you're updating the certificate, the new certificate must be a trusted certificate; therefore, its certification path must be in the platform's <a href="basics_glossary.htm#gl_truststore">trust store</a>. See <a href="#sec_cert_to_trust_store">How do I get my security certificate added to the platform's trust store?</a></p>
 <h4>To update the certificate for a theme</h4>
 <ol>
-	<li>Log in as the Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
+	<li>Log in as a Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
 	<li>Go to <strong>Site</strong>.</li>
 	<li>At the bottom, in the <strong>Themes</strong> section, find the theme.</li>
 	<li>To the right of the line, click the <strong>Actions</strong> icon and choose <strong>Edit Certificate</strong>, as shown below.
-	<p><img src="assets/settings_site_security_options.jpg" alt="Site security options" /></p></li>
+	<p><img src="assets/settings_site_security_options.png" alt="Site security options" /></p></li>
 	<li>In the <strong>Import Private Key + X.509 Certificate from Keystore</strong> overlay, import the new key/certificate file:
 		<ul>
 			<li>Browse to the keystore file and upload it.</li>
@@ -378,7 +410,7 @@ nav-title: Basic Site Settings
 <p>You might need to download the certificate that's been assigned to a theme; for example, for backup. Follow the steps below.</p>
 <h4>To download the certificate for a theme</h4>
 <ol>
-	<li>Log in as the Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
+	<li>Log in as a Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
 	<li>Go to <strong>Site</strong>.</li>
 	<li>At the bottom, in the <strong>Themes</strong> section, find the theme.</li>
 	<li>To the right of the line, click the <strong>Actions</strong> icon and choose <strong>Download Certificate</strong>.</li>
@@ -393,7 +425,7 @@ nav-title: Basic Site Settings
 <p>Most values associated with a site theme are updated only when you click <strong>Save</strong> on the <strong>Site Settings</strong> page. However, when you make changes to security keys/certificates, the changes are effective immediately. Deleting the security certificate for a site theme removes a layer of security; be sure that you want to perform this action. If you're planning to add a new certificate, you could leave the existing certificate in place and then just upload the new one, to ensure there is no lapse in site security; see <a href="#settings_theme_security_update">How do I update the security for a theme?</a></p>
 <h4>To delete the certificate for a theme</h4>
 <ol>
-	<li>Log in as the Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
+	<li>Log in as a Site Admin and <a href="site_admin_overview.htm#admin_menu_siteadmin">go to the Admin section</a>.</li>
 	<li>Go to <strong>Site</strong>.</li>
 	<li>At the bottom, in the <strong>Themes</strong> section, find the theme.</li>
 	<li>To the right of the line, click the <strong>Actions</strong> icon and choose <strong>Delete Certificate</strong>.</li>
@@ -424,27 +456,29 @@ nav-title: Basic Site Settings
 
 
 <h2 id="related_topics">Related Topics</h2>
-<div class="relatedlinks" id="cmhelp_site_admin">
-<!-- #BeginLibraryItem "/Library/relatedtopics_site_admin.lbi" -->
-	<ul>
-		<li><a href="site_admin_.htm">Site Admin Summary Page</a></li>
-		<li><a href="site_admin_overview.htm">Site Admin Responsibilities</a></li>
-		<li><a href="site_admin_agreements.htm">Platform Legal Agreement</a></li>
-		<li><a href="site_admin_config.htm">Configuration</a></li>
-		<li><a href="site_admin_settings.htm">Settings</a></li>
-	</ul>
-	<ul>
-		<li><a href="site_admin_site.htm">Site Settings</a></li>
-		<li><a href="site_admin_site_admins.htm">Managing Site Admins</a></li>
-		<li><a href="site_admin_users.htm">Managing User Accounts</a></li>
-		<li><a href="site_admin_workflows.htm">Workflows</a></li>
-		<li><a href="site_admin_promotion.htm">Promotion Feature</a></li>
-	</ul>
-	<ul>
-		<li><a href="site_admin_tc.htm">Test Client</a></li>
-		<li><a href="site_admin_es.htm">Elasticsearch Configuration</a></li>
-		<li><a href="site_admin_content_guidelines_sd.htm">Content Development Guidelines for Simple Dev Theme</a></li>
-		<li><a href="basics_glossary.htm">Glossary of Terms</a></li>
-	</ul>
-	<!-- #EndLibraryItem -->
-</div>
+<div class="relatedlinks" id="cmhelp_site_admin"><!-- #BeginLibraryItem "/Library/relatedtopics_site_admin.lbi" -->
+<ul>
+	<li><a href="site_admin__toc.htm">Site Admin Summary Page</a></li>
+	<li><a href="site_admin_overview.htm">Site Admin Responsibilities</a></li>
+	<li><a href="site_admin_agreements.htm">Platform Legal Agreement</a></li>
+	<li><a href="site_admin_challenges.htm">Challenges</a></li>
+	<li><a href="site_admin_config.htm">Configuration</a></li>
+	<li><a href="site_admin_country_codes.htm">Country Codes</a></li>
+	<li><a href="site_admin_customization.htm">Customization and Branding</a></li>
+</ul>
+<ul>
+	<li><a href="site_admin_file_manager.htm">File Manager</a></li>
+	<li><a href="site_admin_logins.htm">Logins</a></li>
+	<li><a href="site_admin_settings.htm">Settings</a></li>
+<li><a href="site_admin_site.htm">Site Settings</a></li>
+	<li><a href="site_admin_site_admins.htm">Managing Site Admins</a></li>
+	<li><a href="site_admin_users.htm">Managing User Accounts</a></li>
+	<li><a href="site_admin_workflows.htm">Workflows</a></li>
+</ul>
+<ul>
+	<li><a href="site_admin_promotion.htm">Promotion Feature</a></li>
+	<li><a href="site_admin_tc.htm">Test Client</a></li>
+	<li><a href="site_admin_es.htm">Elasticsearch Configuration</a></li>
+	<li><a href="site_admin_content_guidelines_sd.htm">Content Development Guidelines for Simple Dev Theme</a></li>
+	<li><a href="basics_glossary.htm">Glossary of Terms</a></li>
+</ul><!-- #EndLibraryItem --></div>

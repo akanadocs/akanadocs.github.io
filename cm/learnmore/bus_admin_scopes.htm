@@ -96,7 +96,7 @@ nav-title: Scopes
 </ul>
 <p><strong>Note</strong>: Scopes can only be configured by Business Administrators.</p>
 
-<h4 id="proc_scope_add">To add a scope:</h4>
+<h4 id="proc_scope_add">To add a scope</h4>
 <ol>
 	<li>Go to<!-- #BeginLibraryItem "/Library/hdr_more_admin.lbi" -->&nbsp;<strong>More</strong> &gt; <strong>Admin</strong> &gt;&nbsp;<!-- #EndLibraryItem --><strong>Scopes</strong>.</li>
 	<li>On the <strong>Scopes</strong> page, click <strong>Add Scope</strong>. In the right panel, specify the following:
@@ -105,7 +105,7 @@ nav-title: Scopes
 	<li>Short Description (required)</li>
 	<li>Full Description</li>
 	<li><strong>Visibility</strong>: If a scope has public visibility, anything mapped to the scope (operations or documents) is visible to all users including anonymous users. If a scope has private visibility, any part of the API mapped to the scope is visible only if the user is a member of one or more groups that either have been invited with a visibility scope containing the private scope or else have been invited with unrestricted visibility.</li>
-	<li><strong>Anonymous access</strong>: If anonymous access is allowed for a scope, operations that are mapped to the scope can be used by apps that do not identify themselves to the gateway with any credentials. The app does not even need to be registered in the platform. We recommend not allowing anonymous access to your API. For more information, see <a href="apiadmin_api_add.htm#api_anonymous_access">Should I allow anonymous access?</a></li>
+	<li><strong>Sandbox Anonymous Access Allowed / Live Anonymous Access Allowed</strong>: If anonymous access is allowed for a scope, operations that are mapped to the scope can be used by apps that do not identify themselves to the gateway with any credentials. The app does not even need to be registered in the platform. We recommend not allowing anonymous access to your API, particularly in the<strong> <!-- #BeginLibraryItem "/Library/environ_live.lbi" -->Live<!-- #EndLibraryItem --></strong> implementation. For more information, see <a href="apiadmin_api_add.htm#api_anonymous_access">Should I allow anonymous access?</a></li>
 </ul></li>
 	<li>If you'll be using Akana as your OAuth Provider domain, set the two <strong>Akana OAuth Provider Options</strong> fields appropriately:
 <ul>
@@ -121,7 +121,7 @@ nav-title: Scopes
 
 <h2 id="scope_add_child">How do I add a child to a scope?</h2>
 <p>After you've saved a scope, you can add a child scope. You can create multiple levels in the scope hierarchy.</p>
-<h4>To add a child scope:</h4>
+<h4>To add a child scope</h4>
 <ol><li>Go to<!-- #BeginLibraryItem "/Library/hdr_more_admin.lbi" -->&nbsp;<strong>More</strong> &gt; <strong>Admin</strong> &gt;&nbsp;<!-- #EndLibraryItem --><strong>Scopes</strong>.</li>
 	<li>On the <strong>Scopes</strong> page, in the left panel, click the scope for which you want to add a child scope.</li>
 	<li>In the right panel, click <strong>Add Child</strong>.</li>
@@ -134,7 +134,7 @@ nav-title: Scopes
 
 <h2 id="scope_move">How do I move a scope?</h2>
 <p>You can move a scope anywhere in the scope hierarchy by selecting the scope and dragging it to a new position in the list. You can also move a scope to a higher or lower level in the hierarchy.</p>
-<h4>To move a scope:</h4>
+<h4>To move a scope</h4>
 <ol>
 	<li>Go to<!-- #BeginLibraryItem "/Library/hdr_more_admin.lbi" -->&nbsp;<strong>More</strong> &gt; <strong>Admin</strong> &gt;&nbsp;<!-- #EndLibraryItem --><strong>Scopes</strong>.</li>
 	<li>On the <strong>Scopes</strong> page, in the left panel, click the name of a scope that you want to move. Hold down the mouse and drag the scope to the new location in the hierarchy. It can be higher, lower, or at the same level.</li>
@@ -158,7 +158,7 @@ nav-title: Scopes
 
 <h2 id="scope_edit">How do I edit a scope?</h2>
 <p>You can modify a parent or child scope as long as it isn't in use in an API access contract.</p>
-<h4>To edit a scope:</h4>
+<h4>To edit a scope</h4>
 <ol>
 	<li>Log in to the developer portal as the Business Admin.</li>
 	<li>Go to<!-- #BeginLibraryItem "/Library/hdr_more_admin.lbi" -->&nbsp;<strong>More</strong> &gt; <strong>Admin</strong> &gt;&nbsp;<!-- #EndLibraryItem --><strong>Scopes</strong>.</li>
@@ -171,8 +171,10 @@ nav-title: Scopes
 
 
 <h2 id="scope_delete">How do I delete a scope?</h2>
-<p>You can modify a parent or child scope as long as it isn't in use in an API access contract. If you delete scope that has children, the child scopes are also deleted.</p>
-<h4>To delete a scope:</h4>
+<p>Before you delete a scope, make sure it isn't in use in any licenses or referenced by any APIs. If a scope is in use, you will see this message:</p>
+<pre>Scope cannot be deleted. APIs or Licenses are referencing this scope or its children.</pre>
+<p>If you delete a scope that has children, the child scopes are also deleted.</p>
+<h4>To delete a scope</h4>
 <ol>
 	<li>Go to<!-- #BeginLibraryItem "/Library/hdr_more_admin.lbi" -->&nbsp;<strong>More</strong> &gt; <strong>Admin</strong> &gt;&nbsp;<!-- #EndLibraryItem --><strong>Scopes</strong>.</li>
 	<li>On the <strong>Scopes</strong> page, in the left panel, click the scope you want to delete.</li>
@@ -189,7 +191,7 @@ nav-title: Scopes
 <h2 id="related_topics">Related Topics</h2>
 <div class="relatedlinks" id="cmhelp_bus_admin"><!-- #BeginLibraryItem "/Library/relatedtopics_bus_admin.lbi" -->
 <ul>
-	<li><a href="bus_admin_.htm">Business Admin Summary Page</a></li>
+	<li><a href="bus_admin__toc.htm">Business Admin Summary Page</a></li>
 	<li><a href="bus_admin_overview.htm">Business Admin Responsibilities</a></li>
 	<li><a href="bus_admin_gateways.htm">Managing Gateways</a></li>
 	<li><a href="bus_admin_bus_admin.htm">Business Admins</a></li>
@@ -210,6 +212,7 @@ nav-title: Scopes
 	<li><a href="bus_admin_organizations.htm">Organizations</a></li>
 	<li><a href="bus_admin_org_apis.htm">Organization APIs</a></li>
 	<li><a href="bus_admin_org_apps.htm">Organization Apps</a></li>
+	<li><a href="bus_admin_org_root_monthly_report.htm">Monthly Report</a></li>
 	<li><a href="bus_admin_org_roles.htm">Organization Security/Roles</a></li>
 	<li><a href="bus_admin_org_policies.htm">Organization Policies</a></li>
 	<li><a href="bus_admin_org_processes.htm">Organization Processes</a></li>

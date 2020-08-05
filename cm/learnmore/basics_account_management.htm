@@ -47,14 +47,15 @@ nav-title: Account Management
 </ol>
 
 
-<h4 style="color: gray;"><a href="#h_notifications">Notifications</a></h4>
+<h4 style="color: gray;"><a href="#h_notifications">Preferences and Notification Settings</a></h4>
 
 
 <ol class="table_of_contents">
+	<li><a href="#profile_preferences">What user preferences can I set?</a></li>
 	<li><a href="#how_do_notifications_work">How do notifications work?</a></li>
 	<li><a href="#email_notifications_manage">How do I enable or disable email notifications?</a></li>
-	<li><a href="#notifications_respond">How do I respond to Dashboard notifications?</a></li>
-	<li><a href="#notifications_delete">How do I delete Dashboard notifications?</a></li>
+	<li><a href="#notifications_respond">How do I respond to notifications?</a></li>
+	<li><a href="#notifications_delete">How do I delete notifications?</a></li>
 </ol>
 
 
@@ -125,14 +126,14 @@ nav-title: Account Management
 	<li><strong>Details</strong> page: First Name, Last Name, Profile Name (username on the platform), Email, Phone Number (possibly, depending on configuration) and Avatar. See <a href="#proc_user_details_edit">To edit user details</a>.</li>
 	<li><strong>Forum</strong> page: The user forum aggregates forum entries for all apps, APIs, and groups the user is associated with. See <a href="basics_forums.htm">Forums</a>.</li>
 	<li><strong>Password</strong> page: Change password. See <a href="#proc_password_change">To change your password</a>.</li>
+	<li><strong>Preferences</strong> page (Version: 2020.1.0 and later): See <a href="#profile_preferences">What user preferences can I set?</a></li>
 	<li><strong>Security</strong> page: Set up, or change, security questions and answers. The number of security questions you must answer, if any, is determined by platform settings. See <a href="#proc_sec_q_modify">To set or change answers to security challenge questions</a>.</li>
 	<li><strong>Settings</strong> page: Manage notifications settings. See <a href="#proc_user_settings_edit">To edit user settings</a>.</li>
 </ul>
 
 <h4 id="proc_user_details_edit">To edit user details</h4>
 <ol>
-	<li>In the top navigation, click <strong>Profile</strong>, as shown below.
-	<p><img src="assets/menu_profile.jpg" alt="Profile menu" /></p></li>
+	<li>In the top navigation, to the right of your avatar, click the down arrow and then click <strong>Profile</strong>.</li>
 	<li>In the left navigation menu, click <strong>Details</strong>. The Details page appears, as shown below.
 	<p><img src="assets/profile_details.jpg" alt="Profile Details page" /></p></li>
 	<li>Update the account information as needed. Here you can change any of the following:
@@ -145,7 +146,8 @@ nav-title: Account Management
 			<li>Avatar</li>
 		</ul>
 	</li>
-	<li>Click <strong>Save</strong>.</li>
+	<li>Click <strong>Save</strong>.
+	<p>If needed, you can use the <strong>Reset</strong> button at any point before saving, to remove changes you just made.</p></li>
 	<li>Use the top navigation to navigate to another page.</li>
 </ol>
 
@@ -156,7 +158,9 @@ nav-title: Account Management
 	<li>Provide the current password.</li>
 	<li>Choose the new password.</li>
 	<li>Type the new password again.</li>
-	<li>Click <strong>Save</strong>.</li>
+	<li>Click <strong>Save</strong>.
+		<p>If needed, you can use the <strong>Reset</strong> button at any point before saving, to remove changes you just made.</p>
+	</li>
 	<li>Use the top navigation to navigate to another page.</li>
 </ol>
 
@@ -167,7 +171,9 @@ nav-title: Account Management
 	<p>If you previously provided answers to security questions, the questions that you chose, and the answers you provided, are not displayed. To change the questions and/or answers, all you need to do is choose the question, provide the answer, and save. Your choices are never displayed, but they are stored securely in the database.</p></li>
 	<li>For each entry, choose a question from the drop-down list and then provide an answer.
 	<p>If you previously set up security challenge questions, and are now modifying the information, you'll need to set up a complete new set of questions/answers. The prior information isn't displayed, and the new information replaces it. You can't change just one and keep the others.</p></li>
-	<li>Click <strong>Save</strong>.</li>
+	<li>Click <strong>Save</strong>.
+		<p>If needed, you can use the <strong>Reset</strong> button at any point before saving, to remove changes you just made.</p>
+	</li>
 	<li>Use the top navigation to navigate to another page.
 	<p>Once you navigate away, if you go back to the page you won't see your choices. However, as long as you saved, the information is stored in the database and is available if needed; for example, if you forget your password.</p></li>
 </ol>
@@ -177,7 +183,9 @@ nav-title: Account Management
 	<li>In the top navigation, click <strong>Profile</strong>.</li>
 	<li>In the left navigation menu, click <strong>Settings</strong>.</li>
 	<li>Clear check boxes as needed to modify your notifications settings.</li>
-	<li>Click <strong>Save</strong>.</li>
+	<li>Click <strong>Save</strong>.
+		<p>If needed, you can use the <strong>Reset</strong> button at any point before saving, to remove changes you just made.</p>
+	</li>
 	<li>Use the top navigation to navigate to another page.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
@@ -200,7 +208,7 @@ nav-title: Account Management
 <h2 id="user_email_change">How do I change my email address?</h2>
 <p>The platform uses your email address for authentication when you log in, and also for sending email notifications to inform you about certain events such as app team changes.</p>
 <p>You can change the email address associated with your account, on the <strong>User Settings</strong> page.</p>
-<p class="apidoc_note"><strong>Note</strong>: If you log in to the developer portal using an account you've set up with a third-party provider such as Google, Okta, or Facebook, the email address set up in the developer portal must match the address in the provider account. If you change your email address on the <strong>User Settings</strong> page, make the same change in your third-party provider account.</p>
+<p class="apidoc_note"><strong>Note</strong>: If you log in to the developer portal using an account you've set up with a third-party provider such as Google, Okta, or Facebook, the email address set up in the developer portal must match the address in the provider account. If you change your email address on the <strong>User Settings</strong> page, make the same change in your third-party provider account. When you make the change, a notification is sent to the old and new accounts to keep you informed.</p>
 <p>In version 2019.0.0 and later, confirmation of the new email is required before the change is finalized. When you change your email address:</p>
 <ul>
 	<li>A notification is sent to the new email address, with a code. You must enter the code in the developer portal user interface to confirm the change.</li>
@@ -243,7 +251,7 @@ nav-title: Account Management
 
 
 <h2 id="user_profile_picture_update">How do I update my user profile picture?</h2>
-<p>The user profile avatar (picture) displays with the user name in the <strong>Logged In User</strong> area, and with <strong>App Forum</strong>, <strong>API Forum</strong>, and <strong>Dashboard</strong> posts.</p>
+<p>The user profile avatar (picture) displays with the user name in the <strong>Logged In User</strong> area, and with <strong>App Forum</strong>, <strong>API Forum</strong>, and <strong>Action Dashboard</strong> posts.</p>
 <p>You can set up an avatar for yourself via the <strong>Profile</strong> &gt; <strong>Details</strong> page. You have two choices:</p>
 <ul>
 	<li>Upload a profile picture. For file requirements, see <a href="#avatar_file_requirements">What are the file requirements for avatar images?</a> above.</li>
@@ -282,7 +290,7 @@ nav-title: Account Management
 <p>You can upload an icon for a specific resource such as an API, app, or group. This action can be performed in the <strong>Icon</strong> section when adding or editing the resource.</p>
 <p>For file requirements, see <a href="#avatar_file_requirements">What are the file requirements for avatar images?</a> above.</p>
 
-<h4 id="proc_icon_upload_crop">To upload and crop an icon:</h4>
+<h4 id="proc_icon_upload_crop">To upload and crop an icon</h4>
 <ol>
 	<li>In the <strong>Icon</strong> section for the resource, click <strong>Upload</strong> to launch the <strong>Upload File</strong> pop-up.</li>
 	<li>Click <strong>Browse</strong> and then navigate to the location of your file.</li>
@@ -295,7 +303,7 @@ nav-title: Account Management
 
 <h2 id="how_do_i_log_out">How do I log out?</h2>
 <p>You can log out using the <strong>Logout</strong> link on the top navigation.</p>
-<h4>To log out:</h4>
+<h4>To log out</h4>
 <ol>
 	<li>Access the top navigation.</li>
 	<li>Click <strong>Logout</strong>.</li>
@@ -322,7 +330,7 @@ nav-title: Account Management
 <h2 id="password_change">How do I change my password?</h2>
 <p>Your password is used along with your email address to sign in. You can change your user account password on the <strong>User Settings</strong> page.</p>
 <p>If needed, you could also ask the Site Admin to change your password.</p>
-<h4>To change your password:</h4>
+<h4>To change your password</h4>
 <ol>
 	<li>Go to your <strong>Password</strong> page (<strong>Profile</strong> &gt; <strong>Password</strong>).</li>
 	<li>Type to current password.</li>
@@ -343,7 +351,7 @@ nav-title: Account Management
 	<li>Password reset on the platform only works if you have an account set up on the platform (as a <a href="basics_glossary.htm#gl_registereduser">registered user</a>). If you log in via a social media provider, such as Facebook or Google, you'll need to change your password with the provider.</li>
 	<li>If you're added as a user by a Site Admin, rather than signing up yourself, you must sign in successfully at least once to activate your account before you can change your password using the &quot;Forgot Password&quot; process described here. If a Site Admin added you and you've forgotten your password, ask the Site Admin to change the password for you.</li>
 </ul>
-<h4 id="proc_password_reset">To reset your password:</h4>
+<h4 id="proc_password_reset">To reset your password</h4>
 <ol>
 	<li>On the homepage, click <strong>Login / Sign-up</strong>.</li>
 	<li>On the Login page, click the <strong>Forgot Password?</strong> link.</li>
@@ -380,7 +388,7 @@ nav-title: Account Management
 <p>As part of signing up for the platform, you might be required to provide answers to one or more <a href="basics_glossary.htm#gl_challengequestion">security questions</a>. These are for the security of your account. For more information about security questions, see <a href="#what_are_the_security_questions">What are the security questions and how are they used?</a></p>
 <p>You might want to change one or more of the security questions, or change your answer. Once you are logged in, you can do this at any time.</p>
 <p><strong>Note</strong>: The platform might be set up so that the answers to security questions are encrypted. If this is the case, you'll see a message to that effect. Although your answers to the security questions are not shown except when you add them, your existing answers are stored. You don't need to do anything with questions and answers you don't want to change. Just provide new answers to any changed questions, or if you want to change your answer.</p>
-<h4>To change your security questions and/or answers:</h4>
+<h4>To change your security questions and/or answers</h4>
 <ol>
 	<li>Log in to the platform.</li>
 	<li>In the top navigation, click <strong>Profile</strong>.</li>
@@ -399,37 +407,59 @@ nav-title: Account Management
 
 
 <hr class="divide_hr" />
-<h2 id="h_notifications">Notifications</h2>
+<h2 id="h_notifications">Preferences and Notification Settings</h2>
 
+
+
+
+<h2 id="profile_preferences">What user preferences can I set?</h2>
+<p>In your user profile, you can customize the types of items that are displayed by default on your <a href="basics_glossary.htm#gl_actiondashboard">Action Dashboard</a>.</p>
+<p><strong>Note</strong>: If you change your user preferences to customize the initial display, you can still access all item types when viewing the Action Dashboard. This setting just changes the initial view.</p>
+<p>For information on the Action Dashboard, see <a href="app_stay_informed.htm">Stay Informed</a>.</p>
+
+<h4 id="proc_action_dashboard_preferences">To customize your Action Dashboard initial view</h4>
+<ol>
+	<li>Go to <a href="basics_glossary.htm#gl_profile"><strong>Profile</strong></a> &gt; <strong>Preferences</strong>.</li>
+	<li>Choose one of the item types for your initial view. Choices:
+		<ul>
+			<li>Alerts</li>
+			<li>Requests</li>
+			<li>Tickets</li>
+		</ul>
+		</li>
+	
+	<li>Click <strong>Save</strong>.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
 
 
 
 <h2 id="how_do_notifications_work">How do notifications work?</h2>
 <p>The platform offers two types of notifications:</p>
 <ul>
-	<li>Dashboard notifications, displayed on your Dashboard in the platform user interface</li>
+	<li>Notifications, displayed on the <strong>Notifications</strong> page in the platform user interface and often also in the Action Dashboard.</li>
 	<li>Email notifications, sent to you</li>
 </ul>
-<p><strong>Dashboard notifications</strong></p>
+<p><strong>Action Dashboard notifications</strong></p>
 
-<p>When you log in, you are automatically taken to your Dashboard, where you might see one or more notifications to keep you informed of activity relating to your apps, APIs, and groups. In many cases, such as accepting an invitation to a group, you can take action directly from the Dashboard notification.</p>
+<p>When you log in, you are automatically taken to your Action Dashboard, where you might see one or more notifications to keep you informed of activity relating to your apps, APIs, and groups. In some scenarios, such as accepting an invitation to a group, you can take action directly from the Action Dashboard notification.</p>
 <p>In addition, after you've navigated to a different page, you can always view a summary of your notifications.</p>
-<h4>To view your Dashboard notifications</h4>
+<h4>To view your notifications</h4>
 <ol>
 	<li>In the top navigation bar, click the number indicator. You'll see a short summary of your notifications.</li>
 	<li>To see all notifications from this view, click the <strong>See All</strong> link at the bottom of the drop-down notifications list, as shown below.
 		<p><img src="assets/basics_notifications.jpg" alt="Viewing notifications" /></p></li>
-	<li>In the Dashboard page, manage your notifications. See:
+	<li>On the Notifications page, manage your notifications. See:
 		<ul>
-			<li><a href="#notifications_respond">How do I respond to Dashboard notifications?</a></li>
-			<li><a href="#notifications_delete">How do I delete Dashboard notifications?</a></li>
+			<li><a href="#notifications_respond">How do I respond to notifications?</a></li>
+			<li><a href="#notifications_delete">How do I delete notifications?</a></li>
 		</ul>
 		</li>
 </ol>
-<p>For more information about the Dashboard, see <a href="app_stay_informed.htm#what_information_is_displayed_on_my_dashboard">What information is displayed on my Dashboard?</a></p>
+<p>For more information on the Action Dashboard, see <a href="basics_actiondashboard.htm">Action Dashboard</a>.</p>
 <p><strong>Email notifications</strong></p>
 <p>Email notification messages are generated in response to certain events, such as changes relating to your apps, APIs, or groups.</p>
-<p>For some events, such as password change, you'll always receive an email notification. For other types of events, you can turn off the email notification option in your user settings. Even though the emails are not generated, you will still get Dashboard notifications for these events.</p>
+<p>For some events, such as password change, you'll always receive an email notification. For other types of events, you can turn off the email notification option in your user settings. Even though the emails are not generated, you will still get notifications on the <strong>Action Dashboard</strong> and <strong>Notifications</strong> page for these events.</p>
 <p>To turn off your email notifications: see <a href="#email_notifications_manage">How do I enable or disable email notifications?</a></p>
 <p><a href="#top">Back to top</a></p>
 
@@ -437,7 +467,7 @@ nav-title: Account Management
 
 <h2 id="email_notifications_manage">How do I enable or disable email notifications?</h2>
 <p>By default, the platform sends you email notifications when certain activities occur; for example, when a new member joins your app team or group. You can update your notifications settings on the <strong>User Settings</strong> page to turn email notifications off or on for certain events.</p>
-<h4>To change your notification settings:</h4>
+<h4>To change your notification settings</h4>
 <ol>
 	<li>Go to your <strong>Settings</strong> page (<a href="basics_glossary.htm#gl_profile"><strong>Profile</strong></a> &gt; <strong>Details</strong>).</li>
 	<li>If you want to change your setting for receiving news updates, check or clear the <strong>Email me news updates</strong> check box, if it is available.</li>
@@ -461,19 +491,20 @@ nav-title: Account Management
 
 
 
-<h2 id="notifications_respond">How do I respond to Dashboard notifications?</h2>
-<p>You can respond to notifications directly in the <strong>Dashboard</strong> or you can click the notification to display its Forum entry and respond from there.</p>
-<p>Dashboard notifications display 20 at a time, and the Dashboard page uses infinite scrolling rather than paging. This means that when you have a lot of notifications, and go to the Dashboard, you'll see the first 20. If you scroll down the list, another 20 are added to the list. If you have a large number of notifications, you can continue scrolling down the list, and more notifications will be added, until all your notifications are displayed.</p>
+<h2 id="notifications_respond">How do I respond to notifications?</h2>
+<p>Some notifications are action items, such as an invitation to be an API Admin, to join a team, or to approve a request to connect to your API.</p>
+<p>You can respond to notifications in the <strong>Notifications</strong> page or <strong>Action Dashboard</strong>, or in the <strong>Forum</strong> for the resource, such as app notifications.</p>
+<p>The <strong>Notifications</strong> page displays 20 at a time, and the page uses infinite scrolling rather than paging. This means that when you have a lot of notifications, and go to the <strong>Notifications</strong> page, you'll see the first 20. If you scroll down the list, another 20 are added to the list. If you have a large number of notifications, you can continue scrolling down the list, and more notifications will be added, until all your notifications are displayed.</p>
 <p>For a list of response options to posts or tickets, see <a href="app_collaborate_post_ticket_management.htm">Post/Ticket Management</a>.</p>
 <p><a href="#top">Back to top</a></p>
 
 
 
-<h2 id="notifications_delete">How do I delete Dashboard notifications?</h2>
-<p>In the Dashboard, after you've viewed your notifications, you can delete them individually or in multiples.</p>
+<h2 id="notifications_delete">How do I delete notifications?</h2>
+<p>On the <strong>Notifications</strong> page, after you've viewed your notifications, you can delete them individually or in multiples.</p>
 <p>To delete notifications individually: Check one or more boxes to the right of individual notifications and then click <strong>Delete Checked</strong>.</p>
 <p>To delete all notifications on the page: choose <strong>Check All on Page</strong> and then click <strong>Delete Checked</strong>.</p>
-<p>If you have a large number of notifications, only the first 20 are displayed on the Dashboard. To view additional notifications, just scroll down. As you scroll, additional notifications are displayed. To delete all notifications at once, for a large number, you'd have to scroll until all your notifications are displayed, then choose <strong>Check All on Page</strong> and click <strong>Delete Checked</strong>.</p>
+<p>If you have a large number of notifications, only the first 20 are displayed on the <strong>Notifications</strong> page. To view additional notifications, just scroll down. As you scroll, additional notifications are displayed. To delete all notifications at once, for a large number, you'd have to scroll until all your notifications are displayed, then choose <strong>Check All on Page</strong> and click <strong>Delete Checked</strong>.</p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -506,20 +537,18 @@ nav-title: Account Management
 
 
 <h2 id="related_topics">Related Topics</h2>
-<div class="relatedlinks" id="cmhelp_basics">
-<!-- #BeginLibraryItem "/Library/relatedtopics_basics.lbi" -->
-	<ul>
-		<li><a href="basics.htm">Basics Summary Page</a></li>
-		<li><a href="basics_signup.htm">Sign Up</a></li>
-		<li><a href="basics_account_management.htm">Account Management</a></li>
-		<li><a href="basics_navigation.htm">Navigation</a></li>
-		<li><a href="basics_groups.htm">Groups</a></li>
-	</ul>
-	<ul>
-		<li><a href="basics_forums.htm">Forums</a></li>
-		<li><a href="basics_search.htm">Using Search in the Developer Portal</a></li>
-		<li><a href="basics_support.htm">Support</a></li>
-		<li><a href="basics_glossary.htm">Glossary of Terms</a></li>
-	</ul>
-	<!-- #EndLibraryItem -->
-</div>
+<div class="relatedlinks" id="cmhelp_basics"><!-- #BeginLibraryItem "/Library/relatedtopics_basics.lbi" -->
+<ul>
+	<li><a href="basics.htm">Basics Summary Page</a></li>
+	<li><a href="basics_signup.htm">Sign Up</a></li>
+	<li><a href="basics_account_management.htm">Account Management</a></li>
+	<li><a href="basics_navigation.htm">Navigation</a></li>
+	<li><a href="basics_groups.htm">Groups</a></li>
+</ul>
+<ul>
+	<li><a href="basics_actiondashboard.htm">Action Dashboard</a></li>
+	<li><a href="basics_forums.htm">Forums</a></li>
+	<li><a href="basics_search.htm">Using Search in the Developer Portal</a></li>
+	<li><a href="basics_support.htm">Support</a></li>
+	<li><a href="basics_glossary.htm">Glossary of Terms</a></li>
+</ul><!-- #EndLibraryItem --></div>

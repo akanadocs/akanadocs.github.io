@@ -89,8 +89,7 @@ nav-title: Organizations
 				<tr>
 					<th>Hermosa Theme, 2019.1.0 and later:</th>
 					<th>Hermosa Theme, versions up to 2019.1.0:</th>
-					<th>Default Theme:</th>
-				</tr>
+					</tr>
 			</thead>
 			<tbody>
 				<tr>
@@ -98,9 +97,7 @@ nav-title: Organizations
 						<p><img src="assets/topnav_more_organizations.png" alt="Organizations icon, Hermosa Theme, 2019.1.0 and later" /></p></td>
 					<td><p>From the vertical ellipsis menu, choose <strong>Organizations</strong>.</p>
 						<p><img src="assets/icon_organizations_hermosa.jpg" alt="Organizations icon, Hermosa Theme" /></p></td>
-					<td><p>Click the Organizations icon.</p>
-						<p><img src="assets/icon_organizations_default.jpg" alt="Organizations icon, Default Theme" /></p></td>
-				</tr>
+					</tr>
 			</tbody>
 		</table>
 	</li>
@@ -133,12 +130,12 @@ nav-title: Organizations
 <thead>
 	<tr>
 		<th>Hermosa Theme:</th>
-		<th>Default Theme:</th>
+		<th>Default Theme (Deprecated in 2020.1.0):</th>
 	</tr>
 </thead>
 <tbody>
 	<tr>
-		<td style="vertical-align:top;"><img src="assets/menu_left_org_org_hermosa.jpg" alt="Left menu, Organizations, Hermosa Theme" /></td>
+		<td style="vertical-align:top;"><img src="assets/menu_left_org_org_hermosa_202010.png" alt="Left menu, Organizations, Hermosa Theme" /></td>
 		<td><span style="vertical-align:top;"><img src="assets/menu_left_org_org_default.jpg" alt="Left menu, Organizations, Default Theme" /></span></td>
 	</tr>
 </tbody>
@@ -147,6 +144,8 @@ nav-title: Organizations
 	<li><strong>Details</strong>&#8212;View basic details about the organization; Name, Description, and Type. From this page, you can also edit details or delete the organization.</li>
 	<li><strong>APIs</strong>&#8212;View, add, edit, or delete APIs associated with the organization. See <a href="#business_apis_manage">How do I manage APIs for my organization?</a></li>
 	<li><strong>Apps</strong>&#8212;View, add, edit, or delete apps associated with the organization. See <a href="#business_apps_manage">How do I manage apps for my organization?</a></li>
+	<li><strong>Monthly Report</strong> (Valid in Version: 2020.1.0 and later)&#8212;Available for root business organization only. View a summary of metric information for the entire developer portal. See <a href="bus_admin_org_root_monthly_report.htm">Monthly Report</a>.
+	<p><strong>Note</strong>: The Monthly Report is available in Version 2020.1.0 and later, and Default Theme is deprecated in version 2020.1.0, so the Monthly Report is only available in Hermosa Theme.</p></li>
 	<li><strong>Organizations</strong>&#8212;Create and manage child organizations. See <a href="#business_add">How do I add an organization?</a></li>
 	<li><strong>Policies</strong>&#8212;View, add, edit, or delete policies that can be used by any APIs in the organization. See <a href="#business_policies_manage">How do I manage policies for my organization?</a></li>
 	<li><strong>Processes</strong>&#8212;View, add, edit, or delete processes that can be used by any APIs in the organization. See <a href="#business_processes_manage">How do I manage processes for my organization?</a></li>
@@ -292,8 +291,8 @@ nav-title: Organizations
 <h2 id="business_apis_manage">How do I manage APIs for my organization?</h2>
 <p>In the API platform, providing you have sufficient permissions, you can add and manage APIs at the root level.</p>
 <ul>
-	<li>In Default Theme, click the <strong>Plus</strong> menu and choose <strong>Add a New API</strong>, or click the <strong>My APIs</strong> icon to view your APIs list.</li>
 	<li>In Hermosa Theme, go to <strong>APIs</strong> &gt; <strong>Add API</strong> to add an API, or go to<!-- #BeginLibraryItem "/Library/hdr_myapis_nav_all.lbi" -->&nbsp;<strong>APIs</strong> &gt; <strong>My APIs</strong> &gt; choose API &gt;&nbsp;<!-- #EndLibraryItem -->to view the list.</li>
+	<li>In Default Theme, click the <strong>Plus</strong> menu and choose <strong>Add a New API</strong>, or click the <strong>My APIs</strong> icon to view your APIs list.</li>
 </ul>
 <p>The platform also supports setting up a business organization. You can then add apps and APIs at the organization level. You have full rights to manage these APIs, including:</p>
 <ul>
@@ -311,8 +310,8 @@ nav-title: Organizations
 <h2 id="business_apps_manage">How do I manage apps for my organization?</h2>
 <p>In the API platform, providing you have sufficient permissions, you can add and manage apps at the root level.</p>
 <ul>
-	<li>In Default Theme, click the <strong>Plus</strong> menu and choose <strong>Add a New App</strong>, or click the <strong>My Apps</strong> icon to view the apps list.</li>
 	<li>In Hermosa Theme: <strong>Apps</strong> &gt; <strong>Add App</strong>.</li>
+	<li>In Default Theme, click the <strong>Plus</strong> menu and choose <strong>Add a New App</strong>, or click the <strong>My Apps</strong> icon to view the apps list.</li>
 </ul>
 <p>The platform also supports setting up a business organization. You can then add apps and APIs at the organization level. You have full rights to manage these apps, including:</p>
 <ul>
@@ -413,7 +412,7 @@ nav-title: Organizations
 <h2 id="related_topics">Related Topics</h2>
 <div class="relatedlinks" id="cmhelp_bus_admin"><!-- #BeginLibraryItem "/Library/relatedtopics_bus_admin.lbi" -->
 <ul>
-	<li><a href="bus_admin_.htm">Business Admin Summary Page</a></li>
+	<li><a href="bus_admin__toc.htm">Business Admin Summary Page</a></li>
 	<li><a href="bus_admin_overview.htm">Business Admin Responsibilities</a></li>
 	<li><a href="bus_admin_gateways.htm">Managing Gateways</a></li>
 	<li><a href="bus_admin_bus_admin.htm">Business Admins</a></li>
@@ -434,6 +433,7 @@ nav-title: Organizations
 	<li><a href="bus_admin_organizations.htm">Organizations</a></li>
 	<li><a href="bus_admin_org_apis.htm">Organization APIs</a></li>
 	<li><a href="bus_admin_org_apps.htm">Organization Apps</a></li>
+	<li><a href="bus_admin_org_root_monthly_report.htm">Monthly Report</a></li>
 	<li><a href="bus_admin_org_roles.htm">Organization Security/Roles</a></li>
 	<li><a href="bus_admin_org_policies.htm">Organization Policies</a></li>
 	<li><a href="bus_admin_org_processes.htm">Organization Processes</a></li>
