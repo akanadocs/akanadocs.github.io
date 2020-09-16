@@ -1,19 +1,19 @@
 ---
 layout: page
 title: Installing Lifecycle Manager
-description: Learn how to install Lifecycle Manager 8.0.3.
+description: Learn how to install Lifecycle Manager 8.0.3 to 2019.1.x.
 product: lm
 category: gs
 weight: 10
+sub-nav-class: Installation
 type: page
 nav-title: Installing LM
 ---
 <h1 id="top">Installing Lifecycle Manager</h1>
 <p>This document provides reference information and examples relating to installation and configuration of Lifecycle Manager version 8.0.2 and later with the Akana Platform.</p>
-<p class="apidoc_note"><strong>Note</strong>: Lifecycle Manager 8.0.2 and later requires Akana Platform 8.4.11.</p>
 <p><strong>Notes</strong>:</p>
 <ul>
-	<li>This document provides the steps you need for a fresh install. If you're upgrading from a previous version of Lifecycle Manager, you'll need to refer to the upgrade documentation. See <a href="../upgrade/upgrade_lm_v80x.htm">Upgrading Lifecycle Manager</a>.</li>
+	<li>This document provides the steps you need for a fresh install. If you're upgrading from a previous version of Lifecycle Manager, refer to the upgrade documentation. See <a href="../upgrade/upgrade_lm_v80x.htm">Upgrading Lifecycle Manager</a>.</li>
 	<li>This document addresses installation of Lifecycle Manager version 8.0.2 and later.</li>
 </ul>
 <hr class="divide_hr" />
@@ -76,25 +76,25 @@ nav-title: Installing LM
 <p>First, create two folders: </p>
 <ul>
 	<li>A temporary download location for the Lifecycle Manager download ZIP file.</li>
-	<li>A folder for your installation; for example, <strong>LM805</strong>.</li>
+	<li>A folder for your installation; for example, <strong>LM2019.1</strong>.</li>
 </ul>
 
 <h4 id="proc_download_zips">To download the installation ZIP files</h4>
 <ol>
-	<li>Log in to the Rogue Wave Support Center (<a href="https://library.roguewave.com" target="_blank">https://library.roguewave.com</a>).
+	<li>Log in to the Akana Support Center (<a href="https://www.akana.com/support" target="_blank">https://www.akana.com/support</a>).
 		<p><strong>Note</strong>: If you don't have login credentials for the site, contact Akana technical support to get access.</p>
 	</li>
-	<li>In the <strong>My Resources section</strong>, click <strong>Product Downloads</strong> &gt; <strong>Akana - Product Downloads</strong> (<a href="https://library.roguewave.com/display/SUPPORT/Akana+-+Product+Downloads" title="Direct link to Akana product downloads" target="_blank">https://library.roguewave.com/display/SUPPORT/Akana+-+Product+Downloads</a>).</li>
-	<li>Choose <strong>Akana Lifecycle Manager</strong>.</li>
-	<li>Download the Lifecycle Manager file download it to the temporary download location you set up in Step 1. For example, 8.0.6:
+	<li>In the <strong>Downloads</strong> section, select <strong>Login to Download Software</strong> (<a href="https://library.roguewave.com/display/SUPPORT/Akana+-+Product+Downloads" title="Direct link to Akana product downloads" target="_blank">https://library.roguewave.com/display/SUPPORT/Akana+-+Product+Downloads</a>).</li>
+	<li>Choose <strong>Akana Lifecycle Manager Product Downloads</strong>.</li>
+	<li>Download the Lifecycle Manager file to the temporary download location you set up in Step 1. For example, for 2019.1.20:
 		<ul>
-			<li><strong>Akana Lifecycle Manager 8.0.6.zip</strong></li>
+			<li><strong>Akana Lifecycle Manager 2019.1.20.zip</strong></li>
 			</ul>
 	</li>
-	<li>For 8.0.6, expand the <strong>Additional Required files for LM 8.0.6</strong> section, and download these two files to your temporary location:
+	<li>For 2019.1.20, expand the <strong>Additional Required files for LM 2019.1.20</strong> section, and download one of the zip files based on your operating system, to your temporary location:
 		<ul>
-			<li>Akana Platform 8.4: <strong>AKANA-PLATFORM-8.4.0-GA.zip</strong></li>
-			<li>Cumulative update for 8.4.11: <strong>platform-update-cumulative-8.4.11.zip</strong></li>
+			<li><strong>Linux: </strong>akana-platform-linux-jre_2019.1.11.zip<strong>&nbsp;</strong></li>
+			<li><strong>Windows: </strong>akana-platform-win-jre_2019.1.11.zip</li>
 		</ul>
 	</li>
 </ol>
@@ -107,12 +107,12 @@ nav-title: Installing LM
 <p><strong>Note</strong>: You'll need a password to unzip the files. If you don't know the password, contact your Akana representative.</p>
 <h4>To unzip the installation files</h4>
 <ol>
-	<li>In the folder for your installation, unzip the Akana Platform file. For example, 8.4.</li>
-	<li>In the folder for your installation, unzip the Akana Platform file. For example, 8.4.11.</li>
-	<li>In the temporary folder, unzip the Akana Lifecycle Manager file. For example, 8.0.5. The directory structure will include:
+	<li>In the folder for your installation, unzip the Akana Platform file , for example, either akana-platform-linux-jre_2019.1.11.zip or akana-platform-win-jre_2019.1.11.zip.</li>
+
+	<li>In the temporary folder, unzip the Akana Lifecycle Manager file. The directory structure will include:
 		<ul>
-			<li>Lifecycle Manager ZIP file: for example, <strong> LifecycleManager_8.0.5.zip</strong>.</li>
-			<li>Java Clients ZIP file: for example, <strong>javaclients_8.0.5.00410.zip</strong>.</li>
+			<li>Lifecycle Manager ZIP file: for example, <strong> LifecycleManager 2019.1.20.zip</strong>.</li>
+			<li>Java Clients ZIP file: for example, <strong>javaclients_2019.1.20.00410.zip</strong>.</li>
 			<li>Other files, such as documentation.</li>
 		</ul>
 		</li>
@@ -405,24 +405,7 @@ Q==</pre></li>
 
 
 <h2 id="lm_databases_supported">Supported databases</h2>
-<p>Lifecycle Manager version 8.0 and later supports the following databases:</p>
-<ul>
-	<li><strong>Microsoft SQL Server 2012 and 2014</strong></li>
-	<li><strong>Oracle 11g, 12c</strong>&#8212;If you're using Oracle, your installation must include the following required features and details:
-		<ul>
-			<li>XMLDB and TEXT</li>
-			<li>LEXER, STOPLIST and WORDLIST for the default language installed (for more information, refer to the <a href="../sysadmin/SysAdmin-OSGi.htm" title="Lifecycle Manager System Administrator Guide" target="_blank">Lifecycle Manager System Administrator Guide</a>)</li>
-			<li id="oracle_ctx_grants">CTX grants (for more information, refer to the <a href="../sysadmin/SysAdmin-OSGi.htm" title="Lifecycle Manager System Administrator Guide" target="_blank">Lifecycle Manager System Administrator Guide</a>)</li>
-		</ul>
-	<p>In addition, depending on the Oracle version and Patch Set Update (PSU), there might be additional interim patch requirements:</p>
-		<ul>
-	<li><strong>Oracle 11.2.0.3.x</strong> requires the following patches: <strong>16191663</strong> and <strong>18615607</strong>.</li>
-	<li><strong>Oracle 11.2.0.4.x</strong> requires this patch: <strong>18615607</strong>.</li>
-<li><strong>Oracle 12c</strong> requires PSU <strong>12.1.0.2.0</strong> or greater.
-<p>If you're using Oracle, AL32UTF8 with BYTE length semantics is recommended.</p></li>
-		</ul>
-	</li>
-</ul>
+<p>Lifecycle Manager versions 8.0 and later support the 2019.1.x databases listed in  <a href="../../sp/system_requirements/system_requirements_akana_platform_2019x.htm">System Requirements for Akana Platform 2019.x.x</a>.</p>
 <p><strong>Note</strong>: Depending on the type and version of the database you're using, you might also need to place the database driver in the correct location as part of <a href="#s05_lm_install">Step 5: Install and configure the Akana Lifecycle Manager Application Feature</a>. See <a href="#database_drivers">Database drivers</a>.</p>
 <p><a href="#top">Back to top</a></p>
 
@@ -436,7 +419,7 @@ Q==</pre></li>
 </ul>
 <p>For example, for Oracle 12c, it might be:</p>
 <ul>
-	<li><strong>/akana/lm802/instances/lm/deploy/ojdbc7.jar</strong> (Downloadable from: <a href="http://www.oracle.com/technetwork/database/features/jdbc/jdbc-drivers-12c-download-1958347.html" title="download location for Oracle database driver" target="_blank">http://www.oracle.com/technetwork/database/features/jdbc/jdbc-drivers-12c-download-1958347.html</a>; requires accepting the agreement and logging in.)</li>
+	<li><strong>/akana/lm2019.1/instances/lm/deploy/ojdbc7.jar</strong> (Downloadable from: <a href="http://www.oracle.com/technetwork/database/features/jdbc/jdbc-drivers-12c-download-1958347.html" title="download location for Oracle database driver" target="_blank">http://www.oracle.com/technetwork/database/features/jdbc/jdbc-drivers-12c-download-1958347.html</a>; requires accepting the agreement and logging in.)</li>
 </ul>
 <p>Database options, with driver information:</p>
 <ul>
@@ -566,3 +549,6 @@ default.port=9900</pre>
 	<li><a href="../../sp/platform_install/installing_akana_api_platform_all.htm">Installing the Akana API Platform (all versions)</a></li>
 </ul>
 </div>
+
+
+
