@@ -355,23 +355,24 @@
 Returns information about the authenticated user. Uses HTTP POST.<!-- #EndLibraryItem --></p>
 <p>The platform's OAuth Provider supports retrieval of claims about the end-user via its UserInfo endpoint. This API is an OAuth 2.0-protected resource. To obtain the requested claims about an end-user, the Client should make a request to the UserInfo API using an Access Token obtained through OpenID Connect Authentication. These Claims are normally represented by a JSON object that contains a collection of name and value pairs for the Claims.</p>
 <p>The Client can include the access token in the request parameters, query, or post, depending on the HTTP method used to invoke the UserInfo API or as an Authorization header with <strong>Bearer</strong> scheme.</p>
+<p class="apidoc_note"><strong>Note</strong>: We recommend that the request use the HTTP GET method (<span class="apidoc_code"><a href="m_userinfo_getAuthenticatedUserInfoGET.htm">GET&nbsp;/oauth/userinfo</a></span>), sending the access token in the Authorization header. For information on why you might choose one or the other, see <a href="../aaref/Ref_OAuthGETorPOST.htm">OAuth Operations: GET or POST?</a></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Anyone can run this operation.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
-  <li><a href="#httpmethod">HTTP Method</a></li>
-  <li><a href="#endpoint">URL</a></li>
-  <li><a href="#samplerequest">Sample Request</a></li>
-  <li><a href="#requestheaders">Request Headers</a></li>
-  <li><a href="#requestparameters">Request Parameters</a></li>
+	<li><a href="#httpmethod">HTTP Method</a></li>
+	<li><a href="#endpoint">URL</a></li>
+	<li><a href="#samplerequest">Sample Request</a></li>
+	<li><a href="#requestheaders">Request Headers</a></li>
+	<li><a href="#requestparameters">Request Parameters</a></li>
 </ul>
 <ul>
-  <li><a href="#response">Response</a></li>
-  <li><a href="#sampleresponse">Sample Response</a></li>
-  <li><a href="#responseheaders">Response Headers</a></li>
-  <li><a href="#responsebody">Response Body</a></li>
-  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+	<li><a href="#response">Response</a></li>
+	<li><a href="#sampleresponse">Sample Response</a></li>
+	<li><a href="#responseheaders">Response Headers</a></li>
+	<li><a href="#responsebody">Response Body</a></li>
+	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
 </div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
@@ -389,15 +390,21 @@ Returns information about the authenticated user. Uses HTTP POST.<!-- #EndLibrar
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h2 id="samplerequest">Sample Request</h2>
 <p>The access token can be sent in the query parameters, as an Authorization header, or as POST body.</p>
-<p id="id_samplerequest">The example below shows a request for the user info, with an access token sent in the request URL, in the case of the GET operation.</p>
-<p><strong>Request URL</strong></p>
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->userinfo?access_token=SlAV32hkKG</pre>
+<p id="id_samplerequest">The first example below shows a request for the user info, with an access token sent in the request URL.</p>
+<p><strong>Request URL #1: access token is in parameter</strong></p>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->userinfo?access_token={bearer_token_value}</pre>
+<p><strong>Request URL #2: access token is in request body:</strong></p>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->userinfo</pre>
+
 <p><strong>Sample request headers</strong></p>
-<p>The example below shows the access token sent in the Authorization header (for either GET or POST).</p>
-<pre>Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW</pre>
-<p><strong>Sample request body</strong></p>
-<p>The example below shows the access token sent in the request body, in the case of the POST operation.</p>
-<pre>access_token=SlAV32hkKG</pre>
+<p>The example below shows the access token sent in the Authorization header (for either GET or POST). But if the token is sent as a request parameter, or in the request body, the Authorization header is not needed.</p>
+<pre>Host: docexample.akana.rcoaless.com
+Authorization: Bearer {bearer_token_value}
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded</pre>
+<p><strong>Sample request body (for request URL #2)</strong></p>
+<p>The example below shows the access token sent in the request body</p>
+<pre>access_token={bearer_token_value}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -406,22 +413,30 @@ Returns information about the authenticated user. Uses HTTP POST.<!-- #EndLibrar
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_form-urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
-    </tr>
-    </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_form-urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
+		</tr>
+<tr>
+<td>Host</td>
+<td>The host header for the API call, with the server hostname.</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>The Authorization header, with the token type and token content.</td>
+</tr>
+</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -430,24 +445,24 @@ Returns information about the authenticated user. Uses HTTP POST.<!-- #EndLibrar
 <!-- InstanceBeginEditable name="Request Parameters" -->
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:11%">Parameter</th>
-      <th style="width:9%">Parm Type</th>
-      <th style="width:11%">Data Type</th>
-      <th style="width:11%">Required</th>
-      <th style="width:58%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>access_token</td>
-      <td>query or body</td>
-      <td>string</td>
-      <td>Optional</td>
-      <td>The access token that was received from the authorization server after the user was authenticated.</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:11%">Parameter</th>
+			<th style="width:9%">Parm Type</th>
+			<th style="width:11%">Data Type</th>
+			<th style="width:11%">Required</th>
+			<th style="width:58%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>access_token</td>
+			<td>query or body</td>
+			<td>string</td>
+			<td>Optional</td>
+			<td>The access token that was received from the authorization server after the user was authenticated.</td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -464,14 +479,15 @@ Returns information about the authenticated user. Uses HTTP POST.<!-- #EndLibrar
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Content-Type: application/json</pre>
+<pre>Content-Type: application/json
+Date: Fri, 18 Sep 2020 16:35:21 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  "sub": "jdoe",
-  "name": "Jane Doe",
-  "given_name": "Jane",
-  "family_name": "Doe",
-  "email": "janedoe@example.com"
+  "sub": "jmead",
+  "mail": "jmead@akana.rcoaless.com",
+  "$EMAIL": "jmead@akana.rcoaless.com",
+  "$FULLNAME": "Jane.Mead",
+  "cn": "Jane Mead"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -481,18 +497,18 @@ Returns information about the authenticated user. Uses HTTP POST.<!-- #EndLibrar
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr bgcolor="#DDDDDD">
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -500,12 +516,14 @@ Returns information about the authenticated user. Uses HTTP POST.<!-- #EndLibrar
 
 <!-- InstanceBeginEditable name="Response Body" -->
 <h2 id="responsebody">Response Body</h2>
+<p>The response body is the userinfo. Exact contents depend on the OAuth Provider.</p>
 <p>The response body includes the UserInfo claims, returned in a JSON object. The UserInfo claims include:</p>
 <ul>
-  <li>Standard claims as defined in the OpenID Connect specification.</li>
-  <li>Possibly, custom claims returned from specific identity providers.</li>
+<li>Standard claims as defined in the OpenID Connect specification.</li>
+<li>Possibly, custom claims returned from specific identity providers.</li>
 </ul>
-<p>The <strong>sub</strong> (subject) claim is always included in the UserInfo response. Other claims may be present depending on the authentication response from the specific identity provider.</p>
+<p>The specific content of the response payload might vary according to the resource owner and also the scopes that are used to get the token.</p>
+<p>The <strong>sub</strong> (subject) claim is always included in the UserInfo response. Other claims might be present, depending on the authentication response from the specific identity provider.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
