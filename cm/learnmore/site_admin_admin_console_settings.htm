@@ -105,6 +105,11 @@ nav-title: Admin Console Settings
 	<dd>Default: 512k</dd>
 
 
+	<dt>atmosphere.config.authTokenTimeToIdleTimeInSeconds (Valid in version: 2019.1.24 and later)</dt>
+	<dd>Removes idle user authorization tokens from the cache after the specified time. Before this setting was introduced, tokens were cached for 30 minutes regardless of their usage. This could use a large chunk of memory, resulting in out-of-memory errors on portal containers. With this setting, idle tokens are removed much sooner, but the setting can be modified as needed.</dd>
+	<dd>Default: 62 seconds.</dd>
+
+
 	<dt>atmosphere.config.businessSettingsCacheRefreshOnChange</dt>
 	<dd>Allows security configuration changes to be implemented immediately. When set to false, configuration settings might take up to 5 minutes to take effect due to caching.</dd>
 	<dd><strong>Note</strong>: The configuration only works when there is no load balancing set up, since the in-memory configuration update is limited to the container instance, not all the instances in the cluster.</dd>
