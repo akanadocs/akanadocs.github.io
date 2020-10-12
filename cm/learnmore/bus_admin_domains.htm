@@ -13,7 +13,7 @@ nav-title: Domains
 <p>Configure domains that can be used for login or as authentication domains for APIs defined in the platform.</p>
 <p>Detailed information about certain domains is in these additional files:</p>
 <ul>
-	<li> OpenID Connect domain: see <a href="bus_admin_domains_oidc.htm">OpenID Connect Support</a></li>
+	<li>OpenID Connect domain: see <a href="bus_admin_domains_oidc.htm">OpenID Connect Support</a></li>
 	<li>External OAuth Provider domain: see <a href="bus_admin_domains_eoap.htm">External OAuth Provider Domain</a></li>
 </ul>
 <hr class="divide_hr" />
@@ -35,7 +35,7 @@ nav-title: Domains
 	<li><a href="#pf_domain_or_eoap_domain">Do I choose the PingFederate domain or the External OAuth Provider domain?</a></li>
 	<li><a href="#why_platform_identity">Should I set up a platform identity, or provide the credentials in the domain configuration?</a></li>
 	<li><a href="#how_platform_identity">How do I set up a platform identity for my domain?</a></li>
-	<li><a href="#what_is_jwt">What is JWT?</a></li>
+	<li><a href="#what_is_jwt">What is a JWT?</a></li>
 	<li><a href="#encryption_options_jwt">What are the options for signing and encryption of JWT access tokens?</a></li>
 	<li><a href="#domain_view_only">Why can't I add a domain?</a></li>
 </ol>
@@ -418,7 +418,7 @@ nav-title: Domains
 
 
 
-<h2 id="what_is_jwt">What is JWT?</h2>
+<h2 id="what_is_jwt">What is a JWT?</h2>
 <p>A JWT token is a light weight equivalent to SAML for a security token. JWT (JSON Web Token) tokens are based on JSON and are used in new authentication and authorization protocols such as OpenID Connect and OAuth 2.0.
 
 There are two kinds of JWT tokens the platform uses in OAuth:</p>
@@ -1006,7 +1006,7 @@ There are two kinds of JWT tokens the platform uses in OAuth:</p>
 <p>If you choose to verify the access token with the Authorization Server, this adds a processing step, but means that you can keep the token size fairly small, without the userinfo and the associated encryption that might be needed to protect it.</p>
 <p>In this scenario, you are no longer taking advantage of a key feature of the access token, which is the ability for the Resource Server to validate the token. For this reason, you might consider choosing the Referenced Bearer option instead, which has a more compact token size.</p>
 <p>One reason why you might prefer to place a call with the Authorization Server is to ensure any grant revocations are considered when validating the access token. In a scenario where the user has revoked the grant, that information might be at the Authorization Server but not at the Resource Server. For more information, see <a href="#how_manage_grant_revoked_cancelled">How does the platform manage validation of the JWT access tokens in the resource server when the grant is revoked or cancelled?</a></p>
-<p>There are advantages to either approach; which decision is best depends on your unique scenario.</p>
+<p>Each approach has different advantages. The choice that's best for you will depend on your unique scenario.</p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -1109,27 +1109,27 @@ There are two kinds of JWT tokens the platform uses in OAuth:</p>
 			<td>Select this check box if your OAuth provider should only accept requests over HTTPS.</td>
 		</tr>
 		<tr>
-			<td id="domain_oauth_provider_authserverurl">Authorization Server URL</td>
-			<td><p>The <a href="basics_glossary.htm#gl_oauth_authorizationserverurl">Authorization Server URL</a> set up in your Akana OAuth/OIDC Provider domain configuration; for example, https://www.myauthorizationserver:9800. This is the public URL that apps will use to access this OAuth provider. Can be HTTP or HTTPS. If the <strong>Requires SSL</strong> box is checked (see above), must be HTTPS.</p>
-				<p>Based on the Authorization Server URL specified, the platform derives these endpoints:</p>
-				<ul>
-					<li>Authorization Endpoint (for OAuth 1.0a and OAuth 2.0): {Authorization Server URL}/oauth/auz/authorize</li>
-					<li>OAuth 2.0 Token Endpoint: {Authorization Server URL}/oauth/oauth20/token</li>
-					<li>OAuth 1.0 Token Endpoint: {Authorization Server URL}/oauth/oauth10/token</li>
-				</ul>
-				<p>If the Akana OAuth/OIDC Provider domain uses OpenID Connect for authentication (OpenID Connect support is checked in the Akana OAuth/OIDC Provider domain configuration, Tab 3):</p>
-				<ul>
-					<li>Userinfo Endpoint: {Authorization Server URL}/oauth/userinfo</li>
-					<li>JWKS Endpoint: {Authorization Server URL}/oauth/jwks</li>
-				</ul>
+<td id="domain_oauth_provider_authserverurl">Authorization Server URL</td>
+<td><p>The <a href="basics_glossary.htm#gl_oauth_authorizationserverurl">Authorization Server URL</a> set up in your Akana OAuth/OIDC Provider domain configuration; for example, https://www.myauthorizationserver:9800. This is the public URL that apps will use to access this OAuth provider. Can be HTTP or HTTPS. If the <strong>Requires SSL</strong> box is checked (see above), must be HTTPS.</p>
+<p>Based on the Authorization Server URL specified, the platform derives these endpoints:</p>
+<ul>
+<li>Authorization Endpoint (for OAuth 1.0a and OAuth 2.0): {Authorization Server URL}/oauth/auz/authorize</li>
+<li>OAuth 2.0 Token Endpoint: {Authorization Server URL}/oauth/oauth20/token</li>
+<li>OAuth 1.0 Token Endpoint: {Authorization Server URL}/oauth/oauth10/token</li>
+</ul>
+<p>If the Akana OAuth/OIDC Provider domain uses OpenID Connect for authentication (OpenID Connect support is checked in the Akana OAuth/OIDC Provider domain configuration, Tab 3):</p>
+<ul>
+<li>Userinfo Endpoint: {Authorization Server URL}/oauth/userinfo</li>
+<li>JWKS Endpoint: {Authorization Server URL}/oauth/jwks</li>
+</ul>
 <p>For an OpenID Connect provider, all the endpoints and provider details are available via the discovery URL/well-known configuration URL:</p>
 <ul>
-	<li>{Authorization Server URL}/.well-known/openid-configuration
-	</li>
+<li>{Authorization Server URL}/.well-known/openid-configuration </li>
 </ul>
-				<p>Firewalls and DNS servers must be set up for this URL so that end users and apps can access the URL. This protocol/host/path should resolve to one or more containers with the Akana OAuth Provider feature installed.</p>
-				<p>For more information, including the specific paths for different OAuth URLs for the OAuth provider, see <a href="#platform_oauth_endpoints">What are the OAuth endpoints for the platform?</a></p></td>
-		</tr>
+<p>Firewalls and DNS servers must be set up for this URL so that end users and apps can access the URL. This protocol/host/path should resolve to one or more containers with the Akana OAuth Provider feature installed.</p>
+<p>For more information, including the specific paths for different OAuth URLs for the OAuth provider, see <a href="#platform_oauth_endpoints">What are the OAuth endpoints for the platform?</a></p>
+<p><strong>Note</strong>: In versions prior to 2020.1.0, a trailing slash on the Authorization Server URL results in failure to validate a <a href="basics_glossary.htm#gl_privatekeyjwt">Private Key JWT</a> token (private_key_jwt), with an error that the <strong>aud</strong> claim does not match the intended audience. In version 2020.1.0 and later, the developer portal resolves this internally.</p></td>
+</tr>
 		<tr>
 			<td>Additional Virtual Hosts</td>
 			<td><p>If your OAuth provider has one or more additional virtual hosts, as well as the hostname in the Authorization Server URL, enter the additional hostnames, separated by commas.</p>
@@ -1171,6 +1171,7 @@ There are two kinds of JWT tokens the platform uses in OAuth:</p>
 <p>When setting up an Akana OAuth/OIDC Provider domain on the platform, once you have specified the Authorization Server URL it is important to make sure that requests are directed to this URL where the Akana OAuth Provider feature is installed. This might include additional actions; for example, adding a DNS entry or configuring the load balancer if the URL is a virtual endpoint on F5. If you are setting up an External OAuth Provider domain, this is not necessary.</p>
 <p>The URL you provide for the Authorization Server is the base of the URL for the Request Token URL, Access Token URL, and Authorize URL, with additional parts of the paths as shown below. The <a href="basics_glossary.htm#gl_oauth_callbackurl">Callback URL</a> is the Redirect URL that an app developer would provide in the App details page.</p>
 <p>For specific Authorization Server URLs for the platform, see <a href="#auth_server_url_platform">What is the OAuth Authorization Server URL for the platform?</a> below.</p>
+<p><strong>Note</strong>: In most cases, when setting up an Authorization Server URL in domain configuration, make sure there are no training characters on the URL, including a training slash.</p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -1185,9 +1186,13 @@ There are two kinds of JWT tokens the platform uses in OAuth:</p>
 <pre>https://www.acmepaymentscorp.com:9800/oauth/auz/authorize</pre>
 <p>OAuth Token Endpoint URL becomes:</p>
 <pre>https://www.acmepaymentscorp.com:9800/oauth/oauth20/token</pre>
-<p><strong>Note</strong>: App developers need to know the Authorization Server URL in order to set up their apps to use the OAuth domain. This information must be made available to API Admins, who must make sure it is included in API documentation.</p>
 <p>For general information on Authorization Server URLs, see <a href="#auth_server_url_define">What is an Authorization Server URL?</a> above.</p>
-<p><strong>Note</strong>: If you are setting up an External OAuth Provider domain, you'll need to provide the Authorization Server URL of your provider. Generally, this is available at the well-known configuration endpoint. See <a href="bus_admin_domains_eoap.htm#why_choose_eoap">When would I choose an External OAuth Provider domain?</a></p>
+<p>Notes:</p>
+<ul>
+<li>App developers need to know the Authorization Server URL in order to set up their apps to use the OAuth domain. This information must be made available to API Admins, who must make sure it is included in API documentation.</li>
+<li>If you are setting up an External OAuth Provider domain, you'll need to provide the Authorization Server URL of your provider. Generally, this is available at the well-known configuration endpoint. See <a href="bus_admin_domains_eoap.htm#why_choose_eoap">When would I choose an External OAuth Provider domain?</a></li>
+<li>In most cases, when setting up an Authorization Server URL in domain configuration, make sure there are no training characters on the URL, including a training slash.</li>
+</ul>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -1300,9 +1305,7 @@ There are two kinds of JWT tokens the platform uses in OAuth:</p>
 	<li><strong>For token types other than JWT</strong>: since the grant is not in local memory, the Gateway goes to the Authorization Server for grant information.</li>
 </ul>-->
 <p><strong>Note</strong>: The Business Admin can configure the Akana OAuth/OIDC Provider domain to have the gateway verify JWT Access Tokens with the Authorization Server as well (Akana OAuth/OIDC Provider Domain, Tab 3, Token: <strong>Verify JWT Access Token with Authorization Server</strong>). In this scenario, validation is similar to that of the Referenced Bearer token. However, with this approach you lose a key feature of the JWT Access Token, the ability for the Resource Server to validate the token.</p>
-
 <p><a href="#top">Back to top</a></p>
-
 
 
 
