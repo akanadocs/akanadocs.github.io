@@ -4,7 +4,7 @@ title: Installing Akana API Platform 2020.1.x
 description: Learn how to download, install, and configure the Akana API Platform 2020.1.x.
 product: sp
 category: gs
-weight: 03
+weight: 02
 sub-nav-class: Installation - Akana API Platform
 type: page
 nav-title: Installing Akana API Platform 2020.1.x
@@ -103,7 +103,8 @@ nav-title: Installing Akana API Platform 2020.1.x
 
 <p>This document covers the following broad activities associated with the installation process:</p>
 <ul>
-	<li>Preparation (Steps 1-1 and 1-2)</li>
+	
+	<li>Preparation (Steps <a href="#s01_01">1-1</a> and <a href="#s01_02">1-2</a>)</li>
 	<li>Creating the first container, installing features and plug-ins, and configuring the container (<a href="#run_configurator_pm">Step 2-3</a> to <a href="#configure_pm">Step 2-6</a>)</li>
 	<li>Creating and configuring additional containers (<a href="#run_configurator_more">Step 2-7</a>, which is <a href="#run_configurator_pm">Step 2-3</a> to <a href="#configure_pm">Step 2-6</a> repeated for each container as needed)</li>
 	<li>Adding Network Director to Policy Manager (<a href="#add_nd_to_pm">Step 2-8</a>)</li>
@@ -124,6 +125,7 @@ nav-title: Installing Akana API Platform 2020.1.x
 <p>Before you start, plan your installation. In particular, you'll need to:</p>
 <ul>
 	<li>Decide what containers you'll have, and which features will be installed in which containers. For a recommended simple configuration, see <a href="../deployment/deployment_clustered.htm">Sample Deployment Scenario</a>.</li>
+	<li>Make sure your database is set up and that you have the credentials necessary to configure the Akana Platform to access the database. For information on supported databases, <a href="../system_requirements/system_requirements_akana_platform_20201x.htm#versions_db">System Requirements for Akana Platform 2020.1.x, database versions section</a>.</li>
 	<li>Determine where you'll install Elasticsearch, needed for the search feature. For full information on Elasticsearch, see <a href="../elasticsearch/install_es_config.htm">Installing and Configuring Elasticsearch</a>.</li>
 	<li>Determine whether you'll be using a specific add-on feature that is packaged in a separate option packs ZIP file. Option packs include files for additional features such as:
 <ul>
@@ -187,7 +189,7 @@ nav-title: Installing Akana API Platform 2020.1.x
 <p><strong>Note</strong>: You'll need a password to unzip the files. If you don't know the password, contact your Akana representative.</p>
 
 <h4 id="proc_unzip_files">To unzip the installation files</h4>
-<p>For details about changes in this release, see <a href="https://docs.roguewave.com/en/akana/release_notes/2020.1/AAP_20201_Release_Notes.html" title="Link to Rogue Wave docs site" target="_blank">2020.1.x release notes</a>.</p>
+<p>For details about changes in this release, refer to the release notes: go to <a href="http://help.akana.com/release_notes" title="Link to release notes doc" target="_blank">Release Notes landing page</a> and choose the version.</p>
 <ol>
 	<li>In your installation folder, unzip the Akana Platform + Akana API Platform ZIP file that you downloaded. It includes two embedded ZIP files. For example:
 		<ul>
