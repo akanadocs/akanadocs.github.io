@@ -849,7 +849,7 @@ interface="com.soa.policy.wspolicy.handler.WSPHandlerFactory"&gt;
 35)  &lt;entry key="role" value="consumer"/&gt;
 36)  &lt;/osgi:service-properties&gt;
 37) &lt;/osgi:service&gt;</pre>
-<p>The creation of the <span class="apidoc_code">ComplexPolicyHandler</span> factory is simple and is done on line 01. Then, that same factory instance is published to both the HTTP (REST) and SOAP bindings. Because the factory constructs handlers acting in both the <strong>consumer</strong>  and  <strong>provider</strong>  roles, it must be published multiple times with those roles. In all, the single factory instance is published as four OSGi services:</p>
+<p>The creation of the <span class="apidoc_code">ComplexPolicyHandler</span> factory is simple and is done on line 01. Then, that same factory instance is published to both the HTTP (REST) and SOAP bindings. Because the factory constructs handlers acting in both the <strong>consumer</strong> and  <strong>provider</strong> roles, it must be published multiple times with those roles. In all, the single factory instance is published as four OSGi services:</p>
 <ul>
 	<li>On lines 03&#8211;10, the factory is published as a provider-side HTTP factory.</li>
 	<li>On lines 12&#8211;19 the factory is published as a provider-side SOAP factory.</li>
@@ -896,8 +896,8 @@ interface="com.soa.policy.wspolicy.handler.WSPHandlerFactory"&gt;
 
 <h3 id="s04_4_deployment">Deployment</h3>
 <p>An Akana container will have a folder on the file system with a name that matches the key of the container seen in the Policy Manager Management Console. Under that folder is a sub-folder named  <strong>deploy</strong>. </p>
-<p>Bundles that provide extensions to the container, such as additional message handlers, are placed in the  <strong>deploy</strong>  folder.</p>
-<p>When the container is restarted, the services published within any Bundles in the  <strong>deploy</strong>  folder are imported into the container, and all published handler factories and assertion marshallers are picked up by the Policy Handler Framework.</p>
+<p>Bundles that provide extensions to the container, such as additional message handlers, are placed in the  <strong>deploy</strong> folder.</p>
+<p>When the container is restarted, the services published within any Bundles in the  <strong>deploy</strong> folder are imported into the container, and all published handler factories and assertion marshallers are picked up by the Policy Handler Framework.</p>
 <p><a href="#top">Back to top</a></p>
 
 
