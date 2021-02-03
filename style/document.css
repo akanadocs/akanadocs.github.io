@@ -23,19 +23,19 @@ ul li p, ol li p{ /*list item subsequent paragraph less space above. Copied from
 	padding-bottom: 3px;
 }
 
-h1 { /*12/20/19 add properties from reset.css and theme.css per docs site inspection. Note font-size was 21px now 150% GW*/
+h1 { /*12/20/19 add properties from reset.css and theme.css per docs site inspection. Note font-size was 21px now 150% GW... 2/2/21 update font size, input from AmyK, to 1.6em*/
 	margin: 0;
 	border: 0;
 	font: inherit;
 	text-rendering: optimizelegibility;
 	font-weight: bold;
 	vertical-align: baseline;
-	font-size: 160%;
+	font-size: 1.6em;
 	color: #2f6db5;
 	line-height: normal;
 	padding: 3px 0 12px 0;
 }
-h2 { /*12/20/19 add properties from reset.css and theme.css per docs site inspection. Note font-size was 17px now 135% GW*/
+h2 { /*12/20/19 add properties from reset.css and theme.css per docs site inspection. Note font-size was 17px now 135% GW... 2/2/21 update font size, input from AmyK, to 1.4em*/
 	margin: 0;
 	border: 0;
 	font: inherit;
@@ -43,23 +43,23 @@ h2 { /*12/20/19 add properties from reset.css and theme.css per docs site inspec
 	font-weight: bold;
 	vertical-align: baseline;
 	color: #2f6db5;
-	font-size: 135%;
+	font-size: 1.4em;
 	line-height: normal;
 	padding: 16px 0 8px 0;
 }
-h3 { /*12/20/19 add properties from reset.css and theme.css per docs site inspection. Note font-size was 17px now 125% | color was 000000 now 2f6db5 GW*/
+h3 { /*12/20/19 add properties from reset.css and theme.css per docs site inspection. Note font-size was 17px now 125% | color was 000000 now 2f6db5 GW... 2/2/21 update font size, input from AmyK, to 1.2em*/
 	margin: 0;
 	border: 0;
 	font: inherit;
 	text-rendering: optimizelegibility;
 	font-weight: bold;
 	color: #2f6db5;
-	font-size: 16px;
+	font-size: 1.2em;
 	padding-bottom: 7px;
 	line-height: normal;
 	padding: 10px 0 5px 0;
 }
-h4 { /*12/20/19 add properties from reset.css and theme.css per docs site inspection. Note font-size was 14px now 105% | color was 000000 now 2f6db5 GW*/
+h4 { /*12/20/19 add properties from reset.css and theme.css per docs site inspection. Note font-size was 14px now 105% | color was 000000 now 2f6db5 GW... 2/2/21 update font size, input from AmyK. to 1.1em*/
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -67,10 +67,20 @@ h4 { /*12/20/19 add properties from reset.css and theme.css per docs site inspec
 	text-rendering: optimizelegibility;
 	font-weight: bold;
 	color: #2f6db5;
-	font-size: 14px;
+	font-size: 1.1em;
 	line-height: normal;
-	font-weight: bold;
 	padding: 9px 0;
+}
+h5 { /*2/6/20 adding a definition for h5. Bold with a little bit of space. Color from theme.css.(copying docstest to docslive 2/3/21) GW*/
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	text-rendering: optimizelegibility;
+	font-weight: bold;
+	line-height: normal;
+	color: #2f6db5;
+	padding: 14px 0 10px 0;
 }
 blockquote {
   padding: 10px 20px;
