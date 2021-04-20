@@ -38,7 +38,7 @@ nav-title: Business Metrics
 	<ul>
 		<li><a href="#uc_business_metrics_sla">Configuring a Business Metrics policy to set SLA for a service</a></li>
 		<li><a href="#uc_business_metrics_path_parms">Extracting Business Information from Service Usage Data Using Path Parameters</a></li>
-		<li><a href="#uc_business_metrics_xpath">Extracting Business Information from Service Usage Data Using XPath/JsonPath/RegEx</a></li>
+		<li><a href="#uc_business_metrics_xpath">Extracting Business Information from Service Usage Data Using XPath/JSONPath/RegEx</a></li>
 	</ul>
 	</li>
 </ol>
@@ -97,7 +97,7 @@ nav-title: Business Metrics
 	<li><strong>Add&#8212;</strong>Define a payload structure by specifying Name and optional Description. </li>
 	<li><strong>Delete&#8212;</strong>Delete a payload structure by highlighting row.</li>
 	<li><strong>Source&#8212;</strong>Identify if the structure will be extracted from the Request, Response, or Fault portion of a message. </li>
-	<li><strong>Path&#8212;</strong>Specify the method used to identify the location of the structure using XPath, JsonPath, or RegEx path languages. </li>
+	<li><strong>Path&#8212;</strong>Specify the method used to identify the location of the structure using XPath, JSONPath, or RegEx path languages. </li>
 	<li><strong>Test Message&#8212;</strong>Specify the test message to be used for testing expressions in the text box. Test messages are optional.</li>
 	<li><strong>Apply&#8212;</strong>Button that applies the values in the Extraction instructions or Derivation Instructions to the selected row in the Payload Structures Table. </li>
 </ul>
@@ -109,7 +109,7 @@ nav-title: Business Metrics
 <ul>
 	<li>You begin by adding a variable and assigning a particular type (Currency, Number, or Text). </li>
 	<li>You can “extract” data from a selected “source” (for example, Payload, Header, or Param), or “derive” data by selecting an expression type and defining an expression of how you want to extract data. </li>
-	<li>Payload source types provide an option for testing the response message. XPath, JsonPath, and RegEX examples are provided for Payload source options, and expression examples are provided for simple and spring expression types. </li>
+	<li>Payload source types provide an option for testing the response message. XPath, JSONPath, and RegEx examples are provided for Payload source options, and expression examples are provided for simple and spring expression types. </li>
 </ul>
 <h4>Configuration Options</h4>
 <ul>
@@ -169,7 +169,7 @@ nav-title: Business Metrics
 <li><strong>Source</strong>&#8212;Drop-down for identifying if the dimension will be extracted from the Request Header, Response Payload, Response Header, Fault Payload, Fault Header, Form Param, Path Param, or Query Param portion of the message. </li>
 <li><strong>Name (text box)&#8212;</strong>Enter query or path parameter name to extract from. Only visible if the Source is Query Param, Form Param, or Path Param.</li>
 <li><strong>Name (drop-down)&#8212;</strong>Select area of header to extract from. Only visible if the Source is Header.</li>
-<li><strong>Path&#8212;</strong>Specify the method used to identify the location of the structure using XPath, JsonPath, or RegEx path languages. </li>
+<li><strong>Path&#8212;</strong>Specify the method used to identify the location of the structure using XPath, JSONPath, or RegEx path languages. </li>
 <li><strong>Multi-Valued</strong>&#8212;Check-box enables the Multi-Valued Aggregation Pull. Options include Number of Records, Get First, and Get Last.</li>
 <li><strong>Test Message&#8212;</strong>Specify the test message to be used for testing expressions in the text box. Test messages are optional.</li>
 </ul>
@@ -208,7 +208,7 @@ nav-title: Business Metrics
 <li><strong>Name (text box)&#8212;</strong>Enter query or path parameter name to extract from. Only visible if the Source is Query Param, Form Param, or Path Param.</li>
 <li><strong>Name (drop-down)&#8212;</strong>Select area of header to extract from. Only visible if the Source is Header.</li>
 <li><strong>Multi-Valued</strong>&#8212;Check-box enables the Multi-Valued Aggregation Pull. Options include Number of Records, Get First, Get Last, Get Maximum, Get Minimum, Add All</li>
-<li><strong>Path&#8212;</strong>Specify the method used to identify the location of the structure using XPath, JsonPath, or RegEx path languages. </li>
+<li><strong>Path&#8212;</strong>Specify the method used to identify the location of the structure using XPath, JSONPath, or RegEx path languages. </li>
 <li><strong>Test Message</strong>&#8212;Specify the test message to be used for testing expressions in the text box. Test messages are optional.</li>
 </ul>
 </li>
@@ -236,13 +236,13 @@ nav-title: Business Metrics
 </li>
 <li>
 
-<p>JsonPath Example</p>
+<p>JSONPath Example</p>
 <p><img src="images/bus_metrics_req_payload_json_example.jpg" alt="Request Payload JSON Example" title="Request Payload JSON Example" /></p>
 </li>
 <li>
 
-<p>RegEX Example</p>
-<p><img src="images/bus_metrics_req_payload_regex_example.jpg" alt="Request Payload RegEX Example" title="Request Payload RegEX Example" /></p>
+<p>RegEx Example</p>
+<p><img src="images/bus_metrics_req_payload_regex_example.jpg" alt="Request Payload RegEx Example" title="Request Payload RegEx Example" /></p>
 </li>
 </ul>
 <p><a href="#top">Back to top</a></p>
@@ -306,7 +306,7 @@ nav-title: Business Metrics
 <ol>
 	<li><a href="#uc_business_metrics_sla">Configuring a Business Metrics policy to set SLA for a service</a></li>
 	<li><a href="#uc_business_metrics_path_parms">Extracting Business Information from Service Usage Data Using Path Parameters</a></li>
-	<li><a href="#uc_business_metrics_xpath">Extracting Business Information from Service Usage Data Using XPath/JsonPath/RegEx</a></li>
+	<li><a href="#uc_business_metrics_xpath">Extracting Business Information from Service Usage Data Using XPath/JSONPath/RegEx</a></li>
 </ol>
 
 
@@ -412,10 +412,10 @@ nav-title: Business Metrics
 
 
 
-<h3 id="uc_business_metrics_xpath">Extracting Business Information from Service Usage Data Using XPath/JsonPath/RegEx</h3>
-<p>The following use case illustrates how to use the Business Metrics Policy to extract business information from the service usage data using XPath/JsonPath/RegEx from the request payload and derive operational metric values.</p>
+<h3 id="uc_business_metrics_xpath">Extracting Business Information from Service Usage Data Using XPath/JSONPath/RegEx</h3>
+<p>The following use case illustrates how to use the Business Metrics Policy to extract business information from the service usage data using XPath/JSONPath/RegEx from the request payload and derive operational metric values.</p>
 
-<h4 id="proc_uc_business_metrics_xpath">To Extract Business Information from Service Usage Data Using XPath/JsonPath/RegEx</h4>
+<h4 id="proc_uc_business_metrics_xpath">To Extract Business Information from Service Usage Data Using XPath/JSONPath/RegEx</h4>
 <ol>
 	<li>Launch the Envision Console, select <strong>New Dataset</strong>, and define a dataset with sharing set to <strong>Public</strong>.
 		<p><img src="images/bus_metrics_pol_usecase1a.jpg" alt="Defining a new public dataset" /></p></li>
@@ -442,7 +442,7 @@ nav-title: Business Metrics
 	<li>
 Provide Extract/Derive Configuration for each of the dimensions and metrics using the example illustrated below:
 <ul>
-	<li><strong>Dimension using Extract</strong>&#8212;To obtain a value in request payload using XPath/JsonPath/RegEx.
+	<li><strong>Dimension using Extract</strong>&#8212;To obtain a value in request payload using XPath/JSONPath/RegEx.
 <p><img src="images/bus_metrics_pol_usecase1m.jpg" alt="Configuring the policy: defining the dimensions" /></p></li>
 	<li><strong>Metric using Derive</strong>&#8212;To obtain usage count.
 <p><img src="images/bus_metrics_pol_usecase1n.jpg" alt="Configuring the policy: defining the metrics" /></p>
