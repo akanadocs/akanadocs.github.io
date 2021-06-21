@@ -40,7 +40,7 @@ nav-title: Detailed Customization Document
 		<li><a href="#s04_01">Landing Page</a></li>
 		<li><a href="#s04_02b">Login Entry Page</a> (valid in version: 2020.2.4 and later)</li>
 		<li><a href="#s04_02">Login Entry Page</a> (versions prior to 2020.2.4)
-		<ol>
+			<ol>
 			<li><a href="#s04_02a_01">Step 1: Determine the page you want users to be taken to</a></li>
 			<li><a href="#s04_02a_02">Step 2: Generate the starter customization files and download the customization ZIP file</a></li>
 			<li><a href="#s04_02a_03">Step 3: Set up a custom_en-us.json file</a></li>
@@ -116,7 +116,8 @@ nav-title: Detailed Customization Document
 	<ol>
 		<li><a href="#s11_01">Creating New Pages in Hermosa Theme</a>
 	<ol>
-			<li><a href="#s11_01_01">Example 1: Creating a New Static View in Hermosa Theme</a></li>
+			<li><a href="#s11_01_01">Example 1a: Creating a New Static View in Hermosa Theme</a></li>
+			<li><a href="#s11_01_01b">Example 1b: Creating a New Static View in Hermosa Theme, with override of default redirect behavior</a> (valid in version: 2020.1.8 and later)</li>
 			<li><a href="#s11_01_02">Example 2: Creating a New Dynamic View with a Controller in Hermosa Theme</a></li>
 		</ol>
 		</li>
@@ -132,7 +133,13 @@ nav-title: Detailed Customization Document
 	</li>
 	</ol>
 	</li>
-	<li><a href="#s_external_portal">Rendering API documentation in an external portal</a></li>
+	<li><a href="#s_external_portal_integration">Rendering API documentation in a third-party portal</a> (Valid in version: 2019.1.31 and later)
+		<ol>
+			<li><a href="#s_sso_3p_portal_oidc_sso_sequence_diagram">Integrated login with a third-party portal: End-to-end sequence diagram</a></li>
+			<li><a href="#s_sso_3p_portal_oidc_sso_api_ex">Single sign-on with third-party portal using OpenID Connect provider: API call example</a></li>
+			<li><a href="#s_sso_3p_portal_oidc_sso_api_doc_rendering">Rendering API documentation in a third-party portal: using the customization example</a></li>
+		</ol>
+	</li>
 </ol>
 
 
@@ -321,7 +328,8 @@ nav-title: Detailed Customization Document
 <p><a href="#top">Back to top</a></p>
 
 
-<h3 id="s04_02b">Login Entry Page (valid in version: 2020.2.4 and later)</h3>
+<h3 id="s04_02b">Login Entry Page</h3>
+<h4 class="stamp">Valid in Version: 2020.2.4 and later</h4>
 <p>You can customize the Community Manager developer portal user interface so that after logging in, rather than being taken to the Action Dashboard <strong>(home/dashboard)</strong>, which is the default behavior, users are taken to a different page that you specify.</p>
 <p>The customization ZIP file includes a working example of files that you can use as starter files, and a <strong>readme.md</strong> file with detailed instructions. The customization example includes separate file sets for Hermosa theme and for Bonita/Simple Dev theme, since the steps are a little different in Bonita/Simple Dev. Notes:</p>
 <ul>
@@ -358,6 +366,7 @@ nav-title: Detailed Customization Document
 <p>To set this up, you'll need to perform these high-level tasks (see procedures below):</p>
 <ol>
 	<li><a href="#s04_02a_01">Step 1: Determine the page you want users to be taken to</a></li>
+	<li><a href="#s04_02a_02">Step 2: Generate the starter customization files and download the customization ZIP file</a></li>
 	<li><a href="#s04_02a_03">Step 3: Set up a custom_en-us.json file</a></li>
 	<li><a href="#s04_02a_04">Step 4: Upload the custom_en-us.json file to the Community Manager developer portal</a></li>
 	<li><a href="#s04_02a_05">Step 5: Test</a></li>
@@ -1488,11 +1497,12 @@ com.soa.atmosphere.footer.legal= &copy; 2019-2020 ACME Payments, Inc. All Rights
 <h3 id="s11_01">Creating New Pages in Hermosa Theme</h3>
 <p>In this section:</p>
 <ol>
-	<li><a href="#s11_01_01">Example 1: Creating a New Static View in Hermosa Theme</a></li>
+	<li><a href="#s11_01_01">Example 1a: Creating a New Static View in Hermosa Theme</a></li>
+	<li><a href="#s11_01_01b">Example 1b: Creating a New Static View in Hermosa Theme, with override of default redirect behavior</a> (valid in version: 2020.1.8 and later)</li>
 	<li><a href="#s11_01_02">Example 2: Creating a New Dynamic View with a Controller in Hermosa Theme</a></li>
 </ol>
 
-<h4 id="s11_01_01">Example 1: Creating a New Static View in Hermosa Theme</h4>
+<h4 id="s11_01_01">Example 1a: Creating a New Static View in Hermosa Theme</h4>
 <p>A common customization task is to add a new view in the Community Manager developer portal to support static content from the Community Manager developer portal content file structure. For example, you might want to add a "Showcases" page that lists all the best apps that have been built and provides links to them.</p>
 <p>To set this up you'd have to create and upload two files:</p>
 <ol>
@@ -1565,6 +1575,77 @@ com.soa.atmosphere.footer.legal= &copy; 2019-2020 ACME Payments, Inc. All Rights
     }
   ]
 }</pre>
+
+
+<h4 id="s11_01_01b">Example 1b: Creating a New Static View in Hermosa Theme, with override of default redirect behavior</h4>
+<h4 class="stamp">Valid in Version: 2020.1.8 and later</h4>
+<p>It is a feature of the Community Manager developer portal page behavior that if a user is on a specific public page, and then logs in, the user is taken back to the same page after login. This behavior is designed for maximum usability. For example, the user might be on an API Details page, and there might be many APIs. If the user then logs in, it's likely that the user might want to be redirected to the same API page.</p>
+<p>There are a few developer portal pages that are excluded from this behavior. These are instances where the user, after login, is taken to the <strong>Action Dashboard</strong> page instead (/home/dashboard). A couple of examples of these pages are:</p>
+<ul>
+	<li>The main landing page.</li>
+	<li>The login page itself.</li>
+	<li>The support page.</li>
+</ul>
+<p>In the example above, <a href="#s11_01_01">Example 1a: Creating a New Static View in Hermosa Theme</a>, if a user is on the custom page that you added, and then logs in, the user is taken back to the custom page.</p>
+<p>If you do not want this behavior, you can add a line of code into your <strong>metadata.json</strong> file to exclude the custom page from this behavior. The extra line, within the <strong>layoutStructure</strong> element and below the <strong>view</strong> element in the <strong>metadata.json</strong> file, is:</p>
+<pre>"defaultPageAfterLogin" : true,</pre>
+<p>The information below outlines an example that includes this line of code in the <strong>metadata.json</strong> file. This example adds a &quot;What's New?&quot; page to the developer portal content.</p>
+<p>The steps for uploading the custom files, and for testing, are the same as in <a href="#s11_01_01">Example 1a: Creating a New Static View in Hermosa Theme</a> above. The only functional difference is Line 6 in the <strong>metadata.json</strong> file. This example uses a different value for <strong>view</strong> (line 5 in the <strong>metadata.json</strong> file) to illustrate a slightly different usage scenario. The value of <strong>view</strong> can be whatever you need, but the file name in the specified folder must be <strong>index.htm</strong>. </p>
+<p><strong>HTML file name and location:</strong></p>
+<pre>/content/home/whatsnew/index.htm</pre>
+<p><strong>Metadata.json file name and location:</strong></p>
+<pre>/resources/theme/hermosa/SOA/CM/extensions/metadata.json</pre>
+<p><strong>Metadata.json file content:</strong></p>
+<pre>{
+  "layoutStructure":[
+    {
+      "objType":"home",
+      "view":"whatsnew",
+      "defaultPageAfterLogin" : true, 
+      "layout":[
+  {
+    "widgetInstance":"Main",
+    "widget":"widget.horiz.tiling",
+    "priority":"100"
+  },
+  {
+    "widgetInstance":"Header",
+    "widget":"widget.header",
+    "parentWidgetInstance":"Main",
+    "parent":"widget.horiz.tiling",
+    "priority":"1000"
+  },
+  {
+    "widgetInstance":"Content-Widest",
+    "widget":"widget.horiz.tiling",
+    "parentWidgetInstance":"Main",
+    "parent":"widget.horiz.tiling",
+    "priority":"2200"
+  },
+  {
+    "widgetInstance":"Landing",
+    "widget":"widget.document",
+    "parentWidgetInstance":"Content-Widest",
+    "parent":"widget.horiz.tiling",
+    "priority":"2202"
+  },
+  {
+    "widgetInstance":"Footer",
+    "widget":"widget.footer",
+    "parentWidgetInstance":"Main",
+    "parent":"widget.horiz.tiling",
+    "priority":"3000"
+  }
+      ]
+    }
+  ]
+}</pre>
+<p>In the above:</p>
+<ul>
+	<li>Line 5, <strong>view</strong>, defines the name of the folder where the custom <strong>index.htm</strong> page resides.</li>
+	<li>Line 6, <strong>defaultPageAfterLogin</strong>, defines the behavior, so that a user logging in from that page is not taken back to it after login.</li>
+</ul>
+
 
 <h4 id="s11_01_02">Example 2: Creating a New Dynamic View with a Controller in Hermosa Theme</h4>
 <p>If your new view requires dynamic content, this can be achieved as well.</p>
@@ -1912,15 +1993,77 @@ com.soa.atmosphere.footer.legal= &copy; 2019-2020 ACME Payments, Inc. All Rights
 
 
 
-<h2 id="s_external_portal">Rendering API documentation in an external portal</h2>
+<h2 id="s_external_portal_integration">Rendering API documentation in a third-party portal</h2>
 <h4 class="stamp">Valid in Version: 2019.1.31 and later</h4>
-<p>A third-party portal can be configured to display API documentation from the Community Manager developer portal, including Swagger documentation, OpenAPI documentation, and Test Client.</p>
-<p>The customization ZIP file includes a working example, including step-by-step instructions, all the files you need, and a sample HTML file with the applicable code in place. If you don't have the customization ZIP file, or don't have the latest version, contact <a href="../../sp/support/support.htm">Customer Support</a>.</p>
-<p>All you need to do is:</p>
+<p>You can set up single sign-on with a third-party portal that uses OpenID Connect (OIDC), such as Okta or Salesforce, and create a page on your third-party portal that will display the API documentation pages generated by the Community Manager developer portal.</p>
+<p>To do this, you can code  custom pages on your third-party portal, using special code provided in a working customization example, and create a login domain in the Community Manager developer portal so that, after initial verification, your users can be seamlessly authenticated as authorized to view your API documentation.</p>
+<p>Advantages:</p>
+<ul>
+	<li>Users of the third-party portal can view your API documentation from within the third-party portal. They do not need to log in to the Community Manager developer portal and navigate to your APIs. Each user must complete a one-time registration in the developer portal (see <a href="#note_single_signon">Note</a> below).</li>
+	<li>You can code your custom pages to display documentation for one API, or include multiple APIs on one page.</li>
+	<li>The API documentation is displayed in your third-party portal without the top navigation, side menu, and footer that are present in the Community Manager developer portal.</li>
+	<li>You can code your custom pages to show one or all of the following (separate coding required for each):
+		<ul>
+			<li>OpenAPI generated documentation</li>
+			<li>Swagger 2.0 generated documentation</li>
+			<li>API Test Client</li>
+		</ul>
+	</li>
+	<li>Your users stay on your portal rather than having to switch between sites to view your API documentation.</li>
+</ul>
+<p id="note_single_signon"><strong>Note</strong>: Each user must first complete a one-time registration in the Community Manager developer portal, using your third-party login domain, so that the user is recognized as a valid developer portal user with visibility of the API documentation. After that, single sign-on is in effect and API documentation access from the third-party portal is seamless.</p>
+<p>In this section:</p>
+<ul>
+	<li><a href="#s_sso_3p_portal_oidc_sso_sequence_diagram">Integrated login with a third-party portal: End-to-end sequence diagram</a></li>
+	<li><a href="#s_sso_3p_portal_oidc_sso_api_ex">Single sign-on with third-party portal using an OIDC provider: API call example</a></li>
+	<li><a href="#s_sso_3p_portal_oidc_sso_api_doc_rendering">Rendering API documentation in a third-party portal: using the customization example</a></li>
+</ul>
+
+
+<h3 id="s_sso_3p_portal_oidc_sso_sequence_diagram">Integrated login with a third-party portal: End-to-end sequence diagram</h3>
+<p>The diagram below illustrates all steps of the process, including prerequisites, authentication/authorization at the third-party portal, setting up the API call to authenticate the user with the Community Manager developer portal, and displaying/viewing the API documentation in the third-party portal, in an iframe.</p>
+<p><img src="customization_202020/IDPFlowForPartnerHub.jpg" alt="Integrated login with a third-party portal: End-to-end sequence diagram"/></p>
+<p>In the above:</p>
+<ul>
+	<li>The domain name set up in the Community Manager developer portal (<strong>THIRDPARTY_OIDC_DOMAIN</strong> in this example), and the value used in the <span class="apidoc_code"><a href="../api/login/m_login_ssoLogin.htm">GET&#160;/api/login/ssoLogin</a></span> API call as the value for the <strong>domain</strong> path parameter, must match.</li>
+	<li>In the same API call, the value for the <strong>finalUrl</strong> query parameter is the URL for the page set up on the third-party portal, where users will access the API documentation.</li>
+</ul>
+
+
+
+<h3 id="s_sso_3p_portal_oidc_sso_api_ex">Single sign-on with third-party portal using an OIDC provider: API call example</h3>
+<p>An example for the SSO login API call to the developer portal, with sample values&nbsp;is shown below.</p>
+<p>Third-party OpenID Connect (OIDC) domain URL:</p>
+<pre>https://oidc.acmepaymentscorp.com</pre>
+<p>Domain name for the above third-party OIDC domain, as set up in the Community Manager developer portal: </p>
+<pre>THIRDPARTY_OIDC_DOMAIN</pre>
+<p>Third-party custom page for displaying the API documentation: </p>
+<pre>https://myportal.acmepaymentscorp.com/devportal_api_doc.html</pre>
+<p>Community Manager developer portal URL:</p>
+<pre>https://apiportal.acmepaymentscorp.com/#/home/landing</pre>
+<p>In this example, the API call would be (line break added for display purposes):</p>
+<pre>https://apiportal.acmepaymentscorp.com/api/login/ssologin/THIRDPARTY_OIDC_DOMAIN
+?finalUrl=https://myportal.acmepaymentscorp.com/devportal_api_doc.html&amp;id_token={id_token_value}</pre>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h3 id="s_sso_3p_portal_oidc_sso_api_doc_rendering">Rendering API documentation in a third-party portal: using the customization example</h3>
+<p>You can configure a third-party portal to display API documentation from the Community Manager developer portal, including Swagger documentation, OpenAPI documentation, and Test Client.</p>
+<p>To do this:</p>
+<ul>
+	<li>Follow the steps shown in the sequence diagram above <a href="#s_sso_3p_portal_oidc_sso_sequence_diagram">Integrated login with a third-party portal: End-to-end sequence diagram</a>. Be sure to complete the prerequisites. If needed, use the examples in <a href="#s_sso_3p_portal_oidc_sso_api_ex">Single sign-on with third-party portal using an OIDC provider: API call example</a> to put together your API call.
+		<p>The API call takes care of the authorization and authentication.</p>
+	</li>
+	<li>Use the customization example provided with the product. The customization ZIP file includes a working example, with step-by-step instructions, all the files you need, and a sample HTML file for rendering the API documentation, with the applicable code in place. If you don't have the customization ZIP file, or don't have the latest version, contact <a href="../../sp/support/support.htm">Customer Support</a> or your Akana representative..
+		<p>The customization example helps you code the third-party portal page so that it displays the API documentation.</p>
+	</li>
+</ul>
+<h4 id="proc_api_doc_external_portal">To use the customization example for rendering API documentation in a third-party portal</h4>
 <ol>
 	<li>Download and unzip the ZIP file.</li>
 	<li>Go to the <strong>\test_client\external_portal</strong> folder.</li>
-	<li>Copy those files to the external portal.</li>
+	<li>Copy those files to the thid-party portal.</li>
 	<li>Follow the instructions in the <strong>\test_client\external_portal\readme.md</strong> file to update the placeholder values and apply any other changes you might want.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
