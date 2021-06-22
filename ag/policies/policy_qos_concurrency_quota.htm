@@ -1,4 +1,15 @@
----
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Akana API Platform</title>
+<link href="../../style/reset.css" rel="stylesheet" type="text/css" />
+<link href="../../style/base.css" rel="stylesheet" type="text/css" />
+<link href="../../style/document.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="documentation">
+<!-----
 layout: page
 title: Using the Concurrency Quota policy
 description: Learn how to monitor web service concurrency performance by specifying a concurrency limit (quota).
@@ -8,7 +19,7 @@ sub-nav-class: Policies - QoS
 weight: 04
 type: page
 nav-title: Concurrency Quota
----
+----->
 <h1 id="top">Using the Concurrency Quota policy</h1>
 <p>Learn how to monitor web service concurrency performance by specifying a concurrency limit (quota).</p>
 <p>For information about using policies in the context of the Community Manager developer portal, see <a href="../../cm/learnmore/bus_admin_organizations.htm#h_business_policies">Business Policies</a>.</p>
@@ -44,8 +55,8 @@ nav-title: Concurrency Quota
 <h2 id="introduction">Introduction</h2>
 <p>A Concurrency Quota policy is a Quality of Service (QoS) policy that allows you to:</p>
 <ul>
-<li>Specify a limit (quota) for the number of concurrent  requests allowed to the API/service or contract.</li>
-<li>Configure a fault message that is returned to the consumer, and an alert that is generated, if a request exceeds the predefined quota.</li>
+	<li>Specify a limit (quota) for the number of concurrent requests allowed to the API/service or contract.</li>
+	<li>Configure a fault message that is returned to the consumer, and an alert that is generated, if a request exceeds the predefined quota.</li>
 </ul>
 <p>You can define a fault message by specifying the following values:</p>
 <ul>
@@ -174,7 +185,7 @@ nav-title: Concurrency Quota
 <h3 id="policy_qos_concurrency_quota_behavior_04">Runtime behavior with grid services enabled (com.soa.grid)</h3>
 <p>With grid services enabled, the counter is shared across all Network Director containers in a cluster.</p>
 <p>For example, if the Concurrency Quota policy is set to 16 requests, and there are four Network Director containers, the limit is 16 requests between all four Network Director containers.</p>
-<p>For more information about enabling grid services, see <a href="../../sp/platform_management/using_clusterable_cache.htm">Using the Grid Cache Service for Clustered Cache</a>.</p>
+<p>For more information about enabling grid services, see <a href="../../sp/platform_management/grid_services.htm">Akana Grid Services</a>.</p>
 <h3 id="policy_qos_concurrency_quota_behavior_05">Response time effect on concurrency quota counter</h3>
 <p>The counter is incremented for each request, and decremented when each response is complete. Therefore, if the response time is longer, it is more likely that the error limit will be reached since the counter is not decremented until the response is sent back to the client and the handlers are closed.</p>
 <p>Let's say for example you attach this policy to two APIs, one of which has a significantly slower response time. With the same number of messages to both APIs, the API with the slower response time is likely to reach the concurrency limit sooner than the API with the faster response time.</p>
@@ -399,3 +410,10 @@ nav-title: Concurrency Quota
 	<li><a href="../../cm/learnmore/basics_glossary.htm">Glossary of Terms for the Community Manager developer portal</a></li>
 </ul>
 </div>
+
+
+
+
+</div>
+</body>
+</html>
