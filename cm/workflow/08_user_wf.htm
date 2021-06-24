@@ -22,7 +22,8 @@ nav-title: User Workflow
 	<li><a href="#user_f_00">User Workflow: Functions</a></li>
 	<li><a href="#user_c_00">User Workflow: Conditions</a></li>
 	<li><a href="#user_vr_00">User Workflow: Variable Resolvers</a></li>
-	<li><a href="#user_wf_2fa_ex">User Workflow: Implementing Two-Factor Authentication</a></li>
+	<li><a href="#user_wf_2fa_ex">User Workflow: Implementing two-factor authentication</a></li>
+	<li><a href="#user_wf_f_addroletouser_ex">User Workflow: Assigning a default role to users of a specific login domain</a> (Valid in version: 2019.1.34 and later)</li>
 </ol>
 <hr class="divide_hr" />
 <!--<p>{com.soa.atmosphere.impl\META-INF\resources\templates}</p>-->
@@ -261,7 +262,7 @@ nav-title: User Workflow
 
 
 <h3 id="user_ra_18">@UserActivated</h3>
-<p><strong>Valid in version: 2019.1.6 and later</strong></p>
+<h4 class="stamp">Valid in version: 2019.1.6 and later</h4>
 <p>In a scenario where platform self-signup is disabled, but instead a user account is added by the Site Admin, this reserved action detects whether a user account added by the Site Admin has been activated, so that one or more actions can be taken based on that.</p>
 <p>By default, when the user added by the Site Admin is activated, no notification is sent.</p>
 <p> By default, although the <strong>@UserActivated</strong> action is in the default user workflow, and includes a sendNotification function, this action is disabled, because it's commented out in line 834 of the default user workflow:</p>
@@ -294,7 +295,7 @@ nav-title: User Workflow
 <ol>
 	<li>Download the default user workflow. See <a href="../learnmore/site_admin_workflows.htm#proc_workflow_download">To download a workflow document from the Community Manager developer portal</a>.</li>
 	<li>Remove the comment tag from line 834.</li>
-	<li>Rename the workflow (for example, from <strong>default-user-workflow-v2.xml</strong> to <strong>default-user-workflow-v2-useractivated.xml</strong>).</li>
+	<li>Rename the workflow (for example, to <strong>default-user-workflow-v2-useractivated.xml</strong>).</li>
 	<li>Upload the modified user workflow. See <a href="../learnmore/site_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</li>
 	<li>Make the modified workflow the default user workflow. See <a href="../learnmore/site_admin_workflows.htm#workflow_custom_specify_users">How do I specify a custom workflow for platform users?</a></li>
 </ol>
@@ -321,6 +322,7 @@ nav-title: User Workflow
 	<li><a href="#user_f_14">terminateSession</a></li>
 	<li><a href="#user_f_15">acceptAgreementForDomainUsers</a></li>
 	<li><a href="#user_f_16">acceptAgreementForUsersBelongToRoles</a></li>
+	<li><a href="#user_f_addroletouser">addRoleToUser</a> (Valid in version: 2019.1.34 and later)</li>
 </ul>
 <!--<p>{com.soa.atmosphere.impl\src\com\soa\user\workflow\UserWorkflowFunctions.java}</p>-->
 
@@ -737,7 +739,46 @@ nav-title: User Workflow
 &lt;/function&gt;</pre>
 <p><strong>Note</strong>: To see where this fits into the workflow document, you can download the user workflow from the Community Manager developer portal. The new function is in the default workflow, but is commented out.</p>
 
-<!--<p>{com.soa.atmosphere.impl\src\com\soa\user\workflow\UserWorkflowFunctions.java}</p>-->
+
+<h3 id="user_f_addroletouser">addRoleToUser</h3>
+<h4 class="stamp">Valid in Version: 2019.1.34 and later</h4>
+<p>By default, when a new user logs in for the first time using a login domain set up in the Community Manager developer portal, the user starts without a role assignment.</p>
+<p>The <strong>addRoleToUser</strong> function allows customization of the workflow to modify this default behavior so that a new user, logging in for the first time with a specific login domain, is automatically assigned to a specific role.</p>
+<p>To implement this custom workflow function, add the <strong>addRoleToUser</strong> function to the workflow. You'll also need to specify valid values for the login domain and the role to assign to users logging in with that domain. For instructions and an example, see <a href="#user_wf_f_addroletouser_ex">User Workflow: Assigning a default role to users of a specific login domain</a>.</p>
+
+
+<h4>Examples/Notes/Additional Information</h4>
+<p>In the example below, users of an OpenID Connect Relying Party domain set up in the Community Manager developer portal, with the name <strong>Google OIDC RP Domain</strong>, are automatically assigned the <strong>API Developer</strong> role.</p>
+<p>This example shows a snippet from the full workflow document (for download information, see <a href="#user_wf_f_addroletouser_ex">User Workflow: Assigning a default role to users of a specific login domain</a>). Line numbers have been added for reference purposes.</p>
+<pre>49) &lt;action id="4" name="@Setup"&gt;
+50)   &lt;results&gt;
+51)
+52)
+53)     &lt;!--&lt;result old-status="none" status="unknown" step="30"&gt;
+54)       &lt;conditions type="AND"&gt;
+55)         &lt;condition type="isDomainType"&gt;
+56)           &lt;arg name="DomainType"&gt;com.soa.securitydomain.openidconnect.relyingparty&lt;/arg&gt;  &lt;!&ndash; e.g. com.soa.securitydomain.openidconnect.relyingparty &ndash;&gt;
+57)         &lt;/condition&gt;
+58)         &lt;condition type="isDomainName"&gt;
+59)           &lt;arg name="DomainName"&gt;Google OIDC RP Domain&lt;/arg&gt;  &lt;!&ndash; e.g. Google OIDC RP Domain &ndash;&gt;
+60)         &lt;/condition&gt;
+61)       &lt;/conditions&gt;
+62)       &lt;post-functions&gt;
+63)         &lt;function type="addRoleToUser"&gt;
+64)           &lt;arg name="role"&gt;API Developer&lt;/arg&gt;  &lt;!&ndash; e.g. BUSINESS ADMINISTRATOR &ndash;&gt;
+65)         &lt;/function&gt;
+66)       &lt;/post-functions&gt;
+67)     &lt;/result&gt;--&gt;
+68)     &lt;unconditional-result old-status="none" status="registered" step="30"/&gt;
+69)   &lt;/results&gt;
+70) &lt;/action&gt;
+</pre>
+<p>In the above:</p>
+<ul>
+	<li><strong>DomainType</strong> value is defined on line 56, and <strong>DomainName</strong> value is defined on line 59. For information about getting these values, see <a href="#user_wf_f_addroletouser_ex">User Workflow: Assigning a default role to users of a specific login domain</a>.</li>
+	<li><strong>Role</strong> is defined on line 64.</li>
+</ul>
+<p><strong>Note</strong>: To see where this fits into the workflow document, you can download the user workflow from the Community Manager developer portal. The example above is taken from the <strong>default-user-workflow-v2</strong> user workflow document available within the Community Manager developer portal. The new function is in the default workflow, but is commented out. </p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -768,6 +809,8 @@ nav-title: User Workflow
 	<li><a href="#user_c_21">is2FACodeValid</a></li>
 	<li><a href="#user_c_22">is2FATerminated</a></li>
 	<li><a href="#user_c_23">doesUserBelongToDomain</a></li>
+	<li><a href="#user_c_isdomaintype">isDomainType</a> (Valid in version: 2019.1.34 and later)</li>
+	<li><a href="#user_c_isdomainname">isDomainName</a> (Valid in version: 2019.1.34 and later)</li>
 </ul>
 <!--<p>{com.soa.atmosphere.impl\src\com\soa\user\workflow\UserWorkflowConditions.java}</p>-->
 
@@ -1034,6 +1077,8 @@ nav-title: User Workflow
 <h3 id="user_c_22">is2FATerminated</h3>
 <p>Checks to make sure that the 2FA session has not been terminated. 2FA is terminated if conditions are violated such as if the number of attempts with an invalid code has been exceeded or if the code has expired. If the session has been terminated, this condition returns <strong>true</strong>.</p>
 <p><strong>Note</strong>: The valid number of attempts for a specific instance of the platform, and the timeout period for the cookie, are determined by the Site Admin in the 2FA settings.</p>
+
+
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, if <strong>is2FATerminated</strong> resolves to <strong>Yes</strong>, <strong>2fa.required</strong> is set as a pending task, the current auth token property is removed, and the user's session is terminated. The user must start the login process from the beginning.</p>
 <pre>&lt;result old-status="registered" status="registered" step="400"&gt;
@@ -1076,6 +1121,23 @@ nav-title: User Workflow
   &lt;/results&gt;
 &lt;/action&gt;</pre>
 <p>To see where these fit into the workflow document, you can download the user workflow from the Community Manager developer portal. The new initial action and condition are in the default workflow, but commented out.</p>
+
+
+
+<h3 id="user_c_isdomaintype">isDomainType</h3>
+<h4 class="stamp">Valid in Version: 2019.1.34 and later</h4>
+<p>Checks if the domain type that a new user is logging in on matches the domain specified in the custom workflow, so that further actions can be taken depending on the result of the condition.</p>
+<p>The domain type is the back-end value for the domain type; for example, <strong>com.soa.securitydomain.openidconnect.relyingparty</strong>.</p>
+<p>Use <strong>isDomainType</strong> in combination with <strong><a href="#user_c_isdomainname">isDomainName</a></strong> (see below) and the user workflow function, <a href="#user_f_addroletouser">addRoleToUser</a>, so that a new user, logging in to the Community Manager developer portal for the first time with a specific login domain, is automatically assigned to a specific role.</p>
+<p>For an example, see <a href="#user_f_addroletouser">addRoleToUser</a>.</p>
+
+
+<h3 id="user_c_isdomainname">isDomainName</h3>
+<h4 class="stamp">Valid in Version: 2019.1.34 and later</h4>
+<p>Checks if the domain name that a new user is logging in on matches the domain name specified in the custom workflow, so that further actions can be taken depending on the result of the condition.</p>
+<p>The domain name value is the text name for the domain type as displayed in the Community Manager developer portal (<strong>More</strong> &gt; <strong>Admin</strong> &gt; <strong>Domains</strong>, <strong>Type</strong> column); for example, <strong>Google OIDC RP Domain</strong>.</p>
+<p>Use <strong>isDomainName</strong> in combination with <strong><a href="#user_c_isdomaintype">isDomainType</a></strong> (see above) and the user workflow function, <a href="#user_f_addroletouser">addRoleToUser</a>, so that a new user, logging in to the Community Manager developer portal for the first time with a specific login domain, is automatically assigned to a specific role.</p>
+<p>For an example, see <a href="#user_f_addroletouser">addRoleToUser</a>.</p>
 <!--<p>{com.soa.atmosphere.impl\src\com\soa\user\workflow\twofa\UserTwoFAWorkflowConditions.java}</p>-->
 <p><a href="#top">Back to top</a></p>
 
@@ -1156,7 +1218,7 @@ nav-title: User Workflow
 
 
 
-<h2 id="user_wf_2fa_ex">User Workflow: Implementing Two-Factor Authentication</h2>
+<h2 id="user_wf_2fa_ex">User Workflow: <a href="#user_wf_2fa_ex">Implementing two-factor authentication</a></h2>
 <p>The platform supports setting up a second factor, a verification code generated and sent to the user, as an additional security feature on the login process.</p>
 <p>There is a specific version of the user workflow that is provided out of the box to help get you started on setting up two-factor authentication for login.</p>
 <p>Two-factor authentication is also supported by additional platform settings specified by the Site Admin (<strong>Administration</strong> &gt; <strong>Settings</strong> &gt; <strong>User 2FA</strong>).</p>
@@ -1471,6 +1533,110 @@ nav-title: User Workflow
     &lt;/unconditional-result&gt;
   &lt;/results&gt;
 &lt;/action&gt;</pre>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h2 id="user_wf_f_addroletouser_ex">User Workflow: Assigning a default role to users of a specific login domain</h2>
+<h4 class="stamp">Valid in Version: 2019.1.34 and later</h4>
+<p>You can use the <strong>addRoleToUser</strong> user workflow function to automatically assign a specific role to a user logging in with a specific login domain.</p>
+
+<h4 id="proc_wf_custom_domain_login_role">To implement this custom workflow</h4>
+<p><strong>Note</strong>: If you already have a custom workflow in place, follow Step 1, use your own custom workflow in Step 2 below, and add the new custom section shown below in Step 3, updating the values as shown in Step 4, into your custom workflow. Then follow the other steps.</p>
+<ol>
+	<li>In the Community Manager developer portal, go to <strong>More</strong> &gt; <strong>Admin</strong>&nbsp;&gt; <strong>Domains</strong> and get these two values for the login domain that you want to use:
+		<ul>
+			<li><strong>DomainName</strong>: The plain text name in the Type column. For example, <strong>OpenID Connect Relying Party</strong>.</li>
+			<li><strong>DomainType</strong>: The back-end value for the type of domain. For an OpenID Connect Relying Party domain,&nbsp;the value is <strong>com.soa.securitydomain.openidconnect.relyingparty</strong>. To be sure, you can, turn on developer tools and click the <strong>Modify</strong> button for the domain. In the developer tools you'll see a GET call with the DomainName value in it. In the response, take the <strong>IdentitySystemType</strong> value.
+				<p>Copy both values so that you can use them in the custom workflow.</p>
+			</li>
+		</ul>
+	</li>
+	<li>Download this user workflow: <strong>default-user-workflow-v2</strong>. See <a href="../learnmore/site_admin_workflows.htm#proc_workflow_download">To download a workflow document from the Community Manager developer portal</a>.</li>
+	<li>Remove the comment tag from lines 53&#8211;67 (beginning with <span class="apidoc_code">&lt;result old-status="none" status="unknown" step="30"&gt;</span>).</li>
+	<li>Update the new section with your <strong>DomainName</strong> and <strong>DomainType</strong> values, and change the role if you want to assign a different role.</li>
+	<li>Rename the workflow (for example, to <strong>default-user-workflow-v2-customloginrole.xml</strong>).</li>
+	<li>Upload the modified user workflow. See <a href="../learnmore/site_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</li>
+	<li>Assign the modified workflow as the default user workflow for users. See <a href="../learnmore/site_admin_workflows.htm#workflow_custom_specify_users">How do I specify a custom workflow for platform users?</a></li>
+</ol>
+<p>The example below, a portion of a custom workflow, includes a custom section that implements this functionality. This section of the workflow:</p>
+<ul>
+	<li>Uses the <a href="#user_c_isdomaintype">isDomainType</a> and <a href="#user_c_isdomainname">isDomainName</a> conditions to test whether the <strong>DomainType</strong> and <strong>DomainName</strong> values match a valid login domain.</li>
+	<li>If the conditions are met, assigns the specified role to the user who is logging in for the first time from that login domain.</li>
+</ul>
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE workflow PUBLIC 
+         "-//OpenSymphony Group//DTD OSWorkflow 2.8//EN"
+         "http://www.opensymphony.com/osworkflow/workflow_2_8.dtd" [
+&lt;!-- "http://www.opensymphony.com/osworkflow/workflow_2_8.dtd" --&gt;
+
+
+&lt;!ENTITY LoginComplete "login.complete" &gt;
+&lt;!ENTITY ChangePassword "change.password" &gt;
+&lt;!ENTITY ForceAcceptAgreements "force.accept.agreements" &gt;
+&lt;!ENTITY CollectSecurityQuestionAnswers "collect.security.question.answers" &gt;
+&lt;!ENTITY CollectRequiredProperties "collect.required.properties" &gt;
+&lt;!ENTITY RoleSiteAdmin "SiteAdmin" &gt;
+&lt;!ENTITY RoleTwoFADisabled "2FA-exempt users" &gt;
+
+]&gt;
+
+
+
+
+
+
+&lt;workflow&gt;
+  &lt;initial-actions&gt;
+    &lt;action id="1" name="@Signup"&gt;
+      &lt;restrict-to&gt;
+        &lt;conditions type="AND"&gt;
+          &lt;condition type="isSelfSignupAllowed" /&gt;
+        &lt;/conditions&gt;
+      &lt;/restrict-to&gt;
+      &lt;results&gt;
+        &lt;unconditional-result old-status="none" status="init-signup" step="-1"/&gt;
+      &lt;/results&gt;
+    &lt;/action&gt;
+    &lt;action id="2" name="@Add"&gt;
+      &lt;results&gt;
+        &lt;unconditional-result old-status="none" status="init-admin-add" step="20"/&gt;
+      &lt;/results&gt;
+    &lt;/action&gt;
+    &lt;action id="3" name="@Invite"&gt;
+      &lt;restrict-to&gt;
+        &lt;conditions type="AND"&gt;
+          &lt;condition type="isInviteUnRegisteredUserAllowed" /&gt;
+        &lt;/conditions&gt;
+      &lt;/restrict-to&gt;
+      &lt;results&gt;
+        &lt;unconditional-result old-status="none" status="unknown" step="-1"/&gt;
+      &lt;/results&gt;
+    &lt;/action&gt;
+    &lt;action id="4" name="@Setup"&gt;
+      &lt;results&gt;
+
+
+        &lt;result old-status="none" status="unknown" step="30"&gt;
+          &lt;conditions type="AND"&gt;
+            &lt;condition type="isDomainType"&gt;
+              &lt;arg name="DomainType"&gt;com.soa.securitydomain.openidconnect.relyingparty&lt;/arg&gt;  &lt;!&ndash; e.g. com.soa.securitydomain.openidconnect.relyingparty &ndash;&gt;
+            &lt;/condition&gt;
+            &lt;condition type="isDomainName"&gt;
+              &lt;arg name="DomainName"&gt;Google OIDC RP Domain&lt;/arg&gt;  &lt;!&ndash; e.g. Google OIDC RP Domain &ndash;&gt;
+            &lt;/condition&gt;
+          &lt;/conditions&gt;
+          &lt;post-functions&gt;
+            &lt;function type="addRoleToUser"&gt;
+              &lt;arg name="role"&gt;API Developer&lt;/arg&gt;  &lt;!&ndash; e.g. BUSINESS ADMINISTRATOR &ndash;&gt;
+            &lt;/function&gt;
+          &lt;/post-functions&gt;
+        &lt;/result&gt;
+        &lt;unconditional-result old-status="none" status="registered" step="30"/&gt;
+      &lt;/results&gt;
+    &lt;/action&gt;
+
+...</pre>
 <p><a href="#top">Back to top</a></p>
 
 
