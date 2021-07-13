@@ -469,7 +469,17 @@ nav-title: Glossary of Terms
 	<dd>A request for a <a href="#gl_contract">contract</a>.</dd>
 
 
-	<dt id="gl_coordinateduniversaltime">Coordinated Universal Time (UTC)</dt>
+	<dt id="gl_cookie_attr_domain">cookie attributes: domain</dt>
+	<dd>Available in version: 2019.1.35 and later.</dd>
+	<dd>A cookie attribute supported in the Community Manager developer portal security settings in version 2019.1.35 and later. For details, see <a href="https://datatracker.ietf.org/doc/html/rfc6265#section-5.2.3" title="Link to Section 5.2.3 of the HTTP State Management Mechanism specification, RFC6265" target="_blank">The Domain Attribute</a> (Section 5.2.3 of the HTTP State Management Mechanism specification, RFC6265).</dd>
+
+
+	<dt id="gl_cookie_attr_samesite">cookie attributes: SameSite</dt>
+	<dd>Available in version: 2019.1.35 and later.</dd>
+	<dd>A cookie attribute supported in the Community Manager developer portal security settings in version 2019.1.35 and later. For details, see <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-rfc6265bis-07#section-5.3.7" title="Link to Section 5.3.7 of the HTTP State Management specification" target="_blank">The SameSite Attribute</a> (Section 5.3.7 of the HTTP State Management specification).</dd>
+
+
+<dt id="gl_coordinateduniversaltime">Coordinated Universal Time (UTC)</dt>
 	<dd>Coordinated Universal Time (UTC), also called Zulu time, is the primary time standard in general use. It essentially equates to Greenwich Mean Time (GMT), but is more scientifically precise. In the Akana API Platform API, time values are represented in the standard UTC date/time format <strong>YYYY-MM-DDTHH:MM:SSZ</strong>. Example: <strong>2013-12-31T15:45:00-04:00Z</strong>. In the Community Manager developer portal user interface, in <strong>Analytics</strong> &gt; <strong>Logs</strong>, date formats use the local browser time, adjusted to UTC.</dd>
 
 
@@ -923,7 +933,7 @@ This theme supports full functionality of the Community Manager developer portal
 
 
 	<dt id="gl_iss_claim">iss claim</dt>
-	<dd>In the context of the UK Open Banking standard supported by certain policies including the JOSE Profile-Driven Security policy, the <strong>iss</strong> <a href="#gl_claim">claim</a> is a string that identifies the PSP. If the issuer is using a certificate, as is generally the case, it is the <strong>subject</strong> value of the signing certificate.</dd>
+	<dd>In the context of the UK Open Banking standard supported by certain policies including the JOSE Profile-Driven Security policy, the <strong>iss</strong> <a href="#gl_claim">claim</a> is a string that identifies the <a href="#gl_psp">Payment Services Provider (PSP)</a>. If the issuer is using a certificate, as is generally the case, it is the <strong>subject</strong> value of the signing certificate.</dd>
 	<dd>For more information, see <a href="https://openbanking.atlassian.net/wiki/spaces/DZ/pages/937656404/Read+Write+Data+API+Specification+-+v3.1#Read/WriteDataAPISpecification-v3.1-Step2:FormtheJOSEHeader" title="Link to "form the jose header" section of uk open banking specification v3.1" target="_blank">Step 2: Form the JOSE Header</a> (UK Open Banking specification).</dd>
 </dl>
 
@@ -954,6 +964,11 @@ This theme supports full functionality of the Community Manager developer portal
 
 	<dt id="gl_json">JSON</dt>
 	<dd>An acronym for JavaScript Object Notation, JSON uses a subset of the JavaScript syntax to describe an object clearly and succinctly. One of the advantages of JSON over XML for API messages is that message content conveyed in the JSON format is much more concise than the same content conveyed in XML, consuming less bandwidth.</dd>
+
+
+	<dt id="gl_jsonpath">JSONPath</dt>
+	<dd>A data-serialization format that creates a uniform standard and syntax to define different parts of a JSON document. Using JSONPath, you can define expressions that you can use to identify a subset of the content in a JSON document. For example, some policies support JSONPath for identifying information, such as message content, that the policy can then act upon.</dd>
+	<dd>For more information, see <a href="../../ag/policies/policy_management.htm#policies_jsonpath">Using JSONPath in Policies</a>.</dd>
 
 
 	<dt id="gl_jsonschemadraft4">JSON Schema Draft 4</dt>
@@ -1075,7 +1090,8 @@ This theme supports full functionality of the Community Manager developer portal
 
 
 	<dt id="gl_kid">kid (Key Identifier)</dt>
-	<dd>The kid (Key Identifier) of the signing key sent in the message header. This tells the verifier which key in the <a href="#gl_jsonwebkeyset">JSON Web Key Set</a> to use to validate the JWS (signature).</dd>
+	<dd>The kid (Key Identifier) of the signing and/or encryption key sent in the message header. This tells the verifier which key in the <a href="#gl_jsonwebkeyset">JSON Web Key Set</a> to use to validate the JWS (signature).</dd>
+	<dd>For more information, see the Open Banking 3.1 specification: <a href="https://openbanking.atlassian.net/wiki/spaces/DZ/pages/937656404/Read+Write+Data+API+Specification+-+v3.1#Read/WriteDataAPISpecification-v3.1-ProcessforSigningaPayload" title="https://openbanking.atlassian.net/wiki/spaces/DZ/pages/937656404/Read+Write+Data+API+Specification+-+v3.1#Read/WriteDataAPISpecification-v3.1-ProcessforSigningaPayload" target="_blank">https://openbanking.atlassian.net/wiki/spaces/DZ/pages/937656404/Read+Write+Data+API+Specification+-+v3.1#Read/WriteDataAPISpecification-v3.1-ProcessforSigningaPayload</a> (Step 2).</dd>
 </dl>
 
 
@@ -1560,6 +1576,11 @@ This theme supports full functionality of the Community Manager developer portal
 	<dd>When an API uses the platform as a proxy, the platform receives the API traffic and directs it to the target (actual) endpoint, which is not exposed to API users.</dd>
 
 
+	<dt id="gl_psp">PSP (UK Open Banking)</dt>
+	<dd>In the context of the UK Open Banking standard supported by certain policies including the JOSE Profile-Driven Security policy, PSP is an acronym for Payment Services Provider. From the <a href="https://www.openbanking.org.uk/glossary/#p" title="Link to the UK Open Banking glossary" target="_blank">UK Open Banking glossary</a>:</dd>
+	<dd>&quot;A Payment Services Provider is an entity which carries out regulated payment services...&quot;</dd>
+
+
 	<dt id="gl_public_key_infrastructure">Public Key infrastructure (PKI)</dt>
 	<dd>PKI is the entire set of standards, roles, and protocols that defines and supports the use of a public and private key pair&#8212;asymmetric encryption&#8212;for secure messaging in electronic systems. The infrastructure includes the entity that issues keys and authenticates key holders&#8212;the Certificate Authority. It includes the set of processes and protocols by which public and private keys are used to securely exchange data.</dd>
 
@@ -1816,6 +1837,11 @@ This theme supports full functionality of the Community Manager developer portal
 	<dd>In a tenant/partner scenario, all tenants share the same security domain and are considered to be trusted. So, for example, app owners on one tenant have access to API information on another tenant seamlessly and without any additional security authorization.</dd>
 	
 	
+	<dt id="gl_securityeventtoken">Security Event Token</dt>
+	<dd>In the context of UK Open Banking, a Security Event Token is a JSON data structure that describes statements of fact from the perspective of an issuer about a subject. Each statement of fact represents an event relating to the subject; for example, a token was issued or revoken on behalf of the subject. Each SET becomes an individually signed <a href="#gl_jsonwebsignature">JSON web signature (JWS)</a>.</dd>
+	<dd>For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc8417" title="Link to Security Event Token (SET) specification" target="_blank">https://datatracker.ietf.org/doc/html/rfc8417</a> (Security Event Token specification).</dd>
+	
+	
 	<dt id="gl_securitytokenservice">security token service</dt>
 	<dd>An open standard core component for single sign-on using web services. It includes a framework for claims-based identity management; for example, via <a href="#gl_saml">SAML</a> or <a href="#gl_jsonwebtoken">JSON Web Token (JWT)</a>.</dd>
 	
@@ -1923,6 +1949,10 @@ This theme supports full functionality of the Community Manager developer portal
 	<dd>Parameter <strong>style</strong> values are defined by the Swagger specification, and vary according to the type of parameter (for example, path or query). Examples: simple, spaceDelimited, pipeDelimited, matrix, label, form. For more information, refer to the Swagger documentation re parameter serialization; see <a href="https://swagger.io/docs/specification/serialization/" title="link to Swagger documentation" target="_blank">https://swagger.io/docs/specification/serialization/</a>.</dd>
 	
 	
+	<dt id="gl_subdomain">subdomain</dt>
+	<dd>A subdomain is a subset of a main domain, with a separate IP address. For example, if you own the domain www.example.com you could break it down into these subdomains: www.example.com, apiportal.example.com, docs.example.com.</dd>
+	
+	
 	<dt id="gl_swagger">Swagger</dt>
 	<dd>Swagger is a specification and framework implementation for dynamically generating API documentation for RESTful web services. It is the precursor to Open API Specification 3.0 (<a href="#gl_oas30">OAS 3.0</a>).</dd>
 	<dd>The Akana API Platform supports <a href="#gl_oas30">OAS 3.0</a> (2019.0.0 and later), <a href="#gl_swagger_20">Swagger 2.0</a>, and <a href="#gl_swagger_12">Swagger 1.2</a>.</dd>
@@ -1961,8 +1991,9 @@ This theme supports full functionality of the Community Manager developer portal
 
 
 	<dt id="gl_tan">tan header (UK Open Banking)</dt>
-	<dd>The <strong>tan</strong> claim identifies the trust anchor, and is required in the JOSE header per the Open Banking 3.1 specification.</dd>
-	<dd>When Open Banking support is enabled in the policy, if a <strong>tan</strong> claim exists in the JWS header, the JOSE Security Policy v2 validates the header value and validates that it is present in the <strong>crit</strong> claim list.</dd>
+	<dd>Per the UK Open Banking specification, the <strong>tan</strong> header field: &quot;must be a string that consists of a domain name that is registered to and identifies the Trust Anchor that hosts the public counter-part of the key used for signing.&quot;</dd>
+	<dd>For UK Open Banking, the value must be <strong>openbanking.org.uk</strong>.</dd>
+	<dd>When Open Banking support is enabled in the policy, if a <strong>tan</strong> header field exists in the JWS header, the JOSE Security Policy v2 validates the header value and also validates that it is present in the <strong>crit</strong> claim list.</dd>
 	<dd>For more information, see the Open Banking 3.1 specification: <a href="https://openbanking.atlassian.net/wiki/spaces/DZ/pages/937656404/Read+Write+Data+API+Specification+-+v3.1#Read/WriteDataAPISpecification-v3.1-ProcessforSigningaPayload" title="https://openbanking.atlassian.net/wiki/spaces/DZ/pages/937656404/Read+Write+Data+API+Specification+-+v3.1#Read/WriteDataAPISpecification-v3.1-ProcessforSigningaPayload" target="_blank">https://openbanking.atlassian.net/wiki/spaces/DZ/pages/937656404/Read+Write+Data+API+Specification+-+v3.1#Read/WriteDataAPISpecification-v3.1-ProcessforSigningaPayload</a> (Step 2).</dd>
 
 

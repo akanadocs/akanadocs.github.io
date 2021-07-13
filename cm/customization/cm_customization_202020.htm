@@ -2018,6 +2018,7 @@ com.soa.atmosphere.footer.legal= &copy; 2019-2020 ACME Payments, Inc. All Rights
 	<li><a href="#s_sso_3p_portal_oidc_sso_api_ex">Single sign-on with third-party portal using an OIDC provider: API call example</a></li>
 	<li><a href="#s_sso_3p_portal_oidc_sso_api_doc_rendering">Rendering API documentation in a third-party portal: using the customization example</a></li>
 </ul>
+<p><strong>Note</strong>: Valid in Version: 2019.1.35 and later: In some cases, a user might get an HTTP 401 Unauthorized message, and not be able to view API documentation displayed in an  iframe on a third-party portal, where the third-party portal domain is different from the developer portal domain, because of changes in default settings in newer browsers. There are some settings that the Site Admin can modify to address this (<strong>Admin</strong> &gt; <strong>Settings</strong> &gt; <strong>Security</strong>). The two settings are <a href="../learnmore/site_admin_settings.htm#settings_security_domain">Authentication and CSRF Token Cookie Attribute - Domain</a> and <a href="../learnmore/site_admin_settings.htm#settings_security_samesite">Authentication and CSRF Token Cookie Attribute - SameSite</a>.</p>
 
 
 <h3 id="s_sso_3p_portal_oidc_sso_sequence_diagram">Integrated login with a third-party portal: End-to-end sequence diagram</h3>
@@ -2028,6 +2029,7 @@ com.soa.atmosphere.footer.legal= &copy; 2019-2020 ACME Payments, Inc. All Rights
 	<li>The domain name set up in the Community Manager developer portal (<strong>THIRDPARTY_OIDC_DOMAIN</strong> in this example), and the value used in the <span class="apidoc_code"><a href="../api/login/m_login_ssoLogin.htm">GET&#160;/api/login/ssoLogin</a></span> API call as the value for the <strong>domain</strong> path parameter, must match.</li>
 	<li>In the same API call, the value for the <strong>finalUrl</strong> query parameter is the URL for the page set up on the third-party portal, where users will access the API documentation.</li>
 </ul>
+<p><strong>Note</strong>: In version 2019.1.35 and later: You can implement custom user workflow to mark a third-party user, logging in for the first time, as a registered user. See <a href="../workflow/08_user_wf.htm#user_ia_allowmarkuserasregistered">@AllowMarkUserAsRegistered</a> in the user workflow documentation.</p>
 
 
 
