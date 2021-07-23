@@ -67,7 +67,7 @@ nav-title: API Description Language Support
 <p>The Akana Platform supports:</p>
 <ul>
 	<li><strong>OAS 3.0</strong>: <a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md" title="Link to OAS 3.0 specification on GitHub" target="_blank">https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md</a> (version 2019.0.0 and later)
-	<p>For details about working with OAS3.0, see <a href="apiadmin_a_d_d_oas30.htm">Open API Specification 3.0 Support</a>.</p></li>
+	<p>For details about working with OAS 3.0, see <a href="apiadmin_a_d_d_oas30.htm">Open API Specification 3.0 Support</a>.</p></li>
 	<li><strong>Swagger 2.0</strong>: <a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md" title="Link to Swagger 2.0 specification on GitHub" target="_blank">https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md</a>
 	<p><strong>Note (2019.0.0 and later)</strong>: In the Community Manager developer portal, if you upload or create a Swagger 2.0 API definition, it is converted to OAS 3.0 for use in the API Designer and Test Client.</p></li>
 	<li><strong>Swagger 1.2</strong>
@@ -75,7 +75,7 @@ nav-title: API Description Language Support
 	<p><strong>Note</strong>: In the Community Manager developer portal, if you create a Swagger 1.2 document, the API description is converted to Swagger 2.0 for use in the API Designer and Test Client.</p>
 	</li>
 </ul>
-<p><a href="#top">Back to top</a></p>
+<p><strong>Note</strong>: Where a feature is supported in one or more API documentation formats but not others, converting to other formats is not supported. For example, conversion from OAS 3.0 to Swagger 2.0 might not be 100% because of differences in features supported by both specifications.</p><p><a href="#top">Back to top</a></p>
 
 
 
@@ -296,18 +296,20 @@ nav-title: API Description Language Support
 	<li><strong>All users who have view access to the API</strong>: on the API's <strong>Overview</strong> page, in the <strong>Implementations</strong> section.</li>
 	<li><strong>API Admins</strong>: The same information is also on the API's <strong>Details</strong> page.</li>
 </ul>
+<p>The example below shows the description language options for a REST-based API in version 2021.1.0 and later:</p>
+<p><img src="assets/api_description_languages_2021_01_00.png" alt="API description language options for a specific API: 2021.1.0 and later" /></p>
 <p><strong>Note</strong>: For SOAP-based APIs, created by uploading a WSDL file, only the WSDL option is available. See <a href="apiadmin_api_add.htm#add_api_soap">How do I add a SOAP-based API?</a></p>
-<p>The API can be viewed in these formats supported by the API Platform:</p>
+<p>In the above example, the API can be viewed in these formats supported by the API Platform:</p>
 <ul>
 	<li><a href="basics_glossary.htm#gl_oas30">OAS 3.0</a></li>
 	<li><a href="basics_glossary.htm#gl_swagger_20">Swagger 2.0</a></li>
-	<li><a href="basics_glossary.htm#gl_swagger_12">Swagger 1.2</a></li>
-<li><a href="basics_glossary.htm#gl_raml">RAML 0.8</a></li>
+	<li><a href="basics_glossary.htm#gl_raml">RAML 0.8</a></li>
 	<li><a href="basics_glossary.htm#gl_wsdl">WSDL</a></li>
 </ul>
 <p>Download is not available for:</p>
 <ul>
 	<li> <a href="basics_glossary.htm#gl_wadl">WADL</a></li>
+	<li><a href="basics_glossary.htm#gl_swagger_12">Swagger 1.2</a> (valid in version 2021.1.0 and later)</li>
 </ul>
 <p>To view the API representation, click the applicable icon. The API description is immediately available:</p>
 <ul>
