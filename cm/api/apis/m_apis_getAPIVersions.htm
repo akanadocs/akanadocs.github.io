@@ -346,15 +346,11 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
-<h1 id="top">GET&#160;/api/apis/{APIID}/versions</h1><!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
+<h1 id="top">GET&#160;/api/apis/{APIID}/versions</h1>
 <p>Returns a list of versions associated with the specified API, as an RSS channel.</p>
 <p><strong>Note</strong>: version information does not include operations. For information about operations for a specific API version, use <span class="apidoc_code"><a href="m_apis_getAPIVersion.htm">GET&#160;/api/apis/versions/{APIVersionID}</a></span> with the optional <strong>includeOperations</strong> parameter.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>:
  Must have Read permission for the resource. </p>
-<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -373,17 +369,16 @@
 </ul>
 </div>
 <h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://{hostname}/api/apis/{APIID}/versions</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below show a request for a list of valid versions for the specified API.</p>
 <p><strong>Request URL</strong></p>
@@ -396,10 +391,9 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -425,10 +419,9 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -451,123 +444,286 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with information about the API versions in the form of an RSS feed.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
 <h2 id="sampleresponse">Sample Response</h2>
-<p id="id_sampleresponse">The sample response below shows that there are three versions of the API.</p>
+<p id="id_sampleresponse">The sample response below shows that there are two versions of the API. Version 1 is public and has a sandbox implementation; Version 2 is private and has a live implementation. Each version has one endpoint.</p>
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Wed, 30 Jan 2013 19:53:03 GMT
+Date: Wed, 18 Aug 2021 18:06:53 GMT
 Content-Type: application/json</pre>
 <p><a id="rss_apiversions"></a><strong>Sample response body (JSON)</strong></p>
 <pre>{
-  &quot;channel&quot; : {
-    &quot;title&quot; : &quot;API Versions&quot;,
-    &quot;item&quot; : [ {
-      &quot;title&quot; : &quot;1.4&quot;,
-      &quot;description&quot; : &quot;Fourth update.&quot;,
-      &quot;category&quot; : [ {
-        &quot;value&quot; : &quot;apiversion&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-      }, {
-        &quot;value&quot; : &quot;com.soa.api.state.open&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:state&quot;
-      }, {
-        &quot;value&quot; : &quot;Limited&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:visibility&quot;
-      }, {
-        &quot;value&quot; : &quot;payments API update&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:tag&quot;
-      } ],
-      &quot;guid&quot; : {
-        &quot;value&quot; : &quot;apiversion18974.acmepaymentscorp&quot;
+  "channel":{
+    "title":"API Versions",
+    "item":[
+      {
+        "title":"Version 2 (Private, Live)",
+        "description":"",
+        "category":[
+          {
+            "value":"apiversion",
+            "domain":"uddi:soa.com:resourcetype"
+          },
+          {
+            "value":"com.soa.api.state.open",
+            "domain":"uddi:soa.com:state"
+          },
+          {
+            "value":"Limited",
+            "domain":"uddi:soa.com:visibility"
+          },
+          {
+            "value":"uddi:soa.com:api:resource-level-permissions-notsupported",
+            "domain":"uddi:soa.com:api:resource-level-permissions"
+          },
+          {
+            "value":"finance",
+            "domain":"uddi:soa.com:tag"
+          },
+          {
+            "value":"private",
+            "domain":"uddi:soa.com:tag"
+          },
+          {
+            "value":"acmepaymentscorp",
+            "domain":"uddi:soa.com:tag"
+          }
+        ],
+        "guid":{
+          "value":"73564f84-9eb0-4ab7-84fd-ac4f4c953185.rcoaless"
+        },
+        "pubDate":"Wed, 18 Aug 2021 18:20:16 +0000",
+        "Endpoints":{
+          "Endpoint":[
+            {
+              "Category":"Production",
+              "Uri":"https://api652069live.gateway.akana.com:443/",
+              "CName":"api652069live.gateway.akana.com",
+              "DeploymentZoneRule":"container-1051default-https",
+              "ConnectionProperties":[
+                {
+                  "Name":"virtualHost",
+                  "Value":"api652069live.gateway.akana.com"
+                },
+                {
+                  "Name":"gateway_hostname",
+                  "Value":"api652069live.gateway.akana.com"
+                },
+                {
+                  "Name":"visibility",
+                  "Value":"public"
+                }
+              ],
+              "BindingQName":"{My_ACME_Payments_Corp_API_1}My_ACME_Payments_Corp_API__Binding_0_0_0",
+              "BindingType":"binding.http",
+              "EndpointKey":"uddi:a8e7cb07-5138-4dde-aa88-2a5d4e0274dd",
+              "EndpointImplementationDetails":{
+                "DeploymentZoneEndpoint":{
+                  "DeploymentZoneID":"container-1051.rcoaless",
+                  "EndpointKey":"uddi:a8e7cb07-5138-4dde-aa88-2a5d4e0274dd",
+                  "ListenerName":"default-https",
+                  "ContainerKey":"container-1051",
+                  "GatewayHostName":"api652069live.gateway.akana.com",
+                  "GatewayHostPath":"/",
+                  "EndpointHostName":"api652069live.gateway.akana.com",
+                  "EndpointPath":"/",
+                  "Protocol":"https",
+                  "Path":"/",
+                  "Url":"https://api652069live.gateway.akana.com:443/",
+                  "BindingQName":"{My_ACME_Payments_Corp_API_1}My_ACME_Payments_Corp_API__Binding_0_0_0",
+                  "BindingType":"binding.http",
+                  "Public":true
+                }
+              },
+              "ImplementationCode":"Live"
+            }
+          ]
+        },
+        "Endpoint":{
+          "Category":"Production",
+          "Uri":"https://api652069live.gateway.akana.com:443/",
+          "CName":"api652069live.gateway.akana.com",
+          "DeploymentZoneRule":"container-1051default-https",
+          "ConnectionProperties":[
+            {
+              "Name":"virtualHost",
+              "Value":"api652069live.gateway.akana.com"
+            },
+            {
+              "Name":"gateway_hostname",
+              "Value":"api652069live.gateway.akana.com"
+            },
+            {
+              "Name":"visibility",
+              "Value":"public"
+            }
+          ],
+          "BindingQName":"{My_ACME_Payments_Corp_API_1}My_ACME_Payments_Corp_API__Binding_0_0_0",
+          "BindingType":"binding.http",
+          "EndpointKey":"uddi:a8e7cb07-5138-4dde-aa88-2a5d4e0274dd",
+          "EndpointImplementationDetails":{
+            "DeploymentZoneEndpoint":{
+              "DeploymentZoneID":"container-1051.rcoaless",
+              "EndpointKey":"uddi:a8e7cb07-5138-4dde-aa88-2a5d4e0274dd",
+              "ListenerName":"default-https",
+              "ContainerKey":"container-1051",
+              "GatewayHostName":"api652069live.gateway.akana.com",
+              "GatewayHostPath":"/",
+              "EndpointHostName":"api652069live.gateway.akana.com",
+              "EndpointPath":"/",
+              "Protocol":"https",
+              "Path":"/",
+              "Url":"https://api652069live.gateway.akana.com:443/",
+              "BindingQName":"{My_ACME_Payments_Corp_API_1}My_ACME_Payments_Corp_API__Binding_0_0_0",
+              "BindingType":"binding.http",
+              "Public":true
+            }
+          },
+          "ImplementationCode":"Live"
+        }
       },
-      &quot;pubDate&quot; : &quot;Fri, 18 Jan 2013 15:16:07 GMT&quot;,
-      &quot;Endpoints&quot; : {
-        &quot;Endpoint&quot; : [ {
-          &quot;Category&quot; : &quot;Sandbox&quot;,
-          &quot;Uri&quot; : &quot;http://acmepaymentscorpsandbox.broker.2.soa.com/payments&quot;
-        }, {
-          &quot;Category&quot; : &quot;Production&quot;,
-          &quot;Uri&quot; : &quot;http://acmepaymentscorp.broker.1.soa.com/payments&quot;
-        } ]
+      {
+        "title":"Version 1 (Public, Sandbox)",
+        "description":"My ACME Payments Corp API",
+        "category":[
+          {
+            "value":"apiversion",
+            "domain":"uddi:soa.com:resourcetype"
+          },
+          {
+            "value":"com.soa.api.state.open",
+            "domain":"uddi:soa.com:state"
+          },
+          {
+            "value":"Public",
+            "domain":"uddi:soa.com:visibility"
+          },
+          {
+            "value":"uddi:soa.com:api:resource-level-permissions-notsupported",
+            "domain":"uddi:soa.com:api:resource-level-permissions"
+          },
+          {
+            "value":"finance",
+            "domain":"uddi:soa.com:tag"
+          },
+          {
+            "value":"acmepaymentscorp",
+            "domain":"uddi:soa.com:tag"
+          },
+          {
+            "value":"public",
+            "domain":"uddi:soa.com:tag"
+          }
+        ],
+        "guid":{
+          "value":"4631598c-1d03-4699-ac18-d49456d69b43.rcoaless"
+        },
+        "pubDate":"Wed, 18 Aug 2021 18:21:20 +0000",
+        "Endpoints":{
+          "Endpoint":[
+            {
+              "Category":"Sandbox",
+              "Uri":"https://api652064sandbox.gateway.akana.com:443/",
+              "CName":"api652064sandbox.gateway.akana.com",
+              "DeploymentZoneRule":"container-1051default-https",
+              "ConnectionProperties":[
+                {
+                  "Name":"virtualHost",
+                  "Value":"api652064sandbox.gateway.akana.com"
+                },
+                {
+                  "Name":"gateway_hostname",
+                  "Value":"api652064sandbox.gateway.akana.com"
+                },
+                {
+                  "Name":"visibility",
+                  "Value":"public"
+                }
+              ],
+              "BindingQName":"{My_ACME_Payments_Corp_API_1}My_ACME_Payments_Corp_API__Binding_0",
+              "BindingType":"binding.http",
+              "EndpointKey":"uddi:2a9a297a-9ec5-4ccb-8eee-c089c8edda59",
+              "EndpointImplementationDetails":{
+                "DeploymentZoneEndpoint":{
+                  "DeploymentZoneID":"container-1051.rcoaless",
+                  "EndpointKey":"uddi:2a9a297a-9ec5-4ccb-8eee-c089c8edda59",
+                  "ListenerName":"default-https",
+                  "ContainerKey":"container-1051",
+                  "GatewayHostName":"api652064sandbox.gateway.akana.com",
+                  "GatewayHostPath":"/",
+                  "EndpointHostName":"api652064sandbox.gateway.akana.com",
+                  "EndpointPath":"/",
+                  "Protocol":"https",
+                  "Path":"/",
+                  "Url":"https://api652064sandbox.gateway.akana.com:443/",
+                  "BindingQName":"{My_ACME_Payments_Corp_API_1}My_ACME_Payments_Corp_API__Binding_0",
+                  "BindingType":"binding.http",
+                  "Public":true
+                }
+              },
+              "ImplementationCode":"Sandbox"
+            }
+          ]
+        },
+        "Endpoint":{
+          "Category":"Sandbox",
+          "Uri":"https://api652064sandbox.gateway.akana.com:443/",
+          "CName":"api652064sandbox.gateway.akana.com",
+          "DeploymentZoneRule":"container-1051default-https",
+          "ConnectionProperties":[
+            {
+              "Name":"virtualHost",
+              "Value":"api652064sandbox.gateway.akana.com"
+            },
+            {
+              "Name":"gateway_hostname",
+              "Value":"api652064sandbox.gateway.akana.com"
+            },
+            {
+              "Name":"visibility",
+              "Value":"public"
+            }
+          ],
+          "BindingQName":"{My_ACME_Payments_Corp_API_1}My_ACME_Payments_Corp_API__Binding_0",
+          "BindingType":"binding.http",
+          "EndpointKey":"uddi:2a9a297a-9ec5-4ccb-8eee-c089c8edda59",
+          "EndpointImplementationDetails":{
+            "DeploymentZoneEndpoint":{
+              "DeploymentZoneID":"container-1051.rcoaless",
+              "EndpointKey":"uddi:2a9a297a-9ec5-4ccb-8eee-c089c8edda59",
+              "ListenerName":"default-https",
+              "ContainerKey":"container-1051",
+              "GatewayHostName":"api652064sandbox.gateway.akana.com",
+              "GatewayHostPath":"/",
+              "EndpointHostName":"api652064sandbox.gateway.akana.com",
+              "EndpointPath":"/",
+              "Protocol":"https",
+              "Path":"/",
+              "Url":"https://api652064sandbox.gateway.akana.com:443/",
+              "BindingQName":"{My_ACME_Payments_Corp_API_1}My_ACME_Payments_Corp_API__Binding_0",
+              "BindingType":"binding.http",
+              "Public":true
+            }
+          },
+          "ImplementationCode":"Sandbox"
+        }
       }
-    }, {
-      &quot;title&quot; : &quot;1.1&quot;,
-      &quot;description&quot; : &quot;Update to first release includes key fixes.&quot;,
-      &quot;category&quot; : [ {
-        &quot;value&quot; : &quot;apiversion&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-      }, {
-        &quot;value&quot; : &quot;com.soa.api.state.open&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:state&quot;
-      }, {
-        &quot;value&quot; : &quot;Public&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:visibility&quot;
-      }, {
-        &quot;value&quot; : &quot;payments API&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:tag&quot;
-      } ],
-      &quot;guid&quot; : {
-        &quot;value&quot; : &quot;apiversion18972.acmepaymentscorp&quot;
-      },
-      &quot;pubDate&quot; : &quot;Fri, 18 Jan 2013 09:10:50 GMT&quot;,
-      &quot;Endpoints&quot; : {
-        &quot;Endpoint&quot; : [ {
-          &quot;Category&quot; : &quot;Sandbox&quot;,
-          &quot;Uri&quot; : &quot;http://acmepaymentscorpsandbox.broker.soa.com/payments&quot;
-        }, {
-          &quot;Category&quot; : &quot;Production&quot;,
-          &quot;Uri&quot; : &quot;http://acmepaymentscorp.broker.soa.com/payments&quot;
-        } ]
-      }
-    }, {
-      &quot;title&quot; : &quot;1.0&quot;,
-      &quot;description&quot; : &quot;First release.&quot;,
-      &quot;category&quot; : [ {
-        &quot;value&quot; : &quot;apiversion&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-      }, {
-        &quot;value&quot; : &quot;com.soa.api.state.open&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:state&quot;
-      }, {
-        &quot;value&quot; : &quot;Public&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:visibility&quot;
-      }, {
-        &quot;value&quot; : &quot;payments API&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:tag&quot;
-      } ],
-      &quot;guid&quot; : {
-        &quot;value&quot; : &quot;apiversion18971.acmepaymentscorp&quot;
-      },
-      &quot;pubDate&quot; : &quot;Fri, 18 Jan 2013 08:46:27 GMT&quot;,
-      &quot;Endpoints&quot; : {
-        &quot;Endpoint&quot; : [ {
-          &quot;Category&quot; : &quot;Sandbox&quot;,
-          &quot;Uri&quot; : &quot;http://acmepaymentscorpsandbox.broker.soa.com/payments&quot;
-        }, {
-          &quot;Category&quot; : &quot;Production&quot;,
-          &quot;Uri&quot; : &quot;http://acmepaymentscorp.broker.soa.com/payments&quot;
-        } ]
-      }
-    } ]
+    ]
   },
-  &quot;version&quot; : &quot;1.0&quot;
+  "version":"1.0"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -585,10 +741,9 @@ Content-Type: application/json</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
 <h2 id="responsebody">Response Body</h2>
 <p id="responserss"> The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0. The title of the RSS channel is <strong>API versions</strong>. Each item in the channel represents one API version, and includes the information listed below.</p>
 <table class="tableparmsresponse">
@@ -612,18 +767,31 @@ Content-Type: application/json</pre>
 					<li>Category[&#160;]&#8212;One or more categories for the API version. For each defined category there are two values, <strong>value</strong> and <strong>domain</strong>.</li>
 					<li><a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_guid">GUID</a>: the unique ID for the item.</li>
 					<li><a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_pubdate">pubDate</a></li>
-					<li>Endpoints[&#160;]&#8212;One or more endpoints for the API version. For each defined endpoint there are two values, <strong>Category</strong> and <strong>Uri</strong>.</li>
-				</ul></td>
+					<li>Endpoints[&#160;]&#8212;One or more endpoints for the API version. For each defined endpoint there are multiple name/value pairs with information about the API version endpoint:
+						<ul>
+							<li>URI</li>
+							<li>CName</li>
+							<li>DeploymentZoneRule</li>
+							<li>ConnectionProperties</li>
+							<li>BindingQName</li>
+							<li>BindingType</li>
+							<li>EndpointKey</li>
+							<li>EndpointImplementationDetails</li>
+							<li>ImplementationCode</li>
+						</ul>
+					</li>
+					</ul>
+				<p>For an example, see <a href="#rss_apiversions">Sample response body (JSON)</a> above.</p></td>
 		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
+
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -642,12 +810,13 @@ Content-Type: application/json</pre>
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2>
+
+<h2 id="related_topics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
