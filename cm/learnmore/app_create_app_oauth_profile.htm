@@ -201,9 +201,10 @@ nav-title: App OAuth Profile
 		</tr>
 		<tr>
 			<td>Require Signed Requests</td>
-			<td><p>If API requests from this app should always be signed, check the box. If you choose this option, you must also provide the app's Client Registration JWKS URL. The JWKS URL is required for private Key JWT client authentication and for signed requests.</p>
-				<p>If you choose this option, the parameter named <strong>request</strong>, containing claim information as a JWT token, must be included with API requests that the app sends, per the OpenID Connect specification: <a href="https://openid.net/specs/openid-connect-core-1_0.html#RequestParameter" title="Link to OpenID Connect specification, section 6" target="_blank">Section 6, Passing Request Parameters as JWTs</a>.</p>
-				<p>If this box is not checked, a value of <strong>false</strong> is assumed.</p></td>
+			<td><p>Determines whether the client must transmit request parameters in a single self-contained parameter named <strong>request</strong>.</p>
+				<p>The value of the <strong>request</strong> parameter is a signed JWT. The claims in the JWT represent the request parameters of the authorization request.</p>
+				<p>The OpenID Connect specification calls this JWT a request object. For more information see <a href="https://openid.net/specs/openid-connect-core-1_0.html#RequestParameter" title="Link to OpenID Connect specification, section 6" target="_blank">Section 6, Passing Request Parameters as JWTs</a>.</p>
+				<p>If authorization requests from this app should always be signed, check the box. If you choose this option, you must also provide the app's Client Registration JWKS URL. If this box is not checked, a value of <strong>false</strong> is assumed.</p></td>
 		</tr>
 	</thead>
 	<tbody>
