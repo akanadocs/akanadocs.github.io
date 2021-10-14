@@ -208,7 +208,7 @@ p.apidoc_note { /*Notes in paragraphs: pale gray background*/
 }
 
 /*Copy of formats for apidoc_note but changing inline tagging to Note so tagging works for Flare. Added 10/14/21 for ATMO-39740 GW. */
-p.Note { 
+p.Note {
 	font-size: 12px;
 	background-color: #F6F6F6;
 	padding: 11px;
