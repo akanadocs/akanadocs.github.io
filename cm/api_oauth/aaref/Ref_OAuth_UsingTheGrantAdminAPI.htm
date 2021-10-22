@@ -853,7 +853,7 @@ Cookie set up by the Authentication API</td>
 <p>To query for a single grant, use the URLs below to provide different information relating to the grant. </p>
 <p>Returns all the information about the grant (operation: <a href="../oauth_admin/m_admin_getGrantDetails.htm">GET&#160;/oauth/admin/grants/{GrantID}</a>):</p>
 <pre>[oauth-provider-host]/oauth/admin/grants/{GrantID}</pre>
-<p>Returns the clientâs avatar image (operation: <a href="../oauth_admin/m_admin_getGrantClientAvatar.htm">GET&#160;/oauth/admin/grants/{GrantID}/client/picture</a>):</p>
+<p>Returns the client's avatar image (operation: <a href="../oauth_admin/m_admin_getGrantClientAvatar.htm">GET&#160;/oauth/admin/grants/{GrantID}/client/picture</a>):</p>
 <pre>[oauth-provider-host]/oauth/admin/grants/{GrantID}/client/picture</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -939,10 +939,10 @@ Accept: application/json or application/xml</td>
 
 <h2 id="performing_an_action_on_a_grant">Performing an Action on a Grant</h2>
 <p>Grant administration is done by performing an action on a grant. For example, the action to revoke the grant could be done by the resource owner, client administrator, or provider administrator. There are reserved actions used by the provider as part of the grant issue process.</p>
-<p>Custom actions could be introduced by customizing the workflow definition. For example, each action could be restricted based on the userâs roles and can result in changing the grant state.</p>
+<p>Custom actions could be introduced by customizing the workflow definition. For example, each action could be restricted based on the user's roles and can result in changing the grant state.</p>
 <p>Below are the API details to perform an action on a grant.</p>
 <p>Operation: <a href="../oauth_admin/m_admin_executeWorkflowAction.htm">POST&#160;/oauth/admin/grants/{GrantID}/actions</a>.</p>
-<p class="apidoc_note"><strong>Note</strong>: for more information about revoking a grant, see <a href="Ref_OAuth_RevokingAGrant.htm">OAuth: Revoking a Grant</a>.</p>
+<p class="Note"><strong>Note</strong>: for more information about revoking a grant, see <a href="Ref_OAuth_RevokingAGrant.htm">OAuth: Revoking a Grant</a>.</p>
 <h4>Request</h4>
 <table class="tableparmsresponse">
 	<thead>

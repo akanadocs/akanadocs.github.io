@@ -354,7 +354,7 @@
 <p>Returns an OAuth 2.0 token using HTTP POST.</p>
 <p>To request an access token using this grant type, the client must have already obtained the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_oauth_authorizationcode">Authorization Code</a> from the authorization server. An Authorization Code is a short-lived token issued to the client application by the authorization server upon successful authentication/authorization of an end-user (resource owner). The client application then uses the authorization code to request an access token from the authorization server.</p>
 <p>For detailed examples about the types of access tokens supported, with example for each type of access token, refer to <a href="../aaref/Ref_OAuth_ClientAuthenticationWithOAuthProvider.htm">OAuth: Client Authentication with the Platform's OAuth Provider</a>.</p>
-<p class="apidoc_note"><strong>Note</strong>: there is a corresponding operation that performs the same action using HTTP GET: <a href="m_oauth20_getTokenGET_.htm"><span class="apidoc_code">GET&#160;/oauth/oauth20/token</span></a>. For information on why you might choose one or the other, see <a href="../aaref/Ref_OAuthGETorPOST.htm">OAuth Operations: GET or POST?</a></p>
+<p class="Note"><strong>Note</strong>: there is a corresponding operation that performs the same action using HTTP GET: <a href="m_oauth20_getTokenGET_.htm"><span class="apidoc_code">GET&#160;/oauth/oauth20/token</span></a>. For information on why you might choose one or the other, see <a href="../aaref/Ref_OAuthGETorPOST.htm">OAuth Operations: GET or POST?</a></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Anyone can run this operation.</p>
 <!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
@@ -392,7 +392,7 @@
 <p><strong>Request URL</strong></p>
 <pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/oauth20/token</pre>
 <p><strong>Sample request headers</strong></p>
-<p><strong>Note</strong>: In the sample request headers below, the Authorization header consist of the clientâs Basic authentication header, as explained in <a href="../aaref/Ref_OAuth_ClientAuthenticationWithOAuthProvider.htm#http_basic_authentication">HTTP Basic Authentication</a>. This is one way of sending the authorization credentials. As an alternative, you can send this information in the POST body or, if you are using the GET operation, in the request parameters. For more information, see <a href="../aaref/Ref_OAuth_ClientAuthenticationWithOAuthProvider.htm">OAuth: Client Authentication with the Platform's OAuth Provider</a>.</p>
+<p class="Note"><strong>Note</strong>: In the sample request headers below, the Authorization header consist of the client's Basic authentication header, as explained in <a href="../aaref/Ref_OAuth_ClientAuthenticationWithOAuthProvider.htm#http_basic_authentication">HTTP Basic Authentication</a>. This is one way of sending the authorization credentials. As an alternative, you can send this information in the POST body or, if you are using the GET operation, in the request parameters. For more information, see <a href="../aaref/Ref_OAuth_ClientAuthenticationWithOAuthProvider.htm">OAuth: Client Authentication with the Platform's OAuth Provider</a>.</p>
 <pre>POST /oauth/oauth20/token HTTP/1.1
 Host: http://{oauth-provider-hostname}
 Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
