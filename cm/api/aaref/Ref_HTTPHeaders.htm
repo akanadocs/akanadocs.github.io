@@ -512,10 +512,10 @@ Indicates the type of compression encoding the server used for the response mess
 			<td><p>Specifies the media type of a request or response message  body.</p>
 <p>For response messages, content-type is always used. Refer to  specific methods for valid values. Some typical scenarios:</p>
 <ul class="apidoctable_ul">
-	<li>Generally, response messages use <strong>application/json</strong>, <strong>application/xml</strong>, or <strong>text/plain</strong>. In many cases, values include vendor-specific versions for <strong>application/json</strong> and <strong>application/xml</strong>; for example, <strong>application/vnd.soa.v81+json</strong>. For more information, see <a href="Ref_MediaTypes.htm">Media Types</a>.</li>
+	<li>Generally, response messages use application/json, application/xml, or text/plain. In many cases, values include vendor-specific versions for application/json and application/xml; for example, application/vnd.soa.v81+json. For more information, see <a href="Ref_MediaTypes.htm">Media Types</a>.</li>
 	<li>Methods returning an RSS feed generally use <strong>application/json</strong> unless another format is requested in the request message's accept  header.</li>
-	<li>Methods involving file upload use <strong>multipart/form-data</strong>. When binary data is included in the response, different content-types are used based on the type of the data; for example, <strong>image/gif</strong>, <strong>image/jpeg</strong>, <strong>image/png</strong>, or <strong>application/zip</strong>.
-		<p>For more information about uploading files to the platform with the multipart/form-data media type, see <a href="Ref_ManagingMultipartFormDataUploads.htm">Managing Multipart/Form-Data Uploads</a>.</p></li>
+	<li>Methods involving file upload use multipart/form-data. When binary data is included in the response, different content-types are used based on the type of the data; for example, image/gif, image/jpeg, image/png, or application/zip.
+<p>For more information about uploading files to the platform with the multipart/form-data media type, see <a href="Ref_ManagingMultipartFormDataUploads.htm">Managing Multipart/Form-Data Uploads</a>.</p></li>
 </ul></td>
 		</tr>
 		<tr>
