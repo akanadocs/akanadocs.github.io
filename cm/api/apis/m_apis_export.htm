@@ -392,17 +392,17 @@
 <p id="id_samplerequest">The example below shows a request to export the information for the specified API.</p>
 <p><strong>Request URL #1</strong></p>
 <p>With no options selected.</p>
-<pre>https://{hostname}/api/apis/316f3917-561b-43e3-9731-3a409abed474.acmepaymentscorp/package?exportVersion=all
+<pre class="pre_request_url">https://{hostname}/api/apis/316f3917-561b-43e3-9731-3a409abed474.acmepaymentscorp/package?exportVersion=all
 &amp;wrapInHTML=true&amp;document.domain={hostname}</pre>
 <p><strong>Request URL #2</strong></p>
 <p>With all options selected.</p>
-<pre>https://{hostname}/api/apis/316f3917-561b-43e3-9731-3a409abed474.acmepaymentscorp/package?exportVersion=all
+<pre class="pre_request_url">https://{hostname}/api/apis/316f3917-561b-43e3-9731-3a409abed474.acmepaymentscorp/package?exportVersion=all
 &amp;migration.operationalpolicy.export=true&amp;migration.qospolicy.export=true
 &amp;migration.pki.export=true&amp;migration.export.include.api.admins=true&amp;migration.export.include.api.connections=true
 &amp;migration.export.include.scopes=true&amp;wrapInHTML=true
 &amp;document.domain={hostname}&amp;download=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/octet-stream
+<pre class="pre_request_headers">Accept: application/octet-stream
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -576,7 +576,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. The export file is downloaded as specified in the request parameters.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/octet-stream
 Expires: Mon, 09 Jun 2014 15:25:25 GMT
 Content-Disposition: attachment;filename=&quot;api-export.zip&quot;</pre>

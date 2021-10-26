@@ -391,12 +391,12 @@
 <p id="id_samplerequest">The example below shows a request for a specific avatar.</p>
 <p><strong>Request URL #1</strong></p>
 <p>Returns the specified image at the default size (size of the uploaded image).</p>
-<pre>https://{hostname}/api/dropbox/pictures/1542</pre>
+<pre class="pre_request_url">https://{hostname}/api/dropbox/pictures/1542</pre>
 <p><strong>Request URL #2</strong></p>
 <p>With the optional <strong>size</strong> parameter, returns the specified image at a size of 100 pixels square.</p>
-<pre>https://{hostname}/api/dropbox/pictures/1542?size=100</pre>
+<pre class="pre_request_url">https://{hostname}/api/dropbox/pictures/1542?size=100</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/dropbox/pictures/1542?size=512 HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/dropbox/pictures/1542?size=512 HTTP/1.1
 Host: {hostname}
 Accept: image/png,image/*;q=0.8,*/*;q=0.5
 Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}
@@ -481,7 +481,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <p id="id_sampleresponse">The sample response below shows successful completing of the request.</p>
 
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Fri, 28 Sep 2018 15:47:27 GMT
 Content-Type: image/jpeg</pre>
 

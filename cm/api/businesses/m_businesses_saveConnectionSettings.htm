@@ -389,13 +389,13 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to update the settings for Sandbox and Live implementations. In the Sandbox implementation, the comments workflow is reset to the system default.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/connectionsettings</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/connectionsettings</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_request_headers">Content-Type: application/json
 Accept: application/vnd.soa.v72+json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "WorkflowSetting":[
     {
       "WorkflowDefinitionKey":"workflow:definition:apicontract:v72",
@@ -500,11 +500,11 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <h2 id="sampleresponse">Sample Response #1</h2>
 <p id="id_sampleresponse1">The sample response below shows the results from the sample request. Sandbox comment workflow is reset. to system default (no value supplied).</p>
 <p><strong>Sample response headers: application/vnd.soa.v72+json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v72+json
 Expires: Fri, 06 Feb 2015 20:22:13 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v72+json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;WorkflowSetting&quot; : [ {
     &quot;WorkflowDefinitionKey&quot; : &quot;workflow:definition:apicontract:v72&quot;,
     &quot;Environment&quot; : &quot;Production&quot;,
@@ -518,11 +518,11 @@ Expires: Fri, 06 Feb 2015 20:22:13 GMT</pre>
 <h2 id="sampleresponse2">Sample Response #2</h2>
 <p id="id_sampleresponse2">The sample response below includes values for all settings.</p>
 <p><strong>Sample response headers: application/vnd.soa.v72+xml</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v72+xml
 Expires: Fri, 06 Feb 2015 20:24:58 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v72+xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+<pre class="prettyprint, pre_xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
 &lt;ConnectionSettings xmlns=&quot;http://soa.com/xsd/business/1.0&quot; 
 xmlns:ns2=&quot;http://soa.com/xsd/legals/1.0&quot; xmlns:ns3=&quot;http://soa.com/xsd/dnmodel/1.0&quot; 
 xmlns:ns4=&quot;http://soa.com/xsd/api/1.0&quot;&gt;

@@ -388,10 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for information about the specified business resource (scope)</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/businesses/resources/c5d9b260-da9d-4ad7-b5fe-77e8e0c49ef8.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses/resources/c5d9b260-da9d-4ad7-b5fe-77e8e0c49ef8.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>
-Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -470,11 +469,11 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the scopes for the specified business.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Fri, 07 Oct 2016 21:18:05 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ResourceID&quot; : &quot;c5d9b260-da9d-4ad7-b5fe-77e8e0c49ef8.acmepaymentscorp&quot;,
   &quot;Name&quot; : &quot;Full Access full service&quot;,
   &quot;ShortDescription&quot; : &quot;Full Access full service&quot;,

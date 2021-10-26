@@ -390,15 +390,15 @@ Adds or updates information about operation-specific scope mapping for an API ve
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below sends the values for the operation-specific scope mapping for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/650346bb-4f4d-41ff-b38a-ca727b91181f.acmepaymentscorp/resources</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/650346bb-4f4d-41ff-b38a-ca727b91181f.acmepaymentscorp/resources</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/apis/versions/650346bb-4f4d-41ff-b38a-ca727b91181f.acmepaymentscorp/resources HTTP/1.1
+<pre class="pre_request_headers">PUT /api/apis/versions/650346bb-4f4d-41ff-b38a-ca727b91181f.acmepaymentscorp/resources HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body (operation-specific scope mapping in use)</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;OperationResource&quot;:[
     {
       &quot;OperationName&quot;:&quot;listPayments&quot;,
@@ -434,7 +434,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
   ]
 }</pre>
 <p><strong>Sample request body (operation-specific scope mapping not in use)</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ResourceID&quot;:[
 
   ]
@@ -523,11 +523,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. There are five operations; four operations are mapped to one scope each, and one operation is mapped to three scopes.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Expires: Thu, 19 Jun 2014 15:46:22 GMT</pre>
 <p><strong>Sample response body (operation-specific scope mapping in use)</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;OperationResourceDetails&quot; : [ {
     &quot;OperationName&quot; : &quot;addPayment&quot;,
     &quot;Resource&quot; : [ {
@@ -618,7 +618,7 @@ Expires: Thu, 19 Jun 2014 15:46:22 GMT</pre>
   } ]
 }</pre>
 <p><strong>Sample response body (operation-specific scope mapping not in use)</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->

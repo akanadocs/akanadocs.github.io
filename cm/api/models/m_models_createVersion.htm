@@ -388,13 +388,13 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to create Version 2 of the model.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/models/ad0e3841-5684-4e18-a6ac-da3e2dcd52b3.acmepaymentscorp/versions</pre>
+<pre class="pre_request_url">https://{hostname}/api/models/ad0e3841-5684-4e18-a6ac-da3e2dcd52b3.acmepaymentscorp/versions</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "Visibility":"Public",
   "BusinessID":"tenantbusiness.acmepaymentscorp",
   "SourceModelVersionID":"db79bb8f-0184-4cc5-85d2-2c3e5048ee6a.acmepaymentscorp",
@@ -482,12 +482,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Mon, 20 May 2019 20:16:18 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body</strong></p>
 <p>If schema is defined for the model, the schema is also cloned. The example below is a very simple model.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
     "ModelVersionID": "e25dacef-2e4a-4e89-adfe-b6b4c9271c7d.acmepaymentscorp",
     "ModelID": "ad0e3841-5684-4e18-a6ac-da3e2dcd52b3.acmepaymentscorp",
     "Name": "Version 2",

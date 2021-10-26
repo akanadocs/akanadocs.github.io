@@ -380,7 +380,8 @@ Retrieves a summary of information about active legal documents for the specifie
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/legals</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/legals</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -388,10 +389,9 @@ Retrieves a summary of information about active legal documents for the specifie
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for legal documents for an API. Inactive and Draft legal agreements are also requested.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/a4cc9f79-e8ff-4b06-ad70-2c1a08139776.acmepaymentscorp/legals?Drafts=true&amp;Inactive=true</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/a4cc9f79-e8ff-4b06-ad70-2c1a08139776.acmepaymentscorp/legals?Drafts=true&amp;Inactive=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>
-Accept: application/json, text/javascript, */*; q=0.01
+<pre class="pre_request_headers">Accept: application/json, text/javascript, */*; q=0.01
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>None.</p>
@@ -483,11 +483,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the requested legal agreements returned. Draft and Inactive documents are included, as specified in the sample&#160;request.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 14 Oct 2020 20:44:32 GMT
 Content-Type: application/json</pre>
 <p><a id="rss_agreementdocuments_json"></a><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel":{
     "title":"Agreement Documents",
     "item":[
@@ -641,7 +641,7 @@ The response body is in the form of an RSS channel, and includes the items liste
 		<tr>
 			<td>category</td>
 			<td><p>One or more categories. Each category is a set of two name/value pairs. The second item defines the Domain, and the first defines the actual value for the property. For example, the set of values below shows that the document type is a legal eula (end-user licensing agreement) document:</p>
-				<pre>{
+				<pre class="prettyprint, pre_json">{
   &quot;value&quot; : &quot;com.soa.atmosphere.legals.eula&quot;,
   &quot;domain&quot; : &quot;uddi:soa.com:documenttype&quot;
 }</pre>

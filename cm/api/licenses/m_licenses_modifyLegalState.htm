@@ -388,15 +388,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to change the state of the specified license to Inactive.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/licenses/5591b032-1a1c-4dc0-a941-ee5d5323e337.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/licenses/5591b032-1a1c-4dc0-a941-ee5d5323e337.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/licenses/5591b032-1a1c-4dc0-a941-ee5d5323e337.acmepaymentscorp/state HTTP/1.1
+<pre class="pre_request_headers">PUT /api/licenses/5591b032-1a1c-4dc0-a941-ee5d5323e337.acmepaymentscorp/state HTTP/1.1
 Host: {hostname}
 Accept: */*
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Active&quot;:false
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -492,11 +492,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Fri, 29 Apr 2016 15:27:28 GMT
 Content-Type: text/plain</pre>
 <p><strong>Sample response body</strong></p>
-<pre>5591b032-1a1c-4dc0-a941-ee5d5323e337.acmepaymentscorp</pre>
+<pre class="pre_response_body_plain">5591b032-1a1c-4dc0-a941-ee5d5323e337.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

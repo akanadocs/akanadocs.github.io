@@ -392,16 +392,16 @@ Modifies information about a platform user. </p>
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to update the information for the specified user.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
 <p><strong>Sample request headers #1</strong></p>
-<pre>PUT&#160;/api/users/6a686072-b9fa-434f-8b22-4b2a47b07d59.acmepaymentscorp HTTP/1.1
+<pre class="pre_request_headers">PUT&#160;/api/users/6a686072-b9fa-434f-8b22-4b2a47b07d59.acmepaymentscorp HTTP/1.1
 Host: {hostname}
 Accept: text/plain
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body #1</strong></p>
 <p>Security challenges and phone numbers are in place. Request modifies the user's email address and phone number.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;UserID&quot; : &quot;6a686072-b9fa-434f-8b22-4b2a47b07d59.acmepaymentscorp&quot;,
   &quot;UserName&quot; : &quot;MargaretMartinson&quot;,
   &quot;FirstName&quot; : &quot;Margaret&quot;,
@@ -449,20 +449,20 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
   }
 }</pre>
 <p><strong>Sample request headers #2</strong></p>
-<pre>PUT&#160;/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp HTTP/1.1
+<pre class="pre_request_headers">PUT&#160;/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp HTTP/1.1
 Host: {hostname}
 Accept: text/plain
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body #2: Site Admin modifies firstname and profile name</strong>.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;FirstName&quot;:&quot;John&quot;,
   &quot;LastName&quot;:&quot;Swift&quot;,
   &quot;ProfileName&quot;:&quot;JohnSwift&quot;,
   &quot;Email&quot;:&quot;jswift@acmepaymentscorp.com&quot;
 }</pre>
 <p><strong>Sample request body #3: : Site Admin extends the expiration date on a new account.</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;UserID&quot; : &quot;1025e376-e3dd-442c-9601-7c14e13f9d75.acmepaymentscorp&quot;,
   &quot;UserName&quot; : &quot;JaneMead&quot;,
   &quot;FirstName&quot; : &quot;Jane&quot;,
@@ -570,11 +570,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that the user information was successfully modified.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/plain
 Date: Fri, 25 Sep 2015 15:13:08 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>0601df93-aeb6-44be-ab0e-d6ed694a5aa8.acmepaymentscorp</pre>
+<pre class="pre_response_body_plain">0601df93-aeb6-44be-ab0e-d6ed694a5aa8.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <!-- InstanceEndEditable -->

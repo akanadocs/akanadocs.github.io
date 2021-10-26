@@ -389,18 +389,18 @@
 <p id="id_samplerequest">The example below shows an upload of a revised <strong>custom.less</strong> file.</p>
 <p><strong>Request URL #1</strong></p>
 <p>Uploads a revised <strong>custom.less</strong> file.</p>
-<pre>http://acmepaymentscorp.com/resources/theme/devportal/less?unpack=false</pre>
+<pre class="pre_request_url">http://acmepaymentscorp.com/resources/theme/devportal/less?unpack=false</pre>
 <p><strong>Request URL #2</strong></p
 >
 <p>Uploads an image file to the resources folder.</p>
-<pre>http://acmepaymentscorp.com/resources/img_lead.png</pre>
+<pre class="pre_request_url">http://acmepaymentscorp.com/resources/img_lead.png</pre>
 <p><strong>Sample request headers (for request #1)</strong></p>
-<pre>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+<pre class="pre_request_headers">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 Content-Type: multipart/form-data; boundary=---------------------------2366399137693
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>The content below has been abbreviated for display purposes.</p>
-<pre>-----------------------------2366399137693
+<pre class="pre_plain">-----------------------------2366399137693
 Content-Disposition: form-data; name=&quot;File&quot;; filename=&quot;custom.less&quot;
 Content-Type: application/octet-stream
 
@@ -537,7 +537,7 @@ JlSyqs18Z6p9PbI7bCR9yB5K9odK3sNz5gp7cMpM8kiPXvd_RiIM
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/html
 Cache-Control: no-cache
 Expires: Wed, 23 Sep 2015 09:34:18 GMT</pre>

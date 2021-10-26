@@ -407,9 +407,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The examples below show several variations of adding an API by providing different optional values.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/apis HTTP/1.1
+<pre class="pre_request_headers">POST /api/apis HTTP/1.1
 Host: {hostname}
 Accept: application/vnd.soa.v81+json
 Content-Type: application/vnd.soa.v81+json; charset=UTF-8
@@ -417,7 +417,7 @@ Cookie: {cookie}
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p id="samplerequest01"><strong>Sample request body #1</strong></p>
 <p>Creates an API by uploading a Swagger document, previously uploaded to the Dropbox using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&#160;/api/dropbox/readfiledetails</a></span> operation.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "DLDescriptor":{
     "ServiceDescriptorReference":{
       "ServiceName":"Swagger_Petstore",
@@ -429,7 +429,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 
 <p id="samplerequest02"><strong>Sample request body #2</strong></p>
 <p>Creates an API with only the API name provided, so the API Admin can add the details later. Corresponds to the &quot;Create API from Scratch&quot; option in the UI. No target endpoint specified.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIVersionInfo":{
     "Name":"ACME Payments API"
   },
@@ -441,7 +441,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <p id="samplerequest03"><strong>Sample request body #3</strong></p>
 <p>Creates an API with only the API name provided, so the API Admin can add the details later. Corresponds to the &quot;Create API from Scratch&quot; option in the UI. This example includes the optional target endpoint URL.</p>
 <p>To view the response, see <a href="#id_sampleresponse01">Sample response body #1</a>.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIVersionInfo":{
     "Name":"ACME Payments API",
     "Visibility":"Public"
@@ -457,7 +457,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 
 <p id="samplerequest04"><strong>Sample request body #4: Upload RAML file</strong></p>
 <p>Creates an API by referencing a specific RAML service previously uploaded to the Dropbox using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&#160;/api/dropbox/readfiledetails</a></span> operation.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "DLDescriptor":{
     "ServiceDescriptorReference":{
       "DropboxFileId":1024,
@@ -469,7 +469,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 
 <p id="samplerequest05"><strong>Sample request body #5: Upload RAML file in ZIP file</strong></p>
 <p>Creates an API by referencing a specific RAML file in a subfolder of a ZIP file previously uploaded to the Dropbox using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&#160;/api/dropbox/readfiledetails</a></span> operation. When you use that operation to upload a ZIP file that includes multiple services, the list of services is returned in the response, and you can pick the one you want. For an example and illustration, refer to the documentation for that operation, in the section titled <a href="../dropbox/m_dropbox_readFileDetails.htm#dropbox_fileupload">Sample request body #2: Postman</a>.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "DLDescriptor":{
     "ServiceDescriptorReference":{
       "ServiceName":"Aria_API",
@@ -481,7 +481,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 
 <p id="samplerequest06"><strong>Sample request body #6: Include deployment zone specifications</strong></p>
 <p>Specifies two deployment zones for the API.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIVersionInfo": {
     "Name": "NewAPI_WithDZ"
   },
@@ -514,7 +514,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <p id="samplerequest07"><strong>Sample request body #7: Add API with pattern of Physical Service</strong></p>
 <p>Adds an API choosing a pattern of Physical Service. In this example, the API definition only includes the name; no API description document was uploaded. An API can be defined either way (by uploading an API description document, or not) regardless of the API's pattern.</p>
 <p>To view the response, see <a href="#id_sampleresponse07">Sample response body #2</a>.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIVersionInfo&quot;:{
     &quot;Name&quot;:&quot;ACME Payments API Physical Service&quot;
   },
@@ -526,7 +526,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <p id="eg_samplerequest_08"><strong>Sample request body #8 and #9: With and without specifying an initial version number</strong></p>
 <p>There are two examples below; one does not specify a value for <strong>VersionName</strong>, so the default version name of <strong>v1</strong> is used. The second specifies a custom value, so the custom value is used for the API version.</p>
 <p>With the default value:</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIVersionInfo":{
     "Name":"API_16"
   },
@@ -540,7 +540,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
   }
 }</pre>
 <p>With a custom value specified for <strong>VersionName</strong> (line 4):</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIVersionInfo":{
     "Name":"API_17",
     "VersionName":"API_17_Version_5"   
@@ -564,7 +564,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 	<li>Visibility of <strong>Limited</strong></li>
 </ul>
 <p>To view the response, see <a href="#id_sampleresponse10">Sample response body #3</a>.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIVersionInfo":{
     "Name":"Airport Status API",
     "VersionName":"Version 1",
@@ -659,7 +659,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample responses below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/vnd.soa.v81+json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Tue, 05 Jul 2016 14:49:13 GMT
 Content-Type: application/vnd.soa.v81+json
 Atmo-Renew-Token: renew
@@ -667,7 +667,7 @@ Set-Cookie: Csrf-Token_rcoaless=TokenID%3Dde5b2e6a-d040-11e5-82f9-a0de4d4...</pr
 
 <p id="id_sampleresponse01"><strong>Sample response body #1: application/vnd.soa.v81+json (response to <a href="#samplerequest03">sample request #3</a>)</strong></p>
 <p>Successful response for adding an API with only API name and Target Endpoint URL provided in the request.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIID":"e544b792-cc51-4cf6-9ff2-032b8a61628d.acmepaymentscorp",
   "Name":"ACME Payments API",
   "Description":"ACME Payments API",
@@ -722,55 +722,57 @@ Set-Cookie: Csrf-Token_rcoaless=TokenID%3Dde5b2e6a-d040-11e5-82f9-a0de4d4...</pr
 
 <p id="id_sampleresponse07"><strong>Sample response body #2: application/vnd.soa.v81+json (response to <a href="#samplerequest07">Sample request body #7</a>)</strong></p>
 <p>Successful response for adding an API with pattern of <strong>Physical Service</strong>.</p>
-<pre>    "APIID": "2d8d66b7-ebb7-4920-b745-070177f1d5ae.acmepaymentscorp",
-    "Name": "ACME Payments API Physical Service",
-    "Description": "ACME Payments API Physical Service",
-    "Visibility": "Public",
-    "LatestVersionID": "271a3126-24ec-4500-9741-b5ba4fd58f03.acmepaymentscorp",
-    "RatingSummary": {
-        "Five": 0,
-        "Four": 0,
-        "Three": 0,
-        "Two": 0,
-        "One": 0
+<pre class="prettyprint, pre_json">{
+  "APIID":"2d8d66b7-ebb7-4920-b745-070177f1d5ae.acmepaymentscorp",
+  "Name":"ACME Payments API Physical Service",
+  "Description":"ACME Payments API Physical Service",
+  "Visibility":"Public",
+  "LatestVersionID":"271a3126-24ec-4500-9741-b5ba4fd58f03.acmepaymentscorp",
+  "RatingSummary":{
+    "Five":0,
+    "Four":0,
+    "Three":0,
+    "Two":0,
+    "One":0
+  },
+  "APIVersion":{
+    "APIVersionID":"271a3126-24ec-4500-9741-b5ba4fd58f03.acmepaymentscorp",
+    "APIID":"2d8d66b7-ebb7-4920-b745-070177f1d5ae.acmepaymentscorp",
+    "Name":"v1",
+    "Description":"ACME Payments API Physical Service",
+    "Environment":"Production",
+    "Visibility":"Public",
+    "Created":"2017-08-07T15:16:29Z",
+    "Updated":"2017-08-07T15:16:29Z",
+    "State":"com.soa.api.state.open",
+    "ProductionEndpointAccessAutoApproved":false,
+    "SandboxEndpointAccessAutoApproved":false,
+    "RatingSummary":{
+      "Five":0,
+      "Four":0,
+      "Three":0,
+      "Two":0,
+      "One":0
     },
-    "APIVersion": {
-        "APIVersionID": "271a3126-24ec-4500-9741-b5ba4fd58f03.acmepaymentscorp",
-        "APIID": "2d8d66b7-ebb7-4920-b745-070177f1d5ae.acmepaymentscorp",
-        "Name": "v1",
-        "Description": "ACME Payments API Physical Service",
-        "Environment": "Production",
-        "Visibility": "Public",
-        "Created": "2017-08-07T15:16:29Z",
-        "Updated": "2017-08-07T15:16:29Z",
-        "State": "com.soa.api.state.open",
-        "ProductionEndpointAccessAutoApproved": false,
-        "SandboxEndpointAccessAutoApproved": false,
-        "RatingSummary": {
-            "Five": 0,
-            "Four": 0,
-            "Three": 0,
-            "Two": 0,
-            "One": 0
-        },
-        "SandboxAnonymousAccessAllowed": false,
-        "ProductionAnonymousAccessAllowed": false,
-        "ResourceLevelPermissionsSupported": false,
-        "APIOwnedImplementations": true,
-        "APIDesign": {
-            "CommonDesign": false
-        }
-    },
-    "AdminGroupID": "apiadmin-2d8d66b7-ebb7-4920-b745-070177f1d5ae.acmepaymentscorp",
-    "Created": "2017-08-07T15:16:28Z",
-    "Updated": "2017-08-07T15:16:28Z",
-    "BusinessID": "tenantbusiness.acmepaymentscorp",
-    "OrganizationKey": "uddi:6195a9f3-7b83-11e7-8dd9-82293556bcc5"
+    "SandboxAnonymousAccessAllowed":false,
+    "ProductionAnonymousAccessAllowed":false,
+    "ResourceLevelPermissionsSupported":false,
+    "APIOwnedImplementations":true,
+    "APIDesign":{
+      "CommonDesign":false
+    }
+  },
+  "AdminGroupID":"apiadmin-2d8d66b7-ebb7-4920-b745-070177f1d5ae.acmepaymentscorp",
+  "Created":"2017-08-07T15:16:28Z",
+  "Updated":"2017-08-07T15:16:28Z",
+  "BusinessID":"tenantbusiness.acmepaymentscorp",
+  "OrganizationKey":"uddi:6195a9f3-7b83-11e7-8dd9-82293556bcc5"
 }</pre>
+
 
 <p id="id_sampleresponse10"><strong>Sample response body #3 (response to <a href="#samplerequest10">Sample request body #10</a>)</strong></p>
 <p>Successful response for adding an API with custom privacy setting and custom Name (Version ID in the Community Manager developer portal user interface).</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIID" : "6c2c2c58-b140-45de-a3b9-f77540e16b6b.acmepaymentscorp",
   "Name" : "Airport Status API",
   "Description" : "Airport Status API",

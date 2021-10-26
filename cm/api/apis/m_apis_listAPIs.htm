@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request without the optional parameters.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/apis HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/apis HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -481,12 +481,12 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <p id="id_sampleresponse">The sample response below shows the results of a request without the optional parameters, when there are three APIs on the platform. Both JSON and XML examples are provided.</p>
 
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 29 Jul 2020 14:30:37 GMT
 Content-Type: application/json</pre>
 
 <p><a id="rss_apis_json"></a><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel": {
     "title": "APIs",
     "item": [
@@ -632,10 +632,10 @@ Content-Type: application/json</pre>
 		<tr>
 			<td>category[&#160;]</td>
 			<td><p>An array of sets of two name/value pairs, each including Value and Domain, with a value for each. For example:</p>
-				<pre>&quot;value&quot; : &quot;api&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;api&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;</pre>
 				<p>The example above indicates that the resource is an API.</p>
-				<pre>&quot;value&quot; : &quot;Public&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;Public&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:visibility&quot;</pre>
 				<p>The example above indicates that the API has a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility_api">visibility</a> setting of <strong>Public</strong>.</p></td>
 		</tr>
@@ -654,7 +654,7 @@ Content-Type: application/json</pre>
 					<li>Title: The name of the API.</li>
 					<li><a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_guid">GUID</a>: unique ID for the API version; the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a>.</li>
 					<li>Category: a set of two name/value pairs expressing information about the API version. For example:
-<pre>&quot;value&quot; : &quot;apiversion&quot;,
+<pre class="pre_plain">&quot;value&quot; : &quot;apiversion&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;</pre>
 				<p>The example above indicates that the resource is an API version.</p></li>
 				</ul></td>

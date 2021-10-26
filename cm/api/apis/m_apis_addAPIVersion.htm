@@ -393,13 +393,13 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below adds a version for the <strong>acmepaymentscorp</strong> API.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/4e015aec-8224-4a43-a8d8-7ae969312307.acmepaymentscorp/versions</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/4e015aec-8224-4a43-a8d8-7ae969312307.acmepaymentscorp/versions</pre>
 <p><strong>Sample request headers: application/json</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_request_headers">Content-Type: application/json
 Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body: application/json</strong></p>
-<pre>{ 
+<pre class="prettyprint, pre_json">{ 
   &quot;APIID&quot;:&quot;7df17f3f-8ee2-4749-9719-52f5090c51da.acmepaymentscorp&quot;,
   &quot;Name&quot;:&quot;Version 2&quot;,
   &quot;Description&quot;:&quot;Major update.&quot;,
@@ -564,7 +564,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
   }
 }</pre>
 <p><strong>Sample request body: application/xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+<pre class="prettyprint, pre_xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
 &lt;APIVersion xmlns=&quot;http://soa.com/xsd/api/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/business/1.0&quot; 
 xmlns:ns3=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/dnmodel/1.0&quot; 
 xmlns:ns5=&quot;http://soa.com/xsd/legals/1.0&quot;&gt;
@@ -803,13 +803,12 @@ xmlns:ns5=&quot;http://soa.com/xsd/legals/1.0&quot;&gt;
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that the API version in the request example was added. The API version information is returned along with the APIVersionID.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Atmo-Renew-Token: renew
 Content-Type: application/json
 Date: Thu, 12 Feb 2015 20:29:19 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;APIVersionID&quot; : &quot;53c1ef5a-3043-449f-be6f-8c2dd9da2393.acmepaymentscorp&quot;,
   &quot;APIID&quot; : &quot;7df17f3f-8ee2-4749-9719-52f5090c51da.acmepaymentscorp&quot;,
   &quot;Name&quot; : &quot;Version 2&quot;,

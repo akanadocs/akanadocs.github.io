@@ -389,9 +389,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for PKI information for the <strong>acmepaymentscorp</strong> tenant, <strong>default</strong> theme.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/tenants/acmepaymentscorp/theme/default/pki</pre>
+<pre class="pre_request_url">https://{hostname}/api/tenants/acmepaymentscorp/theme/default/pki</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre class="pre_request_headers">Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -479,11 +479,10 @@ Unique ID for a specific tenant. Same as <strong>TenantID</strong>.</td>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>
-Date: Thu, 11 Oct 2018 03:36:54 GMT
+<pre class="pre_response_headers">Date: Thu, 11 Oct 2018 03:36:54 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "privateKeyExists":false,
   "publicKey":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAylhqsMrK0/AtEvKbspPXlV1SsL7UCfB43sJ5/S/uUnlATK9Xvkuduz8HTIyfsDa98hGCUG130T+WHhFJeMCWClO9qdkIZC/YHbC6g4DisL59ltyjbvAMpNSJGaMBOyJAdt6cuI3YgrLawCrVYLwQ6hANkQUsxQGtAKMdJA/Z7Ko5gUZ/CShpCbaIdj2Srk1enACZzY8HGi1k1Jn419EC5AbtNrrn6YCOXrrJeahCA+jjLXttZtXCPLK/knm+xOGtAo/Q9oDtzXWheNZ0hOv9HYBkE0WNsLgjx5r6kBN8pRg8cYmoP0J4VQUme7nBFDv451yIGQfqS17s6rTzoUYH/QIDAQAB",
   "certificateInfo":{

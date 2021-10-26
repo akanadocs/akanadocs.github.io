@@ -390,11 +390,11 @@ Returns a list of Board items for the specified user.</p>
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest1"><strong>Request URL</strong> #1</p>
 <p>Returns only group member requests.</p>
-<pre>https://{hostname}/api/users/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp/board?ItemType=GroupMemberReq</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp/board?ItemType=GroupMemberReq</pre>
 <p><strong>Request URL</strong> #2</p>
 <p id="id_samplerequest2">Returns only the Board item that matches the specified ItemID.</p>
-<pre>https://{hostname}/api/users/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp/board?ItemID=group_member_req11039.acmepaymentscorp</pre><p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_url">https://{hostname}/api/users/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp/board?ItemID=group_member_req11039.acmepaymentscorp</pre><p><strong>Sample request headers</strong></p>
+<pre class="pre_request_headers">Accept: application/json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -597,11 +597,11 @@ Indicates whether comments should be included in the information returned. Defau
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows Board items that match the parameters specified in Request URL #2. Only  the Board item that matches the specified ItemID is returned.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Tue, 21 May 2013 00:28:30 GMT</pre>
 <p><a id="rss_userboard_json"></a><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;User Board&quot;,
     &quot;startIndex&quot; : 0,
@@ -713,7 +713,7 @@ Date: Tue, 21 May 2013 00:28:30 GMT</pre>
 		<tr>
 			<td>category[&#160;]</td>
 			<td><p>An array of sets of two name/value pairs, each including Value and Domain, with a value for each. For example:</p>
-				<pre>&quot;value&quot; : &quot;false&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;false&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:archivable&quot;</pre>
 				<p>The example above indicates that the Board item is not archivable.</p></td>
 		</tr>

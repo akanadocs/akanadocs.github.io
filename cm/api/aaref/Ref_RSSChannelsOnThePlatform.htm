@@ -408,7 +408,7 @@
 		<tr>
 			<td id="rss_marks">Marks</td>
 			<td><p>Extensibility element that describes whether the item has been marked("liked") by a user, and if so how often. It includes a numeric count and a boolean value, IsMarkedByReader, indicating whether the current user (if a user is logged in) marked the Board item. Example:</p>
-		<pre>"Marks" : {
+		<pre class="prettyprint, pre_json">"Marks" : {
   "Count" : 0,
   "IsMarkedByReader" : false
 }</pre></td>
@@ -494,8 +494,7 @@
 	</tbody>
 </table>
 <p>A JSON example of OpenSearch elements used in an RSS channel is shown below. Ellipses indicate content omitted from the JSON object.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     ...
     &quot;startIndex&quot; : 10,

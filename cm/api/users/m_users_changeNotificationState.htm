@@ -391,15 +391,15 @@ Changes the <a href="../aaref/Ref_Values.htm#values_notificationstate">state</a>
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to archive a notification. In the user interface, this is generally done after the user has viewed the notification.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/notifications/notification30170.acmepaymentscorp/state</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/notifications/notification30170.acmepaymentscorp/state</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&#160;/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/notifications/notification30170.acmepaymentscorp/state HTTP/1.1
+<pre class="pre_request_headers">PUT&#160;/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/notifications/notification30170.acmepaymentscorp/state HTTP/1.1
 Host: {hostname}
 Accept: text/html, */*; q=0.01
 Content-Type: text/plain; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>archived</pre>
+<pre class="pre_plain">archived</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -489,11 +489,11 @@ The unique ID for a specific instance of a notification on a specific user's Das
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that the state of the specified notification has been changed.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/plain
 Date: Fri, 17 May 2013 15:38:29 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>notification30170.acmepaymentscorp</pre>
+<pre class="pre_response_body_plain">notification30170.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

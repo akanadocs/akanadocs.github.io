@@ -373,10 +373,10 @@
 <h2 id="wrapinhtmlparameter">The &quot;Wrap In HTML&quot; Parameter</h2>
 <p>In order to work with the Same Origin security policy when uploading files, in file upload operations the platform passes  a <span class="apidoc_code">wrapInHTML</span> request query parameter. In the response, which is read programmatically, the API returns a script tag, with the security domain set, to an HTML iframe. The response is wrapped in HTML so that the iframe can read it. The HTML response is also padded to ensure it is readable to all browsers (see <a href="#browserlimitationworkaround">Browser Limitation Workaround</a> below).</p>
 <p>The sample request for the <span class="apidoc_code"><a href="../apps/m_apps_saveKeyInfo.htm">POST&#160;/api/apps/versions/{AppVersionID}/keyinfo</a></span> operation is an example of this, as shown below:</p>
-<pre>https://{hostname}/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmepaymentscorp/keyinfo?<strong>wrapInHTML=true</strong></pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmepaymentscorp/keyinfo?<strong>wrapInHTML=true</strong></pre>
 
 <p>Below is an example of code you can use to create the iframe:</p>
-<pre>&lt;iframe id="ifFileManager" style="width:100%;height:100%;" 
+<pre class="prettyprint, pre_xml">&lt;iframe id="ifFileManager" style="width:100%;height:100%;" 
 frameborder="0" src="/resources/global/upload.html?dynamic=true"&gt;&lt;/iframe&gt;</pre>
 <p>This is a way of integrating Ajax file upload in the user interface and getting the response into JavaScript without changing the browser context.</p>
 <p class="apidoc_note"><strong>Note</strong>: This parameter is needed only for browser-based applications using Ajax to post multipart/form-data form. If you are  using Java or .NET or some other environment that is not browser-based, this parameter is not required even for multipart/form-data operations.</p>
@@ -386,7 +386,7 @@ frameborder="0" src="/resources/global/upload.html?dynamic=true"&gt;&lt;/iframe&
 
 <h2 id="readingtheresponse">Reading the Response</h2>
 <p>Because the response is returned to an iframe, which is essentially an HTML page, the response must be readable as HTML. Therefore, the response is wrapped in HTML, as shown in the example below which is from the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readWsdlZip.htm">POST&#160;/api/dropbox/wsdls</a></span> operation. Note the &lt;script&gt; tag which sets the domain for the iframe to match the domain for the main page.</p>
-<pre>&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;meta content="text/html; charset=UTF-8" http-equiv="Content-Type"&gt;
+<pre class="prettyprint, pre_xml">&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;meta content="text/html; charset=UTF-8" http-equiv="Content-Type"&gt;
 &lt;meta content="IE=edge" http-equiv="X-UA-Compatible"&gt;
 &lt;meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacus elit, 
 ornare eget luctus vel, porta id elit. Maecenas molestie, libero sit amet blandit faucibus, orci nisi aliquet nisi, 
@@ -402,7 +402,7 @@ xsd3.xsd,xsd4.xsd,xsd5.xsd,xsd6.xsd,xsd7.xsd,xsd8.xsd,xsd9.xsd&lt;/body&gt;&lt;/
 <h2 id="browserlimitationworkaround">Browser Limitation Workaround</h2>
 <p>If an API call returns an error message that is less that 512 bytes in size, and the user's browser is Internet Explorer, the IE &quot;Friendly Error Messages&quot; feature replaces the custom error page with a generic one. In order to make sure that the custom error message is displayed for all users, regardless of browser, we add padding that increases the size to over 512 bytes.</p>
 <p>For example, the response below is an HTTP status 200 success message. The &lt;meta&gt; tag includes padding to increase the size of the message to over 512 bytes. This padding  is not displayed as part of the visible content of the HTML page, but ensures that the actual response message is relayed, rather than an Internet Explorer default page.</p>
-<pre>&lt;!DOCTYPE html&gt;
+<pre class="prettyprint, pre_xml">&lt;!DOCTYPE html&gt;
 &lt;html lang="en" status="200" statusText="success"&gt;
 &lt;head&gt;
 &lt;meta content="text/html; charset=UTF-8" http-equiv="Content-Type"&gt;&lt;meta content="IE=edge" http-equiv="X-UA-Compatible"&gt;

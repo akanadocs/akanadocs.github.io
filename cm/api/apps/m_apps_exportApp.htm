@@ -389,12 +389,12 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to export the specified app information to a download file.</p>
 <p><strong>Request URL #1</strong></p>
-<pre>http://acmepaymentscorp/api/apps/e1f104d8-8e00-48f3-94ca-499fa70bd28e.acmepaymentscorp/package?exportVersion=all</pre>
+<pre class="pre_request_url">http://acmepaymentscorp/api/apps/e1f104d8-8e00-48f3-94ca-499fa70bd28e.acmepaymentscorp/package?exportVersion=all</pre>
 <p><strong>Request URL #2: all parameters</strong></p>
-<pre>http://acmepaymentscorp/api/apps/e1f104d8-8e00-48f3-94ca-499fa70bd28e.acmepaymentscorp/package?exportVersion=all&amp;migration.app.pki.export=true
+<pre class="pre_request_url">http://acmepaymentscorp/api/apps/e1f104d8-8e00-48f3-94ca-499fa70bd28e.acmepaymentscorp/package?exportVersion=all&amp;migration.app.pki.export=true
 &amp;migration.export.include.api.connections=true&amp;migration.export.include.app.team=true&amp;download=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>http://{hostname}/api/businesses/GET /api/apps/3696840e-3475-4ef8-bbe1-133fc61387c7.acmepaymentscorp/package?exportVersion=all&amp;download=true
+<pre class="pre_request_headers">http://{hostname}/api/businesses/GET /api/apps/3696840e-3475-4ef8-bbe1-133fc61387c7.acmepaymentscorp/package?exportVersion=all&amp;download=true
 Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -524,7 +524,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. The export file is downloaded as specified in the request parameters.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/octet-stream
 Date: Fri, 25 Aug 2017 18:17:26 GMT
 Content-Disposition: attachment;filename=&quot;application-export.zip&quot;

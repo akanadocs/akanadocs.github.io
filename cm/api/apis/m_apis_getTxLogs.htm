@@ -389,9 +389,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the first four transactions for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/6929b1a5-c1ce-4285-b02b-6659ba879dda.rcoaless/txlogs?Environment=Production&amp;Duration=1M&amp;TimeZone=America%2FNew_York</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/6929b1a5-c1ce-4285-b02b-6659ba879dda.rcoaless/txlogs?Environment=Production&amp;Duration=1M&amp;TimeZone=America%2FNew_York</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -566,11 +566,11 @@ The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the transaction logs for a specific API version. The first four transactions have been requested (see example request above).</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Tue, 21 Jul 2020 20:24:47 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "TransactionInfo":[
     {
       "TransactionID":"54d67bd6-15d9-4eb6-9765-f48081bef37e",

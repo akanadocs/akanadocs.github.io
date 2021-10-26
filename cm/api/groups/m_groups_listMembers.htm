@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the group members for the specified group.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/groups/group19212.acmepaymentscorp/members</pre>
+<pre class="pre_request_url">https://{hostname}/api/groups/group19212.acmepaymentscorp/members</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/vnd.soa.v71+xml</pre>
+<pre class="pre_request_headers">Accept: application/vnd.soa.v71+xml</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -443,7 +443,7 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td><span class="apidoc_div_codeendpoint"><a href="../aaref/Ref_IDsOnThePlatform.htm#id_groupid">GroupID</a></span></td>
+			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_groupid">GroupID</a></td>
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
@@ -466,11 +466,11 @@
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows information about the members of the specified group. In this example, two members are in Pending status, meaning they have been invited but have not yet accepted.</p>
 <p><strong>Sample response headers: application/vnd.soa.v71+json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v71+json
 Date: Fri, 29 Apr 2016 13:42:59 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v71+json</strong></p>
-<pre>[
+<pre class="pre_plain">[
   {
     &quot;role&quot;:&quot;com.soa.group.membership.role.admin&quot;,
     &quot;Email&quot;:&quot;saoirse@acmepaymentscorp.com&quot;,
@@ -519,11 +519,11 @@ Date: Fri, 29 Apr 2016 13:42:59 GMT</pre>
 ]</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <p><strong>Sample response headers: application/vnd.soa.v71+json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v71+xml
 Date: Fri, 29 Apr 2016 13:44:43 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v71+json</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+<pre class="prettyprint, pre_xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
 &lt;Memberships&gt;
   &lt;Membership xmlns=&quot;http://soa.com/xsd/group/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/user/1.0&quot; 
 xmlns:ns3=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/resource/1.0&quot;&gt;

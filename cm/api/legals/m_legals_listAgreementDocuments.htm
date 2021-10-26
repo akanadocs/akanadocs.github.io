@@ -389,12 +389,12 @@
 <p id="id_samplerequest">The example below shows a request for any signup agreements on the platform.</p>
 <p><strong>Request URL #1</strong></p>
 <p>Requests information about the platform signup document.</p>
-<pre>https://{hostname}/api/legals?AgreementType=com.soa.atmosphere.legals.signup</pre>
+<pre class="pre_request_url">https://{hostname}/api/legals?AgreementType=com.soa.atmosphere.legals.signup</pre>
 <p><strong>Request URL #2</strong></p>
 <p>Requests information about the legal agreement for the specified API version.</p>
-<pre>https://{hostname}/api/legals?ResourceID=e55ec961-c4bc-4da5-b289-24d344a07cdd.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/legals?ResourceID=e55ec961-c4bc-4da5-b289-24d344a07cdd.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/vnd.soa.v81+xml
+<pre class="pre_request_headers">Accept: application/vnd.soa.v81+xml
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -481,11 +481,11 @@
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/vnd.soa.v81+json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v81+json
 Date: Thu, 11 Jan 2018 17:56:33 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;AgreementDocument&quot;:[
     {
       &quot;DocumentID&quot;:&quot;29b619ed-b4ee-4a5c-b6dc-695714c087a4.acmepaymentscorp&quot;,

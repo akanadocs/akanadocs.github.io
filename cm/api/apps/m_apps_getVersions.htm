@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below gets the versions for a specific app.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apps/app10033.acmepaymentscorp/versions</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/app10033.acmepaymentscorp/versions</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json, text/javascript, */*; q=0.01
+<pre class="pre_request_headers">Accept: application/json, text/javascript, */*; q=0.01
 Host:{hostname}
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
@@ -469,11 +469,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p>In the example below, the app has only one version.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Tue, 24 Jul 2012 21:00:56 GMT
 Content-Type: application/json</pre>
 <p id="rss_applicationversions"><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;Application versions&quot;,
     &quot;item&quot; : [ {

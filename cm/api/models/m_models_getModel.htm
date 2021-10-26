@@ -388,12 +388,12 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="samplerequest_01"><strong>Sample request #1</strong></p>
 <p id="id_samplerequest">The example below shows a request for information about the specified model. For the response, see <a href="#sampleresponse_01">Sample response body #1: no parameters</a>.</p>
-<pre>https://{hostname}/api/models/e2d2af5b-cf21-4e68-8635-387e5ec117b6.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/models/e2d2af5b-cf21-4e68-8635-387e5ec117b6.acmepaymentscorp</pre>
 <p id="samplerequest_02"><strong>Sample request #2</strong></p>
 <p id="id_samplerequest">In the example below, the optional <strong>IncludeVersions</strong> parameter is included, so version information is returned. For the response, see <a href="#sampleresponse_02">Sample response body #2: includes versions</a>.</p>
-<pre>https://{hostname}/api/models/e2d2af5b-cf21-4e68-8635-387e5ec117b6.acmepaymentscorp?IncludeVersions=true</pre>
+<pre class="pre_request_url">https://{hostname}/api/models/e2d2af5b-cf21-4e68-8635-387e5ec117b6.acmepaymentscorp?IncludeVersions=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -474,12 +474,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Mon, 06 May 2019 18:56:41 GMT
 Content-Type: application/json</pre>
 <p id="sampleresponse_01"><strong>Sample response body #1: no parameters</strong></p>
 <p>In the example below, no optional parameters were included.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "ModelID": "e2d2af5b-cf21-4e68-8635-387e5ec117b6.acmepaymentscorp",
   "Name": "Credit Card Purchase",
   "Description": "For use in multiple top-level model objects.",
@@ -494,7 +494,7 @@ Content-Type: application/json</pre>
 }</pre>
 <p id="sampleresponse_02"><strong>Sample response body #2: includes versions</strong></p>
 <p>In the example below, the optional <strong>IncludeVersions</strong> parameter was included in the request, so version information is included in the response. This is the response to <a href="#samplerequest_02">Sample request #2</a>.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "ModelID":"3d3a48bf-0c7d-4bc0-8811-07e3ef6d2ab7.acmepaymentscorp",
   "Name":"Category",
   "Description":"Model object for any pet category",

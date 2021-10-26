@@ -389,15 +389,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a user starting a new discussion relating to an API.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/discussions</pre>
+<pre class="pre_request_url">https://{hostname}/api/discussions</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/discussions HTTP/1.1
+<pre class="pre_request_headers">POST /api/discussions HTTP/1.1
 Host: {hostname}
 Accept: text/plain
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body: no artifacts</strong></p>
-<pre>{ 
+<pre class="prettyprint, pre_json">{ 
   &quot;Content&quot;:&quot;We are planning for our next release. Feature requests welcome!&quot;,
   &quot;DiscussionSubjectID&quot;:&quot;0157f427-0b07-4ae6-9ade-26f4ef3bcc71.acmepaymentscorp&quot;,
   &quot;DiscussionType&quot;:&quot;com.soa.discussion.type.comment&quot;,
@@ -415,7 +415,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
   }
 }</pre>
 <p><strong>Sample request body: with artifacts</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Content&quot;:&quot;We are planning for our next release. Feature requests welcome! \n\n![image](http://{hostname}/api/boards/items/063fe661-a74f-40d2-a242-9d49ec426e81.acmepaymentscorp/img_dollars.jpg \&quot;img_dollars.jpg\&quot;)\n\nCash prizes for the first five suggestions that we use!&quot;,
   &quot;DiscussionSubjectID&quot;:&quot;ecbf7010-abcf-41f8-9f52-1c02b3a51984.acmepaymentscorp&quot;,
   &quot;DiscussionType&quot;:&quot;com.soa.discussion.type.comment&quot;,
@@ -512,11 +512,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/plain
 Date: Thu, 12 Mar 2020 19:56:34 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>discussion584185.acmepaymentscorp</pre>
+<pre class="pre_response_body_plain">discussion584185.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <!-- InstanceEndEditable -->

@@ -389,15 +389,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to update the default API settings for hte business.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/apisettings</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/apisettings</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/businesses/tenantbusiness.acmepaymentscorp/apisettings HTTP/1.1
+<pre class="pre_request_headers">PUT /api/businesses/tenantbusiness.acmepaymentscorp/apisettings HTTP/1.1
 Host: {hostname}
 Accept: application/json
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIWithNewServiceSupport": "com.soa.feature.enabled",
   "APIWithExistingServiceSupport": "com.soa.feature.disabled",
   "PrivateAPIGroupTypeSupport": "com.soa.feature.disabled",
@@ -515,11 +515,11 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the updated API settings for the business.</p>
 <p><strong>Sample response headers: application/vnd.soa.v84+json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/vnd.soa.v84+json
 Date: Wed, 11 Mar 2020 14:35:52 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIWithNewServiceSupport": "com.soa.feature.enabled",
   "APIWithExistingServiceSupport": "com.soa.feature.disabled",
   "PrivateAPIGroupTypeSupport": "com.soa.feature.disabled",

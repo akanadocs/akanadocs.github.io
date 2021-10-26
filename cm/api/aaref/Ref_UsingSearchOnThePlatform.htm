@@ -395,29 +395,29 @@
 <p>The examples below, using the <span class="apidoc_code"><a href="../search/m_search_search.htm">GET&#160;/api/search</a></span> operation, show how search operators can be used to fine-tune a search.</p>
 
 <h4 id="search_eg_01">#1 Sorts in ascending order:</h4>
-<pre>https://{hostname}/api/search?count=20&amp;start=0&amp;q=ACME&amp;SORT=asc</pre>
+<pre class="pre_request_url">https://{hostname}/api/search?count=20&amp;start=0&amp;q=ACME&amp;SORT=asc</pre>
 
 <h4 id="search_eg_02">#2 Returns the 20 most recent entries that include the word ACME:</h4>
-<pre>https://{hostname}/api/search?count=2o&amp;start=0&amp;q=ACME&amp;sortBy=com.soa.sort.order.updated</pre>
+<pre class="pre_request_url">https://{hostname}/api/search?count=2o&amp;start=0&amp;q=ACME&amp;sortBy=com.soa.sort.order.updated</pre>
 
 <h4 id="search_eg_03">#3 Returns the two entries with the highest rating that include the word ACME:</h4>
-<pre>https://{hostname}/api/search?count=2&amp;start=0&amp;q=ACME&amp;sortBy=com.soa.sort.order.rating</pre>
+<pre class="pre_request_url">https://{hostname}/api/search?count=2&amp;start=0&amp;q=ACME&amp;sortBy=com.soa.sort.order.rating</pre>
 
 <h4 id="search_eg_04">#4 Returns search results for all APIs that include the word Payment:</h4>
-<pre>https://{hostname}/api/search?count=20&amp;start=0&amp;q=type:API%20AND%20Payment</pre>
+<pre class="pre_request_url">https://{hostname}/api/search?count=20&amp;start=0&amp;q=type:API%20AND%20Payment</pre>
 
 <h4 id="search_eg_05">#5 Returns the list of users</h4>
-<pre>https://{hostname}/api/search?q=type:user</pre>
+<pre class="pre_request_url">https://{hostname}/api/search?q=type:user</pre>
 
 <h4 id="search_eg_06">#6 Returns list of apps that have the word &quot;game&quot; in their name or metadata (such as tags)</h4>
-<pre>https://{hostname}/api/search?q=type:app AND game</pre>
+<pre class="pre_request_url">https://{hostname}/api/search?q=type:app AND game</pre>
 
 <h4 id="search_eg_07">#7 Returns information about a group with a specific unique ID</h4>
-<pre>https://{hostname}/api/search?q=type:group AND d37990e2-800a-4963-b3b9-908b6a87dbcc.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/search?q=type:group AND d37990e2-800a-4963-b3b9-908b6a87dbcc.acmepaymentscorp</pre>
 
 <h4 id="search_eg_08">#8 Returns information based on a specific unique ID</h4>
 <p>For an example showing the results of this query in Postman, see <a href="../search/m_search_search.htm#search_response_02_postman">GET&#160;/api/search sample response: Postman</a>.</p>
-<pre>https://{hostname}/api/search?q=d37990e2-800a-4963-b3b9-908b6a87dbcc.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/search?q=d37990e2-800a-4963-b3b9-908b6a87dbcc.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

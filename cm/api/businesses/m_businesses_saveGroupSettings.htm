@@ -389,13 +389,13 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to update the group settings for the specified business. This request disables ratings and reviews for groups.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api//businesses/tenantbusiness.acmepaymentscorp/groupsettings</pre>
+<pre class="pre_request_url">https://{hostname}/api//businesses/tenantbusiness.acmepaymentscorp/groupsettings</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;GroupSupport&quot; : &quot;com.soa.feature.enabled&quot;,
   &quot;PublicGroupSupport&quot; : &quot;com.soa.feature.enabled&quot;,
   &quot;PublicGroupBoardSupport&quot; : &quot;com.soa.feature.enabled&quot;,
@@ -499,10 +499,10 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_response_headers">Content-Type: application/json
 Expires: Sat, 07 Feb 2015 19:55:01 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;GroupSupport&quot; : &quot;com.soa.feature.enabled&quot;,
   &quot;PublicGroupSupport&quot; : &quot;com.soa.feature.enabled&quot;,
   &quot;PublicGroupBoardSupport&quot; : &quot;com.soa.feature.enabled&quot;,

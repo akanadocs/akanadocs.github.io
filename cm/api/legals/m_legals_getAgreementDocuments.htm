@@ -389,12 +389,12 @@
 <p id="id_samplerequest">The examples below show requests for legal agreement documents of type signup (for developers signing up to use the platform).</p>
 <p><strong>Request URL #1</strong></p>
 <p>Returns all legal agreements of the specified agreement type.</p>
-<pre>https://{hostname}/api/legals?AgreementType=com.soa.atmosphere.legals.signup</pre>
+<pre class="pre_request_url">https://{hostname}/api/legals?AgreementType=com.soa.atmosphere.legals.signup</pre>
 <p><strong>Request URL #2</strong></p>
 <p>Returns the legal document with the specified LegalDocumentID. Note the first parameter is still required.</p>
-<pre>https://{hostname}/api/legals?AgreementType=com.soa.atmosphere.legals.signup&amp;ResourceID=signupagrmtv1.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/legals?AgreementType=com.soa.atmosphere.legals.signup&amp;ResourceID=signupagrmtv1.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -478,11 +478,11 @@
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of the operation. The first example (JSON) shows the response to sample request #1, with two documents returned, and the second (text/XML) shows the response to sample request #2, with the specified document returned.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Wed, 12 Dec 2018 22:39:28 GMT</pre>
 <p><a id="rss_agreementdocuments_json"></a><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;Agreement Documents&quot;,
     &quot;item&quot; : [ {
@@ -567,7 +567,7 @@ The response body is in the form of an RSS channel, and includes the items liste
 		<tr>
 			<td>category</td>
 			<td><p>One or more categories. Each category is a set of two name/value pairs. The second item defines the Domain, and the first defines the actual value for the property. For example, the set of values below shows that the document is in a state of <strong>active</strong>:</p>
-				<pre>{
+				<pre class="prettyprint, pre_json">{
   &quot;value&quot; : &quot;com.soa.status.active&quot;,
   &quot;domain&quot; : &quot;uddi:soa.com:state&quot;
 

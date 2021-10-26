@@ -389,15 +389,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below adds a review of an app.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/reviews</pre>
+<pre class="pre_request_url">https://{hostname}/api/reviews</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&#160;/api/reviews HTTP/1.1
+<pre class="pre_request_headers">POST &#160;/api/reviews HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ReviewSubjectID&quot;:&quot;ArmSuVQl2Qz4fgqkW7Oyrb8o.acmepaymentscorp&quot;,
   &quot;Topic&quot;:&quot;Great learning tool&quot;,
   &quot;Content&quot;:&quot;Wow, this is great. So much fun. My son played for **two hours straight** and I know it's helping him with his spelling.&quot;,
@@ -485,11 +485,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the full review object returned, including the ReviewID.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Wed, 13 May 2015 19:54:34 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ReviewID&quot; : &quot;review10833.acmepaymentscorp&quot;,
   &quot;ReviewSubjectID&quot; : &quot;ArmSuVQl2Qz4fgqkW7Oyrb8o.acmepaymentscorp&quot;,
   &quot;Topic&quot; : &quot;Great learning tool&quot;,

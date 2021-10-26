@@ -382,9 +382,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below show a request for a list of valid versions for the specified API.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/api18969.acmepaymentscorp/versions</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/api18969.acmepaymentscorp/versions</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/apis/api18969.acmepaymentscorp/versions HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/apis/api18969.acmepaymentscorp/versions HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -456,11 +456,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that there are two versions of the API. Version 1 is public and has a sandbox implementation; Version 2 is private and has a live implementation. Each version has one endpoint.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 18 Aug 2021 18:06:53 GMT
 Content-Type: application/json</pre>
 <p><a id="rss_apiversions"></a><strong>Sample response body (JSON)</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel":{
     "title":"API Versions",
     "item":[

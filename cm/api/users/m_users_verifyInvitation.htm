@@ -389,14 +389,14 @@ Validates an invitation code at the signup page and returns user details.</p>
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to complete the signup in the Simple Developer UI.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/verifyInvitation</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/verifyInvitation</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/users/verifyInvitation HTTP/1.1
+<pre class="pre_request_headers">POST /api/users/verifyInvitation HTTP/1.1
 Host: &lt;SimpleDevHostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
-<pre>validationCode=3rHzXi2goEyAGDQeTp0UYsayC5qzbzvv1F4ottYTLaDdffpA22UqEu8eQzr3I9V_JKfbM-R8H1gzjC8KaynxymqfQH41kU0JmixaLM2NTGSrM0Y9co2bX9wOObQ</pre>
+<pre class="pre_plain">validationCode=3rHzXi2goEyAGDQeTp0UYsayC5qzbzvv1F4ottYTLaDdffpA22UqEu8eQzr3I9V_JKfbM-R8H1gzjC8KaynxymqfQH41kU0JmixaLM2NTGSrM0Y9co2bX9wOObQ</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -463,11 +463,11 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 27 Jan 2016 20:03:44 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;userName&quot; : &quot;506994e4-d840-47c7-84f5-ad3bbae13d36&quot;,
   &quot;firstName&quot; : &quot;&quot;,
   &quot;lastName&quot; : &quot;&quot;,

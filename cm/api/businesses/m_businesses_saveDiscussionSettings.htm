@@ -389,14 +389,14 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The examples below show requests to update the discussion settings for the specified business.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/discussionsettings</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/discussionsettings</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body #1</strong></p>
 <p>Sets custom workflows.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;DiscussionWorkflowDefKey&quot; : &quot;workflow:definition:discussion&quot;,
   &quot;DiscussionCommentWorkflowDefKey&quot; : &quot;workflow:definition:comment&quot;
   &quot;AutoPublish&quot; : false
@@ -405,7 +405,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 }</pre>
 <p><strong>Sample request body #2</strong></p>
 <p>Resets to system default workflows for discussions.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -498,11 +498,11 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Expires: Tue, 27 Jan 2015 16:56:26 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;DiscussionWorkflowDefKey&quot; : &quot;workflow:definition:discussion&quot;,
   &quot;DiscussionCommentWorkflowDefKey&quot; : &quot;workflow:definition:comment&quot;
   &quot;AutoPublish&quot; : false

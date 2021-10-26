@@ -388,16 +388,16 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to add an implementation for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/d973f624-60cb-44b8-9ebb-394712c5fe44.acmepaymentscorp/implementations</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/d973f624-60cb-44b8-9ebb-394712c5fe44.acmepaymentscorp/implementations</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/apis/versions/d973f624-60cb-44b8-9ebb-394712c5fe44.acmepaymentscorp/implementations HTTP/1.1
+<pre class="pre_request_headers">POST /api/apis/versions/d973f624-60cb-44b8-9ebb-394712c5fe44.acmepaymentscorp/implementations HTTP/1.1
 Host: {hostname}
 Accept: application/vnd.soa.v81+json, text/javascript, */*; q=0.01
 Content-Type: application/vnd.soa.v81+json
 Cookie: {cookie}
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ImplementationCode&quot;:&quot;Sandbox&quot;,
   &quot;Description&quot;:&quot;Sandbox implementation.&quot;,
   &quot;CreateMechanism&quot;:&quot;PROXY&quot;,
@@ -490,11 +490,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/vnd.soa.v81+json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Fri, 20 May 2016 22:33:36 GMT
 Content-Type: application/vnd.soa.v81+json</pre>
 <p><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIVersionID&quot; : &quot;f10624ed-9a23-4cb9-90d4-595d4a7c64f9.acmepaymentscorp&quot;,
   &quot;ImplementationCode&quot; : &quot;Sandbox&quot;,
   &quot;Pattern&quot; : &quot;com.akana.pattern.proxy&quot;,

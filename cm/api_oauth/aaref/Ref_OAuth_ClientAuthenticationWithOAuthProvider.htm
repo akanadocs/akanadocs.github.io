@@ -382,7 +382,7 @@
 <h3 id="http_basic_authentication">HTTP Basic Authentication</h3>
 <p>Basic authentication requires that users provide a valid user name and password to access content. All major browsers support this authentication method and it works across firewalls and proxy servers. The disadvantage of Basic authentication is that it transmits passwords across the network using weak encryption. You should use Basic authentication only when you know that the connection between the client and the server is secure.</p>
 <p>With HTTP Basic authentication, the client sends its credentials via an HTTP Authorization Header with scheme Basic as shown in the example below.</p>
-<pre>Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW</pre>
+<pre class="pre_plain">Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW</pre>
 
 
 <h3 id="form_based_authentication">Form-Based Authentication</h3>
@@ -393,7 +393,7 @@
 	<li>form-post</li>
 </ul>
 <p>An example is below.</p>
-<pre>client_id=[Client ID]&amp;client_secret=[Client shared secret]</pre>
+<pre class="pre_plain">client_id=[Client ID]&amp;client_secret=[Client shared secret]</pre>
 
 
 <h3 id="https_2_way_authentication">HTTPS 2-way Authentication</h3>
@@ -426,11 +426,11 @@
 <p>If the Client signs the JWT using an asymmetric signature algorithm such as <strong>RS256</strong>, the client must use its private key as the cryptographic key and must upload the corresponding public key certificate in the Akana platform so as to verify the signatures at the Token API.</p>
 <p>Below is an example of a JWT token (decoded form) used for client credentials.</p>
 <p><strong>JWT token header:</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
 "alg": "HS256"
 }</pre>
 <p><strong>JWT token body:</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "exp": 1436268156,
   "sub": "devconsole",
   "nbf": 1436267256,
@@ -442,9 +442,9 @@
   "iat": 1436267256
 }</pre>
 <p><strong>JWT token signature:</strong></p>
-<pre>IFlwboCnB50gCMgAa3jC42kKppRvuHitN-j3vYuxG48</pre>
+<pre class="pre_plain">IFlwboCnB50gCMgAa3jC42kKppRvuHitN-j3vYuxG48</pre>
 <p><strong>Example JWT token in compact serialization form</strong></p>
-<pre>eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0MzYyNjgxNTYsInN1YiI6ImRldmNvbnNvbGUiLCJuYmYiO
+<pre class="pre_plain">eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0MzYyNjgxNTYsInN1YiI6ImRldmNvbnNvbGUiLCJuYmYiO
 jE0MzYyNjcyNTYsImF1ZCI6WyJodHRwOlwvXC9hYnVqYWdvbmRhLTY0MzA6OTkwMFwvb2F1dGhcL29
 hdXRoMjBcL3Rva2VuIl0sImlzcyI6ImRldmNvbnNvbGUiLCJqdGkiOiJmZnI0NWZyZXVpMzYwYXNlc
 WRoNSIsImlhdCI6MTQzNjI2NzI1Nn0.IFlwboCnB50gCMgAa3jC42kKppRvuHitN-j3vYuxG48</pre>
@@ -456,7 +456,7 @@ WRoNSIsImlhdCI6MTQzNjI2NzI1Nn0.IFlwboCnB50gCMgAa3jC42kKppRvuHitN-j3vYuxG48</pre>
 
 
 <p><strong>Example token request using a JWT assertion as client credentials</strong></p>
-<pre>grant_type=authorization_code&amp;code=n0esc3NRze7LTCu7iYzS6a5acc3f0ogp4
+<pre class="pre_plain">grant_type=authorization_code&amp;code=n0esc3NRze7LTCu7iYzS6a5acc3f0ogp4
 &amp;client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
 &amp;client_assertion=eyJhbGciO...[omitted for brevity]...48</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -530,7 +530,7 @@ WRoNSIsImlhdCI6MTQzNjI2NzI1Nn0.IFlwboCnB50gCMgAa3jC42kKppRvuHitN-j3vYuxG48</pre>
 	</tbody>
 </table>
 <h4>Example</h4>
-<pre>client_id=xyzclient&amp;client_secret=xyzsecret&amp;grant_type=authorization_code
+<pre class="pre_plain">client_id=xyzclient&amp;client_secret=xyzsecret&amp;grant_type=authorization_code
 &amp;code=SplxlOBeZQQYbYS6WxSbIA&amp;redirect_uri=https%3A%2F%2Fclient%2Eexample%2Ecom%2Fcb</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -592,7 +592,7 @@ WRoNSIsImlhdCI6MTQzNjI2NzI1Nn0.IFlwboCnB50gCMgAa3jC42kKppRvuHitN-j3vYuxG48</pre>
 		</tbody>
 </table>
 <h4>Example</h4>
-<pre>client_id=xyzclient&amp;client_secret=xyzsecret&amp;grant_type=client_credentials&amp;scope=READ%20profile%20email</pre>
+<pre class="pre_plain">client_id=xyzclient&amp;client_secret=xyzsecret&amp;grant_type=client_credentials&amp;scope=READ%20profile%20email</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -662,7 +662,7 @@ WRoNSIsImlhdCI6MTQzNjI2NzI1Nn0.IFlwboCnB50gCMgAa3jC42kKppRvuHitN-j3vYuxG48</pre>
 	</tbody>
 </table>
 <h4>Example</h4>
-<pre>client_id=xyzclient&amp;client_secret=xyzsecret&amp;grant_type=password&amp;username=jdoe&amp;password=s3cret&amp;scope=READ%20profile%20email</pre>
+<pre class="pre_plain">client_id=xyzclient&amp;client_secret=xyzsecret&amp;grant_type=password&amp;username=jdoe&amp;password=s3cret&amp;scope=READ%20profile%20email</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -726,7 +726,7 @@ WRoNSIsImlhdCI6MTQzNjI2NzI1Nn0.IFlwboCnB50gCMgAa3jC42kKppRvuHitN-j3vYuxG48</pre>
 	</tbody>
 </table>
 <h4>Example</h4>
-<pre>client_id=xyzclient&amp;client_secret=xyzsecret&amp;grant_type=refresh_token&amp;refresh_token=tGzv3JOkF0XG5Qx2TlKWIA</pre>
+<pre class="pre_plain">client_id=xyzclient&amp;client_secret=xyzsecret&amp;grant_type=refresh_token&amp;refresh_token=tGzv3JOkF0XG5Qx2TlKWIA</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -791,7 +791,7 @@ WRoNSIsImlhdCI6MTQzNjI2NzI1Nn0.IFlwboCnB50gCMgAa3jC42kKppRvuHitN-j3vYuxG48</pre>
 	</tbody>
 </table>
 <h4>Example</h4>
-<pre>client_id=xyzclient&amp;client_secret=xyzsecret&amp;grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
+<pre class="pre_plain">client_id=xyzclient&amp;client_secret=xyzsecret&amp;grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
 &amp;assertion=eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlOWdkazcifQ. ewogImlzc
 [...omitted for brevity...].ggW8hZ1EuVLux[...omitted for brevity...]</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -802,7 +802,7 @@ WRoNSIsImlhdCI6MTQzNjI2NzI1Nn0.IFlwboCnB50gCMgAa3jC42kKppRvuHitN-j3vYuxG48</pre>
 
 <p>The response is the access token.</p>
 <h4>Sample Response</h4>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "access_token": "SlAV32hkKG",
   "token_type": "Bearer",
   "refresh_token": "8xLOxBtZp8",

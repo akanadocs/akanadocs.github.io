@@ -358,7 +358,7 @@
 <p>If you add, modify, or delete API documentation files, you will probably also want to update the documentation table of contents (TOC). In the user interface, the documentation table of contents appears on the left navigation bar, and provides clickable links into the documentation. The TOC is controlled by a JSON file that resides in the main documentation folder. You can edit the JSON file to control how the documentation TOC looks.</p>
 <p>The JSON filename includes the name of the API version; for example, <strong>toc.apiversion23609.acmepaymentscorp.JSON</strong>. This allows you to control the table of contents for each version, even though the documentation for all versions shares the same folder structure.</p>
 <p>If you only have one index page for the documentation, the contents of the JSON file might look something like this:</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "toc":[
     "index.htm"
   ],
@@ -377,7 +377,7 @@
 	<li>The sequence in which they appear</li>
 </ul>
 <p>The example below adds two additional files to the TOC:</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "toc":[
     "api_reference.htm",
     "index.htm",

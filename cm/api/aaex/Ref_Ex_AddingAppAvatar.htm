@@ -385,11 +385,11 @@
 	<li>Log in via the API, <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&#160;/api/login</a></span> operation, using your own email and password in the body of the operation instead of the placeholder values given below.
 		<ul>
 			<li>HTTP method: POST</li>
-			<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>login</strong></li>
+			<li>URL: <strong>https://{hostname}/api/login</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
 			<li>Content-Type header: <strong>application/json</strong></li>
 			<li>Request Body:
-				<pre>{
+				<pre class="prettyprint, pre_json">{
   "email":"MyEmailAddress",
   "password":"MyPassword"
 }</pre>
@@ -400,7 +400,7 @@
 	<li>Upload the image to the dropbox, using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_addPicture.htm">POST&#160;/api/dropbox/pictures</a></span> operation. In your API call, you'll need to specify the name and path for the image.
 		<ul>
 			<li>HTTP method: POST</li>
-			<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>dropbox/pictures</strong></li>
+			<li>URL: <strong>https://{hostname}/api/dropbox/pictures</strong></li>
 			<li>Content-Type header: <strong>multipart/form-data</strong></li>
 			<li>CSRF header: include it if needed. Usually needed for POST operations. If you are not sure, refer to <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
 		</ul>
@@ -409,7 +409,7 @@
 	<p>In your API call, specify the PictureID (DropboxID) that was returned by the previous operation.
 	<ul>
 		<li>HTTP method: POST</li>
-		<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>dropbox/pictures/{PictureID}</strong></li>
+		<li>URL: <strong>https://{hostname}/api/dropbox/pictures/{PictureID}</strong></li>
 		<li>Accept header: <strong>application/json</strong></li>
 		<li>Content-Type header: <strong>application/x-www-form-urlencoded</strong></li>
 		<li>CSRF header: include it if needed. If you are not sure whether it's needed or not, refer to <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
@@ -421,7 +421,7 @@
 	<li>Optional: Review the new image to see how it will look as the avatar, using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_getPicture.htm">GET&#160;/api/dropbox/pictures/{PictureID}</a></span> operation. In your API call, specify the PictureID (DropboxID). The image is returned.
 		<ul>
 		<li>HTTP method: GET</li>
-		<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>dropbox/pictures/{PictureID}</strong></li>
+		<li>URL: <strong>https://{hostname}/api/dropbox/pictures/{PictureID}</strong></li>
 		<li>Accept header: <strong>image/jpeg</strong></li>
 		<li>CSRF header: include it if needed. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
 	</ul>
@@ -429,12 +429,12 @@
 	<li>Modify the app definition to include the new image, using the <span class="apidoc_code"><a href="../apps/m_apps_modifyApp.htm">PUT&#160;/api/apps/{AppID}</a><a href="../dropbox/m_dropbox_addPicture.htm"></a></span> operation. In your API call, you'll need to specify the AppID, and in the body you'll need to include the app name and the DropboxID.
 		<ul>
 		<li>HTTP method: POST</li>
-		<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>apps/{AppID}</strong></li>
+		<li>URL: <strong>https://{hostname}/api/apps/{AppID}</strong></li>
 		<li>Accept header: <strong>text/plain</strong></li>
 		<li>Content-Type header: <strong>multipart/form-data</strong></li>
 		<li>CSRF header: include it if needed. Usually needed for POST operations. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
 		<li>Request Body:
-		<pre>{
+		<pre class="prettyprint, pre_json">{
   &quot;Name&quot;: &quot;MyAppName&quot;,
   &quot;PictureID&quot;:&quot;1234&quot;
 }</pre></li>

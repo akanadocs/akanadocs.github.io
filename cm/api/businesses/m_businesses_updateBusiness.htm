@@ -388,15 +388,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to update the information for the specified business.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/businesses/75b2388a-d620-4863-a737-f1bf2f145f05.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses/75b2388a-d620-4863-a737-f1bf2f145f05.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/businesses/75b2388a-d620-4863-a737-f1bf2f145f05.acmepaymentscorp HTTP/1.1
+<pre class="pre_request_headers">PUT /api/businesses/75b2388a-d620-4863-a737-f1bf2f145f05.acmepaymentscorp HTTP/1.1
 Host: {hostname}
 Accept: application/vnd.soa.v83+json
 Content-Type: application/vnd.soa.v83+json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;BusinessType&quot;:&quot;Company&quot;,
   &quot;Name&quot;:&quot;ACME Payments API Company&quot;,
   &quot;Description&quot;:&quot;ACME Payments API Company, in business since 2011.&quot;,
@@ -497,11 +497,11 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/vnd.soa.v83+json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v83+json
 Date: Thu, 10 Nov 2016 21:55:10 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v83+json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;BusinessID&quot; : &quot;de35bef0-0e6b-4768-b62d-38fe1181b6ec.acmepaymentscorp&quot;,
   &quot;Name&quot; : &quot;ACME Payments API Company&quot;,
   &quot;Description&quot; : &quot;ACME Payments API Company, in business since 2011.&quot;,

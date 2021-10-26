@@ -390,9 +390,9 @@ Returns a list of valid current services matching the query parameter provided, 
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a search for services  with &quot;swagger&quot; as the first few characters.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/services?q=swagger</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/services?q=swagger</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET /api/apis/services?q=swagger HTTP/1.1
+<pre class="pre_request_headers">GET /api/apis/services?q=swagger HTTP/1.1
 Host: {hostname}
 Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -473,11 +473,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. There are two matching services.</p>
 <p><strong>Sample response headers: application/vnd.soa.v80+json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/vnd.soa.v80+json
 Date: Thu, 26 Jul 2018 13:45:53 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v80+json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIImplementation&quot; : [ {
     &quot;Name&quot; : &quot;Swagger_Petstore_v1_Live_Virtual&quot;,
     &quot;Description&quot; : &quot;This is a sample rendition of the Swagger Petstore API.&quot;,

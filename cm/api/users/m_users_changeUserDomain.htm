@@ -389,13 +389,13 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to change the user's domain&#160;from <strong>LDAP</strong> to <strong>Local Domain</strong>.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/b339a885-3bb5-4c4b-87cd-834cac68eacd.acmepaymentscorp/domains/LDAP</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/b339a885-3bb5-4c4b-87cd-834cac68eacd.acmepaymentscorp/domains/LDAP</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;UserDomain&quot;:&quot;Local Domain&quot;,
   &quot;Comments&quot;:&quot;changing user from LDAP to Local Domain&quot;
 }</pre>
@@ -489,10 +489,10 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>content-type: application/json
+<pre class="pre_response_headers">Content-Type: application/json
 date: Wed, 14 Feb 2018 16:29:47 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
     &quot;classifiers&quot;: {},
     &quot;artifacts&quot;: {},
     &quot;UserID&quot;: &quot;b339a885-3bb5-4c4b-87cd-834cac68eacd.acmepaymentscorp&quot;,

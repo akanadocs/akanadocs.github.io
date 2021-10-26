@@ -390,10 +390,10 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a <span class="apidoc_code">POST&#160;/api/login/renewToken</span> request.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/login/renewToken</pre>
+<pre class="pre_request_url">https://{hostname}/api/login/renewToken</pre>
 <p><strong>Sample request headers</strong></p>
 <p>In the sample request headers below, line breaks have been added to the cookie value for display purposes, and the X-Csrf-Token_{fedmemberID} header has been abbreviated.</p>
-<pre>POST /api/login/renewToken HTTP/1.1
+<pre class="pre_request_headers">POST /api/login/renewToken HTTP/1.1
 Host: rcoaless.apiportal.akana.com
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
@@ -462,12 +462,12 @@ X-Csrf-Token_rcoaless: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2Cexpirati
 <p id="id_sampleresponse">The sample response below shows a new cookie returned.</p>
 <h4>Sample response headers</h4>
 <p>In the sample response headers below, the Set-Cookie value has been abbreviated for display purposes.</p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Tue, 16 Feb 2021 21:30:23 GMT
 Set-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3D553bed71-6e51-437c-bddf-90b2cffdb0a0%2Cclaimed_id%3Durn%3Aatmosphere%3Auser%3Aacmepaymentscorp%3Af1ee ... ymUBMkqmp9doQ;path=/;HttpOnly;Secure;expires=Tue, 16 Feb 2021 22:01:23 GMT</pre>
 <h4>Sample response body</h4>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "userName" : "JenMeadows",
   "userFDN" : "f1ee5aaa-e58e-4bc7-989e-490ccd854904.acmepaymentscorp",
   "avatarURL" : "https://acmepaymentscorp.apiportal.akana.com:443/api/users/f1ee5aaa-e58e-4bc7-989e-490ccd854904.acmepaymentscorp/avatars/7057fa39-e78d-4055-bbb0-3afa21532f51.png",

@@ -390,15 +390,13 @@ Returns applicable instructions for logging in the user, depending on the login 
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a login request when the user has selected LDAP as the login option. The second example shows request headers when the user has selected Google.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/login/ssoLoginInstructions?domain=Ldapacmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/login/ssoLoginInstructions?domain=Ldapacmepaymentscorp</pre>
 <p><strong>Sample request headers #1: login using LDAP</strong></p>
-<pre>
-GET /api/login/ssoLoginInstructions?domain=Ldapacmepaymentscorp HTTP/1.1
+<pre class="pre_plain">GET /api/login/ssoLoginInstructions?domain=Ldapacmepaymentscorp HTTP/1.1
 Host: {hostname}
 Accept: */*</pre>
 <p><strong>Sample request headers #2: login using Google</strong></p>
-<pre>
-GET /api/login/ssoLoginInstructions?domain=Googleacmepaymentscorp HTTP/1.1
+<pre class="pre_plain">GET /api/login/ssoLoginInstructions?domain=Googleacmepaymentscorp HTTP/1.1
 Host: {hostname}
 Accept: */*</pre>
 <p><strong>Sample request body</strong></p>
@@ -465,16 +463,16 @@ Accept: */*</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the response when the user chose to log in using LDAP.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json</pre>
 <p><strong>Sample response body #1: login using LDAP</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;identityAttributesNeeded&quot; : [ &quot;username&quot; ],
   &quot;secretAttributesNeeded&quot; : [ &quot;password&quot; ],
   &quot;instructionType&quot; : &quot;NeedCredentials&quot;
 }</pre>
 <p><strong>Sample response body #2: login using Google</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;instructionType&quot; : &quot;NeedRedirect&quot;,
   &quot;redirectUrl&quot; : &quot;https://www.google.com/accounts/o8/ud?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.return_to=http%3A%2F%2Facmepaymentscorp%2Fapi%2Flogin%2FssoLogin%3Fdomain%3DGoogleacmepaymentscorp%26ssoRetryCount%3D0&amp;openid.realm=http%3A%2F%2Facmepaymentscorp&amp;openid.assoc_handle=1.AMlYA9WaF_97DzuvUZ7vLyEKneAxUoVm7YhaTvqJhONKlh6c96TWJMcar0MaDxiW4BvIFuf_ijaAuw&amp;openid.mode=checkid_setup&amp;openid.ns.ext1=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&amp;openid.ext1.type.email=http%3A%2F%2Faxschema.org%2Fcontact%2Femail&amp;openid.ext1.type.lastname=http%3A%2F%2Faxschema.org%2FnamePerson%2Flast&amp;openid.ext1.type.firstname=http%3A%2F%2Faxschema.org%2FnamePerson%2Ffirst&amp;openid.ext1.type.fullname=http%3A%2F%2Faxschema.org%2FnamePerson&amp;openid.ext1.required=firstname%2Clastname%2Cemail%2Cfullname&amp;openid.ext1.mode=fetch_request&quot;&gt;https://www.google.com/accounts/o8/ud?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.return_to=http%3A%2F%2Facmepaymentscorp%2Fapi%2Flogin%2FssoLogin%3Fdomain%3DGoogleacmepaymentscorp%26ssoRetryCount%3D0&amp;openid.realm=http%3A%2F%2Facmepaymentscorp&amp;openid.assoc_handle=1.AMlYA9WaF_97DzuvUZ7vLyEKneAxUoVm7YhaTvqJhONKlh6c96TWJMcar0MaDxiW4BvIFuf_ijaAuw&amp;openid.mode=checkid_setup&amp;openid.ns.ext1=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&amp;openid.ext1.type.email=http%3A%2F%2Faxschema.org%2Fcontact%2Femail&amp;openid.ext1.type.lastname=http%3A%2F%2Faxschema.org%2FnamePerson%2Flast&amp;openid.ext1.type.firstname=http%3A%2F%2Faxschema.org%2FnamePerson%2Ffirst&amp;openid.ext1.type.fullname=http%3A%2F%2Faxschema.org%2FnamePerson&amp;openid.ext1.required=firstname%2Clastname%2Cemail%2Cfullname&amp;openid.ext1.mode=fetch_request
 }</pre>

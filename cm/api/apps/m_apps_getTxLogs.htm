@@ -391,11 +391,10 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the transaction log for the specified app version in the Sandbox implementation. The request is limited to the first 100 transactions.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>http://{hostname}/api/apps/versions/7FuucUjB7B3AYcUVvQpEVv1B.demo/txlogs?Environment=Sandbox
+<pre class="pre_request_url">http://{hostname}/api/apps/versions/7FuucUjB7B3AYcUVvQpEVv1B.demo/txlogs?Environment=Sandbox
 &amp;Duration=1d&amp;TimeZone=America%2FNew_York&amp;count=100&amp;start=0</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>
-GET /api/apps/versions/7FuucUjB7B3AYcUVvQpEVv1B.demo/txlogs?Environment=Sandbox&amp;Duration=1d
+<pre class="pre_plain">GET /api/apps/versions/7FuucUjB7B3AYcUVvQpEVv1B.demo/txlogs?Environment=Sandbox&amp;Duration=1d
 &amp;TimeZone=America%2FNew_York&amp;count=100&amp;start=0 HTTP/1.1
 Host: &lt;localhost&gt;
 Accept: application/json, text/javascript, */*; q=0.01
@@ -575,12 +574,12 @@ The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows five transactions in the log.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Length: 2199
 Date: Wed, 16 Apr 2014 20:32:26 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;TransactionInfo&quot; : [ {
     &quot;TransactionID&quot; : &quot;97dbd8a7-c5a5-11e3-829c-9e428460984d&quot;,
     &quot;APIID&quot; : &quot;775a3d03-857f-48cb-bce6-a7cea40c6d3e.demo&quot;,

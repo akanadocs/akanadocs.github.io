@@ -391,15 +391,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows the response to this operation. In this example, a two-factor authentication task is pending (implemented with a custom workflow).</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api//login/pendingtasks</pre>
+<pre class="pre_request_url">https://{hostname}/api//login/pendingtasks</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST {hostname}/api/login/pendingtasks HTTP/1.0
+<pre class="pre_request_headers">POST {hostname}/api/login/pendingtasks HTTP/1.0
 Host: {hostname}
 Accept: application/json
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
 <p> In the example below, a two-factor authentication task is pending (implemented with a custom workflow). The requests message includes the two-factor authentication code.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;parameters&quot;:{
     &quot;2fa.verification.code&quot;:&quot;298810&quot;,
     &quot;Action&quot;:&quot;validate&quot;
@@ -472,12 +472,12 @@ Content-Type: application/json; charset=UTF-8</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Expires: Wed, 09 Sep 2015 13:30:45 GMT</pre>
 <p><strong>Sample response body #1</strong></p>
 <p>In the example below, the user must also accept the platform's legal agreement as part of the login process.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;pendingAgreements&quot; : [ &quot;signupagrmtv1.acmepaymentscorp&quot; ],
   &quot;pendingTasks&quot; : [ &quot;force.accept.agreements&quot; ],
   &quot;loginState&quot; : &quot;login.inprocess&quot;,
@@ -485,7 +485,7 @@ Expires: Wed, 09 Sep 2015 13:30:45 GMT</pre>
 }</pre>
 <p><strong>Sample response body #2</strong></p>
 <p>In the example below, the user has completed all login tasks and is fully logged in.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;loginState&quot; : &quot;login.complete&quot;,
   &quot;pendingNotifications&quot; : 0
 }</pre>

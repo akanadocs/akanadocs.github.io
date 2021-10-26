@@ -392,15 +392,14 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to add a user.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users</pre>
+<pre class="pre_request_url">https://{hostname}/api/users</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body #1</strong></p>
 <p>This example shows the platform default, without phone numbers.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;FirstName&quot;:&quot;Jonathan&quot;,
   &quot;LastName&quot;:&quot;Swift&quot;,
   &quot;Email&quot;:&quot;jswift@acmepaymentscorp.com&quot;,
@@ -409,7 +408,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 }</pre>
 <p><strong>Sample request body #2</strong></p>
 <p>In the example below, country codes are enabled on the platform. In this scenario, the Site Admin must add phone number information for the user.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;FirstName&quot;:&quot;Jane&quot;,
   &quot;LastName&quot;:&quot;Mead&quot;,
   &quot;Email&quot;:&quot;jmead@acmepaymentscorp.com&quot;,
@@ -507,13 +506,13 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <p id="id_sampleresponse">The sample responses below shows successful completion of this operation.</p>
 
 <p><strong>Sample response headers #1: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Fri, 02 Dec 2016 19:32:43 GMT
 Content-Type: application/json</pre>
 
 <p><strong>Sample response body #1: application/json</strong></p>
 <p>Platform default, without phone numbers.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;UserID&quot; : &quot;09c781ff-ff73-47a3-83d1-b2ced75fdf2d.acmepaymentscorp&quot;,
   &quot;FirstName&quot; : &quot;Jonathan&quot;,
   &quot;LastName&quot; : &quot;Swift&quot;,
@@ -529,14 +528,13 @@ Content-Type: application/json</pre>
 }</pre>
 
 <p><strong>Sample response headers #2: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type:  application/json
 Date: Fri, 09 Feb 2018 21:58:38 GMT</pre>
 
 <p><strong>Sample response body: application/json</strong></p>
 <p>With phone numbers.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;UserID&quot;:&quot;9e2a84dc-d77a-42f8-9528-0eda2ccad5fd.acmepaymentscorp&quot;,
   &quot;FirstName&quot;:&quot;Jane&quot;,
   &quot;LastName&quot;:&quot;Mead&quot;,
@@ -567,13 +565,13 @@ Date: Fri, 09 Feb 2018 21:58:38 GMT</pre>
 
 
 <p><strong>Sample response headers #3: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Thu, 31 May 2018 23:22:38 GMT
 Content-Type: application/json</pre>
 
 <p><strong>Sample response body #3: application/json</strong></p>
 <p>With lifecycle integration enabled for users.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "classifiers" : {
   },
   "artifacts" : {

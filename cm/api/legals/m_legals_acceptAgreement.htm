@@ -391,20 +391,20 @@ Records the user's acceptance of a legal agreement document for the platform.</p
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows the user's acceptance of a specific legal agreement.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/legals/agreements</pre>
+<pre class="pre_request_url">https://{hostname}/api/legals/agreements</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&#160;/api/legals/agreements HTTP/1.1
+<pre class="pre_request_headers">POST &#160;/api/legals/agreements HTTP/1.1
 Host: {hostname}
 Accept: text/plain, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;DocumentID&quot;:&quot;api200eula2.acmepaymentscorp&quot;,
   &quot;UserID&quot;:&quot;user10015.acmepaymentscorp&quot;
 }</pre>
 <p><strong>Sample request body, API access request:</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;DocumentID&quot;:&quot;21520059-8277-4521-a8cd-d0ff7b2393e8.acmepaymentscorp&quot;,
   &quot;AgreementScopeID&quot;:&quot;8hTMKdcZnkA77WsNXmobgG9C.acmepaymentscorp&quot;
 }</pre>
@@ -483,7 +483,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that the operation completed successfully.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 01 Aug 2012 19:00:26 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <p>None.</p>

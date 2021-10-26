@@ -390,15 +390,15 @@ Uploads the contents of a file, such as an API definition document (individual f
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to upload a specific API definition document to create an API.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/dropbox/readfiledetails</pre>
+<pre class="pre_request_url">https://{hostname}/api/dropbox/readfiledetails</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/dropbox/readfiledetails?wrapInHTML=true&amp;document.domain= HTTP/1.1
+<pre class="pre_request_headers">POST /api/dropbox/readfiledetails?wrapInHTML=true&amp;document.domain= HTTP/1.1
 Accept: application/vnd.soa.v81+json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body #1</strong></p>
 <p>The request body is multipart-form data, not shown here.</p>
 <p id="samplerequest_curl"><strong>Sample request #1: Curl</strong></p>
-<pre>curl -X POST \
+<pre class="pre_plain">curl -X POST \
   http://api.acmepaymentscorp.com/api/dropbox/readfiledetails \
   -H 'Accept: application/json' \
   -H 'Cache-Control: no-cache' \
@@ -483,19 +483,19 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/vnd.soa.v81+json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 10 Feb 2016 21:54:27 GMT
 Content-Type: application/vnd.soa.v81+json</pre>
 <p><strong>Sample response body #1: application/vnd.soa.v81+json</strong></p>
 <p>In the example below, a single file was uploaded to the Dropbox.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;FileName&quot; : &quot;swagger_getPetById.json&quot;,
   &quot;FileType&quot; : &quot;json&quot;,
   &quot;DropboxFileId&quot; : 1008
 }</pre>
 	<p><strong>Sample request body #2: ZIP file upload</strong></p>
 <p>In the example below, a ZIP file containing multiple services was uploaded to the Dropbox. In this example, the user must pick the name of the specific service to be used, when putting together the request body for the <span class="apidoc_code"><a href="../apis/m_apis_createAPI.htm">POST&#160;/api/apis</a></span> operation.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "FileName":"swagger_petstore_multi.zip",
   "FileType":"zip",
   "DropboxFileId":1011,

@@ -390,7 +390,8 @@ Returns information about clients. For the provider admin, this operation return
 <p><strong>Request URL</strong></p>
 <pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/admin/clients</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>xxsample_req_hdrxx
+<pre class="pre_request_headers">Content-Type: application/json
+Accept: application/json
 Cookie:&#160;OAuthToken_{OAuthProviderName}={Cookie value (usually starts with TokenID)}</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -489,9 +490,9 @@ Cookie:&#160;OAuthToken_{OAuthProviderName}={Cookie value (usually starts with T
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/xml</strong></p>
-<pre>Accept: application/xml</pre>
+<pre class="pre_request_headers">Accept: application/xml</pre>
 <p><strong>Sample response body: application/xml</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt; 
+<pre class="prettyprint, pre_xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt; 
 &lt;rss xmlns:ns2="http://soa.com/xsd/rss/1.0" xmlns:ns3="http://soa.com/xsd/oauth/1.0" xmlns:ns4="http://soa.com/binding/http" version="1.0&quot;&gt; 
 &lt;channel&gt; 
   &lt;title&gt;Clients&lt;/title&gt; 

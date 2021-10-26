@@ -387,9 +387,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the service endpoints for a specific API version implementation (virtual service).</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/e73b5ce8-f516-4641-9596-4fe51c977032.acmepaymentscorp/implementations/Live/services/uddi:682e995c-404b-11e9-a1ea-9aea37a739bc/endpoints</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/e73b5ce8-f516-4641-9596-4fe51c977032.acmepaymentscorp/implementations/Live/services/uddi:682e995c-404b-11e9-a1ea-9aea37a739bc/endpoints</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 Cookie: {cookie}
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
@@ -475,11 +475,11 @@ The unique ID for a specific service; either a proxied API service or a physical
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. There is only one endpoint for the service.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Tue, 07 Sep 2021 22:21:23 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "Endpoint":[
     {
       "Uri":"https://soa.smext.faa.gov/asws",

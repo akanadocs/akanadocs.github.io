@@ -396,9 +396,9 @@ Returns the generated API description document for the specified API version. Wi
 <h2 id="samplerequest">Sample Request #1: Open API 3.0</h2>
 <p id="id_samplerequest">The example below shows a request for the Open API 3.0 document for an API set up on the platform, in the Live implementation. The API is a subset of the Swagger Petstore API. For the corresponding response, see <a href="#sampleresponse">Sample Response #1</a>.</p>
 <p><strong>Request URL #1: Open API 3.0</strong></p>
-<pre>https://{hostname}/api/apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/oas3?Environment=Production</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/oas3?Environment=Production</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET /api/apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/oas3?Environment=Production HTTP/1.1
+<pre class="pre_request_headers">GET /api/apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/oas3?Environment=Production HTTP/1.1
 Host: {hostname}
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...
 Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}</pre>
@@ -410,14 +410,14 @@ Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}
 
 <p><strong>Request URL #2: Swagger 2.0</strong></p>
 <p>For the response, see <a href="#sampleresponse_2">Sample Response #2: Swagger 2.0</a> below.</p>
-<pre>https://{hostname}/api/apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/swagger</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/swagger</pre>
 
 
 
 <h2 id="samplerequest_3">Sample Request #3: Swagger 1.2</h2>
 <p><strong>Request URL #3: Swagger 1.2</strong></p>
 <p>For the response, see <a href="#sampleresponse_3">Sample Response #3: Swagger 1.2</a> below.</p>
-<pre>https://{hostname}/api/apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/swagger1_2</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/swagger1_2</pre>
 
 
 
@@ -425,7 +425,7 @@ Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}
 <p><strong>Request URL #4: RAML 0.8</strong></p>
 <p>For the response, see <a href="#sampleresponse_4">Sample Response #4: RAML 0.8</a> below.</p>
 <p>The example below includes an appropriate Accept header for the response format. However, this is not necessary; the response media type is determined by the specification.</p>
-<pre>https://{hostname}/api/apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/raml
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/raml
 Accept: application/raml+yaml</pre>
 
 
@@ -433,7 +433,7 @@ Accept: application/raml+yaml</pre>
 <h2 id="samplerequest_5">Sample Request #5: WSDL</h2>
 <p><strong>Request URL #5: WSDL</strong></p>
 <p>For the response, see <a href="#sampleresponse_5">Sample Response #5: WSDL</a> below.</p>
-<pre>https://{hostname}/api/apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/wsdl</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/wsdl</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -537,10 +537,10 @@ Accept: application/raml+yaml</pre>
 <h2 id="sampleresponse">Sample Response #1: Open API 3.0</h2>
 <p id="id_sampleresponse">The example below shows the responses to the API request shown in <a href="#samplerequest">Sample Request #1</a>. The API is a subset of the sample Swagger Petstore API.</p>
 <p><strong>Sample response #1 headers</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_response_headers">Content-Type: application/json
 Date: Thu, 05 Mar 2020 22:51:14 GMT</pre>
 <p><strong>Sample response #1 body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "openapi": "3.0",
   "info": {
     "title": "Swagger_Petstore_4_Operations",
@@ -941,10 +941,10 @@ Date: Thu, 05 Mar 2020 22:51:14 GMT</pre>
 <h2 id="sampleresponse_2">Sample Response  #2: Swagger 2.0</h2>
 <p id="id_sampleresponse_2">The example below shows the responses to the API request shown in <a href="#samplerequest_2">Sample Request #2</a>. The API is a subset of the sample Swagger Petstore API.</p>
 <p><strong>Sample response #2 headers</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_response_headers">Content-Type: application/json
 Date: Thu, 05 Mar 2020 22:54:49 GMT</pre>
 <p><strong>Sample response #2 body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "swagger": "2.0",
   "info": {
     "description": "Swagger_Petstore_4_Operations. Based on http://petstore.swagger.io/v2/swagger.json with deletions in API Designer.",
@@ -1306,10 +1306,10 @@ Date: Thu, 05 Mar 2020 22:54:49 GMT</pre>
 <h2 id="sampleresponse_3">Sample Response  #3: Swagger 1.2</h2>
 <p id="id_sampleresponse_3">The example below shows the responses to the API request shown in <a href="#samplerequest_3">Sample Request #3</a>. The API is a subset of the sample Swagger Petstore API.</p>
 <p><strong>Sample response #3 headers</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_response_headers">Content-Type: application/json
 Date: Thu, 05 Mar 2020 22:57:18 GMT</pre>
 <p><strong>Sample response #3 body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
  "swaggerVersion": "1.2",
  "apis": [
   {
@@ -1327,10 +1327,10 @@ Date: Thu, 05 Mar 2020 22:57:18 GMT</pre>
 <h2 id="sampleresponse_4">Sample Response #4: RAML 0.8</h2>
 <p id="id_sampleresponse_4">The example below shows the responses to the API request shown in <a href="#samplerequest_4">Sample Request #4</a>. The API is a subset of the sample Swagger Petstore API.</p>
 <p><strong>Sample response #4 headers</strong></p>
-<pre>Content-Type: application/raml+yaml
+<pre class="pre_response_headers">Content-Type: application/raml+yaml
 Date: Thu, 05 Mar 2020 22:59:28 GMT</pre>
 <p><strong>Sample response #4 body</strong></p>
-<pre>#%RAML 0.8
+<pre class="prettyprint, pre_yaml">#%RAML 0.8
 title: "Swagger_Petstore_4_Operations_v1_Live"
 baseUri: "https://testing.acmepaymentscorp.com:7955/api16098live"
 protocols: [HTTPS, HTTP]
@@ -1430,10 +1430,10 @@ documentation:
 <p>WSDL is generally used for SOAP rather than REST APIs. If you're retrieving the API definition in WSDL format for a REST API, it will include proprietary extensions for the Akana platform, as shown in the example below. In addition, depending on your browser, you might need to view source in the browser to see it. For SOAP services the response is standard WSDL.</p>
 <p id="id_sampleresponse_5">The example below shows the responses to the API request shown in <a href="#samplerequest_5">Sample Request #5</a>. The API is a subset of the sample Swagger Petstore API.</p>
 <p><strong>Sample response #5 headers</strong></p>
-<pre>Content-Type: application/xml
+<pre class="pre_response_headers">Content-Type: application/xml
 Date: Fri, 06 Mar 2020 14:42:52 GMT</pre>
 <p><strong>Sample response #5 body</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="prettyprint, pre_xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;wsdl:definitions targetNamespace="Swagger_Petstore_4_Operations_v1" xmlns:sdoc="http://soa.com/wsdl/doc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://soa.com/uri/products/wsdlext/1.0" xmlns:tns="Swagger_Petstore_4_Operations_v1" xmlns:js="http://soa.com/jsonSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:shttp="http://soa.com/wsdl/http"&gt;
   &lt;wsdl:types&gt;
     &lt;shttp:schema language="json" targetNamespace="http://soa.com/jsonSchema" xmlns:shttp="http://soa.com/wsdl/http"&gt;&lt;![CDATA[{"ApiResponse":{"type":"object","properties":{"code":{"type":"integer","format":"int32"},"type":{"type":"string"},"message":{"type":"string"}}},"Category":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"}},"xml":{"name":"Category"}},"Order":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"petId":{"type":"integer","format":"int64"},"quantity":{"type":"integer","format":"int32"},"shipDate":{"type":"string","format":"date-time"},"status":{"type":"string","description":"Order Status","enum":["placed","approved","delivered"]},"complete":{"type":"boolean"}},"xml":{"name":"Order"}},"Pet":{"required":["name","photoUrls"],"type":"object","properties":{"id":{"type":"integer","format":"int64"},"category":{"$ref":"#/Category"},"name":{"type":"string","example":"doggie"},"photoUrls":{"type":"array","xml":{"wrapped":true},"items":{"type":"string","xml":{"name":"photoUrl"}}},"tags":{"type":"array","xml":{"wrapped":true},"items":{"$ref":"#/Tag"}},"status":{"type":"string","description":"pet status in the store","enum":["available","pending","sold"]}},"xml":{"name":"Pet"}},"Tag":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"}},"xml":{"name":"Tag"}},"User":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"username":{"type":"string"},"firstName":{"type":"string"},"lastName":{"type":"string"},"email":{"type":"string"},"password":{"type":"string"},"phone":{"type":"string"},"userStatus":{"type":"integer","description":"User Status","format":"int32"}},"xml":{"name":"User"}}}]]&gt;&lt;/shttp:schema&gt;

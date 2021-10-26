@@ -392,25 +392,25 @@
 <p><strong>Note</strong>: For additional examples, see <a href="../aaref/Ref_UsingSearchOnThePlatform.htm#samplesearchurls">Using Search on the Platform (Sample Search URLs section)</a>.</p>
 <p id="id_samplerequest01"><strong>Sample request URL #1</strong></p>
 <p>The example below shows a search for groups, requesting the first two responses. This query returns the first two groups that the user has visibility of. See <a href="#search_response_01">Sample response body #1</a>.</p>
-<pre><span class="apidoc_div_codeendpoint"></span>https://{hostname}/api/search?count=2&amp;start=0&amp;q=type:group</pre>
+<pre class="pre_request_url">https://{hostname}/api/search?count=2&amp;start=0&amp;q=type:group</pre>
 
 <p id="id_samplerequest02"><strong>Sample request URL #2</strong></p>
 <p>The example below shows a request for information based on a specific unique ID. This query returns the response shown in <a href="#search_response_02_postman">Sample response body #2: Postman</a>.</p>
-<pre><span class="apidoc_div_codeendpoint"></span>https://{hostname}/api/search?q=d37990e2-800a-4963-b3b9-908b6a87dbcc.rcoaless</pre>
+<pre class="pre_request_url">https://{hostname}/api/search?q=d37990e2-800a-4963-b3b9-908b6a87dbcc.rcoaless</pre>
 
 <p id="id_samplerequest03"><strong>Sample request URL #3</strong></p>
 <p>the example below shows a search for model objects.This query returns the response shown in <a href="#search_response_03">Sample response body #3</a>.</p>
-<pre>https://{hostname}/api/search?q=type:model</pre>
+<pre class="pre_request_url">https://{hostname}/api/search?q=type:model</pre>
 <p id="id_samplerequest04"><strong>Sample request URL #4</strong></p>
 <p>The example below shows a search for <strong>oauth</strong>.</p>
-<pre><span class="apidoc_div_codeendpoint"></span>https://{hostname}/api/search?count=20&amp;start=0&amp;q=type:*%20AND%20oauth</pre>
+<pre class="pre_request_url">https://{hostname}/api/search?count=20&amp;start=0&amp;q=type:*%20AND%20oauth</pre>
 
 <p id="id_samplerequest05"><strong>Sample request URL #5</strong></p>
 <p>The example below shows a search for the list of all users.</p>
-<pre><span class="apidoc_div_codeendpoint"></span>https://{hostname}/api/search?sort=asc&amp;sortBy=com.soa.sort.order.title_sort&amp;Federation=false&amp;count=20&amp;start=0&amp;q=type:user</pre>
+<pre class="pre_request_url">https://{hostname}/api/search?sort=asc&amp;sortBy=com.soa.sort.order.title_sort&amp;Federation=false&amp;count=20&amp;start=0&amp;q=type:user</pre>
 
 <p><strong>Sample request headers</strong></p>
-<pre>accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -453,7 +453,7 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td><span class="apidoc_div_codeendpoint">q</span></td>
+			<td>q</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Required</td>
@@ -502,7 +502,7 @@
 			<td>string</td>
 			<td>Optional</td>
 			<td><p>Allows you to retrieve objects added or updated after a certain date/time stamp. For example, you could use this to retrieve apps and app versions that were updated since the specified date/time. The example below retrieves up to 10,000 app versions that were updated since the specified date:</p>
-				<pre>/api/search?q=(type:app-version)&amp;UpdatedDateFrom=2019-09-09T00:00:00&amp;count=10000</pre></td>
+				<pre class="pre_plain">/api/search?q=(type:app-version)&amp;UpdatedDateFrom=2019-09-09T00:00:00&amp;count=10000</pre></td>
 		</tr>
 		<tr>
 			<td><p>UpdatedDateTo</p>
@@ -511,7 +511,7 @@
 			<td>string</td>
 			<td>Optional</td>
 			<td><p>In combination with <strong>UpdatedDateFrom</strong>, allows you to retrieve objects, such as apps and app versions, that were updated in a specified date/time range. The example below retrieves all apps that were updated in the specified 1-hour time period:</p>
-				<pre>/api/search?q=(type:app)&amp;UpdatedDateFrom=2019-10-11T22:00:00&amp;UpdatedDateTo=2019-10-11T23:00:00</pre>
+				<pre class="pre_plain">/api/search?q=(type:app)&amp;UpdatedDateFrom=2019-10-11T22:00:00&amp;UpdatedDateTo=2019-10-11T23:00:00</pre>
 			</td>
 		</tr>
 	</tbody>
@@ -531,7 +531,7 @@
 <h2 id="sampleresponse">Sample Response</h2>
 <p>The examples below show successful use of this operation.</p>
 <p><strong>Sample response headers #1</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Thu, 21 May 2020 20:26:11 GMT</pre>
 rss_search_json
@@ -540,7 +540,7 @@ search_response_01
 <p><a id="rss_search_json"></a><strong>Sample response body #1</strong></p>
 <p id="search_response_01">The sample response below shows results for the <span class="apidoc_code">GET&#160;/api/search</span> method when searching for groups and requesting the first two (<a href="#id_samplerequest01">sample request URL #1</a>).</p>
 
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel": {
     "title": "Search Results",
     "description": "Search results for [type:group]",
@@ -612,7 +612,7 @@ search_response_01
 
 <p><strong><a id="search_response_03"></a>Sample response #3: Models List</strong></p>
 <p>The example below illustrates the list of models returned by the Community Manager developer portal user interface on the <strong>{Business}</strong> &gt; <strong>Models</strong> page. This response corresponds to <a href="#id_samplerequest03">sample request URL #3</a>.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel": {
     "title": "Search Results",
     "description": "Search results for [type:model]",

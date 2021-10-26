@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the first five transactions for the specified environment/operation.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/0f14e2b3-671a-49e4-98ac-eef610a58a81.acmepaymentscorp/environments/Production/operations/getPetById/txlogs?count=2</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/0f14e2b3-671a-49e4-98ac-eef610a58a81.acmepaymentscorp/environments/Production/operations/getPetById/txlogs?count=2</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre class="pre_request_headers">Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -548,11 +548,11 @@ The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response belows shows the transaction logs for specific API version. In the JSON example, the first two transactions have been requested (see example request above). The XML example includes three transactions.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Wed, 30 Dec 2015 17:49:10 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;TransactionInfo&quot; : [ {
     &quot;TransactionID&quot; : &quot;eccf145f-af1b-11e5-b10b-bd5e99870074&quot;,
     &quot;APIID&quot; : &quot;77486534-f920-4c20-9b80-be5b5f239caf.acmepaymentscorp&quot;,

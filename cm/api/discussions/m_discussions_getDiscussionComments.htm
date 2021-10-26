@@ -389,12 +389,12 @@
 <p id="id_samplerequest">The example below shows a request for the comments on the specified discussion.</p>
 <p><strong>Request URL #1</strong></p>
 <p>Returns all comments for the specified discussion.</p>
-<pre>https://{hostname}/api/discussions/discussion25800.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/discussions/discussion25800.acmepaymentscorp</pre>
 <p><strong>Request URL #2</strong></p>
 <p>Returns the 5 most recent comments for the specified discussion.</p>
-<pre>https://{hostname}/api/discussions/discussion584195.acmepaymentscorp/comments?start=0&amp;count=5</pre>
+<pre class="pre_request_url">https://{hostname}/api/discussions/discussion584195.acmepaymentscorp/comments?start=0&amp;count=5</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>None.</p>
@@ -500,11 +500,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. Three results were returned.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Thu, 12 Mar 2020 20:32:06 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "totalResults": 3,
   "startIndex": 0,
   "Comment": [

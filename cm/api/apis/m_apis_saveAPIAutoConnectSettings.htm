@@ -389,13 +389,13 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below specifies the auto-connect settings for the specified API version, for both Sandbox and Live implementation includes licenses.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/6077b049-58bd-46ab-871d-a99e7b5c26f9.acmepaymentscorp/autosettings</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/6077b049-58bd-46ab-871d-a99e7b5c26f9.acmepaymentscorp/autosettings</pre>
 <p><strong>Sample request headers: application/json</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIVersionAutoConnectDetail&quot;:[
     {
       &quot;AutoConnectEnabled&quot;:&quot;true&quot;,
@@ -508,11 +508,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Expires: Tue, 16 Sep 2014 14:23:34 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIVersionAutoConnectLicenseDetail&quot; : [ {
     &quot;APIVersionID&quot; : &quot;261810e3-3fed-4d97-9e84-f924813310f7.acmepaymentscorp&quot;,
     &quot;Environment&quot; : &quot;Production&quot;,

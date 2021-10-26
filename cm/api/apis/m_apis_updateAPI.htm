@@ -390,15 +390,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows an update to a specific API.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/api18969.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/api18969.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&#160;/api/apis/api18969.acmepaymentscorp HTTP/1.1
+<pre class="pre_request_headers">PUT&#160;/api/apis/api18969.acmepaymentscorp HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body #1: modifying API information</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Name&quot;:&quot;acmepaymentscorp&quot;,
   &quot;Description&quot;:&quot;Payments API for ACME customers.&quot;,
   &quot;Visibility&quot;:&quot;Public&quot;,
@@ -513,7 +513,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 }</pre>
 <p><strong>Sample request body #2: adding an API version</strong></p>
 <p>The example below adds a new version to the API. The version information is included in the body of the JSON request.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIID&quot;:&quot;api10017.acmepaymentscorp&quot;,
   &quot;Name&quot;:&quot;ACME Payments&quot;,
   &quot;Description&quot;:&quot;Payments API for ACME customers only.&quot;,
@@ -740,12 +740,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <p id="id_sampleresponse">The sample response below shows the updated object returned in the response.</p>
 
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Fri, 18 Jan 2013 09:10:45 GMT
 Content-Type: application/json</pre>
 
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIID&quot; : &quot;api18969.acmepaymentscorp&quot;,
   &quot;Name&quot; : &quot;acmepaymentscorp&quot;,
   &quot;Description&quot; : &quot;Payments API for ACME customers.&quot;,

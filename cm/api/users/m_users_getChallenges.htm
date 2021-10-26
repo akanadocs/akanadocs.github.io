@@ -390,9 +390,9 @@ Returns information about the security <a href="../Ref_Glossary_CommunityPlatfor
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the  security questions and answers for the specified user.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/eceffbe3-3386-495b-80d3-7526f0eb0edc.acmepaymentscorp/challenges</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/eceffbe3-3386-495b-80d3-7526f0eb0edc.acmepaymentscorp/challenges</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/vnd.soa.v72+json
+<pre class="pre_request_headers">Accept: application/vnd.soa.v72+json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -469,11 +469,11 @@ Returns information about the security <a href="../Ref_Glossary_CommunityPlatfor
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/vnd.soa.v72+json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v72+json
 Expires: Thu, 11 Sep 2014 15:19:07 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v72+json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;UserIdentificationChallenge&quot; : [ {
     &quot;UserID&quot; : &quot;eceffbe3-3386-495b-80d3-7526f0eb0edc.acmepaymentscorp&quot;,
     &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.city.birth&quot;,
@@ -489,7 +489,7 @@ Expires: Thu, 11 Sep 2014 15:19:07 GMT</pre>
   } ]
 }</pre>
 <p><strong>Sample response body: application/vnd.soa.v72+xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre class="prettyprint, pre_xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;Challenges xmlns=&quot;http://soa.com/xsd/business/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/api/1.0&quot; 
 xmlns:ns3=&quot;http://soa.com/xsd/legals/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/dnmodel/1.0&quot;&gt;
   &lt;Challenge&gt;

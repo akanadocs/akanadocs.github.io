@@ -390,13 +390,13 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to export the specified app version information to a download file.</p>
 <p><strong>Request URL #1</strong></p>
-<pre>http://acmepaymentscorp/api/apps/versions/6CYql2jSyfK9vaGZrvNkb7Am.acmepaymentscorp/package?
+<pre class="pre_request_url">http://acmepaymentscorp/api/apps/versions/6CYql2jSyfK9vaGZrvNkb7Am.acmepaymentscorp/package?
 exportVersion=current&amp;wrapInHTML=true&amp;document.domain=acmepaymentscorp</pre>
 <p><strong>Request URL #2 (all parameters)</strong></p>
-<pre>http://acmepaymentscorp/api/apps/versions/6CYql2jSyfK9vaGZrvNkb7Am.acmepaymentscorp/package?exportVersion=current&amp;migration.app.pki.export=true
+<pre class="pre_request_url">http://acmepaymentscorp/api/apps/versions/6CYql2jSyfK9vaGZrvNkb7Am.acmepaymentscorp/package?exportVersion=current&amp;migration.app.pki.export=true
 &amp;migration.export.include.api.connections=true&amp;migration.export.include.app.team=true&amp;wrapInHTML=true&amp;document.domain={hostname}&amp;download=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET /api/apps/versions/6CYql2jSyfK9vaGZrvNkb7Am.acmepaymentscorp/package?exportVersion=current
+<pre class="pre_request_headers">GET /api/apps/versions/6CYql2jSyfK9vaGZrvNkb7Am.acmepaymentscorp/package?exportVersion=current
 &amp;wrapInHTML=true&amp;document.domain=acmepaymentscorp HTTP/1.1
 Host: {hostname}
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -522,7 +522,7 @@ The unique ID for a specific app version.</td>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. The export file is downloaded as specified in the request parameters.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/octet-stream
 Expires: Thu, 25 Sep 2014 16:38:20 GMT
 Content-Disposition: attachment;filename=&quot;appversion-export.zip&quot;

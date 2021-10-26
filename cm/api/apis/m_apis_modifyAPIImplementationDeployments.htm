@@ -394,15 +394,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to modify the specified deployment (one deployment zone has been removed, two are left).</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/d7c7104f-8341-4da6-a45f-47114b4d3d7d.acmepaymentscorp/implementations/Live/deployments</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/d7c7104f-8341-4da6-a45f-47114b4d3d7d.acmepaymentscorp/implementations/Live/deployments</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/apis/versions/c8089c94-ac0d-48b3-ae1a-0ca1c9b7d7b9.acmepaymentscorp/implementations/Live/deployments HTTP/1.1
+<pre class="pre_request_headers">PUT /api/apis/versions/c8089c94-ac0d-48b3-ae1a-0ca1c9b7d7b9.acmepaymentscorp/implementations/Live/deployments HTTP/1.1
 Host: {hostname}
 Accept: application/json
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "DeploymentZonesHostingInfo":[
     {
       "DeploymentZoneEndpoint":[
@@ -519,11 +519,11 @@ A code for a specific implementation. Valid values: <strong>Live</strong> or <st
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 11 Nov 2020 20:50:58 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "Name":"Swagger_Petstore_5_Operations_v1_Live",
   "ImplementationCode":"Live",
   "Description":"Swagger_Petstore_5_Operations. Based on http://petstore.swagger.io/v2/swagger.json with deletions in API Designer.",

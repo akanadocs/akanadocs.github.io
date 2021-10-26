@@ -389,13 +389,13 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to modify which policies are assigned to the specified implementation for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/4a1a513f-2758-48a9-8103-d869793e2ac8.rcoaless/implementations/Live/policies</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/4a1a513f-2758-48a9-8103-d869793e2ac8.rcoaless/implementations/Live/policies</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
     "Policy": [
         {
             "PolicyKey": "acmepaymentscorp-AtmosphereApplicationSecurityPolicy",
@@ -547,11 +547,11 @@ Contains information about the policies assigned to an API or API implementation
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Fri, 20 Nov 2020 14:24:40 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "Policy": [
     {
       "PolicyKey": "acmepaymentscorp-AtmosphereApplicationSecurityPolicy",

@@ -390,12 +390,12 @@ Returns information about API contracts for the specified app version, in the fo
 <p id="id_samplerequest">The example below shows a request for the contracts for the specified app version.</p>
 <p><strong>Request URL #1</strong></p>
 <p>Returns results for all environments.</p>
-<pre>https://{hostname}/api/apps/versions/2mWn90b8Y4C2vL7qCxDW8f38.acmepaymentscorp/contracts</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/versions/2mWn90b8Y4C2vL7qCxDW8f38.acmepaymentscorp/contracts</pre>
 <p><strong>Request URL #2</strong></p>
 <p>With optional parameter, returns results for Sandbox only.</p>
-<pre>https://{hostname}/api/apps/versions/2mWn90b8Y4C2vL7qCxDW8f38.acmepaymentscorp/contracts?Environment=sandbox</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/versions/2mWn90b8Y4C2vL7qCxDW8f38.acmepaymentscorp/contracts?Environment=sandbox</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/vnd.soa.v71+json
+<pre class="pre_request_headers">Accept: application/vnd.soa.v71+json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -492,11 +492,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation (sample request #1). There is one contract.</p>
 <p><strong>Sample response headers: application/vnd.soa.v72+json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v72+json
 Expires: Tue, Thu, 12 Mar 2020 18:39:51 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v72+json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "Contract": [
     {
       "ContractID": "79795dce-9eb3-43a9-8ebb-ab487fa41d1a.rcoaless",

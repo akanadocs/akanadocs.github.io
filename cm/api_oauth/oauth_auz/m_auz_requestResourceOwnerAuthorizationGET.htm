@@ -405,13 +405,13 @@
 &amp;code_challenge=Fo9h7PBBSXlHHfHmICjVNVlj36PrntQ1wOZpG99iuAM&amp;code_challenge_method=plain HTTP/1.1</pre>
 
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
+<pre class="pre_request_headers">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 
 <p><strong>Sample request #4</strong></p>
 <p>In the example below, each parameter is shown on a different line, for clarity.</p>
-<pre>https://op.example.com/authorize?
+<pre class="pre_request_url">https://op.example.com/authorize?
 response_type=code
 &client_id=client
 &redirect_uri=[https://client.example.com|https://client.example.com/]
@@ -563,7 +563,7 @@ response_type=code
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. The grant ID is returned in the Location header.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 302 Found
+<pre class="pre_response_headers">HTTP/1.1 302 Found
 Expires: Thu, 09 Jul 2015 13:57:23 GMT
 Location: http://{oauth-provider-hostname}/oauthauz/#/grant/viit0bmhe2vl/authenticate</pre>
 <p><strong>Sample response body</strong></p>

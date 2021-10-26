@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the group members for the specified group.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/groups/group19212.acmepaymentscorp/members</pre>
+<pre class="pre_request_url">https://{hostname}/api/groups/group19212.acmepaymentscorp/members</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/groups/group19212.acmepaymentscorp/members HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/groups/group19212.acmepaymentscorp/members HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -442,7 +442,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 	</thead>
 	<tbody>
 		<tr>
-			<td><span class="apidoc_div_codeendpoint"><a href="../aaref/Ref_IDsOnThePlatform.htm#id_groupid">GroupID</a></span></td>
+			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_groupid">GroupID</a></td>
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
@@ -465,11 +465,11 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows information about the members of the specified group.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Sat, 08 Jun 2013 00:42:41 GMT</pre>
 <p><a id="rss_groupmembers_json"></a><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;ACME Payments API UG&quot;,
     &quot;description&quot; : &quot;ACME Payments API User Group&quot;,
@@ -660,10 +660,10 @@ Date: Sat, 08 Jun 2013 00:42:41 GMT</pre>
 		<tr>
 			<td>category</td>
 			<td><p>An array of sets of name/value pairs containing information about the group member. For example:</p>
-				<pre>&quot;value&quot; : &quot;com.soa.group.membership.state.approved&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;com.soa.group.membership.state.approved&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:status&quot;</pre>
 <p>The example above indicates the user's group membership <a href="../aaref/Ref_Values.htm#values_groupmembershipstates">state</a> (<strong>State</strong> in the <strong>Membership</strong> object).</p>
-				<pre>&quot;value&quot; : &quot;com.soa.group.membership.role.admin&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;com.soa.group.membership.role.admin&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:role&quot;</pre>
 <p>The example above  indicates the user's <a href="../aaref/Ref_Values.htm#values_groupmemberroles">role</a> in the group (<strong>Role</strong> in the <strong>Membership</strong> object).</p
 ></td>
@@ -675,7 +675,7 @@ Date: Sat, 08 Jun 2013 00:42:41 GMT</pre>
 		<tr>
 			<td>Image</td>
 			<td><p>Information about the avatar set up for the user; a set of two name/value pairs, URL and Link. If the user hasn't uploaded an image, the URL to the default user image is included. An example is shown below.</p>
-				<pre>&quot;Url&quot; : &quot;https://{hostname}/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&quot;,
+				<pre class="pre_plain">&quot;Url&quot; : &quot;https://{hostname}/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&quot;,
 &quot;Link&quot; : &quot;../acmepaymentscorp#/user/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/details&quot;</pre></td>
 		</tr>
 	</tbody>

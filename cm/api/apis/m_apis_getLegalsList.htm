@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for legal documents for an API. Inactive and Draft legal agreements are also requested.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/70ad8d6b-3c1f-4ab2-8dc3-a566093bc03a.rcoaless/legals?Drafts=true&amp;Inactive=true</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/70ad8d6b-3c1f-4ab2-8dc3-a566093bc03a.rcoaless/legals?Drafts=true&amp;Inactive=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/vnd.akana.v2020+json
+<pre class="pre_request_headers">Accept: application/vnd.akana.v2020+json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -478,11 +478,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the requested legal agreements returned. Draft and Inactive documents are included, as specified in the sample&#160;request.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 14 Oct 2020 20:39:10 GMT
 Content-Type: application/vnd.akana.v2020+json</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "AgreementDocument":[
     {
       "DocumentID":"e2e6168a-8ffb-4f88-9a00-344371e5ef03.rcoaless",

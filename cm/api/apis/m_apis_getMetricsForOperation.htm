@@ -390,9 +390,9 @@ Returns a set of metric information for the specified operation in the specified
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the metric information for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/0f14e2b3-671a-49e4-98ac-eef610a58a81.acmepaymentscorp/environments/Production/operations/getPetById/metrics</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/0f14e2b3-671a-49e4-98ac-eef610a58a81.acmepaymentscorp/environments/Production/operations/getPetById/metrics</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre class="pre_request_headers">Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -535,11 +535,11 @@ The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Wed, 30 Dec 2015 17:37:20 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;StartTime&quot; : &quot;2015-12-30T15:37:25Z&quot;,
   &quot;EndTime&quot; : &quot;2015-12-30T17:37:25Z&quot;,
   &quot;Interval&quot; : [ {
@@ -587,11 +587,11 @@ Date: Wed, 30 Dec 2015 17:37:20 GMT</pre>
   } ]
 }</pre>
 <p><strong>Sample response headers: application/vnd.soa.v80+xml</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v80+xml
 Date: Wed, 30 Dec 2015 17:39:14 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v80+xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+<pre class="prettyprint, pre_xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
 &lt;Graph xmlns=&quot;http://soa.com/xsd/performance/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/business/1.0&quot; 
 xmlns:ns3=&quot;http://soa.com/xsd/legals/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/dnmodel/1.0&quot; 
 xmlns:ns5=&quot;http://soa.com/xsd/api/1.0&quot; xmlns:ns6=&quot;http://soa.com/xsd/resource/1.0&quot; 

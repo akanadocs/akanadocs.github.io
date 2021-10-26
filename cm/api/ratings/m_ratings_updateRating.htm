@@ -403,15 +403,15 @@ Adds or updates a specific user's rating for a resource. If the rating doesn't e
 
 <p id="id_samplerequest">The example below shows a specific user changing their rating of the specified API version to 5.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/apiversion10024.acmepaymentscorp/ratings/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/apiversion10024.acmepaymentscorp/ratings/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&#160;/api/apis/versions/apiversion10024.acmepaymentscorp/ratings/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp HTTP/1.1
+<pre class="pre_request_headers">PUT&#160;/api/apis/versions/apiversion10024.acmepaymentscorp/ratings/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp HTTP/1.1
 Host: {hostname}
 Accept: application/json
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
 &quot;Rating&quot;:5
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -420,15 +420,15 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h3 id="samplerequest_2">Sample request: Apps service</h3>
 <p id="id_samplerequest_2">The example below shows a specific user changing their rating for an app version to 4.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.acmepaymentscorp/ratings/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.acmepaymentscorp/ratings/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&#160;/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.acmepaymentscorp/ratings/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp HTTP/1.1
+<pre class="pre_request_headers">PUT&#160;/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.acmepaymentscorp/ratings/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ID&quot;:&quot;90VsIX3WmpP32sqoYQk8jj4J.acmepaymentscorp&quot;,
   &quot;UserID&quot;:&quot;957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp&quot;,
   &quot;Rating&quot;:4
@@ -439,15 +439,15 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h3 id="samplerequest_4">Sample request: Groups service</h3>
 <p id="id_samplerequest_4">The example below shows a specific user changing their rating for a group to 5.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/groups/group23509.acmepaymentscorp/ratings/user23509.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/groups/group23509.acmepaymentscorp/ratings/user23509.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/groups/group24386.acmepaymentscorp/ratings/user23509.acmepaymentscorp HTTP/1.1
+<pre class="pre_request_headers">PUT /api/groups/group24386.acmepaymentscorp/ratings/user23509.acmepaymentscorp HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Rating&quot;:5
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -456,14 +456,14 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h3 id="samplerequest_3">Sample request: Users service</h3>
 <p id="id_samplerequest_3">The example below shows a specific user changing their rating for an app version to 1.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmepaymentscorp/ratings/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmepaymentscorp/ratings/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&#160;/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmepaymentscorp/ratings/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp HTTP/1.1
+<pre class="pre_request_headers">PUT&#160;/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmepaymentscorp/ratings/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ID&quot;:&quot;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmepaymentscorp&quot;,
   &quot;UserID&quot;:&quot;522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp&quot;,
   &quot;Rating&quot;:1
@@ -568,11 +568,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h3 id="sampleresponse_1">Sample response: APIs service</h3>
 <p id="id_sampleresponse">The sample response below shows that the operation completed successfully. The updated Rating object is returned in the response.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Tue, 12 Feb 2013 20:06:20 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ID&quot; : &quot;apiversion10025.acmepaymentscorp&quot;,
   &quot;UserID&quot; : &quot;user10002.acmepaymentscorp&quot;,
   &quot;Rating&quot; : 5
@@ -584,12 +584,12 @@ Date: Tue, 12 Feb 2013 20:06:20 GMT</pre>
 <p>The sample response below shows that the operation completed successfully. The updated Rating object is returned in the response.</p>
 
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Fri, 14 Dec 2012 20:24:15 GMT
 Content-Type: application/json</pre>
 
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ID&quot; : &quot;90VsIX3WmpP32sqoYQk8jj4J.acmepaymentscorp&quot;,
   &quot;UserID&quot; : &quot;957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp&quot;,
   &quot;Rating&quot; : 4
@@ -601,12 +601,12 @@ Content-Type: application/json</pre>
 <p>The sample response below shows that the operation completed successfully. The updated Rating object is returned in the response.</p>
 
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Wed, 19 Jun 2013 14:01:28 GMT</pre>
 
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ID&quot; : &quot;group24386.acmepaymentscorp&quot;,
   &quot;UserID&quot; : &quot;user23509.acmepaymentscorp&quot;,
   &quot;Rating&quot; : 5
@@ -618,12 +618,12 @@ Date: Wed, 19 Jun 2013 14:01:28 GMT</pre>
 <p>The sample response below shows that the operation completed successfully. The updated Rating object is returned in the response.</p>
 
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Thu, 30 May 2013 17:31:58 GMT</pre>
 
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ID&quot; : &quot;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmepaymentscorp&quot;,
   &quot;UserID&quot; : &quot;522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp&quot;,
   &quot;Rating&quot; : 1

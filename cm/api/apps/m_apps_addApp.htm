@@ -392,9 +392,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below adds a crossword puzzle app.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apps</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/apps HTTP/1.1
+<pre class="pre_request_headers">POST /api/apps HTTP/1.1
 Host: {hostname}
 Accept: */*
 Content-Type: application/json; charset=UTF-8
@@ -402,8 +402,7 @@ Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body #1</strong></p>
 <p>In this example, the App ID and shared secret values are not included since the platform settings do not allow the user to specify these values. the App ID is assigned automatically when the app is added to the database.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;Name&quot;:&quot;Crosfhocal&quot;,
   &quot;Summary&quot;:&quot;Crossword puzzle app&quot;,
   &quot;Description&quot;:&quot;Crossword puzzle app for Android phones and iPhones&quot;,
@@ -426,7 +425,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 }</pre>
 <p><strong>Sample request body #2</strong></p>
 <p>In this example, the platform settings allow the user to specify App ID (a user-defined unique identity value for the app; not the same as the platform's App ID) and Shared Secret, so those two fields are included in the request object. The settings are controlled by the Site Admin. In the UI: Administration &gt; Settings &gt; Apps &gt; User-Defined Identity. In the API: <span class="apidoc_code"><a href="../businesses/m_businesses_saveAppSettings.htm">PUT&#160;/api/businesses/{BusinessID}/appsettings</a></span> operation.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Name&quot;:&quot;Crosfhocal&quot;,
   &quot;Summary&quot;:&quot;Crossword puzzle app&quot;,
   &quot;Description&quot;:&quot;Crossword puzzle app&quot;,
@@ -448,7 +447,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 
 <p><strong>Sample request body #3</strong></p>
 <p>Adds an app in the context of a specific business organization on the platform.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Name&quot;:&quot;Billing App 2&quot;,
   &quot;Summary&quot;:&quot;Crossword puzzle app&quot;,
   &quot;Description&quot;:&quot;Billing App 2&quot;,
@@ -541,13 +540,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the AppID in plain text.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>
-HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/plain
 Expires: Fri, 25 Sep 2015 09:18:59 GMT
 Atmo-Renew-Token: renew</pre>
 <p><strong>Sample response body</strong></p>
-<pre>7b9f3d33-f6df-4255-a729-d42320bee5f9.acmepaymentscorp</pre>
+<pre class="pre_response_body_plain">7b9f3d33-f6df-4255-a729-d42320bee5f9.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

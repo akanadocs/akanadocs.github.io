@@ -389,10 +389,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for information about organizations on the platform.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/businesses[?][Federation=true][&amp;][BusinessID={BusinessID}]</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses[?][Federation=true][&amp;][BusinessID={BusinessID}]</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>
-GET /api/businesses HTTP/1.1
+<pre class="pre_plain">GET /api/businesses HTTP/1.1
 Host: {hostname}
 Accept: application/vnd.soa.v83+json</pre>
 <p><strong>Sample request body</strong></p>
@@ -476,12 +475,12 @@ Accept: application/vnd.soa.v83+json</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/vnd.soa.v83+json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v83+json
 Date: Fri, 02 Sep 2016 20:59:02 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v83+json</strong></p>
 <p>The example below returns child business organizations to the specified parent organization.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Business&quot;:[
     {
       &quot;BusinessID&quot;:&quot;249203f7-58ed-4e5d-a3e8-e1c020f51a6e.acmepaymentscorp&quot;,

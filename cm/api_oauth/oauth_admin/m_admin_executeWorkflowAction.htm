@@ -393,13 +393,12 @@
 <p><strong>Request URL</strong></p>
 <pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/admin/grants/ah27khdbb4kk/actions</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST http://{oauth-provider-url}/oauth/admin/grants/ah27khdbb4kk/actions HTTP/1.1
+<pre class="pre_request_headers">POST http://{oauth-provider-url}/oauth/admin/grants/ah27khdbb4kk/actions HTTP/1.1
 Content-Type: application/json
 Host: {oauth-provider-url}
 Cookie:&#160;OAuthToken_{OAuthProviderName}={Cookie value (usually starts with TokenID)}</pre>
 <p><strong>Sample request body</strong></p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;Action&quot;:&quot;resource.owner.declined&quot;,
   &quot;Comment&quot;:&quot;Declined.&quot;
 }</pre>
@@ -514,11 +513,11 @@ Cookie:&#160;OAuthToken_{OAuthProviderName}={Cookie value (usually starts with T
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Expires: Wed, 26 Aug 2015 14:08:05 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "GrantID" : "ah27khdbb4kk",
   "GrantProvider" : "OAuthAutomationacmepaymentscorp",
   "GrantType" : "authorization_code",

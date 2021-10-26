@@ -389,14 +389,14 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below sends some changes the user has made to notifications preferences. The user has opted out of one of the notifications groups, so it is omitted from the request object.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/settings</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/settings</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&#160;/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/settings HTTP/1.1
+<pre class="pre_request_headers">PUT&#160;/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/settings HTTP/1.1
 Host: {hostname}
 Accept: text/plain, */*; q=0.01
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "UserID":"45742f96-aad2-45d8-b507-420cf07c87ff.acmepaymentscorp",
   "Email":"janesaoirse@acmepaymentscorp.com",
   "OptedNotification":[
@@ -492,11 +492,11 @@ Content-Type: application/json; charset=UTF-8</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below returns the user ID as confirmation that the call was successful.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: text/plain
 Date: Thu, 16 Oct 2014 17:36:13 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
+<pre class="pre_response_body_plain">522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

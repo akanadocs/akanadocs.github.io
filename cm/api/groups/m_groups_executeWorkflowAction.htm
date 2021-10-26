@@ -389,15 +389,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows an invited user declining an invitation to join a group, and entering a comment in response to the invitation.</p>
 <p><strong>Request URL</strong></p>
-<pre><span class="apidoc_div_codeendpoint">https://{hostname}/api/groups/requests/group_member_req24576.acmepaymentscorp/actions</span></pre>
+<pre class="pre_request_url">https://{hostname}/api/groups/requests/group_member_req24576.acmepaymentscorp/actions</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/groups/requests/group_member_req24576.acmepaymentscorp/actions HTTP/1.1
+<pre class="pre_request_headers">POST /api/groups/requests/group_member_req24576.acmepaymentscorp/actions HTTP/1.1
 Host: {hostname}
 Accept: */*
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ActionName&quot;:&quot;group.membership.action.decline&quot;,
   &quot;Comments&quot;:&quot;Sorry, Jane, can't take this on right now. Appreciate the invite though.&quot;
 }</pre>
@@ -484,12 +484,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p>In the  sample response below, the MembershipRequestID is returned as confirmation that the operation completed successfully.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/plain
 Date: Fri, 14 Jun 2013 18:40:25 GMT
 Atmo-Renew-Token: renew</pre>
 <p><strong>Sample response body</strong></p>
-<pre>group_member_req24576.acmepaymentscorp</pre>
+<pre class="pre_response_body_plain">group_member_req24576.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

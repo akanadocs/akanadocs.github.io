@@ -391,15 +391,15 @@ Invites a new member to the specified group.</p>
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to add the specified user to the team.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/groups/group19212.acmepaymentscorp/members</pre>
+<pre class="pre_request_url">https://{hostname}/api/groups/group19212.acmepaymentscorp/members</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/groups/group19212.acmepaymentscorp/members HTTP/1.1
+<pre class="pre_request_headers">POST /api/groups/group19212.acmepaymentscorp/members HTTP/1.1
 Host: {hostname}
 Accept: text/plain, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Email&quot;:&quot;hpawnitoff@acmepaymentscorp.com&quot;,
   &quot;Role&quot;:&quot;com.soa.group.membership.role.member&quot;,
   &quot;Message&quot;:&quot;Please join the team!&quot;
@@ -486,11 +486,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/plain
 Date: Fri, 14 Jun 2013 16:28:56 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>group_member_req24560.acmepaymentscorp</pre>
+<pre class="pre_response_body_plain">group_member_req24560.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

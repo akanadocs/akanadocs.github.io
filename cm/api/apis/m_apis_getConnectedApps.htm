@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the connected apps for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/apiversion19126.acmepaymentscorp/connectedapps</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/apiversion19126.acmepaymentscorp/connectedapps</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET http://acmepaymentscorp.com/api/apis/versions/facf4025-5a72-46aa-a61e-1f5172647682.acmepaymentscorp/connectedapps HTTP/1.0
+<pre class="pre_request_headers">GET http://acmepaymentscorp.com/api/apis/versions/facf4025-5a72-46aa-a61e-1f5172647682.acmepaymentscorp/connectedapps HTTP/1.0
 Host: acmepaymentscorp.com
 Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -491,11 +491,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that there are 2 apps connected to the specified API.</p>
 <p><strong>Sample response headers: application/vnd.soa.v81+json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Mon, 02 Jul 2018 22:15:13 GMT
 Content-Type: application/vnd.soa.v81+json</pre>
 <p><a id="rss_appsconnected_json"></a><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel":{
     "title":"Apps Connected",
     "item":[
@@ -700,11 +700,11 @@ Content-Type: application/vnd.soa.v81+json</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <p id="id_sampleresponse2">The sample response below shows that there are 2 apps connected to the specified API.</p>
 <p><strong>Sample response headers: application/vnd.soa.v81+json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date:  Mon, 02 Jul 2018 22:20:28 GMT
 Content-Type: application/vnd.soa.v81+xml</pre>
 <p><a id="rss_appsconnected_xml"></a><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre class="prettyprint, pre_xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;rss xmlns:ns2="http://soa.com/xsd/business/1.0" xmlns:ns3="http://soa.com/xsd/user/1.0" xmlns:ns4="http://soa.com/xsd/rss/1.0" xmlns:ns5="http://soa.com/xsd/comment/1.0" xmlns:ns6="http://soa.com/xsd/board/1.0" xmlns:ns7="http://soa.com/xsd/dnmodel/1.0" xmlns:ns8="http://a9.com/-/spec/opensearch/1.1/" xmlns:ns9="http://soa.com/xsd/resource/1.0" xmlns:ns10="http://soa.com/xsd/legals/1.0" xmlns:ns11="http://soa.com/xsd/fault/1.0" xmlns:ns12="http://soa.com/xsd/api/1.0" xmlns:ns13="http://soa.com/xsd/deploymentzone/1.0" xmlns:ns14="http://soa.com/xsd/asset/1.0" xmlns:ns15="http://soa.com/xsd/ticket/1.0" xmlns:ns16="http://soa.com/xsd/app/1.0" xmlns:ns17="http://soa.com/xsd/review/1.0" xmlns:ns18="http://soa.com/xsd/alert/1.0" xmlns:ns19="http://soa.com/xsd/contract/1.0" xmlns:ns20="http://soa.com/xsd/discussion/1.0" xmlns:ns21="http://soa.com/xsd/search/1.0" xmlns:ns22="http://soa.com/xsd/workflow/1.0" xmlns:ns23="http://soa.com/xsd/client/services/1.0" xmlns:ns24="http://soa.com/xsd/oauth/1.0" version="1.0"&gt;
   &lt;channel&gt;
     &lt;title&gt;Apps Connected&lt;/title&gt;
@@ -850,8 +850,7 @@ The response body is in the form of an RSS channel, and includes the items liste
 		<tr>
 			<td>category</td>
 			<td><p>One or more categories. Each category is a set of two name/value pairs. The second item defines the domain for the property, and the first defines the actual value for the property. For example, the set of values below shows that the contract applies to the Sandbox implementation:</p>
-				<pre>
-&quot;value&quot; : &quot;Sandbox&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;Sandbox&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:environment&quot;
 </pre>
 <p>The above indicates that the contract applies to the Sandbox implementation.</p></td>
@@ -864,7 +863,7 @@ The response body is in the form of an RSS channel, and includes the items liste
 			<td>Endpoints</td>
 			<td><p>An array of name/value pair sets containing information about the endpoints that the connection applies to.</p>
 				<p>Each includes Category, which is the <a href="../aaref/Ref_Values.htm#values_environment">implementation</a> for the endpoint, and URI, which is the URI for the endpoint. For example:</p>
-				<pre>&quot;Category&quot;: &quot;Sandbox&quot;,
+				<pre class="pre_plain">&quot;Category&quot;: &quot;Sandbox&quot;,
 &quot;Uri&quot;: &quot;http://acmepaymentscorpsandbox.broker.soa.com/payments&quot;</pre>
 				<p>The above indicates that the specified URI is for the Sandbox implementation.</p></td>
 		</tr>
@@ -880,7 +879,7 @@ The response body is in the form of an RSS channel, and includes the items liste
 		<tr>
 			<td>Actions</td>
 			<td><p>An array of name/value pair sets containing information about one or more <a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_action">action</a> events that are valid for the item. Each includes value and label, and both contain the name of the valid action. For example:</p>
-				<pre>&quot;value&quot; : &quot;apicontract.action.suspend&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;apicontract.action.suspend&quot;,
 &quot;label&quot; : &quot;apicontract.action.suspend&quot;</pre>
 				<p>The example above indicates that Suspend is a valid action for the contract.</p></td>
 		</tr>

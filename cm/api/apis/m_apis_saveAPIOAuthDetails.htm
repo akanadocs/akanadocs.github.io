@@ -389,14 +389,14 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below adds the OAuth details with multiple OAuth providers.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/versions/a7ece9ef-e4cd-4bac-9868-31fde66c516e.acmepaymentscorp/oauthdetails</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/versions/a7ece9ef-e4cd-4bac-9868-31fde66c516e.acmepaymentscorp/oauthdetails</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/apis/versions/a7ece9ef-e4cd-4bac-9868-31fde66c516e/oauthdetails HTTP/1.1
+<pre class="pre_request_headers">PUT /api/apis/versions/a7ece9ef-e4cd-4bac-9868-31fde66c516e/oauthdetails HTTP/1.1
 Accept: application/json
 Content-Type:application/vnd.soa.v2019+json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p id="samplerequest_01"><strong>Sample request body: with API-wide scopes and a third-party OAuth provider</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIVersionID" : "a7ece9ef-e4cd-4bac-9868-31fde66c516e.acmepaymentscorp",
   "APIID" : "09e0e3b0-066e-4122-990c-e3ca325282e7.acmepaymentscorp",
   "Name" : "v1",
@@ -1446,7 +1446,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that the request message was successfully received.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 204 No Content
+<pre class="pre_response_headers">Status Code: 204 No Content
 Date: Mon, 15 Jul 2019 21:44:57 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <p>None.</p>

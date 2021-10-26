@@ -389,10 +389,10 @@ Exports the transaction log for an app version's usage of an API, to a <a href="
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows successful completion of this operation. The usage logs are exported to a CSV file.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apps/versions/7FuucUjB7B3AYcUVvQpEVv1B.demo/txlogs/export?Environment=Sandbox
+<pre class="pre_request_url">https://{hostname}/api/apps/versions/7FuucUjB7B3AYcUVvQpEVv1B.demo/txlogs/export?Environment=Sandbox
 &amp;Duration=1d&amp;TimeZone=America/New_York&amp;count=100&amp;start=0</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET /api/apps/versions/7FuucUjB7B3AYcUVvQpEVv1B.demo/txlogs/export?Environment=Sandbox&amp;Duration=1d
+<pre class="pre_request_headers">GET /api/apps/versions/7FuucUjB7B3AYcUVvQpEVv1B.demo/txlogs/export?Environment=Sandbox&amp;Duration=1d
 &amp;TimeZone=America/New_York&amp;count=100&amp;start=0 HTTP/1.1
 Host: acmepaymentscorp.com
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -553,7 +553,7 @@ The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/csv
 Content-Disposition: attachment;filename=&quot;applogs.csv&quot;
 Date: Wed, 16 Apr 2014 21:26:23 GMT</pre>

@@ -385,12 +385,12 @@
 <p>The examples below show requests for specific API version information.</p>
 <p id="id_samplerequest_01"><strong>Sample request URL #1</strong></p>
 <p>Shows a request for API version information, without optional parameters. For the response, see <a href="#sampleresponse_01">Sample response #1: Without optional parameters</a> below.</p>
-<pre>https://{hostname}/api/apis/versions/afd904fd-f81e-4d0c-9fbc-f9e40efb178e.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/afd904fd-f81e-4d0c-9fbc-f9e40efb178e.acmepaymentscorp</pre>
 <p id="id_samplerequest_02"><strong>Sample request URL #2</strong></p>
 <p>Includes the optional <span class="apidoc_code">includeOperations</span> parameter. For the response, see <a href="#sampleresponse_02">Sample response #2: With optional includeOperations parameter</a> below.</p>
-<pre>https://{hostname}/api/apis/versions/8205b5a9-0bea-4ae3-907b-d48f0b2336c7.acmepaymentscorp?includeOperations=true</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/8205b5a9-0bea-4ae3-907b-d48f0b2336c7.acmepaymentscorp?includeOperations=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/apis/versions/8205b5a9-0bea-4ae3-907b-d48f0b2336c7.acmepaymentscorp HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/apis/versions/8205b5a9-0bea-4ae3-907b-d48f0b2336c7.acmepaymentscorp HTTP/1.1
 Host: {hostname}
 Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -511,11 +511,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h4 id="sampleresponse_01">Sample response #1: Without optional parameters</h4>
 <p>The sample response below shows the response information for <a href="#id_samplerequest_01">sample request #1</a> above (without optional parameters).</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 18 Aug 2021 18:43:33 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIVersionID":"73564f84-9eb0-4ab7-84fd-ac4f4c953185.rcoaless",
   "APIID":"76c31da0-2b77-4e20-9c3c-96335e8da31d.rcoaless",
   "Name":"Version 2 (Private, Live)",
@@ -570,11 +570,11 @@ Content-Type: application/json</pre>
 <p>Example from  version: 2020.2.0</p>
 <p>The sample response below (response to <strong>sample request URL #2</strong>) shows API version information for a subset of the Swagger Petstore API (<a href="http://petstore.swagger.io/" target="_blank">http://petstore.swagger.io/</a>), set up on the platform. In this example, the request message included the optional <span class="apidoc_code">includeOperations</span> parameter, so information about the operations is in the response.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v81+json
 Date: Thu, 19 Nov 2020 15:36:53 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIVersionID":"4a1a513f-2758-48a9-8103-d869793e2ac8.acmepaymentscorp",
   "APIID":"38f286d3-9628-47fd-bf6a-bc6f2ebd72ef.acmepaymentscorp",
   "Name":"v1",
@@ -924,7 +924,7 @@ Date: Thu, 19 Nov 2020 15:36:53 GMT</pre>
 <h4 id="sampleresponse_03">Sample Response #3: Multiple OAuth providers</h4>
 <p>The sample response below shows API version information when there are multiple OAuth providers set up for the API.</p>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIVersionID" : "a7ece9ef-e4cd-4bac-9868-31fde66c516e.acmepaymentscorp",
   "APIID" : "09e0e3b0-066e-4122-990c-e3ca325282e7.acmepaymentscorp",
   "Name" : "v1",

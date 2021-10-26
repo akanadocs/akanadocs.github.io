@@ -389,9 +389,9 @@
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h2 id="samplerequest">Sample Request #1</h2><p id="id_samplerequest">The example below shows a request for API implementation information. To view the response, see <a href="#sampleresponse">Sample Response #1</a>.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/implementations</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/implementations</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/vnd.soa.v81+json
+<pre class="pre_request_headers">Accept: application/vnd.soa.v81+json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -399,9 +399,9 @@
 <h2 id="samplerequest_02">Sample Request #2</h2>
 <p id="id_samplerequest_02">The example below shows a request for API implementation information for the specified API version. To view the response, see <a href="#sampleresponse_02">Sample Response #2</a>.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/implementations?APIVersionID=4ef0b707-a7f1-45eb-8343-cb6fb443ef02.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/implementations?APIVersionID=4ef0b707-a7f1-45eb-8343-cb6fb443ef02.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -504,10 +504,10 @@
 <h2 id="sampleresponse">Sample Response #1</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. Information on all implementations is returned. To view the request, see <a href="#samplerequest">Sample Request #1</a>.</p>
 <p><strong>Sample response headers: application/vnd.soa.v81+json</strong></p>
-<pre>Content-Type: application/vnd.soa.v81+json
+<pre class="pre_response_headers">Content-Type: application/vnd.soa.v81+json
 Date: Thu, 12 Mar 2020 15:46:15 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIImplementationInfo": [
     {
       "APIVersionID": "4ef0b707-a7f1-45eb-8343-cb6fb443ef01.acmepaymentscorp",
@@ -569,10 +569,10 @@ Date: Thu, 12 Mar 2020 15:46:15 GMT</pre>
 <h2 id="sampleresponse_02">Sample Response #2</h2>
 <p id="id_sampleresponse_02">The sample response below shows successful completion of this operation. In this scenario, the optional APIVersionID parameter was used in the request. API implementation information for the specified API version is returned. To view the request, see <a href="#samplerequest_02">Sample Request #2</a>.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_response_headers">Content-Type: application/json
 date: Thu, 12 Mar 2020 15:49:17 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "APIImplementationInfo": [
     {
       "APIVersionID": "4ef0b707-a7f1-45eb-8343-cb6fb443ef02.acmepaymentscorp",

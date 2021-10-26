@@ -388,13 +388,13 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to update the schema for the specified model&#160;version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/models/versions/7c02aaca-ab60-4a8c-8ed6-c0328b200532.acmepaymentscorp/schema</pre>
+<pre class="pre_request_url">https://{hostname}/api/models/versions/7c02aaca-ab60-4a8c-8ed6-c0328b200532.acmepaymentscorp/schema</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 Content-Type: text/plain
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{\n  "type": "object",\n  "required": [\n    "name",\n    "photoUrls"\n  ],\n  "properties": {\n    "id": {\n      "type": "integer",\n      "format": "int64"\n    },\n    "category": {\n      "$ref": "#/definitions/Category"\n    },\n    "name": {\n      "type": "string",\n      "example": "doggie"\n    },\n    "photoUrls": {\n      "type": "array",\n      "xml": {\n        "name": "photoUrl",\n        "wrapped": true\n      },\n      "items": {\n        "type": "string"\n      }\n    }\n  }\n}</pre>
+<pre class="prettyprint, pre_json">{\n  "type": "object",\n  "required": [\n    "name",\n    "photoUrls"\n  ],\n  "properties": {\n    "id": {\n      "type": "integer",\n      "format": "int64"\n    },\n    "category": {\n      "$ref": "#/definitions/Category"\n    },\n    "name": {\n      "type": "string",\n      "example": "doggie"\n    },\n    "photoUrls": {\n      "type": "array",\n      "xml": {\n        "name": "photoUrl",\n        "wrapped": true\n      },\n      "items": {\n        "type": "string"\n      }\n    }\n  }\n}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -476,11 +476,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Fri, 10 May 2019 15:20:54 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{ 
+<pre class="prettyprint, pre_json">{ 
   "ModelVersionID":"7c02aaca-ab60-4a8c-8ed6-c0328b200532.acmepaymentscorp",
   "ModelID":"807f1cb0-4aa2-49b0-98d0-b08d7403daa7.acmepaymentscorp",
   "Name":"v1",

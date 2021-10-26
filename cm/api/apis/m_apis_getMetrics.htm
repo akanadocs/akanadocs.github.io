@@ -381,7 +381,8 @@ Returns a set of metric information for the specified API version, in JSON or XM
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/metrics</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/metrics</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -389,9 +390,9 @@ Returns a set of metric information for the specified API version, in JSON or XM
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the metric information for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/apiversion18972.acmepaymentscorp/metrics?TimeInterval=5s&amp;Duration=1m&amp;Environment=Sandbox</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/apiversion18972.acmepaymentscorp/metrics?TimeInterval=5s&amp;Duration=1m&amp;Environment=Sandbox</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/apis/versions/apiversion18972.acmepaymentscorp/metrics?TimeInterval=5s&amp;Duration=1m&amp;Environment=Sandbox HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/apis/versions/apiversion18972.acmepaymentscorp/metrics?TimeInterval=5s&amp;Duration=1m&amp;Environment=Sandbox HTTP/1.1
 Host: {hostname}
 Accept: */*
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -561,11 +562,11 @@ Indicates whether SLAs should be included in the information returned. If not sp
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 13 May 2020 20:00:00 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "StartTime":"2020-05-13T21:10:00-07:00",
   "EndTime":"2020-05-13T22:10:00-07:00",
   "Interval":[

@@ -389,9 +389,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for information about the followers of the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_board_support">Support Board</a>.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/boards/supportboard.acmepaymentscorp/followers</pre>
+<pre class="pre_request_url">https://{hostname}/api/boards/supportboard.acmepaymentscorp/followers</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre class="pre_request_headers">Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -464,11 +464,11 @@
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Expires: Mon, 23 Feb 2015 14:38:45 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;Support&quot;,
     &quot;description&quot; : &quot;&quot;,
@@ -601,7 +601,7 @@ Expires: Mon, 23 Feb 2015 14:38:45 GMT</pre>
 		<tr>
 			<td>Action</td>
 			<td><p>A set of one or more name/value pairs expressing the action available to the follower. Because following a resource is a yes/no activity, the possible action of a follower will always be to stop following. For example:</p>
-				<pre>&quot;value&quot; : &quot;action.follow.stop&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;action.follow.stop&quot;,
 &quot;label&quot; : &quot;Stop Following&quot;</pre>
 <p><strong>Note</strong>: Actions are returned only if the user requesting the information is authorized to perform the actions.</p></td>
 		</tr>

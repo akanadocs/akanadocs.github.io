@@ -399,37 +399,37 @@
 	<li><a href="#samplerequest_04">Sample request body #4: Cancels a contract.</a></li>
 </ul>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.acmepaymentscorp/actions</pre>
+<pre class="pre_request_url">https://{hostname}/api/contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.acmepaymentscorp/actions</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.acmepaymentscorp/actions HTTP/1.1
+<pre class="pre_request_headers">POST /api/contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.acmepaymentscorp/actions HTTP/1.1
 Host: {hostname}
 Accept: */*
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p id="samplerequest_01"><strong>Sample request body #1</strong></p>
 <p>Activates a contract.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ActionName&quot;:&quot;apicontract.action.activate&quot;,
   &quot;Comments&quot;:&quot;Granting production access (activating).&quot;
 }</pre>
 
 <p id="samplerequest_02"><strong>Sample request body #2</strong></p>
 <p>Suspends an active contract.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ActionName&quot;:&quot;apicontract.action.suspend&quot;,
   &quot;Comments&quot;:&quot;Suspending temporarily; apologies for any inconvenience.&quot;
 }</pre>
 
 <p id="samplerequest_03"><strong>Sample request body #3</strong></p>
 <p>Reactivates a suspended contract (resumes).</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "ActionName":"apicontract.action.resume",
   "Comments":"Ending the temporary suspension. All good."
 }</pre>
 
 <p id="samplerequest_04"><strong>Sample request body #4</strong></p>
 <p>Cancels a contract.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ActionName&quot;:&quot;apicontract.action.cancel&quot;
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -526,25 +526,25 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 </ul>
 
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/plain
 Date: Wed, 10 Jul 2013 19:57:49 GMT</pre>
 
 <p id="sampleresponse_01"><strong>Sample response body #1</strong></p>
 <p>Contract is activated.</p>
-<pre>apicontract.status.activated</pre>
+<pre class="pre_plain">apicontract.status.activated</pre>
 
 <p id="sampleresponse_02"><strong>Sample response body #2</strong></p>
 <p>Contract is suspended.</p>
-<pre>apicontract.status.suspended</pre>
+<pre class="pre_plain">apicontract.status.suspended</pre>
 
 <p id="sampleresponse_03"><strong>Sample response body #3</strong></p>
 <p>Contract is resumed.</p>
-<pre>apicontract.status.activated</pre>
+<pre class="pre_plain">apicontract.status.activated</pre>
 
 <p id="sampleresponse_04"><strong>Sample response body #4</strong></p>
 <p>Contract is cancelled.</p>
-<pre>apicontract.status.cancelled</pre>
+<pre class="pre_plain">apicontract.status.cancelled</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <!-- InstanceEndEditable -->

@@ -389,14 +389,14 @@ Validates the email change code that a user provides. The code is generated, and
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to validate the email change code and therefore change the email address for the user. The change code is issued by the system in response to the <span class="apidoc_code"><a href="m_users_sendEmailChangeCode.htm">POST&#160;/api/users/{UserID}/sendEmailChangeCode</a></span> operation.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/validateEmailChangeCode</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/validateEmailChangeCode</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/users/validateEmailChangeCode
+<pre class="pre_request_headers">POST /api/users/validateEmailChangeCode
 Accept: application/json
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "changeCode":"pKhdsgdTvdL6DwI7gWgRCZrK8AUzc1I4sH6W9pCRslY6NkcMscqpzapHV5rIxbKnfKuq51EOIhqVTWsigIerWx_hdTy8iwiNq6gvKRdpK6OIlw-HaZ-jk1D4FTZctoiLLzrFl0mkKqlNrCy4iM91Xg65Zppp6dYSuWQHeZSHvx6dF4Pp0",
   "newEmailAddress":"jmead@acmepaymentscorp.com"
 }</pre>
@@ -475,10 +475,10 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_response_headers">Content-Type: application/json
 Date: Thu, 18 Apr 2019 17:51:15 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "newEmailAddress":"jmead@acmepaymentscorp.com",
   "userName":"JaneMead",
   "changeStatus":true

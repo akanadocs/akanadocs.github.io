@@ -390,10 +390,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below logs the user out.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/login/logout?fedmemberId=acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/login/logout?fedmemberId=acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>
-POST&#160;/api/login/logout HTTP/1.1
+<pre class="pre_request_headers">POST &#160;/api/login/logout HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/x-www-form-urlencoded</pre>
@@ -466,7 +465,7 @@ Unique ID for a specific tenant. Same as <strong>TenantID</strong>.</p>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that the logout completed successfully. The new set-cookie parameter expires the current cookie, effectively ending the user's Akana API Platform session.</p>
 <h4>Sample response header</h4>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 06 Feb 2013 20:30:27 GMT
 Set-Cookie: AtmoAuthToken=none;path=/;expires=Wed, 06-Feb-2013 15:30:27 GMT;HttpOnly;Version=1</pre>
 <h4>Sample response body</h4>

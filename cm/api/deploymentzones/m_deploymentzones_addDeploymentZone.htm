@@ -388,16 +388,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to add a deployment zone.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/deploymentzones</pre>
+<pre class="pre_request_url">https://{hostname}/api/deploymentzones</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/deploymentzones HTTP/1.1
+<pre class="pre_request_headers">POST /api/deploymentzones HTTP/1.1
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json
 Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;RandomHostNameBehavior&quot;:&quot;com.akana.dontallow&quot;,
   &quot;Name&quot;:&quot;EAP_ND&quot;,
   &quot;Description&quot;:&quot;EAP_ND&quot;,
@@ -484,11 +483,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Thu, 15 Sep 2016 21:01:11 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;DZoneEnvImplAssociations&quot; : {
     &quot;DZoneEnvImplAssociation&quot; : [ {
       &quot;Implementation&quot; : &quot;Live&quot;,

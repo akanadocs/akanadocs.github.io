@@ -393,9 +393,9 @@ Uploads an image, for a resource such as a user profile, to the Dropbox.&#160;Pr
 <p id="id_samplerequest">The example below shows a picture being uploaded. The image is part of the multipart/form-data request body.</p>
 <p class="apidoc_note"><strong>Note</strong>: If you are using iframes, you can wrap the image in HTML so that it will work with the browser's same-origin security policy. For more information, see <a href="../aaref/Ref_FileUploadWithAjax.htm">File Upload with Ajax</a>.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/dropbox/pictures</pre>
+<pre class="pre_request_url">https://{hostname}/api/dropbox/pictures</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&#160;/api/dropbox/pictures HTTP/1.1
+<pre class="pre_request_headers">POST &#160;/api/dropbox/pictures HTTP/1.1
 Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 Content-Type: multipart/form-data; boundary=---------------------------15197250722578
@@ -479,15 +479,15 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <p id="id_sampleresponse">The sample response below shows that the operation completed successfully.</p>
 
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/html
 Expires: Tue, 29 Sep 2015 14:10:36 GMT</pre>
 
 <p><strong>Sample response body #1: plain text</strong></p>
-<pre>1001</pre>
+<pre class="pre_plain">1001</pre>
 
 <p><strong>Sample response body #2: with Wrap In HTML parameter</strong></p>
-<pre>&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot; status=&quot;200&quot; statusText=&quot;success&quot;&gt;&lt;head&gt;&lt;meta content=&quot;text/html; charset=UTF-8&quot; 
+<pre class="prettyprint, pre_xml">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot; status=&quot;200&quot; statusText=&quot;success&quot;&gt;&lt;head&gt;&lt;meta content=&quot;text/html; charset=UTF-8&quot; 
 http-equiv=&quot;Content-Type&quot;&gt;&lt;meta content=&quot;IE=edge&quot; http-equiv=&quot;X-UA-Compatible&quot;&gt;&lt;meta name=&quot;description&quot; 
 content=&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacus elit, ornare eget luctus vel, 
 porta id elit. Maecenas molestie, libero sit amet blandit faucibus, orci nisi aliquet nisi, id mollis mauris 

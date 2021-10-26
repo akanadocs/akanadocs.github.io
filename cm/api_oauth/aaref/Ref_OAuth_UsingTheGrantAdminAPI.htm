@@ -405,7 +405,7 @@ Accept: application/json</td>
 
 
 <h4>Request Payload</h4>
-<pre>identity_email=[EMAIL]&amp;secret_password=[PASSWORD]&amp;Domain=siteusers</pre>
+<pre class="pre_plain">identity_email=[EMAIL]&amp;secret_password=[PASSWORD]&amp;Domain=siteusers</pre>
 <h4>Response</h4>
 <ul>
 <li>The response includes a cookie that will be used for subsequent requests. For non-browser scenarios, the application must save this cookie and include it in every request. The cookie name includes the OAuth Provider name. Cookie name: OAuthToken_{OAuthProviderName}.</li>
@@ -465,7 +465,7 @@ Accept: application/json</td>
 	</tbody>
 </table>
 <h4>Example</h4>
-<pre>identity_username=[USERNAME]&amp;secret_password=[PASSWORD]&amp;Domain=[domain-name]</pre>
+<pre class="pre_plain">identity_username=[USERNAME]&amp;secret_password=[PASSWORD]&amp;Domain=[domain-name]</pre>
 <h4>Response</h4>
 <ul>
 <li>The response includes a cookie that will be used for subsequent requests. For non-browser scenarios, the application must save this cookie and include it in every request. The cookie name includes the OAuth Provider name. Cookie name: OAuthToken_{OAuthProviderName}.</li>
@@ -511,7 +511,7 @@ Accept: application/json</td>
 <h4>Response</h4>
 <p>The response is an html page that redirects the user to the identity provider to log in, and which then redirects the user back to the OAuth provider. The OAuth provider authenticates based on the SSO token, and then sets up the cookie as well as returning the JSON response with the authenticated user details.</p>
 <h4>Example: JSON response after redirects are done</h4>
-<pre>{ "DomainName" : &quot;OpenAM", "UserName" : &quot;eng100" }</pre>
+<pre class="prettyprint, pre_json">{ "DomainName" : &quot;OpenAM", "UserName" : &quot;eng100" }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -556,7 +556,7 @@ Accept: application/json</td>
 <li>The response includes the UserName and DomainName of the user.</li>
 </ul>
 <h4>Response Example</h4>
-<pre>{ "DomainName" : &quot;ldap", "UserName" : &quot;eng100" }</pre>
+<pre class="prettyprint, pre_json">{ "DomainName" : &quot;ldap", "UserName" : &quot;eng100" }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -687,7 +687,7 @@ Cookie set up by the Authentication API</td>
 <h4>Response</h4>
 <p>The response is an RSS feed with one item for each grant. Each RSS item includes an extension object with the property name &quot;Grant&quot; with all the grant details. Below is an example payload. For each grant, you can get the GrantID from either the RSS item <strong>guid</strong> or by using the GrantID property of the RSS item extension property, Grant, as shown in the highlighted examples below. The GrantID will be useful in subsequent API calls to administer the grant.</p>
 <h4>JSON Example</h4>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel": {
     "title": "Grants",
     "description": "",
@@ -761,7 +761,7 @@ Cookie set up by the Authentication API</td>
   "version": "1.0"
 }</pre>
 <h4>XML example</h4>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre class="prettyprint, pre_xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;rss 
   xmlns:ns2="http://soa.com/xsd/rss/1.0" 
   xmlns:ns3="http://soa.com/xsd/oauth/1.0" 
@@ -852,9 +852,9 @@ Cookie set up by the Authentication API</td>
 <h2 id="query_for_a_single_grant">Query for a Single Grant</h2>
 <p>To query for a single grant, use the URLs below to provide different information relating to the grant. </p>
 <p>Returns all the information about the grant (operation: <a href="../oauth_admin/m_admin_getGrantDetails.htm">GET&#160;/oauth/admin/grants/{GrantID}</a>):</p>
-<pre>[oauth-provider-host]/oauth/admin/grants/{GrantID}</pre>
+<pre class="pre_plain">[oauth-provider-host]/oauth/admin/grants/{GrantID}</pre>
 <p>Returns the client's avatar image (operation: <a href="../oauth_admin/m_admin_getGrantClientAvatar.htm">GET&#160;/oauth/admin/grants/{GrantID}/client/picture</a>):</p>
-<pre>[oauth-provider-host]/oauth/admin/grants/{GrantID}/client/picture</pre>
+<pre class="pre_plain">[oauth-provider-host]/oauth/admin/grants/{GrantID}/client/picture</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -912,7 +912,7 @@ Accept: application/json or application/xml</td>
 <h4>Response</h4>
 <p>The response is an RSS feed with one RSS item for each client ID. The only property available for each client is client-id. This API will be enhanced in future to include additional information about the Grant Client.</p>
 <h4>Example Response</h4>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt; 
+<pre class="prettyprint, pre_xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt; 
 &lt;rss xmlns:ns2="http://soa.com/xsd/rss/1.0" xmlns:ns3="http://soa.com/xsd/oauth/1.0" xmlns:ns4="http://soa.com/binding/http" version="1.0&quot;&gt; 
 &lt;channel&gt; 
   &lt;title&gt;Clients&lt;/title&gt; 
@@ -971,7 +971,7 @@ Cookie set up with any of the authentication APIs above.</td>
 
 
 <h4>Request Payload</h4>
-<pre>{ 
+<pre class="prettyprint, pre_json">{ 
    "Action" : &quot;[ACTION]&quot;, 
    "Comment" : &quot;[COMMENT]&quot; 
 }</pre>
@@ -1012,7 +1012,7 @@ Cookie set up with any of the authentication APIs above.</td>
 <h4>Response</h4>
 <p>The Grant object is returned as JSON with the updated details.</p>
 <h4>Sample Response</h4>
-<pre>{
+<pre class="prettyprint, pre_json">{
     "GrantID": "hdoih0raf5q5",
     "GrantProvider": "Capital One OAuth Provider",
     "GrantType": "authorization_code",

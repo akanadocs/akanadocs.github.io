@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to delete an image file that was uploaded to the content window as part of adding a board item with markup support.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/boards/items/artifacts/cad5266e-ef52-4961-b2f4-00ebf80b615a.acmepaymentscorp/img_dollars.jpg</pre>
+<pre class="pre_request_url">https://{hostname}/api/boards/items/artifacts/cad5266e-ef52-4961-b2f4-00ebf80b615a.acmepaymentscorp/img_dollars.jpg</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>DELETE http://{hostname}/api/boards/items/artifacts/cad5266e-ef52-4961-b2f4-00ebf80b615a.acmepaymentscorp/img_dollars.jpg HTTP/1.0
+<pre class="pre_request_headers">DELETE http://{hostname}/api/boards/items/artifacts/cad5266e-ef52-4961-b2f4-00ebf80b615a.acmepaymentscorp/img_dollars.jpg HTTP/1.0
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -469,11 +469,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Expires: Thu, 21 May 2015 18:03:57 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ContextID&quot; : &quot;cad5266e-ef52-4961-b2f4-00ebf80b615a.acmepaymentscorp&quot;,
   &quot;FileName&quot; : &quot;img_dollars.jpg&quot;,
   &quot;BaseUri&quot; : &quot;http://{hostname}&quot;,

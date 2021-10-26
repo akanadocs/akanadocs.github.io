@@ -392,9 +392,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the first two items on an app's board.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apps/app16964.acmepaymentscorp/board?start=0&amp;count=2&amp;RetrievingUserID=522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/app16964.acmepaymentscorp/board?start=0&amp;count=2&amp;RetrievingUserID=522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/apps/app16964.acmepaymentscorp/board?start=0&amp;count=2&amp;RetrievingUserID=522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/apps/app16964.acmepaymentscorp/board?start=0&amp;count=2&amp;RetrievingUserID=522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp HTTP/1.1
 Host:{hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -591,11 +591,11 @@ Indicates whether comments should be included in the information returned. Defau
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the app board returned as an RSS channel in JSON format.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Fri, 31 May 2013 20:13:57 GMT
 Content-Type: application/json</pre>
 <p id="rss_appboard_json"><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;App Board&quot;,
     &quot;startIndex&quot; : 0,
@@ -808,10 +808,10 @@ Content-Type: application/json</pre>
 		<tr>
 			<td>category[&#160;]</td>
 			<td><p>An array of sets of two name/value pairs, each including Value and Domain, with a value for each. For example:</p>
-				<pre>&quot;value&quot; : &quot;GROUP_MEMBER_REQ&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;GROUP_MEMBER_REQ&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;</pre>
 				<p>The example above indicates that the Board item is a group member request.</p>
-				<pre>&quot;value&quot; : &quot;false&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;false&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:archivable&quot;</pre>
 				<p>The example above indicates that the Board item is not archivable.</p></td>
 		</tr>

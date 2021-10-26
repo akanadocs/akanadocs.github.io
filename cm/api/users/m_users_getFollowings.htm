@@ -389,16 +389,16 @@ Returns information about the resources the specified user is following.</p>
 <h2 id="samplerequest">Sample Request #1</h2>
 <p id="id_samplerequest">Requests a list of resources the specified user is following.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp/followings</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp/followings</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <h2 id="samplerequest_2">Sample Request #2</h2>
 <p>Requests a list of APIs the specified user is following, using the optional <strong>Type</strong> parameter.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp/followings[?Type=api]</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp/followings[?Type=api]</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -476,12 +476,11 @@ Returns information about the resources the specified user is following.</p>
 <h2 id="sampleresponse">Sample Response #1</h2>
 <p id="id_sampleresponse">The sample response below shows that the specified user is following one api and one app.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Wed, 15 May 2013 20:22:02 GMT</pre>
 <p id="rss_followings"><strong>Sample response body</strong></p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;Jonathan Swift&quot;,
     &quot;description&quot; : &quot;&quot;,
@@ -561,8 +560,7 @@ Date: Wed, 15 May 2013 20:22:02 GMT</pre>
 }</pre>
 <h2 id="sampleresponse_2">Sample Response #2</h2>
 <p id="id_sampleresponse_2">The sample response below shows only the APIs that the specified user is following, since the optional <strong>Type</strong> parameter was used in the request.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;Jonathan Swift&quot;,
     &quot;description&quot; : &quot;&quot;,
@@ -649,7 +647,7 @@ Date: Wed, 15 May 2013 20:22:02 GMT</pre>
 		<tr>
 			<td>category[&#160;]</td>
 			<td><p>A set of two name/value pairs, including Value and Domain, indicating the type of resource the user is following. For example:</p>
-				<pre>&quot;value&quot; : &quot;api&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;api&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;</pre>
 				<p>The example above indicates that the user is following an API.</p></td>
 		</tr>

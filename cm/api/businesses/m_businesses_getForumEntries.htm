@@ -389,24 +389,24 @@
 <p id="id_samplerequest">The examples below show requests for forum entries for the specified business.</p>
 <p><strong>Request URL #1</strong></p>
 <p>Query parameters limit the results to published discussions.</p>
-<pre>https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/forum?PublishedState=published&amp;ItemType=Discussion&amp;IncludeActions=true&amp;Comments=published</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/forum?PublishedState=published&amp;ItemType=Discussion&amp;IncludeActions=true&amp;Comments=published</pre>
 <p><strong>Request URL #2</strong></p>
 <p>No query parameters.</p>
-<pre>https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/forum</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/forum</pre>
 <p><strong>Request URL #3</strong></p>
 <p>Returns unpublished board entries relating to a specific API.</p>
-<pre>https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/forum?SubjectID=d89826df-21c2-4063-8f86-ec84b16769ee.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/forum?SubjectID=d89826df-21c2-4063-8f86-ec84b16769ee.acmepaymentscorp</pre>
 <p><strong>Request URL #4</strong></p>
 <p>Returns all published discussions.</p>
-<pre>https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/forum?PublishedState=published&amp;ItemType=Discussion</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/forum?PublishedState=published&amp;ItemType=Discussion</pre>
 <p><strong>Request URL #5</strong></p>
 <p>Returns unpublished board entries for the board for a group.</p>
-<pre>https://{hostname}/api/api/businesses/tenantbusiness.acmepaymentscorp/forum?SubjectID=08bf43f4-1b78-48a4-8729-d549faaad796.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/api/businesses/tenantbusiness.acmepaymentscorp/forum?SubjectID=08bf43f4-1b78-48a4-8729-d549faaad796.acmepaymentscorp</pre>
 <p><strong>Request URL #6</strong></p>
 <p>Returns unpublished board entries authored by a specific user.</p>
-<pre>https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/forum?AuthorId=df492b7e-ce2a-478c-86d2-b0bf09c27e52.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/forum?AuthorId=df492b7e-ce2a-478c-86d2-b0bf09c27e52.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/vnd.soa.v72+json
+<pre class="pre_request_headers">Accept: application/vnd.soa.v72+json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -541,11 +541,11 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. In this example, the requestor was not logged in, so only public resources are included in the results.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Expires: Mon, 02 Feb 2015 16:36:51 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;BoardItemDetails&quot; : [ {
     &quot;Type&quot; : &quot;Ticket&quot;,
     &quot;Ticket&quot; : {

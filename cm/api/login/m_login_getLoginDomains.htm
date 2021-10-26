@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for login domain information.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/login/domains?IncludeDisabled=true&amp;all=true&amp;cache=false</pre>
+<pre class="pre_request_url">https://{hostname}/api/login/domains?IncludeDisabled=true&amp;all=true&amp;cache=false</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET /api/login/domains?IncludeDisabled=true&amp;all=true&amp;cache=false HTTP/1.1
+<pre class="pre_request_headers">GET /api/login/domains?IncludeDisabled=true&amp;all=true&amp;cache=false HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -480,11 +480,11 @@ Indicates whether the information should be cached. If you don't want the domain
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/vnd.soa.v72+json
 Date: Wed, 17 Dec 2014 15:00:11 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>[ {
+<pre class="prettyprint, pre_response_body_json">[ {
   &quot;LoginDomainID&quot; : &quot;siteusers.acmepaymentscorp&quot;,
   &quot;FedmemberId&quot; : &quot;acmepaymentscorp&quot;,
   &quot;Title&quot; : &quot;acmepaymentscorp-users&quot;,

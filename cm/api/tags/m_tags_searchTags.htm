@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">In the example below, tags beginning with the user input &quot;and&quot; will be returned.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/tags?q=and</pre>
+<pre class="pre_request_url">https://{hostname}/api/tags?q=and</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET /api/tags?q=android HTTP/1.1
+<pre class="pre_request_headers">GET /api/tags?q=android HTTP/1.1
 Accept: */*</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -471,11 +471,11 @@ Accept: */*</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that there is one tag in the database that matches the user input.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Thu, 20 Sep 2012 18:47:09 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Tag&quot;: [
     &quot;Android&quot;
   ]

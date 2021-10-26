@@ -395,13 +395,13 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below adds a signup agreement to the platform. The request content is sent in JSON format.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/legals?Accept=*/*&amp;Content-Type=application/json</pre>
+<pre class="pre_request_url">https://{hostname}/api/legals?Accept=*/*&amp;Content-Type=application/json</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_request_headers">Content-Type: application/json
 Accept: text/plain
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "Name" : "RCOALESS Community Manager developer portal End-User License Agreement",
   "Description" : "End-User license agreement for rcoaless Community Manager developer portal",
   "AgreementType" : "com.soa.atmosphere.legals.signup",
@@ -491,11 +491,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 201 Created
+<pre class="pre_response_headers">Status Code: 201 Created
 Date: Thu, 03 Jan 2019 00:58:53 GMT
 Location: {hostname}/api/legals/aea331fc-6081-4b14-bf05-ae69d68cd475.rcoaless</pre>
 <p><strong>Sample response body</strong></p>
-<pre>aea331fc-6081-4b14-bf05-ae69d68cd475.rcoaless</pre>
+<pre class="pre_response_body_plain">aea331fc-6081-4b14-bf05-ae69d68cd475.rcoaless</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

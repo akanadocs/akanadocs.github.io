@@ -390,12 +390,12 @@
 <p id="id_samplerequest">The example below shows a request for the workflow definitions for the platform.</p>
 <p><strong>Request URL #1</strong></p>
 <p>Returns all workflows.</p>
-<pre>https://{hostname}/api/workflow/definitions</pre>
+<pre class="pre_request_url">https://{hostname}/api/workflow/definitions</pre>
 <p><strong>Request URL #2</strong></p>
 <p>Returns all workflows for tickets.</p>
-<pre>https://{hostname}/api/workflow/definitions?ObjectType=ticket</pre>
+<pre class="pre_request_url">https://{hostname}/api/workflow/definitions?ObjectType=ticket</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre class="pre_request_headers">Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -479,11 +479,11 @@
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Expires: Mon, 09 Feb 2015 12:32:02 GMT</pre>
 <p><a id="rss_workflowdefinitions_json"></a><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;Workflow Definitions&quot;,
     &quot;description&quot; : &quot;tenantbusiness.acmepaymentscorp&quot;,
@@ -667,7 +667,7 @@ Expires: Mon, 09 Feb 2015 12:32:02 GMT</pre>
 		<tr>
 			<td>category[&#160;]</td>
 			<td><p>A name/value pair describing the object type. For example:</p>
-				<pre>&quot;value&quot; : &quot;app-version&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;app-version&quot;,
 &quot;domain&quot; : &quot;soa.com:workflow.definition:object.type&quot;</pre>
 				<p>The example above indicates that the workflow is for app versions.</p>
  </td>

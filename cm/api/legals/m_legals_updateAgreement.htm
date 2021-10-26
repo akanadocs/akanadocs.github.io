@@ -390,12 +390,12 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The examples below shows requests to update the platform legal agreement.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/legals/ab54495f-3553-47bf-8a35-fa1fe98d2993.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/legals/ab54495f-3553-47bf-8a35-fa1fe98d2993.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_request_headers">Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body #1: Deactivates the legal agreement, so that users no longer have to accept it.</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Name&quot; : &quot;Platform User Agreement #2, Uploaded by API&quot;,
   &quot;Description&quot; : &quot;Platform User Agreement #2&quot;,
   &quot;AgreementType&quot; : &quot;com.soa.atmosphere.legals.signup&quot;,
@@ -408,7 +408,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 
 <p><strong>Sample request body #2: Reactivates the legal agreement</strong></p>
 <p>The difference is the DocumentState parameter value.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "Name" : "Platform User Agreement #2, Uploaded by API",
   "Description" : "Platform User Agreement #2",
   "AgreementType" : "com.soa.atmosphere.legals.signup",
@@ -504,7 +504,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Date: Wed, 12 Dec 2018 22:48:47 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <p>None.</p>

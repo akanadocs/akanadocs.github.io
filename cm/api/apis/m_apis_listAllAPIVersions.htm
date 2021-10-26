@@ -392,12 +392,12 @@ Returns information about API versions for all APIs, in the form of a JSON or XM
 <h2 id="samplerequest">Sample Request</h2>
 <p><strong>Request URL #1</strong></p>
 <p>Returns all API versions.</p>
-<pre>https://{hostname}/api/apis/versions</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions</pre>
 <p><strong>Request URL #2</strong></p>
 <p>Returns deleted API versions.</p>
-<pre>https://{hostname}/api/apis/versions?State=com.soa.api.state.deleted</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions?State=com.soa.api.state.deleted</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/vnd.soa.v72+json</pre>
+<pre class="pre_request_headers">Accept: application/vnd.soa.v72+json</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -487,11 +487,11 @@ Returns information about API versions for all APIs, in the form of a JSON or XM
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation (sample request URL #2, deleted APIs). There is only one deleted API version.</p>
 <p><strong>Sample response headers: application/vnd.soa.v72+json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v72+json
 Expires: Wed, 01 Apr 2015 15:35:29 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v72+json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIVersion&quot; : [ {
     &quot;APIVersionID&quot; : &quot;aa556d1d-a35c-44b8-8aa9-85c68ece27cb.acmepaymentscorp&quot;,
     &quot;APIID&quot; : &quot;931b94ae-f5f0-4c3e-844a-a375e28b82af.acmepaymentscorp&quot;,

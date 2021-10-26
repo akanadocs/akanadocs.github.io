@@ -401,11 +401,11 @@ Retrieves a summary of the ratings for a resource.</p>
 
 <p id="id_samplerequest">The example below shows a request for the ratings summary for the specified API to be returned in JSON.</p>
 <p><strong>Request URL</strong> #1</p>
-<pre>https://{hostname}/api/apis/versions/api18969.acmepaymentscorp/ratings/summary</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/api18969.acmepaymentscorp/ratings/summary</pre>
 <p><strong>Request URL</strong> #2</p>
-<pre>https://{hostname}/api/apis/versions/apiversion19184.acmepaymentscorp/ratings/summary</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/apiversion19184.acmepaymentscorp/ratings/summary</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -415,10 +415,9 @@ Retrieves a summary of the ratings for a resource.</p>
 <h3 id="samplerequest_2">Sample request: Apps service</h3>
 <p id="id_samplerequest_2">The example below shows a request for the ratings summary for the specified app. A JSON response is requested.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apps/versions/app16964.acmepaymentscorp/ratings/summary</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/versions/app16964.acmepaymentscorp/ratings/summary</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>
-Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -428,10 +427,9 @@ Accept: application/json
 <h3 id="samplerequest_3">Sample request: Groups service</h3>
 <p id="id_samplerequest_3">The example below shows a request for the ratings summary for the specified group. A JSON response is requested.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/groups/group24386.acmepaymentscorp/ratings/summary</pre>
+<pre class="pre_request_url">https://{hostname}/api/groups/group24386.acmepaymentscorp/ratings/summary</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>
-Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -514,11 +512,11 @@ Accept: application/json
 <h3 id="sampleresponse_1">Sample response: APIs service</h3>
 <p>The sample responses below shows that the specified API has three ratings.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Mon, 11 Mar 2013 15:56:57 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Five&quot; : 2,
   &quot;Four&quot; : 1,
   &quot;Three&quot; : 0,
@@ -532,11 +530,11 @@ Date: Mon, 11 Mar 2013 15:56:57 GMT</pre>
 <p>The sample responses below shows that the specified app has a total of five ratings in four categories.</p>
 
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Tue, 30 Apr 2013 18:37:42 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Five&quot; : 1,
   &quot;Four&quot; : 1,
   &quot;Three&quot; : 1,
@@ -550,11 +548,11 @@ Date: Tue, 30 Apr 2013 18:37:42 GMT</pre>
 <p>The sample responses below shows that the specified group has a total of five ratings in three categories.</p>
 
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Wed, 19 Jun 2013 15:55:13 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Five&quot; : 2,
   &quot;Four&quot; : 2,
   &quot;Three&quot; : 1,

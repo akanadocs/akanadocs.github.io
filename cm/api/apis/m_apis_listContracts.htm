@@ -389,12 +389,12 @@
 <p id="id_samplerequest">The example below shows a request for the contracts for the specified API version.</p>
 <p><strong>Request URL #1</strong></p>
 <p>Returns results for all environments.</p>
-<pre>https://{hostname}/api/apis/versions/9c84bae7-e5fa-49aa-b90f-ae1b4de79861.acmepaymentscorp/contracts</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/9c84bae7-e5fa-49aa-b90f-ae1b4de79861.acmepaymentscorp/contracts</pre>
 <p><strong>Request URL #2</strong></p>
 <p>With optional parameter, returns only contracts with a state of <a href="../aaref/Ref_Values.htm#values_apicontractstate">Activated</a>.</p>
-<pre>https://{hostname}/api/apis/versions/9c84bae7-e5fa-49aa-b90f-ae1b4de79861.acmepaymentscorp/contracts?ActivatedOnly=true</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/9c84bae7-e5fa-49aa-b90f-ae1b4de79861.acmepaymentscorp/contracts?ActivatedOnly=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/vnd.soa.v72+json
+<pre class="pre_request_headers">Accept: application/vnd.soa.v72+json
 Cookie: {cookie}</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -484,11 +484,11 @@ Cookie: {cookie}</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation (request URL #1). Since a request parameter was included, only contracts with a state of <a href="../aaref/Ref_Values.htm#values_apicontractstate">Activated</a> are returned. There is one contract in the results.</p>
 <p><strong>Sample response headers: application/vnd.soa.v72+json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v72+json
 Date: Tue, Tue, 31 Mar 2015 13:14:40 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v72+json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Contract&quot; : [ {
     &quot;ContractID&quot; : &quot;f75b127c-330a-4918-8eb5-8843a5afbd5f.acmepaymentscorp&quot;,
     &quot;APIVersionID&quot; : &quot;9c84bae7-e5fa-49aa-b90f-ae1b4de79861.acmepaymentscorp&quot;,

@@ -391,7 +391,7 @@
 <p><strong>Request URL</strong></p>
 <pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/login/renewToken</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Content-Type: application/x-www-form-urlencoded
+<pre class="pre_request_headers">Content-Type: application/x-www-form-urlencoded
 Accept: application/json
 Cookie: OAuthToken_{OAuthProviderName}={Cookie value (usually starts with TokenID)}</pre>
 <p><strong>Sample request body</strong></p>
@@ -444,12 +444,12 @@ Cookie: OAuthToken_{OAuthProviderName}={Cookie value (usually starts with TokenI
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_response_headers">Content-Type: application/json
 Set-Cookie: OAuthToken_acmepaymentscorp: TokenID%3D57d30fc7-240e-11e5-a1b9-8945fbb2b0eb%2Cclaimed_id%3DLDAP_acmepaymentscorp%5Ceng100
 %2CissueTime%3D1436207972636%2CexpirationTime%3D1436208572626%2Csig%3DlOsIenU6JM-dYquJKhKMdKarQRtef4ALY5Abuls7KV5jaPgWapM1w0Y
 thq0I1hJvMJ7xlWj8haU3OvM4b6I3LgGWGvw5_Uws935JKLW57xiti_UC2IvxFDrAIg4xx2k-x-icqUDsWfVGNfjWlun43_uRM667RjGOkh_ZmU2xq0Q</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;DomainName&quot; : ldap&quot;,
   &quot;UserName&quot; : eng100&quot;
 }</pre>

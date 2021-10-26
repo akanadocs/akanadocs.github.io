@@ -390,12 +390,12 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p><strong>Request URL #1</strong></p>
 <p id="id_samplerequest">Returns all APIs for the specified user.</p>
-<pre>https://{hostname}/api/users/31af17ef-38e5-4dc2-9b50-92dad8aa7fa7.acmepaymentscorp/apis</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/31af17ef-38e5-4dc2-9b50-92dad8aa7fa7.acmepaymentscorp/apis</pre>
 <p><strong>Request URL #2</strong></p>
 <p>Returns the first two APIs for the specified user.</p>
-<pre>https://{hostname}/api/users/31af17ef-38e5-4dc2-9b50-92dad8aa7fa7.acmepaymentscorp/apis?count=2</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/31af17ef-38e5-4dc2-9b50-92dad8aa7fa7.acmepaymentscorp/apis?count=2</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -476,12 +476,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>
-HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/vnd.akana.v2020+json
 Date: Wed, 29 Jul 2020 14:21:05 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "API": [
     {
       "APIID": "37c792db-e763-4abf-a6c1-2dd2ecc47b7f.acmepaymentscorp",

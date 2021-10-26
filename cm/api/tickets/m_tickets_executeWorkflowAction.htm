@@ -388,15 +388,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request message resolving a ticket.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/tickets/ticket25687.acmepaymentscorp/actions</pre>
+<pre class="pre_request_url">https://{hostname}/api/tickets/ticket25687.acmepaymentscorp/actions</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/tickets/ticket25687.acmepaymentscorp/actions HTTP/1.1
+<pre class="pre_request_headers">POST /api/tickets/ticket25687.acmepaymentscorp/actions HTTP/1.1
 Host: {hostname}
 Accept: */*
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ActionName&quot;:&quot;ticket.action.resolve&quot;,
   &quot;Comments&quot;:&quot;Bug is fixed. Resolving this ticket.&quot;
 }</pre>
@@ -487,11 +487,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/plain
 Date: Tue, 16 Jul 2013 20:42:52 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>RESOLVED</pre>
+<pre class="pre_response_body_plain">RESOLVED</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <!-- InstanceEndEditable -->

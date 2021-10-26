@@ -390,10 +390,10 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the metric information for the specified app version.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>http://{hostname}/api/apps/versions/7FZJvSXlIP12IHKF3DufbL1W.acmepaymentscorp/metrics?
+<pre class="pre_request_url">http://{hostname}/api/apps/versions/7FZJvSXlIP12IHKF3DufbL1W.acmepaymentscorp/metrics?
 Duration=1m&amp;Duration=1d&amp;Environment=Sandbox&amp;ShowSummary=true&amp;ShowIntervalData=false</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET /api/apps/versions/7FZJvSXlIP12IHKF3DufbL1W.acmepaymentscorp/metrics/export?TimeInterval=1h
+<pre class="pre_request_headers">GET /api/apps/versions/7FZJvSXlIP12IHKF3DufbL1W.acmepaymentscorp/metrics/export?TimeInterval=1h
 &amp;Duration=All&amp;ReportType=app.all.apis&amp;Environment=All HTTP/1.1
 Host: &lt;localhost&gt;
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -559,7 +559,7 @@ The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 19 Mar 2014 14:56:18 GMT
 Content-Type: text/csv
 Content-Disposition: attachment;filename=&quot;export.csv&quot;</pre>

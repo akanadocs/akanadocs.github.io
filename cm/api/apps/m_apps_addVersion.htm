@@ -394,17 +394,16 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below sends information about the initial version of a crossword puzzle app.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apps/app10037.acmepaymentscorp/versions</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/app10037.acmepaymentscorp/versions</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&#160;/api/apps/app10037.acmepaymentscorp/versions HTTP/1.1
+<pre class="pre_request_headers">POST &#160;/api/apps/app10037.acmepaymentscorp/versions HTTP/1.1
 Host:{hostname}
 Accept: */*
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body #1</strong></p>
 <p>Includes optional tags and description.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;Name&quot;:&quot;1.0&quot;,
   &quot;Description&quot;:&quot;1.0&quot;,
   &quot;Tag&quot;:[
@@ -420,8 +419,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 }</pre>
 <p><strong>Sample request body #2</strong></p>
 <p>Includes the minimum content needed to add a new app version; the <strong>Name</strong> field, which corresponds to the <strong>Version ID</strong> field in the Community Manager developer portal user interface.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;Name&quot;:&quot;Version 2&quot;
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -507,12 +505,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the AppVersionID of the app version in plain text.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 19 Sep 2012 16:03:19 GMT
 Content-Type: text/plain
 Atmo-Renew-Token: renew</pre>
 <p><strong>Sample response body</strong></p>
-<pre>72zNE5InKlf2z00y8fWSp3AU.acmepaymentscorp</pre>
+<pre class="pre_response_body_plain">72zNE5InKlf2z00y8fWSp3AU.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

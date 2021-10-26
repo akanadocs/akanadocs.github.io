@@ -397,15 +397,15 @@
 <p id="id_samplerequest">The example below shows a request to export the information for the specified API version.</p>
 <p><strong>Request URL #1</strong></p>
 <p>With no options selected</p>
-<pre>https://{hostname}/api/apis/versions/07990ae3-f77a-422a-9286-6a38d6aaa91b.acmepaymentscorp/package?
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/07990ae3-f77a-422a-9286-6a38d6aaa91b.acmepaymentscorp/package?
 exportVersion=current&amp;wrapInHTML=true&amp;document.domain={hostname}</pre>
 <p><strong>Request URL #2</strong></p>
 <p>With all options selected.</p>
-<pre>https://{hostname}/api/apis/versions/07990ae3-f77a-422a-9286-6a38d6aaa91b.acmepaymentscorp/package?exportVersion=current&amp;migration.operationalpolicy.export=true
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/07990ae3-f77a-422a-9286-6a38d6aaa91b.acmepaymentscorp/package?exportVersion=current&amp;migration.operationalpolicy.export=true
 &amp;migration.qospolicy.export=true&amp;migration.pki.export=true&amp;migration.export.include.api.admins=true&amp;migration.export.include.api.connections=true
 &amp;migration.export.include.scopes=true&amp;migration.export.include.resources=true&amp;wrapInHTML=true&amp;document.domain={hostname}&amp;download=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET /api/apis/versions/07990ae3-f77a-422a-9286-6a38d6aaa91b.acmepaymentscorp/package?exportVersion=current
+<pre class="pre_request_headers">GET /api/apis/versions/07990ae3-f77a-422a-9286-6a38d6aaa91b.acmepaymentscorp/package?exportVersion=current
 &amp;wrapInHTML=true&amp;document.domain=acmepaymentscorp HTTP/1.1
 Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -583,7 +583,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. The export file is downloaded as specified in the request parameters.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/octet-stream
 Expires: Mon, 09 Jun 2014 15:58:45 GMT
 Content-Disposition: attachment;filename=&quot;apiversion-export.zip&quot;</pre>

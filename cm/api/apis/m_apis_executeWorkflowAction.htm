@@ -390,13 +390,13 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for approval for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/models/versions/b063e194-3289-4438-90ea-a27b44e38965.acmepaymentscorp/action</pre>
+<pre class="pre_request_url">https://{hostname}/api/models/versions/b063e194-3289-4438-90ea-a27b44e38965.acmepaymentscorp/action</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: text/plain
+<pre class="pre_request_headers">Accept: text/plain
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "Comments":"Requesting approval.",
   "ActionName":"apiversion.action.submit.approval"
 }</pre>
@@ -482,11 +482,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. The new workflow state for the API version is <strong>Pending Approval</strong>.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/plain
 Date: Fri, 06 Mar 2020 21:50:40 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>Pending Approval</pre>
+<pre class="pre_response_body_plain">Pending Approval</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

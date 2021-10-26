@@ -396,17 +396,17 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to update the information for the specified API version implementation. In this example there is only one endpoint.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/f10624ed-9a23-4cb9-90d4-595d4a7c64f9.acmepaymentscorp/implementations/
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/f10624ed-9a23-4cb9-90d4-595d4a7c64f9.acmepaymentscorp/implementations/
 Live/services/uddi:d148f207-3bfe-11e7-8c53-f1aac8715c11/endpoints</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/apis/versions/f10624ed-9a23-4cb9-90d4-595d4a7c64f9.acmepaymentscorp/
+<pre class="pre_request_headers">PUT /api/apis/versions/f10624ed-9a23-4cb9-90d4-595d4a7c64f9.acmepaymentscorp/
 implementations/Live/services/uddi:d148f207-3bfe-11e7-8c53-f1aac8715c11/endpoints HTTP/1.1
 Host: api.acmepaymentscorp.com
 Accept: application/vnd.soa.v81+json
 Content-Type: application/vnd.soa.v81+json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body: application/vnd.soa.v81+json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Endpoint&quot; : [ {
     &quot;Uri&quot; : &quot;http://petstore.swagger.io/v2&quot;,
     &quot;ConnectionProperties&quot; : [ {
@@ -530,11 +530,11 @@ The unique ID for a specific service; either a proxied API service or a physical
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Thu, 18 May 2017 19:53:22 GMT
 Content-Type: application/vnd.soa.v81+json</pre>
 <p><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Endpoint&quot; : [ {
     &quot;Uri&quot; : &quot;http://petstore.swagger.io/v2&quot;,
     &quot;ConnectionProperties&quot; : [ {

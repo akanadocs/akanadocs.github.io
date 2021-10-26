@@ -391,9 +391,9 @@ Ends the current session for the user, either on user logout or on session timeo
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for ending the session, initiated by the user; for example, the user clicks the <strong>Log Out</strong> button in the Community Manager developer portal.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/login/endsession</pre>
+<pre class="pre_request_url">https://{hostname}/api/login/endsession</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET http://{hostname}/api/login/endsession  HTTP/1.0
+<pre class="pre_request_headers">GET http://{hostname}/api/login/endsession  HTTP/1.0
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -476,18 +476,18 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample responses below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Expires: Wed, 22 Apr 2015 11:56:38 GMT
 Set-Cookie: Csrf-Token_rcoaless=none;path=/;expires=Wed, 22 Apr 2015 11:56:38 GMT
 AtmoAuthToken_acmepaymentscorp=none;path=/;expires=Wed, 22-Apr-2015 11:56:38 GMT;HttpOnly</pre>
 <p><strong>Sample response body #1</strong></p>
 <p>Returned for local logout. In this example, the user logged in locally, so there is no content in the response.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
 }</pre>
 <p><strong>Sample response body #2</strong></p>
 <p>Returned on session timeout in a federated scenario.</p>
-<pre>{ 
+<pre class="prettyprint, pre_json">{ 
   &quot;RPLogoutInfo&quot;:[ 
     { 
       &quot;location&quot;:&quot;http://fedmember1.acmepaymentscorp.com/api/login/logout?atmoCallbackFn=?..&quot;,
@@ -501,7 +501,7 @@ AtmoAuthToken_acmepaymentscorp=none;path=/;expires=Wed, 22-Apr-2015 11:56:38 GMT
 }</pre>
 <p><strong>Sample response body #3</strong></p>
 <p>Returned on user logout in a federated scenario with IdPs, <strong>returninstructions</strong> = true.</p>
-<pre>{ 
+<pre class="prettyprint, pre_json">{ 
   &quot;RPLogoutInfo&quot;:[ 
     { 
       &quot;location&quot;:&quot;http://acmepaymentscorp.com/api/login/logout?atmoCallbackFn=?..&quot;,

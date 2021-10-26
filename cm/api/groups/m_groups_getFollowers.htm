@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the followers of the specified group.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/groups/group19212.acmepaymentscorp/followers</pre>
+<pre class="pre_request_url">https://{hostname}/api/groups/group19212.acmepaymentscorp/followers</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -464,9 +464,9 @@
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. The group has 3 followers.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre class="pre_request_headers">Accept: application/json</pre>
 <p><a id="rss_groupfollowers_json"></a><strong>Sample response body (JSON only)</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;ACME Payments API UG&quot;,
     &quot;description&quot; : &quot;&quot;,
@@ -604,7 +604,7 @@
 		<tr>
 			<td>Action</td>
 			<td><p>A set of two name/value pairs expressing the action available to the follower. Because following a resource is a yes/no activity, the possible action of a follower will always be to stop following. For example:</p>
-				<pre>&quot;value&quot; : &quot;action.follow.stop&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;action.follow.stop&quot;,
 &quot;label&quot; : &quot;Stop Following&quot;</pre></td>
 		</tr>
 		<tr>

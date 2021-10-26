@@ -390,9 +390,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the current user's visibility of the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/2f12dfe6-2777-43a6-80e5-2348aff02ac8.acmepaymentscorp/scope</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/2f12dfe6-2777-43a6-80e5-2348aff02ac8.acmepaymentscorp/scope</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>None.</p>
@@ -470,9 +470,9 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the licenses, operations, and scopes that the user has permission to view, as defined by group membership and the scopes visible to groups the user is a member of. However, note that the <strong>RestrictedScope</strong> parameter and <strong>AllAPIVisible</strong> show that the user has complete visibility of the API.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Accept: application/json</pre>
+<pre class="pre_request_headers">Accept: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Visible&quot; : true,
   &quot;RestrictedScope&quot; : false,
   &quot;License&quot; : [ {

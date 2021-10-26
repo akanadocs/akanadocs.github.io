@@ -388,10 +388,10 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to export the license information to a download file.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/licenses/ee987a07-304b-4f1e-8a88-8dc139f6d300.acmepaymentscorp/package?migration.qospolicy.export=true
+<pre class="pre_request_url">https://{hostname}/api/licenses/ee987a07-304b-4f1e-8a88-8dc139f6d300.acmepaymentscorp/package?migration.qospolicy.export=true
 &amp;migration.export.include.scopes=true&amp;download=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET http://{hostname}/api/licenses/ee987a07-304b-4f1e-8a88-8dc139f6d300.acmepaymentscorp/package
+<pre class="pre_request_headers">GET http://{hostname}/api/licenses/ee987a07-304b-4f1e-8a88-8dc139f6d300.acmepaymentscorp/package
 ?migration.qospolicy.export=true&amp;migration.export.include.scopes=true&amp;download=true HTTP/1.0
 Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
@@ -467,7 +467,7 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Tue, 16 Jun 2015 21:38:07 GMT
 Content-Type: application/octet-stream
 Content-Disposition: attachment;filename=&quot;license-export.zip&quot;</pre>

@@ -413,14 +413,14 @@ Initiates the signup process by sending the user's signup information to the dat
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The examples below shows the user's signup information sent in the request body.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/signupUser/qEntsGgwk452385-UBl9q5MLRMuDoYE6p7KPAANZrOtL3o_JLXQ_Nw</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/signupUser/qEntsGgwk452385-UBl9q5MLRMuDoYE6p7KPAANZrOtL3o_JLXQ_Nw</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&#160;/api/users/signupUser/qEntsGgwk452385-UBl9q5MLRMuDoYE6p7KPAANZrOtL3o_JLXQ_Nw HTTP/1.1
+<pre class="pre_request_headers">POST &#160;/api/users/signupUser/qEntsGgwk452385-UBl9q5MLRMuDoYE6p7KPAANZrOtL3o_JLXQ_Nw HTTP/1.1
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body #1</strong></p>
 <p>In the example below, user identification challenges are not in use.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "FirstName":"Jane",
   "LastName":"Saoirse",
   "Email":"jane.saoirse@acmepaymentscorp.com",
@@ -428,8 +428,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 }</pre>
 <p><strong>Sample request body #2</strong></p>
 <p>In the example below, user identification challenges are in use, so the user's answers to these questions must be sent in the request.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   "FirstName":"Jane",
   "LastName":"Mead",
   "Email":"jane.mead@example.com",
@@ -456,7 +455,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 }</pre>
 <p id="samplerequest_03"><strong>Sample request body #3</strong></p>
 <p>In the example below, user identification challenges are in use and also phone numbers are enabled as part of the user profile.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;FirstName&quot;:&quot;Margaret&quot;,
   &quot;LastName&quot;:&quot;Martinson&quot;,
   &quot;Email&quot;:&quot;mmartinson@example.com&quot;,
@@ -565,7 +564,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 <p id="id_sampleresponse">The sample response below shows the user information returned in the form of a JSON object.</p>
 
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Fri, 25 Sep 2015 14:20:42 GMT
 Content-Type: application/json
 Set-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3Dbc6f82c8-cfb9-11e2-9437-cdd24b34e538%2Cclaimed_id%3Durn%3acmepaymentscorp%3Auser%3Aacmepaymentscorp%3Auser
@@ -576,8 +575,7 @@ JCuZAmPNMAE8NagE</pre>
 
 <p><strong>Sample response body</strong></p>
 <p>In the example below, a self-sign user initiated platform signup and provider the user information. The user's state is <strong>pending_validation</strong> until the user confirms the signup by responding to the email that was sent as part of the signup process.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;state&quot; : &quot;pending_validation&quot;,
   &quot;userID&quot; : &quot;6a686072-b9fa-434f-8b22-4b2a47b07d59.acmepaymentscorp&quot;,
   &quot;firstName&quot; : &quot;Margaret&quot;,

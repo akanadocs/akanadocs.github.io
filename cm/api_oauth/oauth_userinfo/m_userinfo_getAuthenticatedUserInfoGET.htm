@@ -390,7 +390,7 @@
 <p><strong>Request URL</strong></p>
 <pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/userinfo</pre>
 <p>The example below shows the access token sent in the Authorization header (for either GET or POST).</p>
-<pre>Host: docexample.akana.rcoaless.com
+<pre class="pre_request_headers">Host: docexample.akana.rcoaless.com
 Authorization: Bearer {bearer_token_value}
 Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -446,10 +446,10 @@ Accept: application/json</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p>The sample response below shows successful completion of this operation. The userinfo is returned.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_response_headers">Content-Type: application/json
 Date: Fri, 18 Sep 2020 16:00:00 GMT</pre>
 <strong>Sample response body</strong>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "sub": "jmead",
   "mail": "jmead@akana.rcoaless.com",
   "$EMAIL": "jmead@akana.rcoaless.com",

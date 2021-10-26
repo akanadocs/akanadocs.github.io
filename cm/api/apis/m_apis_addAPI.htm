@@ -392,16 +392,15 @@
 <h2 id="samplerequest">Sample Request #1: API with New Service</h2>
 <p id="id_samplerequest">The example below adds an API that references the Swagger petstore API for testing purposes.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>
-Host: {hostname}
+<pre class="pre_request_headers">Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
 Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Name&quot;:&quot;aaa_Swagger_Production&quot;,
   &quot;Description&quot;:&quot;Swagger API on the Community Manager developer portal&quot;,
   &quot;Visibility&quot;:&quot;Public&quot;,
@@ -532,17 +531,16 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="samplerequest_2">Sample Request #2: API with Existing Service</h2>
 <p id="id_samplerequest_2">The example below adds an API by referencing an existing API already set up in Policy Manager.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>
-POST /api/apis HTTP/1.1
+<pre class="pre_request_headers">POST /api/apis HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
 AtmoAuthToken_acmepaymentscorp={TokenID_Content}
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIVersion&quot;:{
     &quot;Type&quot;:&quot;shttp&quot;,
     &quot;Visibility&quot;:&quot;com.soa.visibility.registered.users&quot;,
@@ -648,13 +646,13 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <p id="id_sampleresponse">The example below shows the response for the request shown in <a href="#samplerequest">Sample Request #1: API with New Service</a>.</p>
 
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 07 Oct 2015 15:30:26 GMT
 Content-Type: application/json
 Atmo-Renew-Token: renew</pre>
 
 <p><strong>Sample response body: API with New Service: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIID&quot;:&quot;44d187c6-7aa0-492d-bb41-fa5b9c16b450.acmepaymentscorp&quot;,
   &quot;Name&quot;:&quot;aaa_Swagger_Production&quot;,
   &quot;Description&quot;:&quot;Swagger Testing API&quot;,
@@ -767,14 +765,14 @@ Atmo-Renew-Token: renew</pre>
 <h2 id="sampleresponse_2">Sample Response #2: API with Existing Service</h2>
 <p id="id_sampleresponse_2">The example below shows the response for the request shown in <a href="#samplerequest_2">Sample Request #2: API with Existing Service</a>.</p>
 <p><strong>Sample response headers</strong> (ellipses indicate abbreviation for display purposes)</p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Thu, 28 Jan 2016 16:30:14 GMT
 Content-Type: application/json
 Atmo-Renew-Token: renew
 Set-Cookie: Csrf-Token_rcoaless=TokenID%3D68b24a75-c5dc- ...
 AtmoAuthToken_rcoaless=TokenID%3D68b24a75-c5dc-11e5-b708-...</pre>
 <p><strong>Sample response body: API with Existing Service: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIID&quot; : &quot;e5cbd91a-f23d-49ea-b600-a99b3dfb47b7.acmepaymentscorp&quot;,
   &quot;Name&quot; : &quot;PM_SwaggerDelete_API&quot;,
   &quot;Description&quot; : &quot;PM_SwaggerDelete_API&quot;,

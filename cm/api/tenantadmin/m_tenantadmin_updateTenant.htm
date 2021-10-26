@@ -389,14 +389,14 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to modify the themes for the specified tenant.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/tenants/acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/tenants/acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/tenants/acmepaymentscorp HTTP/1.1
+<pre class="pre_request_headers">PUT /api/tenants/acmepaymentscorp HTTP/1.1
 Host: {hostname}
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;TenantName&quot;:&quot;acmepaymentscorp&quot;,
   &quot;ContactEmailAddress&quot;:&quot;administrator@acmepaymentscorp.com&quot;,
   &quot;FromEmailAddress&quot;:&quot;&quot;,
@@ -537,11 +537,11 @@ Unique ID for a specific tenant. Same as <strong>TenantID</strong>.</td>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Fri, 28 Apr 2017 15:05:53 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;FedMemberID&quot; : &quot;acmepaymentscorp&quot;,
   &quot;TenantName&quot; : &quot;acmepaymentscorp&quot;,
   &quot;Description&quot; : &quot;acmepaymentscorp&quot;,

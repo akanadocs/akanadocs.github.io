@@ -391,9 +391,9 @@ Returns information about API contracts for the specified app version, as an RSS
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below is a request for contract info for the specified app version.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apps/versions/y1Kh42Mjlt2BWTij4GLqnY4pJK3JPepT6j2vrkzU.rcoaless/contracts</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/versions/y1Kh42Mjlt2BWTij4GLqnY4pJK3JPepT6j2vrkzU.rcoaless/contracts</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/apps/versions/y1Kh42Mjlt2BWTij4GLqnY4pJK3JPepT6j2vrkzU.rcoaless/contracts HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/apps/versions/y1Kh42Mjlt2BWTij4GLqnY4pJK3JPepT6j2vrkzU.rcoaless/contracts HTTP/1.1
 Host:api.acmepaymentscorp.com
 Accept: application/json, text/javascript, */*; q=0.01
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -497,11 +497,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the contract versions for the specified app. In this example, there are two contract versions.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Thu, 08 Oct 2020 17:41:59 GMT
 Content-Type: application/json</pre>
 <p id="rss_applicationcontracts_json"><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel":{
     "title":"Application Contracts",
     "item":[
@@ -764,7 +764,7 @@ Content-Type: application/json</pre>
 		<tr>
 			<td>category</td>
 			<td><p>One or more categories. Each category is a set of two name/value pairs. The second item defines the Domain, and the first defines the actual value for the property. For example, the set of values below shows that the contract is in the Live implementation:</p>
-				<pre>{
+				<pre class="prettyprint, pre_json">{
   &quot;value&quot;: &quot;Production&quot;,
   &quot;domain&quot;: &quot;uddi:soa.com:environment&quot;
 }

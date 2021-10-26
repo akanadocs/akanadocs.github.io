@@ -389,9 +389,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the login status for the user logging in.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/login/status</pre>
+<pre class="pre_request_url">https://{hostname}/api/login/status</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET http://{hostname}/api/login/status HTTP/1.0
+<pre class="pre_request_headers">GET http://{hostname}/api/login/status HTTP/1.0
 Host: {hostname}
 Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -443,11 +443,11 @@ Accept: application/json</pre>
 <h2 id="sampleresponse">Sample Response #1: 2FA</h2>
 <p id="id_sampleresponse">In the example below, login is initiated. Custom workflow is in place and two-factor authenticaction is required, so the user is directed to this task.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Expires: Tue, 08 Sep 2015 15:45:55 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;pendingTasks&quot; : [ &quot;2fa.required&quot; ],
   &quot;pendingTaskData&quot; : {
     &quot;2fa.required&quot; : {
@@ -473,7 +473,7 @@ Expires: Tue, 08 Sep 2015 15:45:55 GMT</pre>
 <h2 id="sampleresponse_02">Sample Response #2: login tasks in process</h2>
 <p>In the example below, there is still at least one pending task the user must complete to be fully logged in.</p>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;pendingAgreements&quot; : [ &quot;signupagrmtv1.acmepaymentscorp&quot; ],
   &quot;pendingTasks&quot; : [ &quot;2fa.required&quot; ],
   &quot;pendingTaskData&quot; : {
@@ -500,11 +500,11 @@ Expires: Tue, 08 Sep 2015 15:45:55 GMT</pre>
 <h2 id="sampleresponse_03">Sample Response #3: login complete</h2>
 <p>In the example below, there are no pending tasks. The user logs in and login is complete.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Thu, 26 Jul 2018 13:21:56 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;userName&quot; : &quot;adminAcmePaymentsCorp&quot;,
   &quot;loginState&quot; : &quot;login.complete&quot;,
   &quot;avatarURL&quot; : &quot;http://acmepaymentscorp.com/api/users/6b5c2dc3-6cc6-4d87-8698-edb493bcada0.acmepaymentscorp/avatar&quot;,

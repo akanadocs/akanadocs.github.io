@@ -388,14 +388,14 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to update the information about a deployment zone.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/deploymentzones/4hrNPFUYSpq5jeju_Vk5PA.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/deploymentzones/4hrNPFUYSpq5jeju_Vk5PA.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/deploymentzones/4hrNPFUYSpq5jeju_Vk5PA.acmepaymentscorp HTTP/1.1
+<pre class="pre_request_headers">PUT /api/deploymentzones/4hrNPFUYSpq5jeju_Vk5PA.acmepaymentscorp HTTP/1.1
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body #1</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "DeploymentZoneID":"3ed6bf3e-5b8c-40e4-a352-0861dfb5f77a.acmepaymentscorp",
   "Name":"DZ1",
   "Description":"",
@@ -413,7 +413,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 }</pre>
 <p><strong>Sample request body #2</strong></p>
 <p>In the example below, <strong>AddressOverrideBehavior</strong>&#160;is set to <strong>com.akana.allow</strong>, so the <strong>HostName</strong>&#160;field is included, with the hostname that is allowed to override the API Gateway hostname.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "DeploymentZoneID":"3ed6bf3e-5b8c-40e4-a352-0861dfb5f77a.acmepaymentscorp",
   "Name":"Name Change",
   "Description":"Description Change",
@@ -514,11 +514,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Mon, 06 Aug 2018 17:53:29 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
     "DZoneEnvImplAssociations": {
         "DZoneEnvImplAssociation": [
             {

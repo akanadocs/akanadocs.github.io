@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below uses the optional BusinessID query parameter to request information about APIs associated with the specified business.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis?BusinessID=c8d4e833-3569-418c-b0e0-ad222be1feef.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis?BusinessID=c8d4e833-3569-418c-b0e0-ad222be1feef.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/vnd.soa.v83+json
+<pre class="pre_request_headers">Accept: application/vnd.soa.v83+json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -465,12 +465,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/vnd.soa.v83+json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v83+json
 Date: Fri, 02 Sep 2016 15:42:25 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v83+json</strong></p>
 <p>The example below is in response to a request that does not include the optional query parameter.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIInfo&quot; : [ {
     &quot;APIID&quot; : &quot;58596ace-0d7d-4c34-88b1-75530edb8dcb.acmepaymentscorp&quot;,
     &quot;Name&quot; : &quot;Crest&quot;,

@@ -389,14 +389,14 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to update the policies associated with a contract. Previously there were two policies; this example removes one, so there will be only one policy assigned to the contract.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/api/contracts/70db5aae-9c12-41ff-b809-dd5941db1730.rcoaless</pre>
+<pre class="pre_request_url">https://{hostname}/api/api/contracts/70db5aae-9c12-41ff-b809-dd5941db1730.rcoaless</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 Content-Type: application/json
 Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "ContractID": "70db5aae-9c12-41ff-b809-dd5941db1730.rcoaless",
   "APIVersionID": "9daf2b49-0b00-45c2-8ccf-db5ef3d478af.rcoaless",
   "RuntimeID": "wbN3rqWphd4z6LtgwI5oMRbrZoYrwQ4OvKrBn19o.rcoaless",
@@ -511,11 +511,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Note</strong>: the response does not show the policies attached to the contract. In this example, there were previously two policies, and the request removed one of them. To see an updated list of the policies associated with the contract, use the <span class="apidoc_code"><a href="m_contracts_getContract.htm">GET&#160;/api/c</a><a href="m_contracts_getContract.htm">ontracts/{ContractID}</a></span> operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Fri, 06 Sep 2019 21:23:58 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "ContractID": "70db5aae-9c12-41ff-b809-dd5941db1730.rcoaless",
   "APIVersionID": "9daf2b49-0b00-45c2-8ccf-db5ef3d478af.rcoaless",
   "RuntimeID": "wbN3rqWphd4z6LtgwI5oMRbrZoYrwQ4OvKrBn19o.rcoaless",

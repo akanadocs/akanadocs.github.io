@@ -398,14 +398,14 @@
 <p><strong>Request URL</strong></p>
 <pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/login/ssoLogin</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Content-Type: application/x-www-form-urlencoded
+<pre class="pre_request_headers">Content-Type: application/x-www-form-urlencoded
 Accept: application/json</pre>
 <p><strong>Sample request body #1</strong></p>
 <p>The request body is any SSO token, if available, that the identity provider domain can use. Also, optionally, the Domain parameter:</p>
-<pre>Domain=[domain-name]</pre>
+<pre class="pre_plain">Domain=[domain-name]</pre>
 <p><strong>Sample request body #2: LDAP user login (resource owner)</strong></p>
 <p>When the resource owner is logging in, the Domain parameter is not needed. The platform uses the resource owner authentication domain specified for the OAuth Provider.</p>
-<pre>identity_username=ldapuser01&amp;secret_password=MyPassword123</pre>
+<pre class="pre_plain">identity_username=ldapuser01&amp;secret_password=MyPassword123</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -488,7 +488,7 @@ Accept: application/json</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Set-Cookie: AtmoAuthToken_acmepaymentscorp: TokenID%3D480a3a7c-240e-11e5-a1b9-8945fbb2b0eb%2Cclaimed_id%3Durn%3Aacmepaymentscorp%3Auser
+<pre class="pre_response_headers">Set-Cookie: AtmoAuthToken_acmepaymentscorp: TokenID%3D480a3a7c-240e-11e5-a1b9-8945fbb2b0eb%2Cclaimed_id%3Durn%3Aacmepaymentscorp%3Auser
 %3Aacmepaymentscorp%3A8fb17266-354a-4032-96fb-2208ae7b4da4%2CissueTime%3D1436207946162%2CexpirationTime%3D1436209746144%2CAttributes
 Included%3Dfalse%2CUserFDN%3D8fb17266-354a-4032-96fb-2208ae7b4da4%252Eacmepaymentscorp%2CUserName%3Dadminacmepaymentscorp%2Csig
 %3Dd5YEgxmZQaCgfp64gs0EL1ttryepO3kWTwu4gO12OxLF6sjpcrojVKUf0X8heu9eoi8WlEd9ZIN7vPNgi6pu-XZ883L-OkD9fYnN4ktbRPwHQ2Phaa1H1bXaCpfgpeI8q6u

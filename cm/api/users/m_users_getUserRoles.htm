@@ -389,9 +389,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the specified user's roles in relation to the specified group.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/2d0bc425-49ec-4c04-b272-cc8f6f20e52b.acmepaymentscorp/roles?ResourceID=group24386.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/2d0bc425-49ec-4c04-b272-cc8f6f20e52b.acmepaymentscorp/roles?ResourceID=group24386.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/users/2d0bc425-49ec-4c04-b272-cc8f6f20e52b.acmepaymentscorp/roles?ResourceID=group24386.acmepaymentscorp HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/users/2d0bc425-49ec-4c04-b272-cc8f6f20e52b.acmepaymentscorp/roles?ResourceID=group24386.acmepaymentscorp HTTP/1.1
 Host: {hostname}
 Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -473,11 +473,11 @@ Accept: application/json</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that the user is a leader in the specified group.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Tue, 16 Jul 2013 16:34:22 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;RoleName&quot;:[
     &quot;Leader&quot;,
     &quot;Member&quot;

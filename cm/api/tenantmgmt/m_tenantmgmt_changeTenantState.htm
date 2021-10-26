@@ -388,17 +388,17 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The examples below show requests to change the tenant state.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/platform/subscriptions/acmepaymentscorp/state</pre>
+<pre class="pre_request_url">https://{hostname}/platform/subscriptions/acmepaymentscorp/state</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/vnd.soa.v80+json
+<pre class="pre_request_headers">Accept: application/vnd.soa.v80+json
 Content-Type: application/vnd.soa.v80+json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body: suspend</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;TargetState&quot;:&quot;com.akana.tenant.state.suspended&quot;
 }</pre>
 <p><strong>Sample request body: resume</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;TargetState&quot;:&quot;com.akana.tenant.state.active&quot;
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -485,14 +485,14 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample responses below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Content-Type: application/vnd.soa.v80+json</pre>
+<pre class="pre_response_headers">Content-Type: application/vnd.soa.v80+json</pre>
 <p><strong>Sample response body: suspended</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;FedMemberID&quot;:&quot;acmepaymentscorp&quot;,
   &quot;State&quot;:&quot;com.akana.tenant.state.suspended&quot;
 }</pre>
 <p><strong>Sample response body: resumed</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;FedMemberID&quot;:&quot;acmepaymentscorp&quot;,
   &quot;State&quot;:&quot;com.akana.tenant.state.active&quot;
 }</pre>

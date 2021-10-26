@@ -390,9 +390,9 @@ Adds the first artifact, such as an uploaded image or file, to be used in the ma
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows adding an artifact to a new board item.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/boards/items/artifacts</pre>
+<pre class="pre_request_url">https://{hostname}/api/boards/items/artifacts</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST http://{hostname}/api/boards/items/artifacts HTTP/1.0
+<pre class="pre_request_headers">POST http://{hostname}/api/boards/items/artifacts HTTP/1.0
 Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -479,11 +479,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. The Board Item ID is assigned as a result of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/html
 Expires: Fri, 22 May 2015 14:40:04 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ContextID&quot; : &quot;f4827eb8-5a9f-429a-8b2a-4ef2f7f8af8c.acmepaymentscorp&quot;,
   &quot;FileName&quot; : &quot;img_dollars.jpg&quot;,
   &quot;BaseUri&quot; : &quot;http://{hostname}&quot;,

@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for information about the specified model object version. The optional <strong>includeReferences</strong>&#160;parameter is included.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/models/versions/bc90be73-3bb5-4411-9dae-ad90fc65a6ca.acmepaymentscorp?includeReferences=true</pre>
+<pre class="pre_request_url">https://{hostname}/api/models/versions/bc90be73-3bb5-4411-9dae-ad90fc65a6ca.acmepaymentscorp?includeReferences=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -492,12 +492,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Mon, 06 May 2019 21:48:32 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body</strong></p>
 <p>In this example, although the optional <strong>includeReferences</strong>&#160;parameter was included in the request, there are no references, so none are included&#160;in the response.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
     "ModelVersionID": "bc90be73-3bb5-4411-9dae-ad90fc65a6ca.acmepaymentscorp",
     "ModelID": "4a1c31f4-4c10-469a-85cf-3b918f7bbc01.acmepaymentscorp",
     "Name": "v1",

@@ -391,10 +391,10 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for metric information for the specified business organization.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/businesses/640bf91c-9f86-4ff0-8532-8d2b33b3b594.acmepaymentscorp/metrics
+<pre class="pre_request_url">https://{hostname}/api/businesses/640bf91c-9f86-4ff0-8532-8d2b33b3b594.acmepaymentscorp/metrics
 ?TimeInterval=15m&amp;Duration=all&amp;Environment=All&amp;ReportType=business.top10.apis</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -539,11 +539,11 @@ The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>cache-control: no-cache, no-store
+<pre class="pre_plain">cache-control: no-cache, no-store
 Content-Type: application/json
 Date: Tue, 10 Jul 2018 18:01:42 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "EndTime":"2018-07-10T18:15:00Z",
   "Interval":[
     {

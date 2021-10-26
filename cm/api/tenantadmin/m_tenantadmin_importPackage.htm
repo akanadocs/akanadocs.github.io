@@ -393,15 +393,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to import data previously exported from another platform instance.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/tenants/acmepaymentscorp/packages</pre>
+<pre class="pre_request_url">https://{hostname}/api/tenants/acmepaymentscorp/packages</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/tenants/acmepaymentscorp/packages HTTP/1.1
+<pre class="pre_request_headers">POST /api/tenants/acmepaymentscorp/packages HTTP/1.1
 Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>The request body is the import ZIP file and possibly an optional properties file. The example below shows a snippet of the import file to demonstrate how the additional attribute, Package and filename, is used in the POST content. In this example, there is no mapping properties file.</p>
-<pre>-----------------------------11829702124658
+<pre class="pre_plain">-----------------------------11829702124658
 Content-Disposition: form-data; name=&quot;Package&quot;; filename=&quot;business-export.zip&quot;
 Content-Type: application/zip</pre>
 <p>For an illustration of running this operation in Postman, see <a href="../aaref/Ref_ManagingMultipartFormDataUploads.htm#fileupload_example_tenant_import">Managing Multipart/Form-Data Uploads: Tenant Administration Service: Import Package</a>.</p>
@@ -488,7 +488,7 @@ Unique ID for a specific tenant. Same as <strong>TenantID</strong>.</td>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Date: Fri, 15 Jul 2016 18:53:19 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <p>There is no response body, but the file is uploaded.</p>

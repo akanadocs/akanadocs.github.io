@@ -380,7 +380,8 @@ Returns a list of <a href="../Ref_Glossary_CommunityPlatform.htm#gl_viewer">view
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/viewers</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/viewers</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -388,9 +389,9 @@ Returns a list of <a href="../Ref_Glossary_CommunityPlatform.htm#gl_viewer">view
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for information about the viewers for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/apiversion19184.acmepaymentscorp/viewers</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/apiversion19184.acmepaymentscorp/viewers</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -468,11 +469,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that there are three groups that can view this private API.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Thu, 14 Feb 2013 22:54:57 GMT</pre>
 <p><a id="rss_privateviewers_json"></a><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;Private Viewers&quot;,
     &quot;item&quot; : [ {
@@ -579,12 +580,12 @@ The response body is in the form of an RSS channel, and includes the items liste
 		<tr>
 			<td>category[&#160;]</td>
 			<td><p>An array of sets of two name/value pairs, each including Value and Domain, with a value for each. For example:</p>
-				<pre>&quot;value&quot; : &quot;Public&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;Public&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:visibility&quot;
 </pre>
 				<p>The example above indicates that the group has a visibility of Public; it is a public group.</p>
 				<p>In XML the same information is conveyed as follows:</p>
-				<pre>&lt;category domain=&quot;uddi:soa.com:visibility&quot;&gt;Public&lt;/category&gt;</pre></td>
+				<pre class="prettyprint, pre_xml">&lt;category domain=&quot;uddi:soa.com:visibility&quot;&gt;Public&lt;/category&gt;</pre></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_guid">GUID</a></td>

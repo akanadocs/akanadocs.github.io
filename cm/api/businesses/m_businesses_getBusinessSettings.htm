@@ -393,13 +393,13 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the settings for the specified business. In this example, all optional parameters were included.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/settings?IncludeBusinessAPISettings=true
+<pre class="pre_request_url">https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/settings?IncludeBusinessAPISettings=true
 &amp;IncludeBusinessAppSettings=true&amp;IncludeBusinessGroupSettings=true&amp;IncludeTicketSettings=true
 &amp;IncludeConnectionSettings=true&amp;IncludeSecuritySettings=true&amp;IncludeUserSettings=true
 &amp;IncludeDiscussionSettings=true<!--&amp;IncludeReviewSettings&amp;IncludeAlertSettings=true-->&amp;IncludeReviewSettings=true&amp;IncludeAlertSettings=true
 &amp;IncludeCommentSettings=true&amp;IncludeCommentSettings=true&amp;IncludeBusinessSettings=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -570,11 +570,11 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. In the first (application/json) example, all optional parameters were included, as shown in the sample request above. In the second (application/xml) example, only the app settings were included.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Thu, 21 Jun 2018 23:56:16 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "BusinessAPISettings":{
     "PublicAPISupport":"com.soa.feature.enabled",
     "PublicAPISandboxEndpointSupport":"com.soa.feature.enabled",

@@ -398,13 +398,13 @@ Returns information about the authenticated user. Uses HTTP POST.</p>
 
 <p><strong>Sample request headers</strong></p>
 <p>The example below shows the access token sent in the Authorization header (for either GET or POST). But if the token is sent as a request parameter, or in the request body, the Authorization header is not needed.</p>
-<pre>Host: docexample.akana.rcoaless.com
+<pre class="pre_request_headers">Host: docexample.akana.rcoaless.com
 Authorization: Bearer {bearer_token_value}
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded</pre>
 <p><strong>Sample request body (for request URL #2)</strong></p>
 <p>The example below shows the access token sent in the request body</p>
-<pre>access_token={bearer_token_value}</pre>
+<pre class="pre_plain">access_token={bearer_token_value}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -479,10 +479,10 @@ Content-Type: application/x-www-form-urlencoded</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_response_headers">Content-Type: application/json
 Date: Fri, 18 Sep 2020 16:35:21 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "sub": "jmead",
   "mail": "jmead@akana.rcoaless.com",
   "$EMAIL": "jmead@akana.rcoaless.com",

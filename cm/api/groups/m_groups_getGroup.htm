@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for information about the specified group, including settings.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/groups/group19212.acmepaymentscorp?IncludeSettings=true</pre>
+<pre class="pre_request_url">https://{hostname}/api/groups/group19212.acmepaymentscorp?IncludeSettings=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/groups/group19212.acmepaymentscorp?IncludeSettings=true HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/groups/group19212.acmepaymentscorp?IncludeSettings=true HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -472,11 +472,11 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. The IncludeSettings parameter is set to <strong>true</strong>, so information about the group settings is included.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Sat, 08 Jun 2013 00:42:41 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;GroupID&quot; : &quot;group19212.acmepaymentscorp&quot;,
   &quot;Name&quot; : &quot;ACME Payments API UG&quot;,
   &quot;Description&quot; : &quot;ACME Payments API User Group&quot;,

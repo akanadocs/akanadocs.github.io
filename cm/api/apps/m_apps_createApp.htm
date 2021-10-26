@@ -392,16 +392,16 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below adds a crossword puzzle app.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apps</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/apps HTTP/1.1
+<pre class="pre_request_headers">POST /api/apps HTTP/1.1
 Host: {hostname}
 Accept: application/vnd.soa.v84+json
 Content-Type: application/vnd.soa.v84+json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p id="samplerequest_01"><strong>Sample request body #1</strong></p>
 <p>In this example, the app is not added in the context of a specific business organization. For the response, see <a href="#sampleresponse_01">Sample request body #1</a>.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Name&quot;:&quot;Crosfhocal&quot;,
   &quot;Summary&quot;:&quot;Crossword puzzle app&quot;,
   &quot;Description&quot;:&quot;Crossword puzzle app for Android phones and iPhones&quot;,
@@ -425,7 +425,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <p id="samplerequest_02"><strong>Sample request body #2</strong></p>
 
 <p>Adds an app in the context of the business organization specified in the <strong>BusinessID</strong> property. For the response, see <a href="#sampleresponse_02">Sample request body #2</a>.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Name&quot;:&quot;Crosfhocal2&quot;,
   &quot;Summary&quot;:&quot;Crossword puzzle app&quot;,
   &quot;Description&quot;:&quot;Crossword puzzle app for Android phones and iPhones&quot;,
@@ -521,13 +521,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response includes all the information about the new app and app version.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>
-Content-Type: application/vnd.soa.v84+json
+<pre class="pre_response_headers">Content-Type: application/vnd.soa.v84+json
 Date: Thu, 28 Dec 2017 20:27:15 GMT
 atmo-renew-token: renew</pre>
 <p id="sampleresponse_01"><strong>Sample response body #1</strong></p>
 <p>Returns information about the app&#160;in response to the request in <a href="#samplerequest_01">Sample request body #1</a> above. The app is not associated with a specific business organization.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;AppID&quot;:&quot;665cda60-a6ae-452d-acb9-511f1b418de4.acmepaymentscorp&quot;,
   &quot;Name&quot;:&quot;Crosfhocal&quot;,
   &quot;Description&quot;:&quot;Crossword puzzle app for Android phones and iPhones&quot;,
@@ -561,7 +560,7 @@ atmo-renew-token: renew</pre>
 }</pre>
 <p id="sampleresponse_02"><strong>Sample response body #2</strong></p>
 <p>Returns information about the app&#160;in response to the request in <a href="#samplerequest_02">Sample request body #2</a> above. The app is associated with the business organization specified in the last property, <strong>BusinessID</strong>.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
     &quot;AppID&quot;: &quot;5e71027d-bccb-45b7-9528-a698f8dea1bf.acmepaymentscorp&quot;,
     &quot;Name&quot;: &quot;Crosfhocal2&quot;,
     &quot;Description&quot;: &quot;Crossword puzzle app for Android phones and iPhones&quot;,

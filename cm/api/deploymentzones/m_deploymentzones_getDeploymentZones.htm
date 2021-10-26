@@ -394,14 +394,14 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below requests a list of deployment zones.</p>
 <p><strong>Request URL #1</strong></p>
-<pre>https://{hostname}/api/deploymentzones</pre>
+<pre class="pre_request_url">https://{hostname}/api/deploymentzones</pre>
 <p><strong>Request URL #2</strong></p>
-<pre>https://{hostname}/api/deploymentzones?ContextID=87da343c-e260-43e2-8fbf-2fab7fae9203.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/deploymentzones?ContextID=87da343c-e260-43e2-8fbf-2fab7fae9203.acmepaymentscorp</pre>
 <p><strong>Request URL #3</strong></p>
 <p>In the example below, the OrgKey parameter is included. This supersedes the ContextID.</p>
-<pre>https://{hostname}/api/deploymentzones?OrgKey=uddi%3Asoa.com%3Aatmosphere%3Abusiness%3A89535988-cfe8-44e0-8fdb-15f8ebf2109f</pre>
+<pre class="pre_request_url">https://{hostname}/api/deploymentzones?OrgKey=uddi%3Asoa.com%3Aatmosphere%3Abusiness%3A89535988-cfe8-44e0-8fdb-15f8ebf2109f</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/deploymentzones HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/deploymentzones HTTP/1.1
 Host:{hostname}
 Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -506,13 +506,13 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <p id="id_sampleresponse">The sample response below shows the list of deployment zones returned as an RSS channel.</p>
 
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Thu, 23 Jan 2020 23:26:23 GMT
 Content-Type: application/json</pre>
 
 <p><a id="rss_deploymentzones_json"></a><strong>Sample response body #1</strong></p>
 <p>The sample response below is NOT in the context of a sub-organization, so the deployment zone information for the top-level organization (tenant organization) is returned.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel":{
     "title":"Deployment Zones",
     "item":[
@@ -585,7 +585,7 @@ Content-Type: application/json</pre>
 
 <p><strong>Sample response body #2</strong></p>
 <p>In the example below, the request was in the context of a sub-organization (ContextID parameter included).</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel": {
     "title": "Deployment Zones",
     "item": [

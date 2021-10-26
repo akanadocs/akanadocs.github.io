@@ -392,16 +392,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below modifies the name (version number) and tags of an app version. The operation sends the new app version information in JSON format.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apps/versions/2kqqoq5DwNm6MOSrvpnRxC3V.acmepaymentscorp </pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/versions/2kqqoq5DwNm6MOSrvpnRxC3V.acmepaymentscorp </pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Host: {hostname}
+<pre class="pre_request_headers">Host: {hostname}
 Accept: */*
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body #1</strong></p>
 <p>Modifies the name (version number) and description of an app version. App identity and shared secret either cannot be customized or are unchanged, so they are not used in the request.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;Name&quot;:&quot;1.1&quot;,
   &quot;Description&quot;:&quot;First version, great puzzle app.&quot;,
   &quot;Tag&quot;:[
@@ -416,8 +415,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 }</pre>
 <p><strong>Sample request body #2</strong></p>
 <p>Modifies the app identity and shared secret value for an app version, so these fields are included in the request.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;Name&quot;:&quot;1.0&quot;,
   &quot;Description&quot;:&quot;Initial version&quot;,
   &quot;Tag&quot;:[
@@ -514,12 +512,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the AppVersionID.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/plain
 Expires: Thu, 24 Sep 2015 10:45:46 GMT
 Atmo-Renew-Token: renew</pre>
 <p><strong>Sample response body</strong></p>
-<pre>2kqqoq5DwNm6MOSrvpnRxC3V.acmepaymentscorp</pre>
+<pre class="pre_response_body_plain">2kqqoq5DwNm6MOSrvpnRxC3V.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

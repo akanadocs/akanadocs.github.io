@@ -389,12 +389,12 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to export the contract, with all options included.</p>
 <p><strong>Request URL#1: no options</strong></p>
-<pre>https://{hostname}/api/contracts/97509a68-946c-40b0-bbf2-adb58194fd06.acmepaymentscorp/package?download=true&amp;wrapInHTML=true</pre>
+<pre class="pre_request_url">https://{hostname}/api/contracts/97509a68-946c-40b0-bbf2-adb58194fd06.acmepaymentscorp/package?download=true&amp;wrapInHTML=true</pre>
 <p><strong>Request URL #2: all options</strong></p>
-<pre>https://{hostname}/api/contracts/97509a68-946c-40b0-bbf2-adb58194fd06.acmepaymentscorp/package?migration.export.include.apis=true&amp;migration.export.include.apps=true
+<pre class="pre_request_url">https://{hostname}/api/contracts/97509a68-946c-40b0-bbf2-adb58194fd06.acmepaymentscorp/package?migration.export.include.apis=true&amp;migration.export.include.apps=true
 &amp;migration.export.include.licenses=true&amp;migration.qospolicy.export=true&amp;download=true&amp;wrapInHTML=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET /api/contracts/{hostname}/package?migration.export.include.apis=true&amp;migration.export.include.apps=true
+<pre class="pre_request_headers">GET /api/contracts/{hostname}/package?migration.export.include.apis=true&amp;migration.export.include.apps=true
 &amp;migration.export.include.licenses=true&amp;migration.qospolicy.export=true&amp;download=true&amp;wrapInHTML=true HTTP/1.1
 Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -523,7 +523,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. The export file is downloaded as specified in the request parameters.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/octet-stream
 Content-Disposition: attachment;filename=apicontract-export.zip</pre>
 <p><strong>Sample response body</strong></p>

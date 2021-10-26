@@ -389,15 +389,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows an invitation to a user who is not already a platform member.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apps/7508586f-f637-45b7-b6a9-5949907263c6.acmepaymentscorp/members</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/7508586f-f637-45b7-b6a9-5949907263c6.acmepaymentscorp/members</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&#160;/api/apps/a7508586f-f637-45b7-b6a9-5949907263c6.acmepaymentscorp/members HTTP/1.1
+<pre class="pre_request_headers">POST &#160;/api/apps/a7508586f-f637-45b7-b6a9-5949907263c6.acmepaymentscorp/members HTTP/1.1
 Host:{hostname}
 Accept: text/plain, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample POST&#160;data</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Email&quot;:&quot;jmead@acmepaymentscorp.com&quot;
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -482,11 +482,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows a successful outcome. The <a href="../aaref/Ref_IDsOnThePlatform.htm#id_membershiprequestid">MembershipRequestID</a> is returned in the response.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 25 Nov 2020 21:27:04 GMT
 Content-Type: text/plain</pre>
 <p><strong>Sample response body</strong></p>
-<pre>group_member_req10079.acmepaymentscorp</pre>
+<pre class="pre_response_body_plain">group_member_req10079.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

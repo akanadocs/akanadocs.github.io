@@ -391,9 +391,9 @@ Requests a new contract between a specific version of an app and a specific vers
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The examples below show several requests for a new API contract, under different conditions.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/contracts</pre>
+<pre class="pre_request_url">https://{hostname}/api/contracts</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&#160;/api/contracts HTTP/1.1
+<pre class="pre_request_headers">POST &#160;/api/contracts HTTP/1.1
 Host: {hostname}
 Accept: application/json
 Content-Type: application/json
@@ -402,8 +402,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 
 <p><strong>Sample request body #1</strong></p>
 <p>API doesn't use licenses and no quota policy is defined. Request is for access to the Sandbox implementation.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;APIVersionID&quot;:&quot;b49ef94a-3a4b-4cc4-b894-ef067d9a0de9.acmepaymentscorp&quot;,
   &quot;RuntimeID&quot;:&quot;2mWn90b8Y4C2vL7qCxDW8f38.acmepaymentscorp&quot;,
   &quot;Environment&quot;:&quot;Sandbox&quot;,
@@ -419,8 +418,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 
 <p><strong>Sample request body #2</strong></p>
 <p>API doesn't use licenses but app developer wants a quota policy. Request is for access to the Live implementation.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;APIVersionID&quot;:&quot;b49ef94a-3a4b-4cc4-b894-ef067d9a0de9.acmepaymentscorp&quot;,
   &quot;RuntimeID&quot;:&quot;7J0w4Dy2BGN2QPUi6sFGlR6w.acmepaymentscorp&quot;,
   &quot;Environment&quot;:&quot;Production&quot;,
@@ -438,8 +436,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 
 <p><strong>Sample request body #3</strong></p>
 <p>API uses licenses and app developer wants unrestricted access. Request is for access to the Live implementation.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;APIVersionID&quot;:&quot;3e07d360-c6b1-4872-90cc-305fc581c2f9.acmepaymentscorp&quot;,
   &quot;RuntimeID&quot;:&quot;2mWn90b8Y4C2vL7qCxDW8f38.acmepaymentscorp&quot;,
   &quot;Environment&quot;:&quot;Production&quot;,
@@ -455,8 +452,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 
 <p><strong>Sample request body #4</strong></p>
 <p>API uses licenses and app requests access with one license. Request is for access to the Sandbox implementation.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;APIVersionID&quot;:&quot;3e07d360-c6b1-4872-90cc-305fc581c2f9.acmepaymentscorp&quot;,
   &quot;RuntimeID&quot;:&quot;7J0w4Dy2BGN2QPUi6sFGlR6w.acmepaymentscorp&quot;,
   &quot;Environment&quot;:&quot;Sandbox&quot;,
@@ -475,7 +471,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 
 <p><strong>Sample request body #5</strong></p>
 <p>API uses licenses and app developer requests access with all licenses. Request is for access to the Live implementation.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIVersionID&quot;:&quot;3e07d360-c6b1-4872-90cc-305fc581c2f9.acmepaymentscorp&quot;,
   &quot;RuntimeID&quot;:&quot;2mWn90b8Y4C2vL7qCxDW8f38.acmepaymentscorp&quot;,
   &quot;Environment&quot;:&quot;Production&quot;,
@@ -578,13 +574,13 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p>The sample response below returns the expanded Contract object with additional values of <strong>ContractID</strong>, <strong>Environment</strong>, and <strong>State</strong>.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 01 Oct 2014 00:00:00 GMT
 Content-Type: application/json</pre>
 
 <p><strong>Sample response body: response to sample request #1</strong></p>
 <p>API doesn't use licenses and no quota policy is defined. Request is for access to the Sandbox implementation.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ContractID&quot; : &quot;3f548ac7-86ac-4881-8aec-bfa5b5e9f60d.acmepaymentscorp&quot;,
   &quot;APIVersionID&quot; : &quot;b49ef94a-3a4b-4cc4-b894-ef067d9a0de9.acmepaymentscorp&quot;,
   &quot;RuntimeID&quot; : &quot;2mWn90b8Y4C2vL7qCxDW8f38.acmepaymentscorp&quot;,
@@ -600,7 +596,7 @@ Content-Type: application/json</pre>
 
 <p><strong>Sample response body: response to sample request #2</strong></p>
 <p>API doesn't use licenses but app developer wants a quota policy. Request is for access to the Live implementation.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ContractID&quot; : &quot;77824aa2-b370-4348-aa4f-0be60d1b710c.acmepaymentscorp&quot;,
   &quot;APIVersionID&quot; : &quot;b49ef94a-3a4b-4cc4-b894-ef067d9a0de9.acmepaymentscorp&quot;,
   &quot;RuntimeID&quot; : &quot;7J0w4Dy2BGN2QPUi6sFGlR6w.acmepaymentscorp&quot;,
@@ -616,7 +612,7 @@ Content-Type: application/json</pre>
 
 <p><strong>Sample response body: response to sample request #3</strong></p>
 <p>API uses licenses and app developer wants unrestricted access. Request is for access to the Live implementation.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ContractID&quot; : &quot;fa11ed81-ccde-4104-9d3a-109aa880fdde.acmepaymentscorp&quot;,
   &quot;APIVersionID&quot; : &quot;3e07d360-c6b1-4872-90cc-305fc581c2f9.acmepaymentscorp&quot;,
   &quot;RuntimeID&quot; : &quot;2mWn90b8Y4C2vL7qCxDW8f38.acmepaymentscorp&quot;,
@@ -632,7 +628,7 @@ Content-Type: application/json</pre>
 
 <p><strong>Sample response body: response to sample request #4</strong></p>
 <p>API uses licenses and app requests access with one license. Request is for access to the Sandbox implementation.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ContractID&quot; : &quot;9d38e862-6f34-4681-98b4-c826813e4d5c.acmepaymentscorp&quot;,
   &quot;APIVersionID&quot; : &quot;3e07d360-c6b1-4872-90cc-305fc581c2f9.acmepaymentscorp&quot;,
   &quot;RuntimeID&quot; : &quot;7J0w4Dy2BGN2QPUi6sFGlR6w.acmepaymentscorp&quot;,
@@ -649,7 +645,7 @@ Content-Type: application/json</pre>
 
 <p><strong>Sample response body: response to sample request #5</strong></p>
 <p>API uses licenses and app developer requests access with all licenses. Request is for access to the Live implementation.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ContractID&quot;:&quot;a57f7275-c812-410b-ab70-941c93d8f793.acmepaymentscorp&quot;,
   &quot;APIVersionID&quot;:&quot;3e07d360-c6b1-4872-90cc-305fc581c2f9.acmepaymentscorp&quot;,
   &quot;RuntimeID&quot;:&quot;2mWn90b8Y4C2vL7qCxDW8f38.acmepaymentscorp&quot;,

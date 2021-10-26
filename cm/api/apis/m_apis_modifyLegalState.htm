@@ -381,7 +381,8 @@ Modifies the <a href="../aaref/Ref_Values.htm#values_legaldocumentstate">State</
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/legals/{LegalDocumentID}/state</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/legals/{LegalDocumentID}/state</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -389,15 +390,15 @@ Modifies the <a href="../aaref/Ref_Values.htm#values_legaldocumentstate">State</
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a document being inactivated.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/apiversion500.acmepaymentscorp/legals/api200eula2.acmepaymentscorp/state</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/apiversion500.acmepaymentscorp/legals/api200eula2.acmepaymentscorp/state</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&#160;/api/apis/versions/apiversion500.acmepaymentscorp/legals/api200eula2.acmepaymentscorp/state HTTP/1.1
+<pre class="pre_request_headers">PUT&#160;/api/apis/versions/apiversion500.acmepaymentscorp/legals/api200eula2.acmepaymentscorp/state HTTP/1.1
 Host: {hostname}
 Accept: */*
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;DocumentState&quot;:&quot;com.soa.status.inactive&quot;
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -493,11 +494,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of the operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Mon, 04 Feb 2013 21:23:39 GMT
 Content-Type: text/plain</pre>
 <p><strong>Sample response body</strong></p>
-<pre>api200eula2.acmepaymentscorp</pre>
+<pre class="pre_response_body_plain">api200eula2.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->

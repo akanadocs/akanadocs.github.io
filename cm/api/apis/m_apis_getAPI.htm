@@ -389,9 +389,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for a specific API, with the optional settings included.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/12770263-e036-4222-b8eb-87d33676d3ad.acmepaymentscorp?IncludeSettings=true</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/12770263-e036-4222-b8eb-87d33676d3ad.acmepaymentscorp?IncludeSettings=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/apis/12770263-e036-4222-b8eb-87d33676d3ad.acmepaymentscorp?IncludeSettings=true HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/apis/12770263-e036-4222-b8eb-87d33676d3ad.acmepaymentscorp?IncludeSettings=true HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -486,12 +486,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 	<li><a href="#eg_02">#2: Sample response body with optional request parameter IncludeSettings=true</a></li>
 </ul>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Tue, 23 Jan 2018 20:05:59 GMT
 Content-Type: application/json</pre>
 
 <p id="eg_01"><strong>#1: Sample response body without optional parameters</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIID&quot;:&quot;c31049c0-6121-49f3-b862-db96c651a5ad.acmepaymentscorp&quot;,
   &quot;Name&quot;:&quot;Swagger_Petstore_Subset&quot;,
   &quot;Description&quot;:&quot;Subset (6 operations) of the Swagger JSON file from petstore.swagger.io.&quot;,
@@ -522,7 +522,7 @@ Content-Type: application/json</pre>
   &quot;OrganizationKey&quot;:&quot;uddi:f2ecbf31-0077-11e8-ab8e-bf81c7147c98&quot;
 }</pre>
 <p id="eg_02"><strong>#2: Sample response body with optional request parameter IncludeSettings=true</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIID&quot;:&quot;c31049c0-6121-49f3-b862-db96c651a5ad.acmepaymentscorp&quot;,
   &quot;Name&quot;:&quot;Swagger_Petstore_Subset&quot;,
   &quot;Description&quot;:&quot;Subset (6 operations) of the Swagger JSON file from petstore.swagger.io.&quot;,

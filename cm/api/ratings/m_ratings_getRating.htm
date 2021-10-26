@@ -401,9 +401,9 @@
 <h3 id="samplerequest_1">Sample request: APIs service</h3>
 <p>The example below shows a request for a specific user's rating of a specific API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/apiversion23609.acmepaymentscorp/ratings/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/apiversion23609.acmepaymentscorp/ratings/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -412,9 +412,9 @@
 <h3 id="samplerequest_2">Sample request: Apps service</h3>
 <p>The example below shows a request for a specific user's rating of a specific app version.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.acmepaymentscorp/ratings/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.acmepaymentscorp/ratings/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.acmepaymentscorp/ratings/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp
+<pre class="pre_request_headers">GET&#160;/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.acmepaymentscorp/ratings/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -425,9 +425,9 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 <h3 id="samplerequest_4">Sample request: Groups service</h3>
 <p>The example below shows a request for a specific user's rating of a specific group.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/groups/group24386.acmepaymentscorp/ratings/user23509.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/groups/group24386.acmepaymentscorp/ratings/user23509.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre class="pre_request_headers">Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -436,9 +436,9 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 <h3 id="samplerequest_3">Sample request: Users service</h3>
 <p>The example below shows a request for a specific user's rating of a specific app version.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmepaymentscorp/ratings/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmepaymentscorp/ratings/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmepaymentscorp/ratings/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp?_=1369932294081 HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmepaymentscorp/ratings/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp?_=1369932294081 HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -531,11 +531,11 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 <h3 id="sampleresponse_1">Sample response: APIs service</h3>
 <p id="id_sampleresponse">The sample response below shows that the user's rating for this API version is 3.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Thu, 23 May 2013 19:54:46 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ID&quot;: &quot;apiversion23609.acmepaymentscorp&quot;,
   &quot;UserID&quot;: &quot;522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp&quot;,
   &quot;Rating&quot;: 3
@@ -547,12 +547,12 @@ Date: Thu, 23 May 2013 19:54:46 GMT</pre>
 <p id="id_sampleresponse_2">The sample response below shows that the user's rating for this app is 4.</p>
 
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Fri, 14 Dec 2012 21:45:46 GMT</pre>
 
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ID&quot; : &quot;90VsIX3WmpP32sqoYQk8jj4J.acmepaymentscorp&quot;,
   &quot;UserID&quot; : &quot;957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp&quot;,
   &quot;Rating&quot; : 4
@@ -563,11 +563,11 @@ Date: Fri, 14 Dec 2012 21:45:46 GMT</pre>
 <h3 id="sampleresponse_4">Sample response: Groups service</h3>
 <p id="id_sampleresponse_4">The sample response below shows that the user's rating for this group is 5.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Wed, 19 Jun 2013 15:19:10 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ID&quot; : &quot;group24386.acmepaymentscorp&quot;,
   &quot;UserID&quot; : &quot;user23509.acmepaymentscorp&quot;,
   &quot;Rating&quot; : 5
@@ -578,11 +578,11 @@ Date: Wed, 19 Jun 2013 15:19:10 GMT</pre>
 <h3 id="sampleresponse_3">Sample response: Users service</h3>
 <p id="id_sampleresponse_3">The sample response below shows that the user's rating for this app is 2.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Thu, 30 May 2013 16:44:54 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ID&quot; : &quot;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmepaymentscorp&quot;,
   &quot;UserID&quot; : &quot;522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp&quot;,
   &quot;Rating&quot; : 2

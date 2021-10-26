@@ -390,13 +390,13 @@
 <p id="id_samplerequest_01"><strong>Sample request URL #1</strong></p>
 <p>The example below requests information for the specified app. No optional request parameters are used.</p>
 <p>For the response, see <a href="#sample_response_01">Sample response body #1</a> below.</p>
-<pre>https://{hostname}/api/apps/4db49199-1de9-4bfc-9e8a-1960c1faa9f3.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/4db49199-1de9-4bfc-9e8a-1960c1faa9f3.acmepaymentscorp</pre>
 <p id="id_samplerequest_02"><strong>Sample request URL #2</strong></p>
 <p>The example below requests information for the specified app. In this example, app settings are also requested.</p>
 <p>For the response, see <a href="#sample_response_02">Sample response body #2</a> below.</p>
-<pre>https://{hostname}/api/apps/4db49199-1de9-4bfc-9e8a-1960c1faa9f3.acmepaymentscorp?IncludeSettings=true</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/4db49199-1de9-4bfc-9e8a-1960c1faa9f3.acmepaymentscorp?IncludeSettings=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/apps/app16964.acmepaymentscorp HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/apps/app16964.acmepaymentscorp HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}
@@ -501,12 +501,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p>The sample response below is a response to the sample request above.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Tue, 09 Apr 2019 21:32:19 GMT</pre>
 <p><a id="sample_response_01"></a><strong>Sample response body #1</strong></p>
 <p>The example below shows the response to <a href="#id_samplerequest_01">Sample request URL #1</a>.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
     "AppID": "f44f511f-e743-4148-8fdf-dd79f0c4bd0e.acmepaymentscorp",
     "Name": "Peile Android",
     "Description": "Game app for Android phones",
@@ -545,7 +545,7 @@ Date: Tue, 09 Apr 2019 21:32:19 GMT</pre>
 }</pre>
 <p><a id="sample_response_02"></a><strong>Sample response body #2</strong></p>
 <p>The example below shows the response to <a href="#id_samplerequest_02">Sample request URL #2</a>. The <strong>IncludeSettings</strong> parameter was set to <strong>true</strong> in the request, so app settings are included in the response.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "AppID":"f44f511f-e743-4148-8fdf-dd79f0c4bd0e.acmepaymentscorp",
   "Name":"Peile Android",
   "Description":"Game app for Android phones",

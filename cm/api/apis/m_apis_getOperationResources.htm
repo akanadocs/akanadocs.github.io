@@ -389,9 +389,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the scope mapping information for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/2f12dfe6-2777-43a6-80e5-2348aff02ac8.acmepaymentscorp/resources</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/2f12dfe6-2777-43a6-80e5-2348aff02ac8.acmepaymentscorp/resources</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>None.</p>
@@ -469,11 +469,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. There are five operations; four operations are mapped to one scope each, and one operation is mapped to three scopes. The second sample response shows that operation-specific scope mapping is not in use.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Expires: Fri, 06 Jun 2014 16:33:42 GMT</pre>
 <p><strong>Sample response body: application/json (operation-specific scope mapping in use)</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;OperationResourceDetails&quot; : [ {
     &quot;OperationName&quot; : &quot;addPayment&quot;,
     &quot;Resource&quot; : [ {
@@ -576,7 +576,7 @@ Expires: Fri, 06 Jun 2014 16:33:42 GMT</pre>
   } ]
 }</pre>
 <p><strong>Sample response body: application/json (operation-specific scope mapping not in use)</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->

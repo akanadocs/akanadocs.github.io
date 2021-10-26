@@ -389,9 +389,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for information about businesses on the platform.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/businesses</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre class="pre_request_headers">Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -470,11 +470,11 @@
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/vnd.soa.v83+json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type:  application/vnd.soa.v83+json
 Date: Thu, 16 Mar 2017 18:25:37 GMT</pre>
 <p><a id="rss_businesses_json"></a><strong>Sample response body: application/vnd.soa.v83+json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Business&quot; : [ {
     &quot;BusinessID&quot; : &quot;70284b50-fb9e-4ebf-963d-fad8c0327b43.acmepaymentscorp&quot;,
     &quot;BusinessKey&quot; : &quot;uddi:soa.com:atmosphere:business:b9885c7b-0a67-11e7-950e-dfadbdf627aa&quot;,
@@ -564,7 +564,7 @@ The response body is in the form of an RSS channel, and includes the items liste
 		<tr>
 			<td>category[&#160;]</td>
 			<td><p>A name/value pair containing information about the business. For example:</p>
-				<pre>&quot;value&quot; : &quot;business&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;business&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;</pre>
 </td>
 		</tr>

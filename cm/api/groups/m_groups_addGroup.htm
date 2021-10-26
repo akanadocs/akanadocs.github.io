@@ -390,16 +390,16 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a new group being added.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/groups</pre>
+<pre class="pre_request_url">https://{hostname}/api/groups</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/groups HTTP/1.1
+<pre class="pre_request_headers">POST /api/groups HTTP/1.1
 Host: {hostname}
 Accept: application/json
 Content-Type: application/json
 Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "Group":{
     "Name":"LEAD",
     "Description":"League of Extraordinary Application Developers",
@@ -493,7 +493,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Tue, 01 Dec 2020 20:37:43 GMT
 Atmo-Renew-Token: renew
@@ -503,7 +503,7 @@ Set-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3D8a2f4931-d21f-11e2-a8ac-cbf
 OVX-XWv7XRRyslthf8c7MmZRFNvBj_XzeZ90MGUSAdWZHdwq1ALn9CNFVfbdCmDpinGS7azEf0luXwZ-QQJrU7ZThWixkggVMWx47R9ZK0XVPtlW6O
 CDdDkj6edeWYa4QUP7e9qYNqnr9OxXcqvyuQAxoZftBga3-iwbt1yQTMg;path=/;expires=Mon, 10-Jun-2013 23:11:07 GMT;HttpOnly</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;GroupID&quot; : &quot;group24385.acmepaymentscorp&quot;,
   &quot;Name&quot; : &quot;LEAD&quot;,
   &quot;Description&quot; : &quot;League of Extraordinary Application Developers&quot;,

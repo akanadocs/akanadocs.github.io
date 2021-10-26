@@ -388,14 +388,13 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below adds a model object category to the business.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/modelcategories</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/modelcategories</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>
-Content-Type: application/json
+<pre class="pre_request_headers">Content-Type: application/json
 Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre> {
+<pre class="pre_plain"> {
   "Name": "Income",
   "Description": "Income transactions",
   "Deleted": false
@@ -481,10 +480,10 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Date: Tue, 30 Apr 2019 18:41:13 GMT
+<pre class="pre_response_headers">Date: Tue, 30 Apr 2019 18:41:13 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "Name": "Income",
   "Description": "Income transactions",
   "Deleted": false

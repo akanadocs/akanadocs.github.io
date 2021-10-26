@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the contract version for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/34944975-09d4-49a2-8c15-f835fba9c5b4.acmepaymentscorp/contracts</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/34944975-09d4-49a2-8c15-f835fba9c5b4.acmepaymentscorp/contracts</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
@@ -502,11 +502,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p>The sample response below returns the contracts for the specified API version. There are two contracts.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Thu, 08 Oct 2020 17:31:31 GMT</pre>
 <p><a id="rss_apicontracts_json"></a><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel":{
     "title":"Api Contracts",
     "item":[
@@ -769,10 +769,10 @@ Date: Thu, 08 Oct 2020 17:31:31 GMT</pre>
 		<tr>
 			<td>category[&#160;]</td>
 			<td><p>An array of sets of two name/value pairs, each including Value and Domain, with a value for each. For example:</p>
-				<pre>&quot;value&quot; : &quot;Sandbox&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;Sandbox&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:environment&quot;</pre>
 				<p>The example above indicates that the contract applies to the Sandbox <a href="../Ref_Glossary_CommunityPlatform.htm#gl_implementation">implementation</a>.</p>
-				<pre>&quot;value&quot; : &quot;apicontract.status.activated&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;apicontract.status.activated&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:wfstate&quot;</pre>
 				<p>The example above indicates that the contract's <a href="../aaref/Ref_Values.htm#values_legaldocumentstate">status</a> is <strong>activated</strong>.</p></td>
 		</tr>
@@ -791,7 +791,7 @@ Date: Thu, 08 Oct 2020 17:31:31 GMT</pre>
 		<tr>
 			<td>Actions</td>
 			<td><p>An array of name/value pair sets containing information about one or more <a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_action">action</a> events that are valid for the item. Each includes value and label, and both contain the name of the valid action. For example:</p>
-				<pre>&quot;value&quot; : &quot;apicontract.action.suspend&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;apicontract.action.suspend&quot;,
 &quot;label&quot; : &quot;apicontract.action.suspend&quot;</pre>
 				<p>The example above indicates that Suspend is a valid action for the contract.</p></td>
 		</tr>

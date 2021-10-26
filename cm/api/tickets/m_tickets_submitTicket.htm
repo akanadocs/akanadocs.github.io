@@ -390,16 +390,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to add a specific ticket.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/tickets</pre>
+<pre class="pre_request_url">https://{hostname}/api/tickets</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/tickets HTTP/1.1
+<pre class="pre_request_headers">POST /api/tickets HTTP/1.1
 Host: {hostname}
 Accept: text/html, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body: application/json</strong></p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;UserID&quot;:&quot;8dba2d85-1108-417f-ad81-7a369e9e5d79.acmepaymentscorp&quot;,
   &quot;Description&quot;:&quot;When I try to use more than one payment type the transaction hangs up. It's happened to me **twice**.&quot;,
   &quot;Title&quot;:&quot;Bug when using multiple payment types&quot;,
@@ -422,8 +421,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
   &quot;DescriptionMediaType&quot;:&quot;text/markdown&quot;
 }</pre>
 <p><strong>Sample request body: application/xml</strong></p>
-<pre>
-&lt;Ticket xmlns=&quot;http://soa.com/xsd/ticket/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/api/1.0&quot; 
+<pre class="pre_plain">&lt;Ticket xmlns=&quot;http://soa.com/xsd/ticket/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/api/1.0&quot; 
 xmlns:ns3=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/business/1.0&quot; 
 xmlns:ns5=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns6=&quot;http://soa.com/xsd/board/1.0&quot; 
 xmlns:ns7=&quot;http://soa.com/xsd/app/1.0&quot; xmlns:ns8=&quot;http://soa.com/xsd/user/1.0&quot; 
@@ -519,11 +517,11 @@ xmlns:ns13=&quot;http://soa.com/xsd/discussion/1.0&quot; xmlns:ns14=&quot;http:/
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/plain
 Date: Mon, 11 May 2015 20:17:47 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>ticket25687.acmepaymentscorp</pre>
+<pre class="pre_response_body_plain">ticket25687.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <!-- InstanceEndEditable -->

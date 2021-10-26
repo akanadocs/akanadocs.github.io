@@ -389,15 +389,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a comment on the specified discussion.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/discussions/discussion25786.acmepaymentscorp/comments</pre>
+<pre class="pre_request_url">https://{hostname}/api/discussions/discussion25786.acmepaymentscorp/comments</pre>
 	<p><strong>Sample request headers</strong></p>
-<pre>POST /api/discussions/discussion25786.acmepaymentscorp/comments HTTP/1.1
+<pre class="pre_request_headers">POST /api/discussions/discussion25786.acmepaymentscorp/comments HTTP/1.1
 Host: {hostname}
 Accept: text/plain, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Content&quot;:&quot;Awesome! extending to 9pm PST would be great for us since we are in Hawaii.&quot;,
   &quot;UserID&quot;:&quot;434d706d-b32e-49a2-bfe7-2bf23e032347.acmepaymentscorp&quot;
 }</pre>
@@ -485,11 +485,11 @@ The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_d
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/plain
 Date: Fri, 20 Feb 2015 15:23:24 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>3a7e2509-0474-4938-8bcd-2aee1d9ecae1</pre>
+<pre class="pre_response_body_plain">3a7e2509-0474-4938-8bcd-2aee1d9ecae1</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <!-- InstanceEndEditable -->

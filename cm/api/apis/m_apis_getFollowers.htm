@@ -379,7 +379,8 @@ Returns information about the users who are following the specified API.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://{hostname}/api/apis/{APIID}/followers</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/{APIID}/followers</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -387,9 +388,9 @@ Returns information about the users who are following the specified API.</p>
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the followers of a specific API.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/api10017.acmepaymentscorp/followers</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/api10017.acmepaymentscorp/followers</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/apis/api10017.acmepaymentscorp/followers HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/apis/api10017.acmepaymentscorp/followers HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -465,11 +466,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that the specified API has 3 followers.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 13 Feb 2013 16:04:41 GMT
 Content-Type: application/json</pre>
 <p><a id="rss_followers_json"></a><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;acmepaymentscorp&quot;,
     &quot;description&quot; : &quot;&quot;,
@@ -607,7 +608,7 @@ Content-Type: application/json</pre>
 		<tr>
 			<td>Action</td>
 			<td><p>A set of one or more name/value pairs expressing the action available to the follower. Because following a resource is a yes/no activity, the possible action of a follower will always be to stop following. For example:</p>
-				<pre>&quot;value&quot; : &quot;action.follow.stop&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;action.follow.stop&quot;,
 &quot;label&quot; : &quot;Stop Following&quot;</pre></td>
 		</tr>
 		<tr>

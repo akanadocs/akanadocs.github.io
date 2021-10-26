@@ -389,9 +389,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for information about the specified contract.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.rcoaless</pre>
+<pre class="pre_request_url">https://{hostname}/api/contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.rcoaless</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.rcoaless HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.rcoaless HTTP/1.1
 Host: {hostname}
 Accept: application/json
 Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}
@@ -472,12 +472,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows information about the specified contract.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Wed, 04 Sep 2019 18:20:20 GMT</pre>
 <p><strong>Sample response body #1: application/json</strong></p>
 <p>In this example, there are no policies assigned to the contract.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "ContractID": "e31f8041-ff77-4153-8d4b-4a86795b2865.rcoaless",
   "APIVersionID": "9daf2b49-0b00-45c2-8ccf-db5ef3d478af.rcoaless",
   "RuntimeID": "wbN3rqWphd4z6LtgwI5oMRbrZoYrwQ4OvKrBn19o.rcoaless",
@@ -492,7 +492,7 @@ Date: Wed, 04 Sep 2019 18:20:20 GMT</pre>
 }</pre>
 <p><strong>Sample response body #2: application/json</strong></p>
 <p>In this example, there is a policy assigned to the contract. The contract has not yet been activated.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "ContractID": "66176dea-874b-439b-9f3b-104ac0595245.rcoaless",
   "APIVersionID": "9daf2b49-0b00-45c2-8ccf-db5ef3d478af.rcoaless",
   "RuntimeID": "ZkJqWIs4TWzU9sWla7tsrJUdJr38xTKwMXxffV95.rcoaless",

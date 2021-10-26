@@ -394,10 +394,10 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows the Dropbox ID and specific service to indicate the user's selection for creating the API.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/dropbox/readfiledetails?dropboxFileId=1009&amp;zipFileEntry=swagger_petstore.json
+<pre class="pre_request_url">https://{hostname}/api/dropbox/readfiledetails?dropboxFileId=1009&amp;zipFileEntry=swagger_petstore.json
 ?dropboxFileId={dropboxFileId}&amp;zipFileEntry={zipFileEntry}</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET /api/dropbox/readfiledetails?dropboxFileId=1009&amp;zipFileEntry=swagger_petstore.json HTTP/1.1
+<pre class="pre_request_headers">GET /api/dropbox/readfiledetails?dropboxFileId=1009&amp;zipFileEntry=swagger_petstore.json HTTP/1.1
 Host: {hostname}
 Accept: */*
 Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}
@@ -481,11 +481,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Thu, 02 Aug 2018 16:53:42 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;DropboxFileId&quot; : 1009,
   &quot;ServiceDescriptorDocument&quot; : [ {
     &quot;FileName&quot; : &quot;swagger_petstore.json&quot;,

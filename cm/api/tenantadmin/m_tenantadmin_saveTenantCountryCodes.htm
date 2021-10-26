@@ -390,14 +390,14 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The examples below shows requests to add one or more country codes.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/tenants/acmepaymentscorp/countrycodes</pre>
+<pre class="pre_request_url">https://{hostname}/api/tenants/acmepaymentscorp/countrycodes</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body #1: one country (versions up to 2020.1.0)</strong></p>
 <p>Adds country code for the United States and Canada.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;CountryCode&quot;:[
     {
       &quot;id&quot;:&quot;+1&quot;
@@ -407,7 +407,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 
 <p><strong>Sample request body #2: multiple countries (versions up to 2020.1.0)</strong></p>
 <p>Adds country codes for the United States and Canada, Ireland, United Kingdom, and India.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;CountryCode&quot;:[
     {
       &quot;id&quot;:&quot;+1&quot;
@@ -426,7 +426,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 
 <p><strong>Sample request body #3: one country (valid in version: 2020.1.0 and later)</strong></p>
 <p>Adds country code for the United States and Canada.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;CountryCode&quot;:[
     {
     &quot;id&quot;: &quot;+1&quot;,
@@ -437,7 +437,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 
 <p><strong>Sample request body #4: multiple countries (valid in version: 2020.1.0 and later)</strong></p>
 <p>Adds country codes for the United States and Canada, Ireland, United Kingdom, Jersey, and India.</p>
-<pre>[
+<pre class="pre_plain">[
   {
     "id": "+1",
     "Name": "United States and Canada"
@@ -542,7 +542,7 @@ Unique ID for a specific tenant. Same as <strong>TenantID</strong>.</td>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers:</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Date: Wed, 04 Mar 2020 21:28:22 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <p>None.</p>

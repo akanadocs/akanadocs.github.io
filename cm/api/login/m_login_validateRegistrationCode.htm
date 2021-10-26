@@ -388,14 +388,14 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to complete the registration process with the registration code.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/login/validateRegistrationCode</pre>
+<pre class="pre_request_url">https://{hostname}/api/login/validateRegistrationCode</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST http://{hostname}/api/login/validateRegistrationCode HTTP/1.0
+<pre class="pre_request_headers">POST http://{hostname}/api/login/validateRegistrationCode HTTP/1.0
 Host: {hostname}
 Accept: */*
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
-<pre>registrationCode=jqD3KMG6cbNIMMg7tT_7RSXvv-wnkNM0sV3tHAUzRXJy80WeYn1NGPrQ1
+<pre class="pre_plain">registrationCode=jqD3KMG6cbNIMMg7tT_7RSXvv-wnkNM0sV3tHAUzRXJy80WeYn1NGPrQ1
 08sDUxyFfW91_g9IHXloVyX-Ggu7PxcLpgWo62m0mZ8Rqx37boW1fNqLlhxdIg119I</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -464,12 +464,12 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Cache-Control: no-cache
 Expires: Wed, 21 Jan 2015 16:10:23 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;UserID&quot; : &quot;86a1bb98-9f17-4791-904b-bbf93e22db98.acmepaymentscorp&quot;,
   &quot;Email&quot; : &quot;jane.mead@acmepaymentscorp.com&quot;,
   &quot;ProfileName&quot; : &quot;JaneMead&quot;

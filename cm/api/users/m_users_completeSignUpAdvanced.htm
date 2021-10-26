@@ -396,12 +396,12 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to complete the signup and log the user into the Community Manager developer portal user interface.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/completeSignup</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/completeSignup</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json, text/javascript, */*; q=0.01
+<pre class="pre_request_headers">Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;FirstName&quot;:&quot;Jane&quot;,
   &quot;LastName&quot;:&quot;Mead&quot;,
   &quot;EmailAddress&quot;:&quot;janemead@acmepaymentscorp.com&quot;,
@@ -505,11 +505,11 @@ Content-Type: application/json</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that the operation was successful. The signup steps are now complete for the new user, and the user is logged in to the platform.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Set-Cookie:AtmoAuthToken_acmepaymentscorp=TokenID...</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;state&quot; : &quot;registered&quot;,
   &quot;loginState&quot; : &quot;login.complete&quot;,
   &quot;authIdentifier&quot; : &quot;&quot;,

@@ -389,9 +389,9 @@ Returns a list of Board items for the specified group.</p>
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the Board of the specified group.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/groups/group19793.acmepaymentscorp/board</pre>
+<pre class="pre_request_url">https://{hostname}/api/groups/group19793.acmepaymentscorp/board</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -575,11 +575,11 @@ Returns a list of Board items for the specified group.</p>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the group's Board returned.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Wed, 12 Jun 2013 20:00:01 GMT</pre>
 <p><a id="rss_groupboard_json"></a><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;Group Board&quot;,
     &quot;startIndex&quot; : 0,
@@ -855,10 +855,10 @@ Date: Wed, 12 Jun 2013 20:00:01 GMT</pre>
 		<tr>
 			<td>category[&#160;]</td>
 			<td><p>An array of sets of two name/value pairs, each including Value and Domain, with a value for each. For example:</p>
-				<pre>&quot;value&quot; : &quot;DISCUSSION&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;DISCUSSION&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;</pre>
 				<p>The example above indicates that the Board item relates to a discussion.</p>
-				<pre>&quot;value&quot; : &quot;outage&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;outage&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:tag&quot;</pre>
 				<p>The example above indicates that the Board item relates to a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_tag">tag</a> on the discussion.</p></td>
 		</tr>
@@ -892,7 +892,7 @@ Date: Wed, 12 Jun 2013 20:00:01 GMT</pre>
 		<tr>
 			<td>Actions</td>
 			<td><p>An array of name/value pair sets containing information about one or more <a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_action">action</a> events that are valid for the item. Each includes value and label, and both contain the name of the valid action. For example:</p>
-				<pre>&quot;value&quot; : &quot;discussion.action.delete&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;discussion.action.delete&quot;,
 &quot;label&quot; : &quot;discussion.action.delete&quot;</pre>
 				<p>The example above indicates that Delete is a valid action for the Board item.</p></td>
 		</tr>

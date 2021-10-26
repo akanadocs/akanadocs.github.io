@@ -379,7 +379,8 @@
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -387,14 +388,14 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below adds a third tag to the API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/apiversion10022.acmepaymentscorp
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/apiversion10022.acmepaymentscorp
 </pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_request_headers">Content-Type: application/json
 Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
     &quot;APIVersionID&quot;:&quot;0b8c8beb-502b-418f-af4f-9bb56d3d2162.acmepaymentscorp&quot;,
     &quot;APIID&quot;:&quot;bdb478d6-8221-4d27-85d7-fc9379a6428f.acmepaymentscorp&quot;,
     &quot;Name&quot;:&quot;1.1&quot;,
@@ -688,11 +689,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that the API version was successfully updated.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Tue, 22 Apr 2014 17:03:56 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
     &quot;APIVersionID&quot;:&quot;0b8c8beb-502b-418f-af4f-9bb56d3d2162.acmepaymentscorp&quot;,
     &quot;APIID&quot;:&quot;bdb478d6-8221-4d27-85d7-fc9379a6428f.acmepaymentscorp&quot;,
     &quot;Name&quot;:&quot;1.1&quot;,

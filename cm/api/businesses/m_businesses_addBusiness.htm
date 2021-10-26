@@ -388,16 +388,16 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The examples below show requests to add a business organization on the platform, at the top level (#1) and at the child level (#2).</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/businesses</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/businesses HTTP/1.1
+<pre class="pre_request_headers">POST /api/businesses HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body #1</strong></p>
 <p>Adds a new business at the top level. Optional avatar not specified.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;BusinessType&quot;:&quot;Company&quot;,
   &quot;Name&quot;:&quot;ACME Payments Corporation&quot;,
   &quot;Description&quot;:&quot;ACME Payments Corporation&quot;,
@@ -405,7 +405,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 }</pre>
 <p><strong>Sample request body #2</strong></p>
 <p>Adds a child business, therefore includes ParentBusinessID. Also includes optional avatar.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;BusinessType&quot;:&quot;Department&quot;,
   &quot;Name&quot;:&quot;ACME Payments Corporation Billing Department&quot;,
   &quot;Description&quot;:&quot;ACME Payments Corporation Billing Department&quot;,
@@ -505,12 +505,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Thu, 10 Nov 2016 21:44:02 GMT
 Content-Type: application/vnd.soa.v83+json</pre>
 <p><strong>Sample response body #1</strong></p>
 <p>Adds a new organization at the top level.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;BusinessID&quot; : &quot;2dd3432d-641d-4e6d-90b9-58acbbf36f7a.acmepaymentscorp&quot;,
   &quot;Name&quot; : &quot;ACME Payments Corporation&quot;,
   &quot;Description&quot; : &quot;ACME Payments Corporation&quot;,
@@ -521,8 +521,7 @@ Content-Type: application/vnd.soa.v83+json</pre>
 
 <p><strong>Sample response body #2</strong></p>
 <p>Adds a new child organization.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   "BusinessID":"cba4a1b0-47d3-4e04-b84d-8688fba6bd01.acmepaymentscorp",
   "Name":"ACME Payments Organization Payments Department",
   "Description":"ACME Payments Organization Payments Department",

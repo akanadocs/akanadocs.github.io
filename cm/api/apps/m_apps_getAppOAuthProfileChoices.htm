@@ -391,12 +391,12 @@ Returns information about the choices available for a specific app, for the app'
 <p id="id_samplerequest">The examples below show requests for app OAuth profile choices.</p>
 <p><strong>Request URL #1</strong></p>
 <p>Requests all properties.</p>
-<pre>https://{hostname}/api/apps/versions/7mUCQU4xmU18TKMMbjqauA2k.acmepaymentscorp/oauthprofile/choices</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/versions/7mUCQU4xmU18TKMMbjqauA2k.acmepaymentscorp/oauthprofile/choices</pre>
 <p><strong>Request URL #2</strong></p>
 <p>Uses the optional <strong>OAuthClientProperty</strong> parameter to request two specific properties.</p>
-<pre>https://{hostname}/api/apps/versions/7mUCQU4xmU18TKMMbjqauA2k.acmepaymentscorp/oauthprofile/choices?OAuthClientProperty=grant_types_supported&amp;OAuthClientProperty=id_token_signing_alg_values_supported</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/versions/7mUCQU4xmU18TKMMbjqauA2k.acmepaymentscorp/oauthprofile/choices?OAuthClientProperty=grant_types_supported&amp;OAuthClientProperty=id_token_signing_alg_values_supported</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET /api/apps/versions/6NGw7XEtXYy8KZwF7EOxvT2V.acmepaymentscorp/oauthprofile/choices HTTP/1.1
+<pre class="pre_request_headers">GET /api/apps/versions/6NGw7XEtXYy8KZwF7EOxvT2V.acmepaymentscorp/oauthprofile/choices HTTP/1.1
 Host: {hostname}
 Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -478,11 +478,11 @@ Accept: application/json</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. This example returns all properties&#160;(response to&#160;<strong>sample request #1</strong>)</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: TThu, 21 Jun 2018 22:17:23 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
     "oidc10_supported": true,
     "id_token_encryption_alg_values_supported": [
         "A256GCMKW",

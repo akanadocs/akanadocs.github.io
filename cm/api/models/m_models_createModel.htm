@@ -388,14 +388,14 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to add the specified model.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/models</pre>
+<pre class="pre_request_url">https://{hostname}/api/models</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body #1: creating from scratch</strong></p>
 <p>In the example below, the model was created from scratch, not by uploading a schema file.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "Visibility":"Public",
   "BusinessID":"tenantbusiness.acmepaymentscorp",
   "Name":"Credit Card Purchase2",
@@ -411,7 +411,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 	<li>Upload the schema file to the dropbox using the <span class="apidoc_code"><a href="m_models_readFileDetails.htm">POST&#160;/api/models/readfiledetails</a></span> operation.</li>
 	<li>Create the model using the current operation, listing the <strong>DropboxFileId</strong>&#160;in the body of the message as shown below.</li>
 </ol>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "Visibility":"Public",
   "BusinessID":"tenantbusiness.acmepaymentscorp",
   "ModelCategory":"global",
@@ -500,12 +500,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Fri, 03 May 2019 20:22:42 GMT
 Content-Type: application/json</pre>
 <p id="sampleresponse_01"><strong>Sample response body #1: create from scratch</strong></p>
 <p>In this example, the model will be created from scratch. Values have been provided for some optional fields such as Description.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
     "ModelID": "53ae7015-ecb7-4ffc-8060-a860daabb83b.acmepaymentscorp",
     "Name": "Credit Card Purchase2",
     "Description": "For use in multiple top-level model objects.",
@@ -520,7 +520,7 @@ Content-Type: application/json</pre>
 }</pre>
 <p id="sampleresponse_02"><strong>Sample response body #2: import model file</strong></p>
 <p>In this example, the model will be created from an uploaded file. Values are read from the file.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
     "ModelID": "7f8673ab-7184-4fba-acf1-9d471e6fd593.acmepaymentscorp",
     "Name": "Pet",
     "ModelCategory": "global",

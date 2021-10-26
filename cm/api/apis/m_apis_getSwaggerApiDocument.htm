@@ -386,7 +386,8 @@ Returns the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_swagger">Swagger</
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/swagger/{SwaggerPath}</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/swagger/{SwaggerPath}</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -394,9 +395,9 @@ Returns the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_swagger">Swagger</
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the documentation for the <strong>follows</strong> service.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/apiversion400.acmepaymentscorp/follows.json</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/apiversion400.acmepaymentscorp/follows.json</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/apis/versions/apiversion400.acmepaymentscorp/validatePasswordResetCode.json HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/apis/versions/apiversion400.acmepaymentscorp/validatePasswordResetCode.json HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
@@ -494,11 +495,11 @@ The locale applicable to the user requesting the content. For more information, 
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows information about the follows service, as requested in the sample request above.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Thu, 14 Feb 2013 15:10:30 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;apiVersion&quot; : &quot;1.0&quot;,
   &quot;apis&quot; : [ {
     &quot;operations&quot; : [ {

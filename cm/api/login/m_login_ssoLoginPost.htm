@@ -399,23 +399,23 @@
 <p>In processing the request, the platform looks for the <strong>domain</strong> parameter first in the POST content, and then in the path.</p>
 <p><strong>Request URL #1-1 (LDAP)</strong></p>
 <p>Domain parameter is not included in the path, it is sent in the POST content (see sample request body #1).</p>
-<pre>http://acmepaymentscorp.com/api/login/ssoLogin</pre>
+<pre class="pre_request_url">http://acmepaymentscorp.com/api/login/ssoLogin</pre>
 
 <p><strong>Request URL #1-2 (LDAP)</strong></p>
 <p>Domain parameter is sent in the path, and other parameters are sent in the POST content (see sample request body #2).</p>
-<pre>http://acmepaymentscorp.com/api/login/ssoLogin/Ldapacmepaymentscorp1acmepaymentscorp</pre>
+<pre class="pre_request_url">http://acmepaymentscorp.com/api/login/ssoLogin/Ldapacmepaymentscorp1acmepaymentscorp</pre>
 
 <p><strong>Sample request headers</strong></p>
-<pre>Host: {hostname}
+<pre class="pre_request_headers">Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8
 Cookie: JSESSIONID_pm60=1gsjqvxu1cgnj1th05legkdfvo</pre>
 
 <p><strong>Sample request body #1 (LDAP)</strong></p>
-<pre>identity_username=MaryMartinson&amp;secret_password=MyPassword11&amp;domain=Ldapacmepaymentscorp1acmepaymentscorp</pre>
+<pre class="pre_plain">identity_username=MaryMartinson&amp;secret_password=MyPassword11&amp;domain=Ldapacmepaymentscorp1acmepaymentscorp</pre>
 
 <p><strong>Sample request body #2 (LDAP)</strong></p>
-<pre>identity_username=MaryMartinson&amp;secret_password=MyPassword11</pre>
+<pre class="pre_plain">identity_username=MaryMartinson&amp;secret_password=MyPassword11</pre>
 
 
 
@@ -505,7 +505,7 @@ Cookie: JSESSIONID_pm60=1gsjqvxu1cgnj1th05legkdfvo</pre>
 <h2 id="sampleresponse">Sample Response #1: LDAP</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Expires: Mon, 28 Sep 2015 15:23:14 GMT
 Set-Cookie: SignupToken_acmepaymentescorp=Fbnw5YUYLtPVfzTCxtriPKVdB9m7xO7ALwGyt8_f2MiZg
@@ -513,7 +513,7 @@ Set-Cookie: SignupToken_acmepaymentescorp=Fbnw5YUYLtPVfzTCxtriPKVdB9m7xO7ALwGyt8
 DDLTPi4id31yKJ6CDFPCEK7OSycu3fpuvYCCwDv_pfKE5kFrOtW1mFN2whcUNhboAyT9KioLrKREdBr7kc8c</pre>
 <p><strong>Sample response body #1-1</strong></p>
 <p>User is logged in.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;state&quot; : &quot;registered&quot;,
   &quot;response&quot; : {
     &quot;userName&quot; : &quot;Engineering100user100&quot;,
@@ -527,7 +527,7 @@ DDLTPi4id31yKJ6CDFPCEK7OSycu3fpuvYCCwDv_pfKE5kFrOtW1mFN2whcUNhboAyT9KioLrKREdBr7
 
 <p><strong>Sample response body #1-2</strong></p>
 <p>In the example below, the user still needs to accept the signup agreement, so the user's <strong>state</strong> value is <strong>pending_validation</strong>. The user is redirected to a page for accepting the agreement.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;state&quot; : &quot;pending_validation&quot;,
   &quot;status&quot; : &quot;Disabled&quot;,
   &quot;response&quot; : {

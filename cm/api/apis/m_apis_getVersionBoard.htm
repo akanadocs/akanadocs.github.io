@@ -379,7 +379,8 @@
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/board</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/board</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -388,11 +389,11 @@
 <p id="id_samplerequest">The example below a request for an API's Board items. It includes several additional optional parameters: start, count, RetrievingUserID, and SortBy.</p>
 <p><strong>Request URL</strong></p>
 
-<pre>https://{hostname}/api/apis/versions/apiversion19184.acmepaymentscorp/board</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/apiversion19184.acmepaymentscorp/board</pre>
 
 
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/apis/versions/apiversion19184.acmepaymentscorp/board?start=0&amp;count=10&amp;RetrievingUserID=522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp&amp;SortBy=DescendingDate HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/apis/versions/apiversion19184.acmepaymentscorp/board?start=0&amp;count=10&amp;RetrievingUserID=522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp&amp;SortBy=DescendingDate HTTP/1.1
 Accept: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
@@ -591,11 +592,11 @@ An optional parameter allowing users to sort results by a specific value; for ex
 <h2 id="sampleresponse">Sample Response #1</h2>
 <p>The sample response below shows the API version board returned as an RSS channel.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>200 OK
+<pre class="pre_response_headers">200 OK
 Date: Thu, 14 Feb 2013 22:31:56 GMT
 Content-Type: application/json</pre>
 <p id="rss_apiversionboard_json"><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;API Version Board&quot;,
     &quot;startIndex&quot; : 0,
@@ -731,10 +732,10 @@ Content-Type: application/json</pre>
 <h2 id="sampleresponse_02">Sample Response #2</h2>
 <p>The sample response below shows the API version board when the <strong>IncludeCommentActions=true</strong> parameter is included in the request. The response includes valid actions (Action) for the Board items. The URL parameters in this case were: <span class="apidoc_code">start=0&amp;count=10&amp;RetrievingUserID=[userid]&amp;SortBy=DescendingDate&amp;IncludeCommentActions=true&amp;IncludeSelfAuthored=true&amp;PublishedState=all</span>.</p>
 <p><strong>Sample response headers #2: application/json</strong></p>
-<pre>200 OK
+<pre class="pre_response_headers">200 OK
 Content-Type: application/json</pre>
 <p id="rss_apiversionboard_json"><strong>Sample response body #2: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel":{
     "title":"API Version Board",
     "startIndex":0,
@@ -871,10 +872,10 @@ Content-Type: application/json</pre>
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <p><strong>Sample response headers #2</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/xml</pre>
 <p><a id="rss_apiversionboard_xml"></a><strong>Sample response body #2</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel":{
     "title":"API Version Board",
     "startIndex":0,
@@ -1061,7 +1062,7 @@ The response body is in the form of an RSS channel, and includes the items liste
 		<tr>
 			<td>category[&#160;]</td>
 			<td><p>An array of sets of two name/value pairs, each including Value and Domain, with a value for each. For example:</p>
-				<pre>&quot;value&quot; : &quot;false&quot;,
+				<pre class="pre_plain">&quot;value&quot; : &quot;false&quot;,
 &quot;domain&quot; : &quot;uddi:soa.com:archivable&quot;</pre>
 				<p>The example above indicates that the Board item is not archivable.</p></td>
 		</tr>

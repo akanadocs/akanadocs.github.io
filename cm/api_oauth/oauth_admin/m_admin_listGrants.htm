@@ -390,7 +390,7 @@
 <p><strong>Request URL</strong></p>
 <pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/admin/grants?GrantStatus=Active&amp;StartIndex=0&amp;Count=100</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/xml (or application/json)
+<pre class="pre_request_headers">Accept: application/xml (or application/json)
 Cookie:&#160;OAuthToken_{OAuthProviderName}={Cookie value (usually starts with TokenID)}</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -511,9 +511,9 @@ The unique ID for a specific OAuth client, as set up with the OAuth Provider. In
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Content-Type: application/json</pre>
+<pre class="pre_response_headers">Content-Type: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel": {
     "title": "Grants",
     "description": "",
@@ -587,7 +587,7 @@ The unique ID for a specific OAuth client, as set up with the OAuth Provider. In
   "version": "1.0"
 }</pre>
 <p><strong>Sample response body: application/xml</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre class="prettyprint, pre_xml">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;rss 
   xmlns:ns2="http://soa.com/xsd/rss/1.0" 
   xmlns:ns3="http://soa.com/xsd/oauth/1.0" 

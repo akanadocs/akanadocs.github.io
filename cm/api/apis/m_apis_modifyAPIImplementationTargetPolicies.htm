@@ -389,12 +389,12 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to modify the policy information for the specified implementation.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/d7c7104f-8341-4da6-a45f-47114b4d3d7d.acmepaymentscorp/implementations/live/target-policies</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/d7c7104f-8341-4da6-a45f-47114b4d3d7d.acmepaymentscorp/implementations/live/target-policies</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_request_headers">Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "Policy":[
     {
       "PolicyKey":"acmepaymentscorp-AtmosphereApplicationSecurityPolicy",
@@ -613,10 +613,10 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_response_headers">Content-Type: application/json
 Date: Wed, 11 Nov 2020 21:33:37 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "Policy":[
     {
       "PolicyKey":"acmepaymentscorp-AtmosphereApplicationSecurityPolicy",

@@ -388,9 +388,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the profile of a specific user.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/681affee-6f50-4a6b-a455-9947b7511c6a.acmepaymentscorp</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/681affee-6f50-4a6b-a455-9947b7511c6a.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -464,11 +464,11 @@
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the user profile for the specified user.</p>
 <p><strong>Sample response headers #1</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Wed, 21 Feb 2018 14:49:12 GMT</pre>
 <p><strong>Sample response body #1: local user: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;UserID&quot; : &quot;7864b9f3-21d9-40a0-933d-fd63a8284705.acmepaymentscorp&quot;,
   &quot;UserName&quot; : &quot;JaneMead&quot;,
   &quot;FirstName&quot; : &quot;Jane&quot;,
@@ -510,7 +510,7 @@ Date: Wed, 21 Feb 2018 14:49:12 GMT</pre>
 
 <p><strong>Sample response body #2: application/json</strong></p>
 <p>In the example below, the user is a new user added by the Site Admin who has not yet logged in. The challenge questions have not been set up and the user account has an ExpirationDate value. Custom workflow is in place, and a phone number has also been set up for the user.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;UserID&quot; : &quot;c512cc0c-2b0d-47b2-aa69-99bbab02599c.acmepaymentscorp&quot;,
   &quot;UserName&quot; : &quot;MaryMartinson&quot;,
   &quot;FirstName&quot; : &quot;Mary&quot;,
@@ -545,12 +545,12 @@ Date: Wed, 21 Feb 2018 14:49:12 GMT</pre>
 }</pre>
 <p><strong>Sample response headers #3: external domain user</strong></p>
 <p>&#160;</p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/json
 Date: Thu, 22 Feb 2018 16:14:44 GMT</pre>
 <p><strong>Sample response body #3: external domain user</strong></p>
 <p>In this example, the user is logging in using an external login domain for authentication. The response includes some custom user <a href="../Ref_Glossary_CommunityPlatform.htm#gl_claim_oidc">claims</a> as well as the defaults.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;classifiers&quot;:{
 
   },

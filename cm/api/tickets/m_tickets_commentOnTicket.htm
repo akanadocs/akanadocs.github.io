@@ -389,15 +389,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a comment added to the specified ticket.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/tickets/ticket25687.acmepaymentscorp/comments</pre>
+<pre class="pre_request_url">https://{hostname}/api/tickets/ticket25687.acmepaymentscorp/comments</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/tickets/ticket25687.acmepaymentscorp/comments HTTP/1.1
+<pre class="pre_request_headers">POST /api/tickets/ticket25687.acmepaymentscorp/comments HTTP/1.1
 Host: {hostname}
 Accept: text/plain, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Content&quot;:&quot;FYI I've also experienced the same problem. Really glad you are getting it fixed.&quot;,
   &quot;UserID&quot;:&quot;b302bcd5-23cb-4e13-9135-68a7a88e729e.acmepaymentscorp&quot;
 }</pre>
@@ -487,11 +487,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/plain
 Date: Fri, 15 May 2015 15:55:31 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>ce792717-9e6e-4de9-8f39-0e7175581289</pre>
+<pre class="pre_response_body_plain">ce792717-9e6e-4de9-8f39-0e7175581289</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <!-- InstanceEndEditable -->

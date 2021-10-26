@@ -388,14 +388,14 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for a resend of the activation code to the specified email address. The POST&#160;content must be encoded; in the example below it is sent as <strong>emailAddress=jane.saoirse%acmepaymentscorp.com</strong>.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/resendActivation</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/resendActivation</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&#160;/api/users/resendActivation HTTP/1.1
+<pre class="pre_request_headers">POST &#160;/api/users/resendActivation HTTP/1.1
 Host: {hostname}
 Accept: */*
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
-<pre>emailAddress=jane.saoirse@acmepaymentscorp.com</pre>
+<pre class="pre_plain">emailAddress=jane.saoirse@acmepaymentscorp.com</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -462,7 +462,7 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Cache-Control: no-cache
 Wed, 19 Jun 2013 17:17:03 GMT</pre>
 <p><strong>Sample response body</strong></p>

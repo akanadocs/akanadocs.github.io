@@ -389,15 +389,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to update the app settings for the specified business.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/appsettings</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/appsettings</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Content-Type: application/json
+<pre class="pre_request_headers">Content-Type: application/json
 Accept: application/json
 Date: Wed, 06 Nov 2019 19:36:25 GMT
 Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;PublicAppSupport&quot;:&quot;com.soa.feature.enabled&quot;,
   &quot;PublicAppBoardSupport&quot;:&quot;com.soa.feature.enabled&quot;,
   &quot;PublicAppRatingsSupport&quot;:&quot;com.soa.feature.enabled&quot;,
@@ -506,11 +506,11 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v72+json
 Date: Wed, 06 Nov 2019 19:38:05 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;PublicAppSupport&quot;:&quot;com.soa.feature.enabled&quot;,
   &quot;PublicAppBoardSupport&quot;:&quot;com.soa.feature.enabled&quot;,
   &quot;PublicAppRatingsSupport&quot;:&quot;com.soa.feature.enabled&quot;,

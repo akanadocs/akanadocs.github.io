@@ -395,9 +395,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for metric information for a specific app version. The <strong>Time Interval</strong>, <strong>Duration</strong>, and <strong>Time Zone</strong> parameters are specified in the URL.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apps/versions/7FZJvSXlIP12IHKF3DufbL1W.acmepaymentscorp/metrics?Duration=1d&amp;Duration=1d&amp;Environment=Sandbox</pre>
+<pre class="pre_request_url">https://{hostname}/api/apps/versions/7FZJvSXlIP12IHKF3DufbL1W.acmepaymentscorp/metrics?Duration=1d&amp;Duration=1d&amp;Environment=Sandbox</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET /api/apps/versions/7FZJvSXlIP12IHKF3DufbL1W.acmepaymentscorp/metrics?Duration=1d&amp;Duration=1d
+<pre class="pre_request_headers">GET /api/apps/versions/7FZJvSXlIP12IHKF3DufbL1W.acmepaymentscorp/metrics?Duration=1d&amp;Duration=1d
 &amp;Environment=Sandbox HTTP/1.1
 Host: {hostname}
 Accept: */*
@@ -570,11 +570,11 @@ The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 13 May 2020 20:00:00 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "StartTime":"2020-05-13T21:10:00-07:00",
   "EndTime":"2020-05-13T22:10:00-07:00",
   "Interval":[

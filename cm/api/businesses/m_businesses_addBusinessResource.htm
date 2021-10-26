@@ -388,15 +388,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to add a scope.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/resources</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/resources</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/businesses/tenantbusiness.acmepaymentscorp/resources HTTP/1.1
+<pre class="pre_request_headers">POST /api/businesses/tenantbusiness.acmepaymentscorp/resources HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ResourceID&quot;:&quot;&quot;,
   &quot;Name&quot;:&quot;Bronze access&quot;,
   &quot;ShortDescription&quot;:&quot;Bronze access&quot;,
@@ -503,11 +503,11 @@ Contains information about a resource, such as a scope, defined for a business o
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Fri, 07 Oct 2016 20:22:18 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ResourceID&quot; : &quot;74e58bdd-0c5a-47f9-b141-cbaa83e64293.acmepaymentscorp&quot;,
   &quot;Name&quot; : &quot;Access to READ operations&quot;,
   &quot;ShortDescription&quot; : &quot;Access to READ operations&quot;,

@@ -389,12 +389,12 @@
 <p id="id_samplerequest">The example below shows a request for the valid workflow actions for the specified resource.</p>
 <p><strong>Request URL #1</strong></p>
 <p>With no options selected. In this example, the object is a discussion.</p>
-<pre>https://{hostname}/api/workflow/objects/discussion10121.acmepaymentscorp/actions</pre>
+<pre class="pre_request_url">https://{hostname}/api/workflow/objects/discussion10121.acmepaymentscorp/actions</pre>
 <p id="samplerequest_02"><strong>Request URL #2</strong></p>
 <p>With optional parameter to include reserved actions in the response. For the response, see <a href="#id_sampleresponse_4">Sample response body #4</a>. In this example, the object is an app version.</p>
-<pre>https://{hostname}/api/workflow/objects/4pg3oSwgEuGZruzwORllQY8XsYYo4KBMMqcnOjru.rcoaless/actions?IncludeReservedActions</pre>
+<pre class="pre_request_url">https://{hostname}/api/workflow/objects/4pg3oSwgEuGZruzwORllQY8XsYYo4KBMMqcnOjru.rcoaless/actions?IncludeReservedActions</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -479,10 +479,10 @@
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Content-Type: application/json</pre>
+<pre class="pre_response_headers">Content-Type: application/json</pre>
 <p id="id_sampleresponse_1"><strong>Sample response body #1</strong></p>
 <p>The example below is for user workflow.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;Custom workflow for managing users&quot;,
     &quot;WorkflowObject&quot; : {
@@ -503,7 +503,7 @@
 
 <p id="id_sampleresponse_2"><strong>Sample response body #2</strong></p>
 <p>The example below is for API version workflow. In this example, the only valid action for the object is <strong>Submit for Approval</strong>.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel": {
     "title": "v1",
     "WorkflowObject": {
@@ -524,7 +524,7 @@
 
 <p id="id_sampleresponse_3"><strong>Sample response body #3</strong></p>
 <p>In example #2 above, the API version was approved using the <span class="apidoc_code"><a href="../apis/m_apis_executeWorkflowAction.htm">POST&#160;/api/apis/versions/{ApiVersionID}/action</a></span> operation. The valid workflow actions for the API version are now <strong>Approve</strong> or <strong>Reject</strong>, as shown below.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel": {
     "title": "v1",
     "WorkflowObject": {
@@ -550,7 +550,7 @@
 
 <p id="id_sampleresponse_4"><strong>Sample response body #4</strong></p>
 <p>In this example, for app version workflow, the optional parameter <strong>IncludeReservedActions</strong> was included in the request (see <a href="#samplerequest_02">Request URL #2</a>), so reserved actions are included in the response.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "channel" : {
     "title" : "v1",
     "WorkflowObject" : {

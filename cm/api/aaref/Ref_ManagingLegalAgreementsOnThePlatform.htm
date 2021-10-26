@@ -377,7 +377,7 @@
 <p class="apidoc_note"><strong>Note</strong>: your legal agreement should go in the /legals folder for your API. The content path should be something like: <strong>/api/{APIID}/legal/eula.txt</strong>. <a href="../content/m_content_add.htm#contentadd_legalagreement">See an example</a>.</p></li>
 	<li><strong>Publish</strong> the legal agreement. This adds it to the Table of Contents for the folder. In the user interface, you cannot activate the legal agreement until you publish it by clicking the <strong>Publish</strong> button in the File Manager.
 <p>Operation: <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&#160;/content/{path}</a></span> in the <a href="../index_content.htm">Content service</a>. Send the updated TOC JSON file in the body. For example:</p>
-		<pre>Content: {"toc":["eula.txt"],"sequence":["eula.txt","EULA_draft.txt"],"displayNames":{}}</pre>
+		&lt;pre class=&quot;prettyprint, pre_json&quot;&gt;Content: {"toc":["eula.txt"],"sequence":["eula.txt","EULA_draft.txt"],"displayNames":{}}
 		<p>In the above example, two EULA versions were uploaded, but only eula.txt was published.</p></li>
 	<li><strong>Activate</strong> the legal agreement. Once it's activated, developers see it and are required to accept it when requesting access to your API.
 		<p>Operation: <span class="apidoc_code"><a href="../apis/m_apis_createNewAgreement.htm">POST&#160;/api/apis/versions/{APIVersionID}/legals</a></span></p>

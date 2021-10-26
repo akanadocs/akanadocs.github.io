@@ -360,11 +360,11 @@
 	<li>Log in via the API, <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&#160;/api/login</a></span> operation, using your own email and password in the body of the operation instead of the placeholder values given below.
 		<ul>
 			<li>HTTP method: POST</li>
-			<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>login</strong></li>
+			<li>URL: <strong>https://{hostname}/api/login</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
 			<li>Content-Type header: <strong>application/json</strong></li>
 			<li>Request Body:
-				<pre>{
+				<pre class="prettyprint, pre_json">{
   "email":"myemailaddress.com",
   "password":"MyPassword"
 }</pre>
@@ -382,7 +382,7 @@
 			<li>Cookie header.</li>
 			<li>CSRF header: include it if needed. If you are not sure whether it's needed or not, refer to <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
 			<li>Request Body:
-				<pre>newEmailAddress=mynewemailaddress.com</pre>
+				<pre class="pre_plain">newEmailAddress=mynewemailaddress.com</pre>
 				<p><strong>Note</strong>: The new email address must be a valid address that you have immediate access to so that you can retrieve the notification message that the platform sends, with the confirmation code.</p>
 				</li>
 			</ul>
@@ -402,7 +402,7 @@
 			<li>Cookie header.</li>
 			<li>CSRF header: include it if needed. If you are not sure whether it's needed or not, refer to <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
 			<li>Request Body:
-				<pre>{
+				<pre class="prettyprint, pre_json">{
   "changeCode":"9Jg0L9gkvAgz5iZrhSKH60upIct72sO9aX0ifzAwYem3g6_Gd39SBlDysG7rlfGOK2H_4OkeVZEDaUT-dh31h0-2D8NDffW4SbCwXJ_3oc5LYDOcCI0R-RPfTwKMBGavKETyQt41hOsa5w6dH5dZyCcIEhcmztkuc-m5i0",
   "newEmailAddress":"mynewemailaddress.com"
 }</pre>

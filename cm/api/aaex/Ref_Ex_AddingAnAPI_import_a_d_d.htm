@@ -364,11 +364,11 @@
 	<li>Log in via the <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&#160;/api/login</a></span> operation, using your own email and password in the body of the operation instead of the placeholder values given below.
 		<ul>
 			<li>HTTP method: POST</li>
-			<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>login</strong></li>
+			<li>URL: <strong>https://{hostname}/api/login</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
 			<li>Content-Type header: <strong>application/json</strong></li>
 			<li>Request Body:
-				<pre>{
+				<pre class="prettyprint, pre_json">{
   "email":"MyEmailAddress",
   "password":"MyPassword"
 }</pre>
@@ -379,7 +379,7 @@
 	<li>Upload an API description document to the Dropbox, using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&#160;/api/dropbox/readfiledetails</a></span> operation. The document must be locally available. In your API call, use the values below, modifying the URL path as needed, and uploading the API description document.
 		<ul>
 			<li>HTTP method: POST</li>
-			<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>dropbox/readfiledetails</strong></li>
+			<li>URL: <strong>https://{hostname}/api/dropbox/readfiledetails</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
 			<li>CSRF header: see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_csrftoken">Csrf-Token_{fedmemberid}</a>. Include it if needed. If you are not sure whether it's needed or not, refer to <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
 			<li>Login cookie: see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>.</li>
@@ -393,13 +393,13 @@
 	<li>Add the API, using the <span class="apidoc_code"><a href="../apis/m_apis_createAPI.htm">POST&#160;/api/apis</a></span> operation and referencing the DropboxFileId for the API description document that you uploaded. In your API call, use the values below, modifying the URL path as needed. Use the values from the previous response to tailor the request body.
 		<ul>
 			<li>HTTP method: POST</li>
-			<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>apis</strong></li>
+			<li>URL: <strong>https://{hostname}/api/apis</strong></li>
 			<li>Accept header: application/vnd.soa.v81+json</li>
 			<li>Content-Type header: application/vnd.soa.v81+json</li>
 			<li>CSRF header: see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_csrftoken">Csrf-Token_{fedmemberid}</a>. Include it if needed. If you are not sure whether it's needed or not, refer to <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
 			<li>Login cookie: see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>.</li>
 			<li>Request Body (be sure to update the <strong>ServiceName</strong>, <strong>FileName</strong>, and <strong>DropboxFileId</strong> from the previous response):
-	<pre>{
+	<pre class="prettyprint, pre_json">{
   "DLDescriptor":{
     "ServiceDescriptorReference":{
       "ServiceName":"Swagger_Petstore",

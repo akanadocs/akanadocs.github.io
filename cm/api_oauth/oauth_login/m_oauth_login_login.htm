@@ -390,14 +390,14 @@ Allows a person to log in for the purposes of OAuth, and returns the OAuth authe
 <p><strong>Request URL</strong></p>
 <pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/login</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Content-Type: application/x-www-form-urlencoded
+<pre class="pre_request_headers">Content-Type: application/x-www-form-urlencoded
 Accept: application/json</pre>
 <p><strong>Sample request body #1: OAuth Admin login</strong></p>
 <p>In the example below, the user is the OAuth Administrator. The Domain parameter is included.</p>
-<pre>identity_email=administrator@acmepaymentscorp&amp;secret_password=password123&amp;Domain=siteusers</pre>
+<pre class="pre_plain">identity_email=administrator@acmepaymentscorp&amp;secret_password=password123&amp;Domain=siteusers</pre>
 <p><strong>Sample request body #2: Site user</strong></p>
 <p>The site user logs in with the username.</p>
-<pre>identity_username=siteuser17&amp;secret_password=MyPassword123</pre>
+<pre class="pre_plain">identity_username=siteuser17&amp;secret_password=MyPassword123</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -473,8 +473,7 @@ Accept: application/json</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>
-HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Set-Cookie: OAuthToken_acmepaymentscorpoauthdomain=TokenID%3D13439132-4b50-11e5-ad9b-a53b582c6f09%2Cclaimed_id%3D
 Local+Domain%5Cadminacmepaymentscorp%2CissueTime%3D1440524299874%2CexpirationTime%3D1440524899733%2Csig%3DYJCYJY8Zc3aOF6b
@@ -482,7 +481,7 @@ JhS6wiuaeEGceIL2X_82onuUr49iZWvU_srymQuc0gZtWXbOwTBy5c9Ywlyq8wvZ-odIvupThsaASzZd
 z3vWwQIcya77SID6tGGhvjynwSXrst5of2sZ37Cw</pre>
 <p><strong>Sample response body</strong></p>
 <p>The example below is the response after redirects are done.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;DomainName&quot;: &quot;Local Domain&quot;,
   &quot;UserName&quot;: &quot;adminAcmepaymentscorp&quot;
 }</pre>

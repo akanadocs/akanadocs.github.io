@@ -393,20 +393,20 @@
 <pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/oauth20/token</pre>
 <p><strong>Sample request headers</strong></p>
 <p class="Note"><strong>Note</strong>: In the sample request headers below, the Authorization header consist of the client's Basic authentication header, as explained in <a href="../aaref/Ref_OAuth_ClientAuthenticationWithOAuthProvider.htm#http_basic_authentication">HTTP Basic Authentication</a>. This is one way of sending the authorization credentials. As an alternative, you can send this information in the POST body or, if you are using the GET operation, in the request parameters. For more information, see <a href="../aaref/Ref_OAuth_ClientAuthenticationWithOAuthProvider.htm">OAuth: Client Authentication with the Platform's OAuth Provider</a>.</p>
-<pre>POST /oauth/oauth20/token HTTP/1.1
+<pre class="pre_request_headers">POST /oauth/oauth20/token HTTP/1.1
 Host: http://{oauth-provider-hostname}
 Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
 Content-Type: application/x-www-form-urlencoded
 Accept: application/json</pre>
 <p><strong>Sample request body: authorization_code grant type</strong></p>
 <p>In the sample request body shown below, the client ID and client secret are included. When the Authorization header is included with the request message, as shown above, you don't need to send the client ID and client secret in the parameters. Send them either in the header or in the parameters. The below is an example of sending these values in the POST request body if the Authorization header was not sent.</p>
-<pre>client_id=acmepaymentscorp-3rCEQzwEHMT9PPvuXcClpe3v&amp;client_secret=e5868ebb4445fc2ad9f949956c1cb9ddefa0d421&amp;code=T8Y2h7zvp-tviqe2gQQ_VGQKMizn8jRgxZ74hA&amp;redirect_uri=http%3A%2F%2Facmepaymentscorp.com%3A9900%2Fui%2Fapps%2Facmepaymentscorp%2F_VWQJeFH76RyfD6M6FRO5Svg%2Fresources%2Fconsole%2Fglobal%2Foauthclientredirect.html%3Fdynamic%3Dtrue&amp;grant_type=authorization_code&amp;scope=Scope1</pre>
+<pre class="pre_plain">client_id=acmepaymentscorp-3rCEQzwEHMT9PPvuXcClpe3v&amp;client_secret=e5868ebb4445fc2ad9f949956c1cb9ddefa0d421&amp;code=T8Y2h7zvp-tviqe2gQQ_VGQKMizn8jRgxZ74hA&amp;redirect_uri=http%3A%2F%2Facmepaymentscorp.com%3A9900%2Fui%2Fapps%2Facmepaymentscorp%2F_VWQJeFH76RyfD6M6FRO5Svg%2Fresources%2Fconsole%2Fglobal%2Foauthclientredirect.html%3Fdynamic%3Dtrue&amp;grant_type=authorization_code&amp;scope=Scope1</pre>
 
 <p><strong>Sample request body: client_credentials grant type (2-legged)</strong></p>
-<pre>client_id=acmepaymentscorp-3rCEQzwEHMT9PPvuXcClpe3v&amp;client_secret=e5868ebb4445fc2ad9f949956c1cb9ddefa0d421&amp;grant_type=client_credentials&amp;scope=Scope1</pre>
+<pre class="pre_plain">client_id=acmepaymentscorp-3rCEQzwEHMT9PPvuXcClpe3v&amp;client_secret=e5868ebb4445fc2ad9f949956c1cb9ddefa0d421&amp;grant_type=client_credentials&amp;scope=Scope1</pre>
 
 <p><strong>Sample request body: Resource Owner Credentials grant type</strong></p>
-<pre>client_id=atmosphere-3rCEQzwEHMT9PPvuXcClpe3v&amp;client_secret=e5868ebb4445fc2ad9f949956c1cb9ddefa0d421&amp;grant_type=password&amp;scope=Scope1&amp;username=eng100&amp;password=password</pre>
+<pre class="pre_plain">client_id=atmosphere-3rCEQzwEHMT9PPvuXcClpe3v&amp;client_secret=e5868ebb4445fc2ad9f949956c1cb9ddefa0d421&amp;grant_type=password&amp;scope=Scope1&amp;username=eng100&amp;password=password</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -567,11 +567,11 @@ Accept: application/json</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 <strong>Sample response body: application/json</strong></pre>
 <p><strong>Sample response body #1</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;access_token&quot;: &quot;SlAV32hkKG&quot;,
   &quot;token_type&quot;: &quot;Bearer&quot;,
   &quot;refresh_token&quot;: &quot;8xLOxBtZp8&quot;,
@@ -589,7 +589,7 @@ Content-Type: application/json
 }</pre>
 
 <p><strong>Sample response body: authorization_code grant type</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "access_token" : "d50d9fd00acf797ac409d5890fcc76669b727e63",
   "token_type" : "Bearer",
   "expires_in" : 1295998,
@@ -597,14 +597,14 @@ Content-Type: application/json
 }</pre>
 
 <p><strong>Sample response body: Client Credentials grant type (2-legged)</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "access_token" : "4484e52dc4744374aced826a4543cd28948816ff",
   "token_type" : "Bearer",
   "expires_in" : 1295999
 }</pre>
 
 <p><strong>Sample response body: Resource Owner Credentials grant type</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "access_token" : "49fad390491a5b547d0f782309b6a5b33f7ac087",
   "token_type" : "Bearer",
   "expires_in" : 1295999,
@@ -613,7 +613,7 @@ Content-Type: application/json
 
 <p><strong>Sample response body: Error scenario</strong></p>
 <p><strong>Note</strong>: in the example below, the <strong>state</strong> parameter is included in the error response. This would be the case in any scenario where it was included in the request.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   error=invalid_request,
   error_description=Unsupported%20response_type%20value,
   state=af0ifjsldkj
@@ -623,11 +623,11 @@ Content-Type: application/json
 <p><strong>Valid in Version: 2020.2.0 and later</strong></p>
 <p>The example below shows a successful response from the token endpoint, when PKCE is enabled and the correct values were sent to the server in the request.</p>
 <p>Headers:</p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Tue, 29 Dec 2020 18:55:47 GMT
 Content-Type: application/json</pre>
 <p>Body:</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "access_token" : "bXadcrxDyYfoRmoadi66CmJYX6x8eIp2Yxmy2VK3",
   "token_type" : "Bearer",
   "expires_in" : 1295998,

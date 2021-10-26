@@ -380,7 +380,8 @@ Exports a summary of metric information for the specified API version, in the fo
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/metrics/export</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/metrics/export</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -388,10 +389,10 @@ Exports a summary of metric information for the specified API version, in the fo
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the metric information for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/apiversion18972.acmepaymentscorp/metrics/
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/apiversion18972.acmepaymentscorp/metrics/
 export?TimeInterval=5s&amp;Duration=1d&amp;ReportType=service.all.operations&amp;Environment=Sandbox</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/apis/versions/apiversion18972.acmepaymentscorp/metrics/
+<pre class="pre_request_headers">GET&#160;/api/apis/versions/apiversion18972.acmepaymentscorp/metrics/
 export?TimeInterval=5s&amp;Duration=1d&amp;ReportType=service.all.operations&amp;Environment=Sandbox HTTP/1.1
 Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -548,7 +549,7 @@ The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Fri, 01 Feb 2019 00:00:00 GMT
 Content-Type: text/csv
 Content-Disposition: attachment;filename=export.csv</pre>

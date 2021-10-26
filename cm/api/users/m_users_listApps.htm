@@ -393,13 +393,13 @@
 <p id="id_samplerequest_01"><strong>Request URL #1</strong></p>
 <p>The example below shows a request for the apps associated with a specific user. No optional request parameters are used.</p>
 <p>For the response, see <a href="#sample_response_01">Sample response body #1</a> below.</p>
-<pre>https://{hostname}/api/users/00904729-ae54-4a91-94bb-bde91ec6495d.acmepaymentscorp/apps</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/00904729-ae54-4a91-94bb-bde91ec6495d.acmepaymentscorp/apps</pre>
 <p id="id_samplerequest_02"><strong>Request URL #2</strong></p>
 <p>The example below shows a request for the apps associated with a specific user. In this example, tags are also requested.</p>
 <p>For the response, see <a href="#sample_response_02">Sample response body #2</a> below.</p>
-<pre>https://{hostname}/api/users/00904729-ae54-4a91-94bb-bde91ec6495d.acmepaymentscorp/apps?IncludeTags=true</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/00904729-ae54-4a91-94bb-bde91ec6495d.acmepaymentscorp/apps?IncludeTags=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/vnd.soa.v81+json</pre>
+<pre class="pre_request_headers">Accept: application/vnd.soa.v81+json</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -531,12 +531,12 @@
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. The specified user has two apps.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v81+json
 Expires: Tue, 09 Apr 2019 21:09:24 GMT</pre>
 <p><a id="sample_response_01"></a><strong>Sample response body #1</strong></p>
 <p>The example below shows the response to <a href="#id_samplerequest_01">Request URL #1</a> (no optional parameters included). The user has two apps.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "Application":[
     {
       "AppID":"98dd5f5d-dea6-4c10-a873-1b708e80fa0c.acmepaymentscorp",
@@ -576,7 +576,7 @@ Expires: Tue, 09 Apr 2019 21:09:24 GMT</pre>
 }</pre>
 <p><a id="sample_response_02"></a><strong>Sample response body #2</strong></p>
 <p>The example below shows the response to <a href="#id_samplerequest_02">Request URL #2</a>. The user is the same as in the previous example, with two apps. However, the request includes the optional <strong>IncludeTags</strong> parameter, so tags are included in the response.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
     "Application": [
         {
             "AppID": "98dd5f5d-dea6-4c10-a873-1b708e80fa0c.acmepaymentscorp",

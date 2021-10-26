@@ -387,14 +387,14 @@
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest"><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/securitysettings</pre>
+<pre class="pre_request_url">https://{hostname}/api/businesses/tenantbusiness.acmepaymentscorp/securitysettings</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 Content-Type: application/json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body #1</strong></p>
 <p>In this example, CAPTCHA support is disabled, so the <strong>CaptchaSiteKey</strong> and <strong>CaptchaSiteSecret</strong> values are not sent.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "ReadRequestCSRFSupport": "com.soa.feature.disabled",
   "WriteRequestCSRFSupport": "com.soa.feature.disabled",
   "AllowUserEnum": "com.soa.feature.enabled",
@@ -414,7 +414,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 
 <p><strong>Sample request body #2</strong></p>
 <p>In this example, CAPTCHA support is enabled, so the <strong>CaptchaSiteKey</strong> and <strong>CaptchaSiteSecret</strong> values are included in the request.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ReadRequestCSRFSupport&quot;: &quot;com.soa.feature.disabled&quot;,
   &quot;WriteRequestCSRFSupport&quot;: &quot;com.soa.feature.enabled&quot;,
   &quot;AllowUserEnum&quot;: &quot;com.soa.feature.enabled&quot;,
@@ -524,12 +524,12 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v81+json
 Date: Tue, 22 Sep 2020 20:02:08 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <p>In this example, CAPTCHA support is enabled, so the <strong>CaptchaSiteKey</strong>&#160;and <strong>CaptchaSiteSecret</strong> values are included&#160;in the response.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;ReadRequestCSRFSupport&quot;: &quot;com.soa.feature.disabled&quot;,
   &quot;WriteRequestCSRFSupport&quot;: &quot;com.soa.feature.enabled&quot;,
   &quot;AllowUserEnum&quot;: &quot;com.soa.feature.enabled&quot;,

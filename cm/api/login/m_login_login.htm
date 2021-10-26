@@ -396,19 +396,19 @@ Initiates the login process by verifying the credentials of a user who is attemp
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below sends the username and password for authentication of the user logging in.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/login</pre>
+<pre class="pre_request_url">https://{hostname}/api/login</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&#160;/api/login HTTP/1.1
+<pre class="pre_request_headers">POST &#160;/api/login HTTP/1.1
 Host:{hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;email&quot;:&quot;myemailaddress@myemail.com&quot;,
   &quot;password&quot;:&quot;Mypwd_12345&quot;
 }</pre>
 <p id=samplerequest_curl><strong>Sample request: Curl</strong></p>
-<pre>curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -i 'https://{hostname}/api/login' --data '{
+<pre class="pre_plain">curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -i 'https://{hostname}/api/login' --data '{
   "email":"administrator@acmepaymentscorp",
   "password":"Pa$sW0rd_12345",
   "federationLogins":true
@@ -480,7 +480,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the user logging in. The cookie is returned in the Set-Cookie header.&#160;This example also includes the <a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a> header, which may or may not be returned, based on platform settings. For more information, see <a href="../aaref/Ref_CookiesOnThePlatform.htm">Cookies in the Akana API Platform</a> and <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</p>
 <h4>Sample response headers</h4>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Expires: Mon, 27 Jul 2015 12:36:55 GMT
 Set-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3D13544611-3486-11e5-9f5c-cb8d33c7f3c7%2Cclaimed_id%3Durn%3Aacmepaymentscorp%3Auser%3Aacmepaymentscorp%3A5a48b51d-b726-460f-bec5-8fb4e392137c%2CissueTime%3D1438018615951%2CexpirationTime%3D1438020415922%2CAttributesIncluded%3Dfalse%2CUserFDN%3D5a48b51d-b726-460f-bec5-8fb4e392137c%252Eacmepaymentscorp%2CUserName%3Dadminacmepaymentscorp%2Csig%3DcoY4laDvxkQ4vLLg6Tkfc9X35THApqFPh3hONnbCwXsNNjaKxUu9Ce98jf88kPEcrImd69Ry2N8XIrzICKTaUdCIni2ETKNCccpbYfBWftTQoUNVpQffzUTCP965GKqPLf6Zo0ol48TCRn4bWepqz8pycFczAhlsrl-WQBq0Adg;path=/;expires=Mon, 27 Jul 2015 18:01:55 GMT;HttpOnly
@@ -488,8 +488,7 @@ Csrf-Token_rcoaless=TokenID%3D13544611-3486-11e5-9f5c-cb8d33c7f3c7%2CexpirationT
 <h4>Sample response body #1</h4>
 <p id="id_sampleresponse_1">In the example below, the Site Admin added the user (using the <span class="apidoc_code"><a href="../users/m_users_addUser.htm">POST&#160;/api/users</a></span> operation) and the user is now logging in for the first time. The Site Admin specified that the user must change password on first login (<strong>ForcePasswordChangeOnLogin</strong> parameter in the Add User operation); therefore, change password is listed as a pending task. Tokens have been abbreviated.</p>
 <p>To change the password, invoke the <span class="apidoc_code"><a href="../users/m_users_modifyPassword.htm">PUT&#160;/api/users/{UserID}/password</a></span> operation.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
     "userFDN": "3d764293-d647-4bfb-8d8b-f82b98457021.acmepaymentscorp",
     "userName": "JaneMead",
     "status": "success",
@@ -505,7 +504,7 @@ Csrf-Token_rcoaless=TokenID%3D13544611-3486-11e5-9f5c-cb8d33c7f3c7%2CexpirationT
 <h4>Sample response body #2</h4>
 <p id="id_sampleresponse_2">The example below shows a scenario where the user must accept a pending legal agreement. Until the legal agreement is accepted, the login process isn't complete. Tokens have been abbreviated.</p>
 <p>If there is a pending legal agreement, you must invoke the <span class="apidoc_code"><a href="../legals/m_legals_acceptAgreement.htm">POST&#160;/api/legals/agreements</a></span> operation, part of the Legals service, so that the user can accept the legal agreement and complete the login process.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;loginDomainID&quot; : &quot;siteusers.acmepaymentscorp&quot;,
   &quot;pendingTasks&quot; : [ &quot;force.accept.agreements&quot; ],
   &quot;loginState&quot; : &quot;login.inprocess&quot;,
@@ -520,7 +519,7 @@ Csrf-Token_rcoaless=TokenID%3D13544611-3486-11e5-9f5c-cb8d33c7f3c7%2CexpirationT
 <h4>Sample response body #3</h4>
 <p id="id_sampleresponse_3">In the example below, login is not yet complete because the user must provide answers to the security challenge questions. Tokens have been abbreviated.</p>
 <p>To complete this task using the API, invoke the <span class="apidoc_code"><a href="../users/m_users_saveChallenges.htm">PUT&#160;/api/users/{UserID}/challenges</a></span> operation.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;loginDomainID&quot; : &quot;siteusers.acmepaymentscorp&quot;,
   &quot;pendingTasks&quot; : [ &quot;collect.security.question.answers&quot; ],
   &quot;loginState&quot; : &quot;login.inprocess&quot;,
@@ -533,8 +532,7 @@ Csrf-Token_rcoaless=TokenID%3D13544611-3486-11e5-9f5c-cb8d33c7f3c7%2CexpirationT
 }</pre>
 <h4>Sample response body #4</h4>
 <p id="id_sampleresponse_4">The example below shows a LoginResponse object returned when a user has completed all pending tasks, or when a user signs in under normal circumstances; there are no pending tasks, just a simple login. Tokens have been abbreviated.</p>
-<pre>
-{
+<pre class="prettyprint, pre_json">{
   &quot;userFDN&quot; : &quot;4fa1a6c9-c846-4186-87c1-7dab542aad22.acmepaymentscorp&quot;,
   &quot;userName&quot; : &quot;adminAtmosphere&quot;,
   &quot;loginDomainID&quot; : &quot;siteusers.acmepaymentscorp&quot;,
@@ -547,7 +545,7 @@ Csrf-Token_rcoaless=TokenID%3D13544611-3486-11e5-9f5c-cb8d33c7f3c7%2CexpirationT
 }</pre>
 <h4>Sample response body #5</h4>
 <p id="id_sampleresponse_5">The example below shows a LoginResponse object returned when a user is logging in and two-factor authentication is set up on the platform, with delivery options for the authentication code. The user must choose a delivery mechanism and then complete the two-factor authentication process, putting in the verification code, before completing any additional pending login tasks.</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;status&quot; : &quot;success&quot;,
   &quot;userName&quot; : &quot;JaneMead&quot;,
   &quot;pendingAgreements&quot; : [ &quot;signupagrmtv1.acmepaymentscorp&quot; ],
@@ -584,7 +582,7 @@ Csrf-Token_rcoaless=TokenID%3D13544611-3486-11e5-9f5c-cb8d33c7f3c7%2CexpirationT
 }</pre>
 <h4>Sample response body #6</h4>
 <p id="id_sampleresponse_6">The example below shows a LoginResponse object returned when a user is logging in and two-factor authentication (2FA) is set up on the platform, with only one delivery option, email (the platform default).</p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;status&quot; : &quot;success&quot;,
   &quot;userName&quot; : &quot;JaneMead&quot;,
   &quot;pendingAgreements&quot; : [ &quot;signupagrmtv1.acmepaymentscorp&quot; ],

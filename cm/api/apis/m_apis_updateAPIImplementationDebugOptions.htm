@@ -389,9 +389,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to turn on debug mode for the specified API implementation&#160;by setting the logging level to 1.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/8fff41fb-1dcf-4843-95d2-d96b5d41c956.acmepaymentscorp/implementations/Live/debug</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/8fff41fb-1dcf-4843-95d2-d96b5d41c956.acmepaymentscorp/implementations/Live/debug</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/apis/versions/8fff41fb-1dcf-4843-95d2-d96b5d41c956.acmepaymentscorp/implementations/Live/debug HTTP/1.1
+<pre class="pre_request_headers">PUT /api/apis/versions/8fff41fb-1dcf-4843-95d2-d96b5d41c956.acmepaymentscorp/implementations/Live/debug HTTP/1.1
 Host: api-mysql.local.acmepaymentscorp.com
 Accept: application/vnd.soa.v84+json
 Content-Type: application/vnd.soa.v84+json
@@ -400,7 +400,7 @@ ba5-4fdb-93ed-caaf45956f01%252Eacmepaymentscorp%2Csig%3DfhUvb7rSfF8WiN367HbI2xCc
 VT4IuFQahPOPjzpH__V4fNZP4Vmmuo8Wn9tjCMPcrpoXqYV79_FeNINaigSL053zlUb_52bxAkOgQMa9mxiBDMz0HuPMkmDWzKO92vkYxB0rpsU1FxJE9Dnb633NfW3Kq0hT-
 TkAldvoSdlqH0eq_WJK0SBNpwm5sy5SJzM4BiBw5pSJ5UpHGipO_i4wbhu4XsPmX6bNfFJbp7htYKMeZj48efthEHS5H-tMS-Zet-67FYRCywGK_9PUQ_EmqsSnNJYbG9McQ</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;LogLevel&quot;:1
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -491,11 +491,11 @@ TkAldvoSdlqH0eq_WJK0SBNpwm5sy5SJzM4BiBw5pSJ5UpHGipO_i4wbhu4XsPmX6bNfFJbp7htYKMeZ
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. The response indicates a log level of 1, which means debug mode is turned on.</p>
 <p><strong>Sample response headers: application/vnd.soa.v84+json</strong></p>
-<pre>Status Code: 200 OK
+<pre class="pre_response_headers">Status Code: 200 OK
 Content-Type: application/vnd.soa.v84+json
 Date: Thu, 27 Apr 2017 18:28:13 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v84+json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;LogLevel&quot; : 1
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>

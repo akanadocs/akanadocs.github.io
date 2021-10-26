@@ -392,15 +392,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below saves OAuth settings for the production endpoint.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/ac320d12-8494-4b1c-b84e-26337ffd3088.acmepaymentscorp/oauthdetails</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/ac320d12-8494-4b1c-b84e-26337ffd3088.acmepaymentscorp/oauthdetails</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/apis/versions/ac320d12-8494-4b1c-b84e-26337ffd3088.acmepaymentscorp/oauthdetails HTTP/1.1
+<pre class="pre_request_headers">PUT /api/apis/versions/ac320d12-8494-4b1c-b84e-26337ffd3088.acmepaymentscorp/oauthdetails HTTP/1.1
 Host: {hostname}
 Accept: text/plain
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body: using the platform OAuth Provider domain</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIVersionID&quot;:&quot;ac320d12-8494-4b1c-b84e-26337ffd3088.acmepaymentscorp&quot;,
   &quot;ProxyAPI&quot;:{
     &quot;ProductionEndpoint&quot;:{
@@ -429,7 +429,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 }</pre>
 
 <p><strong>Sample request body: using a third-party provider</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;APIVersionID&quot;:&quot;b8bbed55-141c-4091-adac-b990a289012e.acmepaymentscorp&quot;,
   &quot;ProxyAPI&quot;:{
     &quot;ProductionEndpoint&quot;:{
@@ -570,7 +570,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that the request message was successfully received.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 04 May 2016 00:09:39 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <p>None.</p>

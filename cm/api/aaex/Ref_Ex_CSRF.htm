@@ -373,11 +373,11 @@
 	<li>Log in via the API, <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&#160;/api/login</a></span> operation, using your own email and password in the body of the operation instead of the placeholder values given below.
 		<ul>
 			<li>HTTP method: POST</li>
-			<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>login</strong></li>
+			<li>URL: <strong>https://{hostname}/api/login</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
 			<li>Content-Type header: <strong>application/json</strong></li>
 			<li>Request Body:
-				<pre>{
+				<pre class="prettyprint, pre_json">{
   "email":"MyEmailAddress",
   "password":"MyPassword"
 }</pre>
@@ -388,11 +388,11 @@
 	<li>Add the group, using the <span class="apidoc_code"><a href="../groups/m_groups_addGroup.htm">POST&#160;/api/groups</a></span> operation. In your API call, use the values below, modifying the URL path as needed, and filling your own values  for all fields in the Request Body (URL encoding not needed). Tags are optional, but all other values are required.
 		<ul>
 					<li>HTTP method: POST</li>
-			<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>groups</strong></li>
+			<li>URL: <strong>https://{hostname}/api/groups</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
 			<li>Content-Type header: <strong>application/json</strong></li>
 			<li>Request Body (this example includes the optional website address, but you can delete that value, keeping the line with an empty value):
-				<pre>{
+				<pre class="prettyprint, pre_json">{
   "Group":{
     "Name":"CSRF_Test_Group",
     "Description":"Group for testing CSRF token",

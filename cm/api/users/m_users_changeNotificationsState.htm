@@ -391,15 +391,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to archive two notifications.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/b0a1fced-bd72-4ebe-bdfc-1d5269474fff.acmepaymentscorp/notifications/state</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/b0a1fced-bd72-4ebe-bdfc-1d5269474fff.acmepaymentscorp/notifications/state</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&#160;/api/users/b0a1fced-bd72-4ebe-bdfc-1d5269474fff.acmepaymentscorp/notifications/state HTTP/1.1
+<pre class="pre_request_headers">PUT&#160;/api/users/b0a1fced-bd72-4ebe-bdfc-1d5269474fff.acmepaymentscorp/notifications/state HTTP/1.1
 Host: {hostname}
 Accept: */*
 Content-Type: application/vnd.soa.v84+json
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;State&quot;:&quot;archived&quot;,
   &quot;NotificationID&quot;:[
     &quot;notification1024.acmepaymentscorp&quot;,
@@ -487,11 +487,11 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that the operation was successful.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/plain
 Date: Fri, 09 Feb 2018 20:34:36 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>b0a1fced-bd72-4ebe-bdfc-1d5269474fff.acmepaymentscorp</pre>
+<pre class="pre_response_body_plain">b0a1fced-bd72-4ebe-bdfc-1d5269474fff.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

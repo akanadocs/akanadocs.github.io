@@ -388,15 +388,15 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a change in user preference regarding display of the Dashboard help.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://{hostname}/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/preferences/</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/preferences/</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&#160;/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/preferences/ HTTP/1.1
+<pre class="pre_request_headers">POST &#160;/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/preferences/ HTTP/1.1
 Host:{hostname}
 Accept: */*
 Content-Type: application/json; charset=UTF-8
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;Name&quot;:&quot;com.soa.helptext.dashboard.helpClosed&quot;,
   &quot;Value&quot;:&quot;open&quot;
 }</pre>
@@ -483,12 +483,12 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <p id="id_sampleresponse">The sample response below shows successful update of this user's preferences.</p>
 
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Date: Wed, 18 Jul 2012 19:01:59 GMT
 Content-Type: text/plain</pre>
 
 <p><strong>Sample response body</strong></p>
-<pre>522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
+<pre class="pre_response_body_plain">522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp</pre>
 
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->

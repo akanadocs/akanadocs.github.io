@@ -391,32 +391,32 @@ Adds a single file of new content to the platform, or adds a new directory.</p>
 <h2 id="samplerequest">Sample Request</h2>
 <p><strong>Request URL #1: Creating a new folder with empty table of contents file</strong></p>
 <p id="id_samplerequest">The example below creates a new folder named <strong>assets</strong> with a file in it, named <strong>toc.apiversion20693.acmepaymentscorp.json</strong>, the <a href="../aaref/Ref_ManagingAPIDocumentationContent.htm">JSON table of contents file</a> for the new folder. The file contains a single pair of curly braces (encoded in <a href="#contentadd_req_body_01">Sample request body (request URL #1)</a> below).</p>
-<pre>https://api.acmepaymentscorp.com/content/api/api18969.acmepaymentscorp/documents/assets/toc.apiversion20693.acmepaymentscorp.json?body=%7B%7D</pre>
+<pre class="pre_request_url">https://api.acmepaymentscorp.com/content/api/api18969.acmepaymentscorp/documents/assets/toc.apiversion20693.acmepaymentscorp.json?body=%7B%7D</pre>
 
 <p id="contentadd_legalagreement"><strong>Request URL #2: Creating an API legal agreement</strong></p>
 <p id="id_samplerequest2">The example below creates a new legal agreement for an API, with very simple text.</p>
-<pre>https://api.acmepaymentscorp.com/content/api/0af593d7-6a4f-47ed-a058-4e1f77b26dab.acmepaymentscorp/legal/eula.txt?body=End+user+license+agreement</pre>
+<pre class="pre_request_url">https://api.acmepaymentscorp.com/content/api/0af593d7-6a4f-47ed-a058-4e1f77b26dab.acmepaymentscorp/legal/eula.txt?body=End+user+license+agreement</pre>
 
 <p id="contentadd_apilegalagreement_publish"><strong>Request URL #3: Publishing an API legal agreement</strong></p>
 <p id="id_samplerequest2b">The example below publishes a legal agreement for an API by updating the JSON TOC (table of contents) file in the folder. The legal agreement must already exist. The URL and message body update the TOC. For the body content, see <a href="#contentadd_req_body_03">Sample request body (request URL #3)</a> below.</p>
-<pre>https://rcoaless.apiportal.com/content/api/1254cc85-f5a7-4dfc-aa98-c0a2ec258dae.rcoaless/
+<pre class="pre_request_url">https://rcoaless.apiportal.com/content/api/1254cc85-f5a7-4dfc-aa98-c0a2ec258dae.rcoaless/
 legal/toc.ff46365a-ebac-4fd3-9cbd-f1ac20262f80.rcoaless.json</pre>
 
 <p id="contentadd_folder"><strong>Request URL #4: Adding a SimpleDev documentation folder</strong></p>
 <p id="id_samplerequest3">The example below creates the <strong>documentation</strong> folder for a corresponding SimpleDev theme.</p>
-<pre>http://acmepaymentscorp.com/content/documentation</pre>
+<pre class="pre_request_url">http://acmepaymentscorp.com/content/documentation</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /content/api/api18969.acmepaymentscorp/documents/assets/toc.apiversion20693.acmepaymentscorp.json HTTP/1.1
+<pre class="pre_request_headers">POST /content/api/api18969.acmepaymentscorp/documents/assets/toc.apiversion20693.acmepaymentscorp.json HTTP/1.1
 Host: {hostname}
 Accept: */*
 Content-Type: application/x-www-form-urlencoded
 X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p id="contentadd_req_body_01"><strong>Sample request body (request URL #1)</strong></p>
-<pre>body=%7B%7D</pre>
+<pre class="pre_plain">body=%7B%7D</pre>
 
 <p id="contentadd_req_body_03"><strong>Sample request body (request URL #3)</strong></p>
 <p>The request body updates the folder table of content to reflect the fact that the API legal agreement has been published, and is now ready to be activated. The request body must be URL-encoded.</p>
-<pre>body=%7B%22toc%22%3A%5B%22api_legal_agreement_rcoaless.txt%22%2C%22api_legal_agreement_rcoaless2.txt%22%5D%2C%22sequence%22%3A%5B%22api_legal_agreement_rcoaless.txt%22%2C%22api_legal_agreement_rcoaless2.txt%22%2C%22toc.ff46365a-ebac-4fd3-9cbd-f1ac20262f80.rcoaless.json%22%5D%2C%22displayNames%22%3A%7B%7D%7D</pre>
+<pre class="pre_plain">body=%7B%22toc%22%3A%5B%22api_legal_agreement_rcoaless.txt%22%2C%22api_legal_agreement_rcoaless2.txt%22%5D%2C%22sequence%22%3A%5B%22api_legal_agreement_rcoaless.txt%22%2C%22api_legal_agreement_rcoaless2.txt%22%2C%22toc.ff46365a-ebac-4fd3-9cbd-f1ac20262f80.rcoaless.json%22%5D%2C%22displayNames%22%3A%7B%7D%7D</pre>
 
 <p><strong>Sample request body (request URL #4) in Postman</strong></p>
 <p>The example below creates the help folder for a corresponding SimpleDev theme, in Postman. In this example, CSRF is turned off, so only the content-type header is required. The <strong>path</strong> path parameter and <strong>folder</strong> form parameters are used.</p>
@@ -517,7 +517,7 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: text/html
 Date: Tue, 1 Jul 2014 20:00:00 GMT</pre>
 <p><strong>Sample response body</strong></p>

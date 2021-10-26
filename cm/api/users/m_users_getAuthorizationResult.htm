@@ -392,9 +392,9 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below queries whether the specified user is authorized to add an API.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/users/03de5a70-c54e-4924-9abd-29da117230cf.acmepaymentscorp/auzstatus?ResourceType=api&amp;Action=Add</pre>
+<pre class="pre_request_url">https://{hostname}/api/users/03de5a70-c54e-4924-9abd-29da117230cf.acmepaymentscorp/auzstatus?ResourceType=api&amp;Action=Add</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/users/03de5a70-c54e-4924-9abd-29da117230cf.acmepaymentscorp/auzstatus?ResourceType=api&amp;Action=Add HTTP/1.1
+<pre class="pre_request_headers">GET&#160;/api/users/03de5a70-c54e-4924-9abd-29da117230cf.acmepaymentscorp/auzstatus?ResourceType=api&amp;Action=Add HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -540,11 +540,11 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation; the user is authorized to add an API.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Fri, 11 Nov 2016 20:38:44 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   &quot;UserID&quot; : &quot;03de5a70-c54e-4924-9abd-29da117230cf.acmepaymentscorp&quot;,
   &quot;ResourceType&quot; : &quot;api&quot;,
   &quot;Result&quot; : &quot;Authorized&quot;

@@ -384,14 +384,14 @@
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the specified group to have visibility of the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://{hostname}/api/apis/versions/74ae5862-de41-4779-818e-a40b7bed0c68.rcoaless/viewers/cd519032-b0a3-47f8-9fb6-987e0d85432c.rcoaless</pre>
+<pre class="pre_request_url">https://{hostname}/api/apis/versions/74ae5862-de41-4779-818e-a40b7bed0c68.rcoaless/viewers/cd519032-b0a3-47f8-9fb6-987e0d85432c.rcoaless</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 Content-Type: application/json
 AtmoAuthToken_rcoaless=TokenID%3D1edb9803-f56d-4a5a-b705-44acb77bd3e6%2Cclaimed_id%3Durn%3Aa...
 X-Csrf-Token_rcoaless: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "ResourceID":"74ae5862-de41-4779-818e-a40b7bed0c68.rcoaless",
   "ViewerID":"cd519032-b0a3-47f8-9fb6-987e0d85432c.rcoaless",
   "ViewerType":"group",
@@ -494,11 +494,11 @@ X-Csrf-Token_rcoaless: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2Cexpirati
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Expires: Wed, 12 May 2021 18:06:30 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
   "ResourceID":"74ae5862-de41-4779-818e-a40b7bed0c68.rcoaless",
   "ResourceType":"apiversion",
   "ViewerID":"cd519032-b0a3-47f8-9fb6-987e0d85432c.rcoaless",

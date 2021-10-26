@@ -362,11 +362,11 @@
 	<li>Log in via the API, <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&#160;/api/login</a></span> operation, using your own email and password in the body of the operation instead of the placeholder values given below.
 		<ul>
 			<li>HTTP method: POST</li>
-			<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>login</strong></li>
+			<li>URL: <strong>https://{hostname}/api/login</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
 			<li>Content-Type header: <strong>application/json</strong></li>
 			<li>Request Body:
-				<pre>{
+				<pre class="prettyprint, pre_json">{
   "email":"MyEmailAddress",
   "password":"MyPassword"
 }</pre>
@@ -377,11 +377,11 @@
 	<li>Add the user, using the <span class="apidoc_code"><a href="../users/m_users_addUser.htm">POST&#160;/api/users</a></span> operation. In your API call, use the request body as shown below, and fill in valid values for the new user. Make sure the temporary password meets the password rules.
 		<ul>
 					<li>HTTP method: POST</li>
-			<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>users</strong></li>
+			<li>URL: <strong>https://{hostname}/api/users</strong></li>
 			<li>Content-Type header: <strong>application/json</strong></li>
 			<li>CSRF header: include it if needed. If you are not sure whether it's needed or not, refer to <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
 			<li>Request Body:
-				<pre>{
+				<pre class="prettyprint, pre_json">{
   "FirstName":"<strong>TemporaryFirstName</strong>",
   "LastName":"TemporaryLastName",
   "Email":"useremail@example.com",

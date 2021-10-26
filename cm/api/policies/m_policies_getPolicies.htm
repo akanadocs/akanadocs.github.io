@@ -390,18 +390,18 @@ Returns a list of supported policies, such as Service Level, Management, or Comp
 <h2 id="samplerequest">Sample Request</h2>
 <p><strong>Sample request URL #1</strong></p>
 <p>Returns all policies.</p>
-<pre>https://{hostname}/api/policies</pre>
+<pre class="pre_request_url">https://{hostname}/api/policies</pre>
 
 <p><strong>Sample request URL #2</strong></p>
 <p>Returns compliance policies.</p>
-<pre>https://{hostname}/api/policies?Type=Compliance%20Policy</pre>
+<pre class="pre_request_url">https://{hostname}/api/policies?Type=Compliance%20Policy</pre>
 
 <p><strong>Sample request URL #3</strong></p>
 <p>Returns operational policies for the specified business organization, including policies that have not yet been activated.</p>
-<pre>https://{hostname}/api/policies?Type=Operational%20Policy&amp;BusinessID=tenantbusiness.acmepaymentscorp&amp;IncludeInactivePolicies=true</pre>
+<pre class="pre_request_url">https://{hostname}/api/policies?Type=Operational%20Policy&amp;BusinessID=tenantbusiness.acmepaymentscorp&amp;IncludeInactivePolicies=true</pre>
 
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
+<pre class="pre_request_headers">Accept: application/json
 </pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -496,11 +496,11 @@ Returns a list of supported policies, such as Service Level, Management, or Comp
 <p id="id_sampleresponse">The sample response below shows five policies returned.</p>
 
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
+<pre class="pre_response_headers">HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Fri, 01 Jun 2018 00:18:49 GMT</pre>
 <p id="rss_policies_json"><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre class="prettyprint, pre_json">{
     "channel": {
         "title": "Policies",
         "item": [
