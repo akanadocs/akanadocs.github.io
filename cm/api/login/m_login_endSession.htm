@@ -563,12 +563,12 @@ AtmoAuthToken_acmepaymentscorp=none;path=/;expires=Wed, 22-Apr-2015 11:56:38 GMT
 				<p>If the session times out, the Community Manager developer portal:</p>
 				<ul class="apidoctable_ul">
 					<li>Ignores the <strong>returninstructions</strong> parameter.</li>
-					<li>Ends the userâs session and expires the cookies (AtmoAuthToken, and possibly CSRF).</li>
+					<li>Ends the user's session and expires the cookies (AtmoAuthToken, and possibly CSRF).</li>
 					<li>Returns the <strong>LogoutResponse</strong> JSON object with <strong>RPLogoutInfo</strong> for each remote federation member.</li>
 				</ul>
 				<p>If the user actively ends the session, the Community Manager developer portal:</p>
 				<ul class="apidoctable_ul">
-					<li>Ends the userâs session and expires the cookies (AtmoAuthToken, and possibly CSRF).</li>
+					<li>Ends the user's session and expires the cookies (AtmoAuthToken, and possibly CSRF).</li>
 					<li>If the <strong>returninstructions</strong> parameter is set to <strong>true</strong>, returns the <strong>LogoutResponse</strong> JSON object with <strong>IDPLogoutInfo</strong> if the user is logged in via a third-party provider and <strong>RPLogoutInfo</strong> for each remote federation member.</li>
 					<li>If the <strong>returninstructions</strong> parameter is set to <strong>false</strong>, redirects the user-agent if SLO needs to be performed at the IdP; otherwise, just returns an HTTP code 200.</li>
 				</ul>

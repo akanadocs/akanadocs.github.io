@@ -356,7 +356,7 @@
 <p>Deployment zones are also useful for DNS redirection. For example, Network Director might be on one specific hostname, but it might be determined that it&rsquo;s better not to expose that hostname to customers, but rather to specify a DNS redirection for each deployment zone.</p>
 <p>Configuring deployment zones allows you to:</p>
 <ul>
-	<li>Limit the containers or container clusters that are available for platform APIs, so that the APIs can only use those that you specify are available. When you define deployment zones, only those that are defined are valid choices when adding an API to the platform. You might have other containers or container clusters that you donât want to use for platform APIs. Defining deployment zones protects those from use by platform APIs.</li>
+	<li>Limit the containers or container clusters that are available for platform APIs, so that the APIs can only use those that you specify are available. When you define deployment zones, only those that are defined are valid choices when adding an API to the platform. You might have other containers or container clusters that you don't want to use for platform APIs. Defining deployment zones protects those from use by platform APIs.</li>
 	<li>Limit a specific container or container cluster for use only as a Sandbox endpoint or only as a Live implementation.</li>
 	<li>Define a virtual host. A Network Director HTTP or HTTPS listener only has one hostname, but you could configure deployment zones to show a different hostname, a virtual hostname. This is useful in scenarios where the API needs to be published with a specific hostname, independently of where it is deployed.</li>
 </ul>
