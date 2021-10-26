@@ -346,15 +346,11 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">POST&#160;/api/reviews</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>Adds a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_review">review</a> of a resource.</p>
 <p class="apidoc_note"><strong>Note</strong>: If you are using markdown, and will be incorporating one or more artifacts in your review, you must upload the artifacts first. Run the <span class="apidoc_code"><a href="../boards/m_boards_addFirstArtifact.htm">POST&#160;/api/boards/items/artifacts</a></span> operation to upload the first artifact and the <span class="apidoc_code"><a href="../boards/m_boards_addArtifact.htm">POST&#160;/api/boards/items/{BoardItemID}/artifacts</a></span> operation to upload any subsequent artifacts. Use the values from the responses, such as the BoardItemID and the image paths, to construct the payload for adding the review.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -373,19 +369,15 @@
 </ul>
 </div>
 <h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{hostname}/api/reviews</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below adds a review of an app.</p>
 <p><strong>Request URL</strong></p>
@@ -410,10 +402,10 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
   }
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -445,10 +437,10 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -471,17 +463,17 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the modified review object including ReviewID.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the full review object returned, including the ReviewID.</p>
 <p><strong>Sample response headers</strong></p>
@@ -503,10 +495,10 @@ Date: Wed, 13 May 2015 19:54:34 GMT</pre>
   }
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -524,10 +516,10 @@ Date: Wed, 13 May 2015 19:54:34 GMT</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -546,12 +538,11 @@ Date: Wed, 13 May 2015 19:54:34 GMT</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -575,7 +566,7 @@ Method Not Allowed. You might get this if there is an error in the URL, or if yo
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

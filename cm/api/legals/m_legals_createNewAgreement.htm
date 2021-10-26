@@ -346,11 +346,7 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">POST&#160;/api/legals</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>Assigns a document as a legal agreement on the platform, and adds information about the agreement.</p>
 <p> Before running this operation, you must upload the legal document using the content API. Follow these steps:</p>
 <ol>
@@ -360,7 +356,7 @@
 </ol>
 <p class="apidoc_note"><strong>Note</strong>: First, make sure there isn't already a portal signup legal agreement. The API platform allows only one signup agreement. If there is one already existing, you'll have to deactivate it first. For instruction on how to do that in the Community Manager developer portal, refer to the <a href="../../learnmore/site_admin_agreements.htm#platform_legal_agreement_change" target="_blank">Community Manager developer portal Site Admin help</a>. To deactivate/update using the API, use the <span class="apidoc_code"><a href="../legals/m_legals_updateAgreement.htm">PUT&#160;/api/legals/{LegalDocumentID}</a></span> operation.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a></p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -379,19 +375,15 @@
 </ul>
 </div>
 <h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{hostname}/api/legals</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below adds a signup agreement to the platform. The request content is sent in JSON format.</p>
 <p><strong>Request URL</strong></p>
@@ -412,10 +404,10 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
   "FileName" : "platform_agreement_rcoaless.txt"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -451,10 +443,10 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -477,17 +469,17 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 201, with the LegalDocumentID assigned to the agreement.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
@@ -497,10 +489,10 @@ Location: {hostname}/api/legals/aea331fc-6081-4b14-bf05-ae69d68cd475.rcoaless</p
 <p><strong>Sample response body</strong></p>
 <pre class="pre_response_body_plain">aea331fc-6081-4b14-bf05-ae69d68cd475.rcoaless</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -518,10 +510,10 @@ Location: {hostname}/api/legals/aea331fc-6081-4b14-bf05-ae69d68cd475.rcoaless</p
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -540,12 +532,11 @@ Location: {hostname}/api/legals/aea331fc-6081-4b14-bf05-ae69d68cd475.rcoaless</p
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -573,7 +564,7 @@ Method Not Allowed. You might get this if there is an error in the URL, or if yo
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

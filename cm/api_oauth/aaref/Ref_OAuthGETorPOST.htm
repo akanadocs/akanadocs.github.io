@@ -359,7 +359,6 @@
 <h4>Header buffer limitations</h4>
 <p>Some applications place a limit on the header buffer. When OAuth information is sent via HTTP GET, the information is conveyed in query parameters, and some of the values might be quite long. Query parameters go into the header. If there is a limitation on the header buffer, this could result in the message being cut off and/or refused.</p>
 <p>Depending on the general length of your OAuth messages and the systems you are using, this might be a reason to choose HTTP POST rather than GET.</p>
-
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

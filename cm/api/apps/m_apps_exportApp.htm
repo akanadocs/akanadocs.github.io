@@ -346,15 +346,11 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">GET&#160;/api/apps/{AppID}/package</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>Exports the information associated with a specific app.</p>
 
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>, or a user authorized to modify the specific app (an app team member).</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -373,19 +369,15 @@
 </ul>
 </div>
 <h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{hostname}/api/apps/{AppID}/package[?][exportVersion=all][&amp;migration.app.pki.export=true][&amp;migration.export.include.api.connections=true[]&amp;migration.export.include.app.team=true]</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to export the specified app information to a download file.</p>
 <p><strong>Request URL #1</strong></p>
@@ -407,10 +399,10 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -436,10 +428,10 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -510,17 +502,17 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the export information in a download file.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. The export file is downloaded as specified in the request parameters.</p>
 <p><strong>Sample response headers</strong></p>
@@ -532,10 +524,10 @@ Content-Encoding: gzip</pre>
 <p><strong>Sample response body</strong></p>
 <p>The response body is the export file named in the Content-Disposition header. The client you are using must support file download.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -557,10 +549,10 @@ Content-Encoding: gzip</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <p>The response body is a download file that includes information about the app. The export file is a standard format that can be imported into another instance of the platform for the same tenant. It includes the following files:</p>
 <ul>
@@ -569,12 +561,11 @@ Content-Encoding: gzip</pre>
 	<li>objectgraph.xml</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -593,7 +584,7 @@ Content-Encoding: gzip</pre>
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

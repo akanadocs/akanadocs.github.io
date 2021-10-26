@@ -346,18 +346,14 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">POST&#160;/oauth/oauth10/initiate</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>Generates a request to the OAuth Provider for an OAuth 1.0a token, using HTTP POST.</p>
 <p>The client obtains a set of temporary credentials from the server by making an authenticated HTTP (GET/POST) request to the Temporary Credential Request endpoint.</p>
 <p>This is a standard OAuth operation per the OAuth 1.0a specification. See section 1.2: <a href="http://tools.ietf.org/html/rfc5849#section-1.2" target="_blank">http://tools.ietf.org/html/rfc5849#section-1.2</a>. This section of the specification includes details about the request and response messages.</p>
 <p class="Note"><strong>Note</strong>: there is a corresponding operation that performs the same action using HTTP GET: <a href="m_oauth10_generateRequestTokenGET_.htm"><span class="apidoc_code">GET&#160;/oauth/oauth10/initiate</span></a>. However, we recommend using POST. For information on why you might choose one or the other, see <a href="../aaref/Ref_OAuthGETorPOST.htm">OAuth Operations: GET or POST?</a></p>
 <p>For a broader picture of how OAuth 1.0a token management works, and how this operation files into the process flow, see <a href="../aaref/Ref_OAuth_Tokens_10a.htm">OAuth: Using Tokens with OAuth 1.0a</a>.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Anyone can run this operation.</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -375,19 +371,15 @@
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
 </div><h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/oauth10/initiate</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for an OAuth 1.0a access token.</p>
 <p><strong>Request URL</strong></p>
@@ -404,10 +396,10 @@ Host: {hostname}</pre>
 <p><strong>Sample request body</strong></p>
 <p>None. The information is sent in the Authorization header.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -442,24 +434,24 @@ Host: {hostname}</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <p>None.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the token information.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
@@ -469,10 +461,10 @@ Expires: Mon, 05 Oct 2015 15:19:12 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <pre class="pre_plain">oauth_token=45c8npv52e48&oauth_token_secret=L7oLlPhVEL0Gs0QQldoMFctFK_nQkBq7FOiOF99Ix_s&oauth_callback_confirmed=true</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -490,10 +482,10 @@ Expires: Mon, 05 Oct 2015 15:19:12 GMT</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <p>The response body is per the OAuth 1.0a specification. See section 1.2: <a href="http://tools.ietf.org/html/rfc5849#section-1.2" target="_blank">http://tools.ietf.org/html/rfc5849#section-1.2</a></p>
 <table class="tableparmsresponse">
@@ -523,12 +515,11 @@ Expires: Mon, 05 Oct 2015 15:19:12 GMT</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -543,7 +534,7 @@ Expires: Mon, 05 Oct 2015 15:19:12 GMT</pre>
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana OAuth API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

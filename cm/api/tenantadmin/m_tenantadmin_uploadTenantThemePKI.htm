@@ -346,16 +346,12 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">POST&#160;/api/tenants/{FedmemberID}/theme/{theme}/pki</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>Adds PKI information for the specified tenant theme.</p>
 <p class="apidoc_note"><strong>Note</strong>: Before uploading the security certificate and assigning it in the Community Manager developer portal, you must define it in Policy Manager so that trust is established. For instructions, see <a href="../../../ag/security_config/trusted_ca_certificates.htm">Import CA Certificate</a> (Policy Manager help).</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must have Modify permission for the tenant; <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
 
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -374,19 +370,15 @@
 </ul>
 </div>
 <h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{hostname}/api/tenants/{FedmemberID}/theme/{theme}/pki</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows upload of a digital certificate. The request body includes the keystore file name, alias&#160;name, password, and content.</p>
 <p><strong>Request URL</strong></p>
@@ -430,10 +422,10 @@ Content-Disposition: form-data; name="X-Csrf-Token_acmepaymentscorp"
 TokenID%3D7529bcc2-9046-11e8-ac6f-e9decb05b61d%2Cexpiration . . .
 </pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -463,10 +455,10 @@ TokenID%3D7529bcc2-9046-11e8-ac6f-e9decb05b61d%2Cexpiration . . .
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -532,17 +524,17 @@ Unique ID for a specific tenant. Same as <strong>TenantID</strong>.</td>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with information about the digital certificate that was uploaded.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
@@ -557,10 +549,10 @@ Location: http://acmepaymentscorp.com/api/acmepaymentscorp/theme/clone/pki</pre>
 &lt;meta content=&quot;IE=edge&quot; http-equiv=&quot;X-UA-Compatible&quot;&gt;
 &lt;meta name=&quot;description&quot; content=&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacus elit, ornare eget luctus vel, porta id elit. Maecenas molestie, libero sit amet blandit faucibus, orci nisi aliquet nisi, id mollis mauris ipsum a enim. Morbi lacus velit, placerat sit amet luctus eget, pulvinar a massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eleifend tincidunt pellentesque. Cras eu sapien massa, vitae rutrum sapien. Aenean id condimentum sem. Suspendisse tempor luctus ipsum, vel metus.&quot;&gt;&lt;/head&gt;&lt;body status=&quot;201&quot; statusText=&quot;success&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; standalone=&amp;quot;yes&amp;quot;?&amp;gt;&amp;lt;PKIAndCertificateInfo xmlns=&amp;quot;http://soa.com/uri/products/restapi/xsd/1.0&amp;quot;&amp;gt;&amp;lt;privateKeyExists&amp;gt;false&amp;lt;/privateKeyExists&amp;gt;&amp;lt;publicKey&amp;gt;MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsbK49uXtQ1tuB6+Rlw8XZDZT5uYOC/hC/WYbNJW1QX9lR/ezaLCn+UYev1lVpUESZDZn1EtLfMTuYueAqfYAYXp/Ju4gkYxSgdOfIyDLtxfG2EvNz9xZcc1n6BR7jteekiDFD6/Asc1udkO+aMjWYj7cfxQ4s8u5ULtniqGTC2Ea3vynTDHAmunVqqogwFZBuiaDnOO8e4NHc9QavKZ6kTIoHM47nY9zaJdRDwPWmT9h9PVy43vetcSjaMqFmZvHdYdJpIOKCnnSB4pkSxHy8ZbAZaTuEC2LJ1OCYP06gmUHuyC9AKheV59Y4Oq1mmZLqGEAkRDgv+nBvfwLFQo0BQIDAQAB&amp;lt;/publicKey&amp;gt;&amp;lt;certificateInfo&amp;gt;&amp;lt;subjectDN&amp;gt;CN=GenCert, OU=acmepaymentscorpBilling, O=acmepaymentscorp, L=NA, ST=FL, C=US&amp;lt;/subjectDN&amp;gt;&amp;lt;issuerDN&amp;gt;CN=GenCert, OU=acmepaymentscorpBilling, O=acmepaymentscorp, L=NA, ST=FL, C=US&amp;lt;/issuerDN&amp;gt;&amp;lt;serialNo&amp;gt;1532468375&amp;lt;/serialNo&amp;gt;&amp;lt;effectiveDate&amp;gt;1532468375000&amp;lt;/effectiveDate&amp;gt;&amp;lt;expirationDate&amp;gt;1564004375000&amp;lt;/expirationDate&amp;gt;&amp;lt;/certificateInfo&amp;gt;&amp;lt;Links&amp;gt;&amp;lt;Link rel=&amp;quot;delete&amp;quot; href=&amp;quot;http://testing.acmepaymentscorp.com/api/tenants/acmepaymentscorp/theme/clone/pki&amp;quot;/&amp;gt;&amp;lt;Link rel=&amp;quot;self&amp;quot; href=&amp;quot;http://testing.acmepaymentscorp.com/api/tenants/acmepaymentscorp/theme/clone/pki&amp;quot;/&amp;gt;&amp;lt;/Links&amp;gt;&amp;lt;/PKIAndCertificateInfo&amp;gt;&lt;/body&gt;&lt;/html&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -578,10 +570,10 @@ Location: http://acmepaymentscorp.com/api/acmepaymentscorp/theme/clone/pki</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -600,12 +592,11 @@ Location: http://acmepaymentscorp.com/api/acmepaymentscorp/theme/clone/pki</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -624,7 +615,7 @@ Location: http://acmepaymentscorp.com/api/acmepaymentscorp/theme/clone/pki</pre>
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

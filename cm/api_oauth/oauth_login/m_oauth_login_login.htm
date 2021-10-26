@@ -346,15 +346,11 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">POST&#160;/oauth/login</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>
 Allows a person to log in for the purposes of OAuth, and returns the OAuth authentication cookie. For users signed up on the platform; other users log in using the <span class="apidoc_code"><a href="m_oauth_login_ssoLoginPost.htm">POST&#160;/oauth/login/ssoLogin</a></span> operation.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Anyone can run this operation.</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -372,19 +368,15 @@ Allows a person to log in for the purposes of OAuth, and returns the OAuth authe
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
 </div><h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/login</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a login request.</p>
 <p><strong>Request URL</strong></p>
@@ -399,10 +391,10 @@ Accept: application/json</pre>
 <p>The site user logs in with the username.</p>
 <pre class="pre_plain">identity_username=siteuser17&amp;secret_password=MyPassword123</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -424,10 +416,10 @@ Accept: application/json</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -455,10 +447,10 @@ Accept: application/json</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with:</p>
 <ul>
@@ -466,10 +458,10 @@ Accept: application/json</pre>
 	<li>The UserName and DomainName of the user. Example: { "DomainName" : "Local Domain", "UserName" : "Rep1" }.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
@@ -487,10 +479,10 @@ z3vWwQIcya77SID6tGGhvjynwSXrst5of2sZ37Cw</pre>
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -512,10 +504,10 @@ z3vWwQIcya77SID6tGGhvjynwSXrst5of2sZ37Cw</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -534,12 +526,11 @@ z3vWwQIcya77SID6tGGhvjynwSXrst5of2sZ37Cw</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -554,7 +545,7 @@ z3vWwQIcya77SID6tGGhvjynwSXrst5of2sZ37Cw</pre>
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana OAuth API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

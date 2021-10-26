@@ -346,11 +346,7 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">GET&#160;/oauth/auz/grants/{GrantID}/auzcomplete</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>
 Completes the process of authentication and authorization. Changes the grant status to Active or Rejected based on the authorization action, removes the temporary cookie that was in use during provisioning, and returns the resource owner to the redirect URI along with additional information such as the <strong>state</strong> parameter and the code, token, or id token.</p>
 <p>This operation redirects the user back to the application, along with additional information such as authorization code, access token, or ID token:</p>
@@ -361,7 +357,7 @@ Completes the process of authentication and authorization. Changes the grant sta
 </ul>
 <p>The response also includes the <strong>state</strong> parameter. The request for resource owner authorization includes redirect uri and state parameter; these two are used when sending the user back to the application, along with the authorization code, access token or id token, depending on the value in the response_type parameter of the request.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Must be the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_oauth_resourceowner">resource owner</a>.</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -379,19 +375,15 @@ Completes the process of authentication and authorization. Changes the grant sta
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
 </div><h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/auz/grants/{GrantID}/auzcomplete</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a redirect request. Grant provisioning is complete, and the GrantID is returned in the URL.</p>
 <p><strong>Request URL</strong></p>
@@ -403,10 +395,10 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -424,10 +416,10 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -450,10 +442,10 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful:</p>
 <ul>
@@ -462,10 +454,10 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 </ul>
 <p>The response can contain id token, code, token, or a combination, based on the response_type value specified. These elements can be added as query parameters to the Redirect URL, or sent as fragment parameters, or sent to the redirect URL using HTTP POST, based on the response mode chosen.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
@@ -473,10 +465,10 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 <p><strong>Sample response body</strong></p>
 <p>None.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -494,19 +486,18 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <p>No response content. The result of this operation is that the user is redirected to the client's Redirect URI and the temporary cookie is removed.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -529,7 +520,7 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana OAuth API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

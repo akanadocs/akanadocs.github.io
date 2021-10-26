@@ -346,16 +346,12 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">POST&#160;/oauth/login/renewToken</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>Renews an OAuth authentication token. Uses HTTP POST.</p>
 <p>The OAuthToken cookie set up by the login/ssoLogin API calls is valid for only 10 minutes. Before the token expires, you can renew it for another 10 minutes.</p>
 <p><span class="apidoc_note"><strong>Note</strong>: there is a corresponding operation that performs the same action using HTTP GET: <span class="apidoc_code"><a href="m_oauth_login_renewTokenGET_.htm">GET&#160;/oauth/login/renewToken</a></span>. For information on why you might choose one or the other, see <a href="../aaref/Ref_OAuthGETorPOST.htm">OAuth Operations: GET or POST?</a></span></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Anyone can run this operation.</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -373,19 +369,15 @@
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
 </div><h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/login/renewToken</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to renew a token.</p>
 <p><strong>Request URL</strong></p>
@@ -397,10 +389,10 @@ Cookie: OAuthToken_{OAuthProviderName}={Cookie value (usually starts with TokenI
 <p><strong>Sample request body</strong></p>
 <p>None.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -422,25 +414,25 @@ Cookie: OAuthToken_{OAuthProviderName}={Cookie value (usually starts with TokenI
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <p>None.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200. The response includes a cookie that will be used for subsequent requests. For non-browser scenarios, the application must save this cookie and include it in every request. The cookie name includes the OAuth Provider name. Cookie name: OAuthToken_{OAuthProviderName}.</p>
 <p>The response includes the UserName and DomainName of the user.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
@@ -455,10 +447,10 @@ thq0I1hJvMJ7xlWj8haU3OvM4b6I3LgGWGvw5_Uws935JKLW57xiti_UC2IvxFDrAIg4xx2k-x-icqUD
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -480,10 +472,10 @@ thq0I1hJvMJ7xlWj8haU3OvM4b6I3LgGWGvw5_Uws935JKLW57xiti_UC2IvxFDrAIg4xx2k-x-icqUD
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -502,12 +494,11 @@ thq0I1hJvMJ7xlWj8haU3OvM4b6I3LgGWGvw5_Uws935JKLW57xiti_UC2IvxFDrAIg4xx2k-x-icqUD
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -522,7 +513,7 @@ thq0I1hJvMJ7xlWj8haU3OvM4b6I3LgGWGvw5_Uws935JKLW57xiti_UC2IvxFDrAIg4xx2k-x-icqUD
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana OAuth API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

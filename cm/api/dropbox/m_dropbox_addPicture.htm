@@ -346,18 +346,14 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">POST&#160;/api/dropbox/pictures</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>
 Uploads an image, for a resource such as a user profile, to the Dropbox.&#160;Provides a temporary storage location for an avatar image the user uploads as part of creating or updating a resource such as a user profile, an API, or an app.</p>
 <p>For more information on managing images associated with resources on the portal, refer to <a href="../aaref/Ref_ManagingAvatarsOnThePlatform.htm">Managing Avatars on the Portal</a>.</p>
 <p>For an illustration of running this operation in Postman, see <a href="../aaref/Ref_ManagingMultipartFormDataUploads.htm#fileupload_example_dropbox_addpicture">Managing Multipart/Form-Data Uploads: Dropbox Service: Add Picture</a>.</p>
 <p>For a training exercise that uses this operation, including video, see <a href="../aaex/Ref_Ex_AddingAppAvatar.htm">Example: Adding an App Avatar</a>.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must be logged in and must be either an authorized user for the resource or a site admin.</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -376,19 +372,15 @@ Uploads an image, for a resource such as a user profile, to the Dropbox.&#160;Pr
 </ul>
 </div>
 <h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{hostname}/api/dropbox/pictures</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a picture being uploaded. The image is part of the multipart/form-data request body.</p>
 <p class="apidoc_note"><strong>Note</strong>: If you are using iframes, you can wrap the image in HTML so that it will work with the browser's same-origin security policy. For more information, see <a href="../aaref/Ref_FileUploadWithAjax.htm">File Upload with Ajax</a>.</p>
@@ -405,10 +397,10 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 <p><img src="../assets/fileupload_dropbox_addPicture_02.jpg" alt="Add Picture in Postman: Body" /></p>
 <p>For an end-to-end example of running this operation in Postman, see <a href="../aaref/Ref_ManagingMultipartFormDataUploads.htm#fileupload_example_dropbox_addpicture">Managing Multipart/Form-Data Uploads: Dropbox Service: Add Picture</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -438,10 +430,10 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -464,17 +456,17 @@ X-Csrf-Token_acmepaymentscorp: TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2C
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with a string confirmation that the operation is complete.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows that the operation completed successfully.</p>
 
@@ -497,10 +489,10 @@ consectetur adipiscing elit. Morbi eleifend tincidunt pellentesque. Cras eu sapi
 &lt;body status=&quot;200&quot; statusText=&quot;success&quot;&gt;1001&lt;/body&gt;&lt;/html&gt;</pre>
 <p class="apidoc_note"><strong>Note</strong>: for information about the HTML wrapper shown in the sample response above, see <a href="../aaref/Ref_FileUploadWithAjax.htm">File Upload with Ajax</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -518,10 +510,10 @@ consectetur adipiscing elit. Morbi eleifend tincidunt pellentesque. Cras eu sapi
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -541,12 +533,11 @@ A temporary ID for a picture on the platform, such as the avatar for an app, API
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -565,7 +556,7 @@ A temporary ID for a picture on the platform, such as the avatar for an app, API
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

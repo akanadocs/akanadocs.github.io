@@ -346,12 +346,8 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">GET&#160;/api/apis/versions/{APIVersionID}/definition/{Specification}</h1>
 <h1>GET&#160;/api/apis/versions/{APIVersionID}/definition/{Specification}/{IncludeDocId}</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>
 Returns the generated API description document for the specified API version. With the optional <strong>IncludeDocId</strong> parameter, returns the generated API description document in the specified format.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: User must have read permission for the API, per the visibility rules below.</p>
@@ -361,7 +357,7 @@ Returns the generated API description document for the specified API version. Wi
 	<li><strong>Open API 3.0, Swagger 2.0 or 1.2</strong>: The operation returns the Swagger document with the information that the user has visibility to see. In this scenario, if the user has visibility to certain parts of the API, but not others, the user sees the authorized portions of the API, as determined by the API settings and the user's permissions.</li>
 </ul>
 <p><strong>Note</strong>: WSDL is generally used for SOAP rather than REST APIs. If you're retrieving the API definition in WSDL format for a REST API, it will include proprietary extensions for the Akana platform. For SOAP services it will be standard WSDL.</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -380,19 +376,15 @@ Returns the generated API description document for the specified API version. Wi
 </ul>
 </div>
 <h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/definition/{Specification}/[{IncludeDocId}][?Environment={Environment}]</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request #1: Open API 3.0</h2>
 <p id="id_samplerequest">The example below shows a request for the Open API 3.0 document for an API set up on the platform, in the Live implementation. The API is a subset of the Swagger Petstore API. For the corresponding response, see <a href="#sampleresponse">Sample Response #1</a>.</p>
 <p><strong>Request URL #1: Open API 3.0</strong></p>
@@ -435,10 +427,10 @@ Accept: application/raml+yaml</pre>
 <p>For the response, see <a href="#sampleresponse_5">Sample Response #5: WSDL</a> below.</p>
 <pre class="pre_request_url">https://{hostname}/api/apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/wsdl</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -469,10 +461,10 @@ Accept: application/raml+yaml</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -523,17 +515,17 @@ Accept: application/raml+yaml</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the API description document in the requested format.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response #1: Open API 3.0</h2>
 <p id="id_sampleresponse">The example below shows the responses to the API request shown in <a href="#samplerequest">Sample Request #1</a>. The API is a subset of the sample Swagger Petstore API.</p>
 <p><strong>Sample response #1 headers</strong></p>
@@ -1603,10 +1595,10 @@ Date: Fri, 06 Mar 2020 14:42:52 GMT</pre>
 &lt;/wsdl:definitions&gt;
 </pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -1624,19 +1616,18 @@ Date: Fri, 06 Mar 2020 14:42:52 GMT</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <p>The response body is the generated API documentation.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -1655,7 +1646,7 @@ Date: Fri, 06 Mar 2020 14:42:52 GMT</pre>
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

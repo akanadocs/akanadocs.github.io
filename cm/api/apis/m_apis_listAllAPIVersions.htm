@@ -346,18 +346,14 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">GET&#160;/api/apis/versions</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>
 Returns information about API versions for all APIs, in the form of a JSON or XML object.</p>
 <p><strong>V</strong>ersion information does not include operations. For information about operations for a specific API version, use <span class="apidoc_code"><a href="m_apis_getAPIVersion.htm">GET&#160;/api/apis/versions/{APIVersionID}</a></span> with the optional <strong>includeOperations</strong> parameter.</p>
 <p><span class="apidoc_code"><a href="m_apis_listAPIVersions.htm">GET&#160;/api/apis/versions</a></span> with text/xml or application/json content-type returns API version information in the form of an RSS channel; <span class="apidoc_code">GET&#160;/api/apis/versions</span> (this operation) returns it as a JSON or XML object. Both operations return the same information; only the structure/format is different.</p>
 <p class="apidoc_note"><strong>Note</strong>: this operation might return a large amount of content. If you want to view versions for a specific API, use the <span class="apidoc_code"><a href="m_apis_getAPIVersions.htm">GET&#160;apis/{APIID}/versions</a></span> operation instead.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must be authorized to view all APIs on the Community Manager developer portal: <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -376,19 +372,15 @@ Returns information about API versions for all APIs, in the form of a JSON or XM
 </ul>
 </div>
 <h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p><strong>Request URL #1</strong></p>
 <p>Returns all API versions.</p>
@@ -401,10 +393,10 @@ Returns information about API versions for all APIs, in the form of a JSON or XM
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -432,10 +424,10 @@ Returns information about API versions for all APIs, in the form of a JSON or XM
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -473,17 +465,17 @@ Returns information about API versions for all APIs, in the form of a JSON or XM
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with a list of all the API versions visible to the user initiating the operation. The information is sent in JSON or XML format.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation (sample request URL #2, deleted APIs). There is only one deleted API version.</p>
 <p><strong>Sample response headers: application/vnd.soa.v72+json</strong></p>
@@ -518,10 +510,10 @@ Expires: Wed, 01 Apr 2015 15:35:29 GMT</pre>
   }  ]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -541,10 +533,10 @@ Expires: Wed, 01 Apr 2015 15:35:29 GMT</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -563,12 +555,11 @@ Expires: Wed, 01 Apr 2015 15:35:29 GMT</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -587,7 +578,7 @@ Expires: Wed, 01 Apr 2015 15:35:29 GMT</pre>
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

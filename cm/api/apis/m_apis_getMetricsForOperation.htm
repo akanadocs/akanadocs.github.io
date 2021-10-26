@@ -346,17 +346,13 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">GET&#160;/api/apis/versions/{APIVersionID}/environments/{Environment}/operations/{OperationName}/metrics</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>
 Returns a set of metric information for the specified operation in the specified environment that can be used to create a chart.</p>
 <p>For additional information regarding the set of operations dealing with metric information, see <a href="../aaref/Ref_MetricsOnThePlatform.htm">Metrics on the Platform</a>.</p>
 <p class="apidoc_note"><strong>Note</strong>: This operation returns metric data per operation as a chart; the <span class="apidoc_code"><a href="m_apis_getTxLogsForOperation.htm">GET&#160;/api/apis/versions/{APIVersionID}/environments/{Env}/operations/{OpName}/txlogs</a></span> operation returns the same data as a table.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must be a user with Monitor permission for the API; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or an app developer who has a contract with the API.</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -375,18 +371,15 @@ Returns a set of metric information for the specified operation in the specified
 </ul>
 </div>
 <h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/environments/{Environment}/operations/{OperationName}/metrics</pre><!-- InstanceEndEditable -->
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/environments/{Environment}/operations/{OperationName}/metrics</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the metric information for the specified API version.</p>
 <p><strong>Request URL</strong></p>
@@ -396,10 +389,10 @@ Returns a set of metric information for the specified operation in the specified
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -428,10 +421,10 @@ Returns a set of metric information for the specified operation in the specified
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -521,17 +514,17 @@ The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the metrics for the specified API version in JSON or XML format.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
@@ -652,10 +645,10 @@ xmlns:ns7=&quot;http://soa.com/xsd/app/1.0&quot; xmlns:ns8=&quot;http://soa.com/
   &lt;/Interval&gt;
 &lt;/Graph&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -676,10 +669,10 @@ xmlns:ns7=&quot;http://soa.com/xsd/app/1.0&quot; xmlns:ns8=&quot;http://soa.com/
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -698,12 +691,11 @@ xmlns:ns7=&quot;http://soa.com/xsd/app/1.0&quot; xmlns:ns8=&quot;http://soa.com/
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -726,7 +718,7 @@ xmlns:ns7=&quot;http://soa.com/xsd/app/1.0&quot; xmlns:ns8=&quot;http://soa.com/
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

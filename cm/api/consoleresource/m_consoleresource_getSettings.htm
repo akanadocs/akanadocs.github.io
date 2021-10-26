@@ -346,11 +346,7 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">GET&#160;/resources/{ResourceVersionKey}/settings</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>
 Used prior to login: Returns a subset of the configurable settings for the tenant, such as login domains, password policy, and API and app settings. Additional settings, such as settings for alerts, connections, reviews, discussions, and comments, are returned after login.</p>
 <p><strong>Updated in version: 2020.1.0 and later</strong>. Prior to version 2020.1.0, this operation returned all settings. In 2020.1.0 and later, this operation returns a subset of settings so that the user can be logged in. After login, an additional operation, <span class="apidoc_code"><a href="m_consoleresource_getPostLoginSettings.htm">GET&#160;/resources/{ResourceVersionKey}/settings</a></span> with <strong>application/vnd.akana.v2020+json</strong> Accept header, returns all settings.</p>
@@ -358,7 +354,7 @@ Used prior to login: Returns a subset of the configurable settings for the tenan
 <p>The response is cached for one month unless the ResourceVersionKey changes.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Anyone can perform this operation. Login is not required. Additional settings are returned after login.</p>
 <p class="apidoc_note"><strong>Note</strong>: The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csrf_header">CSRF header</a> is never required for this operation, regardless of platform settings.</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -377,19 +373,15 @@ Used prior to login: Returns a subset of the configurable settings for the tenan
 </ul>
 </div>
 <h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">{protocol}//{hostname}/resources/{ResourceVersionKey}/settings</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for information about the preliminary settings for the specified tenant.</p>
 <p><strong>Request URL</strong></p>
@@ -399,10 +391,10 @@ Used prior to login: Returns a subset of the configurable settings for the tenan
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -420,10 +412,10 @@ Used prior to login: Returns a subset of the configurable settings for the tenan
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -446,17 +438,17 @@ Used prior to login: Returns a subset of the configurable settings for the tenan
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the settings.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
@@ -614,10 +606,10 @@ Content-Type: application/json
   }
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -635,10 +627,10 @@ Content-Type: application/json
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -659,12 +651,11 @@ Content-Type: application/json
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -679,7 +670,7 @@ Content-Type: application/json
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

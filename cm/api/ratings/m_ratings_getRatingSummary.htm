@@ -346,10 +346,9 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
-<h1 id="top">GET&#160;/api/{service}[/versions/]{ID}/ratings/summary</h1><!-- InstanceEndEditable -->
+<h1 id="top">GET&#160;/api/{service}[/versions/]{ID}/ratings/summary</h1>
 
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
+
 <p>
 Retrieves a summary of the ratings for a resource.</p>
 <p>This operation is used by the following services:</p>
@@ -360,7 +359,7 @@ Retrieves a summary of the ratings for a resource.</p>
 </ul>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be logged in and have permission to view the requested resources. If the user is logged in but doesn't have permission to view certain resources, the operation works, but limited (or empty) results are returned.</p>
 <p class="apidoc_note"><strong>Note</strong>: Generally, the Akana API Platform maintains averaged ratings for each version of an app or API, aggregating and averaging the ratings based on the specific version that the user is rating rather than for the app or API as a whole. The exception to this is the search interface, where the app or API is displayed as a single line item with the average rating of all versions combined.</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -379,18 +378,15 @@ Retrieves a summary of the ratings for a resource.</p>
 </ul>
 </div>
 <h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://{hostname}/api/{service}[/versions]/{ID}/ratings/summary</pre><!-- InstanceEndEditable -->
+<pre class="soaapidoc_endpoint">https://{hostname}/api/{service}[/versions]/{ID}/ratings/summary</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p>This section includes sample requests for different services that use this operation:</p>
 <ul>
@@ -435,10 +431,10 @@ Retrieves a summary of the ratings for a resource.</p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -464,10 +460,10 @@ Retrieves a summary of the ratings for a resource.</p>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -490,17 +486,17 @@ Retrieves a summary of the ratings for a resource.</p>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the ratings summary in JSON or XML.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p>This section includes sample responses for different services that use this operation:</p>
 <ul>
@@ -561,10 +557,10 @@ Date: Wed, 19 Jun 2013 15:55:13 GMT</pre>
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -582,10 +578,10 @@ Date: Wed, 19 Jun 2013 15:55:13 GMT</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -605,12 +601,11 @@ An aggregated, averaged summary of individual user ratings for the resource, inc
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -633,7 +628,7 @@ An aggregated, averaged summary of individual user ratings for the resource, inc
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

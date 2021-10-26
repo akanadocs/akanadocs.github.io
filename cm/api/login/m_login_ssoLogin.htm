@@ -346,11 +346,7 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">GET&#160;/api/login/ssoLogin</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>Allows a user to log in by authenticating with an external identity provider that has its own login screen, providing SSO is enabled between the platform and the identity provider. Examples: Facebook, Google. SSO must already be enabled between the platform and the identity provider; the System Admin must have already created the OpenID Connect domain and enabled it for login.</p>
 <p>For example, this operation is generally used when SSO login uses a redirect URL to accomplish the login. In this case, the Domain ID is sent as a query or path parameter rather than POST data.</p>
 <p class="apidoc_note"><strong>Note</strong>: Login domains might support SSO login via POST or GET. For example, an OpenID Connect Relying Party domain might support a response mode of query, fragment, or form_post. If the domain supports form_post, <span class="apidoc_code">POST&#160;/api/login/ssoLogin</span> is used. If the domain supports query or fragment, <span class="apidoc_code">GET&#160;/api/login/ssoLogin</span> is used.</p>
@@ -364,7 +360,7 @@
 </ol>
 <p>If the optional finalURL parameter is included, the identity provider also redirects the user to the specified URL once authentication is complete.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: To complete this operation successfully, a user must have valid credentials for the login connector specified in the domain parameter. Note that support of specific login connectors is configurable and is therefore not the same on all platform instances.</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -383,19 +379,15 @@
 </ul>
 </div>
 <h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{hostname}/api/login/ssologin</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The examples below show SSO login in different scenarios, with different providers.</p>
 <p><strong>Request URL #1: Domain in query parameter</strong></p>
@@ -422,10 +414,10 @@
 <p><strong>Sample request headers</strong></p>
 <pre class="pre_request_headers">Accept: application/json</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -443,10 +435,10 @@
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -487,10 +479,10 @@
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns one of these:</p>
 <ul>
@@ -498,10 +490,10 @@
 	<li>If finalURL prameter was not provided: HTTP status code 200, with the user authentication information in JSON format.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the authentication information returned from Google.</p>
 <p><strong>Sample response header (Request #1: finalURL parameter provided in request)</strong></p>
@@ -528,10 +520,10 @@ Set-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3D09e80883-fcad-11e3-9389-f3b
 <p><strong>Sample response body (Request #4: SAML)</strong></p>
 <p>To view the response body for the SAML example, and step-by-step instructions to complete the SAML login, see see <a href="../aaex/Ref_Ex_SSO_Login_SAML.htm">Example: SSO login with SAML Provider</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -553,10 +545,10 @@ Set-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3D09e80883-fcad-11e3-9389-f3b
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -575,12 +567,11 @@ Set-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3D09e80883-fcad-11e3-9389-f3b
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -595,7 +586,7 @@ Set-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3D09e80883-fcad-11e3-9389-f3b
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

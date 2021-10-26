@@ -346,11 +346,7 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">POST&#160;/api/users/signupUser[/{InvitationCode}]</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>
 Initiates the signup process by sending the user's signup information to the database; in some cases, sends an email to the user. Once the user has provided the required signup information, the signup is complete.</p>
 <p><strong>Before</strong>: Either of the following two scenarios can occur before this operation is run:</p>
@@ -378,7 +374,7 @@ Initiates the signup process by sending the user's signup information to the dat
 <p id="id_settings"><strong>Settings</strong>: This operation checks whether the setting that allows users to sign themselves up for the platform is set to allow self-signup. If the setting (SelfSignup) is disabled, the operation will fail. To check this setting, run the <span class="apidoc_code"><a href="../businesses/m_businesses_getUserSettings.htm">GET&#160;/api/businesses/{BusinessID}/usersettings</a></span> operation.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: None required.</p>
 
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -397,19 +393,15 @@ Initiates the signup process by sending the user's signup information to the dat
 </ul>
 </div>
 <h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{hostname}/api/users/signupUser[/{InvitationCode}]</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The examples below shows the user's signup information sent in the request body.</p>
 <p><strong>Request URL</strong></p>
@@ -489,10 +481,10 @@ Content-Type: application/json; charset=UTF-8</pre>
   ]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -515,10 +507,10 @@ Content-Type: application/json; charset=UTF-8</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -548,18 +540,18 @@ Content-Type: application/json; charset=UTF-8</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful on user self-signup, this operation returns HTTP status code 200, with the user information including the assigned UserID. Because email confirmation is needed, the user's <a href="../aaref/Ref_Values.htm#values_usersignupstate">state</a> is <strong>pending_validation</strong>.</p>
 <p>If the user signed up with the invitation code, to complete the signup, and the operation is successful, it returns HTTP 200. At this point, the user's state changes from <strong>pending_validation</strong> to <strong>registered</strong>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the user information returned in the form of a JSON object.</p>
 
@@ -597,10 +589,10 @@ JCuZAmPNMAE8NagE</pre>
   &quot;signupStatus&quot; : &quot;user.signup.confirm.email&quot;
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -623,10 +615,10 @@ JCuZAmPNMAE8NagE</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -645,12 +637,11 @@ JCuZAmPNMAE8NagE</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -669,7 +660,7 @@ JCuZAmPNMAE8NagE</pre>
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

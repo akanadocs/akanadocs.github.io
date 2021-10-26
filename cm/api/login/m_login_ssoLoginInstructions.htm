@@ -346,16 +346,12 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">GET&#160;/api/login/ssoLoginInstructions</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>
 Returns applicable instructions for logging in the user, depending on the login option the user has selected.</p>
 <p>If the login domain needs credentials, the response indicates this and indicates which credentials are needed. If the login domain requires a redirect to the authentication provider, the response indicates NeedRedirect and indicates the redirect URL for the applicable login provider.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: No permissions required.</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -374,19 +370,15 @@ Returns applicable instructions for logging in the user, depending on the login 
 </ul>
 </div>
 <h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{hostname}/api/login/ssoLoginInstructions?domain={domain}</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a login request when the user has selected LDAP as the login option. The second example shows request headers when the user has selected Google.</p>
 <p><strong>Request URL</strong></p>
@@ -402,10 +394,10 @@ Accept: */*</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -423,10 +415,10 @@ Accept: */*</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -449,17 +441,17 @@ Accept: */*</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the login response applicable for the login option specified by the user.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows the response when the user chose to log in using LDAP.</p>
 <p><strong>Sample response headers</strong></p>
@@ -477,10 +469,10 @@ Content-Type: application/json</pre>
   &quot;redirectUrl&quot; : &quot;https://www.google.com/accounts/o8/ud?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.return_to=http%3A%2F%2Facmepaymentscorp%2Fapi%2Flogin%2FssoLogin%3Fdomain%3DGoogleacmepaymentscorp%26ssoRetryCount%3D0&amp;openid.realm=http%3A%2F%2Facmepaymentscorp&amp;openid.assoc_handle=1.AMlYA9WaF_97DzuvUZ7vLyEKneAxUoVm7YhaTvqJhONKlh6c96TWJMcar0MaDxiW4BvIFuf_ijaAuw&amp;openid.mode=checkid_setup&amp;openid.ns.ext1=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&amp;openid.ext1.type.email=http%3A%2F%2Faxschema.org%2Fcontact%2Femail&amp;openid.ext1.type.lastname=http%3A%2F%2Faxschema.org%2FnamePerson%2Flast&amp;openid.ext1.type.firstname=http%3A%2F%2Faxschema.org%2FnamePerson%2Ffirst&amp;openid.ext1.type.fullname=http%3A%2F%2Faxschema.org%2FnamePerson&amp;openid.ext1.required=firstname%2Clastname%2Cemail%2Cfullname&amp;openid.ext1.mode=fetch_request&quot;&gt;https://www.google.com/accounts/o8/ud?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.return_to=http%3A%2F%2Facmepaymentscorp%2Fapi%2Flogin%2FssoLogin%3Fdomain%3DGoogleacmepaymentscorp%26ssoRetryCount%3D0&amp;openid.realm=http%3A%2F%2Facmepaymentscorp&amp;openid.assoc_handle=1.AMlYA9WaF_97DzuvUZ7vLyEKneAxUoVm7YhaTvqJhONKlh6c96TWJMcar0MaDxiW4BvIFuf_ijaAuw&amp;openid.mode=checkid_setup&amp;openid.ns.ext1=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&amp;openid.ext1.type.email=http%3A%2F%2Faxschema.org%2Fcontact%2Femail&amp;openid.ext1.type.lastname=http%3A%2F%2Faxschema.org%2FnamePerson%2Flast&amp;openid.ext1.type.firstname=http%3A%2F%2Faxschema.org%2FnamePerson%2Ffirst&amp;openid.ext1.type.fullname=http%3A%2F%2Faxschema.org%2FnamePerson&amp;openid.ext1.required=firstname%2Clastname%2Cemail%2Cfullname&amp;openid.ext1.mode=fetch_request
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -498,10 +490,10 @@ Content-Type: application/json</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -520,12 +512,11 @@ Content-Type: application/json</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -540,7 +531,7 @@ Content-Type: application/json</pre>
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

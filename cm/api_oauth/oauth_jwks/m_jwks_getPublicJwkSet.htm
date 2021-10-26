@@ -346,18 +346,14 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">GET&#160;/oauth/jwks</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>Returns information about the JWK Set for the specified OAuth Provider.</p>
 <p>If OpenID Connect is enabled in the platform, the platform&rsquo;s OAuth Provider publishes a JSON Web Key Set document. Using this operation, you can access the document and retrieve the values.</p>
 <p>Per the OpenID specification, <a href="http://openid.net/specs/openid-connect-core-1_0.html#RotateSigKeys" target="_blank">http://openid.net/specs/openid-connect-core-1_0.html#RotateSigKeys</a>:</p>
 	<p>&quot;Rotation of signing keys can be accomplished with the following approach. The signer publishes its keys in a JWK Set at its <span class="apidoc_code">jwks_uri</span> location and includes the <span class="apidoc_code">kid</span> of the signing key in the JOSE Header of each message to indicate to the verifier which key is to be used to validate the signature. Keys can be rolled over by periodically adding new keys to the JWK Set at the <span class="apidoc_code">jwks_uri</span> location. The signer can begin using a new key at its discretion and signals the change to the verifier using the <span class="apidoc_code">kid</span> value. The verifier knows to go back to the <span class="apidoc_code">jwks_uri</span> location to re-retrieve the keys when it sees an unfamiliar <span class="apidoc_code">kid</span> value. The JWK Set document at the <span class="apidoc_code">jwks_uri</span> SHOULD retain recently decommissioned signing keys for a reasonable period of time to facilitate a smooth transition.&quot;</p>
 <p>In the platform, if the time period for JWK validity has passed, it is deprecated, but the JWK doesn't expire until every <strong>id_token</strong> that is using it has expired.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Anyone can run this operation.</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -375,19 +371,15 @@
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
 </div><h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/jwks</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the JWK sets for the platform's OAuth provider.</p>
 <p><strong>Request URL</strong></p>
@@ -397,10 +389,10 @@
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -418,24 +410,24 @@
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <p>None.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the JWK set information for the specified OAuth provider.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
@@ -460,10 +452,10 @@ Expires: Thu, 30 Jul 2015 15:58:47 GMT</pre>
   } ]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -481,10 +473,10 @@ Expires: Thu, 30 Jul 2015 15:58:47 GMT</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <p>The response is a JSON Web Key Set document. </p>
 <p>A JSON Web Key Set (JWK Set) is a JSON object that represents a set of JWKs. The JSON object MUST have a &quot;keys&quot; member, with its value being an array of JWKs.</p>
@@ -533,12 +525,11 @@ Expires: Thu, 30 Jul 2015 15:58:47 GMT</pre>
 		</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -562,7 +553,7 @@ Expires: Thu, 30 Jul 2015 15:58:47 GMT</pre>
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana OAuth API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

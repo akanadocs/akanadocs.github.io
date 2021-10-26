@@ -346,11 +346,7 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<!-- InstanceBeginEditable name="Heading" -->
 <h1 id="top">POST&#160;/api/login/ssoLogin</h1>
-<!-- InstanceEndEditable -->
-
-<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p>Logs the user in to an external identity system such as Google or Facebook, for a login domain set up on the platform.</p>
 <p class="apidoc_note"><strong>Note</strong>: Login domains might support SSO login via POST or GET. For example, an OpenID Connect Relying Party domain might support a response mode of query, fragment, or form_post. If the domain supports form_post, <span class="apidoc_code">POST&#160;/api/login/ssoLogin</span> is used. If the domain supports query or fragment, <span class="apidoc_code">GET&#160;/api/login/ssoLogin</span> is used.</p>
 <p>The specific processing that occurs with this operation depends on the login domain being used, as specified in the <strong>domain</strong> parameter in the request message. For example:</p>
@@ -362,7 +358,7 @@
 <p>  With SSO Login, depending on the domain being used, and the protocol that it implements, the requirements of the request message are different.</p>
 <p><strong>Note</strong>: for an example of SSO login using a SAML domain, including request and response, see <a href="../aaex/Ref_Ex_SSO_Login_SAML.htm">Example: SSO login with SAML Provider</a>.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Anyone can run this operation.</p>
-<!-- InstanceEndEditable -->
+
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -381,19 +377,15 @@
 </ul>
 </div>
 <h2 id="httpmethod">HTTP Method</h2>
-<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="endpoint">URL</h2>
-<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://{hostname}/api/login/ssoLogin</pre>
-<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<!-- InstanceBeginEditable name="Sample Request" -->
+
 <h2 id="samplerequest">Sample Request #1: LDAP</h2>
 <p id="id_samplerequest">The examples below shows an SSO login request for an LDAP domain. The first example sends the <strong>domain</strong> parameter in the POST content, the second sends it in the path.</p>
 <p>In processing the request, the platform looks for the <strong>domain</strong> parameter first in the POST content, and then in the path.</p>
@@ -440,10 +432,10 @@ Cookie: JSESSIONID_pm60=1gsjqvxu1cgnj1th05legkdfvo</pre>
 <p><strong>Sample request body/parameters (SAML):</strong></p>
 <p><img src="../assets/eg_ssoLogin_saml_05.png" alt="POST&#160;/api/login/ssoLogin, request body" /></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Headers" -->
+
+
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -465,10 +457,10 @@ Cookie: JSESSIONID_pm60=1gsjqvxu1cgnj1th05legkdfvo</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Request Parameters" -->
+
+
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
 	<thead>
@@ -491,17 +483,17 @@ Cookie: JSESSIONID_pm60=1gsjqvxu1cgnj1th05legkdfvo</pre>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Description" -->
+
+
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, and the user's login request is processed. If all other login tasks are complete, the user is logged in. If not, the user is directed to the next login task.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Sample Response" -->
+
+
 <h2 id="sampleresponse">Sample Response #1: LDAP</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
@@ -564,10 +556,10 @@ ZlHY5NhVjuykWvri5pKVNJhJPyKs2gLN_40SkKGJ7DcDDLTPi4id31yKJ6CDFPCEK7OSycu3fpuvYCCw
 <p><strong>Note</strong>: As well as the login cookie and CSRF cookie, certain operations require specific roles. For example, to create an API, a user who logs in via an external domain would need an additional role, such as being invited to the API Admin group and accepting the invitation. This scenario would use the <span class="apidoc_code"><a href="../groups/m_groups_inviteMemberToGroup.htm">POST&#160;/api/groups/{GroupID}/members</a></span> and <span class="apidoc_code"><a href="../groups/m_groups_executeWorkflowAction.htm">POST&#160;/api/groups/requests/{MembershipRequestID}/actions</a></span> operations. After that, the user could add an API using the <span class="apidoc_code"><a href="../apis/m_apis_createAPI.htm">POST&#160;/api/apis</a></span> operation.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Headers" -->
+
+
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
@@ -585,10 +577,10 @@ ZlHY5NhVjuykWvri5pKVNJhJPyKs2gLN_40SkKGJ7DcDDLTPi4id31yKJ6CDFPCEK7OSycu3fpuvYCCw
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
 
 
-<!-- InstanceBeginEditable name="Response Body" -->
+
+
 <h2 id="responsebody">Response Body</h2>
 <p>The response body depends on the domain used.</p>
 <table class="tableparmsresponse">
@@ -608,12 +600,11 @@ ZlHY5NhVjuykWvri5pKVNJhJPyKs2gLN_40SkKGJ7DcDDLTPi4id31yKJ6CDFPCEK7OSycu3fpuvYCCw
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<!-- InstanceEndEditable -->
+
 
 
 <h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
-<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -628,7 +619,7 @@ ZlHY5NhVjuykWvri5pKVNJhJPyKs2gLN_40SkKGJ7DcDDLTPi4id31yKJ6CDFPCEK7OSycu3fpuvYCCw
 		</tr>
 	</tbody>
 </table>
-<!-- InstanceEndEditable -->
+
 <p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
