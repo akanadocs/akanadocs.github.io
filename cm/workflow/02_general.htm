@@ -82,7 +82,7 @@ function type=&quot;functionName&quot;&gt;
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the property name <strong>2FAComplete</strong> is set to a value of <strong>Yes</strong>.</p>
-<pre>&lt;function type=&quot;setAuthTokenProperty&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;function type=&quot;setAuthTokenProperty&quot;&gt;
   &lt;arg name=&quot;PropertyName&quot;&gt;2FAComplete&lt;/arg&gt;
   &lt;arg name=&quot;PropertyValue&quot;&gt;Yes&lt;/arg&gt;
 &lt;/function&gt;</pre>
@@ -110,7 +110,7 @@ function type=&quot;functionName&quot;&gt;
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the first function removes the existing property and the second one sets a new property, 2FA Complete, with a value of Yes.</p>
-<pre>&lt;function type=&quot;removeAuthTokenProperty&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;function type=&quot;removeAuthTokenProperty&quot;&gt;
   &lt;arg name=&quot;PropertyName&quot;&gt;2FAData&lt;/arg&gt;
 &lt;/function&gt;
 &lt;function type=&quot;setAuthTokenProperty&quot;&gt;
@@ -127,7 +127,7 @@ Parameters
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the workflow sets the LoginState to LoginComplete and then runs the markLoginComplete function.</p>
-<pre>&lt;unconditional-result old-status=&quot;registered&quot; status=&quot;registered&quot; step=&quot;450&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;unconditional-result old-status=&quot;registered&quot; status=&quot;registered&quot; step=&quot;450&quot;&gt;
   &lt;pre-functions&gt;
     &lt;function type=&quot;setProperty&quot;&gt;
       &lt;arg name=&quot;LoginState&quot;&gt;&amp;LoginComplete;&lt;/arg&gt;
@@ -190,7 +190,7 @@ Parameters
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below sets the value and expiration time of the D cookie.</p>
-<pre>&lt;function type=&quot;setCookie&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;function type=&quot;setCookie&quot;&gt;
   &lt;arg name=&quot;CookieName&quot;&gt;D&lt;/arg&gt;
   &lt;arg name=&quot;CookieValue&quot;&gt;akana api platform&lt;/arg&gt;
   &lt;arg name=&quot;CookieExpirationTimeMillis&quot;&gt;31556952000&lt;/arg&gt;
@@ -226,9 +226,9 @@ Restrict the availability of an action by:
 Restricting actions: to restrict when an action can be seen or performed.
 Restricting access: to control service and contract access.
 <p>Workflow uses conditions as logical expressions. Conditional functions can take arguments:</p>
-<pre>&lt;arg&gt;. . .&lt;/arg&gt;</pre>
+<pre class="prettyprint, pre_xml">&lt;arg&gt;. . .&lt;/arg&gt;</pre>
 <p>For example, the workflow snippet below restricts the workflow action to a specific role. The role specified in the argument is AppAdmin. One or more roles can be specified.</p>
-<pre>&lt;restrict-to&gt;
+<pre class="prettyprint, pre_xml">&lt;restrict-to&gt;
   &lt;conditions type=&quot;AND&quot;&gt;
     &lt;condition type=&quot;authorizeByAtmosphereRole&quot;&gt;
       &lt;arg name=&quot;role&quot;&gt;AppAdmin&lt;/arg&gt;
@@ -292,7 +292,7 @@ Restricting access: to control service and contract access.
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the function clones all the contracts a specific app has with APIs, from the Sandbox environment to the Live environment. The <span class="apidoc_code">&lt;condition&gt;</span> tag uses the <strong>authorizeByAtmosphereRole</strong> condition to specify that the user attempting to perform this action must be an App Admin (a member of the app team).</p>
-<pre>&lt;action id=&quot;210&quot; name=&quot;Submit For Review&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;action id=&quot;210&quot; name=&quot;Submit For Review&quot;&gt;
   &lt;restrict-to&gt;
     &lt;conditions type=&quot;AND&quot;&gt;
       &lt;condition type=&quot;authorizeByAtmosphereRole&quot;&gt;
@@ -346,7 +346,7 @@ Restricting access: to control service and contract access.
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the workflow tests that the current user has permission to add an API. If the user does not meet the condition, the action is not allowed.</p>
-<pre>&lt;action id=&quot;409&quot; name=&quot;@AddAPI&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;action id=&quot;409&quot; name=&quot;@AddAPI&quot;&gt;
   &lt;restrict-to&gt;
     &lt;conditions type=&quot;AND&quot;&gt;
       &lt;condition type=&quot;authorizeByAtmosphereAction&quot;&gt;
@@ -382,7 +382,7 @@ Restricting access: to control service and contract access.
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, this condition specifies that an action is valid only for users on the platform's domain, acmepaymentscorp.</p>
-<pre>&lt;condition type=&quot;authorizeByDomain&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;condition type=&quot;authorizeByDomain&quot;&gt;
   &lt;arg name=&quot;domain&quot;&gt;acmepaymentscorp&lt;/arg&gt;
 &lt;/condition&gt;</pre>
 
@@ -421,7 +421,7 @@ Restricting access: to control service and contract access.
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, this condition specifies that only users on a directory server (LDAP) domain can perform the action.</p>
-<pre>&lt;condition type=&quot;authorizeByDomainType&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;condition type=&quot;authorizeByDomainType&quot;&gt;
   &lt;arg name=&quot;DomainType&quot;&gt;Directory Server&lt;/arg&gt;
 &lt;/condition&gt;</pre>
 
@@ -449,7 +449,7 @@ Restricting access: to control service and contract access.
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, this condition specifies that only users with email addresses on the platform's domain, acmepaymentscorp.com, can perform the action.</p>
-<pre>&lt;condition type=&quot;authorizeByEmail&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;condition type=&quot;authorizeByEmail&quot;&gt;
   &lt;arg name=&quot;email&quot;&gt;.*@acmepaymentscorp.com&lt;/arg&gt;
 &lt;/condition&gt;</pre>
 
@@ -484,7 +484,7 @@ Restricting access: to control service and contract access.
 <h4>Examples/Notes/Additional Information</h4>
 <p>Example 1: One condition</p>
 <p>In the example below, this condition checks that the logged-in user is a member of the EngineeringGroup group on the ldap domain. If the user does not meet the condition, the workflow action the condition is associated with is not allowed.</p>
-<pre>&lt;condition type=&quot;authorizeByGroupName&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;condition type=&quot;authorizeByGroupName&quot;&gt;
   &lt;arg name=&quot;group&quot;&gt;EngineeringGroup&lt;/arg&gt;
   &lt;arg name=&quot;domain&quot;&gt;ldap&lt;/arg&gt;
 &lt;/condition&gt;</pre>
@@ -495,7 +495,7 @@ Restricting access: to control service and contract access.
 	<li>Be a member of one of these two Policy Manager groups on the local domain: PM_Group1 or PM_Group2</li>
 	<li>Be a member of one of these two groups on the LDAP domain: LDAP_Group1 or LDAP_Group2</li>
 </ul>
-<pre>&lt;restrict-to&gt;
+<pre class="prettyprint, pre_xml">&lt;restrict-to&gt;
   &lt;conditions type=&quot;OR&quot;&gt;
     &lt;condition type=&quot;authorizeByGroupName&quot;&gt;
       &lt;arg name=&quot;group&quot;&gt;CM_Group1, CM_Group2&lt;/arg&gt;
@@ -538,7 +538,7 @@ Restricting access: to control service and contract access.
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, two conditions are checked: first, is the session in login process (applicable when two-factor authentication is in effect and the user has already provided login credentials), and then, if the specific auth token property, 2FAData, is there.</p>
-<pre>&lt;conditions type=&quot;AND&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;conditions type=&quot;AND&quot;&gt;
   &lt;condition type=&quot;isSessionInLoginProcess&quot;/&gt;
   &lt;condition type=&quot;authTokenPropertyExists&quot;&gt;
     &lt;arg name=&quot;PropertyName&quot;&gt;2FAData&lt;/arg&gt;
@@ -571,7 +571,7 @@ Restricting access: to control service and contract access.
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the workflow checks if the auth token property is set to 2FAComplete indicating that the two-factor authentication process has completed successfully.</p>
-<pre>&lt;condition negate=&quot;true&quot; type=&quot;authTokenPropertyMatches&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;condition negate=&quot;true&quot; type=&quot;authTokenPropertyMatches&quot;&gt;
   &lt;arg name=&quot;PropertyName&quot;&gt;2FAComplete&lt;/arg&gt;
   &lt;arg name=&quot;PropertyValue&quot;&gt;Yes&lt;/arg&gt;
 &lt;/condition&gt;</pre>
@@ -602,7 +602,7 @@ Restricting access: to control service and contract access.
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the custom workflow checks to see if a specific argument exists and, if it does, generates a specific message. The workflow then checks for a different argument and generates a message for that.</p>
-<pre>&lt;action id=&quot;499&quot; name=&quot;@ResolveLoginPendingTask&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;action id=&quot;499&quot; name=&quot;@ResolveLoginPendingTask&quot;&gt;
   &lt;restrict-to&gt;
     &lt;conditions type=&quot;AND&quot;&gt;
       &lt;condition type=&quot;isSessionInLoginProcess&quot;/&gt;
@@ -651,7 +651,7 @@ Restricting access: to control service and contract access.
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the argumentValueEquals condition is used to check if the value for Action is regenerate. If so (later part of the workflow not shown), the 2FA code is regenerated.</p>
-<pre>&lt;conditions type=&quot;AND&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;conditions type=&quot;AND&quot;&gt;
   &lt;condition type=&quot;argumentValueEquals&quot;&gt;
     &lt;arg name=&quot;ArgName&quot;&gt;Action&lt;/arg&gt;
     &lt;arg name=&quot;Value&quot;&gt;regenerate&lt;/arg&gt;
@@ -688,7 +688,7 @@ Restricting access: to control service and contract access.
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the workflow action is restricted to the conditions specified. The first condition is to check that the session is in the login process. If this condition is not met, the step is not continued.</p>
-<pre>&lt;action id=&quot;449&quot; name=&quot;@ResolveLoginPendingTask&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;action id=&quot;449&quot; name=&quot;@ResolveLoginPendingTask&quot;&gt;
   &lt;restrict-to&gt;
     &lt;conditions type=&quot;AND&quot;&gt;
       &lt;condition type=&quot;isSessionInLoginProcess&quot;/&gt;
@@ -723,7 +723,7 @@ Restricting access: to control service and contract access.
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the workflow action is restricted to the conditions specified. The first condition is to check that the cookie does not exist (negate-true on cookieExists). If the cookie does exist, the step is not continued.</p>
-<pre>&lt;action id=&quot;401&quot; name=&quot;@Login&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;action id=&quot;401&quot; name=&quot;@Login&quot;&gt;
   &lt;results&gt;
     &lt;result old-status=&quot;registered&quot; status=&quot;registered&quot; step=&quot;400&quot;&gt;
       &lt;conditions type=&quot;AND&quot;&gt;
@@ -816,7 +816,7 @@ Restricting access: to control service and contract access.
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the actionCommentMatchesRegEx condition is used to ensure that when performing a workflow action, the user enters a specific comment that includes the Support Ticket information (RegEx argument). If no comment is entered, the message specified in the FailedMatchMessage argument is displayed to the user.</p>
-<pre>&lt;conditions type=&quot;AND&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;conditions type=&quot;AND&quot;&gt;
   &lt;condition type=&quot;actionCommentExists&quot;&gt;
     &lt;arg name=&quot;CommentMissingMessage&quot;&gt;Comment needed with Support Ticket ID&lt;/arg&gt;
   &lt;/condition&gt;
@@ -847,7 +847,7 @@ Restricting access: to control service and contract access.
 </table>
 
 <h4>Examples/Notes/Additional Information</h4>
-<pre>&lt;conditions type=&quot;AND&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;conditions type=&quot;AND&quot;&gt;
   &lt;condition type=&quot;actionCommentExists&quot;&gt;
     &lt;arg name=&quot;CommentMissingMessage&quot;&gt;Comment needed with Support Ticket ID&lt;/arg&gt;
   &lt;/condition&gt;
@@ -870,7 +870,7 @@ Restricting access: to control service and contract access.
 
 <h3 id="s02_04_01">${workflow.step.name}</h3>
 <p>The name for a specific workflow step, as a string in the format =${workflow.step.name}. Allows the workflow to dynamically reference another workflow step, by step name, as shown in the example below.</p>
-<pre>&lt;result old-status=&quot;${workflow.step.name}&quot; status=&quot;${workflow.step.name}&quot; step=&quot;-1&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;result old-status=&quot;${workflow.step.name}&quot; status=&quot;${workflow.step.name}&quot; step=&quot;-1&quot;&gt;
   &lt;conditions type=&quot;AND&quot;&gt;
     &lt;condition type=&quot;isLastLoginEmpty&quot;/&gt;
     &lt;condition type=&quot;class&quot;&gt;

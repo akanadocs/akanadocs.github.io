@@ -164,7 +164,7 @@ nav-title: App Version Workflow
 <p>Each app has a page where the app developer can specify the app's settings and preferences for OAuth. This page includes an additional section, for advanced Authorization settings, that isn't normally available to app developers. Only Site Admins or Business Admins see the Authorization section at the bottom of the OAuth Profile page.</p>
 <p>If you want to allow app developers to modify values in the Authorization section of the App OAuth Profile, you'll need to upload a custom workflow that includes the reserved-allow-oauth-auz-details-update reserved workflow action.</p>
 <p>The workflow section below shows how this would look in a custom workflow.</p>
-<pre>&lt;action id="116" name="reserved-allow-oauth-auz-details-update"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="116" name="reserved-allow-oauth-auz-details-update"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="AND"&gt;
       &lt;condition type="authorizeByAtmosphereRole"&gt;
@@ -184,7 +184,7 @@ nav-title: App Version Workflow
 <!--<p>{MM 2/14/17: similar to @Modify. We just added it for backward compatibility.}</p>-->
 
 <p>The workflow section below shows how this would look in a custom workflow.</p>
-<pre>&lt;action id="117" name="reserved-action-modify"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="117" name="reserved-action-modify"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="AND"&gt;
       &lt;condition type="authorizeByAtmosphereRole"&gt;
@@ -246,7 +246,7 @@ nav-title: App Version Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, this function is used to clone all API contracts from Sandbox to Live (Production).</p>
-<pre>&lt;pre-functions&gt;
+<pre class="prettyprint, pre_xml">&lt;pre-functions&gt;
   &lt;function type="cloneAllAPIContracts"&gt;
     &lt;arg name="EnvFrom"&gt;Sandbox&lt;/arg&gt;
     &lt;arg name="EnvTo"&gt;Production&lt;/arg&gt;
@@ -275,7 +275,7 @@ nav-title: App Version Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, this function is used to activate all API contracts in the Live environment.</p>
-<pre>&lt;pre-functions&gt;
+<pre class="prettyprint, pre_xml">&lt;pre-functions&gt;
   &lt;function type="activateAllAPIContractsInEnvironment"&gt;
     &lt;arg name="Environment"&gt;Production&lt;/arg&gt;
   &lt;/function&gt;
@@ -306,7 +306,7 @@ nav-title: App Version Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below shows the use of <strong>activateAllAPIContractsInEnvironment</strong> followed by <strong>cancelAllAPIContractsInEnvironment</strong> to activate all contracts in the Live environment and then cancel all contracts in the Sandbox environment.</p>
-<pre>&lt;restrict-to&gt;
+<pre class="prettyprint, pre_xml">&lt;restrict-to&gt;
   &lt;conditions type="AND"&gt;
     &lt;condition type="authorizeByAtmosphereRole"&gt;
       &lt;arg name="role"&gt;AppAdmin&lt;/arg&gt;
@@ -360,7 +360,7 @@ nav-title: App Version Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, three different notifications are sent out, one for each of three different types of users, to notify the users that the app was marked for deletion.</p>
-<pre>&lt;function type="sendNotification"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="sendNotification"&gt;
   &lt;arg name="notificationType"&gt;com.soa.notification.type.app.marked.for.deletion.appteam&lt;/arg&gt;
   &lt;arg name="role"&gt;AppAdmin&lt;/arg&gt;
 &lt;/function&gt;
@@ -387,7 +387,7 @@ nav-title: App Version Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, deleteAppVersion is run as the last pre-function.</p>
-<pre>&lt;pre-functions&gt;
+<pre class="prettyprint, pre_xml">&lt;pre-functions&gt;
   &lt;function type="addBoardItem"&gt;
     &lt;arg name="boardItemTemplateId"&gt;com.soa.board.item.appversion.delete.request.approved&lt;/arg&gt;
     &lt;arg name="visibility"&gt;Limited&lt;/arg&gt;
@@ -478,7 +478,7 @@ nav-title: App Version Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below shows adding a Board item as a pre-function, to announce that an app deletion request was approved. In this example, <strong>targetBoard</strong> is a set of separate arguments.</p>
-<pre>&lt;pre-functions&gt;
+<pre class="prettyprint, pre_xml">&lt;pre-functions&gt;
   &lt;function type="addBoardItem"&gt;
     &lt;arg name="boardItemTemplateId"&gt;com.soa.board.item.appversion.delete.request.approved&lt;/arg&gt;
     &lt;arg name="visibility"&gt;Limited&lt;/arg&gt;
@@ -492,7 +492,7 @@ nav-title: App Version Workflow
     &lt;arg name="viewers"&gt;${app.dn},${app.team.group.dn},${connected.apis.id},${business.dn}&lt;/arg&gt;
   &lt;/function&gt;</pre>
 <p>The example below shows adding a Board item as a post-function, to announce that an app version has been marked for deletion. In this example, the targetBoards parameter is used, with multiple values in a comma-separated list.</p>
-<pre>&lt;post-functions&gt;
+<pre class="prettyprint, pre_xml">&lt;post-functions&gt;
   &lt;function type="addBoardItem"&gt;
     &lt;arg name="boardItemTemplateId"&gt;com.soa.board.item.appversion.mark.for.delete&lt;/arg&gt;
     &lt;arg name="visibility"&gt;Limited&lt;/arg&gt;
@@ -537,37 +537,37 @@ ${connected.apis.admin.groups},${connected.apis.id},${app.version.dn},${app.dn}&
 <h4>Examples/Notes/Additional Information</h4>
 <p>The examples below show this function used with each of the workflow actions listed above.</p>
 <p>@EditOAuthDetails:</p>
-<pre>&lt;function type="syncAppVersionOAuthClient"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="syncAppVersionOAuthClient"&gt;
   &lt;arg name="action"&gt;Reset&lt;/arg&gt;
 &lt;/function&gt;</pre>
 
 <p>@KeyInfoRemoved:</p>
-<pre>&lt;function type="syncAppVersionOAuthClient"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="syncAppVersionOAuthClient"&gt;
   &lt;arg name="action"&gt;Reset&lt;/arg&gt;
 &lt;/function&gt;</pre>
 
 <p>@KeyInfoSaved:</p>
-<pre>&lt;function type="syncAppVersionOAuthClient"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="syncAppVersionOAuthClient"&gt;
   &lt;arg name="action"&gt;Reset&lt;/arg&gt;
 &lt;/function&gt;</pre>
 
 <p>@RegeneratedSecret:</p>
-<pre>&lt;function type="syncAppVersionOAuthClient"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="syncAppVersionOAuthClient"&gt;
   &lt;arg name="action"&gt;Reset&lt;/arg&gt;
 &lt;/function&gt;</pre>
 
 <p>com.soa.appversion.delete.approve:</p>
-<pre>&lt;function type="syncAppVersionOAuthClient"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="syncAppVersionOAuthClient"&gt;
   &lt;arg name="action"&gt;Delete&lt;/arg&gt;
 &lt;/function&gt;</pre>
 
 <p>com.soa.appversion.delete.auto:</p>
-<pre>&lt;function type="syncAppVersionOAuthClient"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="syncAppVersionOAuthClient"&gt;
   &lt;arg name="action"&gt;Delete&lt;/arg&gt;
 &lt;/function&gt;</pre>
 
 <p>reserved-action-modify:</p>
-<pre>&lt;function type="syncAppVersionOAuthClient"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="syncAppVersionOAuthClient"&gt;
   &lt;arg name="action"&gt;Reset&lt;/arg&gt;
 &lt;/function&gt;</pre>
 
@@ -588,10 +588,10 @@ ${connected.apis.admin.groups},${connected.apis.id},${app.version.dn},${app.dn}&
 <p>The examples below show this function used with each of the workflow actions listed above.</p>
 
 <p id="appv_f_08_ex1">com.soa.appversion.delete.approve:</p>
-<pre>&lt;function type="notifyAppVersionDeleteToOAuthClient"/&gt;</pre>
+<pre class="prettyprint, pre_xml">&lt;function type="notifyAppVersionDeleteToOAuthClient"/&gt;</pre>
 
 <p id="appv_f_08_ex2">com.soa.appversion.delete.auto:</p>
-<pre>&lt;function type="notifyAppVersionDeleteToOAuthClient"/&gt;</pre>
+<pre class="prettyprint, pre_xml">&lt;function type="notifyAppVersionDeleteToOAuthClient"/&gt;</pre>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -635,7 +635,7 @@ ${connected.apis.admin.groups},${connected.apis.id},${app.version.dn},${app.dn}&
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the action being performed is to cancel an API contract in the Sandbox environment. The workflow first checks that there is at least one valid API contract in the Sandbox environment.</p>
-<pre>&lt;action id="202" name="reserved-cancel-api-connection.Sandbox"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="202" name="reserved-cancel-api-connection.Sandbox"&gt;
   &lt;results&gt;
     &lt;result old-status="Sandbox" status="Setup" step="100" owner="${caller}"&gt;
       &lt;conditions type="AND"&gt;
@@ -670,7 +670,7 @@ ${connected.apis.admin.groups},${connected.apis.id},${app.version.dn},${app.dn}&
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the action being performed is to approve all API contracts in the Live environment.</p>
-<pre>&lt;action id="301" name="reserved-approve-api-connection.Production"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="301" name="reserved-approve-api-connection.Production"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="AND"&gt;
       &lt;condition type="existAPIContractsForAllAPIsInEnvironments"&gt;
@@ -716,7 +716,7 @@ ${connected.apis.admin.groups},${connected.apis.id},${app.version.dn},${app.dn}&
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the action being performed is to approve all API contracts in the Live environment. The workflow first tests that there are contracts in existence, because a contract must exist before it can be approved.</p>
-<pre>&lt;action id="301" name="reserved-approve-api-connection.Production"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="301" name="reserved-approve-api-connection.Production"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="AND"&gt;
       &lt;condition type="existAPIContractsForAllAPIsInEnvironments"&gt;

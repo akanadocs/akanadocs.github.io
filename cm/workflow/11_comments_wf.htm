@@ -83,7 +83,7 @@ nav-title: Comments Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, when a new comment is added, the workflow checks the platform settings to see if a comment added by an admin is auto-approved, and also checks the role of the user. If both conditions are met, the status is changed from <strong>none</strong> to <strong>Published</strong>, and the workflow runs the <strong>markPublished</strong> function.</p>
-<pre>&lt;step id="100" name="Route Add New Comment"&gt;
+<pre class="prettyprint, pre_xml">&lt;step id="100" name="Route Add New Comment"&gt;
   &lt;actions&gt;
     &lt;action id="101" name="Auto Approve Admin Add" auto="TRUE"&gt;
       &lt;restrict-to&gt;
@@ -109,7 +109,7 @@ nav-title: Comments Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, when a new comment is added, the workflow checks the platform settings to see if a comment added by an admin is auto-approved. If manual approval is needed (action id 102), the status is changed from <strong>none</strong> to <strong>Pending</strong>, and the workflow runs the <strong>markUnPublished</strong> function.</p>
-<pre>&lt;step id="100" name="Route Add New Comment"&gt;
+<pre class="prettyprint, pre_xml">&lt;step id="100" name="Route Add New Comment"&gt;
   &lt;actions&gt;
     &lt;action id="101" name="Auto Approve Admin Add" auto="TRUE"&gt;
       &lt;restrict-to&gt;
@@ -145,7 +145,7 @@ nav-title: Comments Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, an action is taken the delete the comment. The workflow first verifies that the user is authorized. If the condition is met, the status is changed from <strong>Published</strong> to <strong>Finished</strong>, and the workflow runs the <strong>deleteComment</strong> function.</p>
-<pre>&lt;action id="302" name="comment.action.delete"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="302" name="comment.action.delete"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="AND"&gt;
       &lt;condition type="authorizeByCMRole"&gt;
@@ -216,7 +216,7 @@ nav-title: Comments Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the workflow is set up so that if a comment is made on an API access request, a notification is sent to API Admins. Without this workflow modification, the notification only goes to the app owner.</p>
-<pre>&lt;action id="101" name="Auto Approve Admin Add" auto="TRUE"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="101" name="Auto Approve Admin Add" auto="TRUE"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="OR"&gt;
       &lt;condition type="authorizeByCMRole"&gt;
@@ -279,7 +279,7 @@ nav-title: Comments Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, when a new comment is added, the workflow checks the platform settings to see if a comment added by an admin is auto-approved, and then checks the role of the user. If the user is a Site Admin or Business Admin, the workflow proceeds. If not, the action is not allowed.</p>
-<pre>&lt;step id="100" name="Route Add New Comment"&gt;
+<pre class="prettyprint, pre_xml">&lt;step id="100" name="Route Add New Comment"&gt;
   &lt;actions&gt;
     &lt;action id="101" name="Auto Approve Admin Add" auto="TRUE"&gt;
       &lt;restrict-to&gt;

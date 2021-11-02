@@ -87,7 +87,7 @@ nav-title: Review Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the workflow is set up so that a review added by an administrator is approved automatically. The workflow checks that the user has a role of Site Admin or Business Admin. If so, the status of the review is automatically changed to Published. The markPublished function is invoked as a post-function.</p>
-<pre>&lt;step id="100" name="Route Add New Review"&gt;
+<pre class="prettyprint, pre_xml">&lt;step id="100" name="Route Add New Review"&gt;
   &lt;actions&gt;
     &lt;action id="101" name="Auto Approve Add" auto="TRUE"&gt;
       &lt;restrict-to&gt;
@@ -124,7 +124,7 @@ nav-title: Review Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, an existing, published review is being cancelled because another review on the same subject by the same user was received. The workflow checks that the action is performed by an authorized user, and then changes the status of the original review from Approved to Pending. The <strong>markUnPublished</strong> function is invoked as a post-function.</p>
-<pre>&lt;step id="300" name="Published"&gt;
+<pre class="prettyprint, pre_xml">&lt;step id="300" name="Published"&gt;
   &lt;pre-functions&gt;
     &lt;function type="cancelOldReviewForTheSubjectBySameUser" /&gt;
   &lt;/pre-functions&gt;
@@ -153,7 +153,7 @@ nav-title: Review Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the @cancel reserved action is invoked. The workflow first checks that the user is authorized to perform the action. If so, the review is moved from a Published status to a Finished status. As a post-function, the review is deleted.</p>
-<pre>&lt;action id="303" name="@cancel"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="303" name="@cancel"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="AND"&gt;
       &lt;condition type="authorizeByAtmosphereRole"&gt;
@@ -183,7 +183,7 @@ nav-title: Review Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, a review is published. As a pre-function, the workflow checks for an old review for the same subject by the same user, and cancels it if found. It first checks that the user is authorized to perform the action, changes the old review status from Approved to Pending, and runs the <strong>markUnPublished</strong> function.</p>
-<pre>&lt;step id="300" name="Published"&gt;
+<pre class="prettyprint, pre_xml">&lt;step id="300" name="Published"&gt;
   &lt;pre-functions&gt;
     &lt;function type="cancelOldReviewForTheSubjectBySameUser" /&gt;
   &lt;/pre-functions&gt;
@@ -248,7 +248,7 @@ nav-title: Review Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the workflow is set up so that a review added by an administrator is approved automatically. When the review is published, a notification is sent to applicable admins. A different notification is sent for an API review versus an app review.</p>
-<pre>&lt;step id="100" name="Route Add New Review"&gt;
+<pre class="prettyprint, pre_xml">&lt;step id="100" name="Route Add New Review"&gt;
   &lt;actions&gt;
     &lt;action id="101" name="Auto Approve Add" auto="TRUE"&gt;
       &lt;restrict-to&gt;

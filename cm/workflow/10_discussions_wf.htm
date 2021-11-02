@@ -86,7 +86,7 @@ nav-title: Discussions Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below shows part of the workflow for a pending discussion. It can be approved for publication; the workflow restricts the action to certain authorized roles. The status is changed from Pending to Published, and the markPublished function is run.</p>
-<pre>&lt;step id="200" name="Pending"&gt;
+<pre class="prettyprint, pre_xml">&lt;step id="200" name="Pending"&gt;
   &lt;actions&gt;
     &lt;action id="201" name="discussion.action.approve.publish"&gt;
       &lt;restrict-to&gt;
@@ -112,7 +112,7 @@ nav-title: Discussions Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below defines valid actions for a discussion in the Published state. One valid action is for the discussion to be unpublished. The workflow first checks that the action is being performed by an authorized user. If so, the discussion is moved from an Approved state to Pending, and the markUnPublished function is run as a post-function.</p>
-<pre>&lt;step id="300" name="Published"&gt;
+<pre class="prettyprint, pre_xml">&lt;step id="300" name="Published"&gt;
   &lt;actions&gt;
     &lt;action id="301" name="discussion.action.unpublish"&gt;
       &lt;restrict-to&gt;
@@ -138,7 +138,7 @@ nav-title: Discussions Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, for a discussion in the Rejected state, delete is a valid action. The workflow first checks that the user is authorized to perform the action. If so, the discussion is moved from the Rejected state to the Finished state, and the <strong>deleteDiscussion</strong> function is run.</p>
-<pre>&lt;step id="400" name="Rejected"&gt;
+<pre class="prettyprint, pre_xml">&lt;step id="400" name="Rejected"&gt;
   &lt;actions&gt;
 
     &lt;action id="402" name="discussion.action.delete"&gt;
@@ -203,7 +203,7 @@ nav-title: Discussions Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the workflow is set up so that a review added by an administrator is approved automatically. When the review is published, a notification is sent to applicable admins. A different notification is sent for an API review versus an app review.</p>
-<pre>&lt;action id="102" name="Auto Approve Auto Publish" auto="TRUE"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="102" name="Auto Approve Auto Publish" auto="TRUE"&gt;
     &lt;restrict-to&gt;
       &lt;conditions type="OR"&gt;
         &lt;condition type="authorizeByAtmosphereRole"&gt;

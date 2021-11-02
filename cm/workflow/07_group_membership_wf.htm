@@ -148,7 +148,7 @@ nav-title: Group Membership Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below shows the workflow step when an invited group member declines the invitation. As a result, the group membership request state is set to com.soa.group.membership.state.disapproved.</p>
-<pre>&lt;action id="102" name="group.membership.action.decline"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="102" name="group.membership.action.decline"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="AND"&gt;
       &lt;condition type="isSelfMembership"&gt;&lt;/condition&gt;
@@ -222,7 +222,7 @@ nav-title: Group Membership Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the group member is made into a leader. The setGroupMembershipRole function is used to change the user's role to com.soa.group.membership.role.leader.</p>
-<pre>&lt;action id="106" name="group.membership.action.make.leader"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="106" name="group.membership.action.make.leader"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="OR"&gt;
       &lt;condition type="isCallerGroupAdmin" /&gt;
@@ -325,7 +325,7 @@ nav-title: Group Membership Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below shows workflow steps when a group is deleted. One of two possible notifications is sent out, depending on the group type, to notify group members that the group was deleted.</p>
-<pre>&lt;action id="108" name="group.membership.action.group.deleted"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="108" name="group.membership.action.group.deleted"&gt;
   &lt;results&gt;
     &lt;unconditional-result old-status="Pending" status="Group Deleted" step="400" /&gt;
   &lt;/results&gt;
@@ -376,7 +376,7 @@ nav-title: Group Membership Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below shows workflow for when a group member accepts an invitation to join the group. Since the invited person is the only one who is authorized to accept the invitation, the workflow uses the isSelfMembership condition to check that the individual performing the action is the invited member.</p>
-<pre>&lt;actions&gt;
+<pre class="prettyprint, pre_xml">&lt;actions&gt;
   &lt;action id="101" name="group.membership.action.accept"&gt;
     &lt;restrict-to&gt;
       &lt;conditions type="AND"&gt;
@@ -437,7 +437,7 @@ nav-title: Group Membership Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the action being performed changes a group member's role to admin. The conditions section tests that the user performing the action is either a group admin or a site admin, since these are the two roles authorized to perform the action.</p>
-<pre>&lt;action id="105" name="group.membership.action.make.admin"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="105" name="group.membership.action.make.admin"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="OR"&gt;
       &lt;condition type="isCallerGroupAdmin" /&gt;
@@ -476,7 +476,7 @@ nav-title: Group Membership Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the action being performed changes a group member's role to admin. The conditions section tests that the user performing the action is either a group admin or a site admin, since these are the two roles authorized to perform the action.</p>
-<pre>&lt;action id="105" name="group.membership.action.make.admin"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="105" name="group.membership.action.make.admin"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="OR"&gt;
       &lt;condition type="isCallerGroupAdmin" /&gt;
@@ -523,7 +523,7 @@ nav-title: Group Membership Workflow
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the action being performed makes someone a group member. The conditions section specifies that a user who is a group admin or site admin can perform the action; additionally, a user who is a group leader can perform the action on another user who is a leader or member.</p>
 <p>This limits the action to authorized individuals.</p>
-<pre>&lt;action id="107" name="group.membership.action.make.member"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="107" name="group.membership.action.make.member"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="OR"&gt;
       &lt;condition type="isCallerGroupAdmin" /&gt;
@@ -593,7 +593,7 @@ nav-title: Group Membership Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the action being performed is to assign an existing group member the role of member (as distinct from leader or admin). The "restrict-to" section tests that the user performing the action is either a group admin or a site admin, or that the user is a group leader and the action is being performed on a group member who has the role of leader or member; and, therefore, that the user performing the action is authorized to do so.</p>
-<pre>&lt;action id="107" name="group.membership.action.make.member"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="107" name="group.membership.action.make.member"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="OR"&gt;
       &lt;condition type="isCallerGroupAdmin" /&gt;
@@ -654,7 +654,7 @@ nav-title: Group Membership Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the action being performed is to assign an existing group member the role of <strong>leader</strong> (as distinct from <strong>member</strong> or <strong>admin</strong>). The "restrict-to" section tests that the user performing the action is either a group admin or a site admin, or that the user is a group leader and the action is being performed on a group member who has the role of <strong>leader</strong> or <strong>member</strong>; and, therefore, that the user performing the action is authorized to do so.</p>
-<pre>&lt;action id="106" name="group.membership.action.make.leader"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="106" name="group.membership.action.make.leader"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="OR"&gt;
       &lt;condition type="isCallerGroupAdmin" /&gt;
@@ -738,7 +738,7 @@ nav-title: Group Membership Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, this condition specifies that only users on the platform's domain, acmepaymentscorp, can be invited.</p>
-<pre>&lt;condition type="authorizeInviteeByDomain"&gt;
+<pre class="prettyprint, pre_xml">&lt;condition type="authorizeInviteeByDomain"&gt;
   &lt;arg name="domain"&gt;acmepaymentscorp&lt;/arg&gt;
 &lt;/condition&gt;</pre>
 
@@ -777,7 +777,7 @@ nav-title: Group Membership Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below tests that the domain type is Directory Server. This limits invitees to LDAP users.</p>
-<pre>&lt;condition type="authorizeInviteeByDomainType"&gt;
+<pre class="prettyprint, pre_xml">&lt;condition type="authorizeInviteeByDomainType"&gt;
   &lt;arg name="DomainType"&gt;Directory Server&lt;/arg&gt;
 &lt;/condition&gt;</pre>
 
@@ -805,12 +805,12 @@ nav-title: Group Membership Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below shows the general structure of this argument.</p>
-<pre>&lt;condition type="authorizeInviteeByEmail"&gt;
+<pre class="prettyprint, pre_xml">&lt;condition type="authorizeInviteeByEmail"&gt;
   &lt;arg name="email"&gt;Email Address,Pattern&lt;/arg&gt;
 &lt;/condition&gt;</pre>
 <p>The two examples below show different approaches to restricting email address to two domains.</p>
 <p><strong>Example 1: Both domains on the same line, with comma separators, using the AND condition:</strong></p>
-<pre>&lt;restrict-to&gt;
+<pre class="prettyprint, pre_xml">&lt;restrict-to&gt;
   &lt;conditions type="AND"&gt;
     &lt;condition type="authorizeByEmail"&gt;
       &lt;arg name="email"&gt;.*@soa.com,.*@akana.com&lt;/arg&gt;
@@ -818,7 +818,7 @@ nav-title: Group Membership Workflow
   &lt;/conditions&gt;
 &lt;/restrict-to&gt;</pre>
 <p><strong>Example 2: Each domain on a separate line, using the OR condition:</strong></p>
-<pre>&lt;restrict-to&gt;
+<pre class="prettyprint, pre_xml">&lt;restrict-to&gt;
   &lt;conditions type="OR"&gt;
     &lt;condition type="authorizeByEmail"&gt;
       &lt;arg name="email"&gt;.*@soa.com&lt;/arg&gt;
@@ -867,7 +867,7 @@ nav-title: Group Membership Workflow
 	<li>Be a member of one of these two Policy Manager groups on the local domain: PM_Group1 or PM_Group2</li>
 	<li>Be a member of one of these two groups on the LDAP domain: LDAP_Group1 or LDAP_Group2</li>
 </ul>
-<pre>&lt;restrict-to&gt;
+<pre class="prettyprint, pre_xml">&lt;restrict-to&gt;
   &lt;conditions type="OR"&gt;
     &lt;condition type="authorizeInviteeByGroupName"&gt;
       &lt;arg name="group"&gt;CM_Group1, CM_Group2&lt;/arg&gt;

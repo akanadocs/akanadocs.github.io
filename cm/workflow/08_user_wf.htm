@@ -43,7 +43,7 @@ nav-title: User Workflow
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, <strong>@UserPhoneNotRequired</strong> is used in combination with <strong>doesUserBelongToDomain</strong>. If the user belongs to the specified domain, the condition is met, and the new user is allowed to log in without providing a phone number on the user profile.</p>
 <p class="Note"><strong>Note</strong>: during domain configuration, the <strong>mail</strong> attribute must be mapped in the setting for the referenced domain so that the user can be identified. In the OpenID Connect Relying Party domain in the Community Manager developer portal (<strong>Admin</strong> &gt; <strong>Domains</strong>), it's Tab 7. See <a href="../learnmore/bus_admin_domains_oidc.htm#oidcrp_domain_tab7">Tab 7: User</a> (Site Admin help).</p>
-<pre>&lt;action id=&quot;25&quot; name=&quot;@UserPhoneNotRequired&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;action id=&quot;25&quot; name=&quot;@UserPhoneNotRequired&quot;&gt;
   &lt;restrict-to&gt;
     &lt;conditions type=&quot;AND&quot;&gt;
       &lt;condition type=&quot;doesUserBelongToDomain&quot;&gt;
@@ -68,7 +68,7 @@ nav-title: User Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, <strong>@AllowMarkUserAsRegistered</strong> is used to identify users who are logging in via a specific domain type or domain name, and mark them as Registered Users. This example uses two conditions with OR, which requires only one of the conditions to be met. With AND, the <strong>DomainType</strong> and <strong>DomainName</strong> values must both meet the condition. Another way that this could be implemented is to remove the entire <span class="apidoc_code">&lt;restrict-to&gt;</span> section. In this scenario, the initial action would apply to all users who log in via a third-party login domain.</p>
-<pre>&lt;action id="500" name="@AllowMarkUserAsRegistered"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="500" name="@AllowMarkUserAsRegistered"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="OR"&gt;
       &lt;condition type="isDomainType"&gt;
@@ -196,7 +196,7 @@ nav-title: User Workflow
 <p>In the example below, the workflow for the @ModifyProfile workflow action checks to make sure that either the setting to allow users who are not Managed Users to modify their own profiles is turned on (condition <strong>userSettingsAllowModifyProfile</strong>), or else the current user is a Site Admin. If one of these conditions is met, the action can go forward.</p>
 <p>Note that this condition only applies to users who signed up for the platform themselves (whether by invitation, by setting up a platform account, or by setting up an account with a third-party identity provider such as Google). Managed Users, added by the Site Admin, cannot modify their own profiles, even if the platform setting is turned on.</p>
 <p>If the setting to allow users to modify their own profiles is disabled, a user who is a Site Admin cannot modify his/her own profile. In this case, only another Site Admin can modify this Site Admin's profile.</p>
-<pre>&lt;action id="456" name="@ModifyProfile"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="456" name="@ModifyProfile"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="OR"&gt;
       &lt;conditions type="AND"&gt;
@@ -283,7 +283,7 @@ nav-title: User Workflow
 </ul>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, this reserved action is invoked if the pre-conditions are met. Pre-conditions are that the login is in process, the auth token property exists (indicating that 2FA is required) and the auth token property does <strong>not</strong> match <strong>2FAComplete</strong> (indicating that the two-factor authentication process is not complete).</p>
-<pre>&lt;action id="499" name="@ResolveLoginPendingTask"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="499" name="@ResolveLoginPendingTask"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="AND"&gt;
       &lt;condition type="isSessionInLoginProcess"/&gt;
@@ -312,7 +312,7 @@ nav-title: User Workflow
 <p>In a scenario where platform self-signup is disabled, but instead a user account is added by the Site Admin, this reserved action detects whether a user account added by the Site Admin has been activated, so that one or more actions can be taken based on that.</p>
 <p>By default, when the user added by the Site Admin is activated, no notification is sent.</p>
 <p> By default, although the <strong>@UserActivated</strong> action is in the default user workflow, and includes a sendNotification function, this action is disabled, because it's commented out in line 834 of the default user workflow:</p>
-<pre>&lt;!-- &lt;common-action id="19" /&gt; --&gt;</pre>
+<pre class="prettyprint, pre_xml">&lt;!-- &lt;common-action id="19" /&gt; --&gt;</pre>
 <p>With this reserved action in use, by un-commenting the <strong>comment-action-id</strong> line in the default user workflow, when the Site Admin activates the account, an email  notification is sent to the user to notify the user that the account is now activated.</p>
 
 <h4>Examples/Notes/Additional Information</h4>
@@ -320,7 +320,7 @@ nav-title: User Workflow
 <p>If you remove the comment from line 834, as shown above, the workflow action below comes into effect. Then, if the Site Admin activates a user, the notification <strong>com.soa.notification.type.user.activated</strong> is sent to the user.</p>
 <p>The example below shows the segment of the default user workflow that implements the <strong>@UserActivated</strong> reserved action when the comment tag is removed from line 834.</p>
 <p class="Note"><strong>Note</strong>: The section of the workflow doc below also shows an additional function to send a notification to the Site Admin. To activate this function, you would also need to add the notification, which is not currently part of the product.</p>
-<pre>&lt;action id="19" name="@UserActivated"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="19" name="@UserActivated"&gt;
   &lt;results&gt;
     &lt;unconditional-result old-status="${workflow.step.name}" status="${workflow.step.name}" step="-1"&gt;
       &lt;post-functions&gt;
@@ -384,7 +384,7 @@ nav-title: User Workflow
 <p class="Note"><strong>Note</strong>: Two separate functions exist, <strong>markUserPermanent</strong> and <strong>markUserPermanentIfFirstLogin</strong>, to offer flexibility in implementation. In the out-of-the box user workflow there is no difference in implementation between these two, but a custom workflow could be designed to differentiate between a user's first login and subsequent logins. For example, a custom workflow could require users to renew the account every year, and could enforce the account renewal process.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the user has completed the registration process. LoginState is set to LoginComplete and the user is therefore marked as permanent. The notification is currently commented out.</p>
-<pre>&lt;unconditional-result old-status="registered" status="registered" step="400"&gt;
+<pre class="prettyprint, pre_xml">&lt;unconditional-result old-status="registered" status="registered" step="400"&gt;
   &lt;pre-functions&gt;
     &lt;function type="setProperty"&gt;
       &lt;arg name="LoginState"&gt;&amp;LoginComplete;&lt;/arg&gt;
@@ -457,7 +457,7 @@ nav-title: User Workflow
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below shows adding a Board item as a post-function, to announce that a user added by the Site Admin has logged in for the first time. In this example, <strong>targetBoard</strong> is a set of separate arguments, and <strong>viewers</strong> is a plural parameter.</p>
 
-<pre>&lt;post-functions&gt;
+<pre class="prettyprint, pre_xml">&lt;post-functions&gt;
   &lt;function type="markUserPermanent"/&gt;
   &lt;function type="addBoardItem"&gt;
     &lt;arg name="boardItemTemplateId"&gt;com.soa.board.item.user.logged.in.first.time&lt;/arg&gt;
@@ -512,7 +512,7 @@ nav-title: User Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, a notification is sent as a post-function when the Site Admin adds a user.</p>
-<pre>&lt;step id="20" name="Route Admin Add" &gt;
+<pre class="prettyprint, pre_xml">&lt;step id="20" name="Route Admin Add" &gt;
   &lt;actions&gt;
     &lt;action id="21" name="init-admin-add" auto="TRUE"&gt;
       &lt;results&gt;
@@ -541,7 +541,7 @@ nav-title: User Workflow
 <p>In this scenario, the argument is PendingTask and there are three possible values (see <a href="#user_ra_00">User Workflow: Reserved Actions</a>.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, this function is used to evaluate whether the user logging in is a local domain user and, if so, whether a password change is required. If a password change is required, it is set as a pending task that must be completed prior to login.</p>
-<pre>&lt;step id="400" name="managed"&gt;
+<pre class="prettyprint, pre_xml">&lt;step id="400" name="managed"&gt;
   &lt;actions&gt;
     &lt;action id="401" name="@Login"&gt;
       &lt;results&gt;
@@ -587,7 +587,7 @@ nav-title: User Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, <strong>setTwofaDeliveryOptions</strong> is invoked as the first pre-function to specify the supported delivery options. Depending on the delivery options supported, subsequent workflow actions guide the process.</p>
-<pre>&lt;pre-functions&gt;
+<pre class="prettyprint, pre_xml">&lt;pre-functions&gt;
   &lt;function type="setTwofaDeliveryOptions"&gt;
     &lt;arg name="VoiceSupported"&gt;true&lt;/arg&gt;
     &lt;arg name="TextSupported"&gt;true&lt;/arg&gt;
@@ -632,7 +632,7 @@ nav-title: User Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, <strong>setTwofaDeliveryTarget</strong> is set to <strong>text</strong>.</p>
-<pre>&lt;pre-functions&gt;
+<pre class="prettyprint, pre_xml">&lt;pre-functions&gt;
   &lt;function type="setTwoFADeliveryTarget"&gt;
     &lt;arg name="DeliveryOptions"&gt;${arg.2fa.task.data}&lt;/arg&gt;
     &lt;arg name="DeliveryMechanism"&gt;Text&lt;/arg&gt;
@@ -687,7 +687,7 @@ nav-title: User Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below is a template for this function.</p>
-<pre>&lt;function type="send2FACodeToEmail"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="send2FACodeToEmail"&gt;
   &lt;arg name="DeliveryTargetAddress"&gt;${arg.twofa.delivery.target.address}&lt;/arg&gt;
   &lt;arg name="DeliveryMechanism"&gt;${arg.DeliveryMechanism}&lt;/arg&gt;
   &lt;arg name="2FAData"&gt;${arg.2fa.task.data}&lt;/arg&gt;
@@ -724,7 +724,7 @@ nav-title: User Workflow
 </ul>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the <strong>handle2FATask</strong> function sets a value for the opaque code, 2FACode, and sets the structure into the auth token property, <strong>2FAData</strong>.</p>
-<pre>&lt;pre-functions&gt;
+<pre class="prettyprint, pre_xml">&lt;pre-functions&gt;
   &lt;function type="handle2FATask"&gt;
     &lt;arg name="PropertyName"&gt;2FAData&lt;/arg&gt;
     &lt;arg name="2FAData"&gt;${authtoken.property.2FAData}&lt;/arg&gt;
@@ -744,7 +744,7 @@ nav-title: User Workflow
 <p>There might be a short delay before it's apparent to the user that the UI session has ended. However, if this is used as part of the ResolveLoginPendingTask action, the UI will recognize it immediately and give the user a notification message.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the workflow checks whether the code is expired or max attempts is exceeded. If either of these conditions is met, 2FA required is set as a pending task and the user's cookie is removed. This means that the user must start the login process from the beginning.</p>
-<pre>&lt;conditions type="OR"&gt;
+<pre class="prettyprint, pre_xml">&lt;conditions type="OR"&gt;
   &lt;condition type="is2FACodeExpired"/&gt;
   &lt;condition type="is2FAMaxAttemptsExceeded"/&gt;
 &lt;/conditions&gt;
@@ -767,7 +767,7 @@ nav-title: User Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, this function is added in the workflow document, in the &quot;@Login&quot; section, to skip requiring acceptance of the Community Manager developer portal agreement for users of the acmepaymentscorp domain. This argument also supports multiple domains with comma separator.</p>
-<pre>&lt;function type=&quot;acceptAgreementForDomainUsers&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;function type=&quot;acceptAgreementForDomainUsers&quot;&gt;
   &lt;arg name=&quot;DomainName&quot;&gt;acmepaymentscorp&lt;/arg&gt;
 &lt;/function&gt;</pre>
 <p class="Note"><strong>Note</strong>: To see where this fits into the workflow document, you can download the user workflow from the Community Manager developer portal. The new function is in the default workflow, but is commented out.</p>
@@ -780,7 +780,7 @@ nav-title: User Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, this function is added in the workflow document, in the &quot;@Login&quot; section, to skip requiring acceptance of the Community Manager developer portal agreement for users who have either the Business Administrator or API Developer roles. This argument supports multiple roles with comma separator, as shown below.</p>
-<pre>&lt;function type=&quot;acceptAgreementForUsersBelongToRoles&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;function type=&quot;acceptAgreementForUsersBelongToRoles&quot;&gt;
   &lt;arg name=&quot;role&quot;&gt;Business Administrator,API Developer&lt;/arg&gt;
 &lt;/function&gt;</pre>
 <p class="Note"><strong>Note</strong>: To see where this fits into the workflow document, you can download the user workflow from the Community Manager developer portal. The new function is in the default workflow, but is commented out.</p>
@@ -905,7 +905,7 @@ nav-title: User Workflow
 <p>Note that this condition only applies to users who signed up for the platform themselves (whether by invitation, by setting up a platform account, or by setting up an account with a third-party identity provider such as Google). Managed Users, added by the Site Admin, cannot modify their own profiles, even if the platform setting is turned on.</p>
 <p>If the setting to allow users to modify their own profiles is disabled, a user who is a Site Admin cannot modify his/her own profile. In this case, only another Site Admin can modify this Site Admin's profile.</p>
 <p>For more information, refer to <a href="#user_ra_09">@ModifyProfile</a>.</p>
-<pre>&lt;action id="456" name="@ModifyProfile"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="456" name="@ModifyProfile"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="OR"&gt;
       &lt;conditions type="AND"&gt;
@@ -936,13 +936,13 @@ nav-title: User Workflow
 
 <h3 id="user_c_13">Is2FAEnabled</h3>
 <p>Checks the platform settings to see whether two-factor authentication is enabled for user login; returns Boolean true or false.</p>
-<pre>&lt;condition type="is2FAEnabled"/&gt;</pre>
+<pre class="prettyprint, pre_xml">&lt;condition type="is2FAEnabled"/&gt;</pre>
 <!--<p>{com.soa.atmosphere.impl\src\com\soa\user\workflow\twofa\UserTwoFAWorkflowConditions.java}</p>-->
 
 
 <h3 id="user_c_14">is2FARequired</h3>
 <p>Checks to see whether two-factor authentication is required for login of the current user, based on the recurrence mode specified in the platform's 2FA settings and the user's history of completing the 2FA process. Returns Boolean true or false.</p>
-<pre>&lt;condition type="is2FARequired"/&gt;</pre>
+<pre class="prettyprint, pre_xml">&lt;condition type="is2FARequired"/&gt;</pre>
 <!--<p>{com.soa.atmosphere.impl\src\com\soa\user\workflow\twofa\UserTwoFAWorkflowConditions.java}</p>-->
 
 
@@ -966,7 +966,7 @@ nav-title: User Workflow
 </table>
 
 <h4>Examples/Notes/Additional Information</h4>
-<pre>&lt;condition negate="true" type="isNoDeliveryOption"&gt;
+<pre class="prettyprint, pre_xml">&lt;condition negate="true" type="isNoDeliveryOption"&gt;
   &lt;arg name="PropertyName"&gt;${arg.2fa.task.data}&lt;/arg&gt;
 &lt;/condition&gt;</pre>
 <!--<p>{com.soa.atmosphere.impl\src\com\soa\user\workflow\twofa\UserTwoFAWorkflowConditions.java}</p>-->
@@ -993,7 +993,7 @@ nav-title: User Workflow
 </table>
 
 <h4>Examples/Notes/Additional Information</h4>
-<pre>&lt;condition type="is2FAEnabled"/&gt;
+<pre class="prettyprint, pre_xml">&lt;condition type="is2FAEnabled"/&gt;
 &lt;condition type="is2FARequired"/&gt;
 &lt;condition type="isDeliveryOptionsOnlyOne"&gt;
   &lt;arg name="PropertyName"&gt;${arg.2fa.task.data}&lt;/arg&gt;
@@ -1022,7 +1022,7 @@ nav-title: User Workflow
 </table>
 
 <h4>Examples/Notes/Additional Information</h4>
-<pre>&lt;condition type="isDeliveryOptionsOnlyEmail"&gt;&lt;!-- out of the box support --&gt;
+<pre class="prettyprint, pre_xml">&lt;condition type="isDeliveryOptionsOnlyEmail"&gt;&lt;!-- out of the box support --&gt;
   &lt;arg name="PropertyName"&gt;${arg.2fa.task.data}&lt;/arg&gt;
 &lt;/condition&gt;</pre>
 <!--<p>{com.soa.atmosphere.impl\src\com\soa\user\workflow\twofa\UserTwoFAWorkflowConditions.java}</p>-->
@@ -1048,7 +1048,7 @@ nav-title: User Workflow
 </table>
 
 <h4>Examples/Notes/Additional Information</h4>
-<pre>&lt;condition type="isDeliveryOptionsOnlyEmail"&gt;&lt;!-- out of the box support --&gt;
+<pre class="prettyprint, pre_xml">&lt;condition type="isDeliveryOptionsOnlyEmail"&gt;&lt;!-- out of the box support --&gt;
   &lt;arg name="PropertyName"&gt;${arg.2fa.task.data}&lt;/arg&gt;
 &lt;/condition&gt;</pre>
 <!--<p>{com.soa.atmosphere.impl\src\com\soa\user\workflow\twofa\UserTwoFAWorkflowConditions.java}</p>-->
@@ -1074,7 +1074,7 @@ nav-title: User Workflow
 </table>
 
 <h4>Examples/Notes/Additional Information</h4>
-<pre>&lt;condition type="isDeliveryOptionsOnlyEmail"&gt;&lt;!-- out of the box support --&gt;
+<pre class="prettyprint, pre_xml">&lt;condition type="isDeliveryOptionsOnlyEmail"&gt;&lt;!-- out of the box support --&gt;
   &lt;arg name="PropertyName"&gt;${arg.2fa.task.data}&lt;/arg&gt;
 &lt;/condition&gt;</pre>
 <!--<p>{com.soa.atmosphere.impl\src\com\soa\user\workflow\twofa\UserTwoFAWorkflowConditions.java}</p>-->
@@ -1100,7 +1100,7 @@ nav-title: User Workflow
 </table>
 
 <h4>Examples/Notes/Additional Information</h4>
-<pre>&lt;condition type="isDeliveryOptionsOnlyEmail"&gt;&lt;!-- out of the box support --&gt;
+<pre class="prettyprint, pre_xml">&lt;condition type="isDeliveryOptionsOnlyEmail"&gt;&lt;!-- out of the box support --&gt;
   &lt;arg name="PropertyName"&gt;${arg.2fa.task.data}&lt;/arg&gt;
 &lt;/condition&gt;</pre>
 <!--<p>{com.soa.atmosphere.impl\src\com\soa\user\workflow\twofa\UserTwoFAWorkflowConditions.java}</p>-->
@@ -1109,7 +1109,7 @@ nav-title: User Workflow
 <h3 id="user_c_21">is2FACodeValid</h3>
 <p>Tests to see if the verification code that the user provided is valid. Returns <strong>true</strong> if the code is valid.</p>
 <p>In the example below, <strong>is2FACodeValid</strong> is the second condition. Not shown: if both conditions evaluate to <strong>true</strong>, the workflow sets the auth token cookie and checks if there are any other pending login steps to complete the user's login.</p>
-<pre>&lt;result old-status="registered" status="registered" step="450"&gt;
+<pre class="prettyprint, pre_xml">&lt;result old-status="registered" status="registered" step="450"&gt;
   &lt;conditions type="AND"&gt;
     &lt;condition type="argumentValueEquals"&gt;
       &lt;arg name="ArgName"&gt;Action&lt;/arg&gt;
@@ -1127,7 +1127,7 @@ nav-title: User Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, if <strong>is2FATerminated</strong> resolves to <strong>Yes</strong>, <strong>2fa.required</strong> is set as a pending task, the current auth token property is removed, and the user's session is terminated. The user must start the login process from the beginning.</p>
-<pre>&lt;result old-status="registered" status="registered" step="400"&gt;
+<pre class="prettyprint, pre_xml">&lt;result old-status="registered" status="registered" step="400"&gt;
   &lt;conditions type="AND"&gt;
     &lt;condition type="is2FATerminated"/&gt;
   &lt;/conditions&gt;
@@ -1154,7 +1154,7 @@ nav-title: User Workflow
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, <strong>doesUserBelongToDomain</strong> is used in combination with @<strong>UserPhoneNotRequired</strong>. If the user belongs to the specified domain, the condition is met, and the new user is allowed to log in without providing a phone number on the user profile.</p>
 <p class="Note"><strong>Note</strong>: during domain configuration, the <strong>mail</strong> attribute must be mapped in the setting for the referenced domain so that the user can be identified. In the OpenID Connect Relying Party domain in the Community Manager developer portal (<strong>Admin</strong> &gt; <strong>Domains</strong>), it's Tab 7. See <a href="../learnmore/bus_admin_domains_oidc.htm#oidcrp_domain_tab7">Tab 7: User</a> (Site Admin help).</p>
-<pre>&lt;action id=&quot;25&quot; name=&quot;@UserPhoneNotRequired&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;action id=&quot;25&quot; name=&quot;@UserPhoneNotRequired&quot;&gt;
   &lt;restrict-to&gt;
     &lt;conditions type=&quot;AND&quot;&gt;
       &lt;condition type=&quot;doesUserBelongToDomain&quot;&gt;
@@ -1280,7 +1280,7 @@ nav-title: User Workflow
 	<li>Generates a user notification.</li>
 	<li>Sets "2FA required" as a pending task. The user must enter the code as part of the login process in order for login to be complete.</li>
 </ul>
-<pre>&lt;action id="451" name="@Login"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="451" name="@Login"&gt;
   &lt;pre-functions&gt;
     &lt;function type="setTwofaDeliveryOptions"&gt;
       &lt;arg name="VoiceSupported"&gt;true&lt;/arg&gt;
@@ -1610,7 +1610,7 @@ nav-title: User Workflow
 	<li>Uses the <a href="#user_c_isdomaintype">isDomainType</a> and <a href="#user_c_isdomainname">isDomainName</a> conditions to test whether the <strong>DomainType</strong> and <strong>DomainName</strong> values match a valid login domain.</li>
 	<li>If the conditions are met, assigns the specified role to the user who is logging in for the first time from that login domain.</li>
 </ul>
-<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="prettyprint, pre_xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE workflow PUBLIC 
          "-//OpenSymphony Group//DTD OSWorkflow 2.8//EN"
          "http://www.opensymphony.com/osworkflow/workflow_2_8.dtd" [

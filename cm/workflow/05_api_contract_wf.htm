@@ -148,7 +148,7 @@ nav-title: API Contract Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below shows the workflow when requests for API access in the Live environment are auto-approved. The <strong>updateAPIContractStatus</strong> function is used to update the status.</p>
-<pre>&lt;action id="102" name="Auto-Approve Production Requests From Production App" auto="TRUE"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="102" name="Auto-Approve Production Requests From Production App" auto="TRUE"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="AND"&gt;
       &lt;condition type="isAtmosphereProductionApiContract" /&gt;
@@ -229,7 +229,7 @@ nav-title: API Contract Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, two notifications are sent when an API access request is auto-approved. Each notification goes to a different group of users as specified in the role argument.</p>
-<pre>&lt;post-functions&gt;
+<pre class="prettyprint, pre_xml">&lt;post-functions&gt;
   &lt;function type="autoApproveAccessRequest"&gt;
     &lt;arg name="status"&gt;apicontract.status.activated&lt;/arg&gt;
   &lt;/function&gt;
@@ -254,7 +254,7 @@ nav-title: API Contract Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the app version is synchronized as a last action, after the main function, to make sure the data is up to date before moving on to the next step in the workflow.</p>
-<pre>&lt;action id="311" name="apicontract.action.sync.app.version"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="311" name="apicontract.action.sync.app.version"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="AND"&gt;
       &lt;condition type="authorizeByAtmosphereRole"&gt;
@@ -352,7 +352,7 @@ nav-title: API Contract Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, the API contract active status is updated to a status of com.soa.apicontract.inforce after the contract is activated.</p>
-<pre>&lt;action id="2" name="@AutoConnectActivate"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="2" name="@AutoConnectActivate"&gt;
   &lt;results&gt;
     &lt;unconditional-result old-status="Received" status="Activated" step="600" owner="${caller}"/&gt;
   &lt;/results&gt;
@@ -411,40 +411,40 @@ nav-title: API Contract Workflow
 <h4>Examples/Notes/Additional Information</h4>
 <p>The examples below show this function used with each of the workflow actions listed above.</p>
 <p>@ApiDeleted:</p>
-<pre>&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
   &lt;arg name="action"&gt;Delete&lt;/arg&gt;
 &lt;/function&gt;</pre>
 
 <p>@AppDeleted:</p>
-<pre>&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
   &lt;arg name="action"&gt;Delete&lt;/arg&gt;
 &lt;/function&gt;</pre>
 
 <p>@AutoConnectActivate:</p>
-<pre>&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
   &lt;arg name="action"&gt;Reset&lt;/arg&gt;
 &lt;/function&gt;</pre>
 
 <p>@ImportContract:</p>
-<pre>&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
   &lt;arg name="action"&gt;Reset&lt;/arg&gt;
 &lt;/function&gt;</pre>
 
 <p>apicontract.action.activate:</p>
-<pre>&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
   &lt;arg name="action"&gt;Reset&lt;/arg&gt;
 &lt;/function&gt;</pre>
 
 <p>apicontract.action.approve:</p>
-<pre>&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
   &lt;arg name="action"&gt;Reset&lt;/arg&gt;
 &lt;/function&gt;</pre>
 <p>Auto-Approve Production Requests From Sandbox:</p>
-<pre>&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
   &lt;arg name="action"&gt;Reset&lt;/arg&gt;
 &lt;/function&gt;</pre>
 <p>auto-approve sandbox requests:</p>
-<pre>&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
+<pre class="prettyprint, pre_xml">&lt;function type="syncConnectedAppVersionsInOAuthProvider"&gt;
   &lt;arg name="action"&gt;Reset&lt;/arg&gt;
 &lt;/function&gt;</pre>
 

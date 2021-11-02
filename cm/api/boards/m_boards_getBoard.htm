@@ -3,7 +3,7 @@
 	<head>
 		            <meta http-equiv="Content-type" content="text/html; charset=utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>Graph Object | Shared Service, Performance | Akana API Platform API</title>
+            <title>Get Board | Boards Service | Akana API Platform API</title>
             <link rel="stylesheet" href="/style/bootstrap/bootstrap.min.css" type="text/css" />
             <link rel="stylesheet" href="/style/compiled/bootstrap-overrides.css" type="text/css" />
             <link rel="stylesheet" href="/style/compiled/theme.css" type="text/css" />
@@ -124,7 +124,7 @@
 
                 ObjInnerli.attr("role", "menuitem");
 
-                if ( classsnpages[j].u == '/cm/api/obj/o_performance_Graph.htm' ) {
+                if ( classsnpages[j].u == '/cm/api/boards/m_boards_getBoard.htm' ) {
                     ObjInnera.addClass("soa-ui-dc-container-main-left-nav-item-selected soa-ui-dc-container-main-left-nav-item-link");
                 } else {
                     ObjInnera.addClass("soa-ui-dc-container-main-left-nav-item-link");
@@ -153,8 +153,8 @@
             var Obja = $('<a></a>');
             var Objp = $('<p></p>');
 
-            if ( pages[i].u == '/cm/api/obj/o_performance_Graph.htm' || 
-                    ( 'obj' != '' && pages[i].sc == 'obj' ) ) {
+            if ( pages[i].u == '/cm/api/boards/m_boards_getBoard.htm' || 
+                    ( 'boards' != '' && pages[i].sc == 'boards' ) ) {
                 Objli.addClass("soa-ui-dc-container-main-left-nav-item-selected");
             }
 
@@ -190,7 +190,6 @@
     });
 </script>
 <!-- End left nav script -->
-		<meta name="robots" content="noindex">
 	</head>
 	<body>
 		<div class="soa-ui-dc-top-bar-wrapper">
@@ -347,68 +346,201 @@
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 					<div class="apidocContent">
-<h1 id="top">Graph Object</h1>
-<p>Contains metric information.</p>
+<h1 id="top">GET&#160;/api/boards/{BoardID}</h1>
+<p>
+Returns information about a user-defined board or the Support Board.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be logged in and have permission to view the requested resources. If the user is logged in but doesn't have permission to view certain resources, the operation works, but limited (or empty) results are returned. For more information about how authorization and visibility work for Board operations, see <a href="../aaref/Ref_BoardsInThePortal.htm">Boards in the Community Manager developer portal</a>.</p>
 
-<p class="usedby">This object is used by the following operations:</p>
+<p>This topic includes the following sections:</p>
+<div class="relatedlinks">
 <ul>
-	<li><span class="apidoc_code"><a href="../apps/m_apps_getMetrics.htm">GET&#160;/api/apps/versions/{AppVersionID}/metrics</a></span> (in the response)</li>
-	<li><span class="apidoc_code"><a href="../apis/m_apis_getMetrics.htm">GET&#160;/api/apis/versions/{APIVersionID}/metrics</a></span> (in the response)</li>
-	<li><span class="apidoc_code"><a href="../apis/m_apis_getMetricsForOperation.htm">GET&#160;/api/apis/versions/{APIVersionID}/environments/{Environment}/operations/{OperationName}/metrics</a></span> (in the response)</li>
-	<li><span class="apidoc_code"><a href="../apis/m_apis_getRanges.htm">GET&#160;/api/apis/versions/{APIVersionID}/metrics/ranges</a></span> (in the response)</li>
+	<li><a href="#httpmethod">HTTP Method</a></li>
+	<li><a href="#endpoint">URL</a></li>
+	<li><a href="#samplerequest">Sample Request</a></li>
+	<li><a href="#requestheaders">Request Headers</a></li>
+	<li><a href="#requestparameters">Request Parameters</a></li>
 </ul>
+<ul>
+	<li><a href="#response">Response</a></li>
+	<li><a href="#sampleresponse">Sample Response</a></li>
+	<li><a href="#responseheaders">Response Headers</a></li>
+	<li><a href="#responsebody">Response Body</a></li>
+	<li><a href="#errorcodes">Error Codes/Messages</a></li>
+</ul>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
+<p class="httpverb">GET</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-<p>The properties included in the <strong>Graph</strong> object are listed below.</p>
+<h2 id="endpoint">URL</h2>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/boards/{BoardID}</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h2 id="samplerequest">Sample Request</h2>
+<p id="id_samplerequest">The example below shows a request for the information about the Support Board. for the business.</p>
+<pre class="pre_request_url">https://{hostname}/api/boards/supportboard.acmepaymentscorp</pre>
+<p><strong>Sample request headers</strong></p>
+<pre class="pre_request_headers">Accept: application/json</pre>
+<p><strong>Sample request body</strong></p>
+<p>Not applicable.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+
+<h2 id="requestheaders">Request Headers</h2>
+<p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
-			<th>Property</th>
+			<th>Header</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+			<td><p>application/json, application/xml</p>
+				<p>application/vnd.soa.v71+json, application/vnd.soa.v71+xml</p>
+				<p>application/vnd.soa.v72+json, application/vnd.soa.v72+xml</p>
+				<p>application/vnd.soa.v80+json, application/vnd.soa.v80+xml</p>
+				<p>application/vnd.soa.v81+json, application/vnd.soa.v81+xml</p></td>
+		</tr>
+		<tr>
+			<td>Cookie</td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
+		</tr>
+	</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+
+<h2 id="requestparameters">Request Parameters</h2>
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th>Parameter</th>
+			<th>Parm Type</th>
+			<th>Data Type</th>
+			<th>Required</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_boardid">BoardID</a></td>
+			<td>Path</td>
+			<td>string</td>
+			<td>Required</td>
+			<td>The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_board_userdefined">user-defined board</a>.</td>
+		</tr>
+	</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+
+<h2 id="response">Response</h2>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with information about the specified board.<a href="#top"></a></p>
+
+
+
+
+<h2 id="sampleresponse">Sample Response</h2>
+<p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
+<p><strong>Sample response headers: application/json</strong></p>
+<pre class="pre_response_headers">Status Code: 200 OK
+Content-Type: application/json
+Expires: Fri, 20 Feb 2015 11:02:59 GMT</pre>
+<p><strong>Sample response body: application/json</strong></p>
+<pre class="prettyprint, pre_json">{
+  &quot;BoardID&quot; : &quot;supportboard.acmepaymentscorp&quot;,
+  &quot;BoardType&quot; : &quot;board&quot;,
+  &quot;Title&quot; : &quot;Support&quot;,
+  &quot;Visibility&quot; : &quot;Public&quot;,
+  &quot;IsFollowed&quot; : false,
+  &quot;State&quot; : &quot;com.soa.api.state.active&quot;,
+  &quot;AvatarURL&quot; : &quot;http://acmepaymentscorp/api/boards/supportboard.acmepaymentscorp/avatar&quot;
+}</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+
+<h2 id="responseheaders">Response Headers</h2>
+<p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th>Header</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+			<td><p>application/json, application/xml</p>
+				<p>application/vnd.soa.v71+json, application/vnd.soa.v71+xml</p>
+				<p>application/vnd.soa.v72+json, application/vnd.soa.v72+xml</p>
+				<p>application/vnd.soa.v80+json, application/vnd.soa.v80+xml</p>
+				<p>application/vnd.soa.v81+json, application/vnd.soa.v81+xml</p></td>
+		</tr>
+	</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+
+<h2 id="responsebody">Response Body</h2>
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th>Name</th>
 			<th>Type</th>
 			<th>Description</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td>StartTime</td>
-			<td>dateTime</td>
-			<td>Start time for the graph's data, in format YYYY-MM-DDTHH:MM:SSZ (all date/times are returned in <a href="../Ref_Glossary_CommunityPlatform.htm#gl_zulutime">Zulu time</a>).</td>
-		</tr>
-		<tr>
-			<td>EndTime</td>
-			<td>dateTime</td>
-			<td>End time for the graph's data, in format YYYY-MM-DDTHH:MM:SSZ (all date/times are returned in <a href="../Ref_Glossary_CommunityPlatform.htm#gl_zulutime">Zulu time</a>).</td>
-		</tr>
-		<tr>
-			<td>Summary</td>
-			<td><a href="o_performance_SummaryType.htm">SummaryType</a></td>
-			<td><p>Contains information about a type of metric summary.</p>
-				<p>Optional.</p></td>
-		</tr>
-		<tr>
-			<td>Summaries</td>
-			<td><a href="o_performance_SummaryType.htm">SummaryType</a>[&#160;]</td>
-			<td><p>Contains information about one or more metric summaries. If the &quot;ShowSummary&quot; parameter was &quot;true&quot; in the request, four summary intervals are included in the response, with durations of 0, 5, 15, and 60 minutes.</p>
-				<ul class="apidoctable_ul">
-			<li>Metric: An array of metrics for the summary interval.
-				<ul>
-					<li>Type: Type of metric, such as, &quot;avgResponseTime&quot;. </li>
-					<li>Value: Integer value of the metric. </li>
-				</ul>
-			</li>
-			</ul></td>
-		</tr>
-		<tr>
-			<td>Interval</td>
-			<td><a href="o_performance_IntervalType.htm">IntervalType</a>[&#160;]</td>
-			<td>An array of detail intervals. @StartTime is the beginning of the interval, in <a href="../Ref_Glossary_CommunityPlatform.htm#gl_zulutime">Zulu time</a>.</td>
-		</tr>
-		<tr>
-			<td>Test</td>
-			<td><a href="o_performance_TestType.htm">TestType</a>[&#160;]</td>
-			<td>Contains information about a type of metric test.</td>
+			<td>Board</td>
+			<td><a href="../obj/o_boards_Board.htm">Board</a></td>
+			<td><p>Contains information about a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forum">Forum (Board)</a> on the platform.</p>
+				<p>In this scenario, it is always a user-defined board.</p></td>
 		</tr>
 	</tbody>
 </table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h2 id="errorcodes">Error Codes/Messages</h2>
+<p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th>Item</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+			<td>An error occurred processing the call.</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

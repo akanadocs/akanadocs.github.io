@@ -198,7 +198,7 @@ nav-title: Custom Workflows in the Community Manager developer portal
 	<li>Workflow steps and actions</li>
 </ul>
 <p>The basic structure of required elements in a workflow XML document is shown below.</p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre class="prettyprint, pre_xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE workflow PUBLIC 
   &quot;-//OpenSymphony Group//DTD OSWorkflow 2.9//EN&quot;
   &quot;http://www.opensymphony.com/osworkflow/workflow_2_9.dtd&quot;&gt;
@@ -219,7 +219,7 @@ nav-title: Custom Workflows in the Community Manager developer portal
 <p>Initial actions are predefined reserved words, such as @Create. Initial actions bring the resource into the workflow at the beginning. In Akana API Platform workflows, initial actions always start with the @ sign.</p>
 <p>The specific initial actions for each type of workflow are given in the workflow reference section of this document.</p>
 <p>The example below shows the initial action @Create used to start the App Version workflow.</p>
-<pre>&lt;initial-actions&gt;
+<pre class="prettyprint, pre_xml">&lt;initial-actions&gt;
   &lt;action id=&quot;1&quot; name=&quot;@Create&quot;&gt;
     &lt;results&gt;
       &lt;unconditional-result old-status=&quot;Received&quot; status=&quot;Setup&quot; step=&quot;100&quot; owner=&quot;${caller}&quot; /&gt;
@@ -281,7 +281,7 @@ nav-title: Custom Workflows in the Community Manager developer portal
 
 <h4>Reserved Actions: Examples</h4>
 <p>Below are some examples of reserved actions from actual workflow documents.</p>
-<pre>&lt;action id=&quot;59&quot; name=&quot;@modify&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;action id=&quot;59&quot; name=&quot;@modify&quot;&gt;
 
 &lt;action id=&quot;58&quot; name=&quot;@read&quot;&gt;
 
@@ -299,7 +299,7 @@ nav-title: Custom Workflows in the Community Manager developer portal
 <p>Each step can contain one or more Action elements, but they are not required.</p>
 <p>Actions can be automatic or manual.</p>
 <p>The basic structure of an Action element is shown below.</p>
-<pre>&lt;action id=&quot;###&quot; name=&quot;Display name of action&quot;&gt;
+<pre class="prettyprint, pre_xml">&lt;action id=&quot;###&quot; name=&quot;Display name of action&quot;&gt;
   &lt;results&gt;
     Optional conditional &lt;result&gt; elements
     &lt;/unconditional-result old-status=&quot;value&quot; status=&quot;value&quot; step=&quot;###&quot; /&gt; 

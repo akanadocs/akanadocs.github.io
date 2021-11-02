@@ -126,7 +126,7 @@ nav-title: API Version Workflow
 </ul>
 <p>The Business Admin for the organization, or the API Approver, can approve or reject an API version.</p>
 <p>The example below shows a section of the template workflow showing steps and actions when an API version is pending approval. Valid actions are Approve (<strong>apiversion.action.approve</strong>) or Reject (<strong>apiversion.action.reject</strong>). When the action is <strong>apiversion.action.approve</strong> (third line below), the applicable conditions are applied as shown below.</p>
-<pre>&lt;step id="300" name="Pending Approval!"&gt;
+<pre class="prettyprint, pre_xml">&lt;step id="300" name="Pending Approval!"&gt;
   &lt;actions&gt;
     &lt;action id="301" name="apiversion.action.approve"&gt;
       &lt;restrict-to&gt;
@@ -225,7 +225,7 @@ nav-title: API Version Workflow
 <p class="Note"><strong>Note</strong>: This is provided for your convenience in case you want to modify an API version after it's been activated. In most cases, this is not necessary or recommended.</p>
 <p>The platform only looks for this workflow action if the @Modify action, which gives broad permission to modify all aspects of the API version, is not present in the custom workflow.</p>
 <p>The example below, from the sample custom workflow template at <a href="#apiv_eg_01">API Version Workflow: Customization Example</a> later in this document, shows use of the @ModifyPolicies reserved action to assign this ability to an API version in Active state.</p>
-<pre>&lt;action id="402" name="@ModifyPolicies"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="402" name="@ModifyPolicies"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="OR"&gt;
       &lt;condition type="authorizeByAtmosphereRole"&gt;
@@ -392,9 +392,9 @@ nav-title: API Version Workflow
 <ol>
 	<li>Administrator: In Policy Manager, create a custom role with READ permission on both API and API Version. For instructions on creating a new role, see <a href="../../ag/security_admin/roles.htm">Security Roles and Role Memberships</a>.
 		<p>The custom role defined in <a href="#api_v_wf_example_01">Example 1</a> is <strong>APIAccessor</strong>, as shown below:</p>
-			<pre>&lt;!ENTITY AtmoRoleApiAccessor &quot;APIAccessor&quot; &gt;</pre>
+			<pre class="prettyprint, pre_xml">&lt;!ENTITY AtmoRoleApiAccessor &quot;APIAccessor&quot; &gt;</pre>
 		<p>The custom role defined in <a href="#api_v_wf_example_02">Example 2</a> is <strong>DisableAccessForAPI</strong>, as shown below:</p>
-			<pre>&lt;!ENTITY DisableAccessForAPI &quot;DisableAccessForAPI&quot; &gt;</pre>
+			<pre class="prettyprint, pre_xml">&lt;!ENTITY DisableAccessForAPI &quot;DisableAccessForAPI&quot; &gt;</pre>
 		<p class="Note"><strong>Note</strong>: If you define a different role name, you must update the role name in the custom workflow in Step 2.2 below.</p>
 	</li>
 	<li>Site Admin: In the Community Manager developer portal, create and assign a custom API version workflow that uses the <strong>@DisallowApiAccess</strong> reserved action to remove visibility of the <strong>Access</strong> button and also defines the roles that will be authorized to see and use the <strong>Access</strong> button:
@@ -489,7 +489,7 @@ nav-title: API Version Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below uses this function to export the API version.</p>
-<pre>&lt;action id="100" name="Export-WF"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="100" name="Export-WF"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="AND"&gt;
       &lt;condition type="authorizeByAtmosphereRole"&gt;
@@ -513,7 +513,7 @@ nav-title: API Version Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below uses this function to export all versions of the API.</p>
-<pre>&lt;action id="101" name="Export-All-Versions-WF"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="101" name="Export-All-Versions-WF"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="AND"&gt;
       &lt;condition type="authorizeByAtmosphereRole"&gt;
@@ -538,7 +538,7 @@ nav-title: API Version Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below shows the Delete action in the template custom workflow. Once the conditions have been satisfied, the status is updated from Draft to Deleted and <strong>markApiVersionDeleted</strong> is implemented as a post-function.</p>
-<pre>&lt;action id="102" name="@Delete"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="102" name="@Delete"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="AND"&gt;
         &lt;condition type="isApiVersionInDraftState" /&gt;
@@ -591,7 +591,7 @@ nav-title: API Version Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below shows the API version workflow when an API version is submitted for approval. The previous status is <strong>Draft</strong>, and the new status is <strong>Pending Approval</strong>.</p>
-<pre>&lt;action id="103" name="apiversion.action.submit.approval"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="103" name="apiversion.action.submit.approval"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="AND"&gt;
       &lt;condition type="isApiVersionInDraftState" /&gt;
@@ -630,7 +630,7 @@ nav-title: API Version Workflow
 <p>None.</p>
 <h4>Examples/Notes/Additional Information</h4>
 <p>The example below shows a workflow step that adds <strong>connectAppsFromPreviousVersion</strong> as a pre-function when an API version becomes active. This initiates API access for the apps that are connected to the existing API version.</p>
-<pre>&lt;step id="400" name="Active"&gt;
+<pre class="prettyprint, pre_xml">&lt;step id="400" name="Active"&gt;
   &lt;pre-functions&gt;
     &lt;function type="connectAppsFromPreviousVersion"&gt;
     &lt;/function&gt;
@@ -652,7 +652,7 @@ nav-title: API Version Workflow
 
 <h4>Examples/Notes/Additional Information</h4>
 <p>In the example below, an API version is submitted for approval. The workflow firsts checks that the API version is in Draft state.</p>
-<pre>&lt;action id="103" name="apiversion.action.submit.approval"&gt;
+<pre class="prettyprint, pre_xml">&lt;action id="103" name="apiversion.action.submit.approval"&gt;
   &lt;restrict-to&gt;
     &lt;conditions type="AND"&gt;
       &lt;condition type="isApiVersionInDraftState" /&gt;
